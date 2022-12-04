@@ -38,5 +38,8 @@ Type : select | Name : SourceSansPro | Description : "Source San pro font" | Val
 == Theme Notes History ==
 
 (Current)
+Release 1.2.9.32 :
+Brought back the old social link and social network icons.
+----
 Release 1.2.9.31 :
 Brought back the old social link and social network icons.
