@@ -1,0 +1,42 @@
+=={ UserStyle Data }==
+
+Name : Roblox 2019 Old Theme
+
+Version : 1.2.9.31
+Patch Version : 6
+Version Release Date : 11/30/2022
+Patch Release Date : 12/2/2022
+
+Author URL : userstyles.world/user/tersiswilvin
+
+Description : A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
+
+Author : TersisWilvin (9T2K)
+
+License : No License
+
+Preprocessor : Less
+
+Theme Type : UserCSS
+
+== Theme Default Settings ==
+
+Type : checkbox | Name : GameCardHover | Description : "2019L+ Hover for game cards." | Value : 0
+
+Type : checkbox | Name : fiveColumn | Description : "Five column in Avatar Editor." | Value : 1
+
+Type : checkbox | Name : SponsorSizing | Description : "Original Sponsor sizing." | Value : 1
+
+Type : select | Name : PlayButtonStyle | Description : "Play Button Style." | Value : ["2018L", "2019E", "2019M (Default)", "2020+"]
+
+Type : select | Name : RemoveExtras | Description : "Revert 2019L+ changes." | Value : 1
+
+Type : select | Name : SignUpStyle | Description : "Sign up page style." | Value : ["2017", "2019M (Default)", "2019L", "2020+"]
+
+Type : select | Name : SourceSansPro | Description : "Source San pro font" | Value : 0
+
+== Theme Notes History ==
+
+(Current)
+Release 1.2.9.31 :
+Brought back the old social link and social network icons.
