@@ -3997,6 +3997,9 @@
             width: 66%;
             width: calc(100% - 72px);
         }
+        .light-theme .redirection-banner, .dark-theme .redirection-banner {
+            font-size: 20px;
+        }
     }
     
     & when (@RestoreSidebar = 1) {
@@ -5056,6 +5059,11 @@
     }
     .dark-theme .youtube-video-player .no-javascript-label {
         color: #474747
+    }
+    
+    .light-theme .redirection-banner, .dark-theme .redirection-banner {
+        background-color: #f68802;
+        color: #fff;
     }
     
     .light-theme .table>thead>tr>th {
