@@ -3,9 +3,9 @@
 Name : Roblox 2019 Old Theme
 
 Version : 1.2.9.32
-Patch Version : 0
-Version Release Date : 11/30/2022
-Patch Release Date : 12/2/2022
+Patch Version : 1
+Version Release Date : 12/03/2022
+Patch Release Date : 12/05/2022
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -18,6 +18,72 @@ License : No License
 Preprocessor : Less
 
 Theme Type : UserCSS
+Theme Color Pallette {
+    Gray {
+        Gray 1 : #191919 > #e6e6e6;
+        Gray 2 : #757575 > #8A8A8A;
+        Gray 3 : #B8B8B8 > #474747;
+        Gray 4 : #E3E3E3 > #1C1C1C;
+        Gray 5 : #F2F2F2 > #0D0D0D;
+        Background > #F5F5F5 > #0A0A0A;
+        White : #FFFFFF > #000000;
+    }
+    Blue {
+        Blue Primary : #00A2FF;
+        Blue Hover : #00A2FF;
+        Blue Pressed : #0074BD;
+        Blue Disabled : #99DAFF;
+    }
+    Green {
+        Green Primary : #02B757;
+        Green Hover : #3FC679;
+        Green Pressed : #108237 > #118237 (Main)
+        Green Disabled : #A3E2BD
+    }
+    Red {
+        Red Primary : #E2231A;
+        Red Negative : #D86868;
+        Red Hover : #AC1E2D > #E27676 (Main);
+        Red Pressed : #E27676 > #AC1E2D (Main);
+    }
+    Orange {
+        Orange Warning : #F68802;
+        Orange Favorite : #F6B702;
+    }
+    -- Maybe add shadow option support? --
+    Shadow {
+        Shadow Primary : rgba(25,25,25,0.3) > rgba(230,230,230,0.3);
+        Shadow Hover : rgba(25,25,25,0.75) > rgba(230,230,230,0.75);
+    }
+}
+Theme Links Used {
+    Site Branding {
+        Short : data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+PHBhdGggZD0iTTguMyAzLjdMMy42IDIxLjhsMTguMSA0LjYgNC42LTE4LjEtMTgtNC42em04IDEzLjZsLTMuNS0uOS45LTMuNSAzLjUuOS0uOSAzLjV6IiBmaWxsPSIjZmZmIi8+PC9zdmc+
+        Long : https://images.rbxcdn.com/1359485336f67d6e7be76b5e8ff4b72c-roblox_logo_11212016.svg
+    }
+    Navigation : https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg
+    Icons {
+        https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg
+        https://static.rbxcdn.com/images/Shared/games_08302018.svg
+        https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg
+        https://images.rbxcdn.com/153fd3209692232cd8087cad74a669b0-games.svg
+        https://images.rbxcdn.com/61e81f52a68f06f7c9430c1341e0165b-bc_06282017.svg
+        https://images.rbxcdn.com/cee28149fd95dbd30bfea3be7f7df6aa-itemlabel_10182018.svg
+        https://images.rbxcdn.com/071268906f54456c207a199bf4fb3f40-negative_06142018.svg
+        https://images.rbxcdn.com/ca05cd0d068c3015d64a07cbed74f0dd-social_06282017.svg
+        https://www.roblox.com/images/Gamecards/placeholder_add.png
+        Play Button : data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGQ9Ik0xOSA4LjVsMTEuOTI1IDE2LjAzNmMuODUxIDEgLjc0NSAyLjUxMi0uMjM3IDMuMzc5YTIuMzMgMi4zMyAwIDAxLTEuNTQyLjU4NUg4Ljg1NGMtMS4zIDAtMi4zNTQtMS4wNzMtMi4zNTQtMi4zOTUgMC0uNTc3LjIwNC0xLjEzNC41NzUtMS41N0wxOSA4LjV6IiBpZD0iYSIvPjwvZGVmcz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjx1c2UgZmlsbD0iI0ZGRiIgdHJhbnNmb3JtPSJyb3RhdGUoOTAgMTkgMTguNSkiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggZD0iTTE4IDcyQzguMDU5IDcyIDAgNjMuOTQxIDAgNTRzOC4wNTktMTggMTgtMTggMTggOC4wNTkgMTggMTgtOC4wNTkgMTgtMTggMTh6bTcuNi0xNy42OTVsLTkuNDYtNy4xNmExLjQxMyAxLjQxMyAwIDAwLTIuMzQgMS4wNjh2MTIuMTg0YTEuNDEzIDEuNDEzIDAgMDAyLjM0IDEuMDY4bDkuNDYtNy4xNnoiIGZpbGwtb3BhY2l0eT0iLjkiIGZpbGw9IiNGRkYiLz48L2c+PC9zdmc+
+    }
+    Loading : https://images.rbxcdn.com/4bed93c91f909002b1f17f05c0ce13d1-loading.gif
+}
+
+Websites Used {
+    CodePen > https://codepen.io;
+    WayBack Machine > https://web.archive.org;
+    YouTube > https://www.YouTube.com;
+}
+
+Special thanks to friends who helped me.
 
 == Theme Default Settings ==
 

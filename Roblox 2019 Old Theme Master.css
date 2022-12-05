@@ -8458,7 +8458,7 @@
     
     .btr-dark-theme .btr-settings {
         background-color: #000;
-        box-shadow: 0 0 8px 0 rgb(250 250 250 / 30%);
+        box-shadow: 0 -5px 20px rgb(230 230 230 / 15%);
         color: #e6e6e6
     }
     
@@ -8536,7 +8536,7 @@
         border: 1px solid #474747;
     }
     .dark-theme .btr-settings-checkbox input[type="checkbox"]:checked + label:before {
-        background-image: url(chrome-extension://hbkpclpemjeibhioopcebchdmohaieln/res/icon_checkbox.svg), url(moz-extension://225bad08-a007-4832-8416-bc0baf5c1220/res/icon_checkbox.svg);
+        /*background-image: url(chrome-extension://hbkpclpemjeibhioopcebchdmohaieln/res/icon_checkbox.svg), url(moz-extension://225bad08-a007-4832-8416-bc0baf5c1220/res/icon_checkbox.svg);*/
         background-color: #00A2FF;
     }
     
