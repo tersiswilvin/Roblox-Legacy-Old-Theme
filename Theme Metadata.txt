@@ -105,7 +105,7 @@ Type : select | Name : SourceSansPro | Description : "Source San pro font" | Val
 
 (Current)
 Release 1.2.9.32 :
-Brought back the old social link and social network icons.
+Reverted a few footer pages (More is to come).
 ----
 Release 1.2.9.31 :
 Brought back the old social link and social network icons.
