@@ -1,0 +1,91 @@
+/*=={ 2019 Old Theme Dev Documents }==*/
+
+/*|==={ Main Announcement Branch }===|*/
+
+@Theme Updates
+
+:info: Release 1.2.9.2x is available.
+
+What's new :
+
+/*|==={ Experimental Announcement Branch }===|*/
+
+@Experimental Updates
+
+:info: Prerelease -.-.-.- beta - is available.
+
+What's new :
+
+/*=={ Implimentation / Planned List }==*/
+
+  Status  |        Title
+     X    |  Fix theme compatibility for extentions (Priority)
+     X    |  Game Card options (Priority)
+     X    |  Shadow options (Priority)
+     X    |  More pre-2018 options (Priority)
+     X    |  pre-2018 page options (Non-Priority)
+     X    |  Builders Club options (Non-Priority, Plan Pending)
+
+-- Remove watermark(s) when releasing to mainstream branch. -- 
+
+/*|=={ Development Branch }===|*/
+
+.rbx-left-col:before {
+    content: '(Light Theme) Development Purposes Only!';
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    bottom: 18px;
+    color: #191919
+}
+.rbx-left-col:after {
+    content: 'Milestone ';
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    color: #b8b8b8;
+    width: 100%
+}
+.dark-theme .rbx-left-col:before {
+    content: '(Dark Theme) Development Purposes Only!';
+    color: #E6E6E6
+}
+.dark-theme .rbx-left-col:after {
+    color: #474747;
+}
+
+/*|==={ Experimental Branch }===|*/
+
+.rbx-left-col:before {
+    content: '(Light Theme) Testing Purposes Only!';
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    bottom: 18px;
+    color: #191919
+}
+.rbx-left-col:after {
+    content: 'Milestone ';
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    color: #b8b8b8;
+    width: 100%
+}
+.dark-theme .rbx-left-col:before {
+    content: '(Dark Theme) Testing Purposes Only!';
+    color: #E6E6E6
+}
+.dark-theme .rbx-left-col:after {
+    color: #474747;
+}
+
+/*=={{ Prime Legend }}==*/
+
+/*=={ Headers }==*/
+/*|==={ Secondary Headers }===|*/
+
+-- Comments --
+
