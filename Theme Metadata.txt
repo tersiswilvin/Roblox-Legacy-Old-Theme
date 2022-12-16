@@ -119,11 +119,15 @@ Type : select | Name : SourceSansPro | Description : "Source San pro font" | Val
 
 == Theme Notes History ==
 
-(Current)
+(12/16/2022 | Current)
 Release 1.2.9.33 :
-
+Added box shadow options.
+Added Game Card options.
+Fixed a few issues when sourcesanspro was enabled.
+Partially reverted recent catalog update change.
+----
 Release 1.2.9.32 :
 Reverted a few footer pages (More is to come).
-----
+
 Release 1.2.9.31 :
 Brought back the old social link and social network icons.
