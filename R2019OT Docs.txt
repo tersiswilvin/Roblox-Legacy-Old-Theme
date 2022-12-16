@@ -4,9 +4,14 @@
 
 @Theme Updates
 
-:info: Release 1.2.9.2x is available.
+:info: Release 1.2.9.33 is available.
 
 What's new :
+
+Added box shadow options.
+Added Game Card options.
+Fixed a few issues when sourcesanspro was enabled.
+Partially reverted recent catalog update change.
 
 /*|==={ Experimental Announcement Branch }===|*/
 
@@ -19,12 +24,13 @@ What's new :
 /*=={ Implimentation / Planned List }==*/
 
   Status  |        Title
-     X    |  Fix theme compatibility for extentions (Priority)
-     X    |  Game Card options (Priority)
-     X    |  Shadow options (Priority)
+     %    |  Fix theme compatibility for extentions (Priority)
+     *    |  Game Card options (Priority)
+     *    |  Shadow options (Priority)
      X    |  More pre-2018 options (Priority)
+     *    |  Old logo(s) options (Priority)
      X    |  pre-2018 page options (Non-Priority)
-     X    |  Builders Club options (Non-Priority, Plan Pending)
+     X    |  Builders Club options (Non-Priority)
 
 -- Remove watermark(s) when releasing to mainstream branch. -- 
 
@@ -89,3 +95,6 @@ What's new :
 
 -- Comments --
 
+* Completed
+% Pending
+X Uncompleted
