@@ -2,10 +2,10 @@
 
 Name : Roblox 2019 Old Theme
 
-Version : 1.2.9.32
-Patch Version : 3
-Version Release Date : 12/03/2022
-Patch Release Date : 12/08/2022
+Version : 1.2.9.33
+Patch Version : 1
+Version Release Date : 12/15/2022
+Patch Release Date : 12/17/2022
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -119,7 +119,7 @@ Type : select | Name : SourceSansPro | Description : "Source San pro font" | Val
 
 == Theme Notes History ==
 
-(12/16/2022 | Current)
+(12/15/2022 | Current)
 Release 1.2.9.33 :
 Added box shadow options.
 Added Game Card options.
