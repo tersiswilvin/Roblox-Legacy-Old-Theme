@@ -24,7 +24,7 @@ What's new :
 /*=={ Implimentation / Planned List }==*/
 
   Status  |        Title
-     %    |  Fix theme compatibility for extentions (Priority)
+     X    |  Fix theme compatibility for extentions (Priority)
      *    |  Game Card options (Priority)
      *    |  Shadow options (Priority)
      X    |  More pre-2018 options (Priority)
