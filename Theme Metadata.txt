@@ -3,7 +3,7 @@
 Name : Roblox 2019 Old Theme
 
 Version : 1.2.9.33
-Patch Version : 2
+Patch Version : 3
 Version Release Date : 12/15/2022
 Patch Release Date : 12/18/2022
 
@@ -81,8 +81,16 @@ Theme Links Used {
         https://images.rbxcdn.com/cee28149fd95dbd30bfea3be7f7df6aa-itemlabel_10182018.svg
         https://images.rbxcdn.com/071268906f54456c207a199bf4fb3f40-negative_06142018.svg
         https://images.rbxcdn.com/ca05cd0d068c3015d64a07cbed74f0dd-social_06282017.svg
+        https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg
+        https://images.rbxcdn.com/48557c5d1a3323e45b2bb315f07004cf-placeholder_10182018.svg
+        https://images.rbxcdn.com/16816fe6bf01abe1fec12aa0e42d17b0.png
+        https://images.rbxcdn.com/08fd2f71a779c941251b0a513876ef73.png
         https://www.roblox.com/images/Gamecards/placeholder_add.png
+        https://images.rbxcdn.com/04e6dac32004283d9d4827e38f25c993-typing.gif
         Play Button : data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGQ9Ik0xOSA4LjVsMTEuOTI1IDE2LjAzNmMuODUxIDEgLjc0NSAyLjUxMi0uMjM3IDMuMzc5YTIuMzMgMi4zMyAwIDAxLTEuNTQyLjU4NUg4Ljg1NGMtMS4zIDAtMi4zNTQtMS4wNzMtMi4zNTQtMi4zOTUgMC0uNTc3LjIwNC0xLjEzNC41NzUtMS41N0wxOSA4LjV6IiBpZD0iYSIvPjwvZGVmcz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjx1c2UgZmlsbD0iI0ZGRiIgdHJhbnNmb3JtPSJyb3RhdGUoOTAgMTkgMTguNSkiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggZD0iTTE4IDcyQzguMDU5IDcyIDAgNjMuOTQxIDAgNTRzOC4wNTktMTggMTgtMTggMTggOC4wNTkgMTggMTgtOC4wNTkgMTgtMTggMTh6bTcuNi0xNy42OTVsLTkuNDYtNy4xNmExLjQxMyAxLjQxMyAwIDAwLTIuMzQgMS4wNjh2MTIuMTg0YTEuNDEzIDEuNDEzIDAgMDAyLjM0IDEuMDY4bDkuNDYtNy4xNnoiIGZpbGwtb3BhY2l0eT0iLjkiIGZpbGw9IiNGRkYiLz48L2c+PC9zdmc+
+        Placeholder game thumbnail {
+            data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJwbGFjZWhvbGRlciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwIiB5PSIwIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjkwIiB4bWw6c3BhY2U9InByZXNlcnZlIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48c3R5bGU+LnN0MXtmaWxsOiNjY2N9PC9zdHlsZT48ZyBpZD0iZ2FtZSI+PHBhdGggZmlsbD0iI2YyZjJmMiIgZD0iTTAgMGgxNjB2OTBIMHoiLz48cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTAyIDM2LjVsLTktNS43Yy0uMi0uMS0uNC0uMS0uNi0uMUg2Ny45Yy0uMiAwLS40LjEtLjUuMWwtOS41IDUuN2MtLjMuMi0uNS41LS41Ljh2MjAuOWMwIC41LjUgMSAxIDFoN2MuMSAwIC4yIDAgLjQtLjFsOS45LTRjLjEtLjEuMi0uMS40LS4xaDcuOGMuMSAwIC4yIDAgLjQuMWw5LjkgNGMuMS4xLjIuMS40LjFoN2MuNSAwIDEtLjUgMS0xVjM3LjNjLS4yLS4zLS4zLS42LS42LS44em0tMS42IDIwLjhoLTUuOGwtOS43LTMuOWMtLjQtLjEtLjctLjItMS4xLS4ySDc2Yy0uNCAwLS43LjEtMS4xLjJsLTkuNyAzLjloLTUuOFYzNy45bDguOC01LjNIOTJsOC4zIDUuM3YxOS40aC4xeiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03My44IDQ0aC0zLjF2LTMuMWMwLS41LS40LTEtMS0xcy0xIC40LTEgMVY0NGgtMy4xYy0uNSAwLTEgLjQtMSAxcy40IDEgMSAxaDMuMXYzLjFjMCAuNS40IDEgMSAxczEtLjQgMS0xVjQ2aDMuMWMuNSAwIDEtLjQgMS0xcy0uNC0xLTEtMXoiLz48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI4Ny43IiBjeT0iNDIuNSIgcj0iMi41Ii8+PGNpcmNsZSBjbGFzcz0ic3QxIiBjeD0iOTIuNyIgY3k9IjQ3LjUiIHI9IjIuNSIvPjwvZz48L3N2Zz4=
+        }
     }
     Loading : https://images.rbxcdn.com/4bed93c91f909002b1f17f05c0ce13d1-loading.gif
 }

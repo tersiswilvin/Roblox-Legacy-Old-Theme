@@ -5449,6 +5449,11 @@
         width: 28px;
         height: 28px;
     }
+        
+    .light-theme .icon-default-games-16x16, .light-theme .icon-dislike-gray-16x16, .light-theme .icon-like-gray-16x16, .dark-theme .icon-default-games-16x16, .dark-theme .icon-dislike-gray-16x16, .dark-theme .icon-like-gray-16x16 {
+        background-image: url(https://images.rbxcdn.com/153fd3209692232cd8087cad74a669b0-games.svg);
+    }
+    
     .section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit:hover, .profile-container .profile-about .btn-generic-edit-sm .icon-edit:hover, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit:hover {
         background-position: -28px -84px;
     }
@@ -6060,7 +6065,7 @@
     .light-theme .game-card-container .game-card-name, .dark-theme .game-card-container .game-card-name {
         margin-top: 6px;
     }
-    .light-theme .game-card-link .game-card-name {
+    .light-theme .game-card-link .game-card-name, .dark-theme .game-card-link .game-card-name {
         margin-bottom: 6px;
     }
     
