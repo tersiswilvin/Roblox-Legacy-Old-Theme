@@ -1,6 +1,6 @@
 /*=={ 2019 Old Theme Dev Documents }==*/
 
-/*|==={ Main Announcement Branch }===|*/
+/*|=={ Main Announcement Branch }==|*/
 
 @Theme Updates
 
@@ -24,17 +24,15 @@ What's new :
 /*=={ Implimentation / Planned List }==*/
 
   Status  |        Title
-     X    |  Fix theme compatibility for extentions (Priority)
-     *    |  Game Card options (Priority)
-     *    |  Shadow options (Priority)
-     X    |  More pre-2018 options (Priority)
-     *    |  Old logo(s) options (Priority)
-     X    |  pre-2018 page options (Non-Priority)
-     X    |  Builders Club options (Non-Priority)
+    X(!)  |  Fix theme compatibility for extentions
+     X    |  Add theme + 2022 brand options
+     X    |  Builders Club options
+     X    |  More pre-2018 options
+     X    |  pre-2018 page options
 
 -- Remove watermark(s) when releasing to mainstream branch. -- 
 
-/*|=={ Development Branch }===|*/
+/*|=={ Development Branch }==|*/
 
 .rbx-left-col:before {
     content: '(Light Theme) Development Purposes Only!';
@@ -61,7 +59,7 @@ What's new :
     color: #474747;
 }
 
-/*|==={ Experimental Branch }===|*/
+/*|=={ Experimental Branch }==|*/
 
 .rbx-left-col:before {
     content: '(Light Theme) Testing Purposes Only!';
@@ -88,13 +86,15 @@ What's new :
     color: #474747;
 }
 
-/*=={{ Prime Legend }}==*/
+/*=={{ Legend }}==*/
 
 /*=={ Headers }==*/
-/*|==={ Secondary Headers }===|*/
+/*|=={ Secondary Headers }==|*/
 
 -- Comments --
 
+! Priority
 * Completed
 % Pending
+- Uncommented
 X Uncompleted
