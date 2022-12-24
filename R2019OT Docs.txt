@@ -4,14 +4,12 @@
 
 @Theme Updates
 
-:info: Release 1.2.9.33 is available.
+:info: Release 1.2.9.34 is available.
 
 What's new :
 
-Added box shadow options.
-Added Game Card options.
-Fixed a few issues when sourcesanspro was enabled.
-Partially reverted recent catalog update change.
+Added 2018M Play Button styling option.
+Added holiday banner (Toggleable).
 
 /*|==={ Experimental Announcement Branch }===|*/
 
@@ -25,7 +23,8 @@ What's new :
 
   Status  |        Title
     X(!)  |  Fix theme compatibility for extentions
-     X    |  Add theme + 2022 brand options
+     X    |  Add navigation years options
+     X    |  Add more branding options
      X    |  Builders Club options
      X    |  More pre-2018 options
      X    |  pre-2018 page options
