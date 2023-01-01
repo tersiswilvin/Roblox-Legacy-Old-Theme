@@ -32,8 +32,8 @@ What's new :
 
   Status  |        Title
     X(!)  |  Fix theme compatibility for extentions
-     X    |  Add navigation years options
-     X    |  Add more branding options
+     %    |  Add navigation years options
+     %    |  Add more branding options
      X    |  Builders Club options
      X    |  More pre-2018 options
      X    |  pre-2019 page options
