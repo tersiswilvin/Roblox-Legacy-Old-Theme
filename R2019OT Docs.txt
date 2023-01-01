@@ -4,12 +4,21 @@
 
 @Theme Updates
 
-:info: Release 1.2.9.34 is available.
+:info: Release 1.2.9.35 is available.
 
 What's new :
 
-Added 2018M Play Button styling option.
-Added holiday banner (Toggleable).
+Added box shadow animations option.
+Added Red O logo variant option.
+Additional fixes for game cards.
+Fixed featured game card names going out of bounds.
+Fixed line height on recommended games header.
+Fixed search group game cards.
+Fixed the robux icon when creating a new group.
+Fixed tooltip not showing up when 2018M play button was selected.
+Rearranged some css.
+Renamed Pre-2018 Box shadows to Box Shadows.
+Renamed Game Card style to Item Card style.
 
 /*|==={ Experimental Announcement Branch }===|*/
 
@@ -27,9 +36,9 @@ What's new :
      X    |  Add more branding options
      X    |  Builders Club options
      X    |  More pre-2018 options
-     X    |  pre-2018 page options
+     X    |  pre-2019 page options
 
--- Remove watermark(s) when releasing to mainstream branch. -- 
+-- Build Watermarks for each branch -- 
 
 /*|=={ Development Branch }==|*/
 
@@ -42,7 +51,7 @@ What's new :
     color: #191919
 }
 .rbx-left-col:after {
-    content: 'Milestone ';
+    content: 'Milestone -.-.-.-';
     font-size: 12px;
     text-align: center;
     position: absolute;
@@ -97,3 +106,14 @@ What's new :
 % Pending
 - Uncommented
 X Uncompleted
+
+-- Format --
+
+YYYYMM(I.E : 197001) -- (Optional 1) --
+MMYYYY(I.E : 011970) -- (Recommended) --
+
+----
+
+Y => Year (I.E : 1970(70))
+M => Month (I.E : January(J))
+S => Season (I.E : Early(E), Mid(M), Late(L))
