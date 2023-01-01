@@ -141,6 +141,19 @@ Type : checkbox | Name : RedOLogoStyle | Description : "Use Red O variant" | Val
 
 == Theme Notes History ==
 
+(01/01/2023)
+Added box shadow animations option.
+Added Red O logo variant option.
+Additional fixes for game cards.
+Fixed featured game card names going out of bounds.
+Fixed line height on recommended games header.
+Fixed search group game cards.
+Fixed the robux icon when creating a new group.
+Fixed tooltip not showing up when 2018M play button was selected.
+Rearranged some css.
+Renamed Pre-2018 Box shadows to Box Shadows.
+Renamed Game Card style to Item Card style.
+
 (12/24/2022)
 Release 1.2.9.34 :
 Added 2018M Play Button styling option.
