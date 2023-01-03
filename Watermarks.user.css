@@ -1,14 +1,3 @@
-/* ==UserStyle==
-@name           2019 Old Theme Watermarks
-@namespace      github.com/tersiswilvin
-@version        1.0.1
-@description    Dev/Experimental watermarks for the Roblox 2019 Old Theme.
-@author         Me
-@preprocessor   less
-@var            checkbox        MatchDefaultSiteColors        "Match Roblox Site Colors"        0
-@var            select        WatermarkStyle        "Set Watermark Style"        ["None*","DEV", "Experimental"]
-==/UserStyle== */
-
 @-moz-document domain("www.roblox.com") {
 	/*//=={ 2019 old theme Watermarks }==*/
 	& when not (@WatermarkStyle = None) {
