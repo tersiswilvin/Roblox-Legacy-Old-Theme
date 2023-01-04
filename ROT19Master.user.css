@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230102.1.2.9.35.2
+@version      20230104.1.2.9.35.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -1411,6 +1411,11 @@
             min-height: 1px;
             padding-left: 0;
             padding-right: 0;
+        }
+    }
+    @media (max-width: 1199px) {
+        .rbx-header .rbx-navbar-right {
+            margin-right: 3px;
         }
     }
     
@@ -3947,7 +3952,7 @@
             content: ' Game';
         }
     
-        .game-stats-container li:nth-child(1) p:nth-child(1) {
+        .game-stats-container li:nth-child(1) p:nth-child(1), .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1), .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1) {
             font-size: 0;
         }
         .game-stats-container li:nth-child(1) p:nth-child(1):after {
@@ -3956,19 +3961,7 @@
             font-size: 12px;
             cursor: text;
         }
-        .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1) {
-            font-size: 0;
-        }
-        .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after {
-            content: "Max Players";
-            line-height: 1.5em;
-            font-size: 12px;
-            cursor: text;
-        }
-        .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1) {
-            font-size: 0;
-        }
-        .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
+        .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
             content: "Max Players";
             line-height: 1.5em;
             font-size: 12px;
@@ -4163,19 +4156,6 @@
         .gotham-font, .gotham-font .h1, .gotham-font .h2, .gotham-font .h3, .gotham-font .h4, .gotham-font .h5, .gotham-font .h6, .gotham-font h1, .gotham-font h2, .gotham-font h3, .gotham-font h4, .gotham-font h5, .gotham-font h6, .gotham-font .text, .gotham-font body, .gotham-font button, .gotham-font html, .gotham-font input, .gotham-font pre, .gotham-font select, .gotham-font textarea, 	.gotham-font.chat-container .btn-control-xs, .gotham-font .chat-container .btn-control-xs, .gotham-font.chat-container .chat-search-input, .gotham-font .chat-container .chat-search-input, .gotham-font .chat-main .btn-control-md, .gotham-font .create-chat-container .select-friends-btns .select-friends-cancel, .gotham-font .create-chat-container .select-friends-btns .select-friends-save, .gotham-font .details-btns-fixed button, .gotham-font .details-btns button, .gotham-font .details-container .details-input, .gotham-font .details-header-container .details-input, .gotham-font .dialog-container .dialog-input, .gotham-font .game-item-container .game-btn, .gotham-font .group-dialog .group-name-editor .group-name-input, .gotham-font .group-dialog .group-name-editor .group-name-save, .gotham-font .group-dialog .play-together-game-editor .group-name-input, .gotham-font .group-dialog .play-together-game-editor .group-name-save {
             font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
         }
-        .gotham-font div {
-            font-weight: 300;
-            line-height: 1.3em;
-        }
-        .gotham-font .font-title, .gotham-font .h1, .gotham-font h1, .gotham-font h4, .gotham-font h5, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-label, .gotham-font .text-label:active, .gotham-font .text-label:hover {
-            font-weight: 400;
-        }
-        .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .font-header-2, .gotham-font .font-header-2:active, .gotham-font .font-header-2:hover, .gotham-font .font-header-2:link, .gotham-font .font-header-2:visited, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited {
-            font-weight: 300;
-        }
-        .gotham-font h6 {
-            font-weight: bold
-        }
         .gotham-font .text-robux-lg {
             font-size: 24px;
             font-weight: 400;
@@ -4188,6 +4168,9 @@
             font-size: 16px;
             font-weight: 300;
         }
+        .game-stats-container li:nth-child(1) p:nth-child(1):after, .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
+            font-size: 16px;
+        }
         .gotham-font .small, .gotham-font .small:hover, .gotham-font .small:focus, .gotham-font .small:active, .gotham-font .small-oneline, .gotham-font .small-oneline:active, .gotham-font .small-oneline:focus, .gotham-font .small-oneline:hover, .gotham-font .small:active, .gotham-font .small:focus, .gotham-font .small:hover, .gotham-font .small:link, .gotham-font .small:visited {
             font-size: 12px;
             font-weight: 400;
@@ -4195,6 +4178,19 @@
         .gotham-font .xsmall, .gotham-font .xsmall:active, .gotham-font .xsmall:focus, .gotham-font .xsmall:hover, .gotham-font .item-card-label, .gotham-font .text-date-hint, .gotham-font .text-date-hint:active, .gotham-font .text-date-hint:focus, .gotham-font .text-date-hint:hover, .gotham-font .text-date-hint:link, .gotham-font .text-date-hint:visited {
             font-size: 10px;
             font-weight: 400;
+        }
+        .gotham-font .font-title, .gotham-font .h1, .gotham-font h1, .gotham-font h4, .gotham-font h5, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-label, .gotham-font .text-label:active, .gotham-font .text-label:hover {
+            font-weight: 400;
+        }
+        .gotham-font div {
+            font-weight: 300;
+            line-height: 1.3em;
+        }
+        .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .font-header-2, .gotham-font .font-header-2:active, .gotham-font .font-header-2:hover, .gotham-font .font-header-2:link, .gotham-font .font-header-2:visited, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited {
+            font-weight: 300;
+        }
+        .gotham-font h6 {
+            font-weight: bold
         }
         .gotham-font .game-name-title {
             line-height: 22px;
