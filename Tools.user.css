@@ -1,9 +1,9 @@
 /* ==UserStyle==
-@name           2019 Old Theme Watermarks
+@name           2019 Old Theme Tools
 @namespace      github.com/tersiswilvin
-@version        1.0.1
-@description    Dev/Experimental watermarks for the Roblox 2019 Old Theme.
-@author         Me
+@version        1.0.2
+@description    A new userstyle
+@author         TersisWilvin
 @preprocessor   less
 @var            checkbox        MatchDefaultSiteColors        "Match Roblox Site Colors"        0
 @var            select        WatermarkStyle        "Set Watermark Style"        ["None*","DEV", "Experimental"]
@@ -53,6 +53,12 @@
 		& when (@MatchDefaultSiteColors = 1) {
 			.light-theme .rbx-left-col:after {
 				color: #606162;
+			}
+			.light-theme .icon-default-abuse-report, .light-theme .icon-success, .light-theme .icon-bad-language, .light-theme .icon-private-info, .light-theme .icon-bullying, .light-theme .icon-dating, .light-theme .icon-exploiting, .light-theme .icon-phishing, .light-theme .icon-inappopriate-content, .light-theme .icon-real-life, .light-theme .icon-other {
+				filter: grayscale(100%);
+			}
+			.dark-theme .icon-default-abuse-report, .dark-theme .icon-success, .dark-theme .icon-bad-language, .dark-theme .icon-private-info, .dark-theme .icon-bullying, .dark-theme .icon-dating, .dark-theme .icon-exploiting, .dark-theme .icon-phishing, .dark-theme .icon-inappopriate-content, .dark-theme .icon-real-life, .dark-theme .icon-other {
+				filter: grayscale(100%) brightness(1.5);
 			}
 		}
 		.dark-theme .rbx-left-col:before {
