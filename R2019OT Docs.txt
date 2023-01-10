@@ -4,21 +4,17 @@
 
 @Theme Updates
 
-:info: Release 1.2.9.35 is available.
+:info: Release 1.2.9.36 is available.
 
 What's new :
 
-Added box shadow animations option.
-Added Red O logo variant option.
-Additional fixes for game cards.
-Fixed featured game card names going out of bounds.
-Fixed line height on recommended games header.
-Fixed search group game cards.
-Fixed the robux icon when creating a new group.
-Fixed tooltip not showing up when 2018M play button was selected.
-Rearranged some css.
-Renamed Pre-2018 Box shadows to Box Shadows.
-Renamed Game Card style to Item Card style.
+Added force light theme on signup page option.
+Added legacy next styleguide colors option.
+Added Styleguide Styling option.
+Brand logo now effects the desktop app banner.
+Red Logo now affects the robux page.
+Removed Quick Login from the dropdown (Toggleable).
+Renamed RedOLogoStyle to RedLogoStyle.
 
 /*|==={ Experimental Announcement Branch }===|*/
 
@@ -28,12 +24,13 @@ Renamed Game Card style to Item Card style.
 
 What's new :
 
-/*=={ Implimentation / Planned List }==*/
+/*=={ Planned }==*/
 
-  Status  |        Title
+  Status  |          Title
     X(!)  |  Fix theme compatibility for extentions
-     %    |  Add navigation years options
-     %    |  Add more branding options
+     X    |  Add navigation years options || TODO : 2014> navigation ||
+     X    |  Robux to Tix currency swap option
+     X    |  Add more branding options || TODO : Find and add dec 2014, nov 2015 roblox studio svg || (Add 2019L and 2022+ options?)
      X    |  Builders Club options
      X    |  More pre-2018 options
      X    |  pre-2019 page options
@@ -104,13 +101,16 @@ What's new :
 ! Priority
 * Completed
 % Pending
+& Investigating
 - Uncommented
 X Uncompleted
 
 -- Format --
 
 YYYYMM(I.E : 197001) -- (Optional 1) --
-MMYYYY(I.E : 011970) -- (Recommended) --
+MMYYYY(I.E : 011970) -- (Optional 2) --
+YYYYSSSS(I.E : 1970Early) -- (Optional 3)
+YYYYS(I.E : 1970E) -- (Optional 4)
 
 ----
 

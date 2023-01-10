@@ -2,10 +2,10 @@
 
 Name : Roblox 2019 Old Theme
 
-Version : 1.2.9.35
-Patch Version : 3
-Version Release Date : 01/01/2022
-Patch Release Date : 01/04/2023
+Version : 1.2.9.36
+Patch Version : 0
+Version Release Date : 01/10/2022
+Patch Release Date : 01/--/2023
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -115,33 +115,98 @@ Special thanks to friends who helped me.
 
 == Theme Default Settings ==
 
-Type : checkbox | Name : BoxShadows | Description : "Box Shadows" | Value : 0
-
-Type : checkbox | Name : BoxShadowAnimation | Description : "Box shadow animation" | Value : 1
-
-Type : checkbox | Name : fiveColumn | Description : "Five column in Avatar Editor." | Value : 1
-
-Type : select | Name : GameCardStyle | Description : "Game Cards style" | Value : ["Pre-2018", "2019M*", "2019L"]
-
-Type : select | Name : LogoStyle | Description : "Site Brand style" | Value : ["Pre-2015L", "2015L", "2017E*"]
-
-Type : checkbox | Name : SponsorSizing | Description : "Original Sponsor sizing." | Value : 1
-
-Type : select | Name : PlayButtonStyle | Description : "Play Button Style." | Value : ["2018L", "2019E", "2019M (Default)", "2020+"]
-
-Type : checkbox | Name : RestoreSidebarPadding | Description : "Restore sidebars old padding." | Value : 0
-
-Type : select | Name : RemoveUpdates | Description : "Revert 2019L+ changes." | Value : 1
-
-Type : select | Name : SignUpStyle | Description : "Sign up page style." | Value : ["2017", "2019M (Default)", "2019L", "2020+"]
-
-Type : select | Name : SourceSansPro | Description : "Source San pro font" | Value : 0
-
-Type : checkbox | Name : RedOLogoStyle | Description : "Use Red O variant" | Value : 0
+Variables (@var) {
+    BoxShadows {
+        Type : checkbox
+        Description : "Box Shadows"
+        Value : 0
+    }
+    forcesignuplighttheme {
+        Type : checkbox
+        Description : "Force light theme on signup"
+        Value 0
+    }
+    fiveColumn {
+        Type : checkbox
+        Description : "Five column in Avatar Editor."
+        Value : 1
+    }
+    CardStyle {
+        Type : select
+        Description : "Item Card Style"
+        Value : Pre-2018, 2019M (Default), 2019L
+    }
+    LogoStyle {
+        Type : select
+        Description : "Site Brand Style"
+        Value : 201408, 201412, 201511, 201701 (Default)
+    }
+    LegacyNextStyleGuideButtons {
+        Type : checkbox
+        Description : "Legacy Styleguide Buttons"
+        Value : 0
+    }
+    SponsorSizing {
+        Type : checkbox
+        Description : "Original Sponsor sizing."
+        Value : 1
+    }
+    PlayButtonStyle {
+        Type : select
+        Description : "Play Button Style"
+        Value : 2018M, 2018L, 2019E, 2019M (Default), 2020+
+    }
+    RestoreSidebarPadding {
+        Type : checkbox
+        Description : "Restore sidebars old padding."
+        Value : 0
+    }
+    RemoveUpdates {
+        Type : checkbox
+        Description : "Revert 2019L+ changes"
+        Value : 1
+    }
+    StyleGuideStyle {
+        Type : select
+        Description : "Styleguide Style"
+        Value : 2016, 2017, 2018 (Default)
+    }
+    SignUpStyle {
+        Type : select
+        Description : "Signup Style"
+        Value : 2017, 2018 (Default), 2019L, 2020+
+    }
+    SourceSansPro {
+        Type : checkbox
+        Description : "Source San Pro font"
+        Value : 0
+    }
+    TransitionalAnimations {
+        Type : checkbox
+        Description : "Transition animations"
+        Value : 1
+    }
+    RedLogoStyle {
+        Type : checkbox
+        Description : "Use Red logo variant"
+        Value : 0
+    }
+}
 
 == Theme Notes History ==
 
+(01/10/2023)
+Release 1.2.9.36 :
+Added force light theme on signup page option.
+Added legacy next styleguide colors option.
+Added Styleguide Styling option.
+Brand logo now effects the desktop app banner.
+Red Logo now affects the robux page.
+Removed Quick Login from the dropdown (Toggleable).
+Renamed RedOLogoStyle to RedLogoStyle.
+
 (01/01/2023)
+Release 1.2.9.35 :
 Added box shadow animations option.
 Added Red O logo variant option.
 Additional fixes for game cards.
