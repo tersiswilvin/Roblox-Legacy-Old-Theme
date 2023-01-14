@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230104.1.2.9.36
+@version      20230114.1.2.9.36.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -4072,6 +4072,15 @@
             font-weight: inherit;
             line-height: inherit;
         }
+        .game-creator {
+            display: block;
+        }
+        .game-creator .text-name {
+            padding-left: 0;
+            width: unset;
+            max-width: unset;
+            position: unset;
+        }
         @media (max-width: 767px) {
             .rbx-header .rbx-navbar li a[href="/discover"]:after, .rbx-header .rbx-navbar li a[href="/catalog"]:after {
                 font-size: 12px;
@@ -7948,7 +7957,9 @@
         margin-top: 5px
     }
     .dark-theme .premium-container .page-content:before {
-        filter: invert(100%);
+        & when (@RedLogoStyle = 0) {
+            filter: invert(100%);
+        }
     }
     
     @media(max-width:991px) {
@@ -10011,7 +10022,9 @@
     .btr-settings-checkbox input[type="checkbox"]:checked + label:before {
         border-color: #00A2FF;
     }
-    
+    .btr-settings-checkbox input[type="checkbox"][disabled] + label:before {
+        border-color: #B8B8B8;
+    }
     .btr-settings-checkbox input[type="checkbox"] + label:hover:before {
         border-color: #00A2FF;
     }
