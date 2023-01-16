@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230114.1.2.9.36.1
+@version      20230116.1.2.9.36.2
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -1243,7 +1243,9 @@
     }
     
     .rbx-header .rbx-navbar li {
-        width: 25%;
+		& when (@RemoveUpdates = 1) {
+			width: 25%;
+		}
         float: left;
     }
     
