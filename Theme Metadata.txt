@@ -120,6 +120,11 @@ Special thanks to friends who helped me.
 == Theme Default Settings ==
 
 Variables (@var) {
+    BadgeStyle {
+        Type : select
+        Description : "Badge Style"
+        Value : 201509, 201511, 201612, 201902 (Default)
+    }
     BoxShadows {
         Type : checkbox
         Description : "Box Shadows"
