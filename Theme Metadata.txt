@@ -204,6 +204,16 @@ Variables (@var) {
 
 == Theme Notes History ==
 
+(01/27/2023)
+Added themes icon support for ropro users.
+Added badge styling.
+Brand Logos now affect outside of roblox.com.
+Chat timestamps are top aligned again like it was in 2019.
+Fixed ropro icon border radius for firefox users.
+Fixed the icons on the help pages defaulting to system icons.
+ForceSignupLightTheme no longer effects other pages.
+Ropro sidebar icons no longer repeat.
+
 (01/10/2023)
 Release 1.2.9.36 :
 Added force light theme on signup page option.
