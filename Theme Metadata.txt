@@ -205,6 +205,7 @@ Variables (@var) {
 == Theme Notes History ==
 
 (01/27/2023)
+Release 1.2.9.37 :
 Added themes icon support for ropro users.
 Added badge styling.
 Brand Logos now affect outside of roblox.com.
