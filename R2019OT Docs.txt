@@ -4,17 +4,18 @@
 
 @Theme Updates
 
-:info: Release 1.2.9.36 is available.
+:info: Release 1.2.9.37 is available.
 
 What's new :
 
-Added force light theme on signup page option.
-Added legacy next styleguide colors option.
-Added Styleguide Styling option.
-Brand logo now effects the desktop app banner.
-Red Logo now affects the robux page.
-Removed Quick Login from the dropdown (Toggleable).
-Renamed RedOLogoStyle to RedLogoStyle.
+Added themes icon support for ropro users.
+Added badge styling.
+Brand Logos now affect outside of roblox.com.
+Chat timestamps are top aligned again like it was in 2019.
+Fixed ropro icon border radius for firefox users.
+Fixed the icons on the help pages defaulting to system icons.
+ForceSignupLightTheme no longer effects other pages.
+Ropro sidebar icons no longer repeat.
 
 /*|==={ Experimental Announcement Branch }===|*/
 
@@ -34,62 +35,6 @@ What's new :
      X    |  Builders Club options
      X    |  More pre-2018 options
      X    |  pre-2019 page options
-
--- Build Watermarks for each branch -- 
-
-/*|=={ Development Branch }==|*/
-
-.rbx-left-col:before {
-    content: '(Light Theme) Development Purposes Only!';
-    font-size: 16px;
-    text-align: center;
-    position: absolute;
-    bottom: 18px;
-    color: #191919
-}
-.rbx-left-col:after {
-    content: 'Milestone -.-.-.-';
-    font-size: 12px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    color: #b8b8b8;
-    width: 100%
-}
-.dark-theme .rbx-left-col:before {
-    content: '(Dark Theme) Development Purposes Only!';
-    color: #E6E6E6
-}
-.dark-theme .rbx-left-col:after {
-    color: #474747;
-}
-
-/*|=={ Experimental Branch }==|*/
-
-.rbx-left-col:before {
-    content: '(Light Theme) Testing Purposes Only!';
-    font-size: 16px;
-    text-align: center;
-    position: absolute;
-    bottom: 18px;
-    color: #191919
-}
-.rbx-left-col:after {
-    content: 'Milestone ';
-    font-size: 12px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    color: #b8b8b8;
-    width: 100%
-}
-.dark-theme .rbx-left-col:before {
-    content: '(Dark Theme) Testing Purposes Only!';
-    color: #E6E6E6
-}
-.dark-theme .rbx-left-col:after {
-    color: #474747;
-}
 
 /*=={{ Legend }}==*/
 
