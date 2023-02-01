@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230127.1.2.9.37
+@version      20230201.1.2.9.37.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -6028,6 +6028,10 @@
         padding-left: 0;
     }
     
+	.profile-container .game-container, .profile-container .group-container {
+		text-align: left;
+	}
+	
     .light-theme .icon-bc, .light-theme .icon-default-bc, .light-theme .icon-obc, .light-theme .icon-tbc, .dark-theme .icon-bc, .dark-theme .icon-default-bc, .dark-theme .icon-obc, .dark-theme .icon-tbc {
         background-image: url(https://images.rbxcdn.com/61e81f52a68f06f7c9430c1341e0165b-bc_06282017.svg);
     }
@@ -6179,8 +6183,14 @@
         border-color: transparent;
     }
     
-    .section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit {
+    .light-theme .section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .light-theme .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .light-theme .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit {
         background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
+        background-size: 200% auto;
+        background-position: 0 -84px;
+        width: 28px;
+        height: 28px;
+    }
+	.dark-theme .section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .dark-theme .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .dark-theme .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit {
         background-size: 200% auto;
         background-position: 0 -84px;
         width: 28px;
