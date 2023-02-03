@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230201.1.2.9.37.1
+@version      20230201.1.2.9.37.2
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -3112,6 +3112,10 @@
         width: 100%
     }
     
+	.light-theme .friends-content .avatar-card-content, .dark-theme .friends-content .avatar-card-content {
+		background-color: transparent;
+	}
+	
     .light-theme .create-item-container .sharing-configuration-options .permission-section, .light-theme .item-configuration-container .sharing-configuration-options .permission-section {
         background: #fff;
     }
