@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230201.1.2.9.37.2
+@version      20230208.1.2.9.37.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -8491,7 +8491,7 @@
         }
         border-radius: 3px;
     }
-    .dark-theme .btn-control-xs, .dark-theme .btn-control-sm, .dark-theme .btn-control-md, .dark-theme .content-overflow-toggle .toggle-content, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md, .dark-theme .btn-friends .btn-alert-md, .dark-theme #profile-chat-btn .btn-primary-md {
+    .dark-theme .btn-control-xs, .dark-theme .btn-control-sm, .dark-theme .btn-control-md, .dark-theme .content-overflow-toggle .toggle-content, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md, .dark-theme .btn-friends .btn-alert-md, .dark-theme #profile-chat-btn .btn-primary-md, .dark-theme .avatar-thumbnail .toggle-three-dee {
         & when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
             -webkit-transition: box-shadow 200ms ease-in-out;
             -o-transition: box-shadow 200ms ease-in-out;
@@ -8559,7 +8559,7 @@
         }
         cursor: pointer;
     }
-    .dark-theme .btn-control-xs:focus, .dark-theme .btn-control-xs:hover, .dark-theme .btn-control-sm:focus, .dark-theme .btn-control-sm:hover, .dark-theme .btn-control-md:focus, .dark-theme .btn-control-md:hover, .dark-theme .btn-control-lg:focus, .dark-theme .btn-control-lg:hover, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md:focus, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md:hover, .dark-theme .btn-friends .btn-alert-md:focus, .dark-theme .btn-friends .btn-alert-md:hover, .dark-theme #profile-chat-btn .btn-primary-md:focus, .dark-theme #profile-chat-btn .btn-primary-md:hover, .dark-theme button.toggle-content:focus, .dark-theme button.toggle-content:hover {
+    .dark-theme .btn-control-xs:focus, .dark-theme .btn-control-xs:hover, .dark-theme .btn-control-sm:focus, .dark-theme .btn-control-sm:hover, .dark-theme .btn-control-md:focus, .dark-theme .btn-control-md:hover, .dark-theme .btn-control-lg:focus, .dark-theme .btn-control-lg:hover, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md:focus, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md:hover, .dark-theme .btn-friends .btn-alert-md:focus, .dark-theme .btn-friends .btn-alert-md:hover, .dark-theme #profile-chat-btn .btn-primary-md:focus, .dark-theme #profile-chat-btn .btn-primary-md:hover, .dark-theme button.toggle-content:focus, .dark-theme button.toggle-content:hover, .dark-theme .avatar-thumbnail .toggle-three-dee:focus, .dark-theme .avatar-thumbnail .toggle-three-dee:hover {
         background-color: #000;
         border-color: #474747;
         & when (@LegacyNextStyleGuideButtons = 0) {
@@ -8579,7 +8579,7 @@
             color: #757575;
         }
     }
-    .dark-theme .btn-control-xs.active, .dark-theme .btn-control-xs:active, .dark-theme .btn-control-sm.active, .dark-theme .btn-control-sm:active, .dark-theme .btn-control-md.active, .dark-theme .btn-control-md:active, .dark-theme .btn-control-lg.active, .dark-theme .btn-control-lg:active, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md.active, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md:active, .dark-theme .btn-friends .btn-alert-md.active, .dark-theme .btn-friends .btn-alert-md:active, .dark-theme #profile-chat-btn .btn-primary-md.active, .dark-theme #profile-chat-btn .btn-primary-md:active, .dark-theme button.toggle-content.active, .dark-theme button.toggle-content:active {
+    .dark-theme .btn-control-xs.active, .dark-theme .btn-control-xs:active, .dark-theme .btn-control-sm.active, .dark-theme .btn-control-sm:active, .dark-theme .btn-control-md.active, .dark-theme .btn-control-md:active, .dark-theme .btn-control-lg.active, .dark-theme .btn-control-lg:active, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md.active, .dark-theme .avatar-card-btns .ignore-friend.btn-secondary-md:active, .dark-theme .btn-friends .btn-alert-md.active, .dark-theme .btn-friends .btn-alert-md:active, .dark-theme #profile-chat-btn .btn-primary-md.active, .dark-theme #profile-chat-btn .btn-primary-md:active, .dark-theme button.toggle-content.active, .dark-theme button.toggle-content:active, .dark-theme .avatar-thumbnail .toggle-three-dee.active, .dark-theme .avatar-thumbnail .toggle-three-dee:active {
         background-color: #000;
         & when (@LegacyNextStyleGuideButtons = 0) {
             color: #e6e6e6;
