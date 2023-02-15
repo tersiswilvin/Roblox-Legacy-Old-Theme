@@ -25,16 +25,16 @@ Ropro sidebar icons no longer repeat.
 
 What's new :
 
-/*=={ Planned }==*/
+/*=={ Roadmap }==*/
 
-  Status  |          Title
-    X(!)  |  Fix theme compatibility for extentions
-     X    |  Add navigation years options || TODO : 2014> navigation ||
-     X    |  Robux to Tix currency swap option
-     X    |  Add more branding options || TODO : Find and add dec 2014, nov 2015 roblox studio svg || (Add 2019L and 2022+ options?)
-     X    |  Builders Club options
-     X    |  More pre-2018 options
-     X    |  pre-2019 page options
+   State   |
+     X     |  Fix theme compatibility for extentions
+     X     |  Add navigation years option || TODO : 2014> navigation ||
+     X     |  Robux to Tix currency option
+     X     |  Add slogan option
+     X     |  Premium to builders club option
+     X     |  More customizability
+     X     |  Legacy Pages
 
 /*=={{ Legend }}==*/
 
