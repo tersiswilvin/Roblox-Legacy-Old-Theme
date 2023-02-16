@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230208.1.2.9.37.3
+@version      20230216.1.2.9.37.4
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -4427,6 +4427,10 @@
         visibility: hidden;
     }
     
+	.friends-content .avatar-card-container.disabled {
+		opacity: 1;
+	}
+	
     .premium-landing-page .trade-benefit-section .icon-ten-percent-more {
         visibility: initial;
     }
