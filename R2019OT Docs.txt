@@ -28,9 +28,8 @@ What's new :
 /*=={ Roadmap }==*/
 
    State   |
-     X     |  Fix theme compatibility for extentions
      X     |  Add navigation years option || TODO : 2014> navigation ||
-     X     |  Robux to Tix currency option
+     *     |  Robux to Tix currency option
      X     |  Add slogan option
      X     |  Premium to builders club option
      X     |  More customizability
@@ -61,4 +60,4 @@ YYYYS(I.E : 1970E) -- (Optional 4)
 
 Y => Year (I.E : 1970(70))
 M => Month (I.E : January(J))
-S => Season (I.E : Early(E), Mid(M), Late(L))
+MA => Month Alt (I.E : Early(E), Mid(M), Late(L))

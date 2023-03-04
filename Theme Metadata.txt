@@ -2,10 +2,10 @@
 
 Name : Roblox 2019 Old Theme
 
-Version : 1.2.9.37
-Patch Version : 4
-Version Release Date : 01/27/2023
-Patch Release Date : 02/16/2023
+Version : 1.2.9.38
+Patch Version : 0
+Version Release Date : --/--/2023
+Patch Release Date : --/--/----
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -125,6 +125,11 @@ Variables (@var) {
         Description : "Badge Style"
         Value : 201509, 201511, 201612, 201902 (Default)
     }
+    SiteCurrency {
+        Type : select
+        Description : "Currency Brand Style"
+        Value : Robux (Default), Tickets
+    }
     BoxShadows {
         Type : checkbox
         Description : "Box Shadows"
@@ -133,7 +138,7 @@ Variables (@var) {
     forcesignuplighttheme {
         Type : checkbox
         Description : "Force light theme on signup"
-        Value 0
+        Value : 0
     }
     fiveColumn {
         Type : checkbox
