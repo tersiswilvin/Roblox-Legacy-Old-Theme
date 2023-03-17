@@ -125,15 +125,15 @@ Variables (@var) {
         Description : "Badge Style"
         Value : 201509, 201511, 201612, 201902 (Default)
     }
-    SiteCurrency {
-        Type : select
-        Description : "Currency Brand Style"
-        Value : Robux (Default), Tickets
-    }
     BoxShadows {
         Type : checkbox
         Description : "Box Shadows"
         Value : 0
+    }
+    SiteCurrency {
+        Type : select
+        Description : "Currency Brand Style"
+        Value : Robux (Default), Tickets
     }
     forcesignuplighttheme {
         Type : checkbox
