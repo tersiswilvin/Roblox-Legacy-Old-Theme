@@ -209,6 +209,11 @@ Variables (@var) {
 
 == Theme Notes History ==
 
+(03/17/2023)
+Release 1.2.9.38 :
+Added Site Curency option.
+Changed avatar shop (Marketplace) to catalog in avatar editor (Toggleable).
+
 (01/27/2023)
 Release 1.2.9.37 :
 Added themes icon support for ropro users.
