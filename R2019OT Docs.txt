@@ -23,6 +23,7 @@ What's new :
 
    State   |
      X     |  Add navigation years option || TODO : 2014> navigation ||
+     X     |  Improve Robux to Tix swap. (Missed a few pages/references when released)
      X     |  Add slogan option
      X     |  Premium to builders club option
      X     |  More customizability
