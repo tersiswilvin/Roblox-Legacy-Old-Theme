@@ -1,6 +1,6 @@
 /*=={ 2019 Old Theme Dev Documents }==*/
 
-/*|=={ Main Announcement Branch }==|*/
+/*|=={ Master Discord Announcement }==|*/
 
 @Theme Updates
 
@@ -11,7 +11,7 @@ What's new :
 Added Site Curency option.
 Changed avatar shop (Marketplace) to catalog in avatar editor (Toggleable).
 
-/*|==={ Experimental Announcement Branch }===|*/
+/*|==={ Experimental Discord Announcement }===|*/
 
 @Experimental Updates
 
@@ -19,7 +19,7 @@ Changed avatar shop (Marketplace) to catalog in avatar editor (Toggleable).
 
 What's new :
 
-/*=={ Roadmap }==*/
+/*/=={ Roadmap }==/*/
 
    State   |
      X     |  Add navigation years option || TODO : 2014> navigation ||
@@ -29,26 +29,31 @@ What's new :
      X     |  More customizability
      X     |  Legacy Pages
 
-/*=={{ Legend }}==*/
+/*/=={{ Legend }}==/*/
 
-/*=={ Headers }==*/
+/*/=={ Headers }==/*/
 /*|=={ Secondary Headers }==|*/
 
 -- Comments --
 
-! Priority
+! Priority => X(!) > &(!) > %(!) > *(!)
 * Completed
 % Pending
 & Investigating
 - Uncommented
 X Uncompleted
 
--- Format --
+----
 
 YYYYMM(I.E : 197001) -- (Default 1) --
-YYYYMA(I.E : 1970E) -- (Default 2)
-
-----
+YYYYMA(I.E : 1970E) -- (Default 2) --
+||||||
+|||||\_ Alt
+||||\__ Month
+|||\___ Year
+||\____ Year
+|\_____ Year
+\______ Year
 
 Y => Year (I.E : 1970(70))
 M => Month (I.E : January(J))
