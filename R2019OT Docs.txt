@@ -45,10 +45,8 @@ X Uncompleted
 
 -- Format --
 
-YYYYMM(I.E : 197001) -- (Optional 1) --
-MMYYYY(I.E : 011970) -- (Optional 2) --
-YYYYSSSS(I.E : 1970Early) -- (Optional 3)
-YYYYS(I.E : 1970E) -- (Optional 4)
+YYYYMM(I.E : 197001) -- (Default 1) --
+YYYYMA(I.E : 1970E) -- (Default 2)
 
 ----
 
