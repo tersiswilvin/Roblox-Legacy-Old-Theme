@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230317.1.2.9.38
+@version      20230319.1.2.9.38.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -9,23 +9,24 @@
 @updateURL    https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/ROT19Master.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   BadgeStyle                  "Badge Style"                   ["201509","201511", "201612", "201902*"]
-@var          checkbox BoxShadows                  "Box Shadows"                   0
-@var          select   SiteCurrency                "Currency Brand Style"          ["Robux*","Tickets"]
-@var          checkbox forcesignuplighttheme       "Force light theme on signup"   0
-@var          checkbox fiveColumn                  "Five column in Avatar Editor." 1
-@var          select   CardStyle                   "Item Card Style"               ["Pre-2018", "2019M*", "2019L"]
-@var          select   LogoStyle                   "Site Brand Style"              ["201408", "201412", "201511", "201701*"]
-@var          checkbox LegacyNextStyleGuideButtons "Legacy Styleguide Buttons"     0
-@var          checkbox SponsorSizing               "Original Sponsor sizing."      1
-@var          select   PlayButtonStyle             "Play Button Style"             ["2018M","2018L", "2019E", "2019M*", "2020+"]
-@var          checkbox RestoreSidebarPadding       "Restore sidebars old padding." 0
-@var          checkbox RemoveUpdates               "Revert 2019L+ changes"         1
-@var          select   StyleGuideStyle             "Styleguide Style"              ["2016","2017","2018*"]
-@var          select   SignUpStyle                 "Signup Style"                  ["2017", "2018*", "2019L", "2020+"]
-@var          checkbox SourceSansPro               "Source San Pro font"           0
-@var          checkbox TransitionalAnimations      "Transition animations"         1
-@var          checkbox RedLogoStyle                "Use Red logo variant"          0
+@var          select   BadgeStyle                  "Badge Style"                    ["201509","201511", "201612", "201902*"]
+@var          checkbox BoxShadows                  "Box Shadows"                    0
+@var          select   SiteCurrency                "Currency Brand Style"           ["Robux*","Tickets"]
+@var          checkbox forcesignuplighttheme       "Force light theme on signup"    0
+@var          checkbox fiveColumn                  "Five column in Avatar Editor."  1
+@var          select   CardStyle                   "Item Card Style"                ["Pre-2018", "2019M*", "2019L"]
+@var          select   LogoStyle                   "Site Brand Style"               ["201408", "201412", "201511", "201701*"]
+@var          checkbox LegacyNextStyleGuideButtons "Legacy Styleguide Buttons"      0
+@var          checkbox LegacyFooterText            "Old Footer Text (Brand Synced)" 0
+@var          checkbox SponsorSizing               "Original Sponsor sizing."       1
+@var          select   PlayButtonStyle             "Play Button Style"              ["2018M","2018L", "2019E", "2019M*", "2020+"]
+@var          checkbox RestoreSidebarPadding       "Restore sidebars old padding."  0
+@var          checkbox RemoveUpdates               "Revert 2019L+ changes"          1
+@var          select   StyleGuideStyle             "Styleguide Style"               ["2016","2017","2018*"]
+@var          select   SignUpStyle                 "Signup Style"                   ["2017", "2018*", "2019L", "2020+"]
+@var          checkbox SourceSansPro               "Source San Pro font"            0
+@var          checkbox TransitionalAnimations      "Transition animations"          1
+@var          checkbox RedLogoStyle                "Use Red logo variant"           0
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -246,6 +247,10 @@
         background-color: #0D0D0D;
     }
     
+	.content {
+		padding-top: 12px;
+	}
+	
     .games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window {
         overflow: hidden;
     }
@@ -4049,23 +4054,54 @@
             font-size: 15px;
             line-height: 1.428;
         }
-            .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/catalog"] {
+        .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/catalog"] {
             font-size: 0;
             height: 34.39px;
         }
         .rbx-header .rbx-navbar li a[href="/discover"]:after {
-            content:"Games";
+            content: 'Games';
             font-size: 16px;
             font-weight: inherit;
             line-height: inherit;
         }
-    
         .rbx-header .rbx-navbar li a[href="/catalog"]:after {
-            content:"Catalog";
+            content: 'Catalog';
             font-size: 16px;
             font-weight: inherit;
             line-height: inherit;
         }
+		& when (@SiteCurrency = Tickets) {
+			.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"], .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"] {
+				font-size: 0;
+				height: 34.39px;
+			}
+			.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"]:after, .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"]:after {
+				content: 'Tickets';
+				font-size: 16px;
+				font-weight: inherit;
+				line-height: inherit;
+			}
+			.rbx-header .rbx-navbar li .robux-menu-btn .menu-text-container {
+				display: none
+			}
+			@media (max-width: 767px) {
+				.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"], .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"] {
+					width: 61.75px;
+				}
+				.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"]:after, .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"]:after {
+					font-size: 12px;
+					line-height: 22px;
+				}
+			}
+			@media (max-width: 543px) {
+				.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"], .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"] {
+					height: 28.8px;
+				}
+				.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"]:after, .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"]:after {
+					line-height: 16px;
+				}
+			}
+		}
         .game-creator {
             display: block;
         }
@@ -4110,12 +4146,12 @@
 			}
 		}
         @media (max-width: 767px) {
-            .rbx-header .rbx-navbar li a[href="/discover"]:after, .rbx-header .rbx-navbar li a[href="/catalog"]:after {
-                font-size: 12px;
-                line-height: 22px;
-            }
             .rbx-header .rbx-navbar li a[href="/discover"] {
                 width: 61.75px;
+            }
+			.rbx-header .rbx-navbar li a[href="/discover"]:after, .rbx-header .rbx-navbar li a[href="/catalog"]:after {
+                font-size: 12px;
+                line-height: 22px;
             }
         }
         @media (max-width: 543px) {
@@ -4151,7 +4187,7 @@
                 font-size: 24px;
             }
         }
-        /*/=={ Fixes an issue where the user can't click on the buttons when right aligned. }==/*/
+        /*/ Fixes an issue where the user can't click on the buttons when right aligned. /*/
         .user-transactions-container .dropdown-container {
             z-index: 1;
             position: relative;
@@ -4200,7 +4236,7 @@
         .game-stats-container li:nth-child(1) p:nth-child(1):after, .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
             font-size: 16px;
         }
-        .gotham-font .small, .gotham-font .small:hover, .gotham-font .small:focus, .gotham-font .small:active, .gotham-font .small-oneline, .gotham-font .small-oneline:active, .gotham-font .small-oneline:focus, .gotham-font .small-oneline:hover, .gotham-font .small:active, .gotham-font .small:focus, .gotham-font .small:hover, .gotham-font .small:link, .gotham-font .small:visited, .gotham-font .sg-color-cell {
+        .gotham-font .small, .gotham-font .small:hover, .gotham-font .small:focus, .gotham-font .small:active, .gotham-font .small-oneline, .gotham-font .small-oneline:active, .gotham-font .small-oneline:focus, .gotham-font .small-oneline:hover, .gotham-font .small:active, .gotham-font .small:focus, .gotham-font .small:hover, .gotham-font .small:link, .gotham-font .small:visited, .gotham-font .sg-color-cell, .gotham-font .text-footer {
             font-size: 12px;
             font-weight: 400;
         }
@@ -4383,6 +4419,67 @@
 	& when (@BadgeStyle = 201902) {
 		.icon-badge-administrator, .icon-badge-ambassador, .icon-badge-bloxxer, .icon-badge-bricksmith, .icon-badge-builders-club, .icon-badge-combat-initiation, .icon-badge-friendship, .icon-badge-homestead, .icon-badge-inviter, .icon-badge-official-model-maker, .icon-badge-outrageous-builders-club, .icon-badge-turbo-builders-club, .icon-badge-veteran, .icon-badge-warrior, .icon-badge-welcome-to-the-club, .icon-default-badges {
 			background-image: url(https://images.rbxcdn.com/2a85da8fd52855683c2b039c8536ef56-badges.svg);
+		}
+	}
+	
+	& when (@LegacyFooterText = 1) {
+		& when (@LegacyNextStyleGuideButtons = 1) {
+			.copyright-container {
+				padding-top: 0;
+				border-top: none;
+			}
+			.footer .footer-links {
+				margin: 0;
+			}
+			& when not (@LogoStyle = 201412) or not (@LogoStyle = 201408) {
+				.copyright-container .col-md-3 {
+					display: none;
+				}
+				.footer .col-md-9 {
+					width: 100
+				}
+				@media (min-width: 992px) {
+					.footer .col-md-9 {
+						width: 100%;
+					}
+				}
+			}
+			.copyright-container .footer-note {
+				& when (@LogoStyle = 201701) {
+					margin: 12px auto;
+					text-align: center;
+				}
+				width: 78%;
+				& when (@LogoStyle = 201511) {
+					text-align: left;
+					margin: 12px auto 32px
+				}
+				cursor: text;
+			}
+		}
+		.footer .text-footer, .footer .text-footer:active, .footer .text-footer:focus, .footer .text-footer:hover {
+			font-size: 0;
+		}
+		.footer .footer-note:after {
+			& when (@LogoStyle = 201701) and (@LegacyNextStyleGuideButtons = 0) {
+				content: '©2019 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.';
+			}
+			& when (@LogoStyle = 201701) and (@LegacyNextStyleGuideButtons = 1) {
+				content: '©2017 ROBLOX Corporation';
+			}
+			& when (@LogoStyle = 201511) {
+				content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2015. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.';
+			}
+			& when (@SourceSansPro = 0) {
+				font-size: 10px;
+				font-weight: 500;
+				line-height: 1.5em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 1.5em;
+			}
 		}
 	}
 	
