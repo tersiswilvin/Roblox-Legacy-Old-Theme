@@ -3,9 +3,9 @@
 Name : Roblox 2019 Old Theme
 
 Version : 1.2.9.38
-Patch Version : 0
+Patch Version : 3
 Version Release Date : 03/17/2023
-Patch Release Date : --/--/----
+Patch Release Date : 03/28/2023
 
 Author URL : userstyles.world/user/tersiswilvin
 

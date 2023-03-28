@@ -1,12 +1,13 @@
+
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230319.1.2.9.38.1
+@version      20230328.1.2.9.38.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
 @homepageURL  https://github.com/tersiswilvin/Roblox-2019-Old-Theme
 @supportURL   https://github.com/tersiswilvin/Roblox-2019-Old-Theme/issues
-@updateURL    https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/ROT19Master.user.css
+@updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Master/src/R19OTMaster.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
 @var          select   BadgeStyle                  "Badge Style"                    ["201509","201511", "201612", "201902*"]
@@ -4431,7 +4432,7 @@
 			.footer .footer-links {
 				margin: 0;
 			}
-			& when not (@LogoStyle = 201412) or not (@LogoStyle = 201408) {
+			& when (@LogoStyle = 201511) or (@LogoStyle = 201701) {
 				.copyright-container .col-md-3 {
 					display: none;
 				}
@@ -4469,6 +4470,9 @@
 			}
 			& when (@LogoStyle = 201511) {
 				content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2015. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.';
+			}
+			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+				content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2014. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.';
 			}
 			& when (@SourceSansPro = 0) {
 				font-size: 10px;
@@ -11320,4 +11324,4 @@
             background-color: #0A0A0A;
         }
     }
-    }
+}
