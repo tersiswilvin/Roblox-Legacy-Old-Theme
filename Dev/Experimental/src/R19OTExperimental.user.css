@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox 2019 Old Theme
-@version      20230319.1.2.9.39
+@version      20230329.1.2.9.38.4
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -342,6 +342,9 @@
         .light-theme .icon-logo-r-95, .dark-theme .icon-logo-r-95 {
             background-size: 95px 95px;
         }
+		.light-theme .icon-logo-notification, .dark-theme .icon-logo-notification {
+			background-size: 48px 48px;
+		}
     }
     .light-theme .rbx-header .navbar-search .input-addon-btn .icon-common-search-sm {
         background: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
