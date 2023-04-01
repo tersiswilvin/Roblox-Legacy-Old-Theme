@@ -1,6 +1,6 @@
 ﻿/* ==UserStyle==
 @name         Legacy Roblox
-@version      20230401.1.2.9.39.2
+@version      20230401.1.2.9.39.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       tersiswilvin
@@ -6880,7 +6880,7 @@
     .grid-item-container {
         float: none;
         width: 164px;
-        height: 240px;
+        height: 223px;
         padding: 0 14px 0 0;
         display: inline-block;
         margin-bottom: 12px;
@@ -7158,6 +7158,10 @@
         .game-card-link .game-card-info .no-vote, .game-card-link .game-card-info .playing-counts-label, .game-card-link .game-card-info .vote-percentage-label {
             padding: 0;
         }
+    }
+    
+    .game-card-link .game-card-info .playing-counts-label {
+        padding-left: 0;
     }
     
     /*/ Revert Server Playerlist /*/
@@ -10280,6 +10284,9 @@
         padding: 0 6px;
         margin: 3px 0;
     }
+    .game-card-name-secondary {
+        font-size: 12px !important;
+    }
     .dark-theme .btr-profile-groups .game-card-thumb-container {
         border-color: #1C1C1C
     }
@@ -10913,6 +10920,14 @@
         color: #fff !important;
         margin-left: 5px;
         padding: 0 !important;
+    }
+    
+    .game-sort-detail-container h1 when (@SourceSansPro = 1) {
+        font-weight: 300;
+    }
+    
+    .game-cards .game-card .game-card-info, .game-cards .game-card .game-card-name {
+        line-height: 1.3em;
     }
     }
     
