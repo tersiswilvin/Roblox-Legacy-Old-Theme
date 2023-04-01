@@ -1,12 +1,11 @@
 /* ==UserStyle==
-@name         Roblox 2019 Old Theme
-@version      20230329.1.2.9.38.4
+@name         Legacy Roblox
+@version      20230401.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
-@description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
+@description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       tersiswilvin
 @homepageURL  https://github.com/tersiswilvin/Roblox-2019-Old-Theme
 @supportURL   https://github.com/tersiswilvin/Roblox-2019-Old-Theme/issues
-@updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Master/src/R19OTMaster.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
 @var          select   BadgeStyle                  "Badge Style"                    ["201509","201511", "201612", "201902*"]
@@ -106,6 +105,9 @@
     }
     .light-theme.rogold .home-container h1 .avatar-card-fullbody .icon-placeholder-avatar-headshot img {
         background-color: #d1d1d1 !important;
+        & when (@BoxShadows = 1) {
+            background-color: #fff !important;
+        }
     }
     .dark-theme.rogold .home-container h1 .avatar-card-fullbody .icon-placeholder-avatar-headshot img {
         background-color: #2e2e2e !important;
@@ -1360,6 +1362,12 @@
     
     .rbx-header .rbx-navbar-icon-group .age-bracket-label .dynamic-overflow-container .avatar-headshot-xs, .rbx-header .navbar-search .clear-search {
         display: none;
+    }
+    
+    .age-bracket-label-username,
+    .age-bracket-label-age {
+        font-size: 13px !important;
+        font-weight: 500 !important;
     }
     
     .dark-theme .icon-checkmark-16x16 {
@@ -3124,6 +3132,10 @@
         word-break: break-all;
         vertical-align: top;
         background-color: #d1d1d1;
+        
+        & when (@BoxShadows = 1) {
+            background-color: #fff;
+        }
     }
     .light-theme .avatar-container img, .dark-theme .avatar-container img {
         background-color: transparent
@@ -4256,6 +4268,17 @@
         }
         .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .font-header-2, .gotham-font .font-header-2:active, .gotham-font .font-header-2:hover, .gotham-font .font-header-2:link, .gotham-font .font-header-2:visited, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited {
             font-weight: 300;
+        }
+        .font-header-2 {
+            &, .gotham-font & {
+                &,
+                &:active,
+                &:hover,
+                &:link,
+                &:visited {
+                    font-weight: 400;
+                }
+            }
         }
         .gotham-font h6 {
             font-weight: bold
@@ -5703,6 +5726,9 @@
     }
     .light-theme .avatar-group {
         background-color: #d1d1d1;
+        & when (@BoxShadows = 1) {
+            background-color: #fff;
+        }
     }
     .dark-theme .avatar-group.avatar-double .avatar-item:first-child, .dark-theme .avatar-group.avatar-triple .avatar-item:first-child {
         margin-left: -50%;
@@ -6470,6 +6496,9 @@
     
     .light-theme .avatar-group .avatar-card-image, .light-theme .avatar-group .avatar-card-image {
         background-color: #d1d1d1;
+        & when (@BoxShadows = 1) {
+            background-color: #fff;
+        }
     }
     .dark-theme .avatar-group .avatar-card-image, .dark-theme .avatar-group .avatar-card-image {
         background-color: #2E2E2E;
@@ -10225,6 +10254,7 @@
     
     #people-list-container .people-list-container {
         overflow: visible;
+        float: left;
     }
     
     .dark-theme .btr-settings-checkbox input[type="checkbox"] + label:before {
