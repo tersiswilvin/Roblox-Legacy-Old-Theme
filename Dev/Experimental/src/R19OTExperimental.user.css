@@ -1,6 +1,6 @@
-/* ==UserStyle==
+﻿/* ==UserStyle==
 @name         Legacy Roblox
-@version      20230401.1.2.9.39.1
+@version      20230401.1.2.9.39.2
 @namespace    userstyles.world/user/tersiswilvin
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       tersiswilvin
@@ -467,9 +467,15 @@
     .dark-theme .games-list-container {
         background-color: #1c1c1c
     }
-    .light-theme .notification-red, .dark-theme .notification-red {
-        background-color: #e2231a;
-        color: #fff;
+    .light-theme .notification-red, .dark-theme .notification-red, .btr-nav-notif {
+        background-color: #e2231a !important;
+        color: #fff !important;
+    }
+    .btr-nav-notif {
+        top: 4px !important;
+        right: 0 !important;
+        font-weight: 400 !important;
+        font-size: 10px !important;
     }
     .light-theme .notification-blue, .dark-theme .notification-blue {
         background-color: #00a2ff;
