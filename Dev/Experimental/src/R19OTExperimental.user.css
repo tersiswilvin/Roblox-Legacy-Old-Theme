@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Legacy Roblox
-@version      20230401.1.2.9.39
+@version      20230401.1.2.9.39.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       tersiswilvin
@@ -6942,6 +6942,7 @@
         color: #fff;
         background-color: #00a2ff;
         position: absolute;
+        left: 0;
         bottom: 0;
         width: 91.5%;
         font-size: 10px;
