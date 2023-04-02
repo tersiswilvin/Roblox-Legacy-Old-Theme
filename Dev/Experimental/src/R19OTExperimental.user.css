@@ -11190,14 +11190,12 @@
         color: #00a2ff;
     }
     
-    .article-vote {
-        background: transparent;
-        border: 1px solid #00a2ff;
-        color: #00a2ff;
-        margin: 10px 5px;
-        min-width: 90px;
-        width: auto;
-    }
+    .button, [role="button"] {
+		border: 1px solid #00a2ff;
+		border-radius: 4px;
+		color: #00a2ff;
+		transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out;
+	}
     .button:hover, .button:active, .button:focus, .button[aria-selected="true"], [role="button"]:hover, [role="button"]:active, [role="button"]:focus, [role="button"][aria-selected="true"] {
         background-color: #00a2ff;
         color: #ffffff;
@@ -11239,6 +11237,12 @@
     .dropdown-toggle::after {
         content: "\A0\A0\E75C";
     }
+	
+	.article-vote::before {
+		font-size: 8px;
+		margin-right: 10px;
+	}
+	
     }
     
     @-moz-document url("https://en.help.roblox.com/hc/en-us"), url("https://en.help.roblox.com/hc/de"), url("https://en.help.roblox.com/hc/fr"), url("https://en.help.roblox.com/hc/it"), url("https://en.help.roblox.com/hc/es"), url("https://en.help.roblox.com/hc/ja"), url("https://en.help.roblox.com/hc/ko"), url("https://en.help.roblox.com/hc/pt-br"), url("https://en.help.roblox.com/hc/ru"), url("https://en.help.roblox.com/hc/zh-cn"), url("https://en.help.roblox.com/hc/zh-tw") {
