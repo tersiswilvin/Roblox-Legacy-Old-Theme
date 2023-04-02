@@ -1,6 +1,6 @@
 ﻿/* ==UserStyle==
 @name         Legacy Roblox
-@version      20230401.1.2.9.39.4
+@version      20230401.1.2.9.39.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       tersiswilvin
@@ -1677,6 +1677,11 @@
     .chat-windows-header .chat-header-label span
     {
         color: #fff;
+        
+        & when (@SourceSansPro = 1) {
+            font-weight: 700 !important;
+            font-size: 14px !important;
+        }
     }
     
     .enter-code-container-left, .modal-modern .modal-dialog .modal-content .modal-body .modal-lock-icon {
@@ -2390,6 +2395,33 @@
     }
     .dark-theme .dialogs .dialog-container .dialog-message-container .link-card-details .link-card-description {
         color: #8A8A8A;
+    }
+    .dialog-message span when (@SourceSansPro = 1) {
+        font-weight: 400 !important;
+        font-size: 14px !important;
+    }
+    .chat-search-input when (@SourceSansPro = 1) {
+        font-size: 14px !important;
+        
+        &, &::placeholder {
+            font-weight: 400 !important;
+        }
+    }
+    
+    .chat-friend-list .chat-friend-info span when (@SourceSansPro = 1) {
+        font-size: 12px !important;
+        
+        .light-theme &:not(.read) {
+            color: #b8b8b8 !important;
+        }
+    }
+    
+    .chat-friend-message span.read when (@SourceSansPro = 1) {
+        font-weight: 700 !important;
+    }
+    
+    .chat-friend-list .chat-friend-info .chat-friend-name when (@SourceSansPro = 1) {
+        font-size: 14px !important;
     }
     
     .dialog-container .dialog-header {
@@ -3710,6 +3742,12 @@
         border-color: #1C1C1C;
         color: #e6e6e6;
         border-radius: 0px;
+    }
+    .dialog-container .dialog-input-container .dialog-input when (@SourceSansPro = 1) {
+        font-size: 14px;
+        &::placeholder {
+            font-weight: 400 !important;
+        }
     }
     
     .light-theme .store-card {
