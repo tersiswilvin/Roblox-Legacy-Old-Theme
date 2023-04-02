@@ -1671,6 +1671,10 @@
     .chat-windows-header .chat-header-label span
     {
         color: #fff;
+		&, &:hover, &:focus, &:active, when (@SourceSansPro = 1) {
+			font-size: 14px;
+            font-weight: 700;
+        }
     }
     
     .enter-code-container-left, .modal-modern .modal-dialog .modal-content .modal-body .modal-lock-icon {
@@ -4247,25 +4251,41 @@
         .game-stats-container li:nth-child(1) p:nth-child(1):after, .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
             font-size: 16px;
         }
-        .gotham-font .small, .gotham-font .small:hover, .gotham-font .small:focus, .gotham-font .small:active, .gotham-font .small-oneline, .gotham-font .small-oneline:active, .gotham-font .small-oneline:focus, .gotham-font .small-oneline:hover, .gotham-font .small:active, .gotham-font .small:focus, .gotham-font .small:hover, .gotham-font .small:link, .gotham-font .small:visited, .gotham-font .sg-color-cell, .gotham-font .text-footer {
-            font-size: 12px;
-            font-weight: 400;
+        .gotham-font .small, .gotham-font .small-oneline, .gotham-font .sg-color-cell, .gotham-font .text-footer, .dialog-message span {
+			&, &:hover, &:focus, &:active, &:link {
+				font-size: 12px;
+				font-weight: 400;
+			}
         }
+		.gotham-font .chat-search-input {
+			&, &:hover, &:focus, &:active {
+				font-size: 14px;
+			}
+			&, &::placeholder {
+				font-weight: 400;
+			}
+		}
+		.chat-friend-list .chat-friend-info .chat-friend-name {
+			&, &:hover, &:focus, &:active {
+				font-size: 14px;
+			}
+		}
+		.chat-friend-list .chat-friend-info span {
+			&, &:hover, &:focus, &:active {
+				font-size: 12px;
+			}
+		}
         .gotham-font .xsmall, .gotham-font .xsmall:active, .gotham-font .xsmall:focus, .gotham-font .xsmall:hover, .gotham-font .item-card-label, .gotham-font .text-date-hint, .gotham-font .text-date-hint:active, .gotham-font .text-date-hint:focus, .gotham-font .text-date-hint:hover, .gotham-font .text-date-hint:link, .gotham-font .text-date-hint:visited {
             font-size: 10px;
             font-weight: 400;
         }
+		.chat-friend-message span.read {
+			font-weight: 700;
+		}
         .gotham-font .font-title, .gotham-font .h1, .gotham-font h1, .gotham-font h4, .gotham-font h5, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-label, .gotham-font .text-label:active, .gotham-font .text-label:hover {
             font-weight: 400;
         }
-        .gotham-font div {
-            font-weight: 300;
-            line-height: 1.3em;
-        }
-        .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .font-header-2, .gotham-font .font-header-2:active, .gotham-font .font-header-2:hover, .gotham-font .font-header-2:link, .gotham-font .font-header-2:visited, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited {
-            font-weight: 300;
-        }
-        .font-header-2 {
+		.font-header-2 {
             &, .gotham-font & {
                 &,
                 &:active,
@@ -4275,6 +4295,13 @@
                     font-weight: 400;
                 }
             }
+        }
+        .gotham-font div {
+            font-weight: 300;
+            line-height: 1.3em;
+        }
+        .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .font-header-2, .gotham-font .font-header-2:active, .gotham-font .font-header-2:hover, .gotham-font .font-header-2:link, .gotham-font .font-header-2:visited, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited {
+            font-weight: 300;
         }
         .gotham-font h6 {
             font-weight: bold
