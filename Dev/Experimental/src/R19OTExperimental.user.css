@@ -4300,7 +4300,7 @@
             font-weight: 300;
             line-height: 1.3em;
         }
-        .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .font-header-2, .gotham-font .font-header-2:active, .gotham-font .font-header-2:hover, .gotham-font .font-header-2:link, .gotham-font .font-header-2:visited, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited {
+        .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited {
             font-weight: 300;
         }
         .gotham-font h6 {
