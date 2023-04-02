@@ -100,10 +100,15 @@
         margin-right: 24px !important;
     }
 	
-    /*.user-info-container .user-name-container a:before {
+	/*
+	.user-info-container .user-name-container a:before {
         content: "Hello, ";
     }
-    .user-info-container .user-name-container a:after,*/.rogold .user-name-container:after {
+	.user-info-container .user-name-container a:after {
+	    content: '!';
+	}
+	*/
+	.rogold .user-name-container:after {
         content: "!";
     }
     .light-theme.rogold .home-container h1 .avatar-card-fullbody .icon-placeholder-avatar-headshot img {
@@ -112,6 +117,74 @@
     .dark-theme.rogold .home-container h1 .avatar-card-fullbody .icon-placeholder-avatar-headshot img {
         background-color: #2e2e2e !important;
     }
+	
+	.home-header {
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 12px;
+	}
+	.home-header .avatar {
+		margin-right: 24px;
+	}
+	.home-header .avatar, .home-header .user-info-container {
+		float: left;
+	}
+	.user-avatar-container {
+		min-width: auto;
+	}
+	.user-info-container {
+		display: inline-block;
+		margin-left: 0;
+		width: 75%;
+		width: calc(100% - 180px - 36px);
+		position: relative;
+	}
+	.user-info-container h1 {
+		margin: 36px 0 12px;
+	}
+	.user-info-container h1 {
+		margin-top: 60px;
+	}
+	@media (max-width: 991px) {
+		.home-header .avatar {
+			height: 120px;
+			width: 120px;
+		}
+		.user-info-container {
+			padding: 0 15px;
+		}
+		.user-info-container h1 {
+			margin: 12px 0 6px;
+		}
+		.user-info-container h1 {
+			margin-top: 36px;
+		}
+	}
+	@media (max-width: 767px) {
+		.user-info-container {
+			width: 100%;
+		}
+		.home-header .avatar {
+			display: none;
+		}
+		.user-info-container h1, .user-info-container span[class^="icon"] {
+			float: left;
+			margin: 12px 0;
+		}
+		.user-info-container h1 {
+			max-width: 80%;
+			max-width: calc(100% - 52px - 12px);
+		}
+	}
+	@media (max-width: 543px) {
+		.user-info-container {
+			width: 100%;
+		}
+		.user-info-container h1, .user-info-container span[class^="icon"] {
+			float: none;
+			margin: 6px 0;
+		}
+	}
     
     .light-theme .friends-list-container .friend-container:hover {
         background-color: #f2f2f2;
