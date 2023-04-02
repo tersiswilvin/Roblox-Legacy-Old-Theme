@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           2019 Old Theme Experimental Tools
 @namespace      github.com/tersiswilvin
-@version        1.0.5
+@version        1.0.6
 @description    Experimental Tools/Addons for the Roblox 2019 Old Theme
 @author         TersisWilvin
 @preprocessor   less
 @var            checkbox  MatchDefaultSiteColors  "Match Roblox Site Colors"  0
-@var            select    WatermarkStyle          "Watermark Style"           ["None*","DEV", "Experimental"]
+@var            select    WatermarkStyle          "Watermark Branch"           ["None*","DEV", "Experimental"]
 ==/UserStyle== */
 
 @-moz-document domain("www.roblox.com") {
@@ -40,7 +40,7 @@
 			}
 		}
 		.rbx-left-col:after {
-			content: 'Milestone 1.2.9.38';
+			content: 'Milestone 1.2.9.39';
 			font-size: 12px;
 			text-align: center;
 			position: absolute;
