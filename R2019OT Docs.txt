@@ -4,12 +4,14 @@
 
 @Theme Updates
 
-:info: Release 1.2.9.38 is available.
+:info: Release 1.2.9.39 is available.
 
 What's new :
 
-Added Site Curency option.
-Changed avatar shop (Marketplace) to catalog in avatar editor (Toggleable).
+Added Premium To BC option.
+Added Style Guide Text back to 2016 styleguide.
+Reverted Roblox Help button changes.
+Improved SourceSansPro (Thanks Aubymori).
 
 /*|==={ Experimental Discord Announcement }===|*/
 
@@ -25,7 +27,7 @@ What's new :
      X     |  Add navigation years option || TODO : 2014> navigation ||
      X     |  Improve Robux to Tix swap. (Missed a few pages/references when released)
      X     |  Add slogan option
-     X     |  Premium to builders club option
+     %     |  Premium to builders club option
      X     |  More customizability
      X     |  Legacy Pages
 
