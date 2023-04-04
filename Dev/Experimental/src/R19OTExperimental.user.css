@@ -14,7 +14,7 @@
 @var          select   SiteCurrency                "Currency Brand Style"           ["Robux*","Tickets"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"    0
 @var          checkbox fiveColumn                  "Five column in Avatar Editor."  1
-@var          select   CardStyle                   "Item Card Style"                ["Pre-2018", "2019M*", "2019L"]
+@var          select   CardStyle                   "Item Card Style"                ["Pre-2018", "2019E", "2019M*", "2019L"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Styleguide Buttons"      0
 @var          checkbox LegacyFooterText            "Old Footer Text (Brand Synced)" 0
 @var          checkbox SponsorSizing               "Original Sponsor sizing."       1
@@ -6830,17 +6830,55 @@
         background-color: #000;
         border-radius: 3px;
     }
-    & when not (@CardStyle = Pre-2018) {
+    & when (@CardStyle = 2019M) or (@CardStyle = 2019L) {
         .game-tile .game-card-container {
             border-radius: 0;
         }
     }
+	.game-cards .game-card {
+		& when (@CardStyle = Pre-2018) {
+			width: 161px;
+			height: 223px;
+			padding: 0 11px 0 0;
+		}
+		& when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+			width: 164px;
+			& when (@SourceSansPro = 0) {
+				height: 240px;
+			}
+			& when (@SourceSansPro = 1) {
+				height: 223px;
+			}
+			padding: 0 14px 0 0;
+		}
+	}
+	
+	.horizontal-scroller .scroller {
+        & when (@SourceSansPro = 0) {
+			height: 240px;
+		}
+		& when (@SourceSansPro = 1) {
+			height: 223px;
+		}
+    }
+	@media (max-width: 543px) {
+		.horizontal-scroller .scroller {
+			& when (@SourceSansPro = 0) {
+				height: 150px;
+			}
+			& when (@SourceSansPro = 1) {
+				height: 152px;
+			}
+		}
+	}
     
-    & when (@CardStyle = Pre-2018) {
-        .light-theme .game-card-thumb-container img, .dark-theme .game-card-thumb-container img {
-            border-top-right-radius: 3px;
-            border-top-left-radius: 3px;
-        }
+    & when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
+		& when (@CardStyle = Pre-2018) {
+			.light-theme .game-card-thumb-container img, .dark-theme .game-card-thumb-container img {
+				border-top-right-radius: 3px;
+				border-top-left-radius: 3px;
+			}
+		}
         .light-theme .game-card-info .info-label.icon-playing-counts-gray, .dark-theme .game-card-info .info-label.icon-playing-counts-gray {
             display: none;
         }
@@ -6849,12 +6887,23 @@
             bottom: 20px;
             left: 0;
             font-size: 12px;
-            font-weight: 500;
+			& when (@CardStyle = Pre-2018) {
+				font-weight: 500;
+			}
+			& when (@CardStyle = 2019E) {
+				font-weight: 400;
+			}
             color: #757575;
         }
         .game-card-info .info-label.playing-counts-label:after {
             content: ' Playing';
         }
+		& when (@SourceSansPro = 0) {
+			.gotham-font .game-card-info .info-label.playing-counts-label {
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
         .game-name-title {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -6984,9 +7033,21 @@
     }
     .grid-item-container {
         float: none;
-        width: 164px;
-        height: 240px;
-        padding: 0 14px 0 0;
+		& when (@CardStyle = Pre-2018) {
+			width: 161px;
+			height: 223px;
+			padding: 0 11px 0 0;
+		}
+		& when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+			width: 164px;
+			& when (@SourceSansPro = 0) {
+				height: 240px;
+			}
+			& when (@SourceSansPro = 1) {
+				height: 223px;
+			}
+			padding: 0 14px 0 0;
+		}
         display: inline-block;
         margin-bottom: 12px;
         vertical-align: top;
@@ -6994,7 +7055,7 @@
     }
     .grid-item-container .game-card-link, .featured-grid-item-container .game-card-link {
         background-color: #fff;
-        & when (@CardStyle = Pre-2018) {
+		& when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
             border-radius: 3px;
         }
         & when (@CardStyle = 2019M) {
@@ -7035,9 +7096,21 @@
     
     .featured-grid-item-container {
         float: none;
-        width: 164px;
-        height: 240px;
-        padding: 0 14px 0 0;
+		& when (@CardStyle = Pre-2018) {
+			width: 161px;
+			height: 223px;
+			padding: 0 11px 0 0;
+		}
+		& when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+			width: 164px;
+			& when (@SourceSansPro = 0) {
+				height: 240px;
+			}
+			& when (@SourceSansPro = 1) {
+				height: 223px;
+			}
+			padding: 0 14px 0 0;
+		}
         display: inline-block;
         margin-bottom: 12px;
         vertical-align: top;
@@ -7087,7 +7160,12 @@
         }
         .grid-item-container, .featured-grid-item-container {
             width: 102px;
-            height: 150px;
+			& when (@SourceSansPro = 0) {
+				height: 150px;
+			}
+			& when (@SourceSansPro = 1) {
+				height: 148px;
+			}
         }
         .featured-grid-item-container:before {
             width: 87%;
@@ -7108,11 +7186,21 @@
             width: 90px;
         }
         .light-theme .profile-container .game-cards .game-card, .dark-theme .profile-container .game-cards .game-card {
-            height: 150px;
+            & when (@SourceSansPro = 0) {
+				height: 150px;
+			}
+			& when (@SourceSansPro = 1) {
+				height: 148px;
+			}
         }
         ul.hlist.game-cards .game-card {
             width: 102px;
-            height: 150px
+            & when (@SourceSansPro = 0) {
+				height: 150px;
+			}
+			& when (@SourceSansPro = 1) {
+				height: 148px;
+			}
         }
         .game-card-container {
             width: 90px
@@ -7122,17 +7210,41 @@
         }
     }
     
-    & when (@CardStyle = Pre-2018) {
+    & when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
         .game-cards .game-card {
-            width: 161px;
-            height: 223px;
-            padding: 0 11px 0 0;
+			& when (@CardStyle = Pre-2018) {
+				width: 161px;
+				height: 223px;
+				padding: 0 11px 0 0;
+			}
+			& when (@CardStyle = 2019E) {
+				width: 164px;
+				& when (@SourceSansPro = 0) {
+					height: 240px;
+				}
+				& when (@SourceSansPro = 1) {
+					height: 223px;
+				}
+				padding: 0 14px 0 0;
+			}
         }
         .game-carousel .grid-item-container, .dark-theme .game-carousel .grid-item-container {
             background-color: transparent;
-            width: 161px;
-            height: 223px;
-            padding: 0 11px 0 0;
+			& when (@CardStyle = Pre-2018) {
+				width: 161px;
+				height: 223px;
+				padding: 0 11px 0 0;
+			}
+			& when (@CardStyle = 2019E) {
+				width: 164px;
+				& when (@SourceSansPro = 0) {
+					height: 240px;
+				}
+				& when (@SourceSansPro = 1) {
+					height: 223px;
+				}
+				padding: 0 14px 0 0;
+			}
             margin: 0;
         }
         .grid-item-container .game-card-friend-info .info-avatar {
@@ -7144,9 +7256,6 @@
         }
         .horizontally-scrollable ul.game-cards {
             white-space: nowrap;
-        }
-        .horizontal-scroller .scroller {
-            height: 223px;
         }
         @media (max-width: 543px) {
             .game-cards .game-card, .game-cards .game-card.game-tile, .game-carousel>.grid-item-container, .dark-theme .game-carousel>.grid-item-container {
@@ -7179,8 +7288,14 @@
         }
         @media (min-width: 543px) {
             ul.hlist.game-cards .game-card {
-                width: 161px;
-                padding: 0 11px 0 0;
+				& when (@CardStyle = Pre-2018) {
+					width: 161px;
+					padding: 0 11px 0 0;
+				}
+				& when (@CardStyle = 2019E) {
+					width: 164px;
+					padding: 0 14px 0 0;
+				}
             }
             .friends-groups .game-cards .game-card {
                 height: 230px;
