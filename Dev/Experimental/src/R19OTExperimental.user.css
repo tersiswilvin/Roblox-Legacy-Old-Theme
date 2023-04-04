@@ -6854,10 +6854,10 @@
 	}
 	
 	.horizontal-scroller .scroller {
-        & when (@SourceSansPro = 0) {
+        & when (@SourceSansPro = 0) and not (@CardStyle = Pre-2018) {
 			height: 240px;
 		}
-		& when (@SourceSansPro = 1) {
+		& when (@SourceSansPro = 1) or (@CardStyle = Pre-2018) {
 			height: 223px;
 		}
     }
