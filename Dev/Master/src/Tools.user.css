@@ -1,80 +1,84 @@
 /* ==UserStyle==
-@name           2019 Old Theme Experimental Tools
+@name           Legacy Old Theme Tools
 @namespace      github.com/tersiswilvin
-@version        1.0.6
-@description    Experimental Tools/Addons for the Roblox 2019 Old Theme
+@version        1.0.7
+@description    Experimental Tools/Addons for the Roblox Legacy Old Theme
 @author         TersisWilvin
 @preprocessor   less
 @var            checkbox  MatchDefaultSiteColors  "Match Roblox Site Colors"  0
 @var            select    WatermarkStyle          "Watermark Branch"           ["None*","DEV", "Experimental"]
 ==/UserStyle== */
 
-@-moz-document domain("www.roblox.com") {
-	/*//=={ Watermark }==*/
-	& when not (@WatermarkStyle = None) {
-		.rbx-left-col:before {
-			& when (@WatermarkStyle = DEV) {
-				content: '(Default Theme) Development Purposes Only!';
+@-moz-document domain("web.roblox.com"), domain("www.roblox.com") {
+	/*/=={ Watermark }==/*/
+	.rbx-left-col {
+		& when not (@WatermarkStyle = None) {
+			&:before {
+				& when (@WatermarkStyle = DEV) {
+					content: '(Default Theme) Development Purposes Only!';
+				}
+				& when (@WatermarkStyle = Experimental) {
+					content: '(Default Theme) Testing Purposes Only!';
+				}
+				font-size: 16px;
+				line-height: 16px;
+				text-align: center;
+				position: absolute;
+				display: block;
+				width: 100%;
+				bottom: 0;
+				margin: 24px 0;
+				color: #191919
 			}
-			& when (@WatermarkStyle = Experimental) {
-				content: '(Default Theme) Testing Purposes Only!';
+			.light-theme &:before {
+				& when (@WatermarkStyle = DEV) {
+					content: '(Light Theme) Development Purposes Only!';
+				}
+				& when (@WatermarkStyle = Experimental) {
+					content: '(Light Theme) Testing Purposes Only!';
+				}
+				& when (@MatchDefaultSiteColors = 1) {
+					color: #393b3d;
+				}
 			}
-			font-size: 16px;
-			text-align: center;
-			position: absolute;
-			display: block;
-			width: 100%;
-			bottom: 18px;
-			padding: 0 10px;
-			color: #191919
-		}
-		.light-theme .rbx-left-col:before {
-			& when (@WatermarkStyle = DEV) {
-				content: '(Light Theme) Development Purposes Only!';
-			}
-			& when (@WatermarkStyle = Experimental) {
-				content: '(Light Theme) Testing Purposes Only!';
-			}
-			& when (@MatchDefaultSiteColors = 1) {
-				color: #393b3d;
-			}
-		}
-		.rbx-left-col:after {
-			content: 'Milestone 1.2.9.39';
-			font-size: 12px;
-			text-align: center;
-			position: absolute;
-			display: block;
-			width: 100%;
-			bottom: 0;
-			padding: 0 10px;
-			color: #b8b8b8;
-		}
-		& when (@MatchDefaultSiteColors = 1) {
-			.light-theme .rbx-left-col:after {
-				color: #606162;
-			}
-		}
-		.dark-theme .rbx-left-col:before {
-			& when (@WatermarkStyle = DEV) {
-				content: '(Dark Theme) Development Purposes Only!';
-			}
-			& when (@WatermarkStyle = Experimental) {
-				content: '(Dark Theme) Testing Purposes Only!';
+			&:after {
+				content: 'Milestone 1.2.9.39';
+				font-size: 12px;
+				line-height: 12px;
+				text-align: center;
+				position: absolute;
+				display: block;
+				width: 100%;
+				bottom: 0;
+				margin: 6px 0;
+				color: #b8b8b8;
 			}
 			& when (@MatchDefaultSiteColors = 1) {
-				color: #fff;
+				.light-theme &:after {
+					color: #606162;
+				}
 			}
-			& when not (@MatchDefaultSiteColors = 1) {
-				color: #E6E6E6;
+			.dark-theme &:before {
+				& when (@WatermarkStyle = DEV) {
+					content: '(Dark Theme) Development Purposes Only!';
+				}
+				& when (@WatermarkStyle = Experimental) {
+					content: '(Dark Theme) Testing Purposes Only!';
+				}
+				& when (@MatchDefaultSiteColors = 1) {
+					color: #fff;
+				}
+				& when not (@MatchDefaultSiteColors = 1) {
+					color: #E6E6E6;
+				}
 			}
-		}
-		.dark-theme .rbx-left-col:after {
-			& when (@MatchDefaultSiteColors = 1) {
-				color: #bdbebe;
-			}
-			& when not (@MatchDefaultSiteColors = 1) {
-				color: #474747;
+			.dark-theme &:after {
+				& when (@MatchDefaultSiteColors = 1) {
+					color: #bdbebe;
+				}
+				& when not (@MatchDefaultSiteColors = 1) {
+					color: #474747;
+				}
 			}
 		}
 	}
