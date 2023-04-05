@@ -1,11 +1,11 @@
 =={ UserStyle Data }==
 
-Name : Roblox 2019 Old Theme
+Name : Roblox Legacy Old Theme
 
-Version : 1.2.9.38
-Patch Version : 3
-Version Release Date : 03/17/2023
-Patch Release Date : 03/28/2023
+Version : 1.2.9.39
+Patch Version : 0
+Version Release Date : --/--/2023
+Patch Release Date : --/--/----
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -148,7 +148,7 @@ Variables (@var) {
     CardStyle {
         Type : select
         Description : "Item Card Style"
-        Value : Pre-2018, 2019M (Default), 2019L
+        Value : Pre-2018, 2019E, 2019M (Default), 2019L
     }
     LogoStyle {
         Type : select
@@ -179,6 +179,11 @@ Variables (@var) {
         Type : checkbox
         Description : "Revert 2019L+ changes"
         Value : 1
+    }
+    PremiumToBC {
+        Type : checkbox
+        Description : "Premium To BC"
+        Value : 0
     }
     StyleGuideStyle {
         Type : select

@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230403.1.2.9.39
+@version      20230404.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -55,8 +55,7 @@
     {
         content: ' Search "';
     }
-    .light-theme .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .navbar-list-option-text:after, .dark-theme .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .navbar-list-option-text:after
-    {
+    .light-theme .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .navbar-list-option-text:after, .dark-theme .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .navbar-list-option-text:after {
         content: '"';
     }
     .dark-theme .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .navbar-list-option-suffix, .light-theme .btn-secondary-sm:link , .dark-theme .btn-secondary-md:link, .light-theme .btn-secondary-xs:link {
@@ -9557,6 +9556,31 @@
         display: none;
     }
     
+	.rbx-left-col .rbx-scrollbar .left-col-list {
+		&:after {
+			content: 'Events';
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.42857;
+			margin: 5px 0;
+			position: relative;
+			display: block;
+			cursor: text;
+		}
+		& when (@SourceSansPro = 0) {
+			&:after {
+				font-size: 16px;
+				font-weight: 500;
+			}
+			@media (max-width: 767px) {
+				&:after {
+					font-size: 12px;
+					font-weight: 500
+				}
+			}
+		}
+	}
+	
     /*/Robux/*/
     
 	.light-theme .text-robux, .light-theme .text-robux-tile, .dark-theme .text-robux, .dark-theme .text-robux-tile {
