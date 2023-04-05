@@ -1,6 +1,6 @@
 ﻿/* ==UserStyle==
 @name         Legacy Roblox
-@version      20230401.1.2.9.39.5
+@version      20230401.1.2.9.39.6
 @namespace    userstyles.world/user/tersiswilvin
 @description  A customizable theme that makes Roblox look how it did before 2020. Fork of Roblox 2019 Old Theme.
 @author       tersiswilvin
@@ -10968,6 +10968,11 @@
     
     .game-cards .game-card .game-card-info, .game-cards .game-card .game-card-name {
         line-height: 1.3em;
+    }
+    
+    #navbar-search-input when (@SourceSansPro = 1)
+    {
+        font-weight: 300;
     }
     }
     
