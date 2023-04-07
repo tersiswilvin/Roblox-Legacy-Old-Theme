@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230405.1.2.9.39
+@version      20230406.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -2511,6 +2511,12 @@
 	}
 	.chat-friend-list {
 		max-height: 296px;
+	}
+	.dialog-container .dialog-message-container.message-inbound .dialog-message-avatar-link, .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-message-avatar-link {
+		border: 1px solid #e3e3e3;
+	}
+	.dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-message-avatar-link {
+		border: 1px solid #1c1c1c;
 	}
     .light-theme .game-card-container .game-card-thumb-container, .dark-theme .game-card-container .game-card-thumb-container
     {
