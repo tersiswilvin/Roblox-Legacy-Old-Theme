@@ -10729,6 +10729,24 @@
 			}
 			line-height: 1.42857;
 		}
+		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-17"], .btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-18"] {
+			font-size: 0;
+			line-height: 0;
+		}
+		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-17"]:after {
+			content: "Show Builders Club";
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 16px;
+			display: inline-block
+		}
+		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-18"]:after {
+			content: "Show Builders Club Button";
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 16px;
+			display: inline-block
+		}
 	}
 	
 	#header .btr-nav-notif {
@@ -11095,6 +11113,10 @@
 		border: 1px solid #474747;
 		border-radius: 3px;
 		color: #e6e6e6;
+	}
+	
+	.btr-dark-theme .btr-settings-footer {
+		border-top-color: #171717;
 	}
 	
 	/*
