@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230407.1.2.9.39
+@version      20230408.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -703,7 +703,7 @@
     
     & when (@SourceSansPro = 1) {
         .refresh-link-icon, .refresh-link-icon:active, .refresh-link-icon:focus, .refresh-link-icon:hover, .touch .refresh-link-icon, .touch .refresh-link-icon:active, .touch .refresh-link-icon:focus, .touch .refresh-link-icon:hover, .see-all-link-icon, .see-all-link-icon:active, .see-all-link-icon:focus, .see-all-link-icon:hover, .touch .see-all-link-icon, .touch .see-all-link-icon:active, .touch .see-all-link-icon:focus, .touch .see-all-link-icon:hover, .see-all-link, .see-all-link:active, .see-all-link:focus, .see-all-link:hover, .touch .see-all-link, .touch .see-all-link:active, .touch .see-all-link:focus, .touch .see-all-link:hover {
-            border: 1px solid;
+            border: 1px solid transparent;
         }
     }
     
@@ -884,13 +884,33 @@
     {
         background-image: url(https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg);
     }
-    .light-theme .details-members-container .add-friends-option .add-friends-cirle-container, .dark-theme .details-members-container .add-friends-option .add-friends-cirle-container {
+    .light-theme .details-members-container .add-friends-option .add-friends-cirle-container {
         color: #191919;
         border-color: #00a2ff;
     }
+	.dark-theme .details-members-container .add-friends-option .add-friends-cirle-container {
+        color: #1c1c1c;
+		& when (@BrighterDarkThemeColors = 0) {
+			border-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			border-color: #00a2ff;
+		}
+    }
+	& when (@BrighterDarkThemeColors = 0) {
+		.dark-theme .details-members-container .add-friends-option .add-friends-cirle-container:not(:hover) .icon-chat-add-friends:not(:hover) {
+			filter: brightness(.45)
+		}
+	}
     .light-theme .details-members-container .add-friends-option .add-friends-cirle-container:hover, .dark-theme .details-members-container .add-friends-option .add-friends-cirle-container:hover {
-        background-color: #00a2ff;
-        border-color: #00a2ff;
+		& when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+			border-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00a2ff;
+			border-color: #00a2ff;
+		}
     }
     
     .horizontal-scroller {
@@ -11539,17 +11559,25 @@
     }
     
     .search::before {
-        color: #ddd;
-    }
-    .search-full input[type="search"] {
-        border: 1px solid #b8b8b8;
-        border-radius: 3px;
-    }
+		background: none;
+		color: #ddd;
+		content: "\1F50D";
+		font-size: 18px;
+	}
+	.search input[type="search"] {
+		border: 1px solid #ddd;
+		color: #999;
+	}
     .search input[type="search"]:focus {
         border: 1px solid #00a2ff;
         color: #555;
     }
     
+	.search-full input[type="search"] {
+        border: 1px solid #b8b8b8;
+        border-radius: 3px;
+    }
+	
     .container {
         max-width: 970px;
         margin: 0 auto;
@@ -11648,7 +11676,7 @@
         border-bottom: 1px solid #ddd;
     }
     
-    .icon-star::before {
+	.icon-star::before {
         color: #00a2ff;
     }
     
