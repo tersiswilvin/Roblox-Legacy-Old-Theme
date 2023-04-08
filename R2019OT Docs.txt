@@ -11,6 +11,7 @@ What's new :
 Added back events text on the sidebar.
 Added Premium To BC option.
 Added Style Guide Text back to 2016 styleguide.
+Removed Events container (Toggleable via Remove Updates).
 Reverted Roblox Help button changes.
 Improved chat for more accuracy.
 Improved SourceSansPro (Thanks Aubymori).
