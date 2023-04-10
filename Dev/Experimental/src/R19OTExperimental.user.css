@@ -903,7 +903,11 @@
 			filter: brightness(.45)
 		}
 	}
-    .light-theme .details-members-container .add-friends-option .add-friends-cirle-container:hover, .dark-theme .details-members-container .add-friends-option .add-friends-cirle-container:hover {
+    .light-theme .details-members-container .add-friends-option .add-friends-cirle-container:hover {
+		background-color: #00a2ff;
+		border-color: #00a2ff;
+    }
+	.dark-theme .details-members-container .add-friends-option .add-friends-cirle-container:hover {
 		& when (@BrighterDarkThemeColors = 0) {
 			background-color: #004266;
 			border-color: #004266;
