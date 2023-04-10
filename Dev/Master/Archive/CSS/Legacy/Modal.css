@@ -1,0 +1,276 @@
+div#simplemodal-container {
+  box-sizing: content-box; }
+
+@media (max-width: 480px) {
+  div#simplemodal-container {
+    height: auto; } }
+
+/*Button Styles */
+.GenericModalButtonContainer .btn-large,
+.GenericModalButtonContainer .btn-medium,
+.GenericModalButtonContainer .btn-small {
+  margin: 0px;
+  display: inline-block;
+  zoom: 1;
+  text-align: center;
+  font-weight: normal;
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  box-sizing: content-box; }
+
+.GenericModalButtonContainer .btn-large {
+  padding: 9px 13px 0px 13px;
+  height: 39px;
+  min-width: 70px;
+  font-size: 23px;
+  line-height: 27px;
+  background-position: left 0px; }
+
+.GenericModalButtonContainer .btn-large:hover,
+.GenericModalButtonContainer .btn-medium:hover,
+.GenericModalButtonContainer .btn-small:hover {
+  text-decoration: none; }
+
+.GenericModalButtonContainer .btn-large:hover {
+  background-position: left -48px; }
+
+.GenericModalButtonContainer .btn-neutral,
+.GenericModalButtonContainer .btn-neutral:link,
+.GenericModalButtonContainer .btn-neutral:active,
+.GenericModalButtonContainer .btn-neutral:visited {
+  border-color: #0852b7;
+  background-color: #0852b7;
+  background-image: url(/images/Buttons/StyleGuide/bg-btn-blue.png);
+  color: white; }
+
+.GenericModalButtonContainer .btn-negative,
+.GenericModalButtonContainer .btn-negative:link,
+.GenericModalButtonContainer .btn-negative:active,
+.GenericModalButtonContainer .btn-negative:visited {
+  border-color: #565656;
+  background-color: #565656;
+  background-image: url(/images/Buttons/StyleGuide/bg-btn-gray.png);
+  color: white; }
+
+.ConfirmationModal .GenericModalBody .validationTooltip {
+  color: #a00;
+  font-size: 11px;
+  display: inline; }
+
+.simplemodal-container,
+.simplemodal-container .ConfirmationModal,
+.simplemodal-container .GenericModalButtonContainer {
+  box-sizing: content-box; }
+
+.simplemodal-container .btn-primary,
+.simplemodal-container .btn-primary:link,
+.simplemodal-container .btn-primary:active,
+.simplemodal-container .btn-primary:visited {
+  border-color: #007001;
+  background-color: #007001;
+  background-image: url(/images/Buttons/StyleGuide/bg-btn-green.png) !important;
+  color: white; }
+
+.simplemodal-container .btn-none {
+  display: none; }
+
+.simplemodal-container .btn-medium {
+  padding: 1px 13px 3px 13px;
+  height: 28px;
+  min-width: 62px;
+  font-size: 20px;
+  background-position: left -96px;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer; }
+
+.simplemodal-container .btn-medium:hover {
+  background-position: left -128px; }
+
+.simplemodal-container .btn-primary[disabled], .simplemodal-container .btn-primary[disabled]:hover,
+.simplemodal-container .btn-disabled-primary,
+.simplemodal-container .btn-disabled-primary:hover {
+  cursor: default;
+  background-position: left -202px; }
+
+.simplemodal-container .btn-primary[disabled], .simplemodal-container .btn-primary[disabled]:link, .simplemodal-container .btn-primary[disabled]:active, .simplemodal-container .btn-primary[disabled]:visited,
+.simplemodal-container .btn-disabled-primary,
+.simplemodal-container .btn-disabled-primary:link,
+.simplemodal-container .btn-disabled-primary:active,
+.simplemodal-container .btn-disabled-primary:visited {
+  background-color: #99c699;
+  background-image: url(/images/Buttons/StyleGuide/bg-btn-green.png);
+  border-color: #99c699;
+  color: white; }
+
+.simplemodal-container .btn-negative,
+.simplemodal-container .btn-negative:link,
+.simplemodal-container .btn-negative:active,
+.simplemodal-container .btn-negative:visited {
+  border-color: #565656;
+  background-color: #565656;
+  background-image: url(/images/Buttons/StyleGuide/bg-btn-gray.png);
+  color: white; }
+
+.simplemodal-container .modal-footer button {
+  min-width: 90px; }
+
+.GenericModalButtonContainer .btn-primary,
+.GenericModalButtonContainer .btn-primary:link,
+.GenericModalButtonContainer .btn-primary:active,
+.GenericModalButtonContainer .btn-primary:visited {
+  border-color: #007001;
+  background-color: #007001;
+  background-image: url(/images/Buttons/StyleGuide/bg-btn-green.png) !important;
+  color: white; }
+
+.GenericModalButtonContainer .btn-negative,
+.GenericModalButtonContainer .btn-negative:link,
+.GenericModalButtonContainer .btn-negative:active,
+.GenericModalButtonContainer .btn-negative:visited {
+  border-color: #565656;
+  background-color: #565656;
+  background-image: url(/images/Buttons/StyleGuide/bg-btn-gray.png);
+  color: white; }
+
+.GenericModalButtonContainer .btn-none {
+  display: none; }
+
+.PurchaseModal .simplemodal-close a {
+  background: url("/images/Buttons/btn-x.png") no-repeat top left;
+  display: block;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 5px; }
+
+.PurchaseModal .simplemodal-close a:hover {
+  background-position: bottom left;
+  cursor: pointer; }
+
+.CustomizeCharacterLink {
+  display: block;
+  margin-top: 10px; }
+
+.PurchaseModalMessage.SuccessMsg {
+  padding: 30px 20px 20px 20px;
+  height: auto; }
+
+.PurchaseModal span.Robux, .PurchaseModal span.Free {
+  margin-bottom: 2px; }
+
+.PurchaseModalClose {
+  cursor: pointer;
+  position: absolute;
+  right: -18px;
+  top: -18px; }
+
+.PurchaseModal {
+  width: 435px;
+  display: none;
+  position: absolute;
+  border: 2px solid #272727;
+  background-color: #E1E1E1;
+  padding: 5px; }
+
+.PurchaseModal .titleBar {
+  background-color: #E1E1E1;
+  font-weight: bold;
+  font-size: 27px;
+  letter-spacing: -1px;
+  color: #343434;
+  height: 38px;
+  text-align: center; }
+
+.PurchaseModalBody {
+  background-color: #fff; }
+
+.PurchaseModalMessage {
+  padding: 10px;
+  height: 170px; }
+
+.PurchaseModalMessageImage {
+  display: inline-block;
+  width: 110px;
+  height: 110px; }
+
+.PurchaseModalMessageText {
+  display: inline-block;
+  width: 275px;
+  vertical-align: top;
+  padding-top: 28px; }
+
+.PurchaseModalButtonContainer {
+  clear: left;
+  padding-top: 10px;
+  text-align: center; }
+
+.PurchaseModalFooter {
+  text-align: center;
+  margin: 10px auto 0px;
+  padding-bottom: 5px; }
+
+.ProcessingModalBody {
+  margin: 15px auto;
+  text-align: center;
+  vertical-align: middle;
+  background: none; }
+
+.CurrencyColor1 {
+  color: #080;
+  padding-left: 20px;
+  background: url(/images/cssspecific/rbx2/head_infobox_icons.png) no-repeat 0 -42px; }
+
+.CurrencyColor2 {
+  color: #A61;
+  padding-left: 20px;
+  background: url(/images/cssspecific/rbx2/head_infobox_icons.png) no-repeat 0 -122px; }
+
+.CurrencyColorFree {
+  color: #080; }
+
+#DeleteProductPromotionModal .thumbs-up-green {
+  width: 110px;
+  height: 110px;
+  background: url("/images/Icons/thumbs_up.png") no-repeat;
+  display: block; }
+
+#DeleteProductPromotionModal .btn-blue-ok-sharp {
+  height: 50px;
+  width: 102px;
+  display: inline-block;
+  background: url("/images/Buttons/btn_blue_ok_l.png") top left no-repeat; }
+
+#DeleteProductPromotionModal .btn-blue-ok-sharp:hover {
+  cursor: pointer;
+  background-position: bottom left; }
+
+/* Video Preroll */
+.ABCloseCircle {
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px; }
+
+.closeBtnCircle_35h:hover {
+  background-position: 0px 35px; }
+
+.closeBtnCircle_35h {
+  width: 35px;
+  height: 35px;
+  background: url(/images/Buttons/closeBtnCircle_35h.png); }
+
+.closeBtnCircle_20h:hover {
+  background-position: 0px 20px; }
+
+.closeBtnCircle_20h {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 395px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: url(/images/Buttons/btn-x.png); }
