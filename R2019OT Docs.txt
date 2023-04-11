@@ -24,31 +24,12 @@ Improved SourceSansPro (Thanks Aubymori).
 
 What's new :
 
-/*/=={ Tracker }==/*/
-
-   State   |
-     X     |  Add navigation years option || TODO : 2014> navigation ||
-     X     |  Improve Robux to Tix swap. (Missed a few pages/references when released)
-     X     |  Add slogan option
-     %     |  Premium to builders club option
-     X     |  More customizability
-     X     |  Legacy Pages
-
 /*/=={{ Legend }}==/*/
 
 /*/=={ Headers }==/*/
 /*|=={ Secondary Headers }==|*/
 
 -- Comments --
-
-! Priority => X(!) > &(!) > %(!) > *(!)
-* Completed
-% Pending
-& Investigating
-- Uncommented
-X Uncompleted
-
-----
 
 YYYYMM(I.E : 197001) -- (Default 1) --
 YYYYMA(I.E : 1970E) -- (Default 2) --
