@@ -187,6 +187,18 @@
 		}
 	}
     
+	.friend-list .friend .friend-parent-container, .people-list .friend .friend-parent-container {
+		display: block;
+	}
+	.friend-list .friend .friend-name-container, .people-list .friend .friend-name-container {
+		display: block;
+		max-width: none;
+		margin: 0;
+	}
+	.friend-list .friend .friend-name, .people-list .friend .friend-name {
+		margin: 3px 0 0;
+	}
+	
     .light-theme .friends-list-container .friend-container:hover {
         background-color: #f2f2f2;
         cursor: pointer;
