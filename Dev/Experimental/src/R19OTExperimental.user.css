@@ -2870,8 +2870,14 @@
         line-height: 1em;
         margin: 0;
         padding: 5px 0;
-        font-size: 12px;
-        font-weight: 400;
+		& when (@SourceSansPro = 0) {
+			font-size: 12px;
+			font-weight: 400;
+		}
+		& when (@SourceSansPro = 1) {
+			font-size: 24px;
+			font-weight: 300;
+		}
         display: block;
     }
     .profile-header .header-details .details-actions {
