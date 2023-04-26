@@ -4631,7 +4631,9 @@
 			cursor: text;
 		}
 		.app-bumper-container .app-motto-container .xsmall {
-			font-size: 0;
+			&, &:hover, &:focus, &:active {
+				font-size: 0;
+			}
 		}
 		.app-bumper-container .app-motto-container .xsmall:after {
 			content: 'Millions of games by people like you';
@@ -4644,6 +4646,7 @@
 				font-weight: 400;
 				line-height: 1.3em
 			}
+			cursor: text;
 		}
 		@media (max-width: 767px) {
 			#rbx-private-servers .container-header h2:after {
