@@ -13,6 +13,8 @@ Added Legacy Background Color option.
 Added Premium To BC option.
 Added Style Guide Text back to 2016 styleguide.
 Added Toggleable Brighter Dark Theme colors option.
+App bumper now syncs with settings.
+Re-added VIP Server text swap (Toggleable via Remove Updates).
 Removed Events container (Toggleable via Remove Updates).
 Reverted Roblox Help button changes.
 Improved chat for more accuracy.

@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230425.1.2.9.39
+@version      20230426.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -1403,7 +1403,18 @@
         height: 32px;
         width: 32px;
         margin-left: 6px;
-        background-image: url(/images/Logo/roblox_logo_dark_07262019.svg);
+				& when (@LogoStyle = 201408) {
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzBweCIgaGVpZ2h0PSIzMHB4IiB2aWV3Qm94PSIwIDAgMzAgMzAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDMwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8Zz4NCgkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRUQyRDMwIiBkPSJNMTUsMjkuOEM2LjksMjkuOCwwLjIsMjMuMSwwLjIsMTVTNi45LDAuMiwxNSwwLjIgICAgIFMyOS44LDYuOSwyOS44LDE1UzIzLjEsMjkuOCwxNSwyOS44eiIvPg0KCQkJPGc+DQoJCQkJPHBhdGggZmlsbD0iIzk3MUIxRSIgZD0iTTE1LDAuNUMyMywwLjUsMjkuNSw3LDI5LjUsMTVjMCw4LTYuNSwxNC41LTE0LjUsMTQuNVMwLjUsMjMsMC41LDE1QzAuNSw3LDcsMC41LDE1LDAuNSBNMTUsMCAgICAgIEM2LjcsMCwwLDYuNywwLDE1YzAsOC4zLDYuNywxNSwxNSwxNXMxNS02LjcsMTUtMTVDMzAsNi43LDIzLjMsMCwxNSwwTDE1LDB6Ii8+DQoJCQk8L2c+DQoJCTwvZz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzhBMTgxQSIgZD0iTTE1LDI3LjVDOC4xLDI3LjUsMi41LDIxLjksMi41LDE1UzguMSwyLjUsMTUsMi41ICAgICBTMjcuNSw4LjEsMjcuNSwxNVMyMS45LDI3LjUsMTUsMjcuNXoiLz4NCgkJCTxnPg0KCQkJCTxwYXRoIGZpbGw9IiM5NzFCMUUiIGQ9Ik0xNSwyLjhjNi43LDAsMTIuMiw1LjUsMTIuMiwxMi4yYzAsNi43LTUuNSwxMi4yLTEyLjIsMTIuMlMyLjgsMjEuNywyLjgsMTVDMi44LDguMyw4LjMsMi44LDE1LDIuOCAgICAgICBNMTUsMi4zQzgsMi4zLDIuMyw4LDIuMywxNUMyLjMsMjIsOCwyNy43LDE1LDI3LjdTMjcuNywyMiwyNy43LDE1QzI3LjcsOCwyMiwyLjMsMTUsMi4zTDE1LDIuM3oiLz4NCgkJCTwvZz4NCgkJPC9nPg0KCTwvZz4NCgk8ZyBpZD0iSDVITThTXzFfIj4NCgkJPGc+DQoJCQk8Zz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGRkZGRiIgZD0iTTIxLjYsMy4yYzEsMi4xLDMuMSw4LjksMyw5LjZjLTAuMSwwLjYtMS4zLDEuOS0xLjksMi4xICAgICAgYy0xLjIsMC4zLTcuNi0wLjEtOC44LDAuMWMwLjEsMC42LDAuNiwxLDEsMS40YzIuOCwyLjcsNS43LDUuMyw4LjYsOC4zYy0yLjQsMC4zLTQuOSwwLjUtNy4xLDAuOWMtMC45LTEuNi0xLjktMy4zLTIuNy01ICAgICAgYy0wLjktMS43LTEuNS0zLjYtMi43LTUuMWMtMC44LDAtMS41LDAuMS0yLjIsMC4yYzAuNSwyLjgsMS43LDQuOSwyLjIsNy43Yy0xLjYtMC4yLTMuMi0wLjMtNC41LTAuN2MtMC4zLTIuOS0wLjYtNS45LTAuOS04LjggICAgICBDNS4zLDEwLjksNC45LDcuOSw0LjgsNUM3LDQuNSw5LjUsNC4xLDEyLDMuOUMxNS4xLDMuNSwxOC40LDMsMjEuNiwzLjJ6IE05LjEsNy42QzksOS4yLDkuMywxMC45LDkuNSwxMi41ICAgICAgYzIuMS0wLjMsNC4xLTAuNyw2LjItMS4xYzAtMS4xLDAuMi0yLjItMC4xLTMuMkMxMy43LDcuNywxMS40LDcuNCw5LjEsNy42eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRTIyMzFBIiBkPSJNMTUuMyw4LjVjMC4xLDAuOCwwLjEsMS44LDAsMi43Yy0xLjksMC4zLTMuNywwLjctNS42LDEgICAgICBjLTAuMS0xLjQtMC40LTIuNy0wLjQtNC4zQzExLjYsNy45LDEzLjUsOC4yLDE1LjMsOC41eiBNMTQuNiw5LjFjLTAuMSwwLTAuMS0wLjEtMC4xLTAuMmMtMS0wLjYtMy0wLjYtNC41LTAuNSAgICAgIGMtMC4yLDEsMCwyLjEsMC4zLDIuOGMwLDAuMSwwLDAsMCwwYzAsMC4xLTAuMSwwLjItMC4xLDAuMmMxLjEtMC4yLDMuMS0wLjcsNC4yLTAuOWMwLjIsMCwwLjQtMS4xLDAtMS42ICAgICAgQzE0LjQsOSwxNC42LDkuMSwxNC42LDkuMXoiLz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGRkZGRiIgZD0iTTEwLjQsMTEuMmMxLjQtMC4yLDIuNy0wLjUsNC0wLjljMC4xLTAuMywwLjItMC43LDAuMi0xLjEgICAgICBjMCwwLTAuMS0wLjItMC4xLTAuMmMwLjQsMC40LDAuMiwxLjUsMCwxLjZjLTEsMC4yLTMuMSwwLjctNC4yLDAuOUMxMC4zLDExLjQsMTAuMywxMS4yLDEwLjQsMTEuMiAgICAgIEMxMC40LDExLjIsMTAuMywxMS4yLDEwLjQsMTEuMnoiLz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0UyMjMxQSIgZD0iTTIuOCw0LjVjNC44LTAuOCwxNS42LTEuOSwyMC4xLTIuNGMwLDAsMC0wLjEsMC0wLjEgICAgICBjMS4yLDMsMi40LDYuNCwzLjQsOS43YzAuMSwwLjQsMC41LDEuMywwLjQsMS41Yy0wLjEsMC40LTMuMywyLjgtMy45LDNjLTAuNCwwLjEtNC45LTAuMy02LjUtMC40YzMuOSwzLjQsOC41LDYuOCwxMi40LDEwLjIgICAgICBjLTIuNiwwLTQuOCwwLjEtNi45LDAuNGMtMi4xLDAuMy00LDEtNi4xLDEuMWMtMS42LTMuOC0zLjMtNy41LTUuMS0xMS4yYy0wLjMsMC0wLjUsMC4xLTAuNywwLjFjMSwzLjEsMi4xLDYuMSwzLjEsOS4yICAgICAgYy0yLjgtMS02LTEuNi05LTIuNEMzLjksMjMsMi43LDcuNSwyLjgsNC41eiBNMTkuNSwyLjhDMTcsMywxNC40LDMuNSwxMS44LDMuOEM5LjMsNCw3LjEsNC40LDQuNiw0LjljLTAuMSwzLDAuNCw2LDAuNyw5LjEgICAgICBjMC4zLDMuMSwwLjUsNi4xLDEsOWMxLjMsMC41LDMuNCwwLjgsNSwwLjdjMC4xLTEuNC0wLjYtMi42LTEtMy45QzEwLDE4LjUsOS41LDE3LjMsOS4yLDE2YzAuNS0wLjEsMS4xLTAuMSwxLjgtMC4xICAgICAgYzEuMywyLjQsMi42LDUuMSwzLjksNy42YzAuMiwwLjUsMSwyLjIsMS41LDIuNGMwLjQsMC4xLDUuNC0xLDcuNS0xYzAuMS0wLjYtMC41LTEuMS0wLjgtMS41Yy0xLjEtMS4zLTIuNS0yLjMtMy43LTMuNCAgICAgIGMtMS4zLTEuMS0yLjYtMi4yLTMuOC0zLjNjLTAuNC0wLjQtMC45LTAuOC0xLTEuM2MxLjMsMCwyLjctMC4xLDQuMi0wLjFjMS40LDAuMSwzLjIsMC4yLDQuMywwYzAuNy0wLjIsMS45LTEuNSwyLTIuMSAgICAgIGMwLjEtMC44LTAuMy0xLjgtMC42LTIuN0MyMy42LDcuOCwyMyw1LjIsMjEuOSwzQzIxLjEsMi44LDIwLjMsMi44LDE5LjUsMi44eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjQUMxNjJDIiBkPSJNMjEuOSwzYzEsMi4yLDEuNiw0LjcsMi41LDcuM2MwLjMsMC44LDAuNywxLjksMC42LDIuNyAgICAgIGMtMC4xLDAuNy0xLjMsMi4xLTIuMSwyLjJjLTEuMSwwLjMtNy4yLDAtOC40LDBjMC4xLDAuNiwzLjUsMy41LDQuOCw0LjdjMS4yLDEuMSwyLjYsMi4yLDMuNywzLjRjMC40LDAuNCwwLjksMC45LDAuOCwxLjUgICAgICBjLTQuMSwwLjQtNy4xLDEuMS03LjUsMWMtMC41LTAuMi0xLjMtMS45LTEuNS0yLjRjLTEuMy0yLjUtMi42LTUuMi0zLjktNy42Yy0wLjYsMC0xLjMsMC0xLjgsMC4xYzAuMywxLjMsMC44LDIuNiwxLjEsMy44ICAgICAgYzAuNCwxLjIsMS4xLDIuNCwxLDMuOWMtMS42LDAuMi0zLjYtMC4yLTUtMC43Yy0wLjUtMi45LTAuNy01LjktMS05Yy0wLjMtMy0wLjgtNi4xLTAuNy05LjFDNi44LDQuMiwxNywzLDE5LjUsMi44ICAgICAgQzIwLjMsMi44LDIxLjEsMi44LDIxLjksM3ogTTQuOCw1YzAuMSwyLjksMS40LDE0LjcsMS43LDE3LjZjMS4zLDAuNCwzLDAuNSw0LjUsMC43Yy0wLjUtMi44LTEuNy01LTIuMi03LjcgICAgICBjMC43LTAuMSwxLjMtMC4zLDIuMi0wLjJjMS4yLDEuNSwxLjgsMy4zLDIuNyw1LjFjMC45LDEuNywxLjgsMy40LDIuNyw1YzIuMi0wLjUsNC43LTAuNyw3LjEtMC45Yy0yLjYtMi45LTUuOC01LjYtOC42LTguMyAgICAgIGMtMC40LTAuNC0wLjktMC44LTEtMS40YzEuMy0wLjIsNy43LDAuMiw4LjgtMC4xYzAuNi0wLjEsMS44LTEuNSwxLjktMi4xYzAuMS0wLjctMi03LjUtMy05LjZDMTguNCwzLDcsNC41LDQuOCw1eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNjMwRDBEIiBkPSJNMi4xLDQuN0MyLDQuMiwyLjIsMy44LDIuOCwzLjdjMy4xLTAuNCwxNS4zLTEuOCwxOC44LTIuMSAgICAgIGMxLjQtMC4yLDEuNiwwLDIuMSwxLjJjMC44LDIuMiwzLjMsOC42LDMuNSwxMC42Yy0wLjUsMC42LTMuNiwzLjEtNC40LDMuMmMtMC45LDAuMS00LjUtMC4zLTUuMi0wLjJjMiwxLjcsNy41LDUuNiwxMCw3LjkgICAgICBjMC43LDAuNiwxLjQsMSwxLjYsMS40YzAuNCwwLjUsMC4xLDAuOS0wLjksMC44Yy0xLjktMC4yLTQuNywwLjEtNi40LDAuM2MtMi41LDAuMy01LjUsMS40LTYuNCwxLjFjLTAuOC0wLjMtMS41LTIuOC0xLjktMy44ICAgICAgYy0wLjgtMi4yLTEuNy00LjEtMi44LTYuMmMwLjYsMiwxLjMsNCwyLDUuOWMwLjIsMC42LDEuMSwyLjIsMC4yLDIuMmMtMS4xLDAtNC41LTEuNC05LjQtMi42QzMuMiwyMCwyLjEsNC45LDIuMSw0Ljd6IE0yMi44LDIgICAgICBjLTMuNC0wLjEtMTcsMS43LTIwLjMsMi4zYzAsMywwLjUsNiwwLjcsOS4xQzMuNSwxNi40LDMuOSwyMyw0LDIzYzMsMC44LDYuMiwxLjQsOSwyLjRjLTEtMy4xLTIuMS02LjEtMy4xLTkuMiAgICAgIGMwLjMsMCwwLjQtMC4xLDAuNy0wLjFjMS44LDMuNiwzLjUsNy40LDUuMSwxMS4yYzIuMi0wLjQsNC0wLjgsNi4xLTEuMWMyLjEtMC4zLDQuMy0wLjQsNi45LTAuNGMtMy45LTMuMy04LjUtNi44LTEyLjQtMTAuMiAgICAgIGMxLjYsMC4xLDYsMC40LDYuNSwwLjRjMC43LTAuMSwzLjktMi41LDMuOS0zQzI2LjcsMTMsMjQsNSwyMi44LDJ6Ii8+DQoJCQkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNBQzE2MkMiIGQ9Ik0xMC4zLDExLjJjLTAuMy0wLjctMC41LTEuOC0wLjMtMi44YzEuNS0wLjEsMy40LTAuMSw0LjUsMC41ICAgICAgYzAuMiwwLjEsMC4xLDEtMC4xLDEuM0MxMy4xLDEwLjcsMTEuOCwxMSwxMC4zLDExLjJ6IE0xMC41LDguOGMtMC40LDAuNCwwLDEuNCwwLjEsMS45YzEuMS0wLjEsMi41LTAuNCwzLjUtMC44ICAgICAgYzAuMS0wLjIsMC4xLTAuNiwwLTAuN0MxMy4yLDguOCwxMS44LDguOSwxMC41LDguOHoiLz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzk4MUIxRSIgZD0iTTE1LjYsOC4yYzAuMiwxLDAsMi4xLDAuMSwzLjJjLTIsMC40LTQuMSwwLjgtNi4yLDEuMSAgICAgIEM5LjMsMTAuOSw5LDkuMiw5LjEsNy42QzExLjQsNy40LDEzLjcsNy43LDE1LjYsOC4yeiBNOS40LDcuOWMwLDEuNiwwLjIsMi45LDAuNCw0LjNjMS45LTAuMywzLjctMC43LDUuNi0xICAgICAgYzAuMS0wLjksMC4xLTEuOSwwLTIuN0MxMy41LDguMiwxMS42LDcuOSw5LjQsNy45eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkZGRkZGIiBkPSJNMy45LDIzYy0wLjItMy0xLjQtMTUuNy0xLjQtMTguN0M1LjksMy43LDE5LjQsMS45LDIyLjgsMiAgICAgIGMwLDAsMCwwLjEsMCwwLjFDMjEuMSwyLjQsNy42LDMuOCwyLjgsNC41YzAuMiwzLDEuNiwxNy45LDEuMywxOC41QzQsMjMuMSw0LDIzLDMuOSwyM3oiLz4NCgkJCTwvZz4NCgkJPC9nPg0KCTwvZz4NCjwvZz4NCjwvc3ZnPg==);
+        }
+        & when (@LogoStyle = 201412) {
+            background-image: url(https://www.roblox.com/images/NextStyleGuide/logo_R_30x30.svg);
+        }
+        & when (@LogoStyle = 201511) {
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IlIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNzJweCIgaGVpZ2h0PSI3MnB4IiB2aWV3Qm94PSIwIDAgNzIgNzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDcyIDcyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRTIyMzFBO30NCgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9DQo8L3N0eWxlPg0KPGcgaWQ9IlJfMV8iPg0KCTxnPg0KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjkuMyw2Ny4zQzU5LDU3LjgsNTAuMSw1MC4xLDQwLjcsNDIuMmM1LjYtMC4yLDExLjctMC41LDE3LjMtMWMwLjYtMC4xLDEuMi0wLjMsMS43LTAuNw0KCQkJYzIuMS0xLjcsNS4xLTQuNyw3LTcuM2MwLjMtMC41LDAuNS0xLDAuMy0xLjZjLTItOS01LjQtMTkuOC0xMC4zLTI5LjRjLTAuNC0wLjctMS4yLTEuMi0yLTEuMkMzNi42LDIuMSwxOS4zLDQuNiw0LDcuNw0KCQkJQzMsNy45LDIuMyw4LjgsMi4zLDkuOEMyLjYsMjguNCwzLjYsNDcuNiw1LDY2LjVjMC4xLDEsMC44LDEuOCwxLjgsMmM2LjEsMC45LDEyLjEsMS43LDIwLjMsMi4yYzAuNywwLDEuMy0wLjcsMS0xLjQNCgkJCWMtMi44LTcuOS03LjItMjMuNi03LjktMjYuNGMwLjcsMCwxLTAuMSwxLjYtMC4xYzMuNyw3LjUsOS4zLDE3LjksMTMuMywyNi41YzAuNSwxLjEsMS42LDEuOCwyLjgsMS44YzkuNSwwLjIsMTkuOS0wLjIsMzAuOC0xLjgNCgkJCUM2OS42LDY5LDcwLDY3LjksNjkuMyw2Ny4zeiBNMzQuMSwyNi44Yy0zLjYsMC40LTkuMSwwLjgtMTIuNiwxYy0wLjMtMi4yLTAuNi01LjQtMC43LTcuN2M0LjMsMC4xLDguNywwLjIsMTMuMywwLjYNCgkJCUMzNC4xLDIyLjcsMzQuMSwyNC43LDM0LjEsMjYuOHoiLz4NCgk8L2c+DQoJPGc+DQoJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik01Ny42LDM3LjVjMS44LTEuNiwzLjktMy42LDUuMy01LjlDNjEsMjMuMiw1OCwxNCw1My45LDUuNEMzOC4yLDYuNSwyMS4yLDguNyw2LjQsMTEuNWMwLjYsMTkuOCwxLjUsMzYsMyw1Mw0KCQkJYzQuNywwLjcsNy45LDEuMSwxMy4yLDEuNUMyMCw1Ni44LDE4LDQ5LjMsMTYuMSw0MGMyLjUtMC4xLDUuMS0wLjIsNy43LTAuM2M2LjIsMTAsOS44LDE3LjIsMTUuOCwyN2M3LjQsMCwxNC4yLTAuMiwyMS4xLTAuOA0KCQkJYy05LjktOS43LTE5LjEtMTguMy0yOC41LTI2LjZDNDEuMiwzOC44LDUwLjMsMzguMiw1Ny42LDM3LjV6IE0xNy45LDMxLjZjLTAuNy01LTAuOS0xMC0xLjEtMTVjNywwLDE0LjQsMC4zLDIxLjMsMC45DQoJCQljMC4yLDMuNCwwLjIsOSwwLDEyLjVDMzEuNiwzMC43LDI0LjgsMzEuMiwxNy45LDMxLjZ6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=);
+        }
+        & when (@LogoStyle = 201701) {
+            background-image: url(/images/Logo/roblox_logo_dark_07262019.svg);
+        }
         background-size: 24px;
         background-position: center center;
         background-repeat: no-repeat;
@@ -1412,8 +1423,19 @@
         height: 32px;
         width: 32px;
         margin-left: 6px;
-        background-image: url(/images/Logo/roblox_logo_dark_07262019.svg);
-        filter: invert(100%);
+		& when (@LogoStyle = 201408) {
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzBweCIgaGVpZ2h0PSIzMHB4IiB2aWV3Qm94PSIwIDAgMzAgMzAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDMwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8Zz4NCgkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRUQyRDMwIiBkPSJNMTUsMjkuOEM2LjksMjkuOCwwLjIsMjMuMSwwLjIsMTVTNi45LDAuMiwxNSwwLjIgICAgIFMyOS44LDYuOSwyOS44LDE1UzIzLjEsMjkuOCwxNSwyOS44eiIvPg0KCQkJPGc+DQoJCQkJPHBhdGggZmlsbD0iIzk3MUIxRSIgZD0iTTE1LDAuNUMyMywwLjUsMjkuNSw3LDI5LjUsMTVjMCw4LTYuNSwxNC41LTE0LjUsMTQuNVMwLjUsMjMsMC41LDE1QzAuNSw3LDcsMC41LDE1LDAuNSBNMTUsMCAgICAgIEM2LjcsMCwwLDYuNywwLDE1YzAsOC4zLDYuNywxNSwxNSwxNXMxNS02LjcsMTUtMTVDMzAsNi43LDIzLjMsMCwxNSwwTDE1LDB6Ii8+DQoJCQk8L2c+DQoJCTwvZz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzhBMTgxQSIgZD0iTTE1LDI3LjVDOC4xLDI3LjUsMi41LDIxLjksMi41LDE1UzguMSwyLjUsMTUsMi41ICAgICBTMjcuNSw4LjEsMjcuNSwxNVMyMS45LDI3LjUsMTUsMjcuNXoiLz4NCgkJCTxnPg0KCQkJCTxwYXRoIGZpbGw9IiM5NzFCMUUiIGQ9Ik0xNSwyLjhjNi43LDAsMTIuMiw1LjUsMTIuMiwxMi4yYzAsNi43LTUuNSwxMi4yLTEyLjIsMTIuMlMyLjgsMjEuNywyLjgsMTVDMi44LDguMyw4LjMsMi44LDE1LDIuOCAgICAgICBNMTUsMi4zQzgsMi4zLDIuMyw4LDIuMywxNUMyLjMsMjIsOCwyNy43LDE1LDI3LjdTMjcuNywyMiwyNy43LDE1QzI3LjcsOCwyMiwyLjMsMTUsMi4zTDE1LDIuM3oiLz4NCgkJCTwvZz4NCgkJPC9nPg0KCTwvZz4NCgk8ZyBpZD0iSDVITThTXzFfIj4NCgkJPGc+DQoJCQk8Zz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGRkZGRiIgZD0iTTIxLjYsMy4yYzEsMi4xLDMuMSw4LjksMyw5LjZjLTAuMSwwLjYtMS4zLDEuOS0xLjksMi4xICAgICAgYy0xLjIsMC4zLTcuNi0wLjEtOC44LDAuMWMwLjEsMC42LDAuNiwxLDEsMS40YzIuOCwyLjcsNS43LDUuMyw4LjYsOC4zYy0yLjQsMC4zLTQuOSwwLjUtNy4xLDAuOWMtMC45LTEuNi0xLjktMy4zLTIuNy01ICAgICAgYy0wLjktMS43LTEuNS0zLjYtMi43LTUuMWMtMC44LDAtMS41LDAuMS0yLjIsMC4yYzAuNSwyLjgsMS43LDQuOSwyLjIsNy43Yy0xLjYtMC4yLTMuMi0wLjMtNC41LTAuN2MtMC4zLTIuOS0wLjYtNS45LTAuOS04LjggICAgICBDNS4zLDEwLjksNC45LDcuOSw0LjgsNUM3LDQuNSw5LjUsNC4xLDEyLDMuOUMxNS4xLDMuNSwxOC40LDMsMjEuNiwzLjJ6IE05LjEsNy42QzksOS4yLDkuMywxMC45LDkuNSwxMi41ICAgICAgYzIuMS0wLjMsNC4xLTAuNyw2LjItMS4xYzAtMS4xLDAuMi0yLjItMC4xLTMuMkMxMy43LDcuNywxMS40LDcuNCw5LjEsNy42eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRTIyMzFBIiBkPSJNMTUuMyw4LjVjMC4xLDAuOCwwLjEsMS44LDAsMi43Yy0xLjksMC4zLTMuNywwLjctNS42LDEgICAgICBjLTAuMS0xLjQtMC40LTIuNy0wLjQtNC4zQzExLjYsNy45LDEzLjUsOC4yLDE1LjMsOC41eiBNMTQuNiw5LjFjLTAuMSwwLTAuMS0wLjEtMC4xLTAuMmMtMS0wLjYtMy0wLjYtNC41LTAuNSAgICAgIGMtMC4yLDEsMCwyLjEsMC4zLDIuOGMwLDAuMSwwLDAsMCwwYzAsMC4xLTAuMSwwLjItMC4xLDAuMmMxLjEtMC4yLDMuMS0wLjcsNC4yLTAuOWMwLjIsMCwwLjQtMS4xLDAtMS42ICAgICAgQzE0LjQsOSwxNC42LDkuMSwxNC42LDkuMXoiLz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGRkZGRiIgZD0iTTEwLjQsMTEuMmMxLjQtMC4yLDIuNy0wLjUsNC0wLjljMC4xLTAuMywwLjItMC43LDAuMi0xLjEgICAgICBjMCwwLTAuMS0wLjItMC4xLTAuMmMwLjQsMC40LDAuMiwxLjUsMCwxLjZjLTEsMC4yLTMuMSwwLjctNC4yLDAuOUMxMC4zLDExLjQsMTAuMywxMS4yLDEwLjQsMTEuMiAgICAgIEMxMC40LDExLjIsMTAuMywxMS4yLDEwLjQsMTEuMnoiLz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0UyMjMxQSIgZD0iTTIuOCw0LjVjNC44LTAuOCwxNS42LTEuOSwyMC4xLTIuNGMwLDAsMC0wLjEsMC0wLjEgICAgICBjMS4yLDMsMi40LDYuNCwzLjQsOS43YzAuMSwwLjQsMC41LDEuMywwLjQsMS41Yy0wLjEsMC40LTMuMywyLjgtMy45LDNjLTAuNCwwLjEtNC45LTAuMy02LjUtMC40YzMuOSwzLjQsOC41LDYuOCwxMi40LDEwLjIgICAgICBjLTIuNiwwLTQuOCwwLjEtNi45LDAuNGMtMi4xLDAuMy00LDEtNi4xLDEuMWMtMS42LTMuOC0zLjMtNy41LTUuMS0xMS4yYy0wLjMsMC0wLjUsMC4xLTAuNywwLjFjMSwzLjEsMi4xLDYuMSwzLjEsOS4yICAgICAgYy0yLjgtMS02LTEuNi05LTIuNEMzLjksMjMsMi43LDcuNSwyLjgsNC41eiBNMTkuNSwyLjhDMTcsMywxNC40LDMuNSwxMS44LDMuOEM5LjMsNCw3LjEsNC40LDQuNiw0LjljLTAuMSwzLDAuNCw2LDAuNyw5LjEgICAgICBjMC4zLDMuMSwwLjUsNi4xLDEsOWMxLjMsMC41LDMuNCwwLjgsNSwwLjdjMC4xLTEuNC0wLjYtMi42LTEtMy45QzEwLDE4LjUsOS41LDE3LjMsOS4yLDE2YzAuNS0wLjEsMS4xLTAuMSwxLjgtMC4xICAgICAgYzEuMywyLjQsMi42LDUuMSwzLjksNy42YzAuMiwwLjUsMSwyLjIsMS41LDIuNGMwLjQsMC4xLDUuNC0xLDcuNS0xYzAuMS0wLjYtMC41LTEuMS0wLjgtMS41Yy0xLjEtMS4zLTIuNS0yLjMtMy43LTMuNCAgICAgIGMtMS4zLTEuMS0yLjYtMi4yLTMuOC0zLjNjLTAuNC0wLjQtMC45LTAuOC0xLTEuM2MxLjMsMCwyLjctMC4xLDQuMi0wLjFjMS40LDAuMSwzLjIsMC4yLDQuMywwYzAuNy0wLjIsMS45LTEuNSwyLTIuMSAgICAgIGMwLjEtMC44LTAuMy0xLjgtMC42LTIuN0MyMy42LDcuOCwyMyw1LjIsMjEuOSwzQzIxLjEsMi44LDIwLjMsMi44LDE5LjUsMi44eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjQUMxNjJDIiBkPSJNMjEuOSwzYzEsMi4yLDEuNiw0LjcsMi41LDcuM2MwLjMsMC44LDAuNywxLjksMC42LDIuNyAgICAgIGMtMC4xLDAuNy0xLjMsMi4xLTIuMSwyLjJjLTEuMSwwLjMtNy4yLDAtOC40LDBjMC4xLDAuNiwzLjUsMy41LDQuOCw0LjdjMS4yLDEuMSwyLjYsMi4yLDMuNywzLjRjMC40LDAuNCwwLjksMC45LDAuOCwxLjUgICAgICBjLTQuMSwwLjQtNy4xLDEuMS03LjUsMWMtMC41LTAuMi0xLjMtMS45LTEuNS0yLjRjLTEuMy0yLjUtMi42LTUuMi0zLjktNy42Yy0wLjYsMC0xLjMsMC0xLjgsMC4xYzAuMywxLjMsMC44LDIuNiwxLjEsMy44ICAgICAgYzAuNCwxLjIsMS4xLDIuNCwxLDMuOWMtMS42LDAuMi0zLjYtMC4yLTUtMC43Yy0wLjUtMi45LTAuNy01LjktMS05Yy0wLjMtMy0wLjgtNi4xLTAuNy05LjFDNi44LDQuMiwxNywzLDE5LjUsMi44ICAgICAgQzIwLjMsMi44LDIxLjEsMi44LDIxLjksM3ogTTQuOCw1YzAuMSwyLjksMS40LDE0LjcsMS43LDE3LjZjMS4zLDAuNCwzLDAuNSw0LjUsMC43Yy0wLjUtMi44LTEuNy01LTIuMi03LjcgICAgICBjMC43LTAuMSwxLjMtMC4zLDIuMi0wLjJjMS4yLDEuNSwxLjgsMy4zLDIuNyw1LjFjMC45LDEuNywxLjgsMy40LDIuNyw1YzIuMi0wLjUsNC43LTAuNyw3LjEtMC45Yy0yLjYtMi45LTUuOC01LjYtOC42LTguMyAgICAgIGMtMC40LTAuNC0wLjktMC44LTEtMS40YzEuMy0wLjIsNy43LDAuMiw4LjgtMC4xYzAuNi0wLjEsMS44LTEuNSwxLjktMi4xYzAuMS0wLjctMi03LjUtMy05LjZDMTguNCwzLDcsNC41LDQuOCw1eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNjMwRDBEIiBkPSJNMi4xLDQuN0MyLDQuMiwyLjIsMy44LDIuOCwzLjdjMy4xLTAuNCwxNS4zLTEuOCwxOC44LTIuMSAgICAgIGMxLjQtMC4yLDEuNiwwLDIuMSwxLjJjMC44LDIuMiwzLjMsOC42LDMuNSwxMC42Yy0wLjUsMC42LTMuNiwzLjEtNC40LDMuMmMtMC45LDAuMS00LjUtMC4zLTUuMi0wLjJjMiwxLjcsNy41LDUuNiwxMCw3LjkgICAgICBjMC43LDAuNiwxLjQsMSwxLjYsMS40YzAuNCwwLjUsMC4xLDAuOS0wLjksMC44Yy0xLjktMC4yLTQuNywwLjEtNi40LDAuM2MtMi41LDAuMy01LjUsMS40LTYuNCwxLjFjLTAuOC0wLjMtMS41LTIuOC0xLjktMy44ICAgICAgYy0wLjgtMi4yLTEuNy00LjEtMi44LTYuMmMwLjYsMiwxLjMsNCwyLDUuOWMwLjIsMC42LDEuMSwyLjIsMC4yLDIuMmMtMS4xLDAtNC41LTEuNC05LjQtMi42QzMuMiwyMCwyLjEsNC45LDIuMSw0Ljd6IE0yMi44LDIgICAgICBjLTMuNC0wLjEtMTcsMS43LTIwLjMsMi4zYzAsMywwLjUsNiwwLjcsOS4xQzMuNSwxNi40LDMuOSwyMyw0LDIzYzMsMC44LDYuMiwxLjQsOSwyLjRjLTEtMy4xLTIuMS02LjEtMy4xLTkuMiAgICAgIGMwLjMsMCwwLjQtMC4xLDAuNy0wLjFjMS44LDMuNiwzLjUsNy40LDUuMSwxMS4yYzIuMi0wLjQsNC0wLjgsNi4xLTEuMWMyLjEtMC4zLDQuMy0wLjQsNi45LTAuNGMtMy45LTMuMy04LjUtNi44LTEyLjQtMTAuMiAgICAgIGMxLjYsMC4xLDYsMC40LDYuNSwwLjRjMC43LTAuMSwzLjktMi41LDMuOS0zQzI2LjcsMTMsMjQsNSwyMi44LDJ6Ii8+DQoJCQkJPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNBQzE2MkMiIGQ9Ik0xMC4zLDExLjJjLTAuMy0wLjctMC41LTEuOC0wLjMtMi44YzEuNS0wLjEsMy40LTAuMSw0LjUsMC41ICAgICAgYzAuMiwwLjEsMC4xLDEtMC4xLDEuM0MxMy4xLDEwLjcsMTEuOCwxMSwxMC4zLDExLjJ6IE0xMC41LDguOGMtMC40LDAuNCwwLDEuNCwwLjEsMS45YzEuMS0wLjEsMi41LTAuNCwzLjUtMC44ICAgICAgYzAuMS0wLjIsMC4xLTAuNiwwLTAuN0MxMy4yLDguOCwxMS44LDguOSwxMC41LDguOHoiLz4NCgkJCQk8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzk4MUIxRSIgZD0iTTE1LjYsOC4yYzAuMiwxLDAsMi4xLDAuMSwzLjJjLTIsMC40LTQuMSwwLjgtNi4yLDEuMSAgICAgIEM5LjMsMTAuOSw5LDkuMiw5LjEsNy42QzExLjQsNy40LDEzLjcsNy43LDE1LjYsOC4yeiBNOS40LDcuOWMwLDEuNiwwLjIsMi45LDAuNCw0LjNjMS45LTAuMywzLjctMC43LDUuNi0xICAgICAgYzAuMS0wLjksMC4xLTEuOSwwLTIuN0MxMy41LDguMiwxMS42LDcuOSw5LjQsNy45eiIvPg0KCQkJCTxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkZGRkZGIiBkPSJNMy45LDIzYy0wLjItMy0xLjQtMTUuNy0xLjQtMTguN0M1LjksMy43LDE5LjQsMS45LDIyLjgsMiAgICAgIGMwLDAsMCwwLjEsMCwwLjFDMjEuMSwyLjQsNy42LDMuOCwyLjgsNC41YzAuMiwzLDEuNiwxNy45LDEuMywxOC41QzQsMjMuMSw0LDIzLDMuOSwyM3oiLz4NCgkJCTwvZz4NCgkJPC9nPg0KCTwvZz4NCjwvZz4NCjwvc3ZnPg==);
+        }
+        & when (@LogoStyle = 201412) {
+            background-image: url(https://www.roblox.com/images/NextStyleGuide/logo_R_30x30.svg);
+        }
+        & when (@LogoStyle = 201511) {
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IlIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNzJweCIgaGVpZ2h0PSI3MnB4IiB2aWV3Qm94PSIwIDAgNzIgNzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDcyIDcyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRTIyMzFBO30NCgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9DQo8L3N0eWxlPg0KPGcgaWQ9IlJfMV8iPg0KCTxnPg0KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjkuMyw2Ny4zQzU5LDU3LjgsNTAuMSw1MC4xLDQwLjcsNDIuMmM1LjYtMC4yLDExLjctMC41LDE3LjMtMWMwLjYtMC4xLDEuMi0wLjMsMS43LTAuNw0KCQkJYzIuMS0xLjcsNS4xLTQuNyw3LTcuM2MwLjMtMC41LDAuNS0xLDAuMy0xLjZjLTItOS01LjQtMTkuOC0xMC4zLTI5LjRjLTAuNC0wLjctMS4yLTEuMi0yLTEuMkMzNi42LDIuMSwxOS4zLDQuNiw0LDcuNw0KCQkJQzMsNy45LDIuMyw4LjgsMi4zLDkuOEMyLjYsMjguNCwzLjYsNDcuNiw1LDY2LjVjMC4xLDEsMC44LDEuOCwxLjgsMmM2LjEsMC45LDEyLjEsMS43LDIwLjMsMi4yYzAuNywwLDEuMy0wLjcsMS0xLjQNCgkJCWMtMi44LTcuOS03LjItMjMuNi03LjktMjYuNGMwLjcsMCwxLTAuMSwxLjYtMC4xYzMuNyw3LjUsOS4zLDE3LjksMTMuMywyNi41YzAuNSwxLjEsMS42LDEuOCwyLjgsMS44YzkuNSwwLjIsMTkuOS0wLjIsMzAuOC0xLjgNCgkJCUM2OS42LDY5LDcwLDY3LjksNjkuMyw2Ny4zeiBNMzQuMSwyNi44Yy0zLjYsMC40LTkuMSwwLjgtMTIuNiwxYy0wLjMtMi4yLTAuNi01LjQtMC43LTcuN2M0LjMsMC4xLDguNywwLjIsMTMuMywwLjYNCgkJCUMzNC4xLDIyLjcsMzQuMSwyNC43LDM0LjEsMjYuOHoiLz4NCgk8L2c+DQoJPGc+DQoJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik01Ny42LDM3LjVjMS44LTEuNiwzLjktMy42LDUuMy01LjlDNjEsMjMuMiw1OCwxNCw1My45LDUuNEMzOC4yLDYuNSwyMS4yLDguNyw2LjQsMTEuNWMwLjYsMTkuOCwxLjUsMzYsMyw1Mw0KCQkJYzQuNywwLjcsNy45LDEuMSwxMy4yLDEuNUMyMCw1Ni44LDE4LDQ5LjMsMTYuMSw0MGMyLjUtMC4xLDUuMS0wLjIsNy43LTAuM2M2LjIsMTAsOS44LDE3LjIsMTUuOCwyN2M3LjQsMCwxNC4yLTAuMiwyMS4xLTAuOA0KCQkJYy05LjktOS43LTE5LjEtMTguMy0yOC41LTI2LjZDNDEuMiwzOC44LDUwLjMsMzguMiw1Ny42LDM3LjV6IE0xNy45LDMxLjZjLTAuNy01LTAuOS0xMC0xLjEtMTVjNywwLDE0LjQsMC4zLDIxLjMsMC45DQoJCQljMC4yLDMuNCwwLjIsOSwwLDEyLjVDMzEuNiwzMC43LDI0LjgsMzEuMiwxNy45LDMxLjZ6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=);
+        }
+        & when (@LogoStyle = 201701) {
+            background-image: url(/images/Logo/roblox_logo_dark_07262019.svg);
+			filter: invert(100%);
+        }
         background-size: 24px;
         background-position: center center;
         background-repeat: no-repeat;
@@ -2968,7 +2990,7 @@
         bottom: 0;
     }
     @media (max-width: 543px) {
-            .group-details .group-header .group-caption .group-info .group-stats .group-members, .group-details .group-header .group-caption .group-info .group-stats li {
+        .group-details .group-header .group-caption .group-info .group-stats .group-members, .group-details .group-header .group-caption .group-info .group-stats li {
             width: 100%;
         }
         .group-details .group-header .group-caption .group-info .group-stats {
@@ -4507,6 +4529,143 @@
                 float: right;
             }
         }
+		
+		#rbx-private-servers .container-header h2, .rbx-private-server-create .rbx-private-server-create-button, #rbx-private-servers .section-content-off {
+			font-size: 0;
+		}
+		#rbx-private-servers .container-header h2:after {
+			content: 'VIP Servers';
+			font-size: 20px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 700;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
+			line-height: 1em;
+			cursor: text;
+		}
+
+		.tab-pane .create-server-banner .play-with-others-text {
+			font-size: 0px;
+			height: 44.78px
+		}
+		.game-instances .create-server-banner .play-with-others-text {
+			height: 22.39px
+		}
+
+		.tab-pane .create-server-banner .play-with-others-text:before {
+			content: 'Visit this game with friends and other people you invite.';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
+			line-height: 1.4em;
+			cursor: text;
+		}
+		.tab-pane .create-server-banner .play-with-others-text .text-link {
+			font-size: 16px;
+			line-height: 0.5em;
+		}
+		.tab-pane .create-server-banner .play-with-others-text span:before {
+			content: 'See all your vip servers in the ';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
+			line-height: 0.5em;
+			cursor: text;
+		}
+		.tab-pane .create-server-banner .play-with-others-text span:after {
+			content: ' tab.';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
+			line-height: 0.5em;
+			cursor: text;
+		}
+		.rbx-private-server-create .rbx-private-server-create-button:after {
+			content: 'Create VIP Server';
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 100%;
+		}
+		#rbx-private-servers .section-content-off:not(.empty-game-instances-container):before {
+			content: 'This game does not support ';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
+			line-height: 1.4em;
+			cursor: text;
+		}
+		#rbx-private-servers .section-content-off:not(.empty-game-instances-container) .text-link:after {
+			content: 'VIP Servers';
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 1.4em;
+		}
+		#rbx-private-servers .section-content-off:not(.empty-game-instances-container):after {
+			content: '.';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
+			line-height: 1.4em;
+			cursor: text;
+		}
+		.app-bumper-container .app-motto-container .xsmall {
+			font-size: 0;
+		}
+		.app-bumper-container .app-motto-container .xsmall:after {
+			content: 'Millions of games by people like you';
+			font-size: 10px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 500;
+				line-height: 1.4em
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 400;
+				line-height: 1.3em
+			}
+		}
+		@media (max-width: 767px) {
+			#rbx-private-servers .container-header h2:after {
+				font-size: 16px;
+			}
+		}
+		@media (max-width: 543px) {
+			.tab-pane .create-server-banner .play-with-others-text:before, .tab-pane .create-server-banner .play-with-others-text span:before, .tab-pane .create-server-banner .play-with-others-text span:after, #rbx-private-servers .section-content-off:before, #rbx-private-servers .section-content-off:after {
+				font-size: 12px;
+				font-weight: 400;
+			}
+			.tab-pane .create-server-banner .play-with-others-text .text-link, #rbx-private-servers .section-content-off .text-link:after {
+				font-size: 12px;
+				font-weight: 500;
+			}
+			.tab-pane .create-server-banner .play-with-others-text {
+				height: 33.59px
+			}
+			.tab-pane .create-server-banner .play-with-others-text {
+				height: 16.8px
+			}
+		}
     }
     
 	& when (@SiteCurrency = Tickets) {
@@ -4580,6 +4739,11 @@
         .game-stats-container li:nth-child(1) p:nth-child(1):after, .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
             font-size: 16px;
         }
+		.app-bumper-container .app-motto-container .motto-primary {
+			&, &:hover, &:focus, &:active {
+				    font-weight: 600;
+			}
+		}
         .gotham-font .small, .gotham-font .small-oneline, .gotham-font .sg-color-cell, .gotham-font .text-footer, .dialog-message span {
 			&, &:hover, &:focus, &:active, &:link {
 				font-size: 12px;
