@@ -4654,11 +4654,11 @@
 			}
 		}
 		@media (max-width: 543px) {
-			.tab-pane .create-server-banner .play-with-others-text:before, .tab-pane .create-server-banner .play-with-others-text span:before, .tab-pane .create-server-banner .play-with-others-text span:after, #rbx-private-servers .section-content-off:before, #rbx-private-servers .section-content-off:after {
+			.tab-pane .create-server-banner .play-with-others-text:before, .tab-pane .create-server-banner .play-with-others-text span:before, .tab-pane .create-server-banner .play-with-others-text span:after, #rbx-private-servers .section-content-off:not(.empty-game-instances-container):before, #rbx-private-servers .section-content-off:not(.empty-game-instances-container):after {
 				font-size: 12px;
 				font-weight: 400;
 			}
-			.tab-pane .create-server-banner .play-with-others-text .text-link, #rbx-private-servers .section-content-off .text-link:after {
+			.tab-pane .create-server-banner .play-with-others-text .text-link, #rbx-private-servers .section-content-off:not(.empty-game-instances-container) .text-link:after {
 				font-size: 12px;
 				font-weight: 500;
 			}
