@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230426.1.2.9.39
+@version      20230427.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -4556,15 +4556,15 @@
 			cursor: text;
 		}
 
-		.tab-pane .create-server-banner .play-with-others-text {
+		.create-server-banner .play-with-others-text {
 			font-size: 0px;
 			height: 44.78px
 		}
-		.game-instances .create-server-banner .play-with-others-text {
+		.game-instances .create-server-banner .play-with-others-text, #running-game-instances-container .create-server-banner .play-with-others-text {
 			height: 22.39px
 		}
 
-		.tab-pane .create-server-banner .play-with-others-text:before {
+		.create-server-banner .play-with-others-text:before {
 			content: 'Visit this game with friends and other people you invite.';
 			font-size: 16px;
 			& when (@SourceSansPro = 0) {
@@ -4576,11 +4576,11 @@
 			line-height: 1.4em;
 			cursor: text;
 		}
-		.tab-pane .create-server-banner .play-with-others-text .text-link {
+		.create-server-banner .play-with-others-text .text-link {
 			font-size: 16px;
 			line-height: 0.5em;
 		}
-		.tab-pane .create-server-banner .play-with-others-text span:before {
+		.create-server-banner .play-with-others-text span:before {
 			content: 'See all your vip servers in the ';
 			font-size: 16px;
 			& when (@SourceSansPro = 0) {
@@ -4592,7 +4592,7 @@
 			line-height: 0.5em;
 			cursor: text;
 		}
-		.tab-pane .create-server-banner .play-with-others-text span:after {
+		.create-server-banner .play-with-others-text span:after {
 			content: ' tab.';
 			font-size: 16px;
 			& when (@SourceSansPro = 0) {
@@ -4690,18 +4690,18 @@
 			}
 		}
 		@media (max-width: 543px) {
-			.tab-pane .create-server-banner .play-with-others-text:before, .tab-pane .create-server-banner .play-with-others-text span:before, .tab-pane .create-server-banner .play-with-others-text span:after, #rbx-private-servers .section-content-off:not(.empty-game-instances-container):before, #rbx-private-servers .section-content-off:not(.empty-game-instances-container):after {
+			.create-server-banner .play-with-others-text:before, .create-server-banner .play-with-others-text span:before, .create-server-banner .play-with-others-text span:after, #rbx-private-servers .section-content-off:not(.empty-game-instances-container):before, #rbx-private-servers .section-content-off:not(.empty-game-instances-container):after {
 				font-size: 12px;
 				font-weight: 400;
 			}
-			.tab-pane .create-server-banner .play-with-others-text .text-link, #rbx-private-servers .section-content-off:not(.empty-game-instances-container) .text-link:after {
+			.create-server-banner .play-with-others-text .text-link, #rbx-private-servers .section-content-off:not(.empty-game-instances-container) .text-link:after {
 				font-size: 12px;
 				font-weight: 500;
 			}
-			.tab-pane .create-server-banner .play-with-others-text {
+			.create-server-banner .play-with-others-text {
 				height: 33.59px
 			}
-			.tab-pane .create-server-banner .play-with-others-text {
+			.game-instances .create-server-banner .play-with-others-text, #running-game-instances-container .create-server-banner .play-with-others-text {
 				height: 16.8px
 			}
 		}
