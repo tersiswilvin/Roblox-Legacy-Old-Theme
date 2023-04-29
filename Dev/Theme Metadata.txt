@@ -109,14 +109,6 @@ Theme Links Used {
     Loading : https://images.rbxcdn.com/4bed93c91f909002b1f17f05c0ce13d1-loading.gif
 }
 
-Websites Used {
-    CodePen (https://codepen.io)
-    WayBack Machine (https://web.archive.org)
-    YouTube (https://www.YouTube.com)
-}
-
-Special thanks to friends who helped me.
-
 == Theme Default Settings ==
 
 Variables (@var) {
