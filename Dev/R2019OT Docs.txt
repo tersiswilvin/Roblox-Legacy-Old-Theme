@@ -1,0 +1,50 @@
+/*=={ 2019 Old Theme Dev Documents }==*/
+
+/*|=={ Master Discord Announcement }==|*/
+
+@Theme Updates
+
+:info: Release 1.2.9.39 is available.
+
+What's new :
+
+Added back events text on the sidebar.
+Added Legacy Background Color option.
+Added Premium To BC option.
+Added Style Guide Text back to 2016 styleguide.
+Added Toggleable Brighter Dark Theme colors option.
+App bumper now syncs with settings.
+Re-added VIP Server text swap (Toggleable via Remove Updates).
+Removed Events container (Toggleable via Remove Updates).
+Reverted Roblox Help button changes.
+Improved chat for more accuracy.
+Improved SourceSansPro (Thanks Aubymori).
+
+/*|==={ Experimental Discord Announcement }===|*/
+
+@Experimental Updates
+
+:info: Prerelease -.-.-.- beta - is available.
+
+What's new :
+
+/*/=={{ Legend }}==/*/
+
+/*/=={ Headers }==/*/
+/*|=={ Secondary Headers }==|*/
+
+-- Comments --
+
+YYYYMM(I.E : 197001) -- (Default 1) --
+YYYYMA(I.E : 1970E) -- (Default 2) --
+||||||
+|||||\_ Alt
+||||\__ Month
+|||\___ Year
+||\____ Year
+|\_____ Year
+\______ Year
+
+Y => Year (I.E : 1970(70))
+M => Month (I.E : January(J))
+MA => Month Alt (I.E : Early(E), Mid(M), Late(L))
