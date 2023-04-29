@@ -9,7 +9,7 @@
 ## Installation
 
 If you don't have [stylus](https://add0n.com/stylus.html) already installed, you can get it here :
-- [Chromium Base Browsers](//chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+- [Chromium Based Browsers](//chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 - [FireFox](//addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 - <s>[Opera](//addons.opera.com/extensions/details/stylus/)</s>
 
