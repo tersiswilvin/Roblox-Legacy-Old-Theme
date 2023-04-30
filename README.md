@@ -14,7 +14,7 @@ If you don't have stylus already installed, you can get it here :
 - [FireFox](//addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 - <s>[Opera](//addons.opera.com/extensions/details/stylus/)</s>
 
-Pick the browser your going to install it to and then click add, once you go through the main installation needed, go to [here](//userstyles.world/style/5399/), find and click on the blue "Install" button, and you should then be brought to another page where you can customize the theme to your liking if needed, once done, find and click the gray "Install Style" button to install the theme.
+Pick the browser your going to install it to and then click add, once you go through the main installation needed, go [here](//userstyles.world/style/5399/) and click on the blue "Install" button, you should then be brought to another page where you can customize the theme to your liking, once you're done, click the gray "Install Style" button to install the theme.
 
 ## Issues
 
