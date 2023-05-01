@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230427.1.2.9.39
+@version      20230430.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -16,6 +16,7 @@
 @var          select   SiteCurrency                "Currency Brand Style"           ["Robux*","Tickets"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"    0
 @var          checkbox fiveColumn                  "Five column in Avatar Editor."  1
+@var          select   greetingTxt                 "Greeting Text Style"            ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                ["Pre-2018", "2019E", "2019M*", "2019L"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Styleguide Buttons"      0
 @var          checkbox LegacyFooterText            "Old Footer Text (Brand Synced)" 0
@@ -94,12 +95,6 @@
         box-shadow: inset 4px 0 0 0 #00a2ff;
         cursor: pointer;
     }
-    
-    .rogold .home-container h1 .avatar-card-fullbody, .rogold .home-container h1 .avatar-card-fullbody .icon-placeholder-avatar-headshot {
-        width: 150px !important;
-        height: 150px !important;
-        margin-right: 24px !important;
-    }
 	
 	/*
 	.user-info-container .user-name-container a:before {
@@ -109,9 +104,24 @@
 	    content: '!';
 	}
 	*/
-	.rogold .user-name-container:after {
-        content: "!";
-    }
+	& when (@greetingTxt = Hello) {
+		.user-info-container .user-name-container a:before, .rogold .user-name-container:before {
+			content: "Hello, ";
+		}
+	}
+	& when (@greetingTxt = Exclamation) {
+		.user-info-container .user-name-container a:after, .rogold .user-name-container:after {
+			content: '!';
+		}
+	}
+	& when (@greetingTxt = HelloExclamation) {
+		.user-info-container .user-name-container a:before, .rogold .user-name-container:before {
+			content: "Hello, ";
+		}
+		.user-info-container .user-name-container a:after, .rogold .user-name-container:after {
+			content: '!';
+		}
+	}
     .light-theme.rogold .home-container h1 .avatar-card-fullbody .icon-placeholder-avatar-headshot img {
         background-color: #d1d1d1 !important;
     }
@@ -124,10 +134,10 @@
 		width: 100%;
 		margin-bottom: 12px;
 	}
-	.home-header .avatar {
+	.home-header .avatar, .rogold .home-container .section:not(.home-friends) .avatar {
 		margin-right: 24px;
 	}
-	.home-header .avatar, .home-header .user-info-container {
+	.home-header .avatar, .home-header .user-info-container, .rogold .home-container .section:not(.home-friends) .avatar, .rogold .home-container .section:not(.home-friends) .user-name-container {
 		float: left;
 	}
 	.user-avatar-container {
@@ -143,9 +153,29 @@
 	.user-info-container h1 {
 		margin: 36px 0 12px;
 	}
-	.user-info-container h1 {
+	
+	.rogold .home-container .section:not(.home-friends) .container-header {
+		margin: 0 0 12px;
+	}
+	.rogold .home-container .section:not(.home-friends) h1 {
+		display: block !important;
+		margin-bottom: 0 !important;
+	}
+	.rogold .home-container .section:not(.home-friends) .avatar-card-fullbody, .rogold .home-container .section:not(.home-friends) .icon-placeholder-avatar-headshot {
+		width: 150px !important;
+		height: 150px !important;
+	}
+	.rogold .user-name-container {
+		width: 75%;
+		width: calc(100% - 180px - 36px);
+		margin: 36px 0 12px;
+		padding: 5px 0;
+		position: relative;
+	}
+	.user-info-container h1, .rogold .user-name-container {
 		margin-top: 60px;
 	}
+	
 	@media (max-width: 991px) {
 		.home-header .avatar {
 			height: 120px;
@@ -157,7 +187,20 @@
 		.user-info-container h1 {
 			margin: 12px 0 6px;
 		}
-		.user-info-container h1 {
+		.rogold .home-container .section:not(.home-friends) .container-header {
+			padding: 0;
+		}
+		.rogold .home-container .section:not(.home-friends) .avatar-card-fullbody, .rogold .home-container .section:not(.home-friends) .icon-placeholder-avatar-headshot {
+			height: 120px !important;
+			width: 120px !important;
+		}
+		.rogold .user-name-container {
+			width: 75%;
+			width: calc(100% - 120px - 36px);
+			margin: 12px 0 6px;
+			padding: 5px 15px;
+		}
+		.user-info-container h1, .rogold .user-name-container {
 			margin-top: 36px;
 		}
 	}
@@ -165,7 +208,7 @@
 		.user-info-container {
 			width: 100%;
 		}
-		.home-header .avatar {
+		.home-header .avatar, .rogold .home-container .section:not(.home-friends) .avatar {
 			display: none;
 		}
 		.user-info-container h1, .user-info-container span[class^="icon"] {
@@ -176,6 +219,11 @@
 			max-width: 80%;
 			max-width: calc(100% - 52px - 12px);
 		}
+		.rogold .user-name-container {
+			float: left;
+			margin: 12px 0;
+			width: 100%;
+		}
 	}
 	@media (max-width: 543px) {
 		.user-info-container {
@@ -184,6 +232,11 @@
 		.user-info-container h1, .user-info-container span[class^="icon"] {
 			float: none;
 			margin: 6px 0;
+		}
+		.rogold .user-name-container {
+			float: none;
+			margin: 6px 0;
+			width: 100%;
 		}
 	}
     

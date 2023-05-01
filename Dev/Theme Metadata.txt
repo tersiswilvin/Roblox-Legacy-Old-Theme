@@ -137,6 +137,11 @@ Variables (@var) {
         Description : "Five column in Avatar Editor."
         Value : 1
     }
+    greetingTxt {
+        Type : checkbox
+        Description : "Greeting Text Style"
+        Value : None (Default), Hello, HelloExclamation, Exclamation
+    }
     CardStyle {
         Type : select
         Description : "Item Card Style"
