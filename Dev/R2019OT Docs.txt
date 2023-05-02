@@ -9,7 +9,8 @@
 What's new :
 
 Added back events text on the sidebar.
-Added Legacy Background Color option.
+Added Greeting Text option.
+Added Legacy Profile Background Color option.
 Added Premium To BC option.
 Added Style Guide Text back to 2016 styleguide.
 Added Toggleable Brighter Dark Theme colors option.
