@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230430.1.2.9.39
+@version      20230502.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -4556,6 +4556,15 @@
             .rbx-header .rbx-navbar li a[href="/discover"]:after, .rbx-header .rbx-navbar li a[href="/catalog"]:after {
                 line-height: 16px;
             }
+			.avatar-editor-header .catalog-header div:nth-child(n+1):after {
+				font-size: 12px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+				}
+			}
         }
         .catalog-container .search-bars h1 a {
             font-size: 0px;
