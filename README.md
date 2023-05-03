@@ -9,16 +9,16 @@ For upcoming updates and features you may try out the [experimental](//github.co
 
 ## Installation
 
-If you don't have stylus already installed, you can get it here :
+If you don't have stylus already installed, you can get it here for your browser :
 - [Chromium Based Browsers](//chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 - [FireFox](//addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 - <s>[Opera](//addons.opera.com/extensions/details/stylus/)</s>
 
-Pick the browser your going to install it to and then click add, once you go through the main installation needed, go [here](//userstyles.world/style/5399/) and click on the blue "Install" button, you should then be brought to another page where you can customize the theme to your liking, once you're done, click the gray "Install Style" button to install the theme.
+To install stylus, click the blue "Install/Get/Add" button, if you get a popup prompting to install stylus click "Add" (if you get another popup that it was successful click okay or the X button). Once stylus is installed on your browser go to this [page](//userstyles.world/style/5399/), on the themes page click the blue "Install" button which should take you to the Install page, here you can customize the theme to your choosing, once done, click the gray "Install Style" button and your done, you can confirm it's installed by going on [roblox.com](//roblox.com/).
 
 ## Issues
 
-Please report any bugs/issues you find in [Issues](//github.com/tersiswilvin/Roblox-2019-Old-Theme/issues) or on the themes [userstyles.world](//userstyles.world/style/5399/) page, please make sure to include what browser you're were using at that time, the page you were on and any helpful explinations to recreate the bug/issue.
+Please report any issues you find in [Issues](//github.com/tersiswilvin/Roblox-2019-Old-Theme/issues) or on the themes userstyles.world [page](//userstyles.world/style/5399/), please include what browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
 
 ## Credits
 
