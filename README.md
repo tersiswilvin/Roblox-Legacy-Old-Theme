@@ -26,7 +26,7 @@ For upcoming updates and features you may try out the [experimental](//github.co
      - Ropro
      - Rogold
 - Supports both Light & Dark themes.
-- Supports mobile/touchscreens.
+- Supports touchscreen.
 
 ## Installation
 
