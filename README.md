@@ -7,6 +7,27 @@ For upcoming updates and features you may try out the [experimental](//github.co
     <img src="Dev/Master/Thumbnails/Outputs/2019ROT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
 </p>
 
+## Features
+- Customizable :
+     - Badge Styles.
+     - Box Shadows.
+     - Currency Brand Style.
+     - Five Column Avatar Editor.
+     - Item Cards.
+     - Site Brand Styles.
+     - Play Button Styles.
+     - Remove Updates.
+     - Signup page Styles.
+     - Source Sans Pro.
+     - (And many more).
+- Extension support :
+     - Btroblox
+     - Roblox+
+     - Ropro
+     - Rogold
+- Supports both Light & Dark themes.
+- Supports mobile/touchscreens.
+
 ## Installation
 
 If you don't have stylus already installed, you can get it here for your browser :
