@@ -1025,7 +1025,12 @@
         color: #f2f2f2;
         font-size: 12px;
         padding: 6px;
-        line-height: 1.3em;
+		& when (@SourceSansPro = 0) {
+			line-height: 1.4em;
+		}
+		& when (@SourceSansPro = 1) {
+			line-height: 1.3em;
+		}
         max-width: 200px;
         min-width: 150px;
         font-weight: 400;
@@ -1038,7 +1043,12 @@
         color: #0D0D0D;
         font-size: 12px;
         padding: 6px;
-        line-height: 1.3em;
+        & when (@SourceSansPro = 0) {
+			line-height: 1.4em;
+		}
+		& when (@SourceSansPro = 1) {
+			line-height: 1.3em;
+		}
         max-width: 200px;
         min-width: 150px;
         font-weight: 400;
@@ -4740,7 +4750,7 @@
 			}
 			cursor: text;
 		}
-		.create-server-banner .rbx-private-server-create .rbx-private-server-create-disabled-text {
+		.create-server-banner .rbx-private-server-create .rbx-private-server-create-disabled-text, #private-server-tooltip .tooltip-inner {
 			&, &:hover, &:focus, &:active {
 				font-size: 0
 			}
@@ -4757,6 +4767,17 @@
 			}
 			line-height: 1.4em;
 			cursor: text;
+		}
+		#private-server-tooltip .tooltip-inner:after {
+			content: 'VIP servers let you visit this game privately with friends or people you invite!';
+			font-size: 12px;
+			font-weight: 400;
+			& when (@SourceSansPro = 0) {
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				line-height: 1.3em;
+			}
 		}
 		@media (max-width: 767px) {
 			#rbx-private-servers .container-header h2:after {
