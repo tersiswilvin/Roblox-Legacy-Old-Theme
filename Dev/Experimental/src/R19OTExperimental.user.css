@@ -4325,6 +4325,7 @@
             content: 'Games';
             font-size: 20px;
             line-height: 1em;
+			cursor: text;
         }
     
         #btr-games .rbx-tab-heading span {
@@ -4430,6 +4431,7 @@
             content: "Games";
             font-size: 20px;
             line-height: 1em;
+			cursor: text;
         }
         @media (max-width: 767px) {
             .profile-container .profile-game h3:after {
