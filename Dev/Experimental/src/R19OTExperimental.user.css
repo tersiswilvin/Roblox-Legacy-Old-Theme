@@ -11998,7 +11998,7 @@
         }
     }
     
-    .cd-top, .activity, .footer a:nth-child(3) {
+    .cd-top, .activity, .footer a:nth-child(3), .article-promoted svg.icon-star {
         display: none;
     }
     
@@ -12116,7 +12116,20 @@
     .article-vote-down::before {
         content: "\2715";
     }
-    
+
+	.article-promoted:before {
+		content: "\2605";
+		font-size: 18px;
+		color: #00a2ff;
+		font-family: "copenhagen-icons";
+		font-style: normal;
+		font-weight: normal;
+		speak: none;
+		line-height: 1em;
+		vertical-align: middle;
+		-webkit-font-smoothing: antialiased;
+	}
+	
     @media (max-width: 1000px) {
         .footer-inner {
             margin: 0 15px;
@@ -12140,8 +12153,7 @@
 		font-size: 8px;
 		margin-right: 10px;
 	}
-	
-    }
+}
     
     @-moz-document url("https://en.help.roblox.com/hc/en-us"), url("https://en.help.roblox.com/hc/de"), url("https://en.help.roblox.com/hc/fr"), url("https://en.help.roblox.com/hc/it"), url("https://en.help.roblox.com/hc/es"), url("https://en.help.roblox.com/hc/ja"), url("https://en.help.roblox.com/hc/ko"), url("https://en.help.roblox.com/hc/pt-br"), url("https://en.help.roblox.com/hc/ru"), url("https://en.help.roblox.com/hc/zh-cn"), url("https://en.help.roblox.com/hc/zh-tw") {
     /*/Secondary Help Page/*/
