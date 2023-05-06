@@ -6923,23 +6923,32 @@
         opacity: 1;
         font-weight: 500;
     }
-    
-    .groups-list .menu-vertical-container .menu-vertical:nth-child(2) {
-        margin-bottom: 0;
-    }
-    .groups-list .menu-vertical-container .rbx-divider, .group-details-container .see-all-container-header a {
-        display: none;
-    }
-    
-    @media (min-width: 768px) {
-        .groups-list {
-            width: 160px;
-            margin-right: 10px;
-        }
-    }
-    .groups-list .menu-vertical-container {
-        padding: 0;
-    }
+	
+	.groups-list .rbx-divider {
+		display: none;
+	}
+	@media (min-width: 768px) {
+		.groups-list .menu-vertical-container .menu-vertical, .groups-list.col-sm-3 {
+			width: 160px;
+			margin-right: 10px
+		}
+		.groups-list .menu-vertical-container {
+			padding: 0;
+		}
+		.group-details {
+			max-width: calc(100% - 160px - 10px);
+			width: calc(100% - 160px - 10px);
+		}
+		.group-details-container-desktop-and-tablet {
+			max-width: 1080px;
+		}
+	}
+	.groups-list .menu-dropdown-container .group-cards, .groups-list .menu-vertical-container .group-cards {
+		margin-bottom: 10px;
+	}
+	.groups-list .menu-vertical-container .group-cards:nth-child(2) {
+		margin: 0
+	}
     
     .light-theme .theme-bg {
         background-color: #e3e3e3;
