@@ -8226,6 +8226,7 @@
 		width: auto;
 		height: auto;
 		padding: 4px;
+		min-width: auto;
 	}
 	
     .new-notification-stream-2022 .notification-stream-body .notification-stream-data .notification-stream-scrollbar .notification-stream-list .notification-stream-item .notification-item-content, .new-notification-stream-2022 .notification-stream-body .notification-stream-data .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper .notification-item-content {
