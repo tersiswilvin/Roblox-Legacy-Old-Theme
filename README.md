@@ -8,7 +8,7 @@ For upcoming updates and features you may try out the [experimental](//github.co
 </p>
 
 ## Features
-- Hightly Customizable :
+- Highly Customizable :
      - Badge Styles.
      - Box Shadows.
      - Currency Brand Style.
