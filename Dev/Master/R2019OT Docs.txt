@@ -11,14 +11,6 @@ What's new :
 Added Site Curency option.
 Changed avatar shop (Marketplace) to catalog in avatar editor (Toggleable).
 
-/*|==={ Experimental Discord Announcement }===|*/
-
-@Experimental Updates
-
-:info: Prerelease -.-.-.- beta - is available.
-
-What's new :
-
 /*/=={{ Legend }}==/*/
 
 /*/=={ Headers }==/*/

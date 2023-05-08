@@ -1,10 +1,10 @@
 /*=={ 2019 Old Theme Dev Documents }==*/
 
-/*|=={ Master Discord Announcement }==|*/
+/*|==={ Experimental Discord Announcement }===|*/
 
-@Theme Updates
+@Experimental Updates
 
-:info: Release 1.3 is available.
+:info: Prerelease 1.3 is available.
 
 What's new :
 
@@ -20,14 +20,6 @@ Removed Events container (Toggleable via Remove Updates).
 Reverted Roblox Help button changes.
 Improved chat for more accuracy.
 Improved SourceSansPro (Thanks Aubymori).
-
-/*|==={ Experimental Discord Announcement }===|*/
-
-@Experimental Updates
-
-:info: Prerelease -.-.-.- beta - is available.
-
-What's new :
 
 /*/=={{ Legend }}==/*/
 
