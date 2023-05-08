@@ -8,7 +8,7 @@ For upcoming updates and features you may try out the [experimental](//github.co
 </p>
 
 ## Features
-- Customizable :
+- Hightly Customizable :
      - Badge Styles.
      - Box Shadows.
      - Currency Brand Style.
@@ -26,7 +26,8 @@ For upcoming updates and features you may try out the [experimental](//github.co
      - Ropro
      - Rogold
 - Supports both Light & Dark themes.
-- Supports touchscreen.
+- Supports low resolution devices.
+- Supports touchscreen devices.
 
 ## Installation
 
