@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230506.1.2.9.39
+@version      20230507.1.2.9.39
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
 @author       tersiswilvin
@@ -1574,23 +1574,48 @@
         background-position: -28px -980px;
     }
     
-    .rbx-header .rbx-navbar-icon-group .age-bracket-label {
-        color: #fff;
-        padding-top: 13px;
-        margin-right: 6px;
-        font-size: 10px;
-        font-weight: 500;
-    }
+	.rbx-header .rbx-navbar-icon-group .age-bracket-label {
+		display: inline-block;
+		float: left;
+		color: #fff;
+		padding-top: 13px;
+		margin-right: 6px;
+		& when (@SourceSansPro = 0) {
+			font-size: 10px;
+			font-weight: 500;
+		}
+		& when (@SourceSansPro = 1) {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
     
     .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username {
-        margin-right: 4px;
+        margin-right: 0;
     }
     .xsmall.age-bracket-label-age.text-secondary, .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username, .rbx-header .rbx-navbar-icon-group .age-bracket-label .dynamic-overflow-container  {
         color: inherit;
+		display: inline;
+		& when (@SourceSansPro = 1) {
+			font-size: 12px;
+			font-weight: 400;
+		}
     }
     
+	.rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:before, .light-theme .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:before {
+		content: '@';
+		color: #0074bd;
+		background: #0074bd;
+		display: inline-block;
+		position: absolute;
+		cursor: auto;
+	}
+	.dark-theme .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:before {
+		color: #000;
+		background: #000;
+	}
     .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:after {
-        content:":"
+        content: ": "
     }
     .age-bracket-label.text-header .text-link.dynamic-overflow-container:hover, .age-bracket-label.text-header .text-link.dynamic-overflow-container:focus {
         text-decoration: none;
@@ -2486,6 +2511,9 @@
     }
     
     & when (@fiveColumn = 1) {
+		.right-panel.six-column {
+			width: 670px;
+		}
         #accessories-dropdown {
             display: none;
         }
@@ -7691,6 +7719,12 @@
         background-color: #000;
     }
     
+	@media (max-width: 1199px) {
+		.touch .game-card-container:hover {
+			height: auto;
+		}
+	}
+	
     .game-grid {
         display: block;
     }
@@ -8437,25 +8471,25 @@
     }
     
     .light-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .light-theme .signup-container .fake-input-lg {
-      background-color: #fff;
-      color: #191919;
-      font-size: 16px;
-      height: 38px;
-      background-position-y: 5px;
+		background-color: #fff;
+		color: #191919;
+		font-size: 16px;
+		height: 38px;
+		background-position-y: 5px;
     }
     .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .dark-theme .signup-container .fake-input-lg {
-      & when (@forcesignuplighttheme = 0) {
-        background-color: #000;
-        color: #e6e6e6;
-      }
-      & when (@forcesignuplighttheme = 1) {
-        background-color: #fff;
-        color: #191919;
-      }
-      font-size: 16px;
-      height: 38px;
-      background-position-y: 5px;
-    }
+		& when (@forcesignuplighttheme = 0) {
+			background-color: #000;
+			color: #e6e6e6;
+		}
+		& when (@forcesignuplighttheme = 1) {
+			background-color: #fff;
+			color: #191919;
+		}
+		font-size: 16px;
+		height: 38px;
+		background-position-y: 5px;
+	}
     
     .signup-container .gender-button:focus {
       border: 0 solid transparent !important;
