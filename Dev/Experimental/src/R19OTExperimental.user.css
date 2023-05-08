@@ -4983,8 +4983,14 @@
 				font-size: 12px;
 			}
 		}
+		.gotham-font .game-card-experimental, .gotham-font .game-card-name-secondary {
+			&, &:active, &:focus, &:hover {
+				font-size: 12px;
+				font-weight: 400;
+			}
+		}
         .gotham-font .xsmall, .gotham-font .item-card-label, .gotham-font .text-date-hint, .gotham-font .text-date-hint {
-			&:active, &:focus, &:hover, &:visited, &:link {
+			&, &:active, &:focus, &:hover, &:visited, &:link {
 				font-size: 10px;
 				font-weight: 400;
 			}
