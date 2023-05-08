@@ -4895,6 +4895,46 @@
         .gotham-font, .gotham-font .h1, .gotham-font .h2, .gotham-font .h3, .gotham-font .h4, .gotham-font .h5, .gotham-font .h6, .gotham-font h1, .gotham-font h2, .gotham-font h3, .gotham-font h4, .gotham-font h5, .gotham-font h6, .gotham-font .text, .gotham-font body, .gotham-font button, .gotham-font html, .gotham-font input, .gotham-font pre, .gotham-font select, .gotham-font textarea, 	.gotham-font.chat-container .btn-control-xs, .gotham-font .chat-container .btn-control-xs, .gotham-font.chat-container .chat-search-input, .gotham-font .chat-container .chat-search-input, .gotham-font .chat-main .btn-control-md, .gotham-font .create-chat-container .select-friends-btns .select-friends-cancel, .gotham-font .create-chat-container .select-friends-btns .select-friends-save, .gotham-font .details-btns-fixed button, .gotham-font .details-btns button, .gotham-font .details-container .details-input, .gotham-font .details-header-container .details-input, .gotham-font .dialog-container .dialog-input, .gotham-font .game-item-container .game-btn, .gotham-font .group-dialog .group-name-editor .group-name-input, .gotham-font .group-dialog .group-name-editor .group-name-save, .gotham-font .group-dialog .play-together-game-editor .group-name-input, .gotham-font .group-dialog .play-together-game-editor .group-name-save, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details .text-name span {
             font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
         }
+		
+		.gotham-font h1, .gotham-font .h1 {
+			font-size: 36px;
+			font-weight: 400
+		}
+		.gotham-font h2, .gotham-font .h2 {
+			font-size: 30px;
+			font-weight: 400
+		}
+		.gotham-font h3, .gotham-font .h3, .container-header h2 {
+			font-size: 24px;
+			font-weight: 300
+		}
+		.gotham-font h4, .gotham-font .h4 {
+			font-size: 21px;
+			font-weight: 400
+		}
+		.gotham-font h5, .gotham-font .h5 {
+			font-size: 18px;
+			font-weight: 400
+		}
+		
+		@media (max-width: 767px) {
+			.gotham-font h1, .gotham-font .h1 {
+				font-size:30px
+			}
+			.gotham-font h2, .gotham-font .h2 {
+				font-size:24px
+			}
+			.gotham-font h3, .gotham-font .h3, .container-header h2 {
+				font-size:21px
+			}
+			.gotham-font h4, .gotham-font .h4 {
+				font-size:18px
+			}
+			.gotham-font h5, .gotham-font .h5 {
+				font-size:16px
+			}
+		}
+		
         .gotham-font .text-robux-lg {
             font-size: 24px;
             font-weight: 400;
@@ -4939,23 +4979,23 @@
 				font-size: 12px;
 			}
 		}
-        .gotham-font .xsmall, .gotham-font .xsmall:active, .gotham-font .xsmall:focus, .gotham-font .xsmall:hover, .gotham-font .item-card-label, .gotham-font .text-date-hint, .gotham-font .text-date-hint:active, .gotham-font .text-date-hint:focus, .gotham-font .text-date-hint:hover, .gotham-font .text-date-hint:link, .gotham-font .text-date-hint:visited {
-            font-size: 10px;
-            font-weight: 400;
+        .gotham-font .xsmall, .gotham-font .item-card-label, .gotham-font .text-date-hint, .gotham-font .text-date-hint {
+			&:active, &:focus, &:hover, &:visited, &:link {
+				font-size: 10px;
+				font-weight: 400;
+			}
         }
 		.chat-friend-message span.read {
 			font-weight: 700;
 		}
-        .gotham-font .font-title, .gotham-font .h1, .gotham-font h1, .gotham-font h4, .gotham-font h5, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-label, .gotham-font .text-label:active, .gotham-font .text-label:hover {
-            font-weight: 400;
+        .gotham-font .font-title, .gotham-font .text-name, .gotham-font .text-label {
+			&, &:active, &:hover, &:link {
+				font-weight: 400;
+			}
         }
 		.font-header-2 {
-            &, .gotham-font & {
-                &,
-                &:active,
-                &:hover,
-                &:link,
-                &:visited {
+            .gotham-font & {
+                &, &:active, &:hover, &:link, &:visited {
                     font-weight: 400;
                 }
             }
@@ -4966,9 +5006,6 @@
         }
         .gotham-font h2, .gotham-font h3, .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .robux-page .page-content > .robux-table .robux-body::before, .gotham-font .text-name, .gotham-font .text-name:active, .gotham-font .text-name:hover, .gotham-font .text-name:link, .gotham-font .text-name:visited, #navbar-search-input {
             font-weight: 300;
-        }
-        .gotham-font h6 {
-            font-weight: bold
         }
         .gotham-font .game-name-title {
             line-height: 22px;
