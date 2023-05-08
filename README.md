@@ -26,7 +26,7 @@ For upcoming updates and features you may try out the [experimental](//github.co
      - Ropro
      - Rogold
 - Supports both Light & Dark themes.
-- Supports low resolution devices & high PPI (Pixels Per Inch) monitors.
+- Supports low resolution devices & high PPI/DPI (Pixels Per Inch/Dots Per Inch) monitors.
 - Supports touchscreen devices.
 
 ## Installation
