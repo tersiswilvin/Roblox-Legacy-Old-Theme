@@ -2727,6 +2727,10 @@
         height: 32px;
         width: 160px;
     }
+	.chat-container.collapsed .chat-header .chat-header-title {
+		width: auto;
+		height: 32px;
+	}
 	.chat-main .chat-body {
 		height: 328px;
 	}
