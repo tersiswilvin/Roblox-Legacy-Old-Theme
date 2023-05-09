@@ -2965,7 +2965,26 @@
         float: left;
         width: 33%;
     }
+	
+	.profile-header .header-caption .header-details .details-info:has(li:nth-child(4)) li {
+		width: 25%
+	}
+	.profile-header .header-caption .header-details .details-info:has(li:nth-child(5)) li {
+		width: 20%
+	}
+	.profile-header .header-caption .header-details .details-info:has(li:nth-child(6)) li:nth-child(1n+6) {
+		display: none !important
+	}
     
+	@media (max-width: 990px) and (min-width: 768px) {
+		.profile-header .header-caption .header-details .details-info:has(li:nth-child(4)) li:nth-child(1n+4) {
+			display: none !important;
+		}
+		.profile-header .header-caption .header-details .details-info:has(li:nth-child(4)) li {
+			width: 33%
+		}
+	}
+	
     .profile-header .header-details .details-info li, .profile-header .header-details .details-actions li {
         text-align: center;
     }
@@ -11849,9 +11868,24 @@
     /*/ RoPro /*/
     
     #reputationDiv {
-        top: 55px;
+		& when (@SourceSansPro = 0) {
+			top: 55px;
+		}
+		& when (@SourceSansPro = 1) {
+			margin-top: 12px !important;
+			top: 52px;
+		}
         position: absolute;
     }
+	& when (@SourceSansPro = 1) {
+		#discordLink img, #reputationLikeButton img {
+			height: 16px
+		}
+		#discordLink #discordName, #reputationLikeButton #repValue {
+			height: 16px !important;
+			font-size: 10px
+		}
+	}
     @media (max-width: 992px) {
         #reputationDiv {
             display: none;
@@ -12015,6 +12049,8 @@
 		mask-repeat: no-repeat;
 		-webkit-mask-position: 1px 2px;
 		mask-position: 1px 2px;
+		-webkit-mask-size: 95%;
+		mask-size: 95%;
     }
 	.dark-theme .themes-icon .new-menu-icon {
         background-image: none;
@@ -12025,6 +12061,8 @@
 		mask-repeat: no-repeat;
 		-webkit-mask-position: 1px 2px;
 		mask-position: 1px 2px;
+		-webkit-mask-size: 95%;
+		mask-size: 95%;
 		filter: none;
     }
 	.light-theme .themes-icon:hover .new-menu-icon, .dark-theme .themes-icon:hover .new-menu-icon {
@@ -12081,6 +12119,17 @@
         height: 187px !important;
     }
     
+	.profile-header .header-caption .header-details .details-info li[style="float: left;display: flex;align-items: center;flex-direction: row-reverse;padding-right: 15px;"] {
+		float: left !important;
+		display: block !important;
+		align-items: normal !important;
+		flex-direction: revert !important;
+		padding: 0 5px !important;
+	}
+	.profile-header .header-caption .header-details .details-info li .font-header-2[style="padding-right: 5px;"] {
+		padding-right: 0 !important;
+	}
+	
     /*/RoGold/*/
     
     .light-theme.rogold #nav-Transactions .icon-nav-giftcards {
