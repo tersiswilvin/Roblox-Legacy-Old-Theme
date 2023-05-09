@@ -607,11 +607,19 @@
     }
     .light-theme .notification-red, .dark-theme .notification-red {
         background-color: #e2231a;
-        color: #fff;
+		& when (@SourceSansPro = 1) {
+			font-size: 12px;
+			font-weight: 500;
+		}
+		color: #fff;
     }
     .light-theme .notification-blue, .dark-theme .notification-blue {
         background-color: #00a2ff;
-        color: #fff;
+		& when (@SourceSansPro = 1) {
+			font-size: 12px;
+			font-weight: 500;
+		}
+		color: #fff;
     }
     .light-theme .sg-section {
         background-color: #fff;
