@@ -1,4 +1,4 @@
-/*=={ 2019 Old Theme Dev Documents }==*/
+/*=={ Legacy Old Theme Dev Documents }==*/
 
 /*|==={ Experimental Discord Announcement }===|*/
 
@@ -17,6 +17,7 @@ Added Toggleable Brighter Dark Theme colors option.
 App bumper now syncs with site Brand settings.
 Re-added VIP Server text swap (Toggleable via Remove Updates).
 Removed Events container (Toggleable via Remove Updates).
+Removed unnecessary CSS.
 Reverted Roblox Help button changes.
 Improved chat for more accuracy.
 Improved SourceSansPro (Thanks Aubymori).
