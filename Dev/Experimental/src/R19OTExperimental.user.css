@@ -8267,18 +8267,24 @@
         padding-right: 12px;
         float: left;
     }
+	.stack .card-list .card-item .section-header {
+		overflow: visible;
+	}
     .dark-theme .stack .card-list .card-item .game-server-details {
         border-color: #474747;
     }
-    .light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details {
-        border-right: 1px solid #b8b8b8;
-        padding-right: 12px;
+    .light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details, .dark-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details {
+		border-right: none;
+		padding-right: 0;
         margin: 0;
     }
-    .dark-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details {
+	.light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div:not(.link-menu):not(:nth-child(1)), .light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div + span {
+        border-right: 1px solid #b8b8b8;
+        padding-right: 12px;
+    }
+	.dark-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div:not(.link-menu):not(:nth-child(1)), .dark-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div + span {
         border-right: 1px solid #474747;
         padding-right: 12px;
-        margin: 0;
     }
     .stack .card-list .card-item .player-thumbnails-container {
         padding: 0 0 0 5px;
@@ -8291,7 +8297,11 @@
         row-gap: 0;
         max-width: none;
     }
-    
+    .stack .card-list .rbx-private-game-server-item .card-item .player-thumbnails-container {
+		max-width: none;
+		align-self: center;
+	}
+	
     .stack .card-list {
         display: block;
         flex-wrap: wrap;
