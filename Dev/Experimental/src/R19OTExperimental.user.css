@@ -2516,6 +2516,9 @@
         .content.six-column {
             width: 970px;
         }
+		.content.six-column[style="padding: 20px;border-radius: 10px;margin-bottom: 400px;"] {
+            width: 1002px;
+        }
     }
     
     .light-theme .left-wrapper .section-content, .dark-theme .left-wrapper .section-content {
@@ -4608,10 +4611,10 @@
                 font-size: 16px;
             }
         }
-        body:not(.btr-profile) .profile-container .profile-game .list-item:nth-child(1) .text-label:nth-child(1) {
+        body:not(.btr-profile) .profile-container .profile-game #games-switcher .list-item:nth-child(1) .text-label:nth-child(1) {
             font-size: 0;
         }
-        body:not(.btr-profile) .profile-container .profile-game .list-item:nth-child(1) .text-label:nth-child(1):after {
+        body:not(.btr-profile) .profile-container .profile-game #games-switcher .list-item:nth-child(1) .text-label:nth-child(1):after {
             font-size: 16px;
             content: "Playing";
             line-height: 1.4em;
