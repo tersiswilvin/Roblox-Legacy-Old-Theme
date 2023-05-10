@@ -3219,6 +3219,9 @@
         background-color: #0D0D0D;
         box-shadow: inset 4px 0 0 0 #00a2ff;
     }
+	.new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper:hover, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper:hover, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper:hover {
+        box-shadow: inset 4px 0 0 0 #00a2ff;
+    }
     .light-theme .notification-stream-body .container-empty, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .container-empty {
         background-color: #e3e3e3;
     }
