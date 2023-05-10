@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230509.1.3
+@version      20230510.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate & with customizable options.
 @author       tersiswilvin
@@ -684,13 +684,18 @@
         bottom: 0;
         width: 91.5%;
     }
+	.game-card-friend-activity {
+        position: absolute;
+        bottom: 0;
+		width: 100%
+    }
     @media (max-width: 543px) {
         .game-card-native-ad {
             width: 88%;
         }
     }
     
-    .light-theme .game-card-native-ad, .dark-theme .game-card-native-ad {
+    .light-theme .game-card-friend-activity, .light-theme .game-card-native-ad, .dark-theme .game-card-friend-activity, .dark-theme .game-card-native-ad {
         background-color: #00a2ff;
     }
     
@@ -2814,13 +2819,13 @@
     .light-theme .sponsored-game .game-card-native-ad {
         background-color: #b8b8b8;
     }
-    .light-theme .game-card-native-ad .native-ad-label {
+    .light-theme .game-card-friend-activity .friend-activity-label, .light-theme .game-card-friend-activity .native-ad-label, .light-theme .game-card-native-ad .friend-activity-label, .light-theme .game-card-native-ad .native-ad-label {
         color: #fff;
     }
     .dark-theme .sponsored-game .game-card-native-ad {
         background-color: #474747;
     }
-    .dark-theme .game-card-native-ad .native-ad-label {
+    .dark-theme .game-card-friend-activity .friend-activity-label, .dark-theme .game-card-friend-activity .native-ad-label, .dark-theme .game-card-native-ad .friend-activity-label, .dark-theme .game-card-native-ad .native-ad-label {
         color: #000;
     }
     
