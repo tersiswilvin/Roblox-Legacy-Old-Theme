@@ -2533,7 +2533,7 @@
         .content.six-column {
             width: 970px;
         }
-		.content.six-column[style="padding: 20px;border-radius: 10px;margin-bottom: 400px;"] {
+		.ropro-changes .content.six-column {
             width: 1002px;
         }
     }
