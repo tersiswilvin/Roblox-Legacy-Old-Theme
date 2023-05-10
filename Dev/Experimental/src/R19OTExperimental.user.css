@@ -10377,18 +10377,6 @@
             cursor: default;
             pointer-events: all;
         }
-        
-        @media (min-width: 767px) {
-            .inbox-buttons, .inbox-buttons .roblox-messages-btns {
-                overflow: visible;
-            }
-            .message-actions {
-                float: none;
-            }
-            .message-detail {
-                float: left;
-            }
-        }
 		
         .profile-about .section-content::after {
             background: #fff;
