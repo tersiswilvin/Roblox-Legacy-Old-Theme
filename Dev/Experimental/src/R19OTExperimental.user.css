@@ -682,12 +682,25 @@
     .game-card-native-ad {
         position: absolute;
         bottom: 0;
-        width: 91.5%;
+        & when (@CardStyle = Pre-2018) {
+			width: 93%;
+		}
+		& when not (@CardStyle = Pre-2018) {
+			width: 91.5%;
+		}
     }
 	.game-card-friend-activity {
         position: absolute;
         bottom: 0;
-		width: 100%
+		& when (@CardStyle = Pre-2018) {
+			width: 93.5%;
+		}
+		& when (@CardStyle = 2019E) {
+			width: 91.5%;
+		}
+		& when (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+			width: 100%
+		}
     }
     @media (max-width: 543px) {
         .game-card-native-ad {
