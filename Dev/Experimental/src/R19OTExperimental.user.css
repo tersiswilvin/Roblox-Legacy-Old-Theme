@@ -11,7 +11,6 @@
 @preprocessor less
 @var          select   BadgeStyle                  "Badge Style"                    ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                    0
-@var          checkbox LegacyBackgrounds           "  Old Backgrounds"              0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"     0
 @var          select   SiteCurrency                "Currency Brand Style"           ["Robux*","Tickets"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"    0
@@ -3592,10 +3591,10 @@
         height: 100%;
         word-break: break-all;
         vertical-align: top;
-		& when (@LegacyBackgrounds = 0) {
+		& when (@BoxShadows = 0) {
 			background-color: #d1d1d1;
 		}
-		& when (@LegacyBackgrounds = 1) {
+		& when (@BoxShadows = 1) {
 			background-color: #fff;
 		}
     }
@@ -3608,10 +3607,10 @@
         height: 100%;
         word-break: break-all;
         vertical-align: top;
-		& when (@LegacyBackgrounds = 0) {
+		& when (@BoxShadows = 0) {
 			background-color: #2E2E2E;
 		}
-		& when (@LegacyBackgrounds = 1) {
+		& when (@BoxShadows = 1) {
 			background-color: #000;
 		}
     }
@@ -5491,14 +5490,14 @@
     }
     
     .light-theme .icon-default-placeholder, .light-theme .icon-placeholder-asset, .light-theme .icon-placeholder-avatar-fullbody, .light-theme .icon-placeholder-avatar-headshot, .light-theme .icon-placeholder-game {
-		& when (@LegacyBackgrounds = 0) {
+		& when (@BoxShadows = 0) {
 			background-image: url(https://images.rbxcdn.com/48557c5d1a3323e45b2bb315f07004cf-placeholder_10182018.svg);
 		}
-		& when (@LegacyBackgrounds = 1) {
+		& when (@BoxShadows = 1) {
 			background-image: none;
 		}
     }
-	& when (@LegacyBackgrounds = 1) {
+	& when (@BoxShadows = 1) {
 		.dark-theme .icon-default-placeholder, .dark-theme .icon-placeholder-asset, .dark-theme .icon-placeholder-avatar-fullbody, .dark-theme .icon-placeholder-avatar-headshot, .dark-theme .icon-placeholder-game {
 			background-image: none
 		}
@@ -7440,18 +7439,18 @@
     }
     
     .light-theme .avatar-group .avatar-card-image, .light-theme .avatar-group .avatar-card-image {
-        & when (@LegacyBackgrounds = 0) {
+        & when (@BoxShadows = 0) {
 			background-color: #d1d1d1;
 		}
-		& when (@LegacyBackgrounds = 1) {
+		& when (@BoxShadows = 1) {
 			background-color: #fff;
 		}
     }
     .dark-theme .avatar-group .avatar-card-image, .dark-theme .avatar-group .avatar-card-image {
-        & when (@LegacyBackgrounds = 0) {
+        & when (@BoxShadows = 0) {
 			background-color: #2E2E2E;
 		}
-		& when (@LegacyBackgrounds = 1) {
+		& when (@BoxShadows = 1) {
 			background-color: #000;
 		}
     }
