@@ -19,6 +19,7 @@ Re-added VIP Server text swap (Toggleable via Remove Updates).
 Removed Events container (Toggleable via Remove Updates).
 Removed unnecessary CSS.
 Reverted Roblox Help button changes.
+Roblox+ logo now syncs with site Brand settings.
 Improved chat for more accuracy.
 Improved SourceSansPro (Thanks Aubymori).
 
