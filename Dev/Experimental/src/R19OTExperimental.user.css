@@ -5091,6 +5091,12 @@
             font-size: 20px;
             font-weight: 300;
         }
+		.gotham-font .text-lead {
+			&, &:active, &:hover, &:link, &:visited {
+				font-size: 18px;
+				font-weight: 400;
+			}
+		}
         .gotham-font .font-caption-body, .gotham-font .font-caption-body:active, .gotham-font .font-caption-body:focus, .gotham-font .font-caption-body:hover, .gotham-font .item-card-creator, .gotham-font .font-caption-header, .gotham-font .font-caption-header:active, .gotham-font .font-caption-header:focus, .gotham-font .font-caption-header:hover, .gotham-font .font-caption-header:link, .gotham-font .font-caption-header:visited, .gotham-font .font-header-1 {
             font-size: 16px;
             font-weight: 300;
@@ -10428,6 +10434,7 @@
             width: 60px;
             text-align: right;
             text-transform: uppercase;
+			padding: 2px !important;
         }
         .btn-toggle.on {
             text-align: left;
