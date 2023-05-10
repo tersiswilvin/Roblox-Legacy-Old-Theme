@@ -3203,11 +3203,11 @@
         background-color: #000;
         box-shadow: inset 4px 0 0 0 #00a2ff;
     }
-    .light-theme .notification-stream-list .notification-stream-item, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item {
+    .light-theme .notification-stream-list .notification-stream-item, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper {
         background-color: #f2f2f2;
         color: #191919;
     }
-    .dark-theme .notification-stream-list .notification-stream-item, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item {
+    .dark-theme .notification-stream-list .notification-stream-item, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper {
         background-color: #0D0D0D;
         color: #E6E6E6;
     }
