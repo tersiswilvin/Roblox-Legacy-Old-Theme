@@ -5759,6 +5759,44 @@
         }
     }
     
+	/*/=={ Watermark }==/*/
+	.rbx-left-col {
+		&:before {
+			content: '(Default Theme) Testing Purposes Only!';
+			font-size: 16px;
+			line-height: 16px;
+			text-align: center;
+			position: absolute;
+			display: block;
+			width: 100%;
+			bottom: 0;
+			margin: 24px 0;
+			color: #191919
+		}
+		.light-theme &:before {
+			content: '(Light Theme) Testing Purposes Only!';
+		}
+		&:after {
+			content: 'Milestone 1.3';
+			font-size: 12px;
+			line-height: 12px;
+			text-align: center;
+			position: absolute;
+			display: block;
+			width: 100%;
+			bottom: 0;
+			margin: 6px 0;
+			color: #b8b8b8;
+		}
+		.dark-theme &:before {
+			content: '(Dark Theme) Testing Purposes Only!';
+			color: #E6E6E6;
+		}
+		.dark-theme &:after {
+			color: #474747;
+		}
+	}
+	
     .item-card-thumb-container .item-expire-time-label {
         background-color: #d86868;
         color: #fff;
