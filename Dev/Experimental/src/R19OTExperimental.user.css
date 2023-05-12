@@ -4138,6 +4138,7 @@
     
     .light-theme .breadcrumb-container li.breadcrumb-filter, .dark-theme .breadcrumb-container li.breadcrumb-filter {
         font-size: 12px;
+		font-weight: 500;
         background-color: #00a2ff;
         border-radius: 10px;
     }
