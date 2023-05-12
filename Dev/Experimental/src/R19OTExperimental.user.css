@@ -4840,7 +4840,7 @@
             }
         }
 		
-		#rbx-private-servers .container-header h2, .rbx-private-server-create .rbx-private-server-create-button, #rbx-private-servers .section-content-off {
+		#rbx-private-servers .container-header h2, .light-theme .rbx-private-server-create .rbx-private-server-create-button, .dark-theme .rbx-private-server-create .rbx-private-server-create-button, #rbx-private-servers .section-content-off {
 			font-size: 0;
 		}
 		#rbx-private-servers .container-header h2:after {
@@ -4906,7 +4906,7 @@
 		}
 		.rbx-private-server-create .rbx-private-server-create-button:after {
 			content: 'Create VIP Server';
-			font-size: 16px;
+			font-size: 18px;
 			font-weight: 500;
 			line-height: 100%;
 		}
@@ -9904,6 +9904,9 @@
 		font-size: 18px;
 		border-radius: 3px;
 	}
+	.light-theme .rbx-upgrade-now .btn-secondary-md:visited, .light-theme .rbx-upgrade-now .btn-secondary-md:link, .dark-theme .rbx-upgrade-now .btn-secondary-md:visited, .dark-theme .rbx-upgrade-now .btn-secondary-md:link {
+		color: #fff
+	}
 	.light-theme .btn-secondary-sm, .light-theme .details-btns-fixed .btn-secondary-sm, .dark-theme .btn-secondary-sm, .dark-theme .details-btns-fixed .btn-secondary-sm {
 		& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 			-webkit-transition: box-shadow 200ms ease-in-out;
@@ -10679,6 +10682,18 @@
         display: none;
     }
     
+	& when (@SourceSansPro = 0) {
+		.light-theme, .dark-theme {
+			&.gotham-font .btn-to-link, &.gotham-font .btn-to-link:active, &.gotham-font .btn-to-link:focus, &.gotham-font .btn-to-link:hover, &.gotham-font .refresh-link, &.gotham-font .refresh-link-icon, &.gotham-font .refresh-link-icon:active, &.gotham-font .refresh-link-icon:focus, &.gotham-font .refresh-link-icon:hover, &.gotham-font .refresh-link:active, &.gotham-font .refresh-link:focus, &.gotham-font .refresh-link:hover, &.gotham-font .see-all-link, &.gotham-font .see-all-link-icon, &.gotham-font .see-all-link-icon:active, &.gotham-font .see-all-link-icon:focus, &.gotham-font .see-all-link-icon:hover, &.gotham-font .see-all-link:active, &.gotham-font .see-all-link:focus, &.gotham-font .see-all-link:hover, &.gotham-font .touch .btn-to-link, &.gotham-font .touch .btn-to-link:active, &.gotham-font .touch .btn-to-link:focus, &.gotham-font .touch .btn-to-link:hover, &.gotham-font .touch .refresh-link, &.gotham-font .touch .refresh-link-icon, &.gotham-font .touch .refresh-link-icon:active, &.gotham-font .touch .refresh-link-icon:focus, &.gotham-font .touch .refresh-link-icon:hover, &.gotham-font .touch .refresh-link:active, &.gotham-font .touch .refresh-link:focus, &.gotham-font .touch .refresh-link:hover, &.gotham-font .touch .see-all-link, &.gotham-font .touch .see-all-link-icon, &.gotham-font .touch .see-all-link-icon:active, &.gotham-font .touch .see-all-link-icon:focus, &.gotham-font .touch .see-all-link-icon:hover, &.gotham-font .touch .see-all-link:active, &.gotham-font .touch .see-all-link:focus, &.gotham-font .touch .see-all-link:hover {
+				background-color: transparent;
+				border: 0;
+			}
+		}
+		.gotham-font .btn-to-link, .gotham-font .refresh-link, .gotham-font .refresh-link-icon, .gotham-font .see-all-link, .gotham-font .see-all-link-icon, .gotham-font .touch .btn-to-link, .gotham-font .touch .refresh-link, .gotham-font .touch .refresh-link-icon, .gotham-font .touch .see-all-link, .gotham-font .touch .see-all-link-icon {
+			font-size: 16px;
+		}
+	}
+	
 	.rbx-left-col .rbx-scrollbar .left-col-list {
 		&:after {
 			content: 'Events';
