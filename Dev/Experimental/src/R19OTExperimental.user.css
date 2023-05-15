@@ -7588,19 +7588,13 @@
     .light-theme .catalog-content .search-options .menu-link.active, .light-theme .catalog-content .search-options .menu-link.text-link-secondary:hover, .dark-theme .catalog-content .search-options .menu-link.active, .dark-theme .catalog-content .search-options .menu-link.text-link-secondary:hover {
         color: #00a2ff;
     }
-    
-    .section.profile-about .section-content.remove-panel:nth-child(2), .section.profile-about .section-content.remove-panel.ng-scope {
-        margin-bottom: 0;
-    }
-    
-    .section.profile-about .section-content.remove-panel:nth-child(3) {
-        padding-top: 0;
-    }
-    
-    .section.profile-about .section-content.remove-panel:not(.ng-hide)[ng-show="$ctrl.layout.showEditBox"] {
-        padding-top: 15px;
-        margin-bottom: 0px;
-    }
+	
+	.profile-about profile-description ~ .section-content.remove-panel {
+		padding-top: 0
+	}
+	.profile-about .profile-about .section-content.remove-panel {
+		margin-bottom: 0;
+	}
     
     .assets-explorer-main-content .item-cards .item-card-container .item-card-name .icon-premium-small {
         margin-left: 4px;
@@ -10128,7 +10122,7 @@
 		font-size: 18px;
 		border-radius: 3px;
 	}
-	.dark-theme .btn-control-md, .dark-theme .btn-generic-edit-md, .dark-theme .btn-generic-edit-md, .dark-theme button.btn-generic-edit-md, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md {
+	.dark-theme .btn-control-md, .dark-theme .btn-generic-edit-md, .dark-theme .btn-generic-edit-md, .dark-theme button.btn-generic-edit-md, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .avatar-thumbnail .toggle-three-dee {
 		& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 			-webkit-transition: box-shadow 200ms ease-in-out;
 			-o-transition: box-shadow 200ms ease-in-out;
@@ -10212,7 +10206,7 @@
 		color: #191919;
 		cursor: pointer;
 	}
-	.dark-theme .btn-control-lg:focus, .dark-theme .btn-control-lg:hover, .dark-theme .btn-control-md:focus, .dark-theme .btn-control-md:hover, .dark-theme .btn-control-sm:focus, .dark-theme .btn-control-sm:hover, .dark-theme .btn-control-xs:focus, .dark-theme .btn-control-xs:hover, .dark-theme .btn-generic-edit-lg:focus, .dark-theme .btn-generic-edit-lg:hover, .dark-theme .btn-generic-edit-md:focus, .dark-theme .btn-generic-edit-md:hover, .dark-theme .btn-generic-edit-sm:focus, .dark-theme .btn-generic-edit-sm:hover, .dark-theme .btn-generic-edit-xs:focus, .dark-theme .btn-generic-edit-xs:hover, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:focus, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:hover, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:focus, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:hover {
+	.dark-theme .btn-control-lg:focus, .dark-theme .btn-control-lg:hover, .dark-theme .btn-control-md:focus, .dark-theme .btn-control-md:hover, .dark-theme .btn-control-sm:focus, .dark-theme .btn-control-sm:hover, .dark-theme .btn-control-xs:focus, .dark-theme .btn-control-xs:hover, .dark-theme .btn-generic-edit-lg:focus, .dark-theme .btn-generic-edit-lg:hover, .dark-theme .btn-generic-edit-md:focus, .dark-theme .btn-generic-edit-md:hover, .dark-theme .btn-generic-edit-sm:focus, .dark-theme .btn-generic-edit-sm:hover, .dark-theme .btn-generic-edit-xs:focus, .dark-theme .btn-generic-edit-xs:hover, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:focus, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:hover, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:focus, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:hover, .dark-theme .avatar-thumbnail .toggle-three-dee:focus, .dark-theme .avatar-thumbnail .toggle-three-dee:hover {
 		background-color: #000;
 		& when (@BoxShadows = 1) {
 			box-shadow: 0 1px 3px rgba(105,105,105,0.74);
@@ -10228,7 +10222,7 @@
 		background-color: #fff;
 		color: #191919;
 	}
-	.dark-theme .btn-control-lg.active, .dark-theme .btn-control-lg:active, .dark-theme .btn-control-md.active, .dark-theme .btn-control-md:active, .dark-theme .btn-control-sm.active, .dark-theme .btn-control-sm:active, .dark-theme .btn-control-xs.active, .dark-theme .btn-control-xs:active, .dark-theme .btn-generic-edit-lg.active, .dark-theme .btn-generic-edit-lg:active, .dark-theme .btn-generic-edit-md.active, .dark-theme .btn-generic-edit-md:active, .dark-theme .btn-generic-edit-sm.active, .dark-theme .btn-generic-edit-sm:active, .dark-theme .btn-generic-edit-xs.active, .dark-theme .btn-generic-edit-xs:active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md.active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md.active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:active {
+	.dark-theme .btn-control-lg.active, .dark-theme .btn-control-lg:active, .dark-theme .btn-control-md.active, .dark-theme .btn-control-md:active, .dark-theme .btn-control-sm.active, .dark-theme .btn-control-sm:active, .dark-theme .btn-control-xs.active, .dark-theme .btn-control-xs:active, .dark-theme .btn-generic-edit-lg.active, .dark-theme .btn-generic-edit-lg:active, .dark-theme .btn-generic-edit-md.active, .dark-theme .btn-generic-edit-md:active, .dark-theme .btn-generic-edit-sm.active, .dark-theme .btn-generic-edit-sm:active, .dark-theme .btn-generic-edit-xs.active, .dark-theme .btn-generic-edit-xs:active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md.active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md.active, .dark-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:active, .dark-theme .avatar-thumbnail .toggle-three-dee.active, .dark-theme .avatar-thumbnail .toggle-three-dee:active {
 		& when (@BoxShadows = 1) {
 			box-shadow: none;
 		}
