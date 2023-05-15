@@ -7589,10 +7589,10 @@
         color: #00a2ff;
     }
 	
-	.profile-about profile-description ~ .section-content.remove-panel {
+	.profile-about .section-content.remove-panel:nth-child(3):not([ng-show="$ctrl.layout.showEditBox"]) {
 		padding-top: 0
 	}
-	.profile-about .profile-about .section-content.remove-panel {
+	.profile-about .section-content.remove-panel:nth-child(2), .profile-about .profile-about .section-content.remove-panel {
 		margin-bottom: 0;
 	}
     
