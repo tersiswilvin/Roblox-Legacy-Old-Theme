@@ -4689,7 +4689,7 @@
             cursor: text;
         }
     
-        #player-badges-container .container-header h3:before {
+        #player-badges-container .container-header h2:before {
             content: 'Player ';
             cursor: text;
         }
