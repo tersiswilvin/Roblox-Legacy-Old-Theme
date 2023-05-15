@@ -2973,7 +2973,7 @@
 	}
 	@-webkit-keyframes darker-blink-dialog {
 		0% {
-			background-color: #00253D
+			background-color: #001623
 		}
 
 		to {
@@ -2983,7 +2983,7 @@
 
 	@-moz-keyframes darker-blink-dialog {
 		0% {
-			background-color: #00253D
+			background-color: #001623
 		}
 
 		to {
@@ -2993,7 +2993,7 @@
 
 	@-ms-keyframes darker-blink-dialog {
 		0% {
-			background-color: #00253D
+			background-color: #001623
 		}
 
 		to {
@@ -3003,7 +3003,7 @@
 
 	@-o-keyframes darker-blink-dialog {
 		0% {
-			background-color: #00253D
+			background-color: #001623
 		}
 
 		to {
@@ -3013,7 +3013,7 @@
 
 	@keyframes darker-blink-dialog {
 		0% {
-			background-color: #00253D
+			background-color: #001623
 		}
 
 		to {
@@ -9851,6 +9851,9 @@
 		}
 		font-size: 18px;
 		border-radius: 3px;
+	}
+	.dark-theme .btn-primary-md:visited {
+		color: #fff;
 	}
 	& when (@SourceSansPro = 0) {
 		.gotham-font .btn-growth-md, .gotham-font .btn-growth-md:active, .gotham-font .btn-growth-md:hover, .gotham-font .btn-growth-md:link, .gotham-font a.btn-growth-md, .gotham-font a.btn-growth-md:active, .gotham-font a.btn-growth-md:hover, .gotham-font a.btn-growth-md:link {
