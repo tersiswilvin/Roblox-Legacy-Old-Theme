@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20230514.1.3
+@version      20230515.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate & with customizable options.
 @author       tersiswilvin
@@ -617,8 +617,21 @@
 		}
 		color: #fff;
     }
-    .light-theme .notification-blue, .dark-theme .notification-blue {
+    .light-theme .notification-blue {
         background-color: #00a2ff;
+		& when (@SourceSansPro = 1) {
+			font-size: 12px;
+			font-weight: 500;
+		}
+		color: #fff;
+    }
+	.dark-theme .notification-blue {
+		& when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00a2ff;
+		}
 		& when (@SourceSansPro = 1) {
 			font-size: 12px;
 			font-weight: 500;
@@ -669,8 +682,17 @@
         background-color: #0D0D0D;
     }
     
-    .light-theme .select-group .select-option:hover, .dark-theme .select-group .select-option:hover {
+    .light-theme .select-group .select-option:hover {
         background-color: #00a2ff;
+        color: #fff;
+    }
+	.dark-theme .select-group .select-option:hover {
+        & when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00a2ff;
+		}
         color: #fff;
     }
     
@@ -721,8 +743,16 @@
         }
     }
     
-    .light-theme .game-card-friend-activity, .light-theme .game-card-native-ad, .dark-theme .game-card-friend-activity, .dark-theme .game-card-native-ad {
+    .light-theme .game-card-friend-activity, .light-theme .game-card-native-ad {
         background-color: #00a2ff;
+    }
+	.dark-theme .game-card-friend-activity, .dark-theme .game-card-native-ad {
+        & when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00a2ff;
+		}
     }
     
     .light-theme .table {
@@ -783,8 +813,18 @@
         color: #e6e6e6;
     }
     
-    .rbx-select-group:hover .rbx-select:hover, .dark-theme .rbx-select-group:hover .rbx-select:hover {
+    .rbx-select-group:hover .rbx-select:hover {
         background-color: #00a2ff;
+        color: #fff;
+        cursor: pointer;
+    }
+	.dark-theme .rbx-select-group:hover .rbx-select:hover {
+        & when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00a2ff;
+		}
         color: #fff;
         cursor: pointer;
     }
@@ -1274,9 +1314,18 @@
         z-index: 3
     }
     
-    .light-theme .tab-horizontal-submenu li.active, .light-theme .tab-horizontal-submenu li:hover, .dark-theme .tab-horizontal-submenu li.active, .dark-theme .tab-horizontal-submenu li:hover {
+    .light-theme .tab-horizontal-submenu li.active, .light-theme .tab-horizontal-submenu li:hover {
         color: #fff;
         background-color: #00A2FF;
+    }
+	.dark-theme .tab-horizontal-submenu li.active, .dark-theme .tab-horizontal-submenu li:hover {
+        color: #fff;
+        & when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00A2FF;
+		}
     }
     
     .light-theme .section-content, .light-theme .section-content.remove-panel {
@@ -2344,9 +2393,9 @@
     .light-theme .dialogs .dialog-container.active .dialog-header .dialog-header-title, .dark-theme .dialogs .dialog-container.active .dialog-header .dialog-header-title
     {
 		& when (@BrighterDarkThemeColors = 0) {
-			-webkit-animation: blink-dialog-alt .5s infinite alternate;
-			-o-animation: blink-dialog-alt .5s alternate infinite;
-			animation: blink-dialog-alt .5s infinite alternate;
+			-webkit-animation: darker-blink-dialog .5s infinite alternate;
+			-o-animation: darker-blink-dialog .5s alternate infinite;
+			animation: darker-blink-dialog .5s infinite alternate;
 		}
 		& when (@BrighterDarkThemeColors = 1) {
 			-webkit-animation: blink-dialog .5s infinite alternate;
@@ -2678,15 +2727,34 @@
         border-width: 0 4px 4px 0;
     }
     
-    .light-theme .dialogs .dialog-container .dialog-message-container .dialog-message.message-is-sending, .dark-theme .dialogs .dialog-container .dialog-message-container .dialog-message.message-is-sending {
+    .light-theme .dialogs .dialog-container .dialog-message-container .dialog-message.message-is-sending {
         background-color: #99daff;
         border: 1px solid #99daff;
         opacity: 1
     }
+	.dark-theme .dialogs .dialog-container .dialog-message-container .dialog-message.message-is-sending {
+        & when (@BrighterDarkThemeColors = 0) {
+			background-color: #3D5766;
+			border: 1px solid #3D5766;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #99daff;
+			border: 1px solid #99daff;
+		}
+        opacity: 1
+    }
     .light-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle.message-is-sending:after,
-    .light-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle.message-is-sending:before, .dark-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle.message-is-sending:after,
-    .dark-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle.message-is-sending:before {
+    .light-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle.message-is-sending:before {
         border-color: transparent transparent transparent #99daff
+    }
+	.dark-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle.message-is-sending:after,
+    .dark-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle.message-is-sending:before {
+		& when (@BrighterDarkThemeColors = 0) {
+			border-color: transparent transparent transparent #3D5766
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			border-color: transparent transparent transparent #99daff
+		}
     }
     
     .light-theme .chat-friend-list .chat-conversation-universe .universe-image, .dark-theme .chat-friend-list .chat-conversation-universe .universe-image {
@@ -2903,7 +2971,7 @@
 			background-color: #00a2ff
 		}
 	}
-	@-webkit-keyframes blink-dialog-alt {
+	@-webkit-keyframes darker-blink-dialog {
 		0% {
 			background-color: #00253D
 		}
@@ -2913,7 +2981,7 @@
 		}
 	}
 
-	@-moz-keyframes blink-dialog-alt {
+	@-moz-keyframes darker-blink-dialog {
 		0% {
 			background-color: #00253D
 		}
@@ -2923,7 +2991,7 @@
 		}
 	}
 
-	@-ms-keyframes blink-dialog-alt {
+	@-ms-keyframes darker-blink-dialog {
 		0% {
 			background-color: #00253D
 		}
@@ -2933,7 +3001,7 @@
 		}
 	}
 
-	@-o-keyframes blink-dialog-alt {
+	@-o-keyframes darker-blink-dialog {
 		0% {
 			background-color: #00253D
 		}
@@ -2943,7 +3011,7 @@
 		}
 	}
 
-	@keyframes blink-dialog-alt {
+	@keyframes darker-blink-dialog {
 		0% {
 			background-color: #00253D
 		}
@@ -3166,9 +3234,9 @@
     
     .light-theme .dialogs .dialog-container.active .dialog-header, .dark-theme .dialogs .dialog-container.active .dialog-header {
 		& when (@BrighterDarkThemeColors = 0) {
-			-webkit-animation: blink-dialog-alt .5s infinite alternate;
-			-o-animation: blink-dialog-alt .5s alternate infinite;
-			animation: blink-dialog-alt .5s infinite alternate;
+			-webkit-animation: darker-blink-dialog .5s infinite alternate;
+			-o-animation: darker-blink-dialog .5s alternate infinite;
+			animation: darker-blink-dialog .5s infinite alternate;
 		}
 		& when (@BrighterDarkThemeColors = 1) {
 			-webkit-animation: blink-dialog .5s infinite alternate;
