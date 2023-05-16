@@ -9,28 +9,28 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Master/src/R19OTMaster.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   BadgeStyle                  "Badge Style"                    ["201509","201511", "201612", "201902*"]
-@var          checkbox BoxShadows                  "Box Shadows"                    0
-@var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"     0
-@var          select   SiteCurrency                "Currency Brand Style"           ["Robux*","Tickets"]
-@var          checkbox forcesignuplighttheme       "Force light theme on signup"    0
-@var          checkbox fiveColumn                  "Five column in Avatar Editor."  1
-@var          select   greetingTxt                 "Greeting Text Style"            ["None*", "Hello", "HelloExclamation", "Exclamation"]
-@var          select   CardStyle                   "Item Card Style"                ["Pre-2018", "2019E", "2019M*", "2019L"]
-@var          select   CustomTheme                "Custom Site Style"               ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_Easter","RPlus_OBC"]
-@var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"         0
-@var          checkbox LegacyFooterText            "Old Footer Text (Brand Synced)" 0
-@var          checkbox SponsorSizing               "Original Sponsor sizing."       1
-@var          select   PlayButtonStyle             "Play Button Style"              ["2018M","2018L", "2019E", "2019M*", "2020+"]
-@var          checkbox RestoreSidebarPadding       "Restore sidebars old padding."  0
-@var          checkbox RemoveUpdates               "Revert 2019L+ changes"          1
-@var          checkbox PremiumToBC                 "Premium To BC"                  0
-@var          select   LogoStyle                   "Site Brand Style"               ["201408", "201412", "201511", "201701*"]
-@var          select   SignUpStyle                 "Signup Style"                   ["2017", "2018*", "2019L", "2020+"]
-@var          select   StyleGuideStyle             "Styleguide Page Style"          ["2016","2017","2018*"]
-@var          checkbox SourceSansPro               "Source San Pro font"            0
-@var          checkbox TransitionalAnimations      "Transition animations"          1
-@var          checkbox RedLogoStyle                "Use Red O logo"                 0
+@var          select   BadgeStyle                  "Badge Style"                       ["201509","201511", "201612", "201902*"]
+@var          checkbox BoxShadows                  "Box Shadows"                       0
+@var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"        0
+@var          select   SiteCurrency                "Currency Brand Style"              ["Robux*","Tickets"]
+@var          checkbox forcesignuplighttheme       "Force light theme on signup"       0
+@var          checkbox fiveColumn                  "Five column in Avatar Editor."     1
+@var          select   greetingTxt                 "Greeting Text Style"               ["None*", "Hello", "HelloExclamation", "Exclamation"]
+@var          select   CardStyle                   "Item Card Style"                   ["Pre-2018", "2019E", "2019M*", "2019L"]
+@var          select   CustomTheme                 "Custom Site Theme"                 ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_Easter","RPlus_OBC"]
+@var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"            0
+@var          checkbox LegacyFooterText            "Legacy Footer Text (Brand Synced)" 0
+@var          checkbox SponsorSizing               "Original Sponsor Sizing"           1
+@var          select   PlayButtonStyle             "Play Button Style"                 ["2018M","2018L", "2019E", "2019M*", "2020+"]
+@var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"    0
+@var          checkbox RemoveUpdates               "Revert 2019L+ changes"             1
+@var          checkbox PremiumToBC                 "Premium To BC"                     0
+@var          select   LogoStyle                   "Site Brand Style"                  ["201408", "201412", "201511", "201701*"]
+@var          select   SignUpStyle                 "Signup Theme"                      ["2017", "2018*", "2019L", "2020+"]
+@var          select   StyleGuideStyle             "Styleguide Page Theme"             ["2016","2017","2018*"]
+@var          checkbox SourceSansPro               "Source San Pro font"               0
+@var          checkbox TransitionalAnimations      "Transition animations"             1
+@var          checkbox RedLogoStyle                "Use Red O logo"                    0
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
