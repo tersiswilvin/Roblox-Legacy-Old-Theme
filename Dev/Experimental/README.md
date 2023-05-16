@@ -4,7 +4,7 @@
 For upcoming updates and features you may try out the [experimental](//github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/R19OTExperimental.user.css) channel, you're <ins>**not required**</ins> to install this.
 
 <p align="center">
-    <img src="Dev/Master/Thumbnails/Outputs/2019ROT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
+    <img src="Thumbnails/Outputs/2019ROT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
 </p>
 
 ## Features
