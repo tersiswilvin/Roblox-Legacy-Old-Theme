@@ -12574,7 +12574,57 @@
 		/* TODO */
 	}
 	& when (@CustomTheme = BTR_Red) {
-		/* TODO */
+		.light-theme .rbx-header {
+			background:rgb(190,0,0);
+		}
+
+		.light-theme #header .btr-nav-notif {
+			border-color: rgb(190,0,0);
+		}
+
+		.light-theme .btn-secondary-lg:active, .light-theme .btn-secondary-md:active, .light-theme .btn-secondary-sm:active, .light-theme .btn-secondary-xs:active, .light-theme .active.btn-secondary-lg, .light-theme .active.btn-secondary-md, .light-theme .active.btn-secondary-sm, .light-theme .active.btn-secondary-xs {
+			background:rgb(255,90,90);
+		}
+
+		.light-theme .btn-secondary-lg, .light-theme .btn-secondary-md, .light-theme .rbx-upgrade-now .btn-secondary-md, .light-theme .btn-secondary-sm, .light-theme .btn-secondary-xs {
+			background:rgb(255,0,0);
+			border-color:rgb(255,0,0);
+		}
+
+		.light-theme .btn-secondary-lg:hover, .light-theme .btn-secondary-md:hover, .light-theme .rbx-upgrade-now .btn-secondary-md:hover, .light-theme .btn-secondary-sm:hover, .light-theme .btn-secondary-xs:hover, .light-theme .btn-secondary-lg:focus, .light-theme .btn-secondary-md:focus, .light-theme .rbx-upgrade-now .btn-secondary-md:focus, .light-theme .btn-secondary-sm:focus, .light-theme .btn-secondary-xs:focus {
+			background:rgb(255,90,90);
+			border-color:rgb(255,90,90);
+		}
+
+		.light-theme .dropdown-menu li:hover, .light-theme .rbx-header .navbar-search .navbar-search-option a:hover {
+			box-shadow:4px 0 0 0 rgb(255,0,0) inset
+		}
+
+		.light-theme .rbx-tabs-horizontal .rbx-tab.active .rbx-tab-heading, .light-theme .rbx-tabs-horizontal .rbx-tab-heading:hover, .light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover, .light-theme .rbx-tabs-horizontal .rbx-tab-heading:focus, .light-theme .rbx-tabs-horizontal .rbx-tab-heading:active {
+			box-shadow:0 -4px 0 0 rgb(255,0,0) inset;
+		}
+
+		.light-theme .btn-neutral, .light-theme .btn-neutral:link, .light-theme .btn-neutral:active, .light-theme .btn-neutral:visited {
+			-webkit-filter: hue-rotate(150deg);
+		}
+
+
+		/* Now links. Switch blue and red hex values */
+
+		.light-theme a:link, .light-theme a:visited, .light-theme a:active {
+			color:#C34500;
+		}
+		.light-theme .text-footer {
+			color:#c19f89;
+		}
+
+		.light-theme .footer .text-footer-nav, .light-theme .footer .text-footer-nav:link, .light-theme .footer .text-footer-nav:visited, .light-theme .footer .text-footer-nav:active, .light-theme .footer .row .text-footer-nav:hover {
+			color:#8F522D;
+		}
+
+		.light-theme .copyright-container {
+			border-top-color:#955C35;
+		}
 	}
 	& when (@CustomTheme = BTR_Simblk) {
 		html {
@@ -12665,12 +12715,21 @@
 			color: rgba(255, 255, 255, .5);
 		}
 		
-		.btr-no-hamburger .container-main {
+		/* Extras */
+		
+		body[data-internal-page-name="Games"].btr-no-hamburger .container-main {
 			margin-left: 175px;
 		}
 
-		html .container-main > .content {
+		html body[data-internal-page-name="Games"] .container-main > .content {
 			margin: 40px !important;
+		}
+		
+		html body.light-theme[data-internal-page-name="Catalog"] .container-main > .content {
+			background: #FFF;
+		}
+		html body.dark-theme[data-internal-page-name="Catalog"] .container-main > .content {
+			background: #000;
 		}
 	}
 	& when (@CustomTheme = BTR_Sky) {
@@ -12698,11 +12757,11 @@
 			border-radius: 2px;
 			z-index: -1;
 		}
-		.btr-no-hamburger .container-main {
+		body[data-internal-page-name="Games"].btr-no-hamburger .container-main {
 			margin-left: 175px;
 		}
 
-		html .container-main > .content {
+		html body[data-internal-page-name="Games"] .container-main > .content {
 			margin: 40px !important;
 		}
 	}
