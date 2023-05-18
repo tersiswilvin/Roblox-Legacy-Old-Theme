@@ -30,7 +30,7 @@
 @var          select   StyleGuideStyle             "Styleguide Page Theme"             ["2016","2017","2018*"]
 @var          checkbox SourceSansPro               "Source San Pro font"               0
 @var          checkbox TransitionalAnimations      "Transition animations"             1
-@var          checkbox RedLogoStyle                "Use Red O logo"                    0
+@var          checkbox RedLogoStyle                "Use 2017 Red icon logo"            0
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
