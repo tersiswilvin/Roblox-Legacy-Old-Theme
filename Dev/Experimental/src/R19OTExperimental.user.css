@@ -2842,6 +2842,10 @@
 		width: auto;
 		height: 32px;
 	}
+	.dialog-container .dialog-input-container .dialog-input {
+		min-height: 32px;
+		height: 32px !important;
+	}
 	.chat-main .chat-body {
 		height: 328px;
 	}
@@ -2867,6 +2871,47 @@
 	}
 	.dark-theme .dialog-container .dialog-input-container .dialog-input:disabled {
 		background-color: #0d0d0d;
+	}
+	
+	.light-theme .dialog-container .dialog-input-container .dialog-input::-moz-placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme .dialog-container .dialog-input-container .dialog-input::-moz-placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
+	}
+	.light-theme .dialog-container .dialog-input-container .dialog-input:-ms-input-placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme .dialog-container .dialog-input-container .dialog-input:-ms-input-placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
+	}
+	.light-theme .dialog-container .dialog-input-container .dialog-input::-webkit-input-placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme .dialog-container .dialog-input-container .dialog-input::-webkit-input-placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
+	}
+	.light-theme .dialog-container .dialog-input-container .dialog-input::placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme .dialog-container .dialog-input-container .dialog-input::placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
 	}
 	
     .dark-theme .item-details-thumbnail-container .thumbnail-holder {
@@ -6051,6 +6096,47 @@
         left: -2px;
     }
     
+	.light-theme input::-moz-placeholder,.light-theme textarea::-moz-placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme input::-moz-placeholder,.dark-theme textarea::-moz-placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
+	}
+	.light-theme input:-ms-input-placeholder,.light-theme textarea:-ms-input-placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme input:-ms-input-placeholder,.dark-theme textarea:-ms-input-placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
+	}
+	.light-theme input::-webkit-input-placeholder,.light-theme textarea::-webkit-input-placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme input::-webkit-input-placeholder,.dark-theme textarea::-webkit-input-placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
+	}
+	.light-theme input::placeholder,.light-theme textarea::placeholder {
+		color: #b8b8b8;
+		font-weight: 300;
+		opacity: 1
+	}
+	.dark-theme input::placeholder,.dark-theme textarea::placeholder {
+		color: #474747;
+		font-weight: 300;
+		opacity: 1
+	}
+	
     .light-theme .input-group .input-group-btn .input-dropdown-btn, .dark-theme .input-group .input-group-btn .input-dropdown-btn {
         display: inline-block;
         border-radius: 0 !important;
