@@ -9,17 +9,24 @@ For upcoming updates and features you may try out the [experimental](//github.co
 
 ## Features
 - Highly Customizable :
-     - Badge Styles.
-     - Box Shadows.
-     - Currency Brand Style.
-     - Five Column Avatar Editor.
-     - Item Cards.
-     - Site Brand Styles.
-     - Play Button Styles.
-     - Remove Updates.
-     - Signup page Styles.
-     - Source Sans Pro.
-     - (And many more).
+     - Badge Style
+     - Box Shadows
+     - Currency Brand Style
+     - Force light theme on signup
+     - Fives column in Avatar Editor
+     - Item Card Style
+     - Site Brand Style
+     - Legacy Styleguide Buttons
+     - Old Footer Text (<b>Brand Synced</b>)
+     - Original Sponsor sizing
+     - Play Button Style
+     - Restore sidebars old padding
+     - Revert 2019L+ changes
+     - Styleguide Style
+     - Signup Style
+     - Source Sans Pro font
+     - Transition animations
+     - Use Red logo variant
 - Extension support :
      - Btroblox
      - Roblox+
