@@ -13149,367 +13149,367 @@
 		
 		/*/=={ Sliders }==/*/
 		.light-theme input[type=range]::-ms-fill-lower {
-			background: #be0000;
+			background: #ea0000;
 		}
 		.light-theme input[type=range]::-moz-range-progress {
-			background-color: #be0000;
+			background-color: #ea0000;
 		}
 		.light-theme input[type=range]::-webkit-slider-thumb {
-			border: 2px solid #be0000;
-			box-shadow: 0 0 0 0 rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3);
+			border: 2px solid #ea0000;
+			box-shadow: 0 0 0 0 rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3);
 		}
 		.light-theme input[type=range]::-moz-range-thumb {
-			box-shadow: 0 0 0 0 rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3);
+			box-shadow: 0 0 0 0 rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3);
 		}
 		.light-theme input[type=range]::-ms-thumb {
-			border: 2px solid #be0000;
-			box-shadow: 0 0 0 0 rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3);
+			border: 2px solid #ea0000;
+			box-shadow: 0 0 0 0 rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3);
 		}
 		.light-theme input[type=range]:not(:disabled)::-webkit-slider-thumb:hover {
-			box-shadow: 0 0 0 6px rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3)
+			box-shadow: 0 0 0 6px rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3)
 		}
 		.light-theme input[type=range]:not(:disabled)::-moz-range-thumb:hover {
-			box-shadow: 0 0 0 6px rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3)
+			box-shadow: 0 0 0 6px rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3)
 		}
 		.light-theme input[type=range]:not(:disabled)::-ms-thumb:hover {
-			box-shadow: 0 0 0 6px rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3)
+			box-shadow: 0 0 0 6px rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(25, 25, 25, .3)
 		}
 		.light-theme input[type=range].pr0::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #be0000), color-stop(0, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #ea0000), color-stop(0, #e3e3e3))
 		}
 		.light-theme input[type=range].pr0:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #b8b8b8), color-stop(0, #e3e3e3))
 		}
 		.light-theme input[type=range].pr4::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.04, #be0000), color-stop(.04, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.04, #ea0000), color-stop(.04, #e3e3e3))
 		}
 		.light-theme input[type=range].pr4:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.04, #b8b8b8), color-stop(.04, #e3e3e3))
 		}
 		.light-theme input[type=range].pr8::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.08, #be0000), color-stop(.08, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.08, #ea0000), color-stop(.08, #e3e3e3))
 		}
 		.light-theme input[type=range].pr8:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.08, #b8b8b8), color-stop(.08, #e3e3e3))
 		}
 		.light-theme input[type=range].pr12::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.12, #be0000), color-stop(.12, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.12, #ea0000), color-stop(.12, #e3e3e3))
 		}
 		.light-theme input[type=range].pr12:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.12, #b8b8b8), color-stop(.12, #e3e3e3))
 		}
 		.light-theme input[type=range].pr16::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.16, #be0000), color-stop(.16, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.16, #ea0000), color-stop(.16, #e3e3e3))
 		}
 		.light-theme input[type=range].pr16:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.16, #b8b8b8), color-stop(.16, #e3e3e3))
 		}
 		.light-theme input[type=range].pr20::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, #be0000), color-stop(.2, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, #ea0000), color-stop(.2, #e3e3e3))
 		}
 		.light-theme input[type=range].pr20:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, #b8b8b8), color-stop(.2, #e3e3e3))
 		}
 		.light-theme input[type=range].pr24::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.24, #be0000), color-stop(.24, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.24, #ea0000), color-stop(.24, #e3e3e3))
 		}
 		.light-theme input[type=range].pr24:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.24, #b8b8b8), color-stop(.24, #e3e3e3))
 		}
 		.light-theme input[type=range].pr28::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.28, #be0000), color-stop(.28, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.28, #ea0000), color-stop(.28, #e3e3e3))
 		}
 		.light-theme input[type=range].pr28:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.28, #b8b8b8), color-stop(.28, #e3e3e3))
 		}
 		.light-theme input[type=range].pr32::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.32, #be0000), color-stop(.32, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.32, #ea0000), color-stop(.32, #e3e3e3))
 		}
 		.light-theme input[type=range].pr32:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.32, #b8b8b8), color-stop(.32, #e3e3e3))
 		}
 		.light-theme input[type=range].pr36::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.36, #be0000), color-stop(.36, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.36, #ea0000), color-stop(.36, #e3e3e3))
 		}
 		.light-theme input[type=range].pr36:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.36, #b8b8b8), color-stop(.36, #e3e3e3))
 		}
 		.light-theme input[type=range].pr40::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.4, #be0000), color-stop(.4, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.4, #ea0000), color-stop(.4, #e3e3e3))
 		}
 		.light-theme input[type=range].pr40:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.4, #b8b8b8), color-stop(.4, #e3e3e3))
 		}
 		.light-theme input[type=range].pr44::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.44, #be0000), color-stop(.44, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.44, #ea0000), color-stop(.44, #e3e3e3))
 		}
 		.light-theme input[type=range].pr44:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.44, #b8b8b8), color-stop(.44, #e3e3e3))
 		}
 		.light-theme input[type=range].pr48::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.48, #be0000), color-stop(.48, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.48, #ea0000), color-stop(.48, #e3e3e3))
 		}
 		.light-theme input[type=range].pr48:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.48, #b8b8b8), color-stop(.48, #e3e3e3))
 		}
 		.light-theme input[type=range].pr52::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.52, #be0000), color-stop(.52, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.52, #ea0000), color-stop(.52, #e3e3e3))
 		}
 		.light-theme input[type=range].pr52:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.52, #b8b8b8), color-stop(.52, #e3e3e3))
 		}
 		.light-theme input[type=range].pr56::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.56, #be0000), color-stop(.56, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.56, #ea0000), color-stop(.56, #e3e3e3))
 		}
 		.light-theme input[type=range].pr56:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.56, #b8b8b8), color-stop(.56, #e3e3e3))
 		}
 		.light-theme input[type=range].pr60::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.6, #be0000), color-stop(.6, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.6, #ea0000), color-stop(.6, #e3e3e3))
 		}
 		.light-theme input[type=range].pr60:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.6, #b8b8b8), color-stop(.6, #e3e3e3))
 		}
 		.light-theme input[type=range].pr64::-webkit-slider-runnable-track {
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(.64, #be0000), color-stop(.64, #e3e3e3))
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(.64, #ea0000), color-stop(.64, #e3e3e3))
 		}
 		.light-theme input[type=range].pr64:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.64, #b8b8b8), color-stop(.64, #e3e3e3))
 		}
 		.light-theme input[type=range].pr68::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.68, #be0000), color-stop(.68, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.68, #ea0000), color-stop(.68, #e3e3e3))
 		}
 		.light-theme input[type=range].pr68:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.68, #b8b8b8), color-stop(.68, #e3e3e3))
 		}
 		.light-theme input[type=range].pr72::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.70, #be0000), color-stop(.70, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.70, #ea0000), color-stop(.70, #e3e3e3))
 		}
 		.light-theme input[type=range].pr72:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.70, #b8b8b8), color-stop(.70, #e3e3e3))
 		}
 		.light-theme input[type=range].pr76::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.76, #be0000), color-stop(.76, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.76, #ea0000), color-stop(.76, #e3e3e3))
 		}
 		.light-theme input[type=range].pr76:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.76, #b8b8b8), color-stop(.76, #e3e3e3))
 		}
 		.light-theme input[type=range].pr80::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.8, #be0000), color-stop(.8, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.8, #ea0000), color-stop(.8, #e3e3e3))
 		}
 		.light-theme input[type=range].pr80:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.8, #b8b8b8), color-stop(.8, #e3e3e3))
 		}
 		.light-theme input[type=range].pr84::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.84, #be0000), color-stop(.84, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.84, #ea0000), color-stop(.84, #e3e3e3))
 		}
 		.light-theme input[type=range].pr84:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.84, #b8b8b8), color-stop(.84, #e3e3e3))
 		}
 		.light-theme input[type=range].pr88::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.88, #be0000), color-stop(.88, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.88, #ea0000), color-stop(.88, #e3e3e3))
 		}
 		.light-theme input[type=range].pr88:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.88, #b8b8b8), color-stop(.88, #e3e3e3))
 		}
 		.light-theme input[type=range].pr92::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.90, #be0000), color-stop(.90, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.90, #ea0000), color-stop(.90, #e3e3e3))
 		}
 		.light-theme input[type=range].pr92:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.90, #b8b8b8), color-stop(.90, #e3e3e3))
 		}
 		.light-theme input[type=range].pr96::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.95, #be0000), color-stop(.95, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.95, #ea0000), color-stop(.95, #e3e3e3))
 		}
 		.light-theme input[type=range].pr96:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.95, #b8b8b8), color-stop(.95, #e3e3e3))
 		}
 		.light-theme input[type=range].pr100::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #be0000), color-stop(1, #e3e3e3))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #ea0000), color-stop(1, #e3e3e3))
 		}
 		.light-theme input[type=range].pr100:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #b8b8b8), color-stop(1, #e3e3e3))
 		}
 		/*/-------------------------/*/
 		.dark-theme input[type=range]::-ms-fill-lower {
-			background: #be0000;
+			background: #ea0000;
 		}
 		.dark-theme input[type=range]::-moz-range-progress {
-			background-color: #be0000;
+			background-color: #ea0000;
 		}
 		.dark-theme input[type=range]::-webkit-slider-thumb {
-			border: 2px solid #be0000;
-			box-shadow: 0 0 0 0 rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3);
+			border: 2px solid #ea0000;
+			box-shadow: 0 0 0 0 rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3);
 		}
 		.dark-theme input[type=range]::-moz-range-thumb {
-			border: 2px solid #be0000;
-			box-shadow: 0 0 0 0 rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3);
+			border: 2px solid #ea0000;
+			box-shadow: 0 0 0 0 rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3);
 		}
 		.dark-theme input[type=range]::-ms-thumb {
-			border: 2px solid #be0000;
-			box-shadow: 0 0 0 0 rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3);
+			border: 2px solid #ea0000;
+			box-shadow: 0 0 0 0 rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3);
 		}
 		.dark-theme input[type=range]:not(:disabled)::-webkit-slider-thumb:hover {
-			box-shadow: 0 0 0 6px rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3)
+			box-shadow: 0 0 0 6px rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3)
 		}
 		.dark-theme input[type=range]:not(:disabled)::-moz-range-thumb:hover {
-			box-shadow: 0 0 0 6px rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3)
+			box-shadow: 0 0 0 6px rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3)
 		}
 		.dark-theme input[type=range]:not(:disabled)::-ms-thumb:hover {
-			box-shadow: 0 0 0 6px rgba(190, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3)
+			box-shadow: 0 0 0 6px rgba(234, 0, 0, .5), 0 1px 4px 0 rgba(230, 230, 230, .3)
 		}
 		.dark-theme input[type=range].pr0::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #be0000), color-stop(0, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #ea0000), color-stop(0, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr0:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #474747), color-stop(0, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr4::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.04, #be0000), color-stop(.04, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.04, #ea0000), color-stop(.04, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr4:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.04, #474747), color-stop(.04, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr8::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.08, #be0000), color-stop(.08, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.08, #ea0000), color-stop(.08, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr8:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.08, #474747), color-stop(.08, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr12::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.12, #be0000), color-stop(.12, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.12, #ea0000), color-stop(.12, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr12:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.12, #474747), color-stop(.12, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr16::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.16, #be0000), color-stop(.16, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.16, #ea0000), color-stop(.16, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr16:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.16, #474747), color-stop(.16, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr20::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, #be0000), color-stop(.2, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, #ea0000), color-stop(.2, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr20:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.2, #474747), color-stop(.2, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr24::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.24, #be0000), color-stop(.24, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.24, #ea0000), color-stop(.24, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr24:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.24, #474747), color-stop(.24, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr28::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.28, #be0000), color-stop(.28, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.28, #ea0000), color-stop(.28, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr28:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.28, #474747), color-stop(.28, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr32::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.32, #be0000), color-stop(.32, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.32, #ea0000), color-stop(.32, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr32:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.32, #474747), color-stop(.32, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr36::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.36, #be0000), color-stop(.36, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.36, #ea0000), color-stop(.36, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr36:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.36, #474747), color-stop(.36, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr40::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.4, #be0000), color-stop(.4, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.4, #ea0000), color-stop(.4, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr40:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.4, #474747), color-stop(.4, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr44::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.44, #be0000), color-stop(.44, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.44, #ea0000), color-stop(.44, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr44:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.44, #474747), color-stop(.44, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr48::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.48, #be0000), color-stop(.48, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.48, #ea0000), color-stop(.48, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr48:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.48, #474747), color-stop(.48, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr52::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.52, #be0000), color-stop(.52, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.52, #ea0000), color-stop(.52, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr52:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.52, #474747), color-stop(.52, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr56::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.56, #be0000), color-stop(.56, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.56, #ea0000), color-stop(.56, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr56:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.56, #474747), color-stop(.56, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr60::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.6, #be0000), color-stop(.6, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.6, #ea0000), color-stop(.6, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr60:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.6, #474747), color-stop(.6, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr64::-webkit-slider-runnable-track {
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(.64, #be0000), color-stop(.64, #1C1C1C))
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(.64, #ea0000), color-stop(.64, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr64:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.64, #474747), color-stop(.64, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr68::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.68, #be0000), color-stop(.68, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.68, #ea0000), color-stop(.68, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr68:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.68, #474747), color-stop(.68, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr72::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.70, #be0000), color-stop(.70, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.70, #ea0000), color-stop(.70, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr72:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.70, #474747), color-stop(.70, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr76::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.76, #be0000), color-stop(.76, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.76, #ea0000), color-stop(.76, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr76:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.76, #474747), color-stop(.76, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr80::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.8, #be0000), color-stop(.8, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.8, #ea0000), color-stop(.8, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr80:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.8, #474747), color-stop(.8, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr84::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.84, #be0000), color-stop(.84, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.84, #ea0000), color-stop(.84, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr84:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.84, #474747), color-stop(.84, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr88::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.88, #be0000), color-stop(.88, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.88, #ea0000), color-stop(.88, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr88:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.88, #474747), color-stop(.88, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr92::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.90, #be0000), color-stop(.90, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.90, #ea0000), color-stop(.90, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr92:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.90, #474747), color-stop(.90, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr96::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(.95, #be0000), color-stop(.95, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(.95, #ea0000), color-stop(.95, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr96:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(.95, #474747), color-stop(.95, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr100::-webkit-slider-runnable-track {
-			background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #be0000), color-stop(1, #1C1C1C))
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #ea0000), color-stop(1, #1C1C1C))
 		}
 		.dark-theme input[type=range].pr100:disabled::-webkit-slider-runnable-track {
 			background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #474747), color-stop(1, #1C1C1C))
@@ -13517,19 +13517,19 @@
 
 		.light-theme .rzslider .rz-pointer {
 			background-color : #fff;
-			border-color: #be0000;
+			border-color: #ea0000;
 			box-shadow: none;
 		}
 		.dark-theme .rzslider .rz-pointer {
 			background-color : #000;
-			border-color: #be0000;
+			border-color: #ea0000;
 			box-shadow: none;
 		}
 		.light-theme .rzslider .rz-pointer:hover, .dark-theme .rzslider .rz-pointer:hover {
-			box-shadow: 0 0 0 6px rgb(190 0 0 / 50%)
+			box-shadow: 0 0 0 6px rgb(234 0 0 / 50%)
 		}
 		.light-theme .rzslider .rz-bar.rz-selection, .light-theme .rzslider .rz-tick.rz-selected, .dark-theme .rzslider .rz-bar.rz-selection, .dark-theme .rzslider .rz-tick.rz-selected {
-			background-color: #be0000
+			background-color: #ea0000
 		}
 		.light-theme .rzslider .rz-bar, .light-theme .rzslider .rz-tick {
 			background-color: #f3d8d8
@@ -13646,6 +13646,16 @@
 			opacity: .5;
 			background-color: #800000;
 			border-color: #800000;
+		}
+		.light-theme .touch .btn-secondary-lg:not([disabled]):focus, .light-theme .touch .btn-secondary-lg:not([disabled]):hover, .light-theme .touch .btn-secondary-lg:not([disabled]):visited, .light-theme .touch .btn-secondary-md:not([disabled]):focus, .light-theme .touch .btn-secondary-md:not([disabled]):hover, .light-theme .touch .btn-secondary-md:not([disabled]):visited, .light-theme .touch .btn-secondary-sm:not([disabled]):focus, .light-theme .touch .btn-secondary-sm:not([disabled]):hover, .light-theme .touch .btn-secondary-sm:not([disabled]):visited, .light-theme .touch .btn-secondary-xs:not([disabled]):focus, .light-theme .touch .btn-secondary-xs:not([disabled]):hover, .light-theme .touch .btn-secondary-xs:not([disabled]):visited, .light-theme .touch .avatar-card-btns .accept-friend:not([disabled]):focus, .light-theme .touch .avatar-card-btns .accept-friend:not([disabled]):hover, .light-theme .touch .avatar-card-btns .accept-friend:not([disabled]):visited, .dark-theme .touch .btn-secondary-lg:not([disabled]):focus, .dark-theme .touch .btn-secondary-lg:not([disabled]):hover, .dark-theme .touch .btn-secondary-lg:not([disabled]):visited, .dark-theme .touch .btn-secondary-md:not([disabled]):focus, .dark-theme .touch .btn-secondary-md:not([disabled]):hover, .dark-theme .touch .btn-secondary-md:not([disabled]):visited, .dark-theme .touch .btn-secondary-sm:not([disabled]):focus, .dark-theme .touch .btn-secondary-sm:not([disabled]):hover, .dark-theme .touch .btn-secondary-sm:not([disabled]):visited, .dark-theme .touch .btn-secondary-xs:not([disabled]):focus, .dark-theme .touch .btn-secondary-xs:not([disabled]):hover, .dark-theme .touch .btn-secondary-xs:not([disabled]):visited, .dark-theme .touch .avatar-card-btns .accept-friend:not([disabled]):focus, .dark-theme .touch .avatar-card-btns .accept-friend:not([disabled]):hover, .dark-theme .touch .avatar-card-btns .accept-friend:not([disabled]):visited {
+			color: #fff;
+			background-color: #ea0000;
+			border-color: #ea0000;
+		}
+		.light-theme .touch .btn-secondary-lg:not([disabled]).active, .light-theme .touch .btn-secondary-lg:not([disabled]):active, .light-theme .touch .btn-secondary-md:not([disabled]).active, .light-theme .touch .btn-secondary-md:not([disabled]):active, .light-theme .touch .btn-secondary-sm:not([disabled]).active, .light-theme .touch .btn-secondary-sm:not([disabled]):active, .light-theme .touch .btn-secondary-xs:not([disabled]).active, .light-theme .touch .btn-secondary-xs:not([disabled]):active, .light-theme .touch .avatar-card-btns .accept-friend:not([disabled]).active, .light-theme .touch .avatar-card-btns .accept-friend:not([disabled]):active, .dark-theme .touch .btn-secondary-lg:not([disabled]).active, .dark-theme .touch .btn-secondary-lg:not([disabled]):active, .dark-theme .touch .btn-secondary-md:not([disabled]).active, .dark-theme .touch .btn-secondary-md:not([disabled]):active, .dark-theme .touch .btn-secondary-sm:not([disabled]).active, .dark-theme .touch .btn-secondary-sm:not([disabled]):active, .dark-theme .touch .btn-secondary-xs:not([disabled]).active, .dark-theme .touch .btn-secondary-xs:not([disabled]):active, .dark-theme .touch .avatar-card-btns .accept-friend:not([disabled]).active, .dark-theme .touch .avatar-card-btns .accept-friend:not([disabled]):active {
+			color: #fff;
+			background-color: #be0000;
+			border-color: #be0000;
 		}
 		
 		/*/=={ Btroblox }==/*/
