@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           Legacy Old Theme Tools
 @namespace      github.com/tersiswilvin
-@version        1.0.7
+@version        1.0.8
 @description    Experimental Tools/Addons for the Roblox Legacy Old Theme
 @author         TersisWilvin
 @preprocessor   less
 @var            checkbox  MatchDefaultSiteColors  "Match Roblox Site Colors"  0
-@var            select    WatermarkStyle          "Watermark Branch"           ["None*","DEV", "Experimental"]
+@var            select    WatermarkStyle          "Watermark Branch"           ["None*","DEV","Experimental"]
 ==/UserStyle== */
 
 @-moz-document domain("web.roblox.com"), domain("www.roblox.com") {
@@ -42,7 +42,7 @@
 				}
 			}
 			&:after {
-				content: 'Milestone 1.2.9.39';
+				content: 'Milestone 1.3';
 				font-size: 12px;
 				line-height: 12px;
 				text-align: center;
