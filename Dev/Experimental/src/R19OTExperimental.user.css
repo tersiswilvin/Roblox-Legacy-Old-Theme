@@ -13978,7 +13978,7 @@
 			background-color: rgb(220, 126, 207);
 			border-color: rgb(220, 126, 207);
 		}
-		.light-theme .btn-secondary-xs:hover,.light-theme .btn-secondary-sm:hover,.light-theme .btn-secondary-md:hover,.light-theme .btn-secondary-lg:hover, .dark-theme .btn-secondary-xs:hover,.dark-theme .btn-secondary-sm:hover,.dark-theme .btn-secondary-md:hover,.dark-theme .btn-secondary-lg:hover, .light-theme .rbx-upgrade-now .btn-secondary-md:focus, .light-theme .rbx-upgrade-now .btn-secondary-md:hover{
+		.light-theme .btn-secondary-xs:hover,.light-theme .btn-secondary-sm:hover,.light-theme .btn-secondary-md:hover,.light-theme .btn-secondary-lg:hover, .dark-theme .btn-secondary-xs:hover,.dark-theme .btn-secondary-sm:hover,.dark-theme .btn-secondary-md:hover,.dark-theme .btn-secondary-lg:hover, .light-theme .rbx-upgrade-now .btn-secondary-md:focus, .light-theme .rbx-upgrade-now .btn-secondary-md:hover, .light-theme .avatar-card-btns .accept-friend:focus, .light-theme .avatar-card-btns .accept-friend:hover{
 			background: rgb(233, 185, 227);
 			border-color: rgb(233, 185, 227);
 		}
