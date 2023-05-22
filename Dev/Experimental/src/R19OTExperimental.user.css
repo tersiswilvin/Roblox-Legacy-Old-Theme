@@ -13704,8 +13704,26 @@
 		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
 			border-color: transparent #e3e3e3 transparent transparent;
 		}
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent transparent transparent #e3e3e3;
+		}
 		.dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
 			border-color: transparent #1c1c1c transparent transparent;
+		}
+		.dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent transparent transparent #1c1c1c;
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+			border-color: transparent #fff transparent transparent;
+		}
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent transparent transparent #fff;
+		}
+		.dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+			border-color: transparent #000 transparent transparent;
+		}
+		.dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent transparent transparent #000;
 		}
 
 		.light-theme .details-members-container .add-friends-option .add-friends-cirle-container, .dark-theme .details-members-container .add-friends-option .add-friends-cirle-container {
