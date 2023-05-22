@@ -13936,6 +13936,27 @@
 			}
 		}
 		
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent transparent transparent #e3e3e3;
+		}
+		.dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+			border-color: transparent #1c1c1c transparent transparent;
+		}
+		.dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent transparent transparent #1c1c1c;
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+			border-color: transparent #fff transparent transparent;
+		}
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent transparent transparent #fff;
+		}
+		.dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+			border-color: transparent #000 transparent transparent;
+		}
+		.dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent transparent transparent #000;
+		}
 		
 		/* Footer */
 		.light-theme .footer .text-footer-nav, .light-theme .footer .text-footer-nav:link, .light-theme .footer .text-footer-nav:visited, .light-theme .footer .text-footer-nav:active, .dark-theme .footer .text-footer-nav, .dark-theme .footer .text-footer-nav:link, .dark-theme .footer .text-footer-nav:visited, .dark-theme .footer .text-footer-nav:active{
@@ -13986,11 +14007,16 @@
 			background-position: -28px -448px;
 		}
 		
+		.light-theme .games-list-container, .dark-theme .games-list-container {
+			background-color: transparent;
+		}
+		
 		.rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:before, .light-theme .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:before, .dark-theme .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:before {
 			color: rgb(220, 126, 207);
 			background: rgb(220, 126, 207);
 			border-radius: 100px
 		}
+		
 		& when (@SourceSansPro = 0) {
 			.gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited {
 				background-color: transparent !important;
