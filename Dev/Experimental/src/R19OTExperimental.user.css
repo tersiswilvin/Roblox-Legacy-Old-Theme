@@ -843,7 +843,7 @@
         background-color: #000;
     }
     
-    .light-theme .message-status-container.read .text-link, .light-theme .text-link, .light-theme .text-link.small, .light-theme .text-link.small:active, .light-theme .text-link.small:link, .light-theme .text-link.small:visited, .light-theme .text-link.xsmall, .light-theme .text-link.xsmall:active, .light-theme .text-link.xsmall:link, .light-theme .text-link.xsmall:visited, .light-theme .text-link.xxsmall, .light-theme .text-link.xxsmall:active, .light-theme .text-link.xxsmall:link, .light-theme .text-link.xxsmall:visited, .light-theme .text-link:active, .light-theme .text-link:hover, .light-theme .text-link:link, .light-theme .text-link:visited, .light-theme .text-name, .light-theme .text-name.small, .light-theme .text-name.small:active, .light-theme .text-name.small:link, .light-theme .text-name.small:visited, .light-theme .text-name.xsmall, .light-theme .text-name.xsmall:active, .light-theme .text-name.xsmall:link, .light-theme .text-name.xsmall:visited, .light-theme .text-name.xxsmall, .light-theme .text-name.xxsmall:active, .light-theme .text-name.xxsmall:link, .light-theme .text-name.xxsmall:visited, .light-theme .text-name:active, .light-theme .text-name:hover, .light-theme .text-name:link, .light-theme .text-name:visited, .light-theme .vlist .list-item .list-body .list-content a, .light-theme .vlist .list-item .list-body .list-content a.small, .light-theme .vlist .list-item .list-body .list-content a.small:active, .light-theme .vlist .list-item .list-body .list-content a.small:link, .light-theme .vlist .list-item .list-body .list-content a.small:visited, .light-theme .vlist .list-item .list-body .list-content a.xsmall, .light-theme .vlist .list-item .list-body .list-content a.xsmall:active, .light-theme .vlist .list-item .list-body .list-content a.xsmall:link, .light-theme .vlist .list-item .list-body .list-content a.xsmall:visited, .light-theme .vlist .list-item .list-body .list-content a.xxsmall, .light-theme .vlist .list-item .list-body .list-content a.xxsmall:active, .light-theme .vlist .list-item .list-body .list-content a.xxsmall:link, .light-theme .vlist .list-item .list-body .list-content a.xxsmall:visited, .light-theme .vlist .list-item .list-body .list-content a:active, .light-theme .vlist .list-item .list-body .list-content a:hover, .light-theme .vlist .list-item .list-body .list-content a:link, .light-theme .vlist .list-item .list-body .list-content a:visited, .vlist .list-item .list-body .list-content .light-theme a, .vlist .list-item .list-body .list-content .light-theme a.small, .vlist .list-item .list-body .list-content .light-theme a.small:active, .vlist .list-item .list-body .list-content .light-theme a.small:link, .vlist .list-item .list-body .list-content .light-theme a.small:visited, .vlist .list-item .list-body .list-content .light-theme a.xsmall, .vlist .list-item .list-body .list-content .light-theme a.xsmall:active, .vlist .list-item .list-body .list-content .light-theme a.xsmall:link, .vlist .list-item .list-body .list-content .light-theme a.xsmall:visited, .vlist .list-item .list-body .list-content .light-theme a.xxsmall, .vlist .list-item .list-body .list-content .light-theme a.xxsmall:active, .vlist .list-item .list-body .list-content .light-theme a.xxsmall:link, .vlist .list-item .list-body .list-content .light-theme a.xxsmall:visited, .vlist .list-item .list-body .list-content .light-theme a:active, .vlist .list-item .list-body .list-content .light-theme a:hover, .vlist .list-item .list-body .list-content .light-theme a:link, .vlist .list-item .list-body .list-content .light-theme a:visited, .dark-theme .text-link, .dark-theme .text-link.small, .dark-theme .text-link.small:active, .dark-theme .text-link.small:link, .dark-theme .text-link.small:visited, .dark-theme .text-link.xsmall, .dark-theme .text-link.xsmall:active, .dark-theme .text-link.xsmall:link, .dark-theme .text-link.xsmall:visited, .dark-theme .text-link.xxsmall, .dark-theme .text-link.xxsmall:active, .dark-theme .text-link.xxsmall:link, .dark-theme .text-link.xxsmall:visited, .dark-theme .text-link:active, .dark-theme .text-link:hover, .dark-theme .text-link:link, .dark-theme .text-link:visited, .dark-theme .text-name, .dark-theme .text-name.small, .dark-theme .text-name.small:active, .dark-theme .text-name.small:link, .dark-theme .text-name.small:visited, .dark-theme .text-name.xsmall, .dark-theme .text-name.xsmall:active, .dark-theme .text-name.xsmall:link, .dark-theme .text-name.xsmall:visited, .dark-theme .text-name.xxsmall, .dark-theme .text-name.xxsmall:active, .dark-theme .text-name.xxsmall:link, .dark-theme .text-name.xxsmall:visited, .dark-theme .text-name:active, .dark-theme .text-name:hover, .dark-theme .text-name:link, .dark-theme .text-name:visited, .dark-theme .vlist .list-item .list-body .list-content a, .dark-theme .vlist .list-item .list-body .list-content a.small, .dark-theme .vlist .list-item .list-body .list-content a.small:active, .dark-theme .vlist .list-item .list-body .list-content a.small:link, .dark-theme .vlist .list-item .list-body .list-content a.small:visited, .dark-theme .vlist .list-item .list-body .list-content a.xsmall, .dark-theme .vlist .list-item .list-body .list-content a.xsmall:active, .dark-theme .vlist .list-item .list-body .list-content a.xsmall:link, .dark-theme .vlist .list-item .list-body .list-content a.xsmall:visited, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall:active, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall:link, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall:visited, .dark-theme .vlist .list-item .list-body .list-content a:active, .dark-theme .vlist .list-item .list-body .list-content a:hover, .dark-theme .vlist .list-item .list-body .list-content a:link, .dark-theme .vlist .list-item .list-body .list-content a:visited, .vlist .list-item .list-body .list-content .dark-theme a, .vlist .list-item .list-body .list-content .dark-theme a.small, .vlist .list-item .list-body .list-content .dark-theme a.small:active, .vlist .list-item .list-body .list-content .dark-theme a.small:link, .vlist .list-item .list-body .list-content .dark-theme a.small:visited, .vlist .list-item .list-body .list-content .dark-theme a.xsmall, .vlist .list-item .list-body .list-content .dark-theme a.xsmall:active, .vlist .list-item .list-body .list-content .dark-theme a.xsmall:link, .vlist .list-item .list-body .list-content .dark-theme a.xsmall:visited, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall:active, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall:link, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall:visited, .vlist .list-item .list-body .list-content .dark-theme a:active, .vlist .list-item .list-body .list-content .dark-theme a:hover, .vlist .list-item .list-body .list-content .dark-theme a:link, .vlist .list-item .list-body .list-content .dark-theme a:visited, .dark-theme .messages .messageDivider .news-body a, .dark-theme .messages .messageDivider .news-body a:active, .dark-theme .messages .messageDivider .news-body a:hover, .dark-theme .messages .messageDivider .news-body a:link, .dark-theme .messages .messageDivider .news-body a:visited, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-email-add-address, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-email-verify, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-phone-add-phone, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-phone-verify, .light-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):hover, .light-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):active, .light-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):focus, .dark-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):hover, .dark-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):active, .dark-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):focus, .dark-theme .refresh-link-icon.btn-control-xs:not([disabled]):hover, .dark-theme .refresh-link-icon.btn-control-xs:not([disabled]):active, .dark-theme .refresh-link-icon.btn-control-xs:not([disabled]):focus, #message-detail-body a, .light-theme .messages .messageDivider .news-body a, .light-theme .messages .messageDivider .news-body a:active, .light-theme .messages .messageDivider .news-body a:hover, .light-theme .messages .messageDivider .news-body a:link, .light-theme .messages .messageDivider .news-body a:visited {
+    .light-theme .message-status-container.read .text-link, .light-theme .text-link, .light-theme .text-link.small, .light-theme .text-link.small:active, .light-theme .text-link.small:link, .light-theme .text-link.small:visited, .light-theme .text-link.xsmall, .light-theme .text-link.xsmall:active, .light-theme .text-link.xsmall:link, .light-theme .text-link.xsmall:visited, .light-theme .text-link.xxsmall, .light-theme .text-link.xxsmall:active, .light-theme .text-link.xxsmall:link, .light-theme .text-link.xxsmall:visited, .light-theme .text-link:active, .light-theme .text-link:hover, .light-theme .text-link:link, .light-theme .text-link:visited, .light-theme .text-name, .light-theme .text-name.small, .light-theme .text-name.small:active, .light-theme .text-name.small:link, .light-theme .text-name.small:visited, .light-theme .text-name.xsmall, .light-theme .text-name.xsmall:active, .light-theme .text-name.xsmall:link, .light-theme .text-name.xsmall:visited, .light-theme .text-name.xxsmall, .light-theme .text-name.xxsmall:active, .light-theme .text-name.xxsmall:link, .light-theme .text-name.xxsmall:visited, .light-theme .text-name:active, .light-theme .text-name:hover, .light-theme .text-name:link, .light-theme .text-name:visited, .light-theme .vlist .list-item .list-body .list-content a, .light-theme .vlist .list-item .list-body .list-content a.small, .light-theme .vlist .list-item .list-body .list-content a.small:active, .light-theme .vlist .list-item .list-body .list-content a.small:link, .light-theme .vlist .list-item .list-body .list-content a.small:visited, .light-theme .vlist .list-item .list-body .list-content a.xsmall, .light-theme .vlist .list-item .list-body .list-content a.xsmall:active, .light-theme .vlist .list-item .list-body .list-content a.xsmall:link, .light-theme .vlist .list-item .list-body .list-content a.xsmall:visited, .light-theme .vlist .list-item .list-body .list-content a.xxsmall, .light-theme .vlist .list-item .list-body .list-content a.xxsmall:active, .light-theme .vlist .list-item .list-body .list-content a.xxsmall:link, .light-theme .vlist .list-item .list-body .list-content a.xxsmall:visited, .light-theme .vlist .list-item .list-body .list-content a:active, .light-theme .vlist .list-item .list-body .list-content a:hover, .light-theme .vlist .list-item .list-body .list-content a:link, .light-theme .vlist .list-item .list-body .list-content a:visited, .vlist .list-item .list-body .list-content .light-theme a, .vlist .list-item .list-body .list-content .light-theme a.small, .vlist .list-item .list-body .list-content .light-theme a.small:active, .vlist .list-item .list-body .list-content .light-theme a.small:link, .vlist .list-item .list-body .list-content .light-theme a.small:visited, .vlist .list-item .list-body .list-content .light-theme a.xsmall, .vlist .list-item .list-body .list-content .light-theme a.xsmall:active, .vlist .list-item .list-body .list-content .light-theme a.xsmall:link, .vlist .list-item .list-body .list-content .light-theme a.xsmall:visited, .vlist .list-item .list-body .list-content .light-theme a.xxsmall, .vlist .list-item .list-body .list-content .light-theme a.xxsmall:active, .vlist .list-item .list-body .list-content .light-theme a.xxsmall:link, .vlist .list-item .list-body .list-content .light-theme a.xxsmall:visited, .vlist .list-item .list-body .list-content .light-theme a:active, .vlist .list-item .list-body .list-content .light-theme a:hover, .vlist .list-item .list-body .list-content .light-theme a:link, .vlist .list-item .list-body .list-content .light-theme a:visited, .dark-theme .text-link, .dark-theme .text-link.small, .dark-theme .text-link.small:active, .dark-theme .text-link.small:link, .dark-theme .text-link.small:visited, .dark-theme .text-link.xsmall, .dark-theme .text-link.xsmall:active, .dark-theme .text-link.xsmall:link, .dark-theme .text-link.xsmall:visited, .dark-theme .text-link.xxsmall, .dark-theme .text-link.xxsmall:active, .dark-theme .text-link.xxsmall:link, .dark-theme .text-link.xxsmall:visited, .dark-theme .text-link:active, .dark-theme .text-link:hover, .dark-theme .text-link:link, .dark-theme .text-link:visited, .dark-theme .text-name, .dark-theme .text-name.small, .dark-theme .text-name.small:active, .dark-theme .text-name.small:link, .dark-theme .text-name.small:visited, .dark-theme .text-name.xsmall, .dark-theme .text-name.xsmall:active, .dark-theme .text-name.xsmall:link, .dark-theme .text-name.xsmall:visited, .dark-theme .text-name.xxsmall, .dark-theme .text-name.xxsmall:active, .dark-theme .text-name.xxsmall:link, .dark-theme .text-name.xxsmall:visited, .dark-theme .text-name:active, .dark-theme .text-name:hover, .dark-theme .text-name:link, .dark-theme .text-name:visited, .dark-theme .vlist .list-item .list-body .list-content a, .dark-theme .vlist .list-item .list-body .list-content a.small, .dark-theme .vlist .list-item .list-body .list-content a.small:active, .dark-theme .vlist .list-item .list-body .list-content a.small:link, .dark-theme .vlist .list-item .list-body .list-content a.small:visited, .dark-theme .vlist .list-item .list-body .list-content a.xsmall, .dark-theme .vlist .list-item .list-body .list-content a.xsmall:active, .dark-theme .vlist .list-item .list-body .list-content a.xsmall:link, .dark-theme .vlist .list-item .list-body .list-content a.xsmall:visited, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall:active, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall:link, .dark-theme .vlist .list-item .list-body .list-content a.xxsmall:visited, .dark-theme .vlist .list-item .list-body .list-content a:active, .dark-theme .vlist .list-item .list-body .list-content a:hover, .dark-theme .vlist .list-item .list-body .list-content a:link, .dark-theme .vlist .list-item .list-body .list-content a:visited, .vlist .list-item .list-body .list-content .dark-theme a, .vlist .list-item .list-body .list-content .dark-theme a.small, .vlist .list-item .list-body .list-content .dark-theme a.small:active, .vlist .list-item .list-body .list-content .dark-theme a.small:link, .vlist .list-item .list-body .list-content .dark-theme a.small:visited, .vlist .list-item .list-body .list-content .dark-theme a.xsmall, .vlist .list-item .list-body .list-content .dark-theme a.xsmall:active, .vlist .list-item .list-body .list-content .dark-theme a.xsmall:link, .vlist .list-item .list-body .list-content .dark-theme a.xsmall:visited, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall:active, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall:link, .vlist .list-item .list-body .list-content .dark-theme a.xxsmall:visited, .vlist .list-item .list-body .list-content .dark-theme a:active, .vlist .list-item .list-body .list-content .dark-theme a:hover, .vlist .list-item .list-body .list-content .dark-theme a:link, .vlist .list-item .list-body .list-content .dark-theme a:visited, .dark-theme .messages .messageDivider .news-body a, .dark-theme .messages .messageDivider .news-body a:active, .dark-theme .messages .messageDivider .news-body a:hover, .dark-theme .messages .messageDivider .news-body a:link, .dark-theme .messages .messageDivider .news-body a:visited, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-email-add-address, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-email-verify, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-phone-add-phone, .content .page-content .rbx-tab-content .settings-account-info-container .form-group .account-field-phone-verify, .light-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):hover, .light-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):active, .light-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):focus, .dark-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):hover, .dark-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):active, .dark-theme .touch .refresh-link-icon.btn-control-xs:not([disabled]):focus, .dark-theme .refresh-link-icon.btn-control-xs:not([disabled]):hover, .dark-theme .refresh-link-icon.btn-control-xs:not([disabled]):active, .dark-theme .refresh-link-icon.btn-control-xs:not([disabled]):focus, #message-detail-body a, .light-theme .messages .messageDivider .news-body a, .light-theme .messages .messageDivider .news-body a:active, .light-theme .messages .messageDivider .news-body a:hover, .light-theme .messages .messageDivider .news-body a:link, .light-theme .messages .messageDivider .news-body a:visited, .light-theme .content-overflow-toggle .toggle-content, .dark-theme .content-overflow-toggle .toggle-content {
         color: #00a2ff;
     }
     
@@ -12974,7 +12974,693 @@
 	
 	/*/== Themes ==/*/
 	& when (@CustomTheme = BTR_Night) {
-		/* TODO */
+		html {
+			--btr-theme-header: #000;
+			--btr-theme-navigation: #212121;
+			--btr-theme-background: #303030;
+			
+			--btr-theme-item: #424242;
+			--btr-theme-item-hover: #4A4A4A;
+			--btr-theme-item-hover-hover: #606060;
+			
+			--btr-theme-border: #212121; /* #B8B8B8 */
+			--btr-theme-border-lighter: #303030; /* #E3E3E3 */
+			
+			--btr-theme-text: rgba(255, 255, 255, 1);
+			--btr-theme-text-secondary: rgba(255, 255, 255, .8);
+			--btr-theme-text-disabled: rgba(255, 255, 255, 0.5);
+			--btr-theme-divider: rgba(255, 255, 255, 0.12);
+		}
+		
+		.light-theme #navigation li a, .light-theme #navigation li button, html .light-theme .text-footer-nav:hover, html .light-theme .text-footer-nav:focus {
+			color: var(--btr-theme-text);
+		}
+		
+		html .light-theme .btr-feedtitle, .light-theme .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .navbar-list-option-suffix, .light-theme .btn-control-md:link,.light-theme .vlist .list-item,.light-theme .breadcrumb-container, .light-theme .btn-control-xs:link, .light-theme .notification-stream-list .notification-stream-item.unInteracted, .light-theme .notification-stream-list .notification-stream-item.unInteracted .notification-display-text, .light-theme .notification-stream-list .notification-stream-item:hover, .light-theme .notification-stream-list .notification-stream-item:hover .notification-display-text, .light-theme .text-nav, .light-theme .text-nav:hover, .light-theme .modal-dialog .modal-content .modal-body, .light-theme .modal-dialog .modal-content .modal-top-body, .light-theme .dialogs-minimize-container, .light-theme .notification-stream-list .notification-stream-item, .light-theme .modal-dialog .modal-content, .light-theme .list-item .group-card, .light-theme .store-card-add-label, .light-theme .store-card-price, .light-theme .menu-vertical .menu-option, .light-theme .menu-vertical .menu-option .menu-secondary-option, .light-theme .dialogs .dialog-container .dialog-message-container .indicated-message-bubble, .light-theme .small, .small-oneline, .light-theme #buy-robux-popover-menu li a, .light-theme #settings-popover-menu li a, .light-theme .select-group .select-option, .light-theme .input-field, .light-theme .menu-vertical .menu-option.active, .light-theme .stack .stack-list .stack-row, .light-theme .friends-list-container .friend-container .friend-info .friend-status, .light-theme .text-sec, .light-theme .small.text-title.text-overflow.font-caption-header.chat-friend-name.dynamic-ellipsis-item.ng-binding.read, .light-theme .participant-list-container .dropdown-menu li a, .light-theme .participant-list-container .dropdown-menu li a:visited, .light-theme .participant-list-container .dropdown-menu li a:hover, .light-theme .mobile-panel .panel .panel-heading, .light-theme #buy-robux-popover-menu li a:focus, .light-theme #buy-robux-popover-menu li a:hover, .light-theme #settings-popover-menu li a:focus, .light-theme #settings-popover-menu li a:hover, .light-theme .request-error-page-content .default-error-page, .light-theme .popover-content .dropdown-menu li a, .light-theme .popover-content .dropdown-menu li a:focus, .light-theme .popover-content .dropdown-menu li a:hover, .light-theme .rbx-select-group .rbx-select, .light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading, .light-theme .table, .light-theme .rbx-tabs-horizontal .nav-tabs, .light-theme .popover, .light-theme .slide-switcher .slide-item-container .slide-item-container-right, .light-theme .dropdown-menu li, .light-theme .section-content, .light-theme .text, .light-theme .text-default, .light-theme .text-description, .light-theme .text-footer, .light-theme p, .light-theme .interaction-item, .light-theme .messages .messageDivider.message-news, .light-theme .people-list .friend .friend-link, .light-theme .rbx-header .navbar-search .navbar-search-option a, .light-theme .rbx-header .navbar-search .navbar-search-option a:hover, .light-theme .verification-link-page-content .verification-link-upsell, .light-theme .dropdown-menu, .light-theme .game-card-info .info-label, .light-theme .text-lead, .light-theme .text-lead:active, .light-theme .text-lead:hover, .light-theme .text-lead:link, .light-theme .text-lead:visited, .light-theme .text-title, .light-theme .text-title:active, .light-theme .text-title:hover, .light-theme .text-title:link, .light-theme .text-title:visited, .light-theme .rbx-left-col li .text-nav:active,.light-theme .rbx-left-col , .light-theme .rbx-left-col li .text-nav:link, .light-theme .rbx-left-col li .text-nav:visited, .light-theme .checkbox input[type="checkbox"] + label, .light-theme .radio, .light-theme .radio label, .light-theme .avatar-card-container, .light-theme .btn-control-sm:link, .light-theme .items-list .item-card .item-card-menu button:not(:hover), .light-theme .side-nav-container, .light-theme .friends-list-container .friend-container, .light-theme .friends-list-container, .light-theme .details-container, .light-theme .dialogs .dialog-container .dialog-body, .light-theme .chat-friend-list .chat-friend-container, .light-theme .sg-section, .light-theme .sg-container, .light-theme .rbx-select-group, .light-theme .rbx-header .navbar-search .new-input-field, .light-theme .menu-vertical, .light-theme .notification-stream-container .notification-content-view, .light-theme .message-status-container .read, .light-theme .message-status-container.unread, .light-theme .message-status-container .unread, .light-theme .message-status-container.secondary.unread, .light-theme .message-status-container .secondary.unread, .light-theme input, .light-theme textarea, .light-theme .game-card-native-ad .native-ad-label, .light-theme .chat-main-empty .chat-disconnect, .light-theme .chat-main, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .unread, .light-theme .dialog-container, .light-theme .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .navbar-list-option-text, .light-theme .text-muted, .light-theme .text-subheader, .light-theme .rbx-tabs-horizontal #horizontal-tabs .rbx-tab:not(.active) a:not(:hover), .light-theme .profile-avatar-right .profile-avatar-mask, .light-theme .slide-switcher.games, .light-theme .not-approved-page-content .not-approved-page, .light-theme .rbx-header .navbar-search .navbar-search-option.new-selected, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.secondary.unread, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .secondary.unread, .light-theme .slide-switcher.groups, .light-theme .roblox-popover-container, .light-theme .notification-stream-list .notification-stream-item.unInteracted, .light-theme .notification-stream-list .notification-stream-item.unInteracted .notification-display-text, .light-theme .notification-stream-list .notification-stream-item:hover, .light-theme .notification-stream-list .notification-stream-item:hover .notification-display-text, .light-theme#DevelopSplashScreen .body-container .blurbs-container, .light-theme #DevelopSplashScreen .body-container .blurbs-container, .light-theme .messages .messageDivider.unread, .light-theme .messages .messageDivider .unread, .light-theme .footer .row .text-footer-nav:focus, .light-theme .footer .row .text-footer-nav:hover, .light-theme .xsmall, .light-theme .profile-avatar-right, .banner, .banner .banner-start .banner-content .banner-header, .light-theme .game-language-item, .light-theme .bottom-nav .message-actions .action-buttons, .light-theme .fraud-message-container .message-default, .flatpickr-current-month .flatpickr-monthDropdown-months, .flatpickr-current-month input.cur-year, .flatpickr-weekdays, .flatpickr-day.nextMonthDay, .flatpickr-day.prevMonthDay, .flatpickr-day, .light-theme .highcharts-axis-labels, .light-theme .highcharts-axis-title, .light-theme .highcharts-legend, .light-theme .popover-content .dropdown-menu li a, .light-theme .popover-content .dropdown-menu li button, .light-theme .popover-content .dropdown-menu li a:focus, .light-theme .popover-content .dropdown-menu li a:hover, .light-theme .popover-content .dropdown-menu li button:focus, .light-theme .popover-content .dropdown-menu li button:hover, .light-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .light-theme .conversation-title-editor-container .conversation-title-editor-body, .light-theme .catalog-content .search-options .menu-link:hover, .light-theme .menu-vertical .menu-option .menu-secondary, .light-theme .catalog-content .search-options .filter-label .panel-heading, .light-theme .open .dropdown-menu, .light-theme .pager .pager-cur a, .light-theme .pager .pager-cur span, .light-theme .pager .pager-total a, .light-theme .pager .pager-total span, .light-theme .game-card-avatar-slots .avatar .avatar-offset-label, .light-theme .menu-vertical .menu-option:hover, .light-theme .chat-search, .light-theme .rbx-left-col:before, .light-theme .recommended-game-container .game-name, .light-theme .recommended-game-container .game-name:active, .light-theme .recommended-game-container .game-name:focus, .light-theme .recommended-game-container .game-name:hover, .light-theme .active-game-container a.game-link, .light-theme .active-game-container a.game-link:active, .light-theme .active-game-container a.game-link:focus, .light-theme .active-game-container a.game-link:hover, .light-theme .pinned-game-container a.game-link, .light-theme .pinned-game-container a.game-link:active, .light-theme .pinned-game-container a.game-link:focus, .light-theme .pinned-game-container a.game-link:hover, .light-theme .verification-link-page-content .preparation-list-text .preparation-title, .light-theme .container-footer a, .light-theme .container-footer a:hover, .light-theme .dropdown-menu li.active, .light-theme .dropdown-menu li:focus, .light-theme .dropdown-menu li:hover, .light-theme .menu-vertical .menu-option .menu-secondary-option:focus, .light-theme .menu-vertical .menu-option .menu-secondary-option:hover, .light-theme .paired-name span:first-child, .light-theme .paired-name span:nth-child(2), .light-theme .paired-name span:nth-child(3), a.paired-name.text-name.ng-binding, .premium-container .page-top .top-header > .ng-binding, .premium-container .page-top .top-header > .ng-binding::after, .light-theme .payment-method-label-clickable .payment-method-label, .light-theme .payment-method-label-clickable .payment-method-label:hover, .light-theme .payment-method-label-clickable input.payment-method-radio-input:disabled+label.payment-method-label, .light-theme .radio input[type=radio]:disabled + label {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		.light-theme .payment-method-label-clickable input.payment-method-radio-input:checked+label.payment-method-label {
+			background-color: var(--btr-theme-item-hover);
+			color: var(--btr-theme-text-disabled);
+		}
+		
+		.light-theme .notification-stream-loading, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-loading {
+			background-color: hsla(0, 0%, 0%, 0.6);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		.light-theme .text-secondary, .light-theme .pill-toggle label, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.unread, .light-theme .text-link-secondary, .catalog-content .search-options .panel-heading, .small.text.menu-link.text-link-secondary.ng-binding, .light-theme .text-info, .light-theme .no-servers-message, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.read, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .read, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.read.text, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.read .text, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .read.text, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .read .text, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.read.text-label, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.read .text-label, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .read.text-label, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .read .text-label, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.read.text-link, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info.read .text-link, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .read.text-link, .light-theme .chat-friend-list .chat-friend-container .chat-friend-info .read .text-link, .light-theme .text-muted, .light-theme .item-card-label, .light-theme .game-card-experimental, .light-theme .game-card-container .game-card-name-secondary, .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-message-author, html .light-theme .btr-feeddesc, html .light-theme .btr-feedcreator, html .light-theme .btr-feeddate, html .light-theme .item-card-label, .light-theme .dialogs .dialog-container .dialog-message-container .link-card-details .link-card-description, .light-theme .footer .text-footer-nav, .light-theme .footer .text-footer-nav:link, .light-theme .footer .text-footer-nav:visited, .light-theme .footer .text-footer-nav:active, .light-theme .text-footer, .light-theme .text-pastname, .light-theme .text-label, .light-theme .mobile-search-options .text-label, .light-theme .text-label .text-robux-tile[ng-class="{'text-robux-tile': item.Product.IsFree}"], .rbx-left-col:after, .light-theme .messages .message-detail .message-detail-body a.messageDivider.read, .light-theme .messages .messageDivider .message-detail .message-detail-body a.read, .light-theme .messages .messageDivider.read, .light-theme .messages .messageDivider .read, .light-theme .messages .messageDivider.read .message-detail .message-detail-body a, .light-theme .messages .messageDivider .read .message-detail .message-detail-body a, .light-theme .messages .messageDivider.read.text, .light-theme .messages .messageDivider.read .text, .light-theme .messages .messageDivider .read.text, .light-theme .messages .messageDivider .read .text, .light-theme .messages .messageDivider.read.text-label, .light-theme .messages .messageDivider.read .text-label, .light-theme .messages .messageDivider .read.text-label, .light-theme .messages .messageDivider .read .text-label, .light-theme .messages .messageDivider.read.text-link, .light-theme .messages .messageDivider.read .text-link, .light-theme .messages .messageDivider .read.text-link, .light-theme .messages .messageDivider .read .text-link, .message-detail .message-detail-body .light-theme .messages .messageDivider.read a, .message-detail .message-detail-body .light-theme .messages .messageDivider .read a, .message-detail .message-detail-body .light-theme .messages .messageDivider a.read, .message-detail .message-detail-body .light-theme .messages a.messageDivider.read, .light-theme .text-date-hint, .light-theme .message-summary-content, .light-theme .message-summary-content .subject, .light-theme .messages .messageDivider.unread .message-summary-body .subject, .light-theme .form-has-feedback .form-control-feedback, .light-theme .form-has-feedback .form-control-label, .light-theme .text-report-ads, .light-theme .text-report-ads:active, .light-theme .text-report-ads:link, .light-theme .text-report-ads:visited, .light-theme .text-footer-nav, .light-theme .text-footer-nav:active, .light-theme .text-footer-nav:link, .light-theme .text-footer-nav:visited, .light-theme .notification-stream-body .container-empty {
+			color: var(--btr-theme-text-disabled);
+		}
+		
+		.light-theme .border, .light-theme .border-bottom, .light-theme .border-left, .light-theme .border-right, .light-theme .border-top, .light-theme .modal-dialog .modal-content .modal-header, .light-theme #game-details-play-button-container, .light-theme .vlist .list-item, .light-theme .catalog-container .search-container .input-group .autocomplete-dropdown-menu li, .light-theme .table > thead > tr > th {
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		.light-theme .input-group .input-field::placeholder {
+			color: var(--btr-theme-border);
+		}
+		
+		.light-theme .rbx-header, html .light-theme .container-footer {
+			background: var(--btr-theme-header);
+		}
+		.light-theme .sg-navigation .navbar-header {
+			background-color: var(--btr-theme-header);
+			background-color: rgba(0, 0, 0, 0.94)
+		}
+		
+		.light-theme .rbx-divider, .light-theme .stack .card-list .player-thumbnails-container .player-avatar.hidden-players-placeholder, .light-theme .sg-scrollbar .rbx-left-col, .light-theme .notification-stream-body .container-empty, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .container-empty {
+			background-color: var(--btr-theme-border-lighter);
+		}
+		
+		.light-theme .typing {
+			filter: invert(75%);
+		}
+		
+		.divider-left, .divider-top, .rbx-tabs-vertical ul {
+			border-color: var(--btr-theme-border)
+		}
+		
+		.light-theme .rbx-header .rbx-navbar li .nav-menu-title:focus, .light-theme .rbx-header .rbx-navbar li .nav-menu-title:hover {
+			background-color: rgba(230, 230, 230, 0.2) !important;
+		}
+		
+		.light-theme .rbx-left-col, .light-theme .side-nav-container {
+			background: var(--btr-theme-navigation);
+			color: var(--btr-theme-text);
+		}
+		
+		html .light-theme, html .light-theme .content, .light-theme .games-list-container, .light-theme .horizontal-scroller .scroller .spacer {
+			background-color: var(--btr-theme-background);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html #BodyWrapper, html .light-theme .section-content.remove-panel, html .light-theme .dropdown-menu, html .light-theme .open .dropdown-menu, html .light-theme .popover, html .light-theme .modal-dialog .modal-content, html .light-theme .notification-stream-body, .light-theme .item-card-container, .light-theme .item-card-container .item-card-thumb-container, .light-theme .item-card-container .item-card-caption, .btr-catalog.light-theme .btr-item-card-more, .light-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .light-theme .stack .card-list .card-item, .light-theme .voting-panel .users-vote .vote-details .vote-container .vote-mask .segment, .light-theme .rbx-tabs-horizontal .nav-tabs, .light-theme .rbx-tab .rbx-tab-heading, .light-theme .slide-switcher .slide-item-container .slide-item-container-right, .light-theme .premium-container .robux-body .robux-row, .light-theme .messages .messageDivider.message-news, .light-theme .item-details-thumbnail-container .thumbnail-holder, .light-theme .menu-vertical, .light-theme .menu-vertical .menu-option .menu-secondary-option.active, .light-theme .menu-vertical .menu-option .menu-secondary-option:active, .light-theme .profile-accoutrements-container .profile-accoutrements-slider .accoutrement-item a, .light-theme .sg-container, .light-theme .input-field, .light-theme input, .light-theme #sandbox .catalog-tabs, .light-theme .pill-toggle, .light-theme .rbx-tabs-vertical .rbx-tab.active .rbx-tab-heading, .light-theme .rbx-header .navbar-search .navbar-search-option.new-selected, .light-theme .rbx-header .navbar-search .navbar-search-option, .light-theme .rbx-header .navbar-search .navbar-search-option.selected, .light-theme .rbx-header .navbar-search .new-dropdown-menu, .light-theme .content-overflow-toggle .toggle-content, .light-theme .btr-preview-container {
+			background-color: var(--btr-theme-item);
+		}
+		
+		.light-theme .notification-stream-header, .notification-stream-header.light-theme {
+			border-color: var(--btr-theme-border)
+		}
+		.light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper, .light-theme .file-upload-content {
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		.starcode-input-container input[type=text].starcode-input, .starcode-input-container input[type=text].starcode-input:focus~.starcode-button, .starcode-input-container input[type=text].starcode-input:active, .starcode-input-container input[type=text].starcode-input:hover, .starcode-input-container input[type=text].starcode-input:visited {
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		.light-theme h3.doc-heading {
+			border-color: var(--btr-theme-border-lighter);
+		}
+		.light-theme .sg-section {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border);
+		}
+		.light-theme .avatar-card-container.disabled, .light-theme .sg-store-card, .light-theme #sandbox .catalog-tab:hover, .light-theme #sandbox .catalog-tab.active:hover, .light-theme .sg-section-icons li:nth-child(2n), .light-theme .rbx-header .navbar-search .navbar-search-option.selected, .light-theme .rbx-header .navbar-search .navbar-search-option a:hover, .light-theme .rbx-header .navbar-search .navbar-search-option.selected a:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		.light-theme #sandbox .catalog-tab:hover {
+			border-color: var(--btr-theme-item-hover);
+		}
+		
+		.light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover {
+			background-color: var(--btr-theme-item-hover) !important;
+		}
+		.light-theme .nav > li > a:focus, .light-theme .nav > li > a:hover, .light-theme .nav-tabs > li.active > a:focus {
+			background-color: var(--btr-theme-item-hover-hover) !important;
+		}
+		
+		html .light-theme .input-group-btn .input-dropdown-btn, .light-theme .input-group-addon:first-child, .light-theme .input-group-btn:first-child > .btn, .light-theme .input-group-btn:first-child > .btn-group > .btn, .light-theme .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .light-theme .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .light-theme .input-group .form-control:first-child, .light-theme .input-group .input-field {
+			background-color: var(--btr-theme-item-hover);
+			border-color: var(--btr-theme-divider);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		.light-theme .rbx-select-group .rbx-select, .light-theme .rbx-select-group .select-option, .light-theme .select-group .rbx-select, .light-theme .select-group .select-option {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border);
+		}
+		
+		.light-theme .form-control[disabled], .light-theme .form-control[readonly] {
+			background-color: var(--btr-theme-item-hover);
+			color: var(--btr-theme-border)
+		}
+		
+		.light-theme .table {
+			background-color: var(--btr-theme-header);
+		}
+		.light-theme .table-striped > tbody > tr:nth-child(2n) > td, .light-theme .table-striped > tbody > tr:nth-child(2n) > th, .light-theme .sg-section .gray {
+			background-color: var(--btr-theme-border);
+		}
+		
+		html .light-theme .input-group-btn .input-dropdown-btn .icon-down-16x16 {
+			filter: invert(100%);
+		}
+		& when (@LogoStyle = 201701) {
+			.light-theme .icon-default-logo-notification, .light-theme .icon-logo-notification, .light-theme .icon-logo-r-95 {
+				filter: invert(100%);
+			}
+		}
+		
+		.light-theme .container-empty {
+			background-color: var(--btr-theme-border-lighter);
+			color: var(--btr-theme-text-disabled);
+		}
+		.light-theme .section-content-off, .light-theme .message-banner {
+			background-color: var(--btr-theme-border);
+			color: var(--btr-theme-text-disabled);
+		}
+		
+		.btr-settings-content group[minimizable] .btr-setting-group-title-container h4:hover {
+			background: rgba(255, 255, 255, .1);
+		}
+		
+		.light-theme .form-control:focus {
+			background-color: transparent;
+		}
+		
+		html .light-theme .input-group .input-group-btn .dropdown-menu, html .light-theme .notification-stream-header, html .light-theme .notification-stream-list .notification-stream-item, html .light-theme .notification-stream-list .notification-stream-item, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, html .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper, html .light-theme .notification-stream-body, html .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body, html .light-theme .notification-stream-list .notification-stream-item .notification-display-text:after{
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		html .light-theme .roblox-popover-content.bottom .arrow:after, html .light-theme #notification-stream-popover, .light-theme .popover.bottom > .arrow:after, html .light-theme #notification-stream-popover.popover.bottom > .arrow:after {
+			border-bottom-color: var(--btr-theme-item-hover);
+		}
+		
+		html .light-theme .notification-stream-list .notification-stream-item.unInteracted, html .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item.unInteracted, html .light-theme .notification-stream-list .notification-stream-item.unInteracted .notification-display-text:after {
+			background-color: var(--btr-theme-item-hover-hover);
+		}
+		
+		html .light-theme .input-group-btn .dropdown-menu li a:hover, html .light-theme .input-group-btn .dropdown-menu li a:focus, html .light-theme .input-group-btn .input-dropdown-btn:hover, html .input-group-btn .input-dropdown-btn:focus, html .light-theme .input-group-btn .input-dropdown-btn:active {
+			background-color: var(--btr-theme-item-hover-hover);
+			border-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme .dropdown-menu li:hover, .light-theme .menu-vertical .menu-option:hover, html .light-theme .dropdown-menu li:focus, html .dropdown-menu li.active, html .light-theme .rbx-header .rbx-navbar-search .rbx-navbar-search-option.selected {
+			background-color: var(--btr-theme-item-hover) !important;
+		}
+		
+		.light-theme .messages .messageDivider {
+			background-color: var(--btr-theme-item-hover)
+		}
+		.light-theme .messages .messageDivider.unread {
+			background-color: var(--btr-theme-item-hover-hover)
+		}
+		
+		html .light-theme #header .btr-nav-notif {
+			border-color: var(--btr-theme-header);
+			color: #000;
+		}
+		
+		.light-theme .roblox-popover-content.bottom .arrow, #notification-stream-popover.light-theme.popover.bottom > .arrow, .light-theme #notification-stream-popover.popover.bottom > .arrow, .light-theme .popover.bottom>.arrow, .light-theme .popover.bottom>.arrow:after, .light-theme .dialogs .popover.bottom.game-list-in-dialog>.arrow, .light-theme .dialogs .popover.bottom.game-list-in-dialog>.arrow:after {
+			border-bottom-color: var(--btr-theme-item);
+		}
+		.light-theme .popover.left>.arrow, .light-theme .popover.left>.arrow:after {
+			border-left-color: var(--btr-theme-item);
+		}
+		
+		.light-theme #navigation li a:not(:hover) span[class^="icon-"], .light-theme #navigation li a:not(:hover) span.new-menu-icon, .light-theme #navigation li button:not(:hover) span[class^="icon-"], .light-theme .rbx-tab .text-lead .icon-down {
+			filter: invert(100%);
+		}
+		
+		.light-theme .btn-toggle {
+			background-color: var(--btr-theme-border);
+			color: var(--btr-theme-text-secondary);
+		}
+		.light-theme .btn-toggle .toggle-flip {
+			background-color: var(--btr-theme-item);
+		}
+		.light-theme .btn-toggle.disabled .toggle-flip, .light-theme .btn-toggle[disabled] .toggle-flip {
+			background-color: var(--btr-theme-item-hover);
+		}
+		.light-theme .btn-toggle.disabled, .light-theme .btn-toggle[disabled] {
+			background-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .btn-control-lg, html .light-theme .btn-control-sm, html .light-theme .btn-control-xs, html .light-theme .btn-control-md, html .light-theme .btn-control-sm:visited, html .light-theme .btn-control-xs:visited, html .light-theme .btn-control-md:visited, html .btn-control-sm:link, html .light-theme .btn-control-xs:link, html .light-theme .btn-control-md:link, .light-theme .btn-control-md, .light-theme .btn-control-lg, .light-theme .btn-generic-edit-lg, .light-theme a.btn-generic-edit-lg, .light-theme button.btn-generic-edit-lg, .light-theme .btn-generic-edit-md, .light-theme .btn-generic-edit-md, .light-theme button.btn-generic-edit-md, .light-theme .btn-control-sm, .light-theme .btn-generic-edit-sm, .light-theme a.btn-generic-edit-sm, .light-theme button.btn-generic-edit-sm, .light-theme .btn-control-xs, .light-theme .btn-generic-edit-xs, .light-theme a.btn-generic-edit-xs, .light-theme button.btn-generic-edit-xs, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md, .light-theme .avatar-card-btns .ignore-friend, .light-theme .btn-generic-locked-sm, a.light-theme .btn-generic-locked-sm, button.light-theme .btn-generic-locked-sm, .light-theme .btn-generic-unlocked-sm, a.light-theme .btn-generic-unlocked-sm, button.light-theme .btn-generic-unlocked-sm {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme .btn-control-lg.disabled, html .light-theme .btn-control-lg.disabled:hover, html .light-theme .btn-control-lg.disabled:focus, html .light-theme .btn-control-lg.disabled:active, html .light-theme .btn-control-xs.disabled, html .light-theme .btn-control-xs.disabled:hover, html .light-theme .btn-control-xs.disabled:focus, html .light-theme .btn-control-xs.disabled:active, html .light-theme .btn-control-xs.disabled.active, html .light-theme .btn-control-lg[disabled], html .light-theme .btn-control-lg[disabled]:hover, html .light-theme .btn-control-lg[disabled]:focus, html .light-theme .btn-control-lg[disabled]:active, html .light-theme .btn-control-lg[disabled].active, html .light-theme .btn-control-xs[disabled], html .light-theme .btn-control-xs[disabled]:hover, html .light-theme .btn-control-xs[disabled]:focus, html .light-theme .btn-control-xs[disabled]:active, html .light-theme .btn-control-xs[disabled].active, html .light-theme .btn-control-sm.disabled, html .light-theme .btn-control-sm.disabled:hover, html .light-theme .btn-control-sm.disabled:focus, html .light-theme .btn-control-sm.disabled:active, html .light-theme .btn-control-sm.disabled.active, html .light-theme .btn-control-sm[disabled], html .light-theme .btn-control-sm[disabled]:hover, html .light-theme .btn-control-sm[disabled]:focus, html .light-theme .btn-control-sm[disabled]:active, html .light-theme .btn-control-sm[disabled].active, html .light-theme .btn-control-md.disabled, html .light-theme .btn-control-md.disabled:hover, html .light-theme .btn-control-md.disabled:focus, html .light-theme .btn-control-md.disabled:active, html .light-theme .btn-control-md.disabled.active, html .light-theme .btn-control-md[disabled], html .light-theme .btn-control-md[disabled]:hover, html .light-theme .btn-control-md[disabled]:focus, html .light-theme .btn-control-md[disabled]:active, html .light-theme .btn-control-md[disabled].active, .light-theme .btn-control-lg.disabled, .light-theme .btn-control-lg.disabled.active, .light-theme .btn-control-lg.disabled:active, .light-theme .btn-control-lg.disabled:focus, .light-theme .btn-control-lg.disabled:hover, .light-theme .btn-control-lg[disabled], .light-theme .btn-control-lg[disabled].active, .light-theme .btn-control-lg[disabled]:active, .light-theme .btn-control-lg[disabled]:focus, .light-theme .btn-control-lg[disabled]:hover, .light-theme .btn-control-md.disabled, .light-theme .btn-control-md.disabled.active, .light-theme .btn-control-md.disabled:active, .light-theme .btn-control-md.disabled:focus, .light-theme .btn-control-md.disabled:hover, .light-theme .btn-control-md[disabled], .light-theme .btn-control-md[disabled].active, .light-theme .btn-control-md[disabled]:active, .light-theme .btn-control-md[disabled]:focus, .light-theme .btn-control-md[disabled]:hover, .light-theme .btn-control-sm.disabled, .light-theme .btn-control-sm.disabled.active, .light-theme .btn-control-sm.disabled:active, .light-theme .btn-control-sm.disabled:focus, .light-theme .btn-control-sm.disabled:hover, .light-theme .btn-control-sm[disabled], .light-theme .btn-control-sm[disabled].active, .light-theme .btn-control-sm[disabled]:active, .light-theme .btn-control-sm[disabled]:focus, .light-theme .btn-control-sm[disabled]:hover, .light-theme .btn-control-xs.disabled, .light-theme .btn-control-xs.disabled.active, .light-theme .btn-control-xs.disabled:active, .light-theme .btn-control-xs.disabled:focus, .light-theme .btn-control-xs.disabled:hover, .light-theme .btn-control-xs[disabled], .light-theme .btn-control-xs[disabled].active, .light-theme .btn-control-xs[disabled]:active, .light-theme .btn-control-xs[disabled]:focus, .light-theme .btn-control-xs[disabled]:hover, .light-theme .btn-buy-lg.disabled, .light-theme .btn-buy-lg.disabled.active, .light-theme .btn-buy-lg.disabled:active, .light-theme .btn-buy-lg.disabled:focus, .light-theme .btn-buy-lg.disabled:hover, .light-theme .btn-buy-lg[disabled], .light-theme .btn-buy-lg[disabled].active, .light-theme .btn-buy-lg[disabled]:active, .light-theme .btn-buy-lg[disabled]:focus, .light-theme .btn-buy-lg[disabled]:hover, .light-theme .btn-buy-md.disabled, .light-theme .btn-buy-md.disabled.active, .light-theme .btn-buy-md.disabled:active, .light-theme .btn-buy-md.disabled:focus, .light-theme .btn-buy-md.disabled:hover, .light-theme .btn-buy-md[disabled], .light-theme .btn-buy-md[disabled].active, .light-theme .btn-buy-md[disabled]:active, .light-theme .btn-buy-md[disabled]:focus, .light-theme .btn-buy-md[disabled]:hover, .light-theme .btn-buy-sm.disabled, .light-theme .btn-buy-sm.disabled.active, .light-theme .btn-buy-sm.disabled:active, .light-theme .btn-buy-sm.disabled:focus, .light-theme .btn-buy-sm.disabled:hover, .light-theme .btn-buy-sm[disabled], .light-theme .btn-buy-sm[disabled].active, .light-theme .btn-buy-sm[disabled]:active, .light-theme .btn-buy-sm[disabled]:focus, .light-theme .btn-buy-sm[disabled]:hover, .light-theme .btn-buy-xs.disabled, .light-theme .btn-buy-xs.disabled.active, .light-theme .btn-buy-xs.disabled:active, .light-theme .btn-buy-xs.disabled:focus, .light-theme .btn-buy-xs.disabled:hover, .light-theme .btn-buy-xs[disabled], .light-theme .btn-buy-xs[disabled].active, .light-theme .btn-buy-xs[disabled]:active, .light-theme .btn-buy-xs[disabled]:focus, .light-theme .btn-buy-xs[disabled]:hover, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md.disabled, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md.disabled.active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md.disabled:active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md.disabled:focus, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md.disabled:hover, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md[disabled], .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md[disabled].active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md[disabled]:active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md[disabled]:focus, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md[disabled]:hover, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md.disabled, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md.disabled.active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md.disabled:active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md.disabled:focus, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md.disabled:hover, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md[disabled], .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md[disabled].active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md[disabled]:active, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md[disabled]:focus, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md[disabled]:hover, .dark-theme .btn-control-lg.disabled, .light-theme .avatar-card-btns .ignore-friend.disabled, .light-theme .avatar-card-btns .ignore-friend.disabled.active, .light-theme .avatar-card-btns .ignore-friend.disabled:active, .light-theme .avatar-card-btns .ignore-friend.disabled:focus, .light-theme .avatar-card-btns .ignore-friend.disabled:hover, .light-theme .avatar-card-btns .ignore-friend[disabled], .light-theme .avatar-card-btns .ignore-friend[disabled].active, .light-theme .avatar-card-btns .ignore-friend[disabled]:active, .light-theme .avatar-card-btns .ignore-friend[disabled]:focus, .light-theme .avatar-card-btns .ignore-friend[disabled]:hover, .light-theme .btn-generic-edit-lg.disabled, .light-theme .btn-generic-edit-lg.disabled.active, .light-theme .btn-generic-edit-lg.disabled:active, .light-theme .btn-generic-edit-lg.disabled:focus, .light-theme .btn-generic-edit-lg.disabled:hover, .light-theme .btn-generic-edit-lg[disabled], .light-theme .btn-generic-edit-lg[disabled].active, .light-theme .btn-generic-edit-lg[disabled]:active, .light-theme .btn-generic-edit-lg[disabled]:focus, .light-theme .btn-generic-edit-lg[disabled]:hover, .light-theme .btn-generic-edit-md.disabled, .light-theme .btn-generic-edit-md.disabled.active, .light-theme .btn-generic-edit-md.disabled:active, .light-theme .btn-generic-edit-md.disabled:focus, .light-theme .btn-generic-edit-md.disabled:hover, .light-theme .btn-generic-edit-md[disabled], .light-theme .btn-generic-edit-md[disabled].active, .light-theme .btn-generic-edit-md[disabled]:active, .light-theme .btn-generic-edit-md[disabled]:focus, .light-theme .btn-generic-edit-md[disabled]:hover, .light-theme .btn-generic-edit-sm.disabled, .light-theme .btn-generic-edit-sm.disabled.active, .light-theme .btn-generic-edit-sm.disabled:active, .light-theme .btn-generic-edit-sm.disabled:focus, .light-theme .btn-generic-edit-sm.disabled:hover, .light-theme .btn-generic-edit-sm[disabled], .light-theme .btn-generic-edit-sm[disabled].active, .light-theme .btn-generic-edit-sm[disabled]:active, .light-theme .btn-generic-edit-sm[disabled]:focus, .light-theme .btn-generic-edit-sm[disabled]:hover, .light-theme .btn-generic-edit-xs.disabled, .light-theme .btn-generic-edit-xs.disabled.active, .light-theme .btn-generic-edit-xs.disabled:active, .light-theme .btn-generic-edit-xs.disabled:focus, .light-theme .btn-generic-edit-xs.disabled:hover, .light-theme .btn-generic-edit-xs[disabled], .light-theme .btn-generic-edit-xs[disabled].active, .light-theme .btn-generic-edit-xs[disabled]:active, .light-theme .btn-generic-edit-xs[disabled]:focus, .light-theme .btn-generic-edit-xs[disabled]:hover, .light-theme .btn-generic-locked-sm.disabled, .light-theme .btn-generic-locked-sm.disabled.active, .light-theme .btn-generic-locked-sm.disabled:active, .light-theme .btn-generic-locked-sm.disabled:focus, .light-theme .btn-generic-locked-sm.disabled:hover, .light-theme .btn-generic-locked-sm[disabled], .light-theme .btn-generic-locked-sm[disabled].active, .light-theme .btn-generic-locked-sm[disabled]:active, .light-theme .btn-generic-locked-sm[disabled]:focus, .light-theme .btn-generic-locked-sm[disabled]:hover, a.light-theme .btn-generic-locked-sm.disabled, a.light-theme .btn-generic-locked-sm.disabled.active, a.light-theme .btn-generic-locked-sm.disabled:active, a.light-theme .btn-generic-locked-sm.disabled:focus, a.light-theme .btn-generic-locked-sm.disabled:hover, a.light-theme .btn-generic-locked-sm[disabled], a.light-theme .btn-generic-locked-sm[disabled].active, a.light-theme .btn-generic-locked-sm[disabled]:active, a.light-theme .btn-generic-locked-sm[disabled]:focus, a.light-theme .btn-generic-locked-sm[disabled]:hover, button.light-theme .btn-generic-locked-sm.disabled, button.light-theme .btn-generic-locked-sm.disabled.active, button.light-theme .btn-generic-locked-sm.disabled:active, button.light-theme .btn-generic-locked-sm.disabled:focus, button.light-theme .btn-generic-locked-sm.disabled:hover, button.light-theme .btn-generic-locked-sm[disabled], button.light-theme .btn-generic-locked-sm[disabled].active, button.light-theme .btn-generic-locked-sm[disabled]:active, button.light-theme .btn-generic-locked-sm[disabled]:focus, button.light-theme .btn-generic-locked-sm[disabled]:hover, .light-theme .btn-generic-unlocked-sm.disabled, .light-theme .btn-generic-unlocked-sm.disabled.active, .light-theme .btn-generic-unlocked-sm.disabled:active, .light-theme .btn-generic-unlocked-sm.disabled:focus, .light-theme .btn-generic-unlocked-sm.disabled:hover, .light-theme .btn-generic-unlocked-sm[disabled], .light-theme .btn-generic-unlocked-sm[disabled].active, .light-theme .btn-generic-unlocked-sm[disabled]:active, .light-theme .btn-generic-unlocked-sm[disabled]:focus, .light-theme .btn-generic-unlocked-sm[disabled]:hover, a.light-theme .btn-generic-unlocked-sm.disabled, a.light-theme .btn-generic-unlocked-sm.disabled.active, a.light-theme .btn-generic-unlocked-sm.disabled:active, a.light-theme .btn-generic-unlocked-sm.disabled:focus, a.light-theme .btn-generic-unlocked-sm.disabled:hover, a.light-theme .btn-generic-unlocked-sm[disabled], a.light-theme .btn-generic-unlocked-sm[disabled].active, a.light-theme .btn-generic-unlocked-sm[disabled]:active, a.light-theme .btn-generic-unlocked-sm[disabled]:focus, a.light-theme .btn-generic-unlocked-sm[disabled]:hover, button.light-theme .btn-generic-unlocked-sm.disabled, button.light-theme .btn-generic-unlocked-sm.disabled.active, button.light-theme .btn-generic-unlocked-sm.disabled:active, button.light-theme .btn-generic-unlocked-sm.disabled:focus, button.light-theme .btn-generic-unlocked-sm.disabled:hover, button.light-theme .btn-generic-unlocked-sm[disabled], button.light-theme .btn-generic-unlocked-sm[disabled].active, button.light-theme .btn-generic-unlocked-sm[disabled]:active, button.light-theme .btn-generic-unlocked-sm[disabled]:focus, button.light-theme .btn-generic-unlocked-sm[disabled]:hover {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+			color: var(--btr-theme-text-disabled);
+		}
+		
+		html .light-theme .btn-control-lg:hover, html .light-theme .btn-control-lg:focus, html .light-theme .btn-control-xs:hover, html .light-theme .btn-control-xs:focus, html .light-theme .btn-control-xs.active, html .light-theme .btn-control-sm:hover, html .light-theme .btn-control-sm:focus, html .light-theme .btn-control-sm.active, html .light-theme .btn-control-md:hover, html .light-theme .btn-control-md:focus, html .light-theme .btn-control-md.active, .light-theme .btn-control-lg:focus, .light-theme .btn-control-lg:hover, .light-theme .btn-control-md:focus, .light-theme .btn-control-md:hover, .light-theme .btn-control-sm:focus, .light-theme .btn-control-sm:hover, .light-theme .btn-control-xs:focus, .light-theme .btn-control-xs:hover, .light-theme .btn-generic-edit-lg:focus, .light-theme .btn-generic-edit-lg:hover, .light-theme .btn-generic-edit-md:focus, .light-theme .btn-generic-edit-md:hover, .light-theme .btn-generic-edit-sm:focus, .light-theme .btn-generic-edit-sm:hover, .light-theme .btn-generic-edit-xs:focus, .light-theme .btn-generic-edit-xs:hover, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:focus, .light-theme .profile-header .header-caption .header-details .details-actions .btn-primary-md:hover, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:focus, .light-theme .profile-header .header-caption .header-details .details-actions .btn-alert-md:hover, .light-theme .btn-generic-locked-sm:focus, .light-theme .btn-generic-locked-sm:hover, a.light-theme .btn-generic-locked-sm:focus, a.light-theme .btn-generic-locked-sm:hover, button.light-theme .btn-generic-locked-sm:focus, button.light-theme .btn-generic-locked-sm:hover, .light-theme .btn-generic-unlocked-sm:focus, .light-theme .btn-generic-unlocked-sm:hover, a.light-theme .btn-generic-unlocked-sm:focus, a.light-theme .btn-generic-unlocked-sm:hover, button.light-theme .btn-generic-unlocked-sm:focus, button.light-theme .btn-generic-unlocked-sm:hover, .light-theme .avatar-card-btns .ignore-friend:focus, .light-theme .avatar-card-btns .ignore-friend:hover {
+			background-color: var(--btr-theme-item-hover);
+			border-color: var(--btr-theme-border-lighter);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		.light-theme .pager .first .pager-btn, .light-theme .pager .first a, .light-theme .pager .last .pager-btn, .light-theme .pager .last a, .light-theme .pager .pager-next .pager-btn, .light-theme .pager .pager-next a, .light-theme .pager .pager-prev .pager-btn, .light-theme .pager .pager-prev a, .light-theme .btn-generic-left-sm, .light-theme .btn-generic-right-sm, .light-theme .btn-generic-left-sm.active, .light-theme .btn-generic-left-sm:active, .light-theme .btn-generic-right-sm.active, .light-theme .btn-generic-right-sm:active, .light-theme .btn-generic-left-sm:focus, .light-theme .btn-generic-right-sm:focus, .light-theme .btn-generic-last-page-sm, .light-theme .btn-generic-last-page-sm:focus, .light-theme .btn-generic-last-page-sm.active, .light-theme .btn-generic-last-page-sm:active, .light-theme .btn-generic-first-page-sm, .light-theme .btn-generic-first-page-sm:focus, .light-theme .btn-generic-first-page-sm.active, .light-theme .btn-generic-first-page-sm:active {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		.light-theme .btn-generic-left-sm:hover, .light-theme .btn-generic-right-sm:hover, .light-theme .btn-generic-last-page-sm:hover, .light-theme .btn-generic-first-page-sm:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		.light-theme .pager .disabled .pager-btn, .light-theme .pager .disabled a, .light-theme .btn-generic-left-sm.disabled, .light-theme .btn-generic-left-sm.disabled.active, .light-theme .btn-generic-left-sm.disabled:active, .light-theme .btn-generic-left-sm.disabled:focus, .light-theme .btn-generic-left-sm.disabled:hover, .light-theme .btn-generic-left-sm[disabled], .light-theme .btn-generic-left-sm[disabled].active, .light-theme .btn-generic-left-sm[disabled]:active, .light-theme .btn-generic-left-sm[disabled]:focus, .light-theme .btn-generic-left-sm[disabled]:hover, .light-theme .btn-generic-right-sm.disabled, .light-theme .btn-generic-right-sm.disabled.active, .light-theme .btn-generic-right-sm.disabled:active, .light-theme .btn-generic-right-sm.disabled:focus, .light-theme .btn-generic-right-sm.disabled:hover, .light-theme .btn-generic-right-sm[disabled], .light-theme .btn-generic-right-sm[disabled].active, .light-theme .btn-generic-right-sm[disabled]:active, .light-theme .btn-generic-right-sm[disabled]:focus, .light-theme .btn-generic-right-sm[disabled]:hover, .light-theme .pager .disabled .btn-generic-left-sm, .light-theme .pager .disabled .btn-generic-left-sm.active, .light-theme .pager .disabled .btn-generic-left-sm:active, .light-theme .pager .disabled .btn-generic-left-sm:focus, .light-theme .pager .disabled .btn-generic-left-sm:hover, .light-theme .pager .disabled .btn-generic-right-sm, .light-theme .pager .disabled .btn-generic-right-sm.active, .light-theme .pager .disabled .btn-generic-right-sm:active, .light-theme .pager .disabled .btn-generic-right-sm:focus, .light-theme .pager .disabled .btn-generic-right-sm:hover, .light-theme .btn-generic-first-page-sm.disabled, .light-theme .btn-generic-first-page-sm.disabled.active, .light-theme .btn-generic-first-page-sm.disabled:active, .light-theme .btn-generic-first-page-sm.disabled:focus, .light-theme .btn-generic-first-page-sm.disabled:hover, .light-theme .btn-generic-first-page-sm[disabled], .light-theme .btn-generic-first-page-sm[disabled].active, .light-theme .btn-generic-first-page-sm[disabled]:active, .light-theme .btn-generic-first-page-sm[disabled]:focus, .light-theme .btn-generic-first-page-sm[disabled]:hover, .light-theme .btn-generic-last-page-sm.disabled, .light-theme .btn-generic-last-page-sm.disabled.active, .light-theme .btn-generic-last-page-sm.disabled:active, .light-theme .btn-generic-last-page-sm.disabled:focus, .light-theme .btn-generic-last-page-sm.disabled:hover, .light-theme .btn-generic-last-page-sm[disabled], .light-theme .btn-generic-last-page-sm[disabled].active, .light-theme .btn-generic-last-page-sm[disabled]:active, .light-theme .btn-generic-last-page-sm[disabled]:focus, .light-theme .btn-generic-last-page-sm[disabled]:hover {
+			background-color: transparent;
+			border-color: transparent;
+		}
+		
+		html .light-theme .icon-more, html .light-theme .icon-left, html .light-theme .icon-right, html .light-theme .icon-last-page, html .light-theme .icon-first-page, .light-theme .icon-close {
+			filter: invert(70%);
+		}
+		
+		html .light-theme .game-card-container, .light-theme .grid-item-container .game-card-link, .light-theme .featured-grid-item-container .game-card-link {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme .game-name-title:after {
+			background-color: var(--btr-theme-item);
+		}
+		
+		.light-theme .topic-container .topic-carousel .unselected-topic {
+			background-color: var(--btr-theme-border);
+			color: var(--btr-theme-text-disabled);
+		}
+		
+		html .light-theme hr, .light-theme .slide-switcher .slide-item-container .slide-item-container-right h2 {
+			border-color: #000;
+		}
+		
+		.light-theme .slide-switcher .slide-item-container .slide-item-container-right .slide-item-description {
+			border-color: var(--btr-theme-border)
+		}
+		
+		html .btr-light-theme .btr-it-checkbox input[type="checkbox"]+label:before, .btr-light-theme .btr-settings-checkbox input[type="checkbox"] + label:before, html .light-theme .checkbox label::before, .light-theme .checkbox input[type="checkbox"] + label::before, html .light-theme .radio label::before {
+			background-color: var(--btr-theme-item-hover);
+			border-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme .form-control, html .light-theme .btr-server-pager .btr-server-input, html .light-theme .content .btr-currentPage input, html .light-theme .btr-pager-holder input.btr-pager-cur {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-divider);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme .input-group .form-control, html .light-theme .input-group .form-control:first-child, html .light-theme .input-group .input-field:focus {
+			background-color: var(--btr-theme-item-hover);
+			border-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme .input-field, html .light-theme .content .btr-currentPage input {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		
+		html .light-theme .input-group-btn .input-addon-btn, .light-theme .input-group .input-group-btn .input-addon-btn, .light-theme .input-group .input-group-btn .input-addon-btn:focus, .light-theme .input-group .input-group-btn .input-addon-btn:hover, html .light-theme .input-group-btn .input-addon-btn:active, html .light-theme .input-group-btn .input-addon-btn:hover, html .light-theme .input-group-btn .input-addon-btn.active {
+			background-color: var(--btr-theme-item-hover);
+			border-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme .input-group-btn .input-addon-btn:active, html .light-theme .input-group-btn .input-addon-btn:hover, html .light-theme .input-group-btn .input-addon-btn.active {
+			background-color: var(--btr-theme-item-hover-hover);
+		}
+		
+		html .light-theme .input-group-btn .input-addon-btn .icon-search {
+			filter: invert(100%);
+		}
+		
+		html .light-theme #navbar-universal-search .input-addon-btn {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		html .light-theme .icon-nav-search:not(:hover), .light-theme .rbx-header .navbar-search .input-addon-btn .icon-common-search-sm:not(:hover) {
+			filter: invert(100%);
+		}
+		
+		.btr-light-theme .btr-settings-header, html .btr-light-theme .btr-fake-header, html #btr-naveditor-topright-container li, html .light-theme .btr-naveditor-item > a, html .light-theme .btr-naveditor-item > a:active, html .light-theme .btr-naveditor-item > a:visited, html .btr-naveditor-item > a:focus, html .light-theme .btr-naveditor-item > a:link {
+			background-color: var(--btr-theme-header);
+		}
+		
+		html .btr-light-theme .btr-settings {
+			background-color: var(--btr-theme-background);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme .btr-naveditor-container {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .btr-filter-enabled, html .light-theme .btr-filter-disabled {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme .btr-filter-group {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		html .light-theme .btr-filter-group:active {
+			background-color: var(--btr-theme-item-hover-hover);
+		}
+		
+		html .btr-settings-content group > h4 {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .btr-light-theme .btr-settings select {
+			color: #191919;
+		}
+		
+		html .light-theme .MediaPlayerIcon {
+			filter: invert(70%);
+		}
+		
+		html .light-theme .btn-buy-xs, html .light-theme .btn-buy-sm, html .light-theme .btn-buy-md, html .light-theme .btn-buy-lg {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		.light-theme .game-grid .grid-item-container, html .light-theme .featured-grid-item-container, .dark-theme .featured-grid-item-container {
+			background-color: transparent;
+		}
+		
+		/* Chat */
+		
+		.light-theme .chat-main {
+			background-color: var(--btr-theme-item);
+		}
+		.light-theme .avatar.card-plain {
+			border-color: var(--btr-theme-border);
+		}
+		.light-theme .chat-friend-list .chat-friend-container.active, .light-theme .chat-friend-list .chat-friend-container:active, .light-theme .chat-friend-list .chat-friend-container:focus, .light-theme .chat-friend-list .chat-friend-container:hover {
+			background-color: var(--btr-theme-item-hover);
+			color: #191919;
+		}
+		.light-theme .dialogs .dialog-container .dialog-body {
+			background-color: var(--btr-theme-item-hover-hover);
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container .indicated-message-bubble {
+			background-color: var(--btr-theme-background);
+		}
+		.light-theme .dialog-container .dialog-input-container, .light-theme .dialog-container .dialog-input-container .dialog-input, .light-theme .dialog-container .dialog-input-container .dialog-input:focus {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-background);
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-message {
+			background-color: var(--btr-theme-item);
+			color: var(--btr-theme-text-secondary);
+			border-color: var(--btr-theme-background);
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+			border-color: transparent var(--btr-theme-background) transparent transparent;
+			border-width: 0 4px 4px 0;
+		}
+		.light-theme .details-container {
+			background-color: var(--btr-theme-item-hover-hover);
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+			border-color: transparent var(--btr-theme-item) transparent transparent;
+		}
+		.light-theme .dialog-container, .light-theme .details-members-container .add-friends-option, .light-theme .friends-list-container, .light-theme .game-item-container {
+			background-color: var(--btr-theme-item);
+		}
+		.light-theme .friends-list-container .friend-container:hover, .light-theme .details-btns-fixed, .light-theme .recommended-game-container:hover, .light-theme .dialog-container .dialog-input-container .dialog-input:disabled, .light-theme .active-game-container:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		.light-theme .create-chat-container .details-header-container, .light-theme .select-friends-container .details-header-container, .small.details-input.conversation-title-input.ng-pristine.ng-valid.ng-isolate-scope.ng-empty.ng-valid-maxlength.ng-touched {
+			background-color: var(--btr-theme-item);
+			color: var(--btr-theme-text-secondary);
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container .link-card-container, .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .link-card-container {
+			background-color: var(--btr-theme-item);
+			border: 1px solid var(--btr-theme-background);
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent var(--btr-theme-background) transparent transparent;
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent var(--btr-theme-item) transparent transparent;
+		}
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent transparent transparent var(--btr-theme-background);
+		}
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent transparent transparent var(--btr-theme-item);
+		}
+		
+		/* BC page */
+		
+		body[data-btr-page="membership"] h1, body[data-btr-page="membership"] h2, body[data-btr-page="membership"] h3, body[data-btr-page="membership"] h4, body[data-btr-page="membership"] .product-summary .product-description {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		body[data-btr-page="membership"] .product-summary {
+			color: #529152;
+		}
+		
+		body[data-btr-page="membership"] a:link, body[data-btr-page="membership"] a:visited, body[data-btr-page="membership"] a:active {
+			color: #00A2FF;
+		}
+		
+		/* Private srver config */
+		
+		#configure-form h1, #configure-form h2, #configure-form h2 a:any-link, #configure-form h3, #configure-form h4, #configure-form .form-label {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		/* Settings */
+		
+		.light-theme #settings-container .menu-vertical {
+			background-color: var(--btr-theme-item);
+		}
+		
+		.light-theme #settings-container .menu-vertical .menu-option:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		.light-theme #settings-container .select-group .select-option option {
+			background-color: var(--btr-theme-item-hover);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		.light-theme #settings-container .rbx-select-group .rbx-select, .light-theme #settings-container .select-group:hover, .light-theme #settings-container .select-group:focus, .light-theme #settings-container .select-group.active {
+			background-color: var(--btr-theme-item-hover);
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		/* Friends */
+		
+		.light-theme .rbx-tabs-horizontal .nav-tabs {
+			background-color: var(--btr-theme-item);
+		}
+		
+		.light-theme .tooltip-container .icon-moreinfo {
+			filter: invert(80%);
+		}
+		
+		.light-theme .rbx-tab .rbx-tab-heading {
+			background-color: var(--btr-theme-item);
+			color: var(--btr-theme-text-secondary);
+		}
+		.light-theme .rbx-tab .rbx-tab-heading:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		.light-theme .avatar-card-container {
+			background-color: var(--btr-theme-item);
+		}
+		.light-theme .avatar-card-btns {
+			background-color: var(--btr-theme-item-hover);
+			border-top-color: var(--btr-theme-border-lighter);
+		}
+		
+		/* Roblox badges page */
+		
+		.light-theme .content > #badge-container.badge-container .stack .stack-list .stack-row {
+			background: var(--btr-theme-item-hover);
+		}
+		
+		.light-theme .content > #badge-container.badge-container .stack .stack-list .stack-row.selectedFadeOut {
+			background-color: #4A7691;
+		}
+		
+		html .light-theme .item-card-container, html .light-theme .rbx-tabs-horizontal .nav-tabs, html .light-theme .rbx-tabs-horizontal #horizontal-tabs .rbx-tab:not(.active) a:not(:hover), html .light-theme .nav-tabs>li.active>a, html .light-theme .nav-tabs>li.active>a:hover, html .light-theme .nav-tabs>li.active>a:focus, html #wrap.pinned .right-wrapper:before, html .modal-dialog .modal-content {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		html .light-theme .rbx-tabs-horizontal .rbx-tab-heading, html .light-theme .rbx-tabs-horizontal .rbx-tab.active .rbx-tab-heading, html .light-theme .rbx-tab-horizontal-submenu li {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme .item-card-thumb-container, .light-theme .items-list.avatar-item-list .item-card-container .item-card-thumb-container .item-card-thumb {
+			border-bottom-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .item-card-container {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme.btr-catalog .item-card-thumb-container, .light-theme .item-card-container .item-card-thumb-container {
+			border-color: var(--btr-theme-divider);
+		}
+		
+		.light-theme .catalog-content .search-options .search-options-form {
+			border-right-color: var(--btr-theme-divider);
+		}
+		
+		.light-theme .copyright-container {
+			border-color: var(--btr-theme-divider);
+		}
+		
+		.light-theme .catalog-content .search-options .category-section, .light-theme .catalog-content .search-options .filters-section {
+			border-bottom-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme .breadcrumbs .num-results-showing {
+			color: var(--btr-text-disabled);
+		}
+		
+		html .light-theme .search-options .icon-down:not(:hover) {
+			filter: invert(100%);
+		}
+		html .light-theme.btr-gamedetails .border-bottom {
+			border-bottom-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme.btr-gamedetails .border-top {
+			border-top-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme .stack .stack-list .stack-row, html .light-theme .rbx-tabs-horizontal .nav-tabs {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme.btr-gamedetails .stack-list .stack-row {
+			background-color: var(--btr-theme-item);
+		}
+		
+		.light-theme.btr-gamedetails .server-list-section .card-list .card-item {
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .rbx-tab .rbx-tab-heading {
+			background-color: var(--btr-theme-item);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme .section-left, .stack .card-list .card-item .game-server-details, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details, .light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div:not(.link-menu):not(:nth-child(1)), .light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div + span {
+			border-right-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover, html .light-theme .nav-tabs>li.active>a, html .light-theme .nav-tabs>li.active>a:hover, html .light-theme .nav-tabs>li.active>a:focus {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		html .light-theme .rbx-tabs-horizontal .rbx-tab.active .rbx-tab-heading {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme .store-card, html .light-theme .voting-panel .users-vote .vote-details .vote-container .vote-mask .segment {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme #rbx-passes-container .store-card, .light-theme #store .store-cards .store-card, html .light-theme #rbx-gear-container .store-card, html .light-theme .social-links .medallion {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .store-card .store-card-caption {
+			border-top-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .scroller, html .light-theme .scroller:hover, html .light-theme .scroller.disabled {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .icon-games-carousel-left, html .light-theme .icon-games-carousel-right {
+			filter: invert(70%);
+		}
+		
+		.light-theme .game-card-friend-activity, .light-theme .game-card-native-ad, .featured-grid-item-container:before {
+			background-color: var(--btr-theme-border);
+		}
+		
+		html .light-theme .open .dropdown-menu {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme .avatar.card-plain, html .light-theme .profile-container .asset-item span[title], html .profile-container .asset-item img, .light-theme .asset-thumb-container {
+			border-color: var(--btr-theme-border);
+		}
+		html .light-theme .btr-profile-groups .game-card-container, html .light-theme .btr-profile-groups .game-card-thumb-container, html .light-theme .btr-profile-favorites .game-card-container, html .light-theme .btr-profile-favorites .game-card-thumb-container, html .light-theme.btr-profile .btr-games-list .btr-game-button, html .btr-profile.btr-games-list .btr-game-icon {
+			border-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme.btr-profile .btr-games-list .btr-game-button {
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme.btr-profile .profile-stats-container, .light-theme.btr-profile #aliases-container .border-top {
+			border-color: var(--btr-theme-divider);
+		}
+		
+		html .light-theme .profile-avatar-left {
+			background: none;
+		}
+		
+		html .light-theme .game-card-container, html .light-theme.btr-profile .btr-games-list .btr-game-button, html .light-theme.btr-profile .btr-games-list .btr-game-icon {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme .container-buttons .btn-control-xs > span, .light-theme .section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .light-theme .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .light-theme .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit {
+			filter: invert(70%);
+		}
+		
+		html .light-theme .game-card-name-secondary, html .light-theme.btr-profile .btr-games-list .btr-game-desc-content.btr-no-description:after {
+			color: var(--btr-theme-text-disabled);
+		}
+		
+		html .light-theme .profile-avatar-left .enable-three-dee, html .light-theme .profile-avatar-left .enable-three-dee:hover {
+			background-color: var(--btr-theme-item);
+			border-color: var(--btr-theme-border-lighter);
+			color: var(--btr-theme-text-secondary);
+		}
+		
+		html .light-theme .profile-avatar-left .enable-three-dee:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		.light-theme.btr-profile .btr-games-list .btr-game-desc .btr-toggle-description {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme .item-card-container, html .light-theme .rbx-tabs-vertical .category-tabs .menu-vertical, html .light-theme .menu-vertical .menu-option .menu-secondary {
+			background-color: var(--btr-theme-item);
+		}
+		
+		html .light-theme .menu-vertical .menu-option:hover, html .light-theme .menu-vertical .menu-option .menu-secondary-option:hover {
+			background-color: var(--btr-theme-item-hover);
+		}
+		
+		html .light-theme .item-card-thumb-container {
+			border-bottom-color: var(--btr-theme-border-lighter);
+		}
+		
+		html .light-theme .icon-right-16x16 {
+			filter: invert(80%);
+		}
+		
+		.light-theme .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username:before {
+			color: var(--btr-theme-header);
+			background-color: var(--btr-theme-header)
+		}
 	}
 	& when (@CustomTheme = BTR_Red) {
 		.light-theme .rbx-header {
@@ -13816,7 +14502,7 @@
 			padding: 6px;
 		}
 	
-		.home-container .game-carousel, .home-container .people-list {
+		.game-carousel, .home-container .people-list {
 			margin-left: -6px;
 			margin-right: -6px
 		}
