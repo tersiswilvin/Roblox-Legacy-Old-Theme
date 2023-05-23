@@ -122,6 +122,11 @@ Variables (@var) {
         Description : "Box Shadows"
         Value : 0
     }
+    BrighterDarkThemeColors {
+        Type : checkbox
+        Description : "Brighter Dark theme Colors"
+        Value : 0
+    }
     SiteCurrency {
         Type : select
         Description : "Currency Brand Style"
@@ -134,7 +139,7 @@ Variables (@var) {
     }
     fiveColumn {
         Type : checkbox
-        Description : "Five column in Avatar Editor."
+        Description : "Five column Avatar Editor."
         Value : 1
     }
     greetingTxt {
@@ -147,19 +152,29 @@ Variables (@var) {
         Description : "Item Card Style"
         Value : Pre-2018, 2019E, 2019M (Default), 2019L
     }
-    LogoStyle {
+    CustomTheme {
         Type : select
-        Description : "Site Brand Style"
-        Value : 201408, 201412, 201511, 201701 (Default)
+        Description : "Custom Site Theme"
+        Value : None (Default), BTR_Night, BTR_Red, BTR_Simblk, BTR_Sky, L_Red, RPlus_Easter, RPlus_OBC
+    }
+    LegacyBTRGameHeaders {
+        Type : checkbox
+        Description : "Legacy Game Headers (BTRoblox)"
+        Value : 0
+    }
+    LegacyFooterText {
+        Type : checkbox
+        Description : "Legacy Footer Text (Brand Synced)"
+        Value : 0
     }
     LegacyNextStyleGuideButtons {
         Type : checkbox
-        Description : "Legacy Styleguide Buttons"
+        Description : "Legacy Next Styleguide"
         Value : 0
     }
     SponsorSizing {
         Type : checkbox
-        Description : "Original Sponsor sizing."
+        Description : "Original Sponsor Size"
         Value : 1
     }
     PlayButtonStyle {
@@ -169,7 +184,7 @@ Variables (@var) {
     }
     RestoreSidebarPadding {
         Type : checkbox
-        Description : "Restore sidebars old padding."
+        Description : "Restore legacy sidebar padding"
         Value : 0
     }
     RemoveUpdates {
@@ -179,22 +194,27 @@ Variables (@var) {
     }
     PremiumToBC {
         Type : checkbox
-        Description : "Premium To BC"
+        Description : "Premium To BC (BTRoblox)"
         Value : 0
     }
-    StyleGuideStyle {
+    LogoStyle {
         Type : select
-        Description : "Styleguide Style"
-        Value : 2016, 2017, 2018 (Default)
+        Description : "Site Brand Style"
+        Value : 201408, 201412, 201511, 201701 (Default)
     }
     SignUpStyle {
         Type : select
-        Description : "Signup Style"
+        Description : "Signup Theme"
         Value : 2017, 2018 (Default), 2019L, 2020+
+    }
+    StyleGuideStyle {
+        Type : select
+        Description : "Styleguide Page Theme"
+        Value : 2016, 2017, 2018 (Default)
     }
     SourceSansPro {
         Type : checkbox
-        Description : "Source San Pro font"
+        Description : "Source San Pro Font"
         Value : 0
     }
     TransitionalAnimations {
@@ -204,7 +224,7 @@ Variables (@var) {
     }
     RedLogoStyle {
         Type : checkbox
-        Description : "Use Red logo variant"
+        Description : "Use 2017 Red icon logo"
         Value : 0
     }
 }

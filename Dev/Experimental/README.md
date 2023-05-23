@@ -16,18 +16,20 @@
      - Greeting Text Style.
      - Item Card Style.
      - Custom Site Theme.
+     - Legacy Game Headers (BTRoblox).
      - Legacy Footer Text (Brand Synced).
-     - Original Sponsor Sizing.
+     - Legacy Next Styleguide.
+     - Original Sponsor Size (Deprecated).
      - Play Button Sizing.
      - Restore legacy sidebar padding.
      - Revert 2019L+ changes.
-     - Premium To BC.
+     - Premium To BC (BTRoblox).
      - Site Brand Style.
      - Signup Theme.
      - Styleguide Page Theme.
-     - Source San Pro font.
+     - Source San Pro Font.
      - Transition animations.
-     - Use Red O logo.
+     - Use 2017 Red icon logo.
 - Extension support :
      - Btroblox
      - Roblox+

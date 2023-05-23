@@ -18,8 +18,9 @@
 @var          select   greetingTxt                 "Greeting Text Style"               ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                   ["Pre-2018", "2019E", "2019M*", "2019L"]
 @var          select   CustomTheme                 "Custom Site Theme"                 ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_Easter","RPlus_OBC"]
-@var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"            0
+@var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"    0
 @var          checkbox LegacyFooterText            "Legacy Footer Text (Brand Synced)" 0
+@var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"            0
 @var          checkbox SponsorSizing               "Original Sponsor Sizing"           1
 @var          select   PlayButtonStyle             "Play Button Style"                 ["2018M","2018L", "2019E", "2019M*", "2020+"]
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"    0
@@ -12584,6 +12585,76 @@
     }
     */
     
+	& when (@LegacyBTRGameHeaders = 1) {
+		.btr-profile .btr-games-list .btr-game-button {
+			background: #fff;
+			background: -webkit-linear-gradient(top,#fff 0,#f3f3f3 50%,#ededed 51%,#fff 100%);
+			background: linear-gradient(to bottom,#fff 0,#f3f3f3 50%,#ededed 51%,#fff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0);
+			border: 1px solid #ccc;
+			& when (@SourceSansPro = 0) {
+				font-size: 14px;
+			}
+			& when (@SourceSansPro = 1) {
+				font-family: 'Source Sans Pro',Arial,Helvetica,sans-serif;
+				font-size: 15px;
+			}
+			padding: 2px 0 3px 8px;
+			color: #343434;
+			overflow: hidden;
+			font-weight: bold;
+			cursor: pointer;
+			user-select: text;
+			-moz-user-select: text;
+			-webkit-user-select: text;
+			-ms-user-select: text;
+		}
+		.btr-profile .btr-games-list .btr-game-button:hover {
+			background: #fff;
+			background: -webkit-linear-gradient(top,#fff 0,#edf6f3 49%,#f3f3f3 50%,#dbe6ed 51%,#fff 100%);
+			background: linear-gradient(to bottom,#fff 0,#edf6f3 49%,#f3f3f3 50%,#dbe6ed 51%,#fff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0);
+			box-shadow: none;
+		}
+		
+		.dark-theme.btr-profile .btr-games-list .btr-game-button {
+			background: #000;
+			background: -webkit-linear-gradient(top,#000 0,#262626 50%,#151515 51%,#000 100%);
+			background: linear-gradient(to bottom,#000 0,#262626 50%,#151515 51%,#000 100%);
+			border-color: #333;
+			color: #CBCBCB;
+		}
+		.dark-theme.btr-profile .btr-games-list .btr-game-button:hover {
+			background: #fff;
+			background: -webkit-linear-gradient(top,#000 0,#333 49%,#222 50%,#1C1D1E 51%,#000 100%);
+			background: linear-gradient(to bottom,#000 0,#333 49%,#222 50%,#1C1D1E 51%,#000 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0);
+			box-shadow: none;
+		}
+		
+		.btr-profile .btr-games-list .btr-game-button:before {
+			content: "▶";
+			display: inline-block;
+			padding: 0 4px 0 6px;
+			margin-left: -7px;
+			-webkit-transition: all .16s ease-in-out;
+			transition: all .16s ease-in-out;
+			user-select: text;
+			-moz-user-select: text;
+			-webkit-user-select: text;
+			-ms-user-select: text;
+			& when (@SourceSansPro = 1) {
+				height: 21.41px;
+			}
+		}
+		
+		.btr-game.visible.selected .btr-game-button:before {
+			-webkit-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+	}
+	
     /*/ Roblox+ /*/
     /*Updated to support data urls due to roblox blocking outside urls. (7/13/2022)*/
     
