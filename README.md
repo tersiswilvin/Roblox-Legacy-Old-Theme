@@ -1,7 +1,7 @@
 # Roblox Legacy Old Theme
 **[Roblox Legacy Old Theme](//userstyles.world/style/5399/)** is a theme for [stylus](https://add0n.com/stylus.html) (see [Installation](//github.com/tersiswilvin/Roblox-2019-Old-Theme#Installation) for installation details) that brings back the 2019 theme primarily from June - September 2019 with customizable options for the end user.
 
-For upcoming updates and features you may try out the [experimental](//github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/R19OTExperimental.user.css) channel, you're <ins>**not required**</ins> to install this.
+For upcoming updates & features you can try out the [experimental](//github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/R19OTExperimental.user.css) channel, you're <ins>**not required**</ins> to install this.
 
 <p align="center">
     <img src="Dev/Master/Thumbnails/Outputs/2019ROT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
