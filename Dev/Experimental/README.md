@@ -7,34 +7,34 @@
 
 ## Features
 - Highly Customizable :
-     - Badge Style.
-     - Box Shadows.
-     - Brighter Dark theme Colors.
-     - Currency Brand Style.
-     - Force light theme on signup.
-     - Five column in Avatar Editor.
-     - Greeting Text Style.
-     - Item Card Style.
-     - Custom Site Theme.
-     - Legacy Game Headers (BTRoblox).
-     - Legacy Footer Text (Brand Synced).
-     - Legacy Next Styleguide.
-     - Original Sponsor Size (Deprecated).
-     - Play Button Sizing.
-     - Restore legacy sidebar padding.
-     - Revert 2019L+ changes.
-     - Premium To BC (BTRoblox).
-     - Site Brand Style.
-     - Signup Theme.
-     - Styleguide Page Theme.
-     - Source San Pro Font.
-     - Transition animations.
-     - Use 2017 Red icon logo.
+  - Badge Style.
+  - Box Shadows.
+  - Brighter Dark theme Colors.
+  - Currency Brand Style.
+  - Force light theme on signup.
+  - Five column in Avatar Editor.
+  - Greeting Text Style.
+  - Item Card Style.
+  - Custom Site Theme.
+  - Legacy Game Headers (BTRoblox).
+  - Legacy Footer Text (Brand Synced).
+  - Legacy Next Styleguide.
+  - Original Sponsor Size (Deprecated).
+  - Play Button Sizing.
+  - Restore legacy sidebar padding.
+  - Revert 2019L+ changes.
+  - Premium To BC (BTRoblox).
+  - Site Brand Style.
+  - Signup Theme.
+  - Styleguide Page Theme.
+  - Source San Pro Font.
+  - Transition animations.
+  - Use 2017 Red icon logo.
 - Extension support :
-     - Btroblox
-     - Roblox+
-     - Ropro
-     - Rogold
+  - Btroblox
+  - Roblox+
+  - Ropro
+  - Rogold
 - Supports both Light and Dark themes.
 - Supports low resolution devices and high PPI/DPI (Pixels Per Inch/Dots Per Inch) monitors.
 - Supports touchscreen devices.
