@@ -13051,6 +13051,12 @@
 			color: var(--btr-theme-text);
 		}
 		
+		& when (@StyleGuideStyle = 2016) or (@StyleGuideStyle = 2017) {
+			.code-piece, .light-theme .code-piece {
+				background-color: var(--btr-theme-item-hover);
+			}
+		}
+		
 		html .light-theme, html .light-theme .content, .light-theme .games-list-container, .light-theme .horizontal-scroller .scroller .spacer {
 			background-color: var(--btr-theme-background);
 			color: var(--btr-theme-text-secondary);
@@ -15190,7 +15196,12 @@
     @-moz-document url("https://www.roblox.com/reference/styleguide"), url("https://web.roblox.com/reference/styleguide") {
     & when (@StyleGuideStyle = 2016) {
         body, body.light-theme {
-            background-color: #F2F2F2;
+			& when (@CustomTheme = BTR_Night) {
+				background-color: var(--btr-theme-item-hover);
+			}
+			& when not (@CustomTheme = BTR_Night) {
+				background-color: #F2F2F2;
+			}
         }
         body.dark-theme {
             background-color: #0D0D0D;
@@ -15198,7 +15209,12 @@
     }
     & when (@StyleGuideStyle = 2017) {
         body, body.light-theme {
-            background-color: #E3E3E3;
+			& when (@CustomTheme = BTR_Night) {
+				background-color: var(--btr-theme-background);
+			}
+			& when not (@CustomTheme = BTR_Night) {
+				background-color: #E3E3E3;
+			}
         }
         body.dark-theme {
             background-color: #1C1C1C;
@@ -15206,7 +15222,12 @@
     }
     & when (@StyleGuideStyle = 2018) {
         body, body.light-theme {
-            background-color: #f5f5f5;
+			& when (@CustomTheme = BTR_Night) {
+				background-color: var(--btr-theme-item-hover-hover);
+			}
+			& when not (@CustomTheme = BTR_Night) {
+				background-color: #f5f5f5;
+			}
         }
         body.dark-theme {
             background-color: #0A0A0A;
