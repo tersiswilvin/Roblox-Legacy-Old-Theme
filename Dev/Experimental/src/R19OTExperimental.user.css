@@ -5074,7 +5074,9 @@
         }
 		
 		#rbx-private-servers .container-header h2, .light-theme .rbx-private-server-create .rbx-private-server-create-button, .dark-theme .rbx-private-server-create .rbx-private-server-create-button, #rbx-private-servers .section-content-off {
-			font-size: 0;
+			&, &:hover, &:focus, &:active {
+				font-size: 0
+			}
 		}
 		#rbx-private-servers .container-header h2:after {
 			content: 'VIP Servers';
