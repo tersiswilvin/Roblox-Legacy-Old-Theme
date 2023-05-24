@@ -9,19 +9,21 @@
 What's new :
 
 Added back events text on the sidebar.
+Added Custom Themes. > [BTR_Night, BTR_Red, BTR_Simblk, L_Red, RPlus_OBC]
 Added Game Card Friend Activity support.
 Added Greeting Text option.
-Added legacy profile background color (Toggle via Box Shadows).
-Added Premium To BC option.
+Added legacy profile background color [Toggle via Box Shadows].
+Added Premium To BC option for btroblox.
 Added Style Guide Text back to 2016 styleguide.
 Added Toggleable Brighter Dark Theme colors option.
 App bumper now syncs with site Brand settings.
 Re-added VIP Server text swap (Toggleable via Remove Updates).
-Removed Events container (Toggleable via Remove Updates).
+Removed Events container [Toggleable via Remove Updates].
 Removed unnecessary CSS.
+Renamed some items for better clarity.
 Reverted Roblox Help button changes.
 Roblox+ logo now syncs with site Brand settings.
-Improved chat for more accuracy.
+Improved chat for better accuracy.
 Improved SourceSansPro (Thanks Aubymori).
 
 /*/=={{ Legend }}==/*/
@@ -30,6 +32,9 @@ Improved SourceSansPro (Thanks Aubymori).
 /*|=={ Secondary Headers }==|*/
 
 -- Comments --
+
+(Note)
+[List Item]
 
 YYYYMM(I.E : 197001) -- (Default 1) --
 YYYYMA(I.E : 1970E) -- (Default 2) --

@@ -9,7 +9,7 @@ Patch Release Date : --/--/----
 
 Author URL : userstyles.world/user/tersiswilvin
 
-Description : A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate & with customizable options.
+Description : A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate and with customizable options.
 
 Author : TersisWilvin (9T2K)
 
