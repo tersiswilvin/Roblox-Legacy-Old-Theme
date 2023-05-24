@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230523.1.3
+@version      20230524.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate and with customizable options.
 @author       tersiswilvin
@@ -14811,7 +14811,144 @@
 		}
 	}
 	& when (@CustomTheme = RPlus_OBC) {
-		/* TODO */
+		/* obc.css [4/5/2016] */
+		body.light-theme:not([data-internal-page-name="Catalog"]),body.dark-theme:not([data-internal-page-name="Catalog"]){
+			background: url(https://images.rbxcdn.com/7b740ce2fe1bb189612252b3b93c5b83.jpg) top center repeat-x rgb(34, 34, 34);
+		}
+		
+		.light-theme .rbx-header .rbx-navbar li .nav-menu-title:focus, .light-theme .rbx-header .rbx-navbar li .nav-menu-title:hover{
+			background-color: rgb(34, 34, 34) !important;
+		}
+		.light-theme .sg-navigation .navbar-header, .dark-theme .sg-navigation .navbar-header {
+			background-color: rgba(34, 34, 34);
+			background-color: rgba(34, 34, 34, 0.94);
+		}
+		.light-theme .open .input-dropdown-btn,.light-theme .input-group-btn .input-dropdown-btn:hover,.light-theme .input-group-btn .input-dropdown-btn:focus,.light-theme .language-selector-wrapper .input-group-btn button#language-switcher:hover,.light-theme .language-selector-wrapper .input-group-btn button#language-switcher:focus, .open > .btn-default.dropdown-toggle,.light-theme .nav-container,.light-theme .nav-container .nav-content,.light-theme .btn-secondary-xs:hover,.light-theme .btn-secondary-sm:hover,.light-theme .btn-secondary-md:hover,.light-theme .btn-secondary-lg:hover,.dark-theme .open .input-dropdown-btn,.dark-theme .input-group-btn .input-dropdown-btn:hover,.dark-theme .input-group-btn .input-dropdown-btn:focus,.dark-theme .language-selector-wrapper .input-group-btn button#language-switcher:hover,.dark-theme .language-selector-wrapper .input-group-btn button#language-switcher:focus, .open > .btn-default.dropdown-toggle,.dark-theme .nav-container,.dark-theme .nav-container .nav-content,.dark-theme .btn-secondary-xs:hover,.dark-theme .btn-secondary-sm:hover,.dark-theme .btn-secondary-md:hover,.dark-theme .btn-secondary-lg:hover{
+			background-color: rgb(34, 34, 34);
+			border-color: rgb(242, 242, 242);
+			outline-color: rgb(255,255,255);
+		}
+		.light-theme #MasterContainer,.light-theme .container-footer,.light-theme .container-main>.content{
+			background: none;
+		}
+		
+
+		.light-theme .profile-container>div>.tab-content.rbx-tab-content,.dark-theme .profile-container>div>.tab-content.rbx-tab-content{
+			margin-top: 0px;
+		}
+		.light-theme .container-main>.content>.row:not(#avatar-container),.light-theme .profile-container>div>.tab-content.rbx-tab-content{
+			background-color: #f2f2f2;
+			padding: 6px;
+		}
+		.dark-theme .container-main>.content>.row:not(#avatar-container),.dark-theme .profile-container>div>.tab-content.rbx-tab-content{
+			background-color: #0d0d0d;
+			padding: 6px;
+		}
+		.light-theme .container-main>.content>.row,.light-theme .profile-container>div>.tab-content.rbx-tab-content,.light-theme #wrap.pinned .right-wrapper::before{
+			background-color: #f2f2f2;
+		}
+		.dark-theme .container-main>.content>.row,.dark-theme .profile-container>div>.tab-content.rbx-tab-content,.dark-theme #wrap.pinned .right-wrapper::before{
+			background-color: #0d0d0d;
+		}
+		
+		.game-carousel, .home-container .people-list {
+		margin-left: -6px;
+			margin-right: -6px
+		}
+		.home-container .container-header {
+			margin-left: -6px
+		}
+		
+		.light-theme .horizontal-scroller .scroller .spacer, .dark-theme .horizontal-scroller .scroller .spacer {
+			background-color: transparent
+		}
+		
+		.light-theme .dialogs .dialog-container .dialog-header .dialog-header-title,.light-theme .dialogs .dialog-container .dialog-header,.light-theme .chat-windows-header,.light-theme .chat-container .chat-main .chat-header,.light-theme .tableHeaderText,.light-theme .forum-table-header,.light-theme .forum-table-header th,.light-theme .forum-table-footer,.light-theme .rbx-header,.light-theme .rbx-header .nav.rbx-navbar a,.light-theme .rbx-header .nav.rbx-navbar a:visited,.dark-theme .dialogs .dialog-container .dialog-header .dialog-header-title,.dark-theme .dialogs .dialog-container .dialog-header,.dark-theme .chat-windows-header,.dark-theme .chat-container .chat-main .chat-header,.dark-theme .tableHeaderText,.dark-theme .forum-table-header,.dark-theme .forum-table-header th,.dark-theme .forum-table-footer{
+			background-color: rgb(57, 57, 57);
+		}
+		.light-theme .dialog-container .dialog-header .dialog-header-title:after,.light-theme .notification-blue,.dark-theme .dialog-container .dialog-header .dialog-header-title:after,.dark-theme .notification-blue{
+			background: rgb(57, 57, 57);
+		}
+
+		
+		/* Chat */
+		@-webkit-keyframes obc-blink-dialog{
+			from{
+				background-color: rgb(34, 34, 34);
+			}
+			
+			to{
+				background-color: rgb(57, 57, 57);
+			}
+		}
+		.light-theme .dialogs .dialog-container.active .dialog-header,.light-theme .dialogs .dialog-container.active .dialog-header .dialog-header-title,.dark-theme .dialogs .dialog-container.active .dialog-header,.dark-theme .dialogs .dialog-container.active .dialog-header .dialog-header-title{
+			background-color: rgb(40,40,40);
+			animation: obc-blink-dialog .5s alternate infinite;
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container .dialog-message,.dark-theme .dialogs .dialog-container .dialog-message-container .dialog-message{
+			background-color: rgb(90,90,90);
+			border-color: rgb(90,90,90);
+			color: white;
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle:after, .light-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle:before, .dark-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle:after, .dark-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .dialog-triangle:before{
+			border-color: transparent transparent transparent rgb(90,90,90);
+		}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+			border-color: transparent #e3e3e3 transparent transparent;
+		}
+		.dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+			border-color: transparent #1c1c1c transparent transparent;
+}
+		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+			border-color: transparent #fff transparent transparent;
+		}
+		.dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+			border-color: transparent #000 transparent transparent;
+		}
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent transparent transparent #e3e3e3;
+		}
+		.dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+			border-color: transparent transparent transparent #1c1c1c;
+		}
+		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent transparent transparent #fff;
+		}
+		.dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
+			border-color: transparent transparent transparent #000;
+		}
+		
+		
+		/* Footer */
+		.light-theme .container-footer .footer-note{
+			color: white;
+		}
+		
+		
+		/* Tabs, Dropdowns, and Buttons */
+		.light-theme .rbx-tabs-horizontal .rbx-tab.active .rbx-tab-heading,.light-theme .rbx-tabs-horizontal .rbx-tab-heading:hover,.light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover,.light-theme .rbx-tabs-horizontal .rbx-tab-heading:focus,.light-theme .rbx-tabs-horizontal .rbx-tab-heading:active,.dark-theme .rbx-tabs-horizontal .rbx-tab.active .rbx-tab-heading,.dark-theme .rbx-tabs-horizontal .rbx-tab-heading:hover,.dark-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover,.dark-theme .rbx-tabs-horizontal .rbx-tab-heading:focus,.dark-theme .rbx-tabs-horizontal .rbx-tab-heading:active{
+			box-shadow: 0 -4px 0 0 rgb(31,31,31) inset;
+		}
+		
+		.light-theme .rbx-tabs-vertical .rbx-tab.active .rbx-tab-heading,.light-theme .rbx-tabs-vertical .rbx-tab-heading:hover,.light-theme .rbx-tabs-vertical .rbx-tab-heading:focus,.light-theme .rbx-tabs-vertical .rbx-tab-heading:active,.light-theme .input-group-btn .dropdown-menu li a:hover,.light-theme .rbx-header .rbx-navbar-search .rbx-navbar-search-option.selected,.light-theme .rbx-input-group-btn .dropdown-menu li a:hover,.light-theme .rbx-input-group-btn .dropdown-menu li a:focus,.light-theme .rbx-input-group-btn .dropdown-menu li a.active,.light-theme .dropdown-menu li:hover,.dark-theme .rbx-tabs-vertical .rbx-tab.active .rbx-tab-heading,.dark-theme .rbx-tabs-vertical .rbx-tab-heading:hover,.dark-theme .rbx-tabs-vertical .rbx-tab-heading:focus,.dark-theme .rbx-tabs-vertical .rbx-tab-heading:active,.dark-theme .input-group-btn .dropdown-menu li a:hover,.dark-theme .rbx-header .rbx-navbar-search .rbx-navbar-search-option.selected,.dark-theme .rbx-input-group-btn .dropdown-menu li a:hover,.dark-theme .rbx-input-group-btn .dropdown-menu li a:focus,.dark-theme .rbx-input-group-btn .dropdown-menu li a.active,.dark-theme .dropdown-menu li:hover{
+			box-shadow: 4px 0 0 0 rgb(31,31,31) inset;
+		}
+		
+		.light-theme .btn-secondary-xs,.light-theme .btn-secondary-sm,.light-theme .btn-secondary-md,.light-theme .btn-secondary-lg,.dark-theme .btn-secondary-xs,.dark-theme .btn-secondary-sm,.dark-theme .btn-secondary-md,.dark-theme .btn-secondary-lg{
+			background-color: rgb(57, 57, 57);
+			border-color: rgb(57, 57, 57);
+		}
+		.light-theme .btn-secondary-xs:hover,.light-theme .btn-secondary-sm:hover,.light-theme .btn-secondary-md:hover,.light-theme .btn-secondary-lg:hover,.dark-theme .btn-secondary-xs:hover,.dark-theme .btn-secondary-sm:hover,.dark-theme .btn-secondary-md:hover,.dark-theme .btn-secondary-lg:hover{
+			background: rgb(34, 34, 34);
+		}
+		
+		.light-theme .open .input-dropdown-btn .icon-down-16x16,.light-theme .input-group-btn .input-dropdown-btn:hover .icon-down-16x16,.light-theme .input-group-btn .input-dropdown-btn:focus .icon-down-16x16{
+			-webkit-filter: invert(100%);
+		}
+
+		.light-theme #header .btr-nav-notif {
+			border: 2px solid rgb(57, 57, 57);
+		}
 	}
 	
     }
