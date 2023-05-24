@@ -14828,7 +14828,7 @@
 			border-color: rgb(242, 242, 242);
 			outline-color: rgb(255,255,255);
 		}
-		.light-theme #MasterContainer,.light-theme .container-footer,.light-theme .container-main>.content{
+		.light-theme #MasterContainer,.light-theme .container-footer,.light-theme .container-main>.content,.dark-theme #MasterContainer,.dark-theme .container-footer,.dark-theme .container-main>.content{
 			background: none;
 		}
 		
@@ -14922,6 +14922,9 @@
 		/* Footer */
 		.light-theme .container-footer .footer-note{
 			color: white;
+		}
+		.dark-theme .container-footer .footer-note {
+			color: #999;
 		}
 		
 		
