@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230526.1.3
+@version      20230529.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate and with customizable options.
 @author       tersiswilvin
@@ -3575,6 +3575,11 @@
         border-bottom: 1px solid #1C1C1C
     }
     
+	.spinner {
+		height: 24px;
+		margin: 6px auto;
+	}
+	
     body.rbx-body.light-theme.gotham-font.modal-open[data-internal-page-name="Login"] div[role="dialog"] .fade.modal-modern.in.modal .modal-lock-icon {
         background-image: url(https://images.rbxcdn.com/d57e529d96e8ec75fe0aca50c21b2226-shield-email.png);
     }
@@ -3661,6 +3666,10 @@
     .light-theme .rbx-select-group .rbx-select option, .light-theme .rbx-select-group .select-option option, .light-theme .select-group .rbx-select option, .light-theme .select-group .select-option option {
         color: #191919;
         background-color: #fff;
+    }
+	.dark-theme .rbx-select-group .rbx-select option, .dark-theme .rbx-select-group .select-option option, .dark-theme .select-group .rbx-select option, .dark-theme .select-group .select-option option {
+        color: #e6e6e6;
+        background-color: #000;
     }
     
     .light-theme .menu-vertical .menu-option .menu-secondary-option.active, .light-theme .menu-vertical .menu-option .menu-secondary-option:active {
@@ -4280,6 +4289,10 @@
     .light-theme .rbx-select-group .rbx-select option:checked, .light-theme .rbx-select-group .rbx-select option:hover, .light-theme .rbx-select-group .select-option option:checked, .light-theme .rbx-select-group .select-option option:hover, .light-theme .select-group .rbx-select option:checked, .light-theme .select-group .rbx-select option:hover, .light-theme .select-group .select-option option:checked, .light-theme .select-group .select-option option:hover {
         color: #191919;
         background-color: #fff;
+    }
+	.dark-theme .rbx-select-group .rbx-select option:checked, .dark-theme .rbx-select-group .rbx-select option:hover, .dark-theme .rbx-select-group .select-option option:checked, .dark-theme .rbx-select-group .select-option option:hover, .dark-theme .select-group .rbx-select option:checked, .dark-theme .select-group .rbx-select option:hover, .dark-theme .select-group .select-option option:checked, .dark-theme .select-group .select-option option:hover {
+        color: #e6e6e6;
+        background-color: #000;
     }
     
     #rbx-body.light-theme[data-internal-page-name="ConfigureGroup"] .section .one-time-payout .distribute-header .input-group-btn {
@@ -11143,6 +11156,13 @@
 		
 		.rbx-tabs-horizontal #horizontal-tabs {
 			box-shadow: none;
+		}
+		
+		.light-theme .notification-stream-base {
+			box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3)
+		}
+		.dark-theme .notification-stream-base {
+			box-shadow: 0 1px 4px 0 rgba(230, 230, 230, 0.3)
 		}
     }
     
