@@ -10281,6 +10281,11 @@
 			font-size: 16px;
 		}
 	}
+	& when (@SourceSansPro = 1) {
+		.gotham-font .btn-growth-md, .gotham-font .btn-growth-md:active, .gotham-font .btn-growth-md:hover, .gotham-font .btn-growth-md:link, .gotham-font a.btn-growth-md, .gotham-font a.btn-growth-md:active, .gotham-font a.btn-growth-md:hover, .gotham-font a.btn-growth-md:link {
+			font-size: 18px;
+		}
+	}
 	.light-theme .btn-cta-sm, .light-theme .btn-growth-sm, .light-theme .btn-primary-sm, .dark-theme .btn-cta-sm, .dark-theme .btn-growth-sm, .dark-theme .btn-primary-sm {
 		& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 			-webkit-transition: box-shadow 200ms ease-in-out;
