@@ -17,7 +17,7 @@
   - Item Card Style.
   - Custom Site Theme.
   - Legacy Game Headers (BTRoblox).
-  - Legacy Footer Text (Brand Synced).
+  - Legacy Footer Text.
   - Legacy Next Styleguide.
   - Original Sponsor Size (Deprecated).
   - Play Button Sizing.

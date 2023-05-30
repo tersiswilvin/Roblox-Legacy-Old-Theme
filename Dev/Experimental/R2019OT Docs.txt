@@ -16,13 +16,15 @@ Added legacy profile background color (Toggle via Box Shadows).
 Added Premium To BC option for btroblox.
 Added Style Guide Text back to 2016 styleguide.
 Added Toggleable Brighter Dark Theme colors option.
-App bumper now syncs with site Brand settings.
+App bumper syncs with site Brand settings.
+Legacy Footer Text has more customizable options.
 Re-added VIP Server text swap (Toggleable via Remove Updates).
 Removed Events container (Toggleable via Remove Updates).
 Removed unnecessary CSS.
 Renamed some items for better clarity.
+Revamped Main Site button CSS.
 Reverted Roblox Help button changes.
-Roblox+ logo now syncs with site Brand settings.
+Roblox+ logo syncs with site Brand settings.
 Improved chat for better accuracy.
 Improved SourceSansPro (Thanks Aubymori).
 

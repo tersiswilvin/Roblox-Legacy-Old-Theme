@@ -155,7 +155,7 @@ Variables (@var) {
     CustomTheme {
         Type : select
         Description : "Custom Site Theme"
-        Value : None (Default), BTR_Night, BTR_Red, BTR_Simblk, BTR_Sky, L_Red, RPlus_Easter, RPlus_OBC
+        Value : None (Default), BTR_Night, BTR_Red, BTR_Simblk, BTR_Sky, L_Red, RPlus_Easter (Hidden), RPlus_OBC
     }
     LegacyBTRGameHeaders {
         Type : checkbox
@@ -163,9 +163,9 @@ Variables (@var) {
         Value : 0
     }
     LegacyFooterText {
-        Type : checkbox
-        Description : "Legacy Footer Text (Brand Synced)"
-        Value : 0
+        Type : select
+        Description : "Legacy Footer Text"
+        Value : None (Default), BrandSync, 2014E, 2015E, 2016E, 2016L, 2017E, 2017M, 2018E, 2018L, 2019E
     }
     LegacyNextStyleGuideButtons {
         Type : checkbox
