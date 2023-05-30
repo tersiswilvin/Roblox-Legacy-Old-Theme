@@ -7,9 +7,12 @@ Patch Version : 0
 Version Release Date : --/--/2023
 Patch Release Date : --/--/----
 
+Planned Version Release Date : 06/01/2023
+Planned Patch Release Date : --/--/----
+
 Author URL : userstyles.world/user/tersiswilvin
 
-Description : A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate and with customizable options.
+Description : A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 
 Author : TersisWilvin (9T2K)
 
