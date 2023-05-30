@@ -135,8 +135,11 @@
 		width: 100%;
 		margin-bottom: 12px;
 	}
-	.home-header .avatar, .rogold .home-container .section:not(.home-friends) .avatar {
+	.home-header .avatar {
 		margin-right: 24px;
+	}
+	.rogold .home-container .section:not(.home-friends) .avatar {
+		margin-right: 24px !important;
 	}
 	.home-header .avatar, .home-header .user-info-container, .rogold .home-container .section:not(.home-friends) .avatar, .rogold .home-container .section:not(.home-friends) .user-name-container {
 		float: left;
@@ -159,8 +162,10 @@
 		margin: 0 0 12px;
 	}
 	.rogold .home-container .section:not(.home-friends) h1 {
-		display: block !important;
+		display: inline-block !important;
+		width: 100%;
 		margin-bottom: 0 !important;
+		padding: 0;
 	}
 	.rogold .home-container .section:not(.home-friends) .avatar-card-fullbody, .rogold .home-container .section:not(.home-friends) .icon-placeholder-avatar-headshot {
 		width: 150px !important;
