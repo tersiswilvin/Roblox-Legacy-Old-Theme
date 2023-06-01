@@ -8195,8 +8195,14 @@
     .dark-theme .input-group-btn .input-dropdown-btn:focus, .dark-theme .input-group-btn .input-dropdown-btn:hover {
         border: 1px solid #474747;
         color: #fff;
-        background-color: #00a2ff;
-        border-color: #00a2ff;
+		& when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+			border-color: #004266;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00a2ff;
+			border-color: #00a2ff;
+		}
     }
     
 	.light-theme .payment-method-label-clickable input.payment-method-radio-input:checked+label.payment-method-label {
@@ -8553,8 +8559,14 @@
     
     .featured-grid-item-container:before {
         content: 'Featured Game';
-        color: #fff;
-        background-color: #00a2ff;
+        & when (@BrighterDarkThemeColors = 0) {
+			background-color: #004266;
+			color: #000;
+		}
+		& when (@BrighterDarkThemeColors = 1) {
+			background-color: #00a2ff;
+			color: #fff;
+		}
         position: absolute;
         bottom: 0;
         & when (@CardStyle = Pre-2018) {
@@ -10211,9 +10223,22 @@
     }
     
     .language-selector-wrapper .input-group-btn button#language-switcher:hover, .language-selector-wrapper .input-group-btn button#language-switcher:focus,  .open>.btn-default.dropdown-toggle {
-        background-color: #00a2ff;
-        border-color: #00a2ff;
-        color: #fff;
+		.light-theme & {
+			background-color: #00a2ff;
+			border-color: #00a2ff;
+			color: #fff;
+		}
+		.dark-theme & {
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #004266;
+				border-color: #004266;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #00a2ff;
+				border-color: #00a2ff;
+			}
+			color: #fff;
+		}
     }
     
     .input-group-btn .input-dropdown-btn:active .dropdown-icon.icon-globe {
@@ -10280,16 +10305,6 @@
 	}
 	.dark-theme .btn-primary-md:visited {
 		color: #fff;
-	}
-	& when (@SourceSansPro = 0) {
-		.gotham-font .btn-growth-md, .gotham-font .btn-growth-md:active, .gotham-font .btn-growth-md:hover, .gotham-font .btn-growth-md:link, .gotham-font a.btn-growth-md, .gotham-font a.btn-growth-md:active, .gotham-font a.btn-growth-md:hover, .gotham-font a.btn-growth-md:link {
-			font-size: 16px;
-		}
-	}
-	& when (@SourceSansPro = 1) {
-		.gotham-font .btn-growth-md, .gotham-font .btn-growth-md:active, .gotham-font .btn-growth-md:hover, .gotham-font .btn-growth-md:link, .gotham-font a.btn-growth-md, .gotham-font a.btn-growth-md:active, .gotham-font a.btn-growth-md:hover, .gotham-font a.btn-growth-md:link {
-			font-size: 18px;
-		}
 	}
 	.light-theme .btn-cta-sm, .light-theme .btn-growth-sm, .light-theme .btn-primary-sm, .dark-theme .btn-cta-sm, .dark-theme .btn-growth-sm, .dark-theme .btn-primary-sm {
 		& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
@@ -11094,6 +11109,25 @@
     
     /*/Extras/*/
     
+	& when (@SourceSansPro = 0) {
+		.light-theme.gotham-font, .dark-theme.gotham-font {
+			& .btn-growth-md, & a.btn-growth-md {
+				&, &:active, &:hover, &:link {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	& when (@SourceSansPro = 1) {
+		.light-theme.gotham-font, .dark-theme.gotham-font {
+			& .btn-growth-md, & a.btn-growth-md {
+				&, &:active, &:hover, &:link {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	
     & when (@BoxShadows = 1) {
         .slide-switcher .slide-item-container .slide-item-container-left .slide-item-image {
             box-shadow: 0 0 6px 0 rgb(0 0 0 / 49%);
