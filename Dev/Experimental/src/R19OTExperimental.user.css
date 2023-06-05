@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230603.1.3
+@version      20230604.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -29,7 +29,7 @@
 @var          select   LogoStyle                   "Site Brand Style"                   ["201408", "201412", "201511", "201701*"]
 @var          select   SignUpStyle                 "Signup Theme"                       ["2017", "2018*", "2019L", "2020+"]
 @var          select   StyleGuideStyle             "Styleguide Page Theme"              ["2016","2017","2018*"]
-@var          checkbox SourceSansPro               "Source San Pro Font"                0
+@var          checkbox SourceSansPro               "Source Sans Pro Font"               0
 @var          checkbox TransitionalAnimations      "Transition animations"              1
 @var          checkbox RedLogoStyle                "Use 2017 Red icon logo"             0
 ==/UserStyle== */
@@ -14939,7 +14939,7 @@
 			box-shadow: inset 0 -4px 0 0 #ea0000;
 		}
 
-		.light-theme .chat-container .chat-main .chat-header, .light-theme .dialogs .dialog-container .dialog-header, .light-theme .chat-windows-header, .light-theme .input-group-btn .input-dropdown-btn.active, .light-theme .input-group-btn .input-dropdown-btn:active, .light-theme .radio input[type="radio"]:checked + label::after, .light-theme .checkbox input[type="checkbox"]:checked + label::before, .light-theme .select-group .select-option:hover, .light-theme .rbx-select-group .rbx-select.active, .light-theme .rbx-select-group .rbx-select:active, .light-theme .rbx-select-group .rbx-select:focus, .light-theme .tab-horizontal-submenu li.active, .light-theme .tab-horizontal-submenu li:hover, .dark-theme .chat-container .chat-main .chat-header, .dark-theme .dialogs .dialog-container .dialog-header, .dark-theme .chat-windows-header, .dark-theme .input-group-btn .input-dropdown-btn.active, .dark-theme .input-group-btn .input-dropdown-btn:active, .dark-theme .radio input[type="radio"]:checked + label::after, .dark-theme .checkbox input[type="checkbox"]:checked + label::before, .dark-theme .select-group .select-option:hover, .dark-theme .rbx-select-group .rbx-select.active, .dark-theme .rbx-select-group .rbx-select:active, .dark-theme .rbx-select-group .rbx-select:focus, .dark-theme .tab-horizontal-submenu li.active, .dark-theme .tab-horizontal-submenu li:hover, .rbx-select-group:hover .rbx-select:hover, .dark-theme .rbx-select-group:hover .rbx-select:hover, .light-theme .pill-toggle input:checked + label, .dark-theme .pill-toggle input:checked + label, .featured-grid-item-container:before, .light-theme .game-card-friend-activity, .light-theme .game-card-native-ad, .dark-theme .game-card-friend-activity, .dark-theme .game-card-native-ad {
+		.light-theme .chat-container .chat-main .chat-header, .light-theme .dialogs .dialog-container .dialog-header, .light-theme .chat-windows-header, .light-theme .input-group-btn .input-dropdown-btn.active, .light-theme .input-group-btn .input-dropdown-btn:active, .light-theme .radio input[type="radio"]:checked + label::after, .light-theme .checkbox input[type="checkbox"]:checked + label::before, .light-theme .select-group .select-option:hover, .light-theme .rbx-select-group:hover .rbx-select:hover, .light-theme .rbx-select-group .rbx-select.active, .light-theme .rbx-select-group .rbx-select:active, .light-theme .rbx-select-group .rbx-select:focus, .light-theme .tab-horizontal-submenu li.active, .light-theme .tab-horizontal-submenu li:hover, .dark-theme .chat-container .chat-main .chat-header, .dark-theme .dialogs .dialog-container .dialog-header, .dark-theme .chat-windows-header, .dark-theme .input-group-btn .input-dropdown-btn.active, .dark-theme .input-group-btn .input-dropdown-btn:active, .dark-theme .radio input[type="radio"]:checked + label::after, .dark-theme .checkbox input[type="checkbox"]:checked + label::before, .dark-theme .select-group .select-option:hover, .dark-theme .rbx-select-group .rbx-select.active, .dark-theme .rbx-select-group .rbx-select:active, .dark-theme .rbx-select-group .rbx-select:focus, .dark-theme .tab-horizontal-submenu li.active, .dark-theme .tab-horizontal-submenu li:hover, .rbx-select-group:hover .rbx-select:hover, .dark-theme .rbx-select-group:hover .rbx-select:hover, .light-theme .pill-toggle input:checked + label, .dark-theme .pill-toggle input:checked + label, .featured-grid-item-container:before, .light-theme .game-card-friend-activity, .light-theme .game-card-native-ad, .dark-theme .game-card-friend-activity, .dark-theme .game-card-native-ad {
 			background-color: #ea0000;
 		}
 
