@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230604.1.3
+@version      20230606.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -51,7 +51,7 @@
     {
         display: none;
     }
-    .light-theme .rbx-header .navbar-search .new-dropdown-menu li, .dark-theme .rbx-header .navbar-search .new-dropdown-menu li, .dark-theme .rbx-header
+    .light-theme .rbx-header .navbar-search .new-dropdown-menu li, .dark-theme .rbx-header .navbar-search .new-dropdown-menu li
     {
         border: none;
     }
@@ -2700,6 +2700,11 @@
 		.ropro-changes .content.six-column {
             width: 1002px;
         }
+		@media (max-width: 1154px) {
+			.ropro-changes .content.six-column {
+				max-width: 1002px;
+			}
+		}
     }
     
     .light-theme .left-wrapper .section-content, .dark-theme .left-wrapper .section-content {
@@ -5257,6 +5262,92 @@
 			}
 			& when (@SourceSansPro = 1) {
 				line-height: 1.3em;
+			}
+		}
+		
+		#purchase-private-server-modal .modal-title, #purchase-private-server-modal .private-server-main-text {
+			font-size: 0
+		}
+		#purchase-private-server-modal .private-server-game-name {
+			font-size: 0;
+			margin-top: 0;
+			display: inline-block;
+			height: 19px;
+		}
+		#purchase-private-server-modal .modal-title:before {
+			content: 'Create VIP Server';
+			& when (@SourceSansPro = 0) {
+				font-size: 20px;
+				font-weight: 700;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 21px;
+				font-weight: 400;
+			}
+			line-height: 1.42857;
+			cursor: text;
+		}
+		#purchase-private-server-modal .private-server-main-text:before {
+			content: 'Create a VIP Server for ';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		#purchase-private-server-modal .private-server-main-text:after {
+			content: '?';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		#purchase-private-server-modal .private-server-main-text * {
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+		}
+		#purchase-private-server-modal .private-server-game-name:before {
+			content: 'Game Name';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 500;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 400;
+				line-height: 1.3em;
+			}
+			cursor: text
+		}
+		
+		@media (max-width: 767px) {
+			#purchase-private-server-modal .private-server-game-name:before {
+				font-size: 12px;
+				font-weight: 400;
+			}
+		}
+		@media (max-width: 543px) {
+			#purchase-private-server-modal .private-server-main-text:before, #purchase-private-server-modal .private-server-main-text:after, #purchase-private-server-modal .private-server-main-text * {
+				font-size: 12px;
+				font-weight: 400;
 			}
 		}
 		
@@ -10046,11 +10137,21 @@
 		}
         padding: 5px 0;
         cursor: text;
-		top: -32.39px;
+		& when (@SourceSansPro = 0) {
+			top: -32.39px;
+		}
+		& when (@SourceSansPro = 1) {
+			top: -30.8px;
+		}
 		width: max-content;
     }
 	.premium-container .robux-body .robux-row:nth-child(3) {
-		margin-bottom: 47.32px;
+		& when (@SourceSansPro = 0) {
+			margin-bottom: 47.39px;
+		}
+		& when (@SourceSansPro = 1) {
+			margin-bottom: 45.8px;
+		}
 	}
     
     .robux-page .robux-body .robux-row .robux-cell:nth-child(3) {
@@ -11493,7 +11594,26 @@
 			color: #e6e6e6
 		}
 	}
-    
+	
+	@media (max-width: 767px) {
+		.btn-cta-lg, .btn-growth-lg, .btn-secondary-lg, .btn-control-lg, .btn-alert-lg, .btn-buy-lg {
+			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
+				padding: 9px;
+				font-size: 18px;
+				line-height: 100%;
+				border-radius: 3px;
+			}
+		}
+		.btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md {
+			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
+				padding: 7px;
+				font-size: 16px;
+				line-height: 100%;
+				border-radius: 3px;
+			}
+		}
+	}
+	
     /* Toggle */
     
     .light-theme .btn-toggle {
