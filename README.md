@@ -41,7 +41,8 @@ If you don't have stylus already installed, you can get it here for your browser
 - [FireFox](//addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 - <s>[Opera](//addons.opera.com/extensions/details/stylus/)</s>
 
-To install stylus, click the blue "Install/Get/Add" button, if you get a popup prompting to install stylus click "Add" (if you get another popup that it was successful click okay or the X button). Once stylus is installed on your browser go to this [page](//userstyles.world/style/5399/), on the themes page click the blue "Install" button which should take you to the Install page, here you can customize the theme to your choosing (if you do not see the customization options on the right, click the gear icon next to the gray "Install" button), once done, click the gray "Install Style" button and your done, you can confirm it's installed by going on [roblox.com](//roblox.com/).
+1. To install stylus, click the blue "Install/Get/Add" button, if you get a popup prompting to install stylus click "Add" (if you get another popup that it was successful click okay or the X button).
+2. Once stylus is installed on your browser go to this [page](//userstyles.world/style/5399/), on the themes page click the blue "Install" button which should take you to the Install page, here you can customize the theme to your choosing (if you do not see the customization options on the right, click the gear icon next to the gray "Install" button), once done, click the gray "Install Style" button and your done, you can confirm it's installed by going on [roblox.com](//roblox.com/).
 
 ### Extras
 
