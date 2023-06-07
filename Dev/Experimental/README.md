@@ -51,7 +51,7 @@ If you don't have stylus already installed, you can get it here for your browser
 
 ### Extras
 
-For upcoming future updates and features you can try out the [experimental](//github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/R19OTExperimental.user.css) channel, please note that you're <ins>**not required**</ins> to install this and that experimental may contain bugs or issues which should be reported using [Issues](#Issues).
+For upcoming future updates and features you can try out the [experimental](//github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/R19OTExperimental.user.css) channel, please note that you're <ins>**not required**</ins> to install this, note that experimental may change periodically and or contain bugs or issues which should be reported using [Issues](#Issues).
 
 ## Issues
 
