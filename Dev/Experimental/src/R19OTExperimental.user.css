@@ -5629,6 +5629,9 @@
 		.tab-content>.tab-pane:not(.active).scaling-tab .section-content {
 			background: transparent;
 			padding: 0;
+			& when (@BoxShadows = 1) {
+				box-shadow: none;
+			}
 		}
 		.tab-content>.tab-pane:not(.active).scaling-tab .section-content .avatar-type-container div:not(.pill-toggle), .tab-content>.tab-pane:not(.active).scaling-tab .section-sliders, .avatar-type-container .text-label, .avatar-type-container .avatar-type-message-banner {
 			display: none;
