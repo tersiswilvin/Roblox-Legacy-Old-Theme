@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230609.1.3
+@version      20230610.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -13,14 +13,15 @@
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         0
 @var          select   SiteCurrency                "Currency Brand Style"               ["Robux*","Tickets"]
+@var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
 @var          checkbox fiveColumn                  "Five column Avatar Editor."         1
 @var          select   greetingTxt                 "Greeting Text Style"                ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                    ["Pre-2018", "2019E", "2019M*", "2019L"]
-@var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"     0
 @var          select   LegacyFooterText            "Legacy Footer Text"                 ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"             0
+@var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size (Deprecated)" 1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
@@ -4531,6 +4532,202 @@
     .light-theme .catalog-container .search-container .input-group .autocomplete-dropdown-menu .dropdown-menu, .dark-theme .catalog-container .search-container .input-group .autocomplete-dropdown-menu .dropdown-menu {
         max-height: 338px;
     }
+	
+	& when (@AvatarGogoSpinner = 1) {
+		@-webkit-keyframes gogoloader {
+			0% {
+				-webkit-transform: scale(0);
+				-ms-transform: scale(0);
+				-o-transform: scale(0);
+				transform: scale(0);
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+			50% {
+				opacity: 100;
+				filter: alpha(opacity=10000);
+			}
+			100% {
+				-webkit-transform: scale(1);
+				-ms-transform: scale(1);
+				-o-transform: scale(1);
+				transform: scale(1);
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+		}
+		
+		@keyframes gogoloader {
+			0% {
+				-webkit-transform: scale(0);
+				-ms-transform: scale(0);
+				-o-transform: scale(0);
+				transform: scale(0);
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+			50% {
+				opacity: 100;
+				filter: alpha(opacity=10000);
+			}
+			100% {
+				-webkit-transform: scale(1);
+				-ms-transform: scale(1);
+				-o-transform: scale(1);
+				transform: scale(1);
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+		}
+		
+		.profile-avatar-left .thumbnail-loader {
+			position: unset;
+			width: inherit;
+			height: inherit;
+			top: unset;
+			transform: none;
+		}
+		#avatar-container .thumbnail-loader {
+			width: inherit;
+			height: inherit;
+			display: block
+		}
+		.profile-avatar-left .thumbnail-loader, .profile-avatar-left .spinner, #avatar-container .thumbnail-loader, #avatar-container .spinner {
+			background-image: none;
+			display: inline-block;
+			white-space: normal;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			text-align: center;
+			z-index: 0;
+			margin: 0;
+		}
+		.profile-avatar-left .thumbnail-loader:after {
+			content: 'Loading';
+			font-size: 16px;
+			line-height: 300px;
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			transform: translate(-35px, 0);
+		}
+		#avatar-container .thumbnail-loader:after {
+			content: 'Loading';
+			color: #191919;
+			font-size: 16px;
+			line-height: 354px;
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			transform: translate(-35px, 0);
+		}
+		.dark-theme .profile-avatar-left .thumbnail-loader:after {
+			color: #e6e6e6
+		}
+		#profile-current-wearing-avatar .thumbnail-holder {
+			width: 300px;
+			height: 300px;
+			margin: 0 auto;
+		}
+		.profile-avatar-left #thumbnail-3d-container {
+			display: inline-block;
+			width: 300px;
+			height: 300px;
+		}
+		.profile-avatar-left #thumbnail-3d-container canvas {
+			position: relative;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+		.profile-avatar-left .spinner:before, .profile-avatar-left .spinner:after {
+			opacity: 0;
+			content: "\0020";
+			position: absolute;
+			top: 10%;
+			left: 10%;
+			width: 80%;
+			height: 80%;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				border-radius: 50%;
+				border: 3px solid #0074BD;
+				box-shadow: 0 0 50px #99DAFF, inset 0 0 50px #99DAFF;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				border-radius: 352px;
+				border: 3px solid #184FA2;
+				box-shadow: 0 0 50px #5D9CFB, inset 0 0 50px #5D9CFB;
+			}
+		}
+		.dark-theme .profile-avatar-left .spinner:before, .dark-theme .profile-avatar-left .spinner:after {
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				border-radius: 50%;
+				& when (@BrighterDarkThemeColors = 0) {
+					border: 3px solid #001623;
+					box-shadow: 0 0 50px #3D5766, inset 0 0 50px #3D5766;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					border: 3px solid #0074BD;
+					box-shadow: 0 0 50px #99DAFF, inset 0 0 50px #99DAFF;
+				}
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				border-radius: 352px;
+				border: 3px solid #184FA2;
+				box-shadow: 0 0 50px #5D9CFB, inset 0 0 50px #5D9CFB;
+			}
+		}
+		#avatar-container .thumbnail-loader .spinner:before, #avatar-container .thumbnail-loader .spinner:after {
+			opacity: 0;
+			box-sizing: border-box;
+			content: "\0020";
+			position: absolute;
+			top: 15%;
+			left: 15%;
+			width: 70%;
+			height: 70%;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				border-radius: 50%;
+				border: 3px solid #0074BD;
+				box-shadow: 0 0 50px #99DAFF, inset 0 0 50px #99DAFF;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				border-radius: 352px;
+				border: 3px solid #184FA2;
+				box-shadow: 0 0 50px #5D9CFB, inset 0 0 50px #5D9CFB;
+			}
+		}
+		.dark-theme #avatar-container .thumbnail-loader .spinner:before, .dark-theme #avatar-container .thumbnail-loader .spinner:after {
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				border-radius: 50%;
+				& when (@BrighterDarkThemeColors = 0) {
+					border: 3px solid #001623;
+					box-shadow: 0 0 50px #3D5766, inset 0 0 50px #3D5766;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					border: 3px solid #0074BD;
+					box-shadow: 0 0 50px #99DAFF, inset 0 0 50px #99DAFF;
+				}
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				border-radius: 352px;
+				border: 3px solid #184FA2;
+				box-shadow: 0 0 50px #5D9CFB, inset 0 0 50px #5D9CFB;
+			}
+		}
+		.profile-avatar-left .spinner:before, #avatar-container .thumbnail-loader .spinner:before {
+			z-index: 2;
+			-webkit-animation: gogoloader 2s infinite;
+			-o-animation: gogoloader 2s infinite;
+			animation: gogoloader 2s infinite;
+		}
+		.profile-avatar-left .spinner:after, #avatar-container .thumbnail-loader .spinner:after {
+			-webkit-animation: gogoloader 2s infinite 1s;
+			-o-animation: gogoloader 2s infinite 1s;
+			animation: gogoloader 2s infinite 1s;
+		}
+	}
+	
     & when (@RemoveUpdates = 1) {
         .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option-content[href="#!/game-passes"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li a[href="https://www.roblox.com/crossdevicelogin/ConfirmCode"], .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3) {
             display: none !important;
@@ -5403,6 +5600,90 @@
 			}
 			.game-instances .create-server-banner .play-with-others-text, #running-game-instances-container .create-server-banner .play-with-others-text {
 				height: 16.8px
+			}
+		}
+		
+		/*/ Cringe CSS ahead /*/
+
+		.tab-content>.tab-pane:not(.active).scaling-tab {
+			display: block;
+			position: absolute;
+			top: 84px;
+			margin-left: -101px;
+		}
+		.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+			position: fixed;
+			top: 60px
+		}
+		.tab-content>.active.scaling-tab .pill-toggle {
+			position: absolute;
+			left: -168px;
+			top: -72px;
+		}
+		.pinned .tab-content>.active.scaling-tab .pill-toggle {
+			position: fixed;
+			top: 60px;
+			left: unset;
+			margin-left: -116px;
+		}
+		.tab-content>.tab-pane:not(.active).scaling-tab .section-content {
+			background: transparent;
+			padding: 0;
+		}
+		.tab-content>.tab-pane:not(.active).scaling-tab .section-content .avatar-type-container div:not(.pill-toggle), .tab-content>.tab-pane:not(.active).scaling-tab .section-sliders, .avatar-type-container .text-label, .avatar-type-container .avatar-type-message-banner {
+			display: none;
+		}
+		
+		.tab-content>.tab-pane:not(.active).scaling-tab .avatar-type-toggle-scale {
+			margin-left: 0
+		}
+		
+		.ropro-changes .tab-content>:not(.active).scaling-tab .pill-toggle {
+			position: relative;
+		}
+		.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
+			top: 112px
+		}
+		.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+			top: 50px
+		}
+		.ropro-changes .tab-content>.scaling-tab, .ropro-changes .tab-content>.scaling-tab .pill-toggle {
+			z-index: 2;
+		}
+		
+		@media (max-width: 991px) {
+			.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+				display: block;
+				position: absolute;
+				top: 84px;
+				margin-left: -101px;
+			}
+			.ropro-changes .pinned .tab-content>.active.scaling-tab .pill-toggle {
+				left: unset
+			}
+			.pinned .tab-content>.active.scaling-tab .pill-toggle {
+				position: absolute;
+				left: -168px;
+				top: -72px;
+			}
+			.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 112px;
+			}
+		}
+		@media (max-width: 767px) {
+			.tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 76px;
+			}
+			.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 104px;
+			}
+			.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 104px;
+			}
+		}
+		@media (max-width: 543px) {
+			.tab-content>.active.scaling-tab .pill-toggle, .ropro-changes .tab-content>.active.scaling-tab .pill-toggle {
+				top: -67px;
 			}
 		}
     }
@@ -10392,9 +10673,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #02b757;
-			border: 1px solid #02b757;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #001E0E;
+				border: 1px solid #001E0E;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #02b757;
+				border: 1px solid #02b757;
+				color: #fff;
+			}
 			&, &:hover, &:focus, &:active {
 				font-size: 21px;
 			}
@@ -10425,9 +10713,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #02b757;
-			border: 1px solid #02b757;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #001E0E;
+				border: 1px solid #001E0E;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #02b757;
+				border: 1px solid #02b757;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -10461,9 +10756,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #02b757;
-			border: 1px solid #02b757;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #001E0E;
+				border: 1px solid #001E0E;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #02b757;
+				border: 1px solid #02b757;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -10497,9 +10799,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #02b757;
-			border: 1px solid #02b757;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #001E0E;
+				border: 1px solid #001E0E;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #02b757;
+				border: 1px solid #02b757;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -10520,12 +10829,23 @@
 			cursor: pointer;
 		}
 		.dark-theme &:focus, .dark-theme &:hover {
-			background-color: #3fc679;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #0D2B1A;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #3fc679;
+			}
 			& when (@BoxShadows = 1) {
 				box-shadow: 0 1px 3px rgba(105,105,105,0.74);
 			}
-			border-color: #3fc679;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				border-color: #0D2B1A;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				border-color: #3fc679;
+				color: #fff;
+			}
 			cursor: pointer;
 		}
 		.light-theme &.active, .light-theme &:active {
@@ -10539,8 +10859,14 @@
 			& when (@BoxShadows = 1) {
 				box-shadow: none;
 			}
-			background-color: #3fc679;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #0D2B1A;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #3fc679;
+				color: #fff;
+			}
 		}
 		/*/ Disabled /*/
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
@@ -10559,8 +10885,14 @@
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
 			opacity: .5;
-			background-color: #a3e2bd;
-			border-color: #a3e2bd;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #34473B;
+				border-color: #34473B;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #a3e2bd;
+				border-color: #a3e2bd;
+			}
 			color: #fff;
 			& when (@LegacyNextStyleGuideButtons = 0) {
 				cursor: not-allowed;
@@ -10578,9 +10910,16 @@
 			border-color: #02b757;
 		}
 		.dark-theme .touch &:not([disabled]):focus, .dark-theme .touch &:not([disabled]):hover, .dark-theme .touch &:not([disabled]):visited {
-			color: #fff;
-			background-color: #02b757;
-			border-color: #02b757;
+			& when (@BrighterDarkThemeColors = 0) {
+				color: #b8b8b8;
+				background-color: #001E0E;
+				border-color: #001E0E;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				color: #fff;
+				background-color: #02b757;
+				border-color: #02b757;
+			}
 		}
 		.light-theme .touch &:not([disabled]).active, .light-theme .touch &:not([disabled]):active {
 			color: #fff;
@@ -10594,14 +10933,29 @@
 			}
 		}
 		.dark-theme .touch &:not([disabled]).active, .dark-theme .touch &:not([disabled]):active {
-			color: #fff;
 			& when (@LegacyNextStyleGuideButtons = 0) {
-				background-color: #118237;
-				border-color: #118237;
+				& when (@BrighterDarkThemeColors = 0) {
+					color: #b8b8b8;
+					background-color: #010C05;
+					border-color: #010C05;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					color: #fff;
+					background-color: #118237;
+					border-color: #118237;
+				}
 			}
 			& when (@LegacyNextStyleGuideButtons = 1) {
-				background-color: #01853f;
-				border-color: #017a3a;
+				& when (@BrighterDarkThemeColors = 0) {
+					color: #b8b8b8;
+					background-color: #000502;
+					border-color: #001108;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					color: #fff;
+					background-color: #01853f;
+					border-color: #017a3a;
+				}
 			}
 		}
 	}
@@ -10630,9 +10984,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #00a2ff;
-			border: 1px solid #00a2ff;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #004266;
+				border: 1px solid #004266;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #00a2ff;
+				border: 1px solid #00a2ff;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -10666,9 +11027,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #00a2ff;
-			border: 1px solid #00a2ff;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #004266;
+				border: 1px solid #004266;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #00a2ff;
+				border: 1px solid #00a2ff;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -10702,9 +11070,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #00a2ff;
-			border: 1px solid #00a2ff;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #004266;
+				border: 1px solid #004266;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #00a2ff;
+				border: 1px solid #00a2ff;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -10738,9 +11113,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #00a2ff;
-			border: 1px solid #00a2ff;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #004266;
+				border: 1px solid #004266;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #00a2ff;
+				border: 1px solid #00a2ff;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -10761,13 +11143,23 @@
 			cursor: pointer;
 		}
 		.dark-theme &:focus, .dark-theme &:hover {
-			background-color: #32b5ff;
-			& when (@BoxShadows = 1) {
-				box-shadow: 0 1px 3px rgba(150,150,150,0.74);
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #144966;
 			}
-			border-color: #32b5ff;
-			color: #fff;
-			cursor: pointer;
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #32b5ff;
+			}
+			& when (@BoxShadows = 1) {
+				box-shadow: 0 1px 3px rgba(105,105,105,0.74);
+			}
+			& when (@BrighterDarkThemeColors = 0) {
+				border-color: #144966;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				border-color: #32b5ff;
+				color: #fff;
+			}
 		}
 		.light-theme &.active, .light-theme &:active {
 			& when (@BoxShadows = 1) {
@@ -10780,8 +11172,14 @@
 			& when (@BoxShadows = 1) {
 				box-shadow: none;
 			}
-			background-color: #32b5ff;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #144966;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #32B5FF;
+				color: #fff;
+			}
 		}
 		/*/ Disabled /*/
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
@@ -10800,9 +11198,14 @@
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
 			opacity: .5;
-			background-color: #99daff;
-			border-color: #99daff;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #3D5766;
+				border-color: #3D5766;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #99DAFF;
+				border-color: #99DAFF;
+			}
 			& when (@LegacyNextStyleGuideButtons = 0) {
 				cursor: not-allowed;
 				pointer-events: none;
@@ -10819,9 +11222,16 @@
 			border-color: #00a2ff;
 		}
 		.dark-theme .touch &:not([disabled]):focus, .dark-theme .touch &:not([disabled]):hover, .dark-theme .touch &:not([disabled]):visited {
-			color: #fff;
-			background-color: #00a2ff;
-			border-color: #00a2ff;
+			& when (@BrighterDarkThemeColors = 0) {
+				color: #b8b8b8;
+				background-color: #004266;
+				border-color: #004266;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				color: #fff;
+				background-color: #00a2ff;
+				border-color: #00a2ff;
+			}
 		}
 		.light-theme .touch &:not([disabled]).active, .light-theme .touch &:not([disabled]):active {
 			color: #fff;
@@ -10837,12 +11247,28 @@
 		.dark-theme .touch &:not([disabled]).active, .dark-theme .touch &:not([disabled]):active {
 			color: #fff;
 			& when (@LegacyNextStyleGuideButtons = 0) {
-				background-color: #0074bd;
-				border-color: #0074bd;
+				& when (@BrighterDarkThemeColors = 0) {
+					color: #b8b8b8;
+					background-color: #001623;
+					border-color: #001623;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					color: #fff;
+					background-color: #0074bd;
+					border-color: #0074bd;
+				}
 			}
 			& when (@LegacyNextStyleGuideButtons = 1) {
-				background-color: #0082cc;
-				border-color: #007bc2;
+				& when (@BrighterDarkThemeColors = 0) {
+					color: #b8b8b8;
+					background-color: #001623;
+					border-color: #001623;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					color: #fff;
+					background-color: #002133;
+					border-color: #001A28;
+				}
 			}
 		}
 	}
@@ -11179,12 +11605,23 @@
 			cursor: pointer;
 		}
 		.dark-theme &:focus, .dark-theme &:hover {
-			background-color: #3fc679;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #0D2B1A;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #3fc679;
+			}
 			& when (@BoxShadows = 1) {
 				box-shadow: 0 1px 3px rgba(105,105,105,0.74);
 			}
-			border-color: #3fc679;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				border-color: #0D2B1A;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				border-color: #3fc679;
+				color: #fff;
+			}
 			cursor: pointer;
 		}
 		.light-theme &.active, .light-theme &:active {
@@ -11198,8 +11635,14 @@
 			& when (@BoxShadows = 1) {
 				box-shadow: none;
 			}
-			background-color: #3fc679;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #0D2B1A;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #3fc679;
+				color: #fff;
+			}
 		}
 	}
 	/*/ Disabled /*/
@@ -11323,12 +11766,28 @@
 		.dark-theme .touch &:not([disabled]).active, .dark-theme .touch &:not([disabled]):active {
 			color: #fff;
 			& when (@LegacyNextStyleGuideButtons = 0) {
-				background-color: #118237;
-				border-color: #118237;
+				& when (@BrighterDarkThemeColors = 0) {
+					color: #b8b8b8;
+					background-color: #010C05;
+					border-color: #010C05;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					color: #fff;
+					background-color: #118237;
+					border-color: #118237;
+				}
 			}
 			& when (@LegacyNextStyleGuideButtons = 1) {
-				background-color: #30a261;
-				border-color: #2e9a5c;
+				& when (@BrighterDarkThemeColors = 0) {
+					color: #b8b8b8;
+					background-color: #010C05;
+					border-color: #010C05;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					color: #fff;
+					background-color: #020704;
+					border-color: #000;
+				}
 			}
 		}
 	}
@@ -11357,9 +11816,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #d86868;
-			border: 1px solid #d86868;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #3D1D1D;
+				border: 1px solid #3D1D1D;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #d86868;
+				border: 1px solid #d86868;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -11393,9 +11859,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #d86868;
-			border: 1px solid #d86868;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #3D1D1D;
+				border: 1px solid #3D1D1D;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #d86868;
+				border: 1px solid #d86868;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -11429,9 +11902,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #d86868;
-			border: 1px solid #d86868;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #3D1D1D;
+				border: 1px solid #3D1D1D;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #d86868;
+				border: 1px solid #d86868;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -11465,9 +11945,16 @@
 				-o-transition: box-shadow 200ms ease-in-out;
 				transition: box-shadow 200ms ease-in-out;
 			}
-			background-color: #d86868;
-			border: 1px solid #d86868;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #3D1D1D;
+				border: 1px solid #3D1D1D;
+				color: #b8b8b8;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #d86868;
+				border: 1px solid #d86868;
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -11488,12 +11975,24 @@
 			cursor: pointer;
 		}
 		.dark-theme &:focus, .dark-theme &:hover {
-			background-color: #e27676;
-			& when (@BoxShadows = 1) {
-				box-shadow: 0 1px 3px rgba(150,150,150,0.74);
+
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #472525;
 			}
-			border-color: #e27676;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #e27676;
+			}
+			& when (@BoxShadows = 1) {
+				box-shadow: 0 1px 3px rgba(105,105,105,0.74);
+			}
+			& when (@BrighterDarkThemeColors = 0) {
+				border-color: #472525;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				border-color: #e27676;
+				color: #fff;
+			}
 			cursor: pointer;
 		}
 		.light-theme &.active, .light-theme &:active {
@@ -11507,8 +12006,14 @@
 			& when (@BoxShadows = 1) {
 				box-shadow: none;
 			}
-			background-color: #e27676;
-			color: #fff;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #472525;
+				color: #e3e3e3;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #e27676;
+				color: #fff;
+			}
 		}
 		/*/ Disabled /*/
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
@@ -11527,8 +12032,14 @@
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
 			opacity: .5;
-			background-color: #d86868;
-			border-color: #d86868;
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #3D1D1D;
+				border-color: #3D1D1D;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #d86868;
+				border-color: #d86868;
+			}
 			color: #fff;
 			& when (@LegacyNextStyleGuideButtons = 0) {
 				cursor: not-allowed;
@@ -11546,9 +12057,16 @@
 			border-color: #d86868;
 		}
 		.dark-theme .touch &:not([disabled]):focus, .dark-theme .touch &:not([disabled]):hover, .dark-theme .touch &:not([disabled]):visited {
-			color: #fff;
-			background-color: #d86868;
-			border-color: #d86868;
+			& when (@BrighterDarkThemeColors = 0) {
+				color: #b8b8b8;
+				background-color: #3D1D1D;
+				border-color: #3D1D1D;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				color: #fff;
+				background-color: #d86868;
+				border-color: #d86868;
+			}
 		}
 		.light-theme .touch &:not([disabled]).active, .light-theme .touch &:not([disabled]):active {
 			color: #fff;
@@ -11556,9 +12074,16 @@
 			border-color: #ac1e2d;
 		}
 		.dark-theme .touch &:not([disabled]).active, .dark-theme .touch &:not([disabled]):active {
-			color: #fff;
-			background-color: #ac1e2d;
-			border-color: #ac1e2d;
+			& when (@BrighterDarkThemeColors = 0) {
+				color: #b8b8b8;
+				background-color: #110304;
+				border-color: #110304;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				color: #fff;
+				background-color: #ac1e2d;
+				border-color: #ac1e2d;
+			}
 		}
 	}
 	/*/== Fixes ==/*/
