@@ -18,6 +18,7 @@ Added Style Guide Text back to 2016 styleguide.
 Added Toggleable Brighter Dark Theme colors option.
 App bumper syncs with site Brand settings.
 Legacy Footer Text has more customizable options.
+Moved body scale type back in it's original place in the Avatar Editor.
 Re-added VIP Server text swap (Toggleable via Remove Updates).
 Removed Events container (Toggleable via Remove Updates).
 Removed unnecessary CSS.
