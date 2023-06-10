@@ -31,24 +31,24 @@ Color Pallette {
     Blue {
         Blue Primary : #00A2FF => #004266;
         Blue Hover : #32B5FF => #144966;
-        Blue Pressed : #0074BD;
+        Blue Pressed : #0074BD => #001623;
         Blue Disabled : #99DAFF => #3D5766;
     }
     Green {
-        Green Primary : #02B757;
-        Green Hover : #3FC679;
-        Green Pressed : #118237;
-        Green Disabled : #A3E2BD;
+        Green Primary : #02B757 => #001E0E;
+        Green Hover : #3FC679 => #0D2B1A;
+        Green Pressed : #118237 => #010C05;
+        Green Disabled : #A3E2BD => #34473B;
     }
     Red {
-        Red Primary : #E2231A;
-        Red Negative : #D86868;
-        Red Hover : #E27676;
-        Red Pressed : #AC1E2D;
+        Red Primary : #E2231A => #470A08;
+        Red Negative : #D86868 => #3D1D1D;
+        Red Hover : #E27676 => #472525;
+        Red Pressed : #AC1E2D => #110304;
     }
     Orange {
-        Orange Warning : #F68802;
-        Orange Favorite : #F6B702;
+        Orange Warning : #F68802 => #5B3100;
+        Orange Favorite : #F6B702 => #5B4300;
     }
     Shadow {
         Shadow Primary : rgba(25,25,25,0.3) => rgba(230,230,230,0.3);
