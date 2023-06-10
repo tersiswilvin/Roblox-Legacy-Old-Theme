@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230607.1.3
+@version      20230609.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -13440,6 +13440,15 @@
         margin: 0! important;
     }
     
+	.ropro-cloud-play-container {
+		top: -68px;
+		position: relative
+	}
+	
+	.gotham-font .game-main-content .game-calls-to-action #game-details-play-button-container:has(.random-server-button), .gotham-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container:has(.random-server-button) {
+		display: flex
+	}
+	
     .light-theme button:hover #serverFilters, .dark-theme button:hover #serverFilters {
         color: #fff !important;
     }
