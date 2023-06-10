@@ -6225,6 +6225,16 @@
         visibility: initial;
     }
     
+	.light-theme .placeholder, .dark-theme .placeholder {
+		background-color: transparent;
+	}
+	.dark-theme .shimmer, .dark-theme .shimmer-lines .shimmer-line, .light-theme .shimmer, .light-theme .shimmer-lines .shimmer-line, .shimmer-lines .dark-theme .shimmer-line, .shimmer-lines .light-theme .shimmer-line {
+		animation: none;
+		background-image: none;
+		background-repeat: no-repeat;
+		background-size: 0;
+	}
+	
     .icon-robux-130x130 {
         visibility: hidden;
     }
