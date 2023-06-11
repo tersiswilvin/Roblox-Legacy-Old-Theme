@@ -2676,12 +2676,11 @@
         border-radius: 3px;
     }
     
-    .items-list.avatar-item-list .item-card.six-column
-    {
-        width: 134px;
-        height: 188px;
-    }
-    
+	& when (@fiveColumn = 0) {
+		.items-list.avatar-item-list .item-card.six-column {
+			height: 188px;
+		}
+	}
     & when (@fiveColumn = 1) {
 		.right-panel.six-column {
 			width: 670px;
@@ -2705,6 +2704,10 @@
 			.ropro-changes .content.six-column {
 				max-width: 1002px;
 			}
+		}
+		.items-list.avatar-item-list .item-card.six-column {
+			width: 20%;
+			height: 188px;
 		}
     }
     
