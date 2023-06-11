@@ -5651,9 +5651,14 @@
 					font-weight: 400;
 				}
 			}
+			.rbx-tab.six-tab:nth-child(6) .text-lead .icon-down {
+				margin-top: -7px
+			}
 		}
 		@media (max-width: 543px) {
-			
+			.rbx-tab.six-tab:nth-child(6) .text-lead {
+				height: 13px
+			}
 		}
 		
 		/*/ Cringe CSS ahead /*/
