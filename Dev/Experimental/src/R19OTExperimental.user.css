@@ -2711,6 +2711,10 @@
 		}
     }
     
+	.item-card-container.remove-panel {
+		padding: 0 0 5px;
+	}
+	
     .light-theme .left-wrapper .section-content, .dark-theme .left-wrapper .section-content {
         padding-bottom: 0;
     }
@@ -5618,7 +5622,7 @@
 		}
 		.rbx-tab.six-tab:nth-child(6) .text-lead {
 			font-size: 0;
-			height: 13px
+			height: 16px
 		}
 		.rbx-tab.six-tab:nth-child(6) .text-lead:before {
 			content: 'Body';
@@ -5647,6 +5651,9 @@
 					font-weight: 400;
 				}
 			}
+		}
+		@media (max-width: 543px) {
+			
 		}
 		
 		/*/ Cringe CSS ahead /*/
@@ -8118,6 +8125,10 @@
         }
     }
     
+	.items-list .item-card .item-card-caption {
+		width: 100%;
+	}
+	
     .item-cards-stackable .item-card-secondary-info {
         min-height: 16.8px;
     }
