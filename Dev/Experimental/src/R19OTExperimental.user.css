@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230610.1.3
+@version      20230611.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2686,7 +2686,7 @@
 		.right-panel.six-column {
 			width: 670px;
 		}
-        #accessories-dropdown {
+        .rbx-tab.six-tab:nth-child(5) {
             display: none;
         }
         .rbx-tab.six-tab {
@@ -4957,7 +4957,7 @@
         .game-home-page-container .game-error .error-text:before {
             content: 'Games failed to load';
             font-size: 16px;
-        font-weight: inherit;
+			font-weight: inherit;
             line-height: 1.5em;
             margin-top: 12px;
             display: block;
@@ -5603,12 +5603,60 @@
 			}
 		}
 		
+		.nav-tabs {
+			display: flex;
+		}
+		.rbx-tab.six-tab:nth-child(2) {
+			display: none;
+		}
+		.rbx-tab.six-tab:nth-child(3).ng-hide {
+			display: block !important;
+			order: 6;
+		}
+		.rbx-tab.six-tab:nth-child(6) .text-lead {
+			font-size: 0;
+			height: 13px
+		}
+		.rbx-tab.six-tab:nth-child(6) .text-lead:before {
+			content: 'Body';
+			& when (@SourceSansPro = 0) {
+				font-size: 16px;
+				font-weight: 500;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 18px;
+				font-weight: 400;
+			}
+			display: inline-block
+		}
+		.rbx-tab.six-tab:nth-child(6) .text-lead .icon-down {
+			margin-top: -8px
+		}
+		
+		@media (max-width: 767px) {
+			.rbx-tab.six-tab:nth-child(6) .text-lead:before {
+				& when (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 18px;
+					font-weight: 400;
+				}
+			}
+		}
+		
 		/*/ Cringe CSS ahead /*/
 
 		.tab-content>.tab-pane:not(.active).scaling-tab {
 			display: block;
 			position: absolute;
-			top: 84px;
+			& when (@SourceSansPro = 0) {
+				top: 84px;
+			}
+			& when (@SourceSansPro = 1) {
+				top: 88px;
+			}
 			margin-left: -101px;
 		}
 		.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
@@ -5645,7 +5693,12 @@
 			position: relative;
 		}
 		.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
-			top: 112px
+			& when (@SourceSansPro = 0) {
+				top: 112px
+			}
+			& when (@SourceSansPro = 1) {
+				top: 116px
+			}
 		}
 		.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
 			top: 50px
