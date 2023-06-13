@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230611.1.3
+@version      20230612.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5542,10 +5542,66 @@
 			cursor: text
 		}
 		
+		.private-server-container .container-header.see-all-container-header h1, .private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"], .gotham-font .private-server-container .container-header.see-all-container-header .see-all-link-icon {
+			&, &:hover, &:active, &:focus, &:visited {
+				font-size: 0;
+			}
+		}
+		.private-server-container .container-header.see-all-container-header h1:after {
+			content: 'Configure VIP Server';
+			& when (@SourceSansPro = 0) {
+				font-size: 32px;
+				font-weight: 800;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 36px;
+				font-weight: 400;
+			}
+			line-height: 1em;
+			cursor: text;
+		}
+		.private-server-container .container-header.see-all-container-header .see-all-link-icon:before {
+			content: 'Back to VIP Servers';
+			& when (@SourceSansPro = 0) {
+				font-size: 16px;
+				font-weight: 500;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 14px;
+				font-weight: 500;
+			}
+			line-height: 100%;
+		}
+		
+		.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"]:after {
+			content: 'Game';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 500;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 400;
+			}
+			line-height: 1.4em;
+			cursor: text;
+		}
+		
 		@media (max-width: 767px) {
+			.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"]:after {
+				font-size: 12px;
+				font-weight: 500;
+			}
 			#purchase-private-server-modal .private-server-game-name:before {
 				font-size: 12px;
 				font-weight: 400;
+			}
+			.private-server-container .container-header.see-all-container-header h1:after {
+				& when (@SourceSansPro = 0) {
+					font-size: 24px;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 30px;
+				}
 			}
 		}
 		@media (max-width: 543px) {
@@ -5640,6 +5696,18 @@
 			margin-top: -8px
 		}
 		
+		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1) {
+			font-size: 0;
+			height: 22.39px
+		}
+		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
+			content: 'Body';
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.4em;
+			cursor: text;
+		}
+		
 		@media (max-width: 767px) {
 			.rbx-tab.six-tab:nth-child(6) .text-lead:before {
 				& when (@SourceSansPro = 0) {
@@ -5658,6 +5726,13 @@
 		@media (max-width: 543px) {
 			.rbx-tab.six-tab:nth-child(6) .text-lead {
 				height: 13px
+			}
+			.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1) {
+				height: 16.8px
+			}
+			.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
+				font-size: 12px;
+				font-weight: 400;
 			}
 		}
 		
@@ -10955,7 +11030,12 @@
 		}
 		/*/ Disabled /*/
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			background-color: #a3e2bd;
 			border-color: #a3e2bd;
 			color: #fff;
@@ -10969,7 +11049,12 @@
 			}
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			& when (@BrighterDarkThemeColors = 0) {
 				background-color: #34473B;
 				border-color: #34473B;
@@ -11268,7 +11353,12 @@
 		}
 		/*/ Disabled /*/
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			background-color: #99daff;
 			border-color: #99daff;
 			color: #fff;
@@ -11282,7 +11372,12 @@
 			}
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			& when (@BrighterDarkThemeColors = 0) {
 				background-color: #3D5766;
 				border-color: #3D5766;
@@ -11385,13 +11480,14 @@
 			background-color: #000;
 			border: 1px solid #474747;
 			color: #e6e6e6;
-			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 			transition: all,0.2s,ease-in-out;
-		}
-		&, &:hover, &:focus, &:active {
-			font-size: 21px;
-		}
-		border-radius: 5px;
+			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
+				transition: all,0.2s,ease-in-out;
+			}
+			&, &:hover, &:focus, &:active {
+				font-size: 21px;
+			}
+			border-radius: 5px;
 		}
 	}
 	.btn-buy-lg {
@@ -11496,7 +11592,7 @@
 			&, &:hover, &:focus, &:active {
 				font-size: 18px;
 			}
-		border-radius: 3px;
+			border-radius: 3px;
 		}
 	}
 	.btn-control-sm, .btn-generic-edit-sm, a.btn-generic-edit-sm, button.btn-generic-edit-sm, .btn-generic-locked-sm,a.btn-generic-locked-sm,button.btn-generic-locked-sm, .btn-generic-unlocked-sm,a.btn-generic-unlocked-sm,button.btn-generic-unlocked-sm, .btn-generic-back-sm, .btn-generic-next-sm {
@@ -11733,7 +11829,12 @@
 	/*/ Disabled /*/
 	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-buy-lg, .btn-buy-md, .btn-buy-sm, .btn-buy-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .btn-control-lg.disabled, .avatar-card-btns .ignore-friend {
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			background-color: #fff;
 			border-color: #b8b8b8;
 			color: #b8b8b8;
@@ -11747,7 +11848,12 @@
 			}
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			background-color: #000;
 			border-color: #474747;
 			color: #474747;
@@ -11763,7 +11869,12 @@
 	}
 	.btn-generic-edit-lg, .btn-generic-edit-md, .btn-generic-edit-sm, .btn-generic-edit-xs, .btn-generic-locked-sm,a.btn-generic-locked-sm,button.btn-generic-locked-sm, .btn-generic-unlocked-sm,a.btn-generic-unlocked-sm,button.btn-generic-unlocked-sm, .btn-generic-back-sm, .btn-generic-next-sm {
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover  {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			background-color: #fff;
 			border-color: #b8b8b8;
 			color: #191919;
@@ -11777,7 +11888,12 @@
 			}
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			background-color: #000;
 			border-color: #474747;
 			color: #e6e6e6;
@@ -12102,7 +12218,12 @@
 		}
 		/*/ Disabled /*/
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			background-color: #d86868;
 			border-color: #d86868;
 			color: #fff;
@@ -12116,7 +12237,12 @@
 			}
 		}
 		.dark-theme &.disabled, .dark-theme &.disabled.active, .dark-theme &.disabled:active, .dark-theme &.disabled:focus, .dark-theme &.disabled:hover, .dark-theme &[disabled], .dark-theme &[disabled].active, .dark-theme &[disabled]:active, .dark-theme &[disabled]:focus, .dark-theme &[disabled]:hover {
-			opacity: .5;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				opacity: .5;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				opacity: 1;
+			}
 			& when (@BrighterDarkThemeColors = 0) {
 				background-color: #3D1D1D;
 				border-color: #3D1D1D;
@@ -12442,9 +12568,6 @@
             content: 'off';
             font-size: 12px;
             font-weight: 400;
-        }
-        .light-theme .btn-primary-lg.disabled, .light-theme .btn-primary-lg.disabled.active, .light-theme .btn-primary-lg.disabled:active, .light-theme .btn-primary-lg.disabled:focus, .light-theme .btn-primary-lg.disabled:hover, .light-theme .btn-primary-lg[disabled], .light-theme .btn-primary-lg[disabled].active, .light-theme .btn-primary-lg[disabled]:active, .light-theme .btn-primary-lg[disabled]:focus, .light-theme .btn-primary-lg[disabled]:hover, .light-theme .btn-primary-md.disabled, .light-theme .btn-primary-md.disabled.active, .light-theme .btn-primary-md.disabled:active, .light-theme .btn-primary-md.disabled:focus, .light-theme .btn-primary-md.disabled:hover, .light-theme .btn-primary-md[disabled], .light-theme .btn-primary-md[disabled].active, .light-theme .btn-primary-md[disabled]:active, .light-theme .btn-primary-md[disabled]:focus, .light-theme .btn-primary-md[disabled]:hover, .light-theme .btn-primary-sm.disabled, .light-theme .btn-primary-sm.disabled.active, .light-theme .btn-primary-sm.disabled:active, .light-theme .btn-primary-sm.disabled:focus, .light-theme .btn-primary-sm.disabled:hover, .light-theme .btn-primary-sm[disabled], .light-theme .btn-primary-sm[disabled].active, .light-theme .btn-primary-sm[disabled]:active, .light-theme .btn-primary-sm[disabled]:focus, .light-theme .btn-primary-sm[disabled]:hover, .light-theme .btn-primary-xs.disabled, .light-theme .btn-primary-xs.disabled.active, .light-theme .btn-primary-xs.disabled:active, .light-theme .btn-primary-xs.disabled:focus, .light-theme .btn-primary-xs.disabled:hover, .light-theme .btn-primary-xs[disabled], .light-theme .btn-primary-xs[disabled].active, .light-theme .btn-primary-xs[disabled]:active, .light-theme .btn-primary-xs[disabled]:focus, .light-theme .btn-primary-xs[disabled]:hover, .light-theme .btn-secondary-lg.disabled, .light-theme .btn-secondary-lg.disabled.active, .light-theme .btn-secondary-lg.disabled:active, .light-theme .btn-secondary-lg.disabled:focus, .light-theme .btn-secondary-lg.disabled:hover, .light-theme .btn-secondary-lg[disabled], .light-theme .btn-secondary-lg[disabled].active, .light-theme .btn-secondary-lg[disabled]:active, .light-theme .btn-secondary-lg[disabled]:focus, .light-theme .btn-secondary-lg[disabled]:hover, .light-theme .btn-secondary-md.disabled, .light-theme .btn-secondary-md.disabled.active, .light-theme .btn-secondary-md.disabled:active, .light-theme .btn-secondary-md.disabled:focus, .light-theme .btn-secondary-md.disabled:hover, .light-theme .btn-secondary-md[disabled], .light-theme .btn-secondary-md[disabled].active, .light-theme .btn-secondary-md[disabled]:active, .light-theme .btn-secondary-md[disabled]:focus, .light-theme .btn-secondary-md[disabled]:hover, .light-theme .btn-secondary-sm.disabled, .light-theme .btn-secondary-sm.disabled.active, .light-theme .btn-secondary-sm.disabled:active, .light-theme .btn-secondary-sm.disabled:focus, .light-theme .btn-secondary-sm.disabled:hover, .light-theme .btn-secondary-sm[disabled], .light-theme .btn-secondary-sm[disabled].active, .light-theme .btn-secondary-sm[disabled]:active, .light-theme .btn-secondary-sm[disabled]:focus, .light-theme .btn-secondary-sm[disabled]:hover, .light-theme .btn-secondary-xs.disabled, .light-theme .btn-secondary-xs.disabled.active, .light-theme .btn-secondary-xs.disabled:active, .light-theme .btn-secondary-xs.disabled:focus, .light-theme .btn-secondary-xs.disabled:hover, .light-theme .btn-secondary-xs[disabled], .light-theme .btn-secondary-xs[disabled].active, .light-theme .btn-secondary-xs[disabled]:active, .light-theme .btn-secondary-xs[disabled]:focus, .light-theme .btn-secondary-xs[disabled]:hover, .light-theme .btn-cta-lg.disabled, .light-theme .btn-cta-lg.disabled.active, .light-theme .btn-cta-lg.disabled:active, .light-theme .btn-cta-lg.disabled:focus, .light-theme .btn-cta-lg.disabled:hover, .light-theme .btn-cta-lg[disabled], .light-theme .btn-cta-lg[disabled].active, .light-theme .btn-cta-lg[disabled]:active, .light-theme .btn-cta-lg[disabled]:focus, .light-theme .btn-cta-lg[disabled]:hover, .light-theme .btn-cta-md.disabled, .light-theme .btn-cta-md.disabled.active, .light-theme .btn-cta-md.disabled:active, .light-theme .btn-cta-md.disabled:focus, .light-theme .btn-cta-md.disabled:hover, .light-theme .btn-cta-md[disabled], .light-theme .btn-cta-md[disabled].active, .light-theme .btn-cta-md[disabled]:active, .light-theme .btn-cta-md[disabled]:focus, .light-theme .btn-cta-md[disabled]:hover, .light-theme .btn-cta-sm.disabled, .light-theme .btn-cta-sm.disabled.active, .light-theme .btn-cta-sm.disabled:active, .light-theme .btn-cta-sm.disabled:focus, .light-theme .btn-cta-sm.disabled:hover, .light-theme .btn-cta-sm[disabled], .light-theme .btn-cta-sm[disabled].active, .light-theme .btn-cta-sm[disabled]:active, .light-theme .btn-cta-sm[disabled]:focus, .light-theme .btn-cta-sm[disabled]:hover, .light-theme .btn-cta-xs.disabled, .light-theme .btn-cta-xs.disabled.active, .light-theme .btn-cta-xs.disabled:active, .light-theme .btn-cta-xs.disabled:focus, .light-theme .btn-cta-xs.disabled:hover, .light-theme .btn-cta-xs[disabled], .light-theme .btn-cta-xs[disabled].active, .light-theme .btn-cta-xs[disabled]:active, .light-theme .btn-cta-xs[disabled]:focus, .light-theme .btn-cta-xs[disabled]:hover, .light-theme .btn-growth-lg.disabled, .light-theme .btn-growth-lg.disabled.active, .light-theme .btn-growth-lg.disabled:active, .light-theme .btn-growth-lg.disabled:focus, .light-theme .btn-growth-lg.disabled:hover, .light-theme .btn-growth-lg[disabled], .light-theme .btn-growth-lg[disabled].active, .light-theme .btn-growth-lg[disabled]:active, .light-theme .btn-growth-lg[disabled]:focus, .light-theme .btn-growth-lg[disabled]:hover, .light-theme .btn-growth-md.disabled, .light-theme .btn-growth-md.disabled.active, .light-theme .btn-growth-md.disabled:active, .light-theme .btn-growth-md.disabled:focus, .light-theme .btn-growth-md.disabled:hover, .light-theme .btn-growth-md[disabled], .light-theme .btn-growth-md[disabled].active, .light-theme .btn-growth-md[disabled]:active, .light-theme .btn-growth-md[disabled]:focus, .light-theme .btn-growth-md[disabled]:hover, .light-theme .btn-growth-sm.disabled, .light-theme .btn-growth-sm.disabled.active, .light-theme .btn-growth-sm.disabled:active, .light-theme .btn-growth-sm.disabled:focus, .light-theme .btn-growth-sm.disabled:hover, .light-theme .btn-growth-sm[disabled], .light-theme .btn-growth-sm[disabled].active, .light-theme .btn-growth-sm[disabled]:active, .light-theme .btn-growth-sm[disabled]:focus, .light-theme .btn-growth-sm[disabled]:hover, .light-theme .btn-growth-xs.disabled, .light-theme .btn-growth-xs.disabled.active, .light-theme .btn-growth-xs.disabled:active, .light-theme .btn-growth-xs.disabled:focus, .light-theme .btn-growth-xs.disabled:hover, .light-theme .btn-growth-xs[disabled], .light-theme .btn-growth-xs[disabled].active, .light-theme .btn-growth-xs[disabled]:active, .light-theme .btn-growth-xs[disabled]:focus, .light-theme .btn-growth-xs[disabled]:hover, .light-theme .btn-control-lg.disabled, .light-theme .btn-control-lg.disabled.active, .light-theme .btn-control-lg.disabled:active, .light-theme .btn-control-lg.disabled:focus, .light-theme .btn-control-lg.disabled:hover, .light-theme .btn-control-lg[disabled], .light-theme .btn-control-lg[disabled].active, .light-theme .btn-control-lg[disabled]:active, .light-theme .btn-control-lg[disabled]:focus, .light-theme .btn-control-lg[disabled]:hover, .light-theme .btn-control-md.disabled, .light-theme .btn-control-md.disabled.active, .light-theme .btn-control-md.disabled:active, .light-theme .btn-control-md.disabled:focus, .light-theme .btn-control-md.disabled:hover, .light-theme .btn-control-md[disabled], .light-theme .btn-control-md[disabled].active, .light-theme .btn-control-md[disabled]:active, .light-theme .btn-control-md[disabled]:focus, .light-theme .btn-control-md[disabled]:hover, .light-theme .btn-control-sm.disabled, .light-theme .btn-control-sm.disabled.active, .light-theme .btn-control-sm.disabled:active, .light-theme .btn-control-sm.disabled:focus, .light-theme .btn-control-sm.disabled:hover, .light-theme .btn-control-sm[disabled], .light-theme .btn-control-sm[disabled].active, .light-theme .btn-control-sm[disabled]:active, .light-theme .btn-control-sm[disabled]:focus, .light-theme .btn-control-sm[disabled]:hover, .light-theme .btn-control-xs.disabled, .light-theme .btn-control-xs.disabled.active, .light-theme .btn-control-xs.disabled:active, .light-theme .btn-control-xs.disabled:focus, .light-theme .btn-control-xs.disabled:hover, .light-theme .btn-control-xs[disabled], .light-theme .btn-control-xs[disabled].active, .light-theme .btn-control-xs[disabled]:active, .light-theme .btn-control-xs[disabled]:focus, .light-theme .btn-control-xs[disabled]:hover, .light-theme .btn-alert-lg.disabled, .light-theme .btn-alert-lg.disabled.active, .light-theme .btn-alert-lg.disabled:active, .light-theme .btn-alert-lg.disabled:focus, .light-theme .btn-alert-lg.disabled:hover, .light-theme .btn-alert-lg[disabled], .light-theme .btn-alert-lg[disabled].active, .light-theme .btn-alert-lg[disabled]:active, .light-theme .btn-alert-lg[disabled]:focus, .light-theme .btn-alert-lg[disabled]:hover, .light-theme .btn-alert-md.disabled, .light-theme .btn-alert-md.disabled.active, .light-theme .btn-alert-md.disabled:active, .light-theme .btn-alert-md.disabled:focus, .light-theme .btn-alert-md.disabled:hover, .light-theme .btn-alert-md[disabled], .light-theme .btn-alert-md[disabled].active, .light-theme .btn-alert-md[disabled]:active, .light-theme .btn-alert-md[disabled]:focus, .light-theme .btn-alert-md[disabled]:hover, .light-theme .btn-alert-sm.disabled, .light-theme .btn-alert-sm.disabled.active, .light-theme .btn-alert-sm.disabled:active, .light-theme .btn-alert-sm.disabled:focus, .light-theme .btn-alert-sm.disabled:hover, .light-theme .btn-alert-sm[disabled], .light-theme .btn-alert-sm[disabled].active, .light-theme .btn-alert-sm[disabled]:active, .light-theme .btn-alert-sm[disabled]:focus, .light-theme .btn-alert-sm[disabled]:hover, .light-theme .btn-alert-xs.disabled, .light-theme .btn-alert-xs.disabled.active, .light-theme .btn-alert-xs.disabled:active, .light-theme .btn-alert-xs.disabled:focus, .light-theme .btn-alert-xs.disabled:hover, .light-theme .btn-alert-xs[disabled], .light-theme .btn-alert-xs[disabled].active, .light-theme .btn-alert-xs[disabled]:active, .light-theme .btn-alert-xs[disabled]:focus, .light-theme .btn-alert-xs[disabled]:hover, .light-theme .btn-buy-lg.disabled, .light-theme .btn-buy-lg.disabled.active, .light-theme .btn-buy-lg.disabled:active, .light-theme .btn-buy-lg.disabled:focus, .light-theme .btn-buy-lg.disabled:hover, .light-theme .btn-buy-lg[disabled], .light-theme .btn-buy-lg[disabled].active, .light-theme .btn-buy-lg[disabled]:active, .light-theme .btn-buy-lg[disabled]:focus, .light-theme .btn-buy-lg[disabled]:hover, .light-theme .btn-buy-md.disabled, .light-theme .btn-buy-md.disabled.active, .light-theme .btn-buy-md.disabled:active, .light-theme .btn-buy-md.disabled:focus, .light-theme .btn-buy-md.disabled:hover, .light-theme .btn-buy-md[disabled], .light-theme .btn-buy-md[disabled].active, .light-theme .btn-buy-md[disabled]:active, .light-theme .btn-buy-md[disabled]:focus, .light-theme .btn-buy-md[disabled]:hover, .light-theme .btn-buy-sm.disabled, .light-theme .btn-buy-sm.disabled.active, .light-theme .btn-buy-sm.disabled:active, .light-theme .btn-buy-sm.disabled:focus, .light-theme .btn-buy-sm.disabled:hover, .light-theme .btn-buy-sm[disabled], .light-theme .btn-buy-sm[disabled].active, .light-theme .btn-buy-sm[disabled]:active, .light-theme .btn-buy-sm[disabled]:focus, .light-theme .btn-buy-sm[disabled]:hover, .light-theme .btn-buy-xs.disabled, .light-theme .btn-buy-xs.disabled.active, .light-theme .btn-buy-xs.disabled:active, .light-theme .btn-buy-xs.disabled:focus, .light-theme .btn-buy-xs.disabled:hover, .light-theme .btn-buy-xs[disabled], .light-theme .btn-buy-xs[disabled].active, .light-theme .btn-buy-xs[disabled]:active, .light-theme .btn-buy-xs[disabled]:focus, .light-theme .btn-buy-xs[disabled]:hover, .light-theme .details-btns-fixed .btn-secondary-sm.disabled, .light-theme .details-btns-fixed .btn-secondary-sm.disabled.active, .light-theme .details-btns-fixed .btn-secondary-sm.disabled:active, .light-theme .details-btns-fixed .btn-secondary-sm.disabled:focus, .light-theme .details-btns-fixed .btn-secondary-sm.disabled:hover, .light-theme .details-btns-fixed .btn-secondary-sm[disabled], .light-theme .details-btns-fixed .btn-secondary-sm[disabled].active, .light-theme .details-btns-fixed .btn-secondary-sm[disabled]:active, .light-theme .details-btns-fixed .btn-secondary-sm[disabled]:focus, .light-theme .details-btns-fixed .btn-secondary-sm[disabled]:hover, .dark-theme .btn-primary-lg.disabled, .dark-theme .btn-primary-lg.disabled.active, .dark-theme .btn-primary-lg.disabled:active, .dark-theme .btn-primary-lg.disabled:focus, .dark-theme .btn-primary-lg.disabled:hover, .dark-theme .btn-primary-lg[disabled], .dark-theme .btn-primary-lg[disabled].active, .dark-theme .btn-primary-lg[disabled]:active, .dark-theme .btn-primary-lg[disabled]:focus, .dark-theme .btn-primary-lg[disabled]:hover, .dark-theme .btn-primary-md.disabled, .dark-theme .btn-primary-md.disabled.active, .dark-theme .btn-primary-md.disabled:active, .dark-theme .btn-primary-md.disabled:focus, .dark-theme .btn-primary-md.disabled:hover, .dark-theme .btn-primary-md[disabled], .dark-theme .btn-primary-md[disabled].active, .dark-theme .btn-primary-md[disabled]:active, .dark-theme .btn-primary-md[disabled]:focus, .dark-theme .btn-primary-md[disabled]:hover, .dark-theme .btn-primary-sm.disabled, .dark-theme .btn-primary-sm.disabled.active, .dark-theme .btn-primary-sm.disabled:active, .dark-theme .btn-primary-sm.disabled:focus, .dark-theme .btn-primary-sm.disabled:hover, .dark-theme .btn-primary-sm[disabled], .dark-theme .btn-primary-sm[disabled].active, .dark-theme .btn-primary-sm[disabled]:active, .dark-theme .btn-primary-sm[disabled]:focus, .dark-theme .btn-primary-sm[disabled]:hover, .dark-theme .btn-primary-xs.disabled, .dark-theme .btn-primary-xs.disabled.active, .dark-theme .btn-primary-xs.disabled:active, .dark-theme .btn-primary-xs.disabled:focus, .dark-theme .btn-primary-xs.disabled:hover, .dark-theme .btn-primary-xs[disabled], .dark-theme .btn-primary-xs[disabled].active, .dark-theme .btn-primary-xs[disabled]:active, .dark-theme .btn-primary-xs[disabled]:focus, .dark-theme .btn-primary-xs[disabled]:hover, .dark-theme .btn-secondary-lg.disabled, .dark-theme .btn-secondary-lg.disabled.active, .dark-theme .btn-secondary-lg.disabled:active, .dark-theme .btn-secondary-lg.disabled:focus, .dark-theme .btn-secondary-lg.disabled:hover, .dark-theme .btn-secondary-lg[disabled], .dark-theme .btn-secondary-lg[disabled].active, .dark-theme .btn-secondary-lg[disabled]:active, .dark-theme .btn-secondary-lg[disabled]:focus, .dark-theme .btn-secondary-lg[disabled]:hover, .dark-theme .btn-secondary-md.disabled, .dark-theme .btn-secondary-md.disabled.active, .dark-theme .btn-secondary-md.disabled:active, .dark-theme .btn-secondary-md.disabled:focus, .dark-theme .btn-secondary-md.disabled:hover, .dark-theme .btn-secondary-md[disabled], .dark-theme .btn-secondary-md[disabled].active, .dark-theme .btn-secondary-md[disabled]:active, .dark-theme .btn-secondary-md[disabled]:focus, .dark-theme .btn-secondary-md[disabled]:hover, .dark-theme .btn-secondary-sm.disabled, .dark-theme .btn-secondary-sm.disabled.active, .dark-theme .btn-secondary-sm.disabled:active, .dark-theme .btn-secondary-sm.disabled:focus, .dark-theme .btn-secondary-sm.disabled:hover, .dark-theme .btn-secondary-sm[disabled], .dark-theme .btn-secondary-sm[disabled].active, .dark-theme .btn-secondary-sm[disabled]:active, .dark-theme .btn-secondary-sm[disabled]:focus, .dark-theme .btn-secondary-sm[disabled]:hover, .dark-theme .btn-secondary-xs.disabled, .dark-theme .btn-secondary-xs.disabled.active, .dark-theme .btn-secondary-xs.disabled:active, .dark-theme .btn-secondary-xs.disabled:focus, .dark-theme .btn-secondary-xs.disabled:hover, .dark-theme .btn-secondary-xs[disabled], .dark-theme .btn-secondary-xs[disabled].active, .dark-theme .btn-secondary-xs[disabled]:active, .dark-theme .btn-secondary-xs[disabled]:focus, .dark-theme .btn-secondary-xs[disabled]:hover, .dark-theme .btn-cta-lg.disabled, .dark-theme .btn-cta-lg.disabled.active, .dark-theme .btn-cta-lg.disabled:active, .dark-theme .btn-cta-lg.disabled:focus, .dark-theme .btn-cta-lg.disabled:hover, .dark-theme .btn-cta-lg[disabled], .dark-theme .btn-cta-lg[disabled].active, .dark-theme .btn-cta-lg[disabled]:active, .dark-theme .btn-cta-lg[disabled]:focus, .dark-theme .btn-cta-lg[disabled]:hover, .dark-theme .btn-cta-md.disabled, .dark-theme .btn-cta-md.disabled.active, .dark-theme .btn-cta-md.disabled:active, .dark-theme .btn-cta-md.disabled:focus, .dark-theme .btn-cta-md.disabled:hover, .dark-theme .btn-cta-md[disabled], .dark-theme .btn-cta-md[disabled].active, .dark-theme .btn-cta-md[disabled]:active, .dark-theme .btn-cta-md[disabled]:focus, .dark-theme .btn-cta-md[disabled]:hover, .dark-theme .btn-cta-sm.disabled, .dark-theme .btn-cta-sm.disabled.active, .dark-theme .btn-cta-sm.disabled:active, .dark-theme .btn-cta-sm.disabled:focus, .dark-theme .btn-cta-sm.disabled:hover, .dark-theme .btn-cta-sm[disabled], .dark-theme .btn-cta-sm[disabled].active, .dark-theme .btn-cta-sm[disabled]:active, .dark-theme .btn-cta-sm[disabled]:focus, .dark-theme .btn-cta-sm[disabled]:hover, .dark-theme .btn-cta-xs.disabled, .dark-theme .btn-cta-xs.disabled.active, .dark-theme .btn-cta-xs.disabled:active, .dark-theme .btn-cta-xs.disabled:focus, .dark-theme .btn-cta-xs.disabled:hover, .dark-theme .btn-cta-xs[disabled], .dark-theme .btn-cta-xs[disabled].active, .dark-theme .btn-cta-xs[disabled]:active, .dark-theme .btn-cta-xs[disabled]:focus, .dark-theme .btn-cta-xs[disabled]:hover, .dark-theme .btn-growth-lg.disabled, .dark-theme .btn-growth-lg.disabled.active, .dark-theme .btn-growth-lg.disabled:active, .dark-theme .btn-growth-lg.disabled:focus, .dark-theme .btn-growth-lg.disabled:hover, .dark-theme .btn-growth-lg[disabled], .dark-theme .btn-growth-lg[disabled].active, .dark-theme .btn-growth-lg[disabled]:active, .dark-theme .btn-growth-lg[disabled]:focus, .dark-theme .btn-growth-lg[disabled]:hover, .dark-theme .btn-growth-md.disabled, .dark-theme .btn-growth-md.disabled.active, .dark-theme .btn-growth-md.disabled:active, .dark-theme .btn-growth-md.disabled:focus, .dark-theme .btn-growth-md.disabled:hover, .dark-theme .btn-growth-md[disabled], .dark-theme .btn-growth-md[disabled].active, .dark-theme .btn-growth-md[disabled]:active, .dark-theme .btn-growth-md[disabled]:focus, .dark-theme .btn-growth-md[disabled]:hover, .dark-theme .btn-growth-sm.disabled, .dark-theme .btn-growth-sm.disabled.active, .dark-theme .btn-growth-sm.disabled:active, .dark-theme .btn-growth-sm.disabled:focus, .dark-theme .btn-growth-sm.disabled:hover, .dark-theme .btn-growth-sm[disabled], .dark-theme .btn-growth-sm[disabled].active, .dark-theme .btn-growth-sm[disabled]:active, .dark-theme .btn-growth-sm[disabled]:focus, .dark-theme .btn-growth-sm[disabled]:hover, .dark-theme .btn-growth-xs.disabled, .dark-theme .btn-growth-xs.disabled.active, .dark-theme .btn-growth-xs.disabled:active, .dark-theme .btn-growth-xs.disabled:focus, .dark-theme .btn-growth-xs.disabled:hover, .dark-theme .btn-growth-xs[disabled], .dark-theme .btn-growth-xs[disabled].active, .dark-theme .btn-growth-xs[disabled]:active, .dark-theme .btn-growth-xs[disabled]:focus, .dark-theme .btn-growth-xs[disabled]:hover, .dark-theme .btn-control-lg.disabled, .dark-theme .btn-control-lg.disabled.active, .dark-theme .btn-control-lg.disabled:active, .dark-theme .btn-control-lg.disabled:focus, .dark-theme .btn-control-lg.disabled:hover, .dark-theme .btn-control-lg[disabled], .dark-theme .btn-control-lg[disabled].active, .dark-theme .btn-control-lg[disabled]:active, .dark-theme .btn-control-lg[disabled]:focus, .dark-theme .btn-control-lg[disabled]:hover, .dark-theme .btn-control-md.disabled, .dark-theme .btn-control-md.disabled.active, .dark-theme .btn-control-md.disabled:active, .dark-theme .btn-control-md.disabled:focus, .dark-theme .btn-control-md.disabled:hover, .dark-theme .btn-control-md[disabled], .dark-theme .btn-control-md[disabled].active, .dark-theme .btn-control-md[disabled]:active, .dark-theme .btn-control-md[disabled]:focus, .dark-theme .btn-control-md[disabled]:hover, .dark-theme .btn-control-sm.disabled, .dark-theme .btn-control-sm.disabled.active, .dark-theme .btn-control-sm.disabled:active, .dark-theme .btn-control-sm.disabled:focus, .dark-theme .btn-control-sm.disabled:hover, .dark-theme .btn-control-sm[disabled], .dark-theme .btn-control-sm[disabled].active, .dark-theme .btn-control-sm[disabled]:active, .dark-theme .btn-control-sm[disabled]:focus, .dark-theme .btn-control-sm[disabled]:hover, .dark-theme .btn-control-xs.disabled, .dark-theme .btn-control-xs.disabled.active, .dark-theme .btn-control-xs.disabled:active, .dark-theme .btn-control-xs.disabled:focus, .dark-theme .btn-control-xs.disabled:hover, .dark-theme .btn-control-xs[disabled], .dark-theme .btn-control-xs[disabled].active, .dark-theme .btn-control-xs[disabled]:active, .dark-theme .btn-control-xs[disabled]:focus, .dark-theme .btn-control-xs[disabled]:hover, .dark-theme .btn-alert-lg.disabled, .dark-theme .btn-alert-lg.disabled.active, .dark-theme .btn-alert-lg.disabled:active, .dark-theme .btn-alert-lg.disabled:focus, .dark-theme .btn-alert-lg.disabled:hover, .dark-theme .btn-alert-lg[disabled], .dark-theme .btn-alert-lg[disabled].active, .dark-theme .btn-alert-lg[disabled]:active, .dark-theme .btn-alert-lg[disabled]:focus, .dark-theme .btn-alert-lg[disabled]:hover, .dark-theme .btn-alert-md.disabled, .dark-theme .btn-alert-md.disabled.active, .dark-theme .btn-alert-md.disabled:active, .dark-theme .btn-alert-md.disabled:focus, .dark-theme .btn-alert-md.disabled:hover, .dark-theme .btn-alert-md[disabled], .dark-theme .btn-alert-md[disabled].active, .dark-theme .btn-alert-md[disabled]:active, .dark-theme .btn-alert-md[disabled]:focus, .dark-theme .btn-alert-md[disabled]:hover, .dark-theme .btn-alert-sm.disabled, .dark-theme .btn-alert-sm.disabled.active, .dark-theme .btn-alert-sm.disabled:active, .dark-theme .btn-alert-sm.disabled:focus, .dark-theme .btn-alert-sm.disabled:hover, .dark-theme .btn-alert-sm[disabled], .dark-theme .btn-alert-sm[disabled].active, .dark-theme .btn-alert-sm[disabled]:active, .dark-theme .btn-alert-sm[disabled]:focus, .dark-theme .btn-alert-sm[disabled]:hover, .dark-theme .btn-alert-xs.disabled, .dark-theme .btn-alert-xs.disabled.active, .dark-theme .btn-alert-xs.disabled:active, .dark-theme .btn-alert-xs.disabled:focus, .dark-theme .btn-alert-xs.disabled:hover, .dark-theme .btn-alert-xs[disabled], .dark-theme .btn-alert-xs[disabled].active, .dark-theme .btn-alert-xs[disabled]:active, .dark-theme .btn-alert-xs[disabled]:focus, .dark-theme .btn-alert-xs[disabled]:hover, .dark-theme .btn-buy-lg.disabled, .dark-theme .btn-buy-lg.disabled.active, .dark-theme .btn-buy-lg.disabled:active, .dark-theme .btn-buy-lg.disabled:focus, .dark-theme .btn-buy-lg.disabled:hover, .dark-theme .btn-buy-lg[disabled], .dark-theme .btn-buy-lg[disabled].active, .dark-theme .btn-buy-lg[disabled]:active, .dark-theme .btn-buy-lg[disabled]:focus, .dark-theme .btn-buy-lg[disabled]:hover, .dark-theme .btn-buy-md.disabled, .dark-theme .btn-buy-md.disabled.active, .dark-theme .btn-buy-md.disabled:active, .dark-theme .btn-buy-md.disabled:focus, .dark-theme .btn-buy-md.disabled:hover, .dark-theme .btn-buy-md[disabled], .dark-theme .btn-buy-md[disabled].active, .dark-theme .btn-buy-md[disabled]:active, .dark-theme .btn-buy-md[disabled]:focus, .dark-theme .btn-buy-md[disabled]:hover, .dark-theme .btn-buy-sm.disabled, .dark-theme .btn-buy-sm.disabled.active, .dark-theme .btn-buy-sm.disabled:active, .dark-theme .btn-buy-sm.disabled:focus, .dark-theme .btn-buy-sm.disabled:hover, .dark-theme .btn-buy-sm[disabled], .dark-theme .btn-buy-sm[disabled].active, .dark-theme .btn-buy-sm[disabled]:active, .dark-theme .btn-buy-sm[disabled]:focus, .dark-theme .btn-buy-sm[disabled]:hover, .dark-theme .btn-buy-xs.disabled, .dark-theme .btn-buy-xs.disabled.active, .dark-theme .btn-buy-xs.disabled:active, .dark-theme .btn-buy-xs.disabled:focus, .dark-theme .btn-buy-xs.disabled:hover, .dark-theme .btn-buy-xs[disabled], .dark-theme .btn-buy-xs[disabled].active, .dark-theme .btn-buy-xs[disabled]:active, .dark-theme .btn-buy-xs[disabled]:focus, .dark-theme .btn-buy-xs[disabled]:hover, .dark-theme .details-btns-fixed .btn-secondary-sm.disabled, .dark-theme .details-btns-fixed .btn-secondary-sm.disabled.active, .dark-theme .details-btns-fixed .btn-secondary-sm.disabled:active, .dark-theme .details-btns-fixed .btn-secondary-sm.disabled:focus, .dark-theme .details-btns-fixed .btn-secondary-sm.disabled:hover, .dark-theme .details-btns-fixed .btn-secondary-sm[disabled], .dark-theme .details-btns-fixed .btn-secondary-sm[disabled].active, .dark-theme .details-btns-fixed .btn-secondary-sm[disabled]:active, .dark-theme .details-btns-fixed .btn-secondary-sm[disabled]:focus, .dark-theme .details-btns-fixed .btn-secondary-sm[disabled]:hover {
-            opacity: 1;
         }
 		.slide-switcher .slide-item-container .slide-item-container-left .slide-item-image {
 			border-radius: 12px;
