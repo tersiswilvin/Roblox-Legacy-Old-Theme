@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230612.1.3
+@version      20230614.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -11524,7 +11524,7 @@
 			border-radius: 5px;
 		}
 	}
-	.btn-control-md, .btn-generic-edit-md, .btn-generic-edit-md, button.btn-generic-edit-md, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .avatar-card-btns .ignore-friend {
+	.btn-control-md, .btn-generic-edit-md, .btn-generic-edit-md, button.btn-generic-edit-md, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .avatar-card-btns .ignore-friend, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -11741,7 +11741,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-generic-edit-lg, .btn-generic-edit-md, .btn-generic-edit-sm, .btn-generic-edit-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .btn-generic-locked-sm,a.btn-generic-locked-sm,button.btn-generic-locked-sm, .btn-generic-unlocked-sm,a.btn-generic-unlocked-sm,button.btn-generic-unlocked-sm, .avatar-card-btns .ignore-friend, .btn-generic-back-sm, a.btn-generic-back-sm, button.btn-generic-back-sm, .btn-generic-next-sm, a.btn-generic-next-sm, button.btn-generic-next-sm {
+	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-generic-edit-lg, .btn-generic-edit-md, .btn-generic-edit-sm, .btn-generic-edit-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .btn-generic-locked-sm,a.btn-generic-locked-sm,button.btn-generic-locked-sm, .btn-generic-unlocked-sm,a.btn-generic-unlocked-sm,button.btn-generic-unlocked-sm, .avatar-card-btns .ignore-friend, .btn-generic-back-sm, a.btn-generic-back-sm, button.btn-generic-back-sm, .btn-generic-next-sm, a.btn-generic-next-sm, button.btn-generic-next-sm, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #fff;
 			& when (@BoxShadows = 1) {
@@ -11827,7 +11827,7 @@
 		}
 	}
 	/*/ Disabled /*/
-	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-buy-lg, .btn-buy-md, .btn-buy-sm, .btn-buy-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .btn-control-lg.disabled, .avatar-card-btns .ignore-friend {
+	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-buy-lg, .btn-buy-md, .btn-buy-sm, .btn-buy-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .btn-control-lg.disabled, .avatar-card-btns .ignore-friend, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee {
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
 			& when (@LegacyNextStyleGuideButtons = 0) {
 				opacity: .5;
@@ -12309,17 +12309,6 @@
 	.rbx-upgrade-now .btn-secondary-md {
 		.light-theme &:visited, .light-theme &:link, .dark-theme &:visited, .dark-theme &:link {
 			color: #fff
-		}
-	}
-	.profile-avatar-left .enable-three-dee {
-		&, &:hover, &:focus, &:active {
-			font-size: 18px;
-		}
-		border-radius: 3px;
-	}
-	.avatar-thumbnail .toggle-three-dee {
-		&, &:hover, &:focus, &:active {
-			font-size: 18px;
 		}
 	}
 	.btn-generic-locked-sm:link,a.btn-generic-locked-sm:link,button.btn-generic-locked-sm:link, .btn-generic-unlocked-sm:link,a.btn-generic-unlocked-sm:link,button.btn-generic-unlocked-sm:link, .btn-generic-locked-sm:visited,a.btn-generic-locked-sm:visited,button.btn-generic-locked-sm:visited, .btn-generic-unlocked-sm:visited,a.btn-generic-unlocked-sm:visited,button.btn-generic-unlocked-sm:visited {
