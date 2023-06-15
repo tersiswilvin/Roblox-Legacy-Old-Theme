@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230614.1.3
+@version      20230615.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,6 +9,7 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
+@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["None","2017E", "2017M", "2018E","2018L*"]
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         0
@@ -5665,173 +5666,6 @@
 				height: 16.8px
 			}
 		}
-		
-		.nav-tabs {
-			display: flex;
-		}
-		.rbx-tab.six-tab:nth-child(2) {
-			display: none;
-		}
-		.rbx-tab.six-tab:nth-child(3).ng-hide {
-			display: block !important;
-			order: 6;
-		}
-		.rbx-tab.six-tab:nth-child(6) .text-lead {
-			font-size: 0;
-			height: 16px
-		}
-		.rbx-tab.six-tab:nth-child(6) .text-lead:before {
-			content: 'Body';
-			& when (@SourceSansPro = 0) {
-				font-size: 16px;
-				font-weight: 500;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 18px;
-				font-weight: 400;
-			}
-			display: inline-block
-		}
-		.rbx-tab.six-tab:nth-child(6) .text-lead .icon-down {
-			margin-top: -8px
-		}
-		
-		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1) {
-			font-size: 0;
-			height: 22.39px
-		}
-		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
-			content: 'Body';
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 1.4em;
-			cursor: text;
-		}
-		
-		@media (max-width: 767px) {
-			.rbx-tab.six-tab:nth-child(6) .text-lead:before {
-				& when (@SourceSansPro = 0) {
-					font-size: 12px;
-					font-weight: 500;
-				}
-				& when (@SourceSansPro = 1) {
-					font-size: 18px;
-					font-weight: 400;
-				}
-			}
-			.rbx-tab.six-tab:nth-child(6) .text-lead .icon-down {
-				margin-top: -7px
-			}
-		}
-		@media (max-width: 543px) {
-			.rbx-tab.six-tab:nth-child(6) .text-lead {
-				height: 13px
-			}
-			.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1) {
-				height: 16.8px
-			}
-			.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
-				font-size: 12px;
-				font-weight: 400;
-			}
-		}
-		
-		/*/ Cringe CSS ahead /*/
-
-		.tab-content>.tab-pane:not(.active).scaling-tab {
-			display: block;
-			position: absolute;
-			& when (@SourceSansPro = 0) {
-				top: 84px;
-			}
-			& when (@SourceSansPro = 1) {
-				top: 88px;
-			}
-			margin-left: -101px;
-		}
-		.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
-			position: fixed;
-			top: 60px
-		}
-		.tab-content>.active.scaling-tab .pill-toggle {
-			position: absolute;
-			left: -168px;
-			top: -72px;
-		}
-		.pinned .tab-content>.active.scaling-tab .pill-toggle {
-			position: fixed;
-			top: 60px;
-			left: unset;
-			margin-left: -116px;
-		}
-		.tab-content>.tab-pane:not(.active).scaling-tab .section-content {
-			background: transparent;
-			padding: 0;
-			& when (@BoxShadows = 1) {
-				box-shadow: none;
-			}
-		}
-		.tab-content>.tab-pane:not(.active).scaling-tab .section-content .avatar-type-container div:not(.pill-toggle), .tab-content>.tab-pane:not(.active).scaling-tab .section-sliders, .avatar-type-container .text-label, .avatar-type-container .avatar-type-message-banner {
-			display: none;
-		}
-		
-		.tab-content>.tab-pane:not(.active).scaling-tab .avatar-type-toggle-scale {
-			margin-left: 0
-		}
-		
-		.ropro-changes .tab-content>:not(.active).scaling-tab .pill-toggle {
-			position: relative;
-		}
-		.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
-			& when (@SourceSansPro = 0) {
-				top: 112px
-			}
-			& when (@SourceSansPro = 1) {
-				top: 116px
-			}
-		}
-		.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
-			top: 50px
-		}
-		.ropro-changes .tab-content>.scaling-tab, .ropro-changes .tab-content>.scaling-tab .pill-toggle {
-			z-index: 2;
-		}
-		
-		@media (max-width: 991px) {
-			.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
-				display: block;
-				position: absolute;
-				top: 84px;
-				margin-left: -101px;
-			}
-			.ropro-changes .pinned .tab-content>.active.scaling-tab .pill-toggle {
-				left: unset
-			}
-			.pinned .tab-content>.active.scaling-tab .pill-toggle {
-				position: absolute;
-				left: -168px;
-				top: -72px;
-			}
-			.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
-				top: 112px;
-			}
-		}
-		@media (max-width: 767px) {
-			.tab-content>.tab-pane:not(.active).scaling-tab {
-				top: 76px;
-			}
-			.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
-				top: 104px;
-			}
-			.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
-				top: 104px;
-			}
-		}
-		@media (max-width: 543px) {
-			.tab-content>.active.scaling-tab .pill-toggle, .ropro-changes .tab-content>.active.scaling-tab .pill-toggle {
-				top: -67px;
-			}
-		}
     }
     
 	& when (@SiteCurrency = Tickets) {
@@ -6068,6 +5902,304 @@
             width: 100%;
         }
     }
+	
+	& when not (@AvatarEditor = None) {
+		.nav-tabs {
+			display: flex;
+		}
+		.rbx-tab.six-tab:nth-child(2) {
+			display: none;
+		}
+		.rbx-tab.six-tab:nth-child(3).ng-hide {
+			display: block !important;
+			order: 6;
+		}
+		.rbx-tab.six-tab:nth-child(6) .text-lead {
+			font-size: 0;
+			height: 16px
+		}
+		.rbx-tab.six-tab:nth-child(6) .text-lead:before {
+			content: 'Body';
+			& when (@SourceSansPro = 0) {
+				font-size: 16px;
+				font-weight: 500;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 18px;
+				font-weight: 400;
+			}
+			display: inline-block
+		}
+		.rbx-tab.six-tab:nth-child(6) .text-lead .icon-down {
+			margin-top: -8px
+		}
+		
+		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1) {
+			font-size: 0;
+			height: 22.39px
+		}
+		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
+			content: 'Body';
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.4em;
+			cursor: text;
+		}
+		
+		@media (max-width: 767px) {
+			.rbx-tab.six-tab:nth-child(6) .text-lead:before {
+				& when (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 18px;
+					font-weight: 400;
+				}
+			}
+			.rbx-tab.six-tab:nth-child(6) .text-lead .icon-down {
+				margin-top: -7px
+			}
+		}
+		@media (max-width: 543px) {
+			.rbx-tab.six-tab:nth-child(6) .text-lead {
+				height: 13px
+			}
+			.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1) {
+				height: 16.8px
+			}
+			.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
+				font-size: 12px;
+				font-weight: 400;
+			}
+		}
+		
+		/*/ Cringe CSS ahead /*/
+
+		.tab-content>.tab-pane:not(.active).scaling-tab {
+			display: block;
+			position: absolute;
+			& when (@SourceSansPro = 0) {
+				top: 84px;
+			}
+			& when (@SourceSansPro = 1) {
+				top: 88px;
+			}
+			margin-left: -101px;
+		}
+		.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+			position: fixed;
+			top: 60px
+		}
+		.tab-content>.active.scaling-tab .pill-toggle {
+			position: absolute;
+			left: -168px;
+			top: -72px;
+		}
+		.pinned .tab-content>.active.scaling-tab .pill-toggle {
+			position: fixed;
+			top: 60px;
+			left: unset;
+			margin-left: -116px;
+		}
+		.tab-content>.tab-pane:not(.active).scaling-tab .section-content {
+			background: transparent;
+			padding: 0;
+			& when (@BoxShadows = 1) {
+				box-shadow: none;
+			}
+		}
+		.tab-content>.tab-pane:not(.active).scaling-tab .section-content .avatar-type-container div:not(.pill-toggle), .tab-content>.tab-pane:not(.active).scaling-tab .section-sliders, .avatar-type-container .text-label, .avatar-type-container .avatar-type-message-banner {
+			display: none;
+		}
+		
+		.tab-content>.tab-pane:not(.active).scaling-tab .avatar-type-toggle-scale {
+			margin-left: 0
+		}
+		
+		.ropro-changes .tab-content>:not(.active).scaling-tab .pill-toggle {
+			position: relative;
+		}
+		.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
+			& when (@SourceSansPro = 0) {
+				top: 112px
+			}
+			& when (@SourceSansPro = 1) {
+				top: 116px
+			}
+		}
+		.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+			top: 50px
+		}
+		.ropro-changes .tab-content>.scaling-tab, .ropro-changes .tab-content>.scaling-tab .pill-toggle {
+			z-index: 2;
+		}
+		
+		@media (max-width: 991px) {
+			.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+				display: block;
+				position: absolute;
+				top: 84px;
+				margin-left: -101px;
+			}
+			.ropro-changes .pinned .tab-content>.active.scaling-tab .pill-toggle {
+				left: unset
+			}
+			.pinned .tab-content>.active.scaling-tab .pill-toggle {
+				position: absolute;
+				left: -168px;
+				top: -72px;
+			}
+			.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 112px;
+			}
+		}
+		@media (max-width: 767px) {
+			.tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 76px;
+			}
+			.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 104px;
+			}
+			.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
+				top: 104px;
+			}
+		}
+		@media (max-width: 543px) {
+			.tab-content>.active.scaling-tab .pill-toggle, .ropro-changes .tab-content>.active.scaling-tab .pill-toggle {
+				top: -67px;
+			}
+		}
+		& when not (@AvatarEditor = 2018L) {
+			.scaling-tab .section-sliders {
+				margin-bottom: -13px;
+				margin-left: 0;
+				margin-right: 0;
+			}
+			.tab-content.scaling-tab:not(.active), .tab-content > .tab-pane:not(.active).scaling-tab .section-sliders {
+				display: block;
+			}
+			.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders {
+				position: relative;
+				top: 308px;
+				left: -191px;
+				width: 277px;
+				padding: 0 15px 15px
+			}
+			.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:before {
+				content: ' Scaling ';
+				& when (@SourceSansPro = 0) {
+					font-size: 20px;
+					font-weight: 700;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 21px;
+					font-weight: 400
+				}
+				padding-top: 15px;
+				padding-bottom: 13px;
+				display: inline-block;
+				cursor: text
+			}
+			.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
+				content: '';
+				top: 19px;
+				left: 100px;
+				position: absolute;
+				background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
+				background-position: 0 -160px;
+				background-repeat: no-repeat;
+				background-size: 32px auto;
+				width: 16px;
+				height: 16px;
+				display: inline-block;
+				vertical-align: middle;
+				padding: 4px 0 0 6px;
+				cursor: pointer
+			}
+			.left-wrapper .section-content {
+				& when (@AvatarEditor = 2017E) {
+					& when (@SourceSansPro = 0) {
+						height: 521.56px
+					}
+					& when (@SourceSansPro = 1) {
+						height: 511.56px
+					}
+				}
+				& when (@AvatarEditor = 2017M) {
+					& when (@SourceSansPro = 0) {
+						height: 581.34px
+					}
+					& when (@SourceSansPro = 1) {
+						height: 571.34px
+					}
+				}
+				& when (@AvatarEditor = 2018E) {
+					& when (@SourceSansPro = 0) {
+						height: 702.91px
+					}
+					& when (@SourceSansPro = 1) {
+						height: 685.91px
+					}
+				}
+			}
+			& when (@AvatarEditor = 2017E) or (@AvatarEditor = 2017M) {
+				.left-wrapper .section-content .section-sliders, .scaling-tab .scale-container:last-child {
+					display: none;
+				}
+			}
+			.scaling-tab .scale-container {
+				margin-bottom: -3px;
+			}
+			& when (@AvatarEditor = 2017E) {
+				.scaling-tab .scale-container:nth-child(3) {
+					display: none
+				}
+			}
+			& when (@AvatarEditor = 2018E) {
+				.scaling-tab .scale-container:nth-child(5) {
+					& when (@SourceSansPro = 0) {
+						margin-top: 59.78px;
+					}
+					& when (@SourceSansPro = 1) {
+						margin-top: 56.59px;
+					}
+				}
+				.left-wrapper .section-content .section-sliders {
+					padding: 0;
+					& when (@SourceSansPro = 0) {
+						margin-top: 230.34px;
+					}
+					& when (@SourceSansPro = 1) {
+						margin-top: 217.34px;
+					}
+				}
+			}
+			.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(9)) li:nth-child(11) {
+				display: none
+			}
+			
+			@media (max-width: 767px) {
+				.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:before {
+					& when (@SourceSansPro = 0) {
+						font-size: 16px
+					}
+					& when (@SourceSansPro = 1) {
+						font-size: 18px
+					}
+				}
+				.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
+					top: 18px;
+					left: 85px;
+				}
+			}
+			@media (max-width: 543px) {
+				.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
+					top: 15px;
+				}
+			}
+		}
+	}
 	
 	& when (@BadgeStyle = 201509) {
 		.icon-badge-administrator, .icon-badge-ambassador, .icon-badge-bloxxer, .icon-badge-bricksmith, .icon-badge-builders-club, .icon-badge-combat-initiation, .icon-badge-friendship, .icon-badge-homestead, .icon-badge-inviter, .icon-badge-official-model-maker, .icon-badge-outrageous-builders-club, .icon-badge-turbo-builders-club, .icon-badge-veteran, .icon-badge-warrior, .icon-badge-welcome-to-the-club, .icon-default-badges {
@@ -7711,8 +7843,8 @@
             background-position: 0 -112px;
         }
         .icon-dating {
-        background-position: 0 -140px;
-    }
+			background-position: 0 -140px;
+		}
         .icon-exploiting {
             background-position: 0 -168px;
         }
