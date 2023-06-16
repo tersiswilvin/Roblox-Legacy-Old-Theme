@@ -9,7 +9,7 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["None","2017E", "2017M", "2018E","2018L*"]
+@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017E", "2017M", "2018E","2018L*","Current"]
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         0
@@ -5903,7 +5903,7 @@
         }
     }
 	
-	& when not (@AvatarEditor = None) {
+	& when not (@AvatarEditor = Current) {
 		.nav-tabs {
 			display: flex;
 		}
@@ -5941,8 +5941,14 @@
 		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
 			content: 'Body';
 			font-size: 16px;
-			font-weight: 400;
-			line-height: 1.4em;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
 			cursor: text;
 		}
 		
@@ -6104,7 +6110,12 @@
 			.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
 				content: '';
 				top: 19px;
-				left: 100px;
+				& when (@SourceSansPro = 0) {
+					left: 100px;
+				}
+				& when (@SourceSansPro = 1) {
+					left: 85px;
+				}
 				position: absolute;
 				background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
 				background-position: 0 -160px;
@@ -6190,7 +6201,12 @@
 				}
 				.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
 					top: 18px;
-					left: 85px;
+					& when (@SourceSansPro = 0) {
+						left: 85px;
+					}
+					& when (@SourceSansPro = 1) {
+						left: 78px;
+					}
 				}
 			}
 			@media (max-width: 543px) {
@@ -12954,6 +12970,9 @@
         background: #e3e3e3;
         border-radius: 6px;
         border: 0 solid #000;
+		& when (@BoxShadows = 1) {
+			box-shadow: 0 1px 3px 0 rgb(25 25 25 / 30%);
+		}
         cursor: pointer
     }
     .light-theme input[type=range]::-moz-range-track {
@@ -13263,6 +13282,9 @@
         background: #1c1c1c;
         border-radius: 6px;
         border: 0 solid #000;
+		& when (@BoxShadows = 1) {
+			box-shadow: 0 1px 3px 0 rgb(230 230 230 / 30%);
+		}
         cursor: pointer
     }
     .dark-theme input[type=range]::-moz-range-track {
