@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230616.1.3
+@version      20230617.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,7 +9,9 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017E", "2017M", "2018E","2018L*","Current"]
+@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017E", "2017M", "2017L","2018L*","Current"]
+@var          checkbox AvatarEditorHeightFix       "  Late 2017 Height Fix"             0
+@var          checkbox AvatarEditorCostumesAlt     "  Costume to Outfits swap"          0
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         0
@@ -5903,7 +5905,18 @@
         }
     }
 	
+	/*/ Cringe CSS ahead /*/
+	
 	& when not (@AvatarEditor = Current) {
+		/*/ Believe it or not this was actually a roblox CSS issue back in Late 2017, added in a fix in case it's annoying /*/
+		& when (@AvatarEditorHeightFix = 1) {
+			.left-wrapper, .left-wrapper-placeholder {
+				& when (@AvatarEditor = 2017L) {
+					height: 777.69px;
+				}
+			}
+		}
+		
 		.nav-tabs {
 			display: flex;
 		}
@@ -5979,8 +5992,6 @@
 				font-weight: 400;
 			}
 		}
-		
-		/*/ Cringe CSS ahead /*/
 
 		.tab-content>.tab-pane:not(.active).scaling-tab {
 			display: block;
@@ -5992,6 +6003,12 @@
 				top: 88px;
 			}
 			margin-left: -101px;
+			width: 86px;
+			height: 30.39px;
+		}
+		.tab-content>.tab-pane:not(.active).scaling-tab .section-content,.tab-content>.tab-pane:not(.active).scaling-tab [avatar-scaling] {
+			width: 86px;
+			height: 30.39px;
 		}
 		.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
 			position: fixed;
@@ -6077,6 +6094,120 @@
 			}
 		}
 		& when not (@AvatarEditor = 2018L) {
+			& when (@AvatarEditorCostumesAlt = 1) {
+				.rbx-tab.six-tab:nth-child(3) .text-lead {
+					font-size: 0;
+					height: 16px;
+				}
+				.rbx-tab.six-tab:nth-child(3) .text-lead:before {
+					content: 'Outfits';
+					& when (@SourceSansPro = 0) {
+						font-size: 16px;
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-size: 18px;
+						font-weight: 400;
+					}
+					display: inline-block;
+				}
+				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1), .right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3) {
+					font-size: 0;
+					height: 22.39px
+				}
+				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1):after  {
+					content: 'Outfits';
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 400;
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 300;
+						line-height: 1.3em;
+					}
+					cursor: text;
+				}
+				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3):after  {
+					content: 'My Outfits';
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 400;
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 300;
+						line-height: 1.3em;
+					}
+					cursor: text;
+				}
+				.rbx-tab.six-tab:nth-child(3) .text-lead .icon-down {
+					margin-top: -8px;
+				}
+				.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(1), .scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(2) {
+					font-size: 0;
+					height: 36.39px
+				}
+				.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(1):after {
+					content: 'Present Outfits';
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 400;
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 300;
+						line-height: 1.3em;
+					}
+				}
+				.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(2):after {
+					content: 'My Outfits';
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 400;
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 300;
+						line-height: 1.3em;
+					}
+				}
+				@media (max-width: 767px) {
+					.rbx-tab.six-tab:nth-child(3) .text-lead:before {
+						& when (@SourceSansPro = 0) {
+							font-size: 12px;
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-size: 18px;
+							font-weight: 400;
+						}
+					}
+					.rbx-tab.six-tab:nth-child(3) .text-lead .icon-down {
+						margin-top: -7px
+					}
+				}
+				@media (max-width: 543px) {
+					.rbx-tab.six-tab:nth-child(3) .text-lead {
+						height: 13px
+					}
+					.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1), .right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3) {
+						height: 16.8px
+					}
+					.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1):after, .right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3):after {
+						font-size: 12px;
+						font-weight: 400;
+					}
+					.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)) li:nth-child(1), .scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)) li:nth-child(2) {
+						height: 30.8px
+					}
+					.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)) li:nth-child(1):after, .scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)) li:nth-child(2):after {
+						font-size: 12px;
+						font-size: 400
+					}
+				}
+			}
+			
 			.scaling-tab .section-sliders {
 				margin-bottom: -13px;
 				margin-left: 0;
@@ -6145,7 +6276,7 @@
 						height: 571.34px
 					}
 				}
-				& when (@AvatarEditor = 2018E) {
+				& when (@AvatarEditor = 2017L) {
 					& when (@SourceSansPro = 0) {
 						height: 702.91px
 					}
@@ -6167,7 +6298,7 @@
 					display: none
 				}
 			}
-			& when (@AvatarEditor = 2018E) {
+			& when (@AvatarEditor = 2017L) {
 				.scaling-tab .scale-container:nth-child(5) {
 					& when (@SourceSansPro = 0) {
 						margin-top: 59.78px;
@@ -11292,6 +11423,9 @@
 			background-color: #00a2ff;
 			border: 1px solid #00a2ff;
 			color: #fff;
+			&:link {
+				color: #fff;
+			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
@@ -11310,11 +11444,17 @@
 				background-color: #004266;
 				border: 1px solid #004266;
 				color: #b8b8b8;
+				&:link {
+					color: #b8b8b8;
+				}
 			}
 			& when (@BrighterDarkThemeColors = 1) {
 				background-color: #00a2ff;
 				border: 1px solid #00a2ff;
 				color: #fff;
+				&:link {
+					color: #fff;
+				}
 			}
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
