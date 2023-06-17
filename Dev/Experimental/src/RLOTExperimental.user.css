@@ -4442,11 +4442,7 @@
     .light-theme .breadcrumb-container li.breadcrumb-filter .breadcrumb-filter-name,.light-theme .breadcrumb-container li.breadcrumb-filter .breadcrumb-filter-name:hover,.light-theme .breadcrumb-container li.breadcrumb-filter:hover .breadcrumb-filter-name, .dark-theme .breadcrumb-container li.breadcrumb-filter .breadcrumb-filter-name, .dark-theme .breadcrumb-container li.breadcrumb-filter .breadcrumb-filter-name:hover, .dark-theme .breadcrumb-container li.breadcrumb-filter:hover .breadcrumb-filter-name {
         color: #fff;
     }
-    
-    ul.nav > li.cursor-pointer:hover {
-        cursor: default;
-    }
-    
+	
     .light-theme .copyright-container {
         border-color: #e3e3e3;
     }
@@ -5666,6 +5662,32 @@
 			}
 			.game-instances .create-server-banner .play-with-others-text, #running-game-instances-container .create-server-banner .play-with-others-text {
 				height: 16.8px
+			}
+		}
+		
+		.game-home-page-container:has(.game-error) h2 {
+			font-size: 0
+		}
+		.game-home-page-container:has(.game-error) h2:after {
+			content: 'Games';
+			& when (@SourceSansPro - 0) {
+				font-size: 20px;
+				font-weight: 700;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 24px;
+				font-weight: 300;
+			}
+			line-height: 1em;
+		}
+		@media (max-width: 767px) {
+			.game-home-page-container:has(.game-error) h2:after {
+				& when (@SourceSansPro - 0) {
+					font-size: 16px;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 21px;
+				}
 			}
 		}
     }
