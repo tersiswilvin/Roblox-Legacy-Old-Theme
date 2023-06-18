@@ -6369,6 +6369,8 @@
 					padding: 0;
 					& when (@SourceSansPro = 0) {
 						margin-top: 230.34px;
+						position: relative;
+						z-index: 1;
 					}
 					& when (@SourceSansPro = 1) {
 						margin-top: 217.34px;
@@ -7200,7 +7202,6 @@
     
     @media (max-width: 767px)
     {
-    
         .light-theme .avatar-container .avatar-card-fullbody .icon-game, .light-theme .avatar-container .avatar-headshot-lg .avatar-status.icon-game, .light-theme .avatar-container .avatar-status.icon-game, .dark-theme .avatar-container .avatar-card-fullbody .icon-game, .dark-theme .avatar-container .avatar-headshot-lg .avatar-status.icon-game, .dark-theme .avatar-container .avatar-status.icon-game
         {
             background-color: #02b757;
