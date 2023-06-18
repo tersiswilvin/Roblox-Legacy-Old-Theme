@@ -1,36 +1,46 @@
 /* ==UserStyle==
 @name           Legacy Old Theme Tools
 @namespace      github.com/tersiswilvin
-@version        1.0.8
+@version        1.0.9
 @description    Experimental Tools/Addons for the Roblox Legacy Old Theme
 @author         TersisWilvin
 @preprocessor   less
 @var            checkbox  MatchDefaultSiteColors  "Match Roblox Site Colors"  0
-@var            select    WatermarkStyle          "Watermark Branch"           ["None*","DEV","Experimental"]
+@var            checkbox  SourceSansPro           "Source Sans Pro Font"      0
+@var            select    WatermarkStyle          "Watermark Branch"          ["None*","DEV","Experimental"]
 ==/UserStyle== */
 
 @-moz-document domain("web.roblox.com"), domain("www.roblox.com") {
 	/*/=={ Watermark }==/*/
-	.rbx-left-col {
-		& when not (@WatermarkStyle = None) {
-			&:before {
-				& when (@WatermarkStyle = DEV) {
-					content: '(Default Theme) Development Purposes Only!';
-				}
-				& when (@WatermarkStyle = Experimental) {
-					content: '(Default Theme) Testing Purposes Only!';
-				}
+	.rbx-left-col when not (@WatermarkStyle = None) {
+		&:before {
+			& when (@WatermarkStyle = DEV) {
+				content: '(Default Theme) Development Purposes Only!';
+			}
+			& when (@WatermarkStyle = Experimental) {
+				content: '(Default Theme) Testing Purposes Only!';
+			}
+			& when (@SourceSansPro = 0) {
 				font-size: 16px;
 				line-height: 16px;
-				text-align: center;
-				position: absolute;
-				display: block;
-				width: 100%;
-				bottom: 0;
-				margin: 24px 0;
-				color: #191919
 			}
-			.light-theme &:before {
+			& when (@SourceSansPro = 1) {
+				font-size: 18px;
+				line-height: 18px;
+			}
+			text-align: center;
+			position: absolute;
+			display: block;
+			width: 100%;
+			bottom: 0;
+			& when (@SourceSansPro = 0) {
+				margin: 24px 0;
+			}
+			& when (@SourceSansPro = 1) {
+				margin: 28px 0;
+			}
+			color: #191919;
+			.light-theme & {
 				& when (@WatermarkStyle = DEV) {
 					content: '(Light Theme) Development Purposes Only!';
 				}
@@ -41,43 +51,52 @@
 					color: #393b3d;
 				}
 			}
-			&:after {
-				content: 'Milestone 1.3';
-				font-size: 12px;
-				line-height: 12px;
-				text-align: center;
-				position: absolute;
-				display: block;
-				width: 100%;
-				bottom: 0;
-				margin: 6px 0;
-				color: #b8b8b8;
-			}
-			& when (@MatchDefaultSiteColors = 1) {
-				.light-theme &:after {
-					color: #606162;
-				}
-			}
-			.dark-theme &:before {
+			.dark-theme & {
 				& when (@WatermarkStyle = DEV) {
 					content: '(Dark Theme) Development Purposes Only!';
 				}
 				& when (@WatermarkStyle = Experimental) {
 					content: '(Dark Theme) Testing Purposes Only!';
 				}
+				& when (@MatchDefaultSiteColors = 0) {
+					color: #E6E6E6;
+				}
 				& when (@MatchDefaultSiteColors = 1) {
 					color: #fff;
 				}
-				& when not (@MatchDefaultSiteColors = 1) {
-					color: #E6E6E6;
-				}
 			}
-			.dark-theme &:after {
+		}
+		&:after {
+			content: 'Milestone 1.3';
+			& when (@SourceSansPro = 0) {
+				font-size: 12px;
+				line-height: 12px;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 14px;
+				line-height: 14px;
+			}
+			text-align: center;
+			position: absolute;
+			display: block;
+			width: 100%;
+			bottom: 0;
+			& when (@SourceSansPro = 0) {
+				margin: 6px 0;
+			}
+			& when (@SourceSansPro = 1) {
+				margin: 7px 0;
+			}
+			color: #b8b8b8;
+			.light-theme & when (@MatchDefaultSiteColors = 1) {
+				color: #606162;
+			}
+			.dark-theme & {
+				& when (@MatchDefaultSiteColors = 0) {
+					color: #474747;
+				}
 				& when (@MatchDefaultSiteColors = 1) {
 					color: #bdbebe;
-				}
-				& when not (@MatchDefaultSiteColors = 1) {
-					color: #474747;
 				}
 			}
 		}
