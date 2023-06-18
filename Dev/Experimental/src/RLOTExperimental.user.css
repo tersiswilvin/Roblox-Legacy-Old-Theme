@@ -6133,11 +6133,16 @@
 					}
 					display: inline-block;
 				}
-				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1), .right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3) {
+				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1) {
 					font-size: 0;
-					height: 22.39px
+					& when (@SourceSansPro = 0) {
+						height: 22.39px
+					}
+					& when (@SourceSansPro = 1) {
+						height: 20.8px;
+					}
 				}
-				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1):after  {
+				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
 					content: 'Outfits';
 					font-size: 16px;
 					& when (@SourceSansPro = 0) {
@@ -6150,7 +6155,29 @@
 					}
 					cursor: text;
 				}
-				.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3):after  {
+				.right-wrapper-placeholder-six-column:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content:has(.tab-content #costumes.tab-pane.active) .breadcrumb-container li:nth-child(3) {
+					font-size: 0;
+					& when (@SourceSansPro = 0) {
+						height: 22.39px
+					}
+					& when (@SourceSansPro = 1) {
+						height: 20.8px;
+					}
+				}
+				.right-wrapper-placeholder-six-column:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content:has(.tab-content #costumes.tab-pane.active :not(.btn-secondary-xs.btn-float-right)) .breadcrumb-container li:nth-child(3):after {
+					content: 'Present Outfits';
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 400;
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 300;
+						line-height: 1.3em;
+					}
+					cursor: text;
+				}
+				.right-wrapper-placeholder-six-column:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content:has(.tab-content #costumes.tab-pane.active .btn-secondary-xs.btn-float-right) .breadcrumb-container li:nth-child(3):after {
 					content: 'My Outfits';
 					font-size: 16px;
 					& when (@SourceSansPro = 0) {
@@ -6166,11 +6193,20 @@
 				.rbx-tab.six-tab:nth-child(3) .text-lead .icon-down {
 					margin-top: -8px;
 				}
-				.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(1), .scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(2) {
+				.tab-content .tab-content #costumes.tab-pane.active .btn-secondary-xs.btn-float-right {
+					font-size: 0
+				}
+				.tab-content .tab-content #costumes.tab-pane.active .btn-secondary-xs.btn-float-right:after {
+					content: 'Create New Outfit';
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 100%;
+				}
+				.tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(1), .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(2) {
 					font-size: 0;
 					height: 36.39px
 				}
-				.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(1):after {
+				.tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(1):after {
 					content: 'Present Outfits';
 					font-size: 16px;
 					& when (@SourceSansPro = 0) {
@@ -6182,7 +6218,7 @@
 						line-height: 1.3em;
 					}
 				}
-				.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(2):after {
+				.tab-horizontal-submenu:has(li:nth-child(2)):not(:has(li:nth-child(3))) li:nth-child(2):after {
 					content: 'My Outfits';
 					font-size: 16px;
 					& when (@SourceSansPro = 0) {
@@ -6213,10 +6249,10 @@
 					.rbx-tab.six-tab:nth-child(3) .text-lead {
 						height: 13px
 					}
-					.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1), .right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3) {
+					.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1), .tab-content:has(.tab-content #costumes.tab-pane.active :not(.btn-secondary-xs.btn-float-right)) .breadcrumb-container li:nth-child(3), .tab-content:has(.tab-content #costumes.tab-pane.active .btn-secondary-xs.btn-float-right) .breadcrumb-container li:nth-child(3) {
 						height: 16.8px
 					}
-					.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1):after, .right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(3):after {
+					.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(3).active) + .tab-content .breadcrumb-container li:nth-child(1):after, .tab-content:has(.tab-content #costumes.tab-pane.active :not(.btn-secondary-xs.btn-float-right)) .breadcrumb-container li:nth-child(3):after, .tab-content:has(.tab-content #costumes.tab-pane.active .btn-secondary-xs.btn-float-right) .breadcrumb-container li:nth-child(3):after {
 						font-size: 12px;
 						font-weight: 400;
 					}
@@ -12798,10 +12834,6 @@
         .dark-theme .profile-about .section-content::after {
             background-color: #000;
         }
-		
-		#avatar-container .rbx-tabs-horizontal #horizontal-tabs {
-			box-shadow: none;
-		}
 		
 		.light-theme .notification-stream-base {
 			box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3)
