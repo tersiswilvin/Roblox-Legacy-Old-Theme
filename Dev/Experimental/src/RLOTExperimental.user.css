@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230617.1.3
+@version      20230619.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -7004,37 +7004,59 @@
 	.rbx-left-col {
 		&:before {
 			content: '(Default Theme) Testing Purposes Only!';
-			font-size: 16px;
-			line-height: 16px;
+			& when (@SourceSansPro = 0) {
+				font-size: 16px;
+				line-height: 16px;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 18px;
+				line-height: 18px;
+			}
 			text-align: center;
 			position: absolute;
 			display: block;
 			width: 100%;
 			bottom: 0;
-			margin: 24px 0;
-			color: #191919
-		}
-		.light-theme &:before {
-			content: '(Light Theme) Testing Purposes Only!';
+			& when (@SourceSansPro = 0) {
+				margin: 24px 0;
+			}
+			& when (@SourceSansPro = 1) {
+				margin: 28px 0;
+			}
+			color: #191919;
+			.light-theme & {
+				content: '(Light Theme) Testing Purposes Only!';
+			}
+			.dark-theme & {
+				content: '(Dark Theme) Testing Purposes Only!';
+				color: #E6E6E6;
+			}
 		}
 		&:after {
 			content: 'Milestone 1.3';
-			font-size: 12px;
-			line-height: 12px;
+			& when (@SourceSansPro = 0) {
+				font-size: 12px;
+				line-height: 12px;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 14px;
+				line-height: 14px;
+			}
 			text-align: center;
 			position: absolute;
 			display: block;
 			width: 100%;
 			bottom: 0;
-			margin: 6px 0;
+			& when (@SourceSansPro = 0) {
+				margin: 6px 0;
+			}
+			& when (@SourceSansPro = 1) {
+				margin: 7px 0;
+			}
 			color: #b8b8b8;
-		}
-		.dark-theme &:before {
-			content: '(Dark Theme) Testing Purposes Only!';
-			color: #E6E6E6;
-		}
-		.dark-theme &:after {
-			color: #474747;
+			.dark-theme & {
+				color: #474747;
+			}
 		}
 	}
 	
