@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230619.1.3
+@version      20230622.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,12 +9,12 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017E", "2017M", "2017L","2018L*","Current"]
+@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017EM", "2017M", "2017L","2018L*","Current"]
 @var          checkbox AvatarEditorHeightFix       "  Late 2017 Height Fix"             0
 @var          checkbox AvatarEditorCostumesAlt     "  Costume to Outfits swap"          0
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
-@var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         0
+@var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
 @var          select   SiteCurrency                "Currency Brand Style"               ["Robux*","Tickets"]
 @var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
@@ -4745,7 +4745,7 @@
 	}
 	
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option-content[href="#!/game-passes"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li a[href="https://www.roblox.com/crossdevicelogin/ConfirmCode"], .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3) {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li a[href="https://www.roblox.com/crossdevicelogin/ConfirmCode"], .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3) {
             display: none !important;
         }
         .menu-vertical .menu-option-content[href="#!/classic-heads"]:after {
@@ -4772,9 +4772,8 @@
 				font-weight: 300;
 			}
         }
-        .menu-vertical .menu-option-content[href="#!/game-passes"]:before {
-            content: 'Game Passes';
-            float: left;
+        .menu-vertical .menu-option-content[href="#!/game-passes"] .menu-text:before {
+            content: 'Game ';
 			& when (@SourceSansPro = 0) {
 				font-size: 12px;
 				font-weight: 500;
@@ -4978,6 +4977,169 @@
             margin-top: 12px;
             display: block;
         }
+		
+		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-heads"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/my-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/other-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/my-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/other-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span {
+			font-size: 0;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span:after {
+			content: 'Clothing';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+			content: 'T-shirts';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+			content: 'Shirts';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+			content: 'Pants';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-heads"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span:after {
+			content: 'Heads';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/game-passes"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span:before {
+			content: 'Game ';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/my-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+			content: 'My Games';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/other-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+			content: 'Other Games';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/private-servers"]) ~ .tab-content .breadcrumb-container li:first-child span {
+			font-size: 0
+		}
+		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/private-servers"]) ~ .tab-content .breadcrumb-container li:first-child span:after {
+			content: 'VIP Servers';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/my-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+			content: 'My VIP Servers';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/other-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+			content: 'Other VIP Servers';
+			font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-weight: 400;
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+			cursor: text;
+		}
+		@media (max-width: 543px) {
+			.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span:after, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
+				& when (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 16px;
+					font-weight: 300;
+				}
+			}
+		}
+		
 		.game-dev-store .container-header h3:after {
 			content: ' for this game';
 		}
@@ -5760,41 +5922,61 @@
         }
 		
 		.gotham-font h1, .gotham-font .h1 {
-			font-size: 36px;
-			font-weight: 400
+			&, &:hover, &:focus, &:active {
+				font-size: 36px;
+				font-weight: 400
+			}
 		}
 		.gotham-font h2, .gotham-font .h2 {
-			font-size: 30px;
-			font-weight: 400
+			&, &:hover, &:focus, &:active {
+				font-size: 30px;
+				font-weight: 400
+			}
 		}
 		.gotham-font h3, .gotham-font .h3, .container-header h2 {
-			font-size: 24px;
-			font-weight: 300
+			&, &:hover, &:focus, &:active {
+				font-size: 24px;
+				font-weight: 300
+			}
 		}
 		.gotham-font h4, .gotham-font .h4 {
-			font-size: 21px;
-			font-weight: 400
+			&, &:hover, &:focus, &:active {
+				font-size: 21px;
+				font-weight: 400
+			}
 		}
 		.gotham-font h5, .gotham-font .h5 {
-			font-size: 18px;
-			font-weight: 400
+			&, &:hover, &:focus, &:active {
+				font-size: 18px;
+				font-weight: 400
+			}
 		}
 		
 		@media (max-width: 767px) {
 			.gotham-font h1, .gotham-font .h1 {
-				font-size:30px
+				&, &:hover, &:focus, &:active {
+					font-size:30px
+				}
 			}
 			.gotham-font h2, .gotham-font .h2 {
-				font-size:24px
+				&, &:hover, &:focus, &:active {
+					font-size:24px
+				}
 			}
 			.gotham-font h3, .gotham-font .h3, .container-header h2 {
-				font-size:21px
+				&, &:hover, &:focus, &:active {
+					font-size:21px
+				}
 			}
 			.gotham-font h4, .gotham-font .h4 {
-				font-size:18px
+				&, &:hover, &:focus, &:active {
+					font-size:18px
+				}
 			}
 			.gotham-font h5, .gotham-font .h5 {
-				font-size:16px
+				&, &:hover, &:focus, &:active {
+					font-size:16px
+				}
 			}
 		}
 		
@@ -6328,7 +6510,7 @@
 				cursor: pointer
 			}
 			.left-wrapper .section-content {
-				& when (@AvatarEditor = 2017E) {
+				& when (@AvatarEditor = 2017EM) {
 					& when (@SourceSansPro = 0) {
 						height: 521.56px
 					}
@@ -6353,7 +6535,7 @@
 					}
 				}
 			}
-			& when (@AvatarEditor = 2017E) or (@AvatarEditor = 2017M) {
+			& when (@AvatarEditor = 2017EM) or (@AvatarEditor = 2017M) {
 				.left-wrapper .section-content .section-sliders, .scaling-tab .scale-container:last-child {
 					display: none;
 				}
@@ -6361,7 +6543,7 @@
 			.scaling-tab .scale-container {
 				margin-bottom: -3px;
 			}
-			& when (@AvatarEditor = 2017E) {
+			& when (@AvatarEditor = 2017EM) {
 				.scaling-tab .scale-container:nth-child(3) {
 					display: none
 				}
@@ -7025,8 +7207,15 @@
 			text-align: center;
 			position: absolute;
 			display: block;
-			width: 100%;
 			bottom: 0;
+			& when (@RestoreSidebarPadding = 0) {
+				width: 165px;
+				padding: 0 0 0 10px
+			}
+			& when (@RestoreSidebarPadding = 1) {
+				width: 100%;
+				padding: 0 10px;
+			}
 			& when (@SourceSansPro = 0) {
 				margin: 24px 0;
 			}
@@ -7055,8 +7244,15 @@
 			text-align: center;
 			position: absolute;
 			display: block;
-			width: 100%;
 			bottom: 0;
+			& when (@RestoreSidebarPadding = 0) {
+				width: 165px;
+				padding: 0 0 0 10px
+			}
+			& when (@RestoreSidebarPadding = 1) {
+				width: 100%;
+				padding: 0 10px;
+			}
 			& when (@SourceSansPro = 0) {
 				margin: 6px 0;
 			}
@@ -7376,31 +7572,6 @@
         background-color: #e6e6e6;
         color: #000
     }
-    
-	.light-theme .input-group .input-field::-moz-placeholder {
-		color: #b8b8b8;
-	}
-	.light-theme .input-group .input-field:-ms-input-placeholder {
-		color: #b8b8b8;
-	}
-	.light-theme .input-group .input-field::-webkit-input-placeholder {
-		color: #b8b8b8;
-	}
-	.light-theme .input-group .input-field::placeholder {
-		color: #b8b8b8;
-	}
-	.dark-theme .input-group .input-field::-moz-placeholder {
-		color: #474747;
-	}
-	.dark-theme .input-group .input-field:-ms-input-placeholder {
-		color: #474747;
-	}
-	.dark-theme .input-group .input-field::-webkit-input-placeholder {
-		color: #474747;
-	}
-	.dark-theme .input-group .input-field::placeholder {
-		color: #474747;
-	}
 	
     .light-theme .rbx-select-group .rbx-select.active, .light-theme .rbx-select-group .rbx-select:active, .light-theme .rbx-select-group .rbx-select:focus {
         background-color: #00a2ff;
@@ -12837,9 +13008,19 @@
             box-shadow: none;
         }
         
-        .game-dev-store {
+        .game-dev-store, .item-cards-stackable, .inbox-buttons .roblox-messages-btns {
             overflow: unset;
         }
+		
+		.roblox-messages-container.rbx-tabs-horizontal .nav-tabs {
+			margin-bottom: -9px;
+		}
+		
+		.roblox-messages-container .rbx-tab-content .inbox-buttons:first-child {
+			float: left;
+			width: 100%;
+			overflow: unset;
+		}
 		
         .light-theme .btn-primary-lg:focus, .light-theme .btn-primary-lg:hover, .light-theme .btn-primary-md:focus, .light-theme .btn-primary-md:hover, .light-theme .btn-primary-sm:focus, .light-theme .btn-primary-sm:hover, .light-theme .btn-primary-xs:focus, .light-theme .btn-primary-xs:hover, .light-theme .btn-secondary-lg:focus, .light-theme .btn-secondary-lg:hover, .light-theme .btn-secondary-md:focus, .light-theme .btn-secondary-md:hover, .light-theme .btn-secondary-sm:focus, .light-theme .btn-secondary-sm:hover, .light-theme .btn-secondary-xs:focus, .light-theme .btn-secondary-xs:hover, .light-theme .btn-cta-lg:focus, .light-theme .btn-cta-lg:hover, .light-theme .btn-cta-md:focus, .light-theme .btn-cta-md:hover, .light-theme .btn-cta-sm:focus, .light-theme .btn-cta-sm:hover, .light-theme .btn-cta-xs:focus, .light-theme .btn-cta-xs:hover, .light-theme .btn-growth-lg:focus, .light-theme .btn-growth-lg:hover, .light-theme .btn-growth-md:focus, .light-theme .btn-growth-md:hover, .light-theme .btn-growth-sm:focus, .light-theme .btn-growth-sm:hover, .light-theme .btn-growth-xs:focus, .light-theme .btn-growth-xs:hover, .light-theme .btn-control-lg:focus, .light-theme .btn-control-lg:hover, .light-theme .btn-control-md:focus, .light-theme .btn-control-md:hover, .light-theme .btn-control-sm:focus, .light-theme .btn-control-sm:hover, .light-theme .btn-control-xs:focus, .light-theme .btn-control-xs:hover, .light-theme .btn-alert-lg:focus, .light-theme .btn-alert-lg:hover, .light-theme .btn-alert-md:focus, .light-theme .btn-alert-md:hover, .light-theme .btn-alert-sm:focus, .light-theme .btn-alert-sm:hover, .light-theme .btn-alert-xs:focus, .light-theme .btn-alert-xs:hover, .light-theme .btn-generic-edit-lg:focus, .light-theme .btn-generic-edit-lg:hover, .light-theme .btn-generic-edit-md:focus, .light-theme .btn-generic-edit-md:hover, .light-theme .btn-generic-edit-sm:focus, .light-theme .btn-generic-edit-sm:hover, .light-theme .btn-generic-edit-xs:focus, .light-theme .btn-generic-edit-xs:hover, .light-theme .btn-common-play-game-lg:focus, .light-theme .btn-common-play-game-lg:hover, .light-theme .btn-branded-robux-white-lg:focus, .light-theme .btn-branded-robux-white-lg:hover, .light-theme .btn-buy-lg:focus, .light-theme .btn-buy-lg:hover, .light-theme .btn-buy-md:focus, .light-theme .btn-buy-md:hover, .light-theme .btn-buy-sm:focus, .light-theme .btn-buy-sm:hover, .light-theme .btn-buy-xs:focus, .light-theme .btn-buy-xs:hover, .light-theme .btn-generic-locked-sm:focus, .light-theme .btn-generic-locked-sm:hover, .light-theme .btn-generic-back-sm:focus, .light-theme .btn-generic-back-sm:hover, .light-theme .btn-generic-next-sm:focus, .light-theme .btn-generic-next-sm:hover, .light-theme .rbx-tabs-horizontal .nav-tabs, .light-theme .menu-vertical, .light-theme .stack .stack-list .stack-row {
             box-shadow: 0 1px 3px rgb(150 150 150 / 74%);
