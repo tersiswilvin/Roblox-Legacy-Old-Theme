@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230622.1.3
+@version      20230628.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,9 +9,11 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017EM", "2017M", "2017L","2018L*","Current"]
-@var          checkbox AvatarEditorHeightFix       "  Late 2017 Height Fix"             0
+@var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017EM", "2017M", "2017L","2018L","2019M*","Current"]
+@var          checkbox AvatarEditorAdblocker       "  Adblocker Support ( ! )"          0
+@var          checkbox AvatarEditorPreCtgReorg     "  PreCategory Reorganize"           1
 @var          checkbox AvatarEditorCostumesAlt     "  Costume to Outfits swap"          0
+@var          checkbox AvatarEditorHeightFix       "  Late 2017 Height Fix"             0
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
@@ -418,10 +420,10 @@
         top: -10px;
     }
     
-    #upgrade-now-button {
+    body:not(.RenamePremiumBtn) #upgrade-now-button {
         font-size: 0
     }
-    #upgrade-now-button:after {
+    body:not(.RenamePremiumBtn) #upgrade-now-button:after {
 		& when (@SourceSansPro = 0) {
 			font-size: 16px;
 		}
@@ -5782,7 +5784,7 @@
 			}
 		}
 		
-		.rbx-left-col .rbx-scrollbar .left-col-list {
+		body:not(.RestoreEvents) .rbx-left-col .rbx-scrollbar .left-col-list {
 			&:after {
 				content: 'Events';
 				font-size: 14px;
@@ -5921,6 +5923,137 @@
             font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
         }
 		
+		.gotham-font div {
+			&, &:hover, &:focus, &:active {
+				font-weight: 300;
+				line-height: 1.3em;
+			}
+        }
+        .gotham-font .text-robux-lg {
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .gotham-font .text-footer-nav {
+			&, &:active, &:hover, &:link {
+				font-size: 20px;
+				font-weight: 300;
+			}
+        }
+		.gotham-font .text-lead {
+			&, &:active, &:hover, &:link, &:visited {
+				font-size: 18px;
+				font-weight: 400;
+			}
+		}
+        .gotham-font .font-caption-body, .gotham-font .item-card-creator, .gotham-font .font-caption-header, .gotham-font .font-header-1 {
+			&, &:active, &:focus, &:hover, &:link, &:visited {
+				font-size: 16px;
+				font-weight: 300;
+			}
+        }
+        .game-stats-container li:nth-child(1) p:nth-child(1):after, .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
+            font-size: 16px;
+        }
+		.app-bumper-container .app-motto-container .motto-primary {
+			&, &:hover, &:focus, &:active {
+				font-weight: 600;
+			}
+		}
+		.item-card-container .item-card-name {
+			&, &:hover, &:focus, &:active {
+				font-weight: 500;
+			}
+		}
+		.gotham-font .small, .gotham-font .small-oneline {
+			&, &:hover, &:focus, &:link, &:visited, &:active {
+				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+		.gotham-font .chat-search-input {
+			&, &:hover, &:focus, &:active {
+				font-size: 14px;
+			}
+			&, &::placeholder {
+				font-weight: 400;
+			}
+		}
+		.chat-friend-list .chat-friend-info .chat-friend-name {
+			&, &:hover, &:focus, &:active {
+				font-size: 14px;
+			}
+		}
+		.chat-friend-list .chat-friend-info span {
+			&, &:hover, &:focus, &:active {
+				font-size: 12px;
+			}
+		}
+		.gotham-font .xsmall, .gotham-font, .gotham-font .item-card-label, .game-card-experimental, .gotham-font .game-card-name-secondary, .gotham-font .sg-color-cell, .gotham-font .text-footer, .dialog-message span {
+			&, &:active, &:focus, &:hover {
+				font-size: 12px;
+				font-weight: 400;
+			}
+		}
+		.gotham-font .text-date-hint, .gotham-font .text-date-hint {
+			&, &:active, &:focus, &:hover, &:visited, &:link {
+				font-size: 10px;
+				font-weight: 400;
+			}
+        }
+		.chat-friend-message span.read {
+			font-weight: 700;
+		}
+        .gotham-font .font-title, .gotham-font .text-name, .gotham-font .text-label {
+			&, &:active, &:focus, &:hover, &:visited, &:link {
+				font-weight: 400;
+			}
+        }
+		.gotham-font .font-header-2 {
+            &, &:active, &:focus, &:hover, &:visited, &:link {
+                font-weight: 400;
+            }
+        }
+        .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .text-name, #navbar-search-input {
+			&, &:active, &:focus, &:hover, &:visited, &:link {
+				font-weight: 300;
+			}
+        }
+        .gotham-font .game-name-title {
+            line-height: 22px;
+        }
+        .gotham-font .line-height {
+            line-height: 1em;
+        }
+        .robux-page .premium-container .page-top .top-header > .ng-binding::after {
+            font-weight: inherit;
+        }
+        .gotham-font .game-main-content .game-calls-to-action {
+            padding: 0 12px 0 24px;
+        }
+        .gotham-font .game-main-content .game-calls-to-action .game-title-container {
+            padding: 0 24px 0 0;
+        }
+        .gotham-font .game-main-content .game-calls-to-action #game-context-menu {
+            top: 10px;
+            right: 12px;
+        }
+        body .icon-robux-price-container .icon-robux-16x16 {
+            margin-top: 0;
+        }
+        .light-theme .redirection-banner, .dark-theme .redirection-banner {
+            font-size: 20px;
+        }
+        .gotham-font .chat-friend-list .chat-friend-info .chat-brief-timestamp {
+            margin: 3px 0 0;
+            padding: 0 0 0 5px;
+            width: 72px;
+        }
+		.game-card-link .friend-activity-label, .game-card-link .native-ad-label {
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 1.866em;
+		}
+		
 		.gotham-font h1, .gotham-font .h1 {
 			&, &:hover, &:focus, &:active {
 				font-size: 36px;
@@ -5980,129 +6113,6 @@
 			}
 		}
 		
-        .gotham-font .text-robux-lg {
-            font-size: 24px;
-            font-weight: 400;
-        }
-        .gotham-font .text-footer-nav {
-			&, &:active, &:hover, &:link {
-				font-size: 20px;
-				font-weight: 300;
-			}
-        }
-		.gotham-font .text-lead {
-			&, &:active, &:hover, &:link, &:visited {
-				font-size: 18px;
-				font-weight: 400;
-			}
-		}
-        .gotham-font .font-caption-body, .gotham-font .item-card-creator, .gotham-font .font-caption-header, .gotham-font .font-header-1 {
-			&, &:active, &:focus, &:hover, &:link, &:visited {
-				font-size: 16px;
-				font-weight: 300;
-			}
-        }
-        .game-stats-container li:nth-child(1) p:nth-child(1):after, .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
-            font-size: 16px;
-        }
-		.app-bumper-container .app-motto-container .motto-primary {
-			&, &:hover, &:focus, &:active {
-				    font-weight: 600;
-			}
-		}
-		.gotham-font .small, .gotham-font .small-oneline {
-			&, &:hover, &:focus, &:link, &:visited, &:active {
-				font-size: 14px;
-				font-weight: 400;
-			}
-		}
-		.gotham-font .chat-search-input {
-			&, &:hover, &:focus, &:active {
-				font-size: 14px;
-			}
-			&, &::placeholder {
-				font-weight: 400;
-			}
-		}
-		.chat-friend-list .chat-friend-info .chat-friend-name {
-			&, &:hover, &:focus, &:active {
-				font-size: 14px;
-			}
-		}
-		.chat-friend-list .chat-friend-info span {
-			&, &:hover, &:focus, &:active {
-				font-size: 12px;
-			}
-		}
-		.gotham-font .xsmall, .gotham-font .game-card-experimental, .gotham-font .game-card-name-secondary, .gotham-font .sg-color-cell, .gotham-font .text-footer, .dialog-message span {
-			&, &:active, &:focus, &:hover {
-				font-size: 12px;
-				font-weight: 400;
-			}
-		}
-        .gotham-font .item-card-label, .gotham-font .text-date-hint, .gotham-font .text-date-hint {
-			&, &:active, &:focus, &:hover, &:visited, &:link {
-				font-size: 10px;
-				font-weight: 400;
-			}
-        }
-		.chat-friend-message span.read {
-			font-weight: 700;
-		}
-        .gotham-font .font-title, .gotham-font .text-name, .gotham-font .text-label {
-			&, &:active, &:focus, &:hover, &:visited, &:link {
-				font-weight: 400;
-			}
-        }
-		.gotham-font .font-header-2 {
-            &, &:active, &:focus, &:hover, &:visited, &:link {
-                font-weight: 400;
-            }
-        }
-        .gotham-font div {
-            font-weight: 300;
-            line-height: 1.3em;
-        }
-        .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .text-name, #navbar-search-input {
-			&, &:active, &:focus, &:hover, &:visited, &:link {
-				font-weight: 300;
-			}
-        }
-        .gotham-font .game-name-title {
-            line-height: 22px;
-        }
-        .gotham-font .line-height {
-            line-height: 1em;
-        }
-        .robux-page .premium-container .page-top .top-header > .ng-binding::after {
-            font-weight: inherit;
-        }
-        .gotham-font .game-main-content .game-calls-to-action {
-            padding: 0 12px 0 24px;
-        }
-        .gotham-font .game-main-content .game-calls-to-action .game-title-container {
-            padding: 0 24px 0 0;
-        }
-        .gotham-font .game-main-content .game-calls-to-action #game-context-menu {
-            top: 10px;
-            right: 12px;
-        }
-        body .icon-robux-price-container .icon-robux-16x16 {
-            margin-top: 0;
-        }
-        .light-theme .redirection-banner, .dark-theme .redirection-banner {
-            font-size: 20px;
-        }
-        .gotham-font .chat-friend-list .chat-friend-info .chat-brief-timestamp {
-            margin: 3px 0 0;
-            padding: 0 0 0 5px;
-            width: 72px;
-        }
-		.game-card-link .friend-activity-label, .game-card-link .native-ad-label {
-			font-size: 12px;
-			font-weight: 400;
-			line-height: 1.866em;
-		}
         & when (@CardStyle = Pre-2018) {
             .game-card-container .game-card-info .info-label.playing-counts-label {
                 font-weight: 400;
@@ -6123,11 +6133,9 @@
 	
 	& when not (@AvatarEditor = Current) {
 		/*/ Believe it or not this was actually a roblox CSS issue back in Late 2017, added in a fix in case it's annoying /*/
-		& when (@AvatarEditorHeightFix = 1) {
+		& when (@AvatarEditorHeightFix = 1) and (@AvatarEditor = 2017L) {
 			.left-wrapper, .left-wrapper-placeholder {
-				& when (@AvatarEditor = 2017L) {
-					height: 777.69px;
-				}
+				height: 777.69px;
 			}
 		}
 		
@@ -6163,7 +6171,12 @@
 		
 		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1) {
 			font-size: 0;
-			height: 22.39px
+			& when (@SourceSansPro = 0) {
+				height: 22.39px
+			}
+			& when (@SourceSansPro = 1) {
+				height: 20.8px
+			}
 		}
 		.right-wrapper-placeholder:has(.rbx-tab.six-tab:nth-child(6).active) + .tab-content .breadcrumb-container li:nth-child(1):after {
 			content: 'Body';
@@ -6206,21 +6219,35 @@
 				font-weight: 400;
 			}
 		}
-
+		
+		.scaling-tab .scaling-info {
+			display: revert;
+			width: max-content;
+			left: -189px;
+			top: 309px;
+			position: relative;
+			padding-left: 15px;
+		}
+		.avatar-type-container {
+			position: relative;
+			order: -1;
+		}
+		
 		.tab-content>.tab-pane:not(.active).scaling-tab {
 			display: block;
 			position: absolute;
 			& when (@SourceSansPro = 0) {
-				top: 84px;
+				top: 86px;
 			}
 			& when (@SourceSansPro = 1) {
 				top: 88px;
 			}
-			margin-left: -101px;
+			margin-left: -103px;
 			width: 86px;
 			height: 30.39px;
 		}
 		.tab-content>.tab-pane:not(.active).scaling-tab .section-content,.tab-content>.tab-pane:not(.active).scaling-tab [avatar-scaling] {
+			display: grid;
 			width: 86px;
 			height: 30.39px;
 		}
@@ -6230,14 +6257,18 @@
 		}
 		.tab-content>.active.scaling-tab .pill-toggle {
 			position: absolute;
-			left: -168px;
-			top: -72px;
+			left: -170px;
+			top: -70px;
 		}
 		.pinned .tab-content>.active.scaling-tab .pill-toggle {
 			position: fixed;
-			top: 60px;
+			top: 62px;
 			left: unset;
-			margin-left: -116px;
+			margin-left: -118px;
+		}
+		.ropro-changes .pinned .tab-content > .active.scaling-tab .pill-toggle {
+			top: 47px;
+			margin-left: -118px;
 		}
 		.tab-content>.tab-pane:not(.active).scaling-tab .section-content {
 			background: transparent;
@@ -6259,14 +6290,14 @@
 		}
 		.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
 			& when (@SourceSansPro = 0) {
-				top: 112px
+				top: 114px
 			}
 			& when (@SourceSansPro = 1) {
-				top: 116px
+				top: 118px
 			}
 		}
 		.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
-			top: 50px
+			top: 47px;
 		}
 		.ropro-changes .tab-content>.scaling-tab, .ropro-changes .tab-content>.scaling-tab .pill-toggle {
 			z-index: 2;
@@ -6276,11 +6307,13 @@
 			.pinned .tab-content>.tab-pane:not(.active).scaling-tab {
 				display: block;
 				position: absolute;
-				top: 84px;
-				margin-left: -101px;
+				top: 78px;
+				margin-left: -103px;
 			}
 			.ropro-changes .pinned .tab-content>.active.scaling-tab .pill-toggle {
-				left: unset
+				top: -70px;
+				left: unset;
+				margin-left: -118px;
 			}
 			.pinned .tab-content>.active.scaling-tab .pill-toggle {
 				position: absolute;
@@ -6293,21 +6326,47 @@
 		}
 		@media (max-width: 767px) {
 			.tab-content>.tab-pane:not(.active).scaling-tab {
-				top: 76px;
+				top: 78px;
+			}
+			.pinned .tab-content > .active.scaling-tab .pill-toggle {
+				left: 15px;
+				top: -70px;
 			}
 			.ropro-changes .tab-content>.tab-pane:not(.active).scaling-tab {
-				top: 104px;
+				top: 106px;
 			}
 			.ropro-changes .pinned .tab-content>.tab-pane:not(.active).scaling-tab {
-				top: 104px;
+				top: 106px;
 			}
 		}
 		@media (max-width: 543px) {
 			.tab-content>.active.scaling-tab .pill-toggle, .ropro-changes .tab-content>.active.scaling-tab .pill-toggle {
-				top: -67px;
+				top: -65px;
+			}
+			.pinned .tab-content > .active.scaling-tab .pill-toggle {
+				top: -65px;
+			}
+			.ropro-changes .pinned .tab-content>.active.scaling-tab .pill-toggle {
+				top: -65px;
 			}
 		}
-		& when not (@AvatarEditor = 2018L) {
+		& when (@AvatarEditorPreCtgReorg = 1) {
+			.tab-horizontal-submenu:has(.submenu-row:nth-child(5)) .submenu-row:nth-child(-n+4) {
+				display: none;
+			}
+			.tab-horizontal-submenu:has(li:nth-child(12)) li:first-child {
+				display: none;
+			}
+			.rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(4):hover) ~ .tab-horizontal-submenu .submenu-row:last-child, .rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(4).active) ~ .tab-horizontal-submenu .submenu-row:last-child {
+				padding-top: 0;
+			}
+		}
+		& when not (@AvatarEditor = 2019M) {
+			.rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(7):hover) ~ .tab-horizontal-submenu li:first-child, .rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(7).active) ~ .tab-horizontal-submenu li:first-child {
+				display: none;
+			}
+		}
+		& when not ((@AvatarEditor = 2018L) or (@AvatarEditor = 2019M)) {
 			& when (@AvatarEditorCostumesAlt = 1) {
 				.rbx-tab.six-tab:nth-child(3) .text-lead {
 					font-size: 0;
@@ -6473,42 +6532,6 @@
 				width: 277px;
 				padding: 0 15px 15px
 			}
-			.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:before {
-				content: ' Scaling ';
-				& when (@SourceSansPro = 0) {
-					font-size: 20px;
-					font-weight: 700;
-				}
-				& when (@SourceSansPro = 1) {
-					font-size: 21px;
-					font-weight: 400
-				}
-				padding-top: 15px;
-				padding-bottom: 13px;
-				display: inline-block;
-				cursor: text
-			}
-			.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
-				content: '';
-				top: 19px;
-				& when (@SourceSansPro = 0) {
-					left: 100px;
-				}
-				& when (@SourceSansPro = 1) {
-					left: 85px;
-				}
-				position: absolute;
-				background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
-				background-position: 0 -160px;
-				background-repeat: no-repeat;
-				background-size: 32px auto;
-				width: 16px;
-				height: 16px;
-				display: inline-block;
-				vertical-align: middle;
-				padding: 4px 0 0 6px;
-				cursor: pointer
-			}
 			.left-wrapper .section-content {
 				& when (@AvatarEditor = 2017EM) {
 					& when (@SourceSansPro = 0) {
@@ -6557,7 +6580,7 @@
 						margin-top: 56.59px;
 					}
 				}
-				.left-wrapper .section-content .section-sliders {
+				.left-wrapper .section-content .section-sliders[ng-if="avatarDataModel.isBodyTypeScaleOutOfTab"] {
 					padding: 0;
 					& when (@SourceSansPro = 0) {
 						margin-top: 230.34px;
@@ -6571,31 +6594,6 @@
 			}
 			.scaling-tab.active, .tab-horizontal-submenu:has(li:nth-child(9)) li:nth-child(11) {
 				display: none
-			}
-			
-			@media (max-width: 767px) {
-				.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:before {
-					& when (@SourceSansPro = 0) {
-						font-size: 16px
-					}
-					& when (@SourceSansPro = 1) {
-						font-size: 18px
-					}
-				}
-				.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
-					top: 18px;
-					& when (@SourceSansPro = 0) {
-						left: 85px;
-					}
-					& when (@SourceSansPro = 1) {
-						left: 78px;
-					}
-				}
-			}
-			@media (max-width: 543px) {
-				.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders:after {
-					top: 15px;
-				}
 			}
 		}
 	}
@@ -7186,7 +7184,7 @@
     & when (@SponsorSizing = 1) {
         .rbx-nav-sponsor img {
             width: 155px;
-            height: 46px;
+            height: 46.14px;
             image-rendering: optimizequality;
             image-rendering: -webkit-optimize-contrast;
         }
@@ -9749,8 +9747,18 @@
         }
     }
     
+	& when (@CardStyle = 2019M) and (@SourceSansPro = 1) {
+		.game-card-friend-info .info-avatar {
+			height: 22px;
+		}
+		.game-card-friend-info .info-avatar .avatar {
+			height: 22px;
+			width: 22px;
+		}
+	}
+	
     & when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
-        .game-cards .game-card {
+		.game-cards .game-card {
 			& when (@CardStyle = Pre-2018) {
 				width: 161px;
 				height: 223px;
@@ -12852,15 +12860,12 @@
 		}
 	}
 	/*/== Fixes ==/*/
-	.dark-theme .btn-primary-md:visited {
-		color: #fff;
-	}
 	.gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn {
 		&, &:hover, &:focus, &:active {
 			font-size: 16px
 		}
 	}
-	.rbx-upgrade-now .btn-secondary-md {
+	.rbx-upgrade-now .btn-secondary-md, .btn-primary-md, .btn-secondary-sm {
 		.light-theme &:visited, .light-theme &:link, .dark-theme &:visited, .dark-theme &:link {
 			color: #fff
 		}
@@ -15107,7 +15112,7 @@
 			color: var(--btr-theme-text-secondary);
 		}
 		
-		html #BodyWrapper, html #BodyWrapper #Body, html .light-theme .section-content, html .light-theme .section-content.remove-panel, html .light-theme .dropdown-menu, html .light-theme .open .dropdown-menu, html .light-theme .popover, html .light-theme .modal-dialog .modal-content, html .light-theme .notification-stream-body, .light-theme .item-card-container, .light-theme .item-card-container .item-card-thumb-container, .light-theme .item-card-container .item-card-caption, .btr-catalog.light-theme .btr-item-card-more, .light-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .light-theme .stack .card-list .card-item, .light-theme .voting-panel .users-vote .vote-details .vote-container .vote-mask .segment, .light-theme .rbx-tabs-horizontal .nav-tabs, .light-theme .rbx-tab .rbx-tab-heading, .light-theme .slide-switcher .slide-item-container .slide-item-container-right, .light-theme .premium-container .robux-body .robux-row, .light-theme .messages .messageDivider.message-news, .light-theme .item-details-thumbnail-container .thumbnail-holder, .light-theme .menu-vertical, .light-theme .menu-vertical .menu-option .menu-secondary-option.active, .light-theme .menu-vertical .menu-option .menu-secondary-option:active, .light-theme .profile-accoutrements-container .profile-accoutrements-slider .accoutrement-item a, .light-theme .sg-container, .light-theme .input-field, .light-theme input, .light-theme #sandbox .catalog-tabs, .light-theme .pill-toggle, .light-theme .rbx-tabs-vertical .rbx-tab.active .rbx-tab-heading, .light-theme .rbx-header .navbar-search .navbar-search-option.new-selected, .light-theme .rbx-header .navbar-search .navbar-search-option, .light-theme .rbx-header .navbar-search .navbar-search-option.selected, .light-theme .rbx-header .navbar-search .new-dropdown-menu, .light-theme .content-overflow-toggle .toggle-content, .light-theme .btr-preview-container, .light-theme .game-list-in-dialog, .light-theme .dialogs .popover.bottom.game-list-in-dialog {
+		html #BodyWrapper, html #BodyWrapper #Body, html .light-theme .section-content, html .light-theme .section-content.remove-panel, html .light-theme .dropdown-menu, html .light-theme .open .dropdown-menu, html .light-theme .popover, html .light-theme .modal-dialog .modal-content, html .light-theme .notification-stream-body, .light-theme .item-card-container, .light-theme .item-card-container .item-card-thumb-container, .light-theme .item-card-container .item-card-caption, .btr-catalog.light-theme .btr-item-card-more, .light-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .light-theme .stack .card-list .card-item, .light-theme .voting-panel .users-vote .vote-details .vote-container .vote-mask .segment, .light-theme .rbx-tabs-horizontal .nav-tabs, .light-theme .rbx-tab .rbx-tab-heading, .light-theme .slide-switcher .slide-item-container .slide-item-container-right, .light-theme .premium-container .robux-body .robux-row, .light-theme .messages .messageDivider.message-news, .light-theme .item-details-thumbnail-container .thumbnail-holder, .light-theme .menu-vertical, .light-theme .menu-vertical .menu-option .menu-secondary-option.active, .light-theme .menu-vertical .menu-option .menu-secondary-option:active, .light-theme .profile-accoutrements-container .profile-accoutrements-slider .accoutrement-item a, .light-theme .sg-container, .light-theme .input-field, .light-theme input, .light-theme #sandbox .catalog-tabs, .light-theme .pill-toggle, .light-theme .rbx-tabs-vertical .rbx-tab.active .rbx-tab-heading, .light-theme .rbx-header .navbar-search .navbar-search-option.new-selected, .light-theme .rbx-header .navbar-search .navbar-search-option, .light-theme .rbx-header .navbar-search .navbar-search-option.selected, .light-theme .rbx-header .navbar-search .new-dropdown-menu, .light-theme .content-overflow-toggle .toggle-content, .light-theme .btr-preview-container, .light-theme .game-list-in-dialog, .light-theme .dialogs .popover.bottom.game-list-in-dialog, .light-theme .request-error-page-content .default-error-page {
 			background-color: var(--btr-theme-item);
 		}
 		
