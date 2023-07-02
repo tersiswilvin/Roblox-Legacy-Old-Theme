@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    TersisWilvin
-// @version      1.0
+// @version      1.0.1
 // @description  Restores the missing items back to the Roblox Site.
 // @author       TersisWilvin
 // @match        *.roblox.com/*
@@ -648,7 +648,7 @@ if (Settings.RenamePremiumBtn) {
 }
 if (Settings.RestoreMyFeed) {
     waitForElm(".rbx-left-col .rbx-scrollbar .left-col-list li #nav-group").then(async (hdrSec) => {
-        hdrSec.parentElement.innerHTML = myFeeds()
+        hdrSec.parentElement.outerHTML = myFeeds()
     });
 }
 if (Settings.RestoreHomepage) {
