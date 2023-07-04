@@ -53,7 +53,7 @@ If you don't have stylus already installed, you can get it here for your browser
 
 For a better theme experience, you can try out the [Legacy Site Restoration JS](//raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Experimental/src/JS/LegacySiteRestoration.JS) or the [Icon Replacer JS](https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/JS/IconReplacer.user.JS).
 
-For upcoming future updates and features you can try out the [experimental](//github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/R19OTExperimental.user.css) channel, please note that you're <ins>**not required**</ins> to install this, note that experimental may change periodically and or contain bugs or issues which should be reported using [Issues](#Issues).
+For upcoming future updates and features you can try out the [experimental](//github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css) channel, please note that you're <ins>**not required**</ins> to install this, note that experimental may change periodically and or contain bugs or issues which should be reported using [Issues](#Issues).
 
 ## Issues
 
