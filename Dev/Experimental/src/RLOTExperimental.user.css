@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230628.1.3
+@version      20230705.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -11,7 +11,7 @@
 @preprocessor less
 @var          select   AvatarEditor                "Avatar Editor Style (Experimental)" ["2017EM", "2017M", "2017L","2018L","2019M*","Current"]
 @var          checkbox AvatarEditorAdblocker       "  Adblocker Support ( ! )"          0
-@var          checkbox AvatarEditorPreCtgReorg     "  PreCategory Reorganize"           1
+@var          checkbox AvatarEditorPreCtgReorg     "  PreCategory Reorg"                1
 @var          checkbox AvatarEditorCostumesAlt     "  Costume to Outfits swap"          0
 @var          checkbox AvatarEditorHeightFix       "  Late 2017 Height Fix"             0
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
@@ -5959,9 +5959,14 @@
 				font-weight: 600;
 			}
 		}
-		.item-card-container .item-card-name {
+		.item-card-container .item-card-name, .game-card-container .game-card-name {
 			&, &:hover, &:focus, &:active {
 				font-weight: 500;
+			}
+		}
+		.gotham-font .game-name-title {
+			&:hover, &:focus, &:active {
+				line-height: 22px;
 			}
 		}
 		.gotham-font .small, .gotham-font .small-oneline {
@@ -6049,12 +6054,14 @@
             width: 72px;
         }
 		.game-card-link .friend-activity-label, .game-card-link .native-ad-label {
-			font-size: 12px;
-			font-weight: 400;
-			line-height: 1.866em;
+			&, &:hover, &:focus, &:active {
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 1.866em;
+			}
 		}
 		
-		.gotham-font h1, .gotham-font .h1 {
+		.gotham-font h1, .gotham-font .h1, .gotham-font .font-title {
 			&, &:hover, &:focus, &:active {
 				font-size: 36px;
 				font-weight: 400
@@ -6086,7 +6093,7 @@
 		}
 		
 		@media (max-width: 767px) {
-			.gotham-font h1, .gotham-font .h1 {
+			.gotham-font h1, .gotham-font .h1, .gotham-font .font-title {
 				&, &:hover, &:focus, &:active {
 					font-size:30px
 				}
@@ -6220,19 +6227,6 @@
 			}
 		}
 		
-		.scaling-tab .scaling-info {
-			display: revert;
-			width: max-content;
-			left: -189px;
-			top: 309px;
-			position: relative;
-			padding-left: 15px;
-		}
-		.avatar-type-container {
-			position: relative;
-			order: -1;
-		}
-		
 		.tab-content>.tab-pane:not(.active).scaling-tab {
 			display: block;
 			position: absolute;
@@ -6357,17 +6351,20 @@
 			.tab-horizontal-submenu:has(li:nth-child(12)) li:first-child {
 				display: none;
 			}
-			.rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(4):hover) ~ .tab-horizontal-submenu .submenu-row:last-child, .rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(4).active) ~ .tab-horizontal-submenu .submenu-row:last-child {
+			.tab-horizontal-submenu:has(.submenu-row:nth-child(5)) .submenu-row:last-child {
 				padding-top: 0;
 			}
 		}
 		& when not (@AvatarEditor = 2019M) {
-			.rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(7):hover) ~ .tab-horizontal-submenu li:first-child, .rbx-tabs-horizontal:has(.rbx-tab.six-tab:nth-child(7).active) ~ .tab-horizontal-submenu li:first-child {
+			.tab-horizontal-submenu:has(li:nth-child(8)):not(:has(li:nth-child(9))) li:first-child {
 				display: none;
 			}
 		}
 		& when not ((@AvatarEditor = 2018L) or (@AvatarEditor = 2019M)) {
 			& when (@AvatarEditorCostumesAlt = 1) {
+				#costumes-dropdown .icon-down {
+					display: none;
+				}
 				.rbx-tab.six-tab:nth-child(3) .text-lead {
 					font-size: 0;
 					height: 16px;
@@ -6441,9 +6438,6 @@
 					}
 					cursor: text;
 				}
-				.rbx-tab.six-tab:nth-child(3) .text-lead .icon-down {
-					margin-top: -8px;
-				}
 				.tab-content .tab-content #costumes.tab-pane.active .btn-secondary-xs.btn-float-right {
 					font-size: 0
 				}
@@ -6492,9 +6486,6 @@
 							font-weight: 400;
 						}
 					}
-					.rbx-tab.six-tab:nth-child(3) .text-lead .icon-down {
-						margin-top: -7px
-					}
 				}
 				@media (max-width: 543px) {
 					.rbx-tab.six-tab:nth-child(3) .text-lead {
@@ -6517,6 +6508,190 @@
 				}
 			}
 			
+			& when (@SourceSansPro = 1) {
+				.redraw-avatar .text-link, .scaling-placeholder .text-link {
+					margin: 0;
+					.light-theme & {
+						-webkit-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
+						background-color: #fff;
+						& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
+							-webkit-transition: box-shadow 200ms ease-in-out;
+							-o-transition: box-shadow 200ms ease-in-out;
+							transition: box-shadow 200ms ease-in-out;
+						}
+						border: 1px solid #b8b8b8;
+						color: #191919;
+						cursor: pointer;
+						display: inline-block;
+						font-weight: 500;
+						height: auto;
+						text-align: center;
+						white-space: nowrap;
+						vertical-align: middle;
+						padding: 4px;
+						& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
+							transition: all,0.2s,ease-in-out;
+						}
+						&, &:hover, &:focus, &:active {
+							font-size: 14px;
+						}
+						line-height: 100%;
+						border-radius: 3px;
+						&:focus, &:hover {
+							background-color: #fff;
+							& when (@BoxShadows = 1) {
+								box-shadow: 0 1px 3px rgba(150,150,150,0.74);
+							}
+							border-color: #b8b8b8;
+							color: #191919;
+							cursor: pointer;
+							text-decoration: none;
+						}
+						&.active, &:active {
+							& when (@BoxShadows = 1) {
+								box-shadow: none;
+							}
+							background-color: #fff;
+							color: #191919;
+						}
+						&.disabled, &.disabled.active, &.disabled:active, &.disabled:focus, &.disabled:hover, &[disabled], &[disabled].active, &[disabled]:active, &[disabled]:focus, &[disabled]:hover {
+							& when (@LegacyNextStyleGuideButtons = 0) {
+								opacity: .5;
+							}
+							& when (@LegacyNextStyleGuideButtons = 1) {
+								opacity: 1;
+							}
+							background-color: #fff;
+							border-color: #b8b8b8;
+							color: #b8b8b8;
+							& when (@LegacyNextStyleGuideButtons = 0) {
+								cursor: not-allowed;
+								pointer-events: none;
+							}
+							& when (@LegacyNextStyleGuideButtons = 1) {
+								cursor: default;
+								pointer-events: all;
+							}
+						}
+					}
+					.light-theme .touch &:not([disabled]):focus, .touch &:not([disabled]):hover, .touch &:not([disabled]):visited {
+						color: #191919;
+						background-color: #fff;
+						border-color: #b8b8b8;
+					}
+					.light-theme .touch &:not([disabled]).active, .touch &:not([disabled]):active {
+						color: #191919;
+							& when (@LegacyNextStyleGuideButtons = 0) {
+							background-color: #f2f2f2;
+							border-color: #b8b8b8;
+						}
+						& when (@LegacyNextStyleGuideButtons = 1) {
+							background-color: #e6e6e6;
+							border-color: #999;
+						}
+					}
+					.dark-theme & {
+						-webkit-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
+						background-color: #000;
+						& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
+							-webkit-transition: box-shadow 200ms ease-in-out;
+							-o-transition: box-shadow 200ms ease-in-out;
+							transition: box-shadow 200ms ease-in-out;
+						}
+						border: 1px solid #474747;
+						color: #e6e6e6;
+						cursor: pointer;
+						display: inline-block;
+						font-weight: 500;
+						height: auto;
+						text-align: center;
+						white-space: nowrap;
+						vertical-align: middle;
+						padding: 4px;
+						& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
+							transition: all,0.2s,ease-in-out;
+						}
+						&, &:hover, &:focus, &:active {
+							font-size: 14px;
+						}
+						line-height: 100%;
+						border-radius: 3px;
+						&:focus, &:hover {
+							background-color: #000;
+							& when (@BoxShadows = 1) {
+								box-shadow: 0 1px 3px rgba(105,105,105,0.74);
+							}
+							border-color: #474747;
+							color: #e6e6e6;
+							cursor: pointer;
+							text-decoration: none;
+						}
+						&.active, &:active {
+							& when (@BoxShadows = 1) {
+								box-shadow: none;
+							}
+							background-color: #000;
+							color: #e6e6e6;
+						}
+						&.disabled, &.disabled.active, &.disabled:active, &.disabled:focus, &.disabled:hover, &[disabled], &[disabled].active, &[disabled]:active, &[disabled]:focus, &[disabled]:hover {
+							& when (@LegacyNextStyleGuideButtons = 0) {
+								opacity: .5;
+							}
+							& when (@LegacyNextStyleGuideButtons = 1) {
+								opacity: 1;
+							}
+							background-color: #000;
+							border-color: #474747;
+							color: #e6e6e6;
+							& when (@LegacyNextStyleGuideButtons = 0) {
+								cursor: not-allowed;
+								pointer-events: none;
+							}
+							& when (@LegacyNextStyleGuideButtons = 1) {
+								cursor: default;
+								pointer-events: all;
+							}
+						}
+					}
+					.dark-theme .touch &:not([disabled]):focus, .dark-theme .touch &:not([disabled]):hover, .dark-theme .touch &:not([disabled]):visited {
+						color: #e6e6e6;
+						background-color: #000;
+						border-color: #474747;
+					}
+
+					.dark-theme .touch &:not([disabled]).active, .dark-theme .touch &:not([disabled]):active {
+						color: #e6e6e6;
+						& when (@LegacyNextStyleGuideButtons = 0) {
+							background-color: #0d0d0d;
+							border-color: #474747;
+						}
+						& when (@LegacyNextStyleGuideButtons = 1) {
+							background-color: #191919;
+							border-color: #666;
+						}
+					}
+				}
+			}
+			
+			.scaling-tab .scaling-info {
+				display: revert;
+				width: max-content;
+				left: -189px;
+				top: 306px;
+				position: relative;
+				padding-left: 15px;
+			}
+			.avatar-type-container {
+				position: relative;
+				order: -1;
+			}
+			
 			.scaling-tab .section-sliders {
 				margin-bottom: -13px;
 				margin-left: 0;
@@ -6527,8 +6702,8 @@
 			}
 			.tab-content > .tab-pane:not(.active).scaling-tab .section-sliders {
 				position: relative;
-				top: 308px;
-				left: -191px;
+				top: 306px;
+				left: -189px;
 				width: 277px;
 				padding: 0 15px 15px
 			}
@@ -9580,6 +9755,30 @@
 			height: auto;
 		}
 	}
+	
+	/*/ Revert the recent changes for friend activity and native ads. /*/
+	.game-card .game-card-container .game-card-link .game-card-info, .game-card .game-card-container .game-card-link .game-card-native-ad, .game-carousel .game-card-container .game-card-link .game-card-info, .game-carousel .game-card-container .game-card-link .game-card-native-ad, .game-grid .game-card-container .game-card-link .game-card-info, .game-grid .game-card-container .game-card-link .game-card-native-ad {
+		position: absolute;
+		margin: 0 6px;
+	}
+	.game-grid .game-card-container .game-card-link .game-card-friend-activity, .game-grid .game-card-container .game-card-link .game-card-native-ad, .game-carousel .game-card-container .game-card-link .game-card-info[data-testid="game-tile-stats-friend-activity"] {
+		margin: 0
+	}
+	.game-card .game-card-container .game-card-link .game-card-native-ad, .game-carousel .game-card-container .game-card-link .game-card-native-ad, .game-grid .game-card-container .game-card-link .game-card-native-ad, .game-carousel .game-card-container .game-card-link .game-card-info[data-testid="game-tile-stats-friend-activity"] {
+		bottom: 0;
+	}
+	.game-card-info[data-testid="game-tile-stats-friend-activity"] {
+		background-color: #00a2ff;
+		text-align: center;
+	}
+	.game-card-info[data-testid="game-tile-stats-friend-activity"] .info-label {
+		font-size: 10px;
+		font-weight: 500;
+		line-height: 2.24em;
+		color: #fff;
+		display: block;
+	}
+	/*/ end of changes /*/
 	
     .game-grid {
         display: block;
@@ -13016,6 +13215,18 @@
         .game-dev-store, .item-cards-stackable, .inbox-buttons .roblox-messages-btns {
             overflow: unset;
         }
+		
+		.rbx-tabs-horizontal-six-column .nav-tabs {
+			border-bottom: 1px solid #ddd;
+		}
+		.light-theme .tab-horizontal-submenu {
+			box-shadow: 0 1px 3px hsl(0deg 0% 59% / 74%);
+			z-index: 2;
+		}
+		.dark-theme .tab-horizontal-submenu {
+			box-shadow: 0 1px 3px hsl(0deg 0% 41% / 74%);
+			z-index: 2;
+		}
 		
 		.roblox-messages-container.rbx-tabs-horizontal .nav-tabs {
 			margin-bottom: -9px;
