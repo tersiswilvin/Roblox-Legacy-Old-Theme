@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230705.1.3
+@version      20230708.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9761,15 +9761,23 @@
 		position: absolute;
 		margin: 0 6px;
 	}
-	.game-grid .game-card-container .game-card-link .game-card-friend-activity, .game-grid .game-card-container .game-card-link .game-card-native-ad, .game-carousel .game-card-container .game-card-link .game-card-info[data-testid="game-tile-stats-friend-activity"] {
+	.game-card-container .game-card-link .game-card-friend-activity, .game-card-container .game-card-link .game-card-native-ad, .game-card-container .game-card-link .game-card-info[data-testid="game-tile-stats-friend-activity"] {
 		margin: 0
 	}
-	.game-card .game-card-container .game-card-link .game-card-native-ad, .game-carousel .game-card-container .game-card-link .game-card-native-ad, .game-grid .game-card-container .game-card-link .game-card-native-ad, .game-carousel .game-card-container .game-card-link .game-card-info[data-testid="game-tile-stats-friend-activity"] {
+	.game-card-container .game-card-link .game-card-native-ad, .game-card-container .game-card-link .game-card-native-ad, .game-card-container .game-card-link .game-card-native-ad, .game-card-container .game-card-link .game-card-info[data-testid="game-tile-stats-friend-activity"] {
 		bottom: 0;
 	}
 	.game-card-info[data-testid="game-tile-stats-friend-activity"] {
 		background-color: #00a2ff;
 		text-align: center;
+		.grid-item-container & {
+			& when (@CardStyle = Pre-2018) {
+				width: 93%;
+			}
+			& when not (@CardStyle = Pre-2018) {
+				width: 91.5%;
+			}
+		}
 	}
 	.game-card-info[data-testid="game-tile-stats-friend-activity"] .info-label {
 		font-size: 10px;
