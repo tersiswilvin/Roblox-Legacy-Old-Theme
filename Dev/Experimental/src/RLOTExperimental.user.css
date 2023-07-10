@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230708.1.3
+@version      20230710.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9768,9 +9768,22 @@
 		bottom: 0;
 	}
 	.game-card-info[data-testid="game-tile-stats-friend-activity"] {
-		background-color: #00a2ff;
+		.light-theme & {
+			background-color: #00a2ff;
+			color: #fff;
+		}
+        .dark-theme & {
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #004266;
+				color: #000;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #00a2ff;
+				color: #fff;
+			}
+		}
 		text-align: center;
-		.grid-item-container & {
+		.game-grid .grid-item-container & {
 			& when (@CardStyle = Pre-2018) {
 				width: 93%;
 			}
@@ -9783,7 +9796,17 @@
 		font-size: 10px;
 		font-weight: 500;
 		line-height: 2.24em;
-		color: #fff;
+		.light-theme & {
+			color: #fff;
+		}
+        .dark-theme & {
+			& when (@BrighterDarkThemeColors = 0) {
+				color: #000;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				color: #fff;
+			}
+		}
 		display: block;
 	}
 	/*/ end of changes /*/
@@ -9842,13 +9865,19 @@
     
     .featured-grid-item-container:before {
         content: 'Featured Game';
-        & when (@BrighterDarkThemeColors = 0) {
-			background-color: #004266;
-			color: #000;
-		}
-		& when (@BrighterDarkThemeColors = 1) {
+		.light-theme & {
 			background-color: #00a2ff;
 			color: #fff;
+		}
+        .dark-theme & {
+			& when (@BrighterDarkThemeColors = 0) {
+				background-color: #004266;
+				color: #000;
+			}
+			& when (@BrighterDarkThemeColors = 1) {
+				background-color: #00a2ff;
+				color: #fff;
+			}
 		}
         position: absolute;
         bottom: 0;
@@ -14765,22 +14794,29 @@
     }
     */
     
-	& when (@LegacyBTRGameHeaders = 1) {
+	& when (@LegacyBTRGameHeaders =1) {
 		.btr-profile .btr-games-list .btr-game-button {
 			background: #fff;
-			background: -webkit-linear-gradient(top,#fff 0,#f3f3f3 50%,#ededed 51%,#fff 100%);
-			background: linear-gradient(to bottom,#fff 0,#f3f3f3 50%,#ededed 51%,#fff 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0);
+			background: -webkit-linear-gradient(top, #fff 0, #f3f3f3 50%, #ededed 51%, #fff 100%);
+			background: linear-gradient(to bottom, #fff 0, #f3f3f3 50%, #ededed 51%, #fff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
 			border: 1px solid #ccc;
-			& when (@SourceSansPro = 0) {
-				font-size: 14px;
+			& when (@SourceSansPro =0) {
+				font-size: 12px;
+				padding: 6px 0 2px 8px;
 			}
-			& when (@SourceSansPro = 1) {
-				font-family: 'Source Sans Pro',Arial,Helvetica,sans-serif;
+
+			& when (@SourceSansPro =1) {
+				font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 				font-size: 15px;
+				padding: 2px 0 3px 8px;
 			}
-			padding: 2px 0 3px 8px;
-			color: #343434;
+			& when (@LegacyNextStyleGuideButtons = 0) {
+				color: #191919;
+			}
+			& when (@LegacyNextStyleGuideButtons = 1) {
+				color: #343434;
+			}
 			overflow: hidden;
 			font-weight: bold;
 			cursor: pointer;
@@ -14788,46 +14824,49 @@
 			-moz-user-select: text;
 			-webkit-user-select: text;
 			-ms-user-select: text;
-		}
-		.btr-profile .btr-games-list .btr-game-button:hover {
-			background: #fff;
-			background: -webkit-linear-gradient(top,#fff 0,#edf6f3 49%,#f3f3f3 50%,#dbe6ed 51%,#fff 100%);
-			background: linear-gradient(to bottom,#fff 0,#edf6f3 49%,#f3f3f3 50%,#dbe6ed 51%,#fff 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0);
-			box-shadow: none;
-		}
-		
-		.dark-theme.btr-profile .btr-games-list .btr-game-button {
-			background: #000;
-			background: -webkit-linear-gradient(top,#000 0,#262626 50%,#151515 51%,#000 100%);
-			background: linear-gradient(to bottom,#000 0,#262626 50%,#151515 51%,#000 100%);
-			border-color: #333;
-			color: #CBCBCB;
-		}
-		.dark-theme.btr-profile .btr-games-list .btr-game-button:hover {
-			background: #fff;
-			background: -webkit-linear-gradient(top,#000 0,#333 49%,#222 50%,#1C1D1E 51%,#000 100%);
-			background: linear-gradient(to bottom,#000 0,#333 49%,#222 50%,#1C1D1E 51%,#000 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ffffff',GradientType=0);
-			box-shadow: none;
-		}
-		
-		.btr-profile .btr-games-list .btr-game-button:before {
-			content: "▶";
-			display: inline-block;
-			padding: 0 4px 0 6px;
-			margin-left: -7px;
-			-webkit-transition: all .16s ease-in-out;
-			transition: all .16s ease-in-out;
-			user-select: text;
-			-moz-user-select: text;
-			-webkit-user-select: text;
-			-ms-user-select: text;
-			& when (@SourceSansPro = 1) {
-				height: 21.41px;
+			&:before {
+				content: "▶";
+				display: inline-block;
+				padding: 0 4px 0 6px;
+				margin-left: -7px;
+				-webkit-transition: all .16s ease-in-out;
+				transition: all .16s ease-in-out;
+				user-select: text;
+				-moz-user-select: text;
+				-webkit-user-select: text;
+				-ms-user-select: text;
+
+				& when (@SourceSansPro =1) {
+					height: 21.41px;
+				}
+			}
+			&:hover {
+				background: #fff;
+				background: -webkit-linear-gradient(top, #fff 0, #edf6f3 49%, #f3f3f3 50%, #dbe6ed 51%, #fff 100%);
+				background: linear-gradient(to bottom, #fff 0, #edf6f3 49%, #f3f3f3 50%, #dbe6ed 51%, #fff 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+				box-shadow: none;
+			}
+			.dark-theme& {
+				background: #000;
+				background: -webkit-linear-gradient(top, #000 0, #262626 50%, #151515 51%, #000 100%);
+				background: linear-gradient(to bottom, #000 0, #262626 50%, #151515 51%, #000 100%);
+				border-color: #333;
+				& when (@LegacyNextStyleGuideButtons = 0) {
+					color: #e6e6e6;
+				}
+				& when (@LegacyNextStyleGuideButtons = 1) {
+					color: #CBCBCB;
+				}
+				&:hover {
+					background: #fff;
+					background: -webkit-linear-gradient(top, #000 0, #333 49%, #222 50%, #1C1D1E 51%, #000 100%);
+					background: linear-gradient(to bottom, #000 0, #333 49%, #222 50%, #1C1D1E 51%, #000 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+					box-shadow: none;
+				}
 			}
 		}
-		
 		.btr-game.visible.selected .btr-game-button:before {
 			-webkit-transform: rotate(90deg);
 			-ms-transform: rotate(90deg);
