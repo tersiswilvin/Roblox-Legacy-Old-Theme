@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    TersisWilvin
-// @version      1.0.1
-// @description  Restores the missing items back to the Roblox Site.
+// @version      1.0.2
+// @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com/*
 // @icon         https://images.rbxcdn.com/23421382939a9f4ae8bbe60dbe2a3e7e.ico.gzip
@@ -16,6 +16,7 @@ document.body.classList.add("LSRJSActive")
 
 var Settings = {
     emptyResponse: true,
+    debugMode: false,
     CustomEvents: false,
     homeGreeting: true,
     RenamePremiumBtn: true,
@@ -24,27 +25,44 @@ var Settings = {
     modernHTMLFormat: false,
     RestoreMyFeed: true,
     ORHThemeCompatible: false, // if true forces the JS to use aubymori's home header version for theme compatibility.
+    displaynames: false,
     isMembership: false,
     MembershipType: "obc", // bc, tbc, obc, premium
 };
 
-var userData, userID;
+var userData, userAvatarData, userName, userDisplayName, userAvatar = null;
+var userID = (Settings.debugMode) && 1 || null;
 
 (function() {
 
     'use strict';
 
-    GM_xmlhttpRequest({
-        method: "GET",
-        url: "https://users.roblox.com/v1/users/authenticated",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        onload: function(response) {
-            userData = JSON.parse(response.responseText);
-            userID = userData.id;
-        },
-    });
+    if (Settings.debugMode) {
+        userID = 1;
+        userName = "Roblox";
+        userDisplayName = "Roblox";
+    } else {
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: "https://users.roblox.com/v1/users/authenticated",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            onload: function(response) {
+                userData = JSON.parse(response.responseText);
+                userID = userData.id;
+                userName = userData.name;
+                userDisplayName = userData.displayName;
+            },
+            onerror: function(error) {
+                // Return default values if an error occured and print if debugging is enabled.
+                userData = null;
+                userID = 1;
+                userName = "Roblox";
+                userDisplayName = "Roblox";
+            }
+        });
+    }
     GM_xmlhttpRequest({
         method: "GET",
         url: "https://premiumfeatures.roblox.com/v1/users/"+userID+"/validate-membership",
@@ -73,6 +91,7 @@ function premiumLabel() {
 }
 
 function getBC() {
+    // lazy way to do this
     if (Settings.isMembership) {
         if (Settings.emptyResponse) {
             return ''
@@ -84,20 +103,20 @@ function getBC() {
     }
 }
 
-function homeheader(link, avatar, name) {
+function homeheader(avatar, name) {
     if (Settings.modernHTMLFormat) {
         if (Settings.ORHThemeCompatible) {
             return `
             <div id="home-header" class="col-xs-12 home-header-container">
                 <div class="home-header">
-                    <a href="${ link ?? "/users/1/profile" }" class="user-avatar-container avatar avatar-headshot-lg">
+                    <a href="https://www.roblox.com/users/${ userID }/profile" class="user-avatar-container avatar avatar-headshot-lg">
                         <span class="thumbnail-2d-container avatar-card-image">
-                            <img src="${ avatar ?? "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" }" alt="" class="avatar-card-image">
+                            <img src="${ avatar }" alt="" class="avatar-card-image">
                          </span>
                      </a>
                      <div class="user-info-container">
                          <h1 class="user-name-container">
-                             <a href="${ link ?? "/users/1/profile" }">${ name ?? "Roblox" }</a>
+                             <a href="https://www.roblox.com/users/${ userID }/profile">${ name }</a>
                          </h1>
                      </div>
                  </div>
@@ -107,14 +126,14 @@ function homeheader(link, avatar, name) {
             return `
             <div id="home-header" class="col-xs-12 home-header-container">
                 <div class="home-header">
-                    <a href="${ link ?? "/users/1/profile" }" class="user-avatar-container avatar avatar-headshot-lg">
+                    <a href="https://www.roblox.com/users/${ userID }/profile" class="user-avatar-container avatar avatar-headshot-lg">
                         <span class="thumbnail-2d-container avatar-card-image">
-                            <img src="${ avatar ?? "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" }" alt="" class="avatar-card-image">
+                            <img src="${ avatar }" alt="" class="avatar-card-image">
                         </span>
                     </a>
                     <div class="user-info-container">
                         <h1 class="user-name-container">
-                            <a href="${ link ?? "/users/1/profile" }">${ name ?? "Roblox" }</a>
+                            <a href="https://www.roblox.com/users/${ userID }/profile">${ name }</a>
                         </h1>
                     </div>
                 </div>
@@ -124,12 +143,12 @@ function homeheader(link, avatar, name) {
     } else {
         return `
         <div class="col-xs-12 home-header">
-            <a href="${ link ?? "/users/1/profile" }" class="avatar avatar-headshot-lg">
-                <img alt="avatar" src="${ avatar ?? "" }" id="home-avatar-thumb" class="avatar-card-image">
+            <a href="https://www.roblox.com/users/${ userID }/profile" class="avatar avatar-headshot-lg">
+                <img alt="avatar" src="${ avatar }" id="home-avatar-thumb" class="avatar-card-image">
             </a>
             <div class="home-header-content${getBC()}">
                 <h1>
-                    <a href="${ link ?? "" }"> ${ name ?? "" } </a>
+                    <a href="https://www.roblox.com/users/${ userID }/profile"> ${ name } </a>
                 </h1>
                 ${ (Settings.isMembership && premiumLabel()) || "" }
             </div>
@@ -653,16 +672,31 @@ if (Settings.RestoreMyFeed) {
 }
 if (Settings.RestoreHomepage) {
     document.body.classList.add("RestoreHomepage")
-    function timeout() {
-        waitForElm("#HomeContainer .section:first-child").then(async (hdrSec) => {
-            let sidebarUser = await waitForElm("#navigation.rbx-left-col > ul > li > a") ?? null;
-            let link = sidebarUser.getAttribute("href") ?? null;
-            let avatar = (await waitForElm("#navigation.rbx-left-col > ul > li > a img")).getAttribute("src") ?? null;
-            let name = (await waitForElm("#navigation.rbx-left-col > ul > li > a .font-header-2")).innerText ?? null;
-            if (Settings.homeGreeting) name = "Hello, " + name + "!";
-            hdrSec.outerHTML = homeheader(link, avatar, name)
+    function GMtimeout() {
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds="+userID+"&size=150x150&format=Png",
+            onload: function(response) {
+                var JSONdata = JSON.parse(response.responseText);
+                if (JSONdata.data && JSONdata.data.length > 0) {
+                    userAvatarData = JSONdata.data[0];
+                    userAvatar = userAvatarData.imageUrl;
+                }
+            },
         });
     }
-
-    setTimeout(timeout, 600)
+    function hometimeout() {
+        waitForElm("#HomeContainer .section:first-child").then(async (hdrSec) => {
+            if (Settings.homeGreeting) {
+                if (Settings.displaynames) {
+                    userDisplayName = "Hello, " + userDisplayName + "!"
+                } else {
+                    userName = "Hello, " + userName + "!"
+                }
+            }
+            hdrSec.outerHTML = homeheader(userAvatar, userName)
+        });
+    }
+    setTimeout(GMtimeout, 500)
+    setTimeout(hometimeout, 1000)
 }
