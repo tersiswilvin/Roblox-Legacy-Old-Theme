@@ -49,12 +49,12 @@ var userData = {
 };
 
 var Settings = {
-    AddJSClasses: false, /*/ Adds classes for options for those working with themes or extentions. /*/
-    debugMode: true,
+    AddJSClasses: true, /*/ Adds classes for options for those working with themes or extentions. /*/
+    debugMode: false,
     demoMode: false,
     homeGreeting: true,
-    homeFormat: "2022", /*/ {"2018", "2020", "2022"} /*/
-    MembershipType: "Premium", /*/ 'Default/Legacy Types' > {"BC", "TBC", "OBC"}, 'Extra/Modern Types' > {"Premium"} /*/
+    homeFormat: "2018", /*/ {"2018", "2020", "2022"} /*/
+    MembershipType: "OBC", /*/ 'Default/Legacy Types' > {"BC", "TBC", "OBC"}, 'Extra/Modern Types' > {"Premium"} /*/
     ORHCompatible: false, // if true will use aubymori Old Roblox Header for legacy theme compatibility, requires homeFormat to be 2020.
     useCustomEvents: true,
     useDisplayNames: false,
