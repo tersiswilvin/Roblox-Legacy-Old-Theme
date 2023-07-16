@@ -734,7 +734,7 @@ if (Settings.RestoreEvents) {
             SponsorTemplate(LeftColList, CustomEvents.Event2Link, CustomEvents.Event2Title, CustomEvents.Event2Source, CustomEvents.Event1 && true || false)
         }
         if (CustomEvents.Event3) {
-            SponsorTemplate(LeftColList, CustomEvents.Event3Link, CustomEvents.Event3Title, CustomEvents.Event3Source, CustomEvents.Event2 && true || false)
+            SponsorTemplate(LeftColList, CustomEvents.Event3Link, CustomEvents.Event3Title, CustomEvents.Event3Source, (CustomEvents.Event1 || CustomEvents.Event2) && true || false)
         }
     }
 }
