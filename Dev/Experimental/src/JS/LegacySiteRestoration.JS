@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.1.2
+// @version      1.1.3
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com/*
 // @icon         https://images.rbxcdn.com/23421382939a9f4ae8bbe60dbe2a3e7e.ico.gzip
 // @grant        GM_xmlhttpRequest
+// @run-at       document-end
 // ==/UserScript==
 
 /*/== Variables ==/*/
@@ -891,12 +892,12 @@ if (Settings.RestoreHomePage) {
     Style.innerHTML = GetHeaderStyle()
     document.getElementsByTagName("head")[0].appendChild(Style);
     const HomeContainer = document.getElementById('HomeContainer');
-    const HomeContainerFS = HomeContainer.querySelector('.section:first-child');
+    const HomeContainerFirstSection = HomeContainer.querySelector('.section:first-child');
     const homeheader = document.createElement('div');
+    HomeContainer.insertBefore(homeheader, HomeContainerFirstSection);
+    HomeContainer.removeChild(HomeContainerFirstSection);
     var homeheaderalt, headeravatarframe, headerloaderavatarthumb, headeravatarthumb, homeuserinfocontainer, homeheadercontent, homeheaderloadercontenth1, homeheadercontenth1, homeheaderloadercontentlink, homeheadercontentlink, usericoncontainer, iconcontainerlabel, iconcontainerextralabel;
     var PresenceDiv, PresenceSpan, PresenceStatus = null;
-    HomeContainer.insertBefore(homeheader, HomeContainerFS);
-    HomeContainer.removeChild(HomeContainerFS);
     function GetMembership(parentElement) {
         if (Settings.homeFormat === "2021" && Settings.homeFormat === "2022") {
             usericoncontainer = document.createElement('div');
