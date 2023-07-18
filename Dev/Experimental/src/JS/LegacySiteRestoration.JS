@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.1.0
+// @version      1.1.1
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com/*
@@ -38,26 +38,42 @@ var Data = {
 }
 
 var userData = {
-    avatardataP1: '',
-    avatardataP2: '',
-    data: '',
-    displayName: '',
-    id: 0,
-    imageUrl: '',
-    name: '',
-    hasMembership: '',
-};
+    avatardataP1: null,
+    avatardataP2: null,
+    data: null,
+    displayName: null,
+    hasMembership: null,
+    id: '{id}',
+    imageUrl: null,
+    name: null,
+    userPresence: {
+        P1: false,
+        P2: false,
+        Presence: false,
+        gameId: null,
+        gameName: null,
+        invisibleModeExpiry: null,
+        lastLocation: 'string',
+        lastOnline: null,
+        placeId: 0,
+        rootPlaceId: 0,
+        userPresenceType: 0,
+        userLastPresenceType: 0,
+        universeId: 0,
+    }
+}
 
 var Settings = {
     AddJSClasses: true, /*/ Adds classes for options for those working with themes or extentions. /*/
-    debugMode: false,
+    debugMode: true,
     demoMode: false,
-    homeGreeting: true,
-    homeFormat: "2018", /*/ {"2018", "2020", "2022"} /*/
+    homeGreeting: true, /*/ Starting 2020, the home greeting was removed. /*/
+    homeFormat: "2017", /*/ {"2017", "2020", "2021", "2022"} /*/
+    homeavatarPresence: false,
     MembershipType: "OBC", /*/ 'Default/Legacy Types' > {"BC", "TBC", "OBC"}, 'Extra/Modern Types' > {"Premium"} /*/
-    ORHCompatible: false, // if true will use aubymori Old Roblox Header for legacy theme compatibility, requires homeFormat to be 2020.
+    ORHCompatible: false, /*/ if true will use aubymori Old Roblox Header for legacy theme compatibility, requires homeFormat to be 2021. /*/
     useCustomEvents: true,
-    useDisplayNames: false,
+    useDisplayNames: false, /*/ Started being used around Early to Mid 2021. /*/
     RestoreEvents: true,
     RestoreHomePage: true,
     RestoreMyFeed: true,
@@ -67,7 +83,7 @@ var Settings = {
 /*/== Functions ==/*/
 
 function GetHeaderStyle() {
-    if (Settings.homeFormat === "2018") {
+    if (Settings.homeFormat === "2017") {
         return `
 .home-container {
 	float: left;
@@ -197,6 +213,130 @@ function GetHeaderStyle() {
 }
         `
     } else if (Settings.homeFormat === "2020") {
+        return `
+.home-header {
+    margin-bottom: 12px;
+}
+
+.home-header:before,.home-header:after {
+    content: " ";
+    display: table;
+}
+
+.home-header:after {
+    clear: both;
+}
+
+.home-header .avatar,.home-header .home-header-content {
+    float: left;
+}
+
+.home-header .avatar {
+    margin-right: 24px;
+}
+
+.home-header-content {
+    width: 75%;
+    width: calc(100% - 180px - 36px);
+    position: relative;
+}
+
+@media(max-width: 991px) {
+    .home-header-content {
+        padding:0 15px;
+    }
+}
+
+.home-header-content h1 {
+    margin: 36px 0 12px;
+}
+
+.home-header-content h1 .icon-premium-medium {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.home-header-content h1 .icon-premium-small {
+    display: none;
+}
+
+@media(max-width: 991px) {
+    .home-header .avatar {
+        height:120px;
+        width: 120px;
+    }
+
+    .home-header .avatar img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .home-header-content {
+        width: 75%;
+        width: calc(100% - 120px - 36px);
+    }
+
+    .home-header-content h1 {
+        margin: 12px 0 6px;
+    }
+
+    .home-header-content h1 .icon-premium-medium {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .home-header-content h1 .icon-premium-small {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .home-header .avatar {
+        display:none;
+    }
+
+    .home-header-content {
+        width: 100%;
+    }
+
+    .home-header-content:before,.home-header-content:after {
+        content: " ";
+        display: table;
+    }
+
+    .home-header-content:after {
+        clear: both;
+    }
+
+    .home-header-content h1,.home-header-content span[class^="icon"] {
+        margin: 12px 0;
+    }
+
+    .home-header-content h1 {
+        max-width: 80%;
+        max-width: calc(100% - 52px - 12px);
+    }
+
+    .home-header-content h1 .icon-premium-medium {
+        display: none;
+    }
+
+    .home-header-content h1 .icon-premium-small {
+        display: inline-block;
+    }
+}
+
+@media(max-width: 543px) {
+    .home-header-content {
+        width:100%;
+    }
+
+    .home-header-content h1,.home-header-content span[class^="icon"] {
+        margin: 8px 0;
+    }
+}
+        `
+    } else if (Settings.homeFormat === "2021") {
         if (Settings.ORHCompatible) {
             return `
 .home-header {
@@ -669,10 +809,10 @@ function GetHeaderStyle() {
 
 /*/== RunTime ==/*/
 
-if (Settings.MembershipType === "Premium" && Settings.homeFormat === "2018") {
+if (Settings.MembershipType === "Premium" && Settings.homeFormat === "2017") {
     Settings.homeFormat = "2020"
-} else if (Settings.MembershipType !== "Premium" && Settings.homeFormat !== "2018") {
-    Settings.homeFormat = "2018"
+} else if (Settings.MembershipType !== "Premium" && Settings.homeFormat !== "2017") {
+    Settings.homeFormat = "2017"
 }
 
 if (Settings.RestoreMyFeed) {
@@ -756,48 +896,84 @@ if (Settings.RestoreHomePage) {
     var homeheaderalt, headeravatarframe, headerloaderavatarthumb, headeravatarthumb, homeuserinfocontainer, homeheadercontent, homeheaderloadercontenth1, homeheadercontenth1, homeheaderloadercontentlink, homeheadercontentlink, usericoncontainer, iconcontainerlabel, iconcontainerextralabel;
     HomeContainer.insertBefore(homeheader, HomeContainerFS);
     HomeContainer.removeChild(HomeContainerFS);
-    function GetMembership(prodparent) {
-        usericoncontainer = document.createElement('div');
-        usericoncontainer.classList.add("user-icon-container");
-        if (Settings.homeFormat === "2018") {
-            prodparent.appendChild(usericoncontainer);
-        } else {
-            prodparent.parentNode.insertBefore(usericoncontainer, prodparent)
+    function GetMembership(parentElement) {
+        if (Settings.homeFormat === "2021" && Settings.homeFormat === "2022") {
+            usericoncontainer = document.createElement('div');
+            usericoncontainer.classList.add("user-icon-container");
+            parentElement.parentNode.insertBefore(usericoncontainer, parentElement)
         }
         switch(Settings.MembershipType) {
             case "BC":
                 iconcontainerlabel = document.createElement('span');
                 iconcontainerlabel.classList.add("icon-bc");
-                usericoncontainer.appendChild(iconcontainerlabel);
+                parentElement.appendChild(iconcontainerlabel);
                 break;
             case "TBC":
                 iconcontainerlabel = document.createElement('span');
                 iconcontainerlabel.classList.add("icon-tbc");
-                usericoncontainer.appendChild(iconcontainerlabel);
+                parentElement.appendChild(iconcontainerlabel);
                 break;
             case "OBC":
                 iconcontainerlabel = document.createElement('span');
                 iconcontainerlabel.classList.add("icon-obc");
-                usericoncontainer.appendChild(iconcontainerlabel);
+                parentElement.appendChild(iconcontainerlabel);
                 break;
             case "Premium":
                 iconcontainerlabel = document.createElement('span');
                 iconcontainerlabel.classList.add("medium-icon", "icon-premium-medium");
-                usericoncontainer.appendChild(iconcontainerlabel);
+                if (Settings.homeFormat === "2020") {
+                    parentElement.parentNode.insertBefore(iconcontainerlabel, parentElement);
+                } else {
+                    usericoncontainer.appendChild(iconcontainerlabel);
+                }
                 iconcontainerextralabel = document.createElement('span');
                 iconcontainerextralabel.classList.add("small-icon", "icon-premium-small");
-                usericoncontainer.appendChild(iconcontainerextralabel);
+                if (Settings.homeFormat === "2020") {
+                    parentElement.parentNode.insertBefore(iconcontainerextralabel, parentElement);
+                } else {
+                    usericoncontainer.appendChild(iconcontainerextralabel);
+                }
                 break;
             default:
+                var iconcontainer = document.createElement("div");
+                iconcontainer.classList.add("has-error");
+                parentElement.appendChild(iconcontainer);
                 iconcontainerlabel = document.createElement('span');
                 iconcontainerlabel.classList.add("icon-warning");
-                usericoncontainer.appendChild(iconcontainerlabel);
+                iconcontainer.appendChild(iconcontainerlabel);
+                var iconerrorlabel = document.createElement("span");
+                iconerrorlabel.classList.add("text-error");
+                iconerrorlabel.textContent = " Invalid Membership Type";
+                iconcontainer.appendChild(iconerrorlabel)
         }
     }
+    function userPresenceTemplate(parentElement) {
+        var PresenceDiv;
+        var querydiv = parentElement.querySelector("div");
+        if (querydiv) {
+            parentElement.removeChild(querydiv)
+        }
+        PresenceDiv = document.createElement("div");
+        parentElement.appendChild(PresenceDiv);
+        PresenceDiv.setAttribute("ng-non-bindable", "");
+        var PresenceLink;
+        const PresenceSpan = document.createElement("span")
+        PresenceSpan.classList.add("avatar-status", userData.userPresence.userPresenceType === 1 && "icon-online" || userData.userPresence.userPresenceType === 2 && "icon-game" || userData.userPresence.userPresenceType === 3 && "icon-studio");
+        PresenceSpan.setAttribute("title", userData.userPresence.lastLocation)
+        PresenceDiv.appendChild(PresenceSpan);
+    }
     switch(Settings.homeFormat) {
-        case "2018":
+        case "2017":
+        case "2020":
             if (Settings.AddJSClasses) {
-                document.body.classList.add("HP2018")
+                switch (Settings.homeFormat) {
+                    case "2017":
+                        document.body.classList.add("HP2017");
+                        break;
+                    case "2020":
+                        document.body.classList.add("HP2020");
+                        break;
+                }
             }
             homeheader.classList.add("col-xs-12", "home-header");
             headeravatarframe = document.createElement('a');
@@ -817,9 +993,9 @@ if (Settings.RestoreHomePage) {
             homeheaderloadercontentlink.classList.add("placeholder", "shimmer", "shimmer-line");
             homeheaderloadercontenth1.appendChild(homeheaderloadercontentlink);
             break;
-        case "2020":
+        case "2021":
             if (Settings.AddJSClasses) {
-                document.body.classList.add("HP2020")
+                document.body.classList.add("HP2021")
             }
             homeheader.classList.add("col-xs-12", "home-header-container");
             homeheaderalt = document.createElement('div');
@@ -952,9 +1128,13 @@ if (Settings.RestoreHomePage) {
                 Data.loadedstop = true
                 if (Settings.debugMode) {
                     console.log("All neccessary data has loaded.\n\nAccount Name : "+userData.name+"\nDisplay Name : "+userData.displayName+"\nId : "+userData.id+"\nMembership : "+userData.hasMembership+"\nimageUrl : "+userData.imageUrl)
+                    if (Settings.homeavatarPresence) {
+                        console.log("Game ID : "+userData.userPresence.gameId+"\nLast Location : "+userData.userPresence.lastLocation+"\nLast Online : "+userData.userPresence.lastOnline+"\nPlace Id : "+userData.userPresence.placeId+"\nRoot Place Id : "+userData.userPresence.rootPlaceId+"\nUser Presence Type : "+userData.userPresence.userPresenceType+"\nUniverse Id : "+userData.userPresence.universeId)
+                    }
                 }
                 switch(Settings.homeFormat) {
-                    case "2018":
+                    case "2017":
+                    case "2020":
                         homeheader.removeChild(headeravatarframe);
                         headeravatarframe = document.createElement('a');
                         homeheader.appendChild(headeravatarframe);
@@ -974,14 +1154,19 @@ if (Settings.RestoreHomePage) {
                         homeheadercontent.appendChild(homeheadercontenth1);
                         homeheadercontentlink = document.createElement('a');
                         homeheadercontenth1.appendChild(homeheadercontentlink);
+                        if (userData.hasMembership && Settings.homeFormat === "2020") {
+                            GetMembership(homeheadercontentlink)
+                        }
                         homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
                         homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                        if (userData.hasMembership) {
+                        if (Settings.homeFormat === "2017" && userData.hasMembership || Settings.homeFormat === "2020") {
                             homeheadercontent.classList.remove("non-bc");
+                        }
+                        if (userData.hasMembership && Settings.homeFormat === "2017") {
                             GetMembership(homeheadercontent)
                         }
                         break;
-                    case "2020":
+                    case "2021":
                         homeheaderalt.removeChild(headeravatarframe);
                         headeravatarframe = document.createElement('a');
                         homeheaderalt.appendChild(headeravatarframe);
@@ -1050,6 +1235,48 @@ if (Settings.RestoreHomePage) {
                 }
             }
         }, 125);
+        if (Settings.homeavatarPresence) {
+            setInterval(function() {
+                if (Settings.homeavatarPresence && Data.P1) {
+                    GM_xmlhttpRequest({
+                        method: 'POST',
+                        url: "https://presence.roblox.com/v1/presence/users",
+                        headers: {
+                            'accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        data: JSON.stringify(
+                            {
+                                userIds: [
+                                    userData.id
+                                ]
+                            }
+                        ),
+                        onload: function (response) {
+                            userData.userPresence.P1 = JSON.parse(response.responseText);
+                            userData.userPresence.P2 = userData.userPresence.P1.userPresences[0];
+                            userData.userPresence.gameId = userData.userPresence.P2.gameId;
+                            userData.userPresence.invisibleModeExpiry = userData.userPresence.P2.invisibleModeExpiry;
+                            userData.userPresence.lastLocation = userData.userPresence.P2.lastLocation;
+                            userData.userPresence.lastOnline = userData.userPresence.P2.lastOnline;
+                            userData.userPresence.placeId = userData.userPresence.P2.placeId;
+                            userData.userPresence.rootPlaceId = userData.userPresence.P2.rootPlaceId;
+                            userData.userPresence.userPresenceType = userData.userPresence.P2.userPresenceType;
+                            userData.userPresence.universeId = userData.userPresence.P2.universeId;
+                        },
+                        onerror: function (error) {
+                            if (Settings.debugMode) {
+                                console.error(error);
+                            }
+                        }
+                    });
+                }
+                if (userData.userPresence.userLastPresenceType !== userData.userPresence.userPresenceType && userData.userPresence.userPresenceType !== 0) {
+                    userData.userPresence.userLastPresenceType = userData.userPresence.userPresenceType;
+                    userPresenceTemplate(headeravatarframe);
+                }
+            }, 500);
+        }
         setTimeout(function() {
             if (!Data.loaded) {
                 if (headerloaderavatarthumb) {
