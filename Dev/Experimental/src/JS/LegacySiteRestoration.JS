@@ -65,7 +65,7 @@ var userData = {
 
 var Settings = {
     AddJSClasses: true, /*/ Adds classes for options for those working with themes or extentions. /*/
-    debugMode: true,
+    debugMode: false,
     demoMode: false,
     homeGreeting: true, /*/ Starting 2020, the home greeting was removed. /*/
     homeFormat: "2017", /*/ {"2017", "2020", "2021", "2022"} /*/
