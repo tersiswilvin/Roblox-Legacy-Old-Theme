@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.1.1
+// @version      1.1.2
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com/*
@@ -894,6 +894,7 @@ if (Settings.RestoreHomePage) {
     const HomeContainerFS = HomeContainer.querySelector('.section:first-child');
     const homeheader = document.createElement('div');
     var homeheaderalt, headeravatarframe, headerloaderavatarthumb, headeravatarthumb, homeuserinfocontainer, homeheadercontent, homeheaderloadercontenth1, homeheadercontenth1, homeheaderloadercontentlink, homeheadercontentlink, usericoncontainer, iconcontainerlabel, iconcontainerextralabel;
+    var PresenceDiv, PresenceSpan, PresenceStatus = null;
     HomeContainer.insertBefore(homeheader, HomeContainerFS);
     HomeContainer.removeChild(HomeContainerFS);
     function GetMembership(parentElement) {
@@ -948,19 +949,21 @@ if (Settings.RestoreHomePage) {
         }
     }
     function userPresenceTemplate(parentElement) {
-        var PresenceDiv;
-        var querydiv = parentElement.querySelector("div");
-        if (querydiv) {
-            parentElement.removeChild(querydiv)
+        if (PresenceDiv) {
+            PresenceSpan.classList.remove(PresenceStatus);
+            PresenceStatus = userData.userPresence.userPresenceType === 1 && "icon-online" || userData.userPresence.userPresenceType === 2 && "icon-game" || userData.userPresence.userPresenceType === 3 && "icon-studio";
+            PresenceSpan.classList.add(PresenceStatus);
+            PresenceSpan.setAttribute("title", userData.userPresence.lastLocation);
+        } else {
+            PresenceDiv = document.createElement("div");
+            parentElement.appendChild(PresenceDiv);
+            PresenceDiv.setAttribute("ng-non-bindable", "");
+            PresenceSpan = document.createElement("span");
+            PresenceDiv.appendChild(PresenceSpan);
+            PresenceStatus = userData.userPresence.userPresenceType === 1 && "icon-online" || userData.userPresence.userPresenceType === 2 && "icon-game" || userData.userPresence.userPresenceType === 3 && "icon-studio";
+            PresenceSpan.classList.add("avatar-status", PresenceStatus);
+            PresenceSpan.setAttribute("title", userData.userPresence.lastLocation);
         }
-        PresenceDiv = document.createElement("div");
-        parentElement.appendChild(PresenceDiv);
-        PresenceDiv.setAttribute("ng-non-bindable", "");
-        var PresenceLink;
-        const PresenceSpan = document.createElement("span")
-        PresenceSpan.classList.add("avatar-status", userData.userPresence.userPresenceType === 1 && "icon-online" || userData.userPresence.userPresenceType === 2 && "icon-game" || userData.userPresence.userPresenceType === 3 && "icon-studio");
-        PresenceSpan.setAttribute("title", userData.userPresence.lastLocation)
-        PresenceDiv.appendChild(PresenceSpan);
     }
     switch(Settings.homeFormat) {
         case "2017":
@@ -1234,49 +1237,48 @@ if (Settings.RestoreHomePage) {
                     console.log("Not all data has loaded.\n======\nP1 : "+Data.P1+"\nP2 : "+Data.P2+"\nP3 : "+Data.P3+"\n======\nP1Error : "+Data.P1Error+"\nP2Error : "+Data.P2Error+"\nP3Error : "+Data.P3Error)
                 }
             }
-        }, 125);
-        if (Settings.homeavatarPresence) {
-            setInterval(function() {
-                if (Settings.homeavatarPresence && Data.P1) {
-                    GM_xmlhttpRequest({
-                        method: 'POST',
-                        url: "https://presence.roblox.com/v1/presence/users",
-                        headers: {
-                            'accept': 'application/json',
-                            'Content-Type': 'application/json'
-                        },
-                        data: JSON.stringify(
-                            {
-                                userIds: [
-                                    userData.id
-                                ]
-                            }
-                        ),
-                        onload: function (response) {
-                            userData.userPresence.P1 = JSON.parse(response.responseText);
-                            userData.userPresence.P2 = userData.userPresence.P1.userPresences[0];
-                            userData.userPresence.gameId = userData.userPresence.P2.gameId;
-                            userData.userPresence.invisibleModeExpiry = userData.userPresence.P2.invisibleModeExpiry;
-                            userData.userPresence.lastLocation = userData.userPresence.P2.lastLocation;
-                            userData.userPresence.lastOnline = userData.userPresence.P2.lastOnline;
-                            userData.userPresence.placeId = userData.userPresence.P2.placeId;
-                            userData.userPresence.rootPlaceId = userData.userPresence.P2.rootPlaceId;
-                            userData.userPresence.userPresenceType = userData.userPresence.P2.userPresenceType;
-                            userData.userPresence.universeId = userData.userPresence.P2.universeId;
-                        },
-                        onerror: function (error) {
-                            if (Settings.debugMode) {
-                                console.error(error);
-                            }
+            if (Settings.homeavatarPresence && Data.P1) {
+                GM_xmlhttpRequest({
+                    method: 'POST',
+                    url: "https://presence.roblox.com/v1/presence/users",
+                    headers: {
+                        'accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    data: JSON.stringify(
+                        {
+                            userIds: [
+                                userData.id
+                            ]
                         }
-                    });
-                }
-                if (userData.userPresence.userLastPresenceType !== userData.userPresence.userPresenceType && userData.userPresence.userPresenceType !== 0) {
+                    ),
+                    onload: function (response) {
+                        userData.userPresence.P1 = JSON.parse(response.responseText);
+                        userData.userPresence.P2 = userData.userPresence.P1.userPresences[0];
+                        userData.userPresence.gameId = userData.userPresence.P2.gameId;
+                        userData.userPresence.invisibleModeExpiry = userData.userPresence.P2.invisibleModeExpiry;
+                        userData.userPresence.lastLocation = userData.userPresence.P2.lastLocation;
+                        userData.userPresence.lastOnline = userData.userPresence.P2.lastOnline;
+                        userData.userPresence.placeId = userData.userPresence.P2.placeId;
+                        userData.userPresence.rootPlaceId = userData.userPresence.P2.rootPlaceId;
+                        userData.userPresence.userPresenceType = userData.userPresence.P2.userPresenceType;
+                        userData.userPresence.universeId = userData.userPresence.P2.universeId;
+                    },
+                    onerror: function (error) {
+                        if (Settings.debugMode) {
+                            console.error(error);
+                        }
+                    }
+                });
+                if (userData.userPresence.userLastPresenceType !== userData.userPresence.userPresenceType && userData.userPresence.userPresenceType === 0) {
+                    userData.userPresence.userLastPresenceType = userData.userPresence.userPresenceType;
+                    PresenceDiv = null;
+                } else if (userData.userPresence.userLastPresenceType !== userData.userPresence.userPresenceType && userData.userPresence.userPresenceType !== 0) {
                     userData.userPresence.userLastPresenceType = userData.userPresence.userPresenceType;
                     userPresenceTemplate(headeravatarframe);
                 }
-            }, 500);
-        }
+            }
+        }, 125);
         setTimeout(function() {
             if (!Data.loaded) {
                 if (headerloaderavatarthumb) {
