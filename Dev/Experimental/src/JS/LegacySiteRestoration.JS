@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.1.3
+// @version      1.1.4
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com/*
@@ -32,10 +32,13 @@ var Data = {
     loadedstop: false,
     P1: false,
     P1Error: false,
+    P1Stop: false,
     P2: false,
     P2Error: false,
+    P2Stop: false,
     P3: false,
     P3Error: false,
+    P3Stop: false,
 }
 
 var userData = {
@@ -66,6 +69,7 @@ var userData = {
 
 var Settings = {
     AddJSClasses: true, /*/ Adds classes for options for those working with themes or extentions. /*/
+    BulkLoading: false, /*/ If true loads everything at once then in chunks /*/
     debugMode: false,
     demoMode: false,
     homeGreeting: true, /*/ Starting 2020, the home greeting was removed. /*/
@@ -1136,106 +1140,220 @@ if (Settings.RestoreHomePage) {
                         console.log("Game ID : "+userData.userPresence.gameId+"\nLast Location : "+userData.userPresence.lastLocation+"\nLast Online : "+userData.userPresence.lastOnline+"\nPlace Id : "+userData.userPresence.placeId+"\nRoot Place Id : "+userData.userPresence.rootPlaceId+"\nUser Presence Type : "+userData.userPresence.userPresenceType+"\nUniverse Id : "+userData.userPresence.universeId)
                     }
                 }
-                switch(Settings.homeFormat) {
-                    case "2017":
-                    case "2020":
-                        homeheader.removeChild(headeravatarframe);
-                        headeravatarframe = document.createElement('a');
-                        homeheader.appendChild(headeravatarframe);
-                        headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                        headeravatarframe.classList.add("avatar", "avatar-headshot-lg");
-                        homeheader.appendChild(homeheadercontent);
-                        headeravatarthumb = document.createElement('img');
-                        headeravatarframe.appendChild(headeravatarthumb);
-                        headeravatarthumb.setAttribute('alt','avatar');
-                        headeravatarthumb.setAttribute('src', userData.imageUrl);
-                        headeravatarthumb.setAttribute('id','home-avatar-thumb');
-                        headeravatarthumb.classList.add("avatar-card-image");
-                        headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                        //======//
-                        homeheadercontent.removeChild(homeheaderloadercontenth1);
-                        homeheadercontenth1 = document.createElement('h1');
-                        homeheadercontent.appendChild(homeheadercontenth1);
-                        homeheadercontentlink = document.createElement('a');
-                        homeheadercontenth1.appendChild(homeheadercontentlink);
-                        if (userData.hasMembership && Settings.homeFormat === "2020") {
-                            GetMembership(homeheadercontentlink)
-                        }
-                        homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                        homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                        if (Settings.homeFormat === "2017" && userData.hasMembership || Settings.homeFormat === "2020") {
-                            homeheadercontent.classList.remove("non-bc");
-                        }
-                        if (userData.hasMembership && Settings.homeFormat === "2017") {
-                            GetMembership(homeheadercontent)
-                        }
-                        break;
-                    case "2021":
-                        homeheaderalt.removeChild(headeravatarframe);
-                        headeravatarframe = document.createElement('a');
-                        homeheaderalt.appendChild(headeravatarframe);
-                        homeheaderalt.appendChild(homeheadercontent);
-                        headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                        headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
-                        headerloaderavatarthumb = document.createElement('span');
-                        headeravatarframe.appendChild(headerloaderavatarthumb);
-                        headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
-                        if (Settings.ORHCompatible) {
-                            homeheadercontent.classList.remove("col-xs-12");
-                        } else {
-                            homeheadercontent.classList.remove("col-xs-10");
-                        }
-                        headeravatarthumb = document.createElement('img');
-                        headerloaderavatarthumb.appendChild(headeravatarthumb);
-                        headeravatarthumb.setAttribute('src', userData.imageUrl);
-                        headeravatarthumb.classList.add("avatar-card-image");
-                        //======//
-                        homeheaderloadercontenth1.classList.remove("shimmer-lines", "col-xs-3");
-                        homeheaderloadercontenth1.removeChild(homeheaderloadercontentlink);
-                        if (userData.hasMembership && !Settings.ORHCompatible) {
-                            GetMembership(homeheaderloadercontenth1)
-                        }
-                        homeheadercontentlink = document.createElement('a');
-                        homeheaderloadercontenth1.appendChild(homeheadercontentlink);
-                        homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                        homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                        break;
-                    case "2022":
-                        homeheaderalt.classList.remove("home-header-shimmer");
-                        homeheaderalt.classList.add("home-header");
-                        homeheaderalt.removeChild(headeravatarframe);
-                        headeravatarframe = document.createElement('a');
-                        homeheaderalt.appendChild(headeravatarframe);
-                        homeheaderalt.appendChild(homeheadercontent);
-                        headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                        headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
-                        headerloaderavatarthumb = document.createElement('span');
-                        headeravatarframe.appendChild(headerloaderavatarthumb);
-                        headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
-                        headeravatarthumb = document.createElement('img');
-                        headerloaderavatarthumb.appendChild(headeravatarthumb);
-                        headeravatarthumb.setAttribute('src', userData.imageUrl);
-                        headeravatarthumb.classList.add("avatar-card-image");
-                        //======//
-                        homeuserinfocontainer.classList.add("home-userinfo-upsell-container")
-                        homeuserinfocontainer.classList.remove("shimmer-home-user-info")
-                        homeheadercontent.classList.remove("shimmer-lines");
-                        homeheadercontent.classList.add("user-info-container");
-                        if (userData.hasMembership && !Settings.ORHCompatible) {
-                            GetMembership(homeheaderloadercontenth1)
-                        }
-                        homeheaderloadercontenth1.classList.remove("placeholder", "shimmer-line");
-                        homeheaderloadercontenth1.classList.add("user-name-container");
-                        homeheadercontentlink = document.createElement('a');
-                        homeheaderloadercontenth1.appendChild(homeheadercontentlink);
-                        homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                        homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                        break;
+                if (Settings.BulkLoading) {
+                    switch(Settings.homeFormat) {
+                        case "2017":
+                        case "2020":
+                            homeheader.removeChild(headeravatarframe);
+                            headeravatarframe = document.createElement('a');
+                            homeheader.appendChild(headeravatarframe);
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            headeravatarframe.classList.add("avatar", "avatar-headshot-lg");
+                            homeheader.appendChild(homeheadercontent);
+                            headeravatarthumb = document.createElement('img');
+                            headeravatarframe.appendChild(headeravatarthumb);
+                            headeravatarthumb.setAttribute('alt','avatar');
+                            headeravatarthumb.setAttribute('src', userData.imageUrl);
+                            headeravatarthumb.setAttribute('id','home-avatar-thumb');
+                            headeravatarthumb.classList.add("avatar-card-image");
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            //======//
+                            homeheadercontent.removeChild(homeheaderloadercontenth1);
+                            homeheadercontenth1 = document.createElement('h1');
+                            homeheadercontent.appendChild(homeheadercontenth1);
+                            homeheadercontentlink = document.createElement('a');
+                            homeheadercontenth1.appendChild(homeheadercontentlink);
+                            if (userData.hasMembership && Settings.homeFormat === "2020") {
+                                GetMembership(homeheadercontentlink)
+                            }
+                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
+                            if (Settings.homeFormat === "2017" && userData.hasMembership || Settings.homeFormat === "2020") {
+                                homeheadercontent.classList.remove("non-bc");
+                            }
+                            if (userData.hasMembership && Settings.homeFormat === "2017") {
+                                GetMembership(homeheadercontent)
+                            }
+                            break;
+                        case "2021":
+                            homeheaderalt.removeChild(headeravatarframe);
+                            headeravatarframe = document.createElement('a');
+                            homeheaderalt.appendChild(headeravatarframe);
+                            homeheaderalt.appendChild(homeheadercontent);
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
+                            headerloaderavatarthumb = document.createElement('span');
+                            headeravatarframe.appendChild(headerloaderavatarthumb);
+                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
+                            if (Settings.ORHCompatible) {
+                                homeheadercontent.classList.remove("col-xs-12");
+                            } else {
+                                homeheadercontent.classList.remove("col-xs-10");
+                            }
+                            headeravatarthumb = document.createElement('img');
+                            headerloaderavatarthumb.appendChild(headeravatarthumb);
+                            headeravatarthumb.setAttribute('src', userData.imageUrl);
+                            headeravatarthumb.classList.add("avatar-card-image");
+                            //======//
+                            homeheaderloadercontenth1.classList.remove("shimmer-lines", "col-xs-3");
+                            homeheaderloadercontenth1.removeChild(homeheaderloadercontentlink);
+                            if (userData.hasMembership && !Settings.ORHCompatible) {
+                                GetMembership(homeheaderloadercontenth1)
+                            }
+                            homeheadercontentlink = document.createElement('a');
+                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
+                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
+                            break;
+                        case "2022":
+                            homeheaderalt.classList.remove("home-header-shimmer");
+                            homeheaderalt.classList.add("home-header");
+                            homeheaderalt.removeChild(headeravatarframe);
+                            headeravatarframe = document.createElement('a');
+                            homeheaderalt.appendChild(headeravatarframe);
+                            homeheaderalt.appendChild(homeheadercontent);
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
+                            headerloaderavatarthumb = document.createElement('span');
+                            headeravatarframe.appendChild(headerloaderavatarthumb);
+                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
+                            headeravatarthumb = document.createElement('img');
+                            headerloaderavatarthumb.appendChild(headeravatarthumb);
+                            headeravatarthumb.setAttribute('src', userData.imageUrl);
+                            headeravatarthumb.classList.add("avatar-card-image");
+                            //======//
+                            homeuserinfocontainer.classList.add("home-userinfo-upsell-container")
+                            homeuserinfocontainer.classList.remove("shimmer-home-user-info")
+                            homeheadercontent.classList.remove("shimmer-lines");
+                            homeheadercontent.classList.add("user-info-container");
+                            if (userData.hasMembership && !Settings.ORHCompatible) {
+                                GetMembership(homeheaderloadercontenth1)
+                            }
+                            homeheaderloadercontenth1.classList.remove("placeholder", "shimmer-line");
+                            homeheaderloadercontenth1.classList.add("user-name-container");
+                            homeheadercontentlink = document.createElement('a');
+                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
+                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
+                            break;
 
+                    }
                 }
             } else if (!Data.loaded && !Data.loadedstop) {
                 if (Settings.debugMode) {
                     console.log("Not all data has loaded.\n======\nP1 : "+Data.P1+"\nP2 : "+Data.P2+"\nP3 : "+Data.P3+"\n======\nP1Error : "+Data.P1Error+"\nP2Error : "+Data.P2Error+"\nP3Error : "+Data.P3Error)
+                }
+            }
+            if (!Settings.BulkLoading) {
+                if (Data.P1 && !Data.P1Stop) {
+                    Data.P1Stop = true;
+                    switch(Settings.homeFormat) {
+                        case "2017":
+                        case "2020":
+                            homeheadercontent.removeChild(homeheaderloadercontenth1);
+                            homeheadercontenth1 = document.createElement('h1');
+                            homeheadercontent.appendChild(homeheadercontenth1);
+                            homeheadercontentlink = document.createElement('a');
+                            homeheadercontenth1.appendChild(homeheadercontentlink);
+                            if (userData.hasMembership && Settings.homeFormat === "2020") {
+                                GetMembership(homeheadercontentlink)
+                            }
+                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
+                            if (Settings.homeFormat === "2017" && userData.hasMembership || Settings.homeFormat === "2020") {
+                                homeheadercontent.classList.remove("non-bc");
+                            }
+                            if (userData.hasMembership && Settings.homeFormat === "2017") {
+                                GetMembership(homeheadercontent)
+                            }
+                            break;
+                        case "2021":
+                            homeheaderloadercontenth1.classList.remove("shimmer-lines", "col-xs-3");
+                            homeheaderloadercontenth1.removeChild(homeheaderloadercontentlink);
+                            if (userData.hasMembership && !Settings.ORHCompatible) {
+                                GetMembership(homeheaderloadercontenth1)
+                            }
+                            homeheadercontentlink = document.createElement('a');
+                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
+                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
+                            break;
+                        case "2022":
+                            homeuserinfocontainer.classList.add("home-userinfo-upsell-container")
+                            homeuserinfocontainer.classList.remove("shimmer-home-user-info")
+                            homeheadercontent.classList.remove("shimmer-lines");
+                            homeheadercontent.classList.add("user-info-container");
+                            if (userData.hasMembership && !Settings.ORHCompatible) {
+                                GetMembership(homeheaderloadercontenth1)
+                            }
+                            homeheaderloadercontenth1.classList.remove("placeholder", "shimmer-line");
+                            homeheaderloadercontenth1.classList.add("user-name-container");
+                            homeheadercontentlink = document.createElement('a');
+                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
+                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
+                            break;
+
+                    }
+                }
+                if (Data.P3 && !Data.P3Stop) {
+                    Data.P3Stop = true;
+                    switch(Settings.homeFormat) {
+                        case "2017":
+                        case "2020":
+                            homeheader.removeChild(headeravatarframe);
+                            headeravatarframe = document.createElement('a');
+                            homeheader.appendChild(headeravatarframe);
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            headeravatarframe.classList.add("avatar", "avatar-headshot-lg");
+                            homeheader.appendChild(homeheadercontent);
+                            headeravatarthumb = document.createElement('img');
+                            headeravatarframe.appendChild(headeravatarthumb);
+                            headeravatarthumb.setAttribute('alt','avatar');
+                            headeravatarthumb.setAttribute('src', userData.imageUrl);
+                            headeravatarthumb.setAttribute('id','home-avatar-thumb');
+                            headeravatarthumb.classList.add("avatar-card-image");
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            break;
+                        case "2021":
+                            homeheaderalt.removeChild(headeravatarframe);
+                            headeravatarframe = document.createElement('a');
+                            homeheaderalt.appendChild(headeravatarframe);
+                            homeheaderalt.appendChild(homeheadercontent);
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
+                            headerloaderavatarthumb = document.createElement('span');
+                            headeravatarframe.appendChild(headerloaderavatarthumb);
+                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
+                            if (Settings.ORHCompatible) {
+                                homeheadercontent.classList.remove("col-xs-12");
+                            } else {
+                                homeheadercontent.classList.remove("col-xs-10");
+                            }
+                            headeravatarthumb = document.createElement('img');
+                            headerloaderavatarthumb.appendChild(headeravatarthumb);
+                            headeravatarthumb.setAttribute('src', userData.imageUrl);
+                            headeravatarthumb.classList.add("avatar-card-image");
+                            break;
+                        case "2022":
+                            homeheaderalt.classList.remove("home-header-shimmer");
+                            homeheaderalt.classList.add("home-header");
+                            homeheaderalt.removeChild(headeravatarframe);
+                            headeravatarframe = document.createElement('a');
+                            homeheaderalt.appendChild(headeravatarframe);
+                            homeheaderalt.appendChild(homeheadercontent);
+                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
+                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
+                            headerloaderavatarthumb = document.createElement('span');
+                            headeravatarframe.appendChild(headerloaderavatarthumb);
+                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
+                            headeravatarthumb = document.createElement('img');
+                            headerloaderavatarthumb.appendChild(headeravatarthumb);
+                            headeravatarthumb.setAttribute('src', userData.imageUrl);
+                            headeravatarthumb.classList.add("avatar-card-image");
+                            break;
+
+                    }
                 }
             }
             if (Settings.homeavatarPresence && Data.P1) {
@@ -1281,7 +1399,7 @@ if (Settings.RestoreHomePage) {
             }
         }, 125);
         setTimeout(function() {
-            if (!Data.loaded) {
+            if (Settings.BulkLoading && !Data.loaded || !Settings.BulkLoading && !Data.P3) {
                 if (headerloaderavatarthumb) {
                     headerloaderavatarthumb.classList.remove("shimmer");
                     headerloaderavatarthumb.classList.add("thumbnail-2d-container", "icon-broken");
