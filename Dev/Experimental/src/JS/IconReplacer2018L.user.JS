@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Roblox Icon replacer
+// @name         Roblox Icon replacer Late 2018
 // @namespace    TersisWilvin
-// @version      1.0
-// @description  Replaces the favicon
+// @version      1.1
+// @description  Replaces the favicon to the grey one added in late 2018
 // @author       TersisWilvin
 // @match        https://www.roblox.com/*
 // @match        https://blog.roblox.com/*
