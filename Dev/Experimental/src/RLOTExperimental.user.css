@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230726.1.3
+@version      20230728.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -3892,33 +3892,11 @@
         background: #000;
     }
     
-    .light-theme .avatar-card-fullbody .avatar-card-image, .light-theme .avatar .avatar-card-image {
-        width: 100%;
-        height: 100%;
-        word-break: break-all;
-        vertical-align: top;
-		& when (@BoxShadows = 0) {
-			background-color: #d1d1d1;
-		}
-		& when (@BoxShadows = 1) {
-			background-color: #fff;
-		}
+    .light-theme .avatar-card-fullbody .avatar-card-image, .light-theme .avatar .avatar-card-image, .dark-theme .avatar-card-fullbody .avatar-card-image, .dark-theme .avatar .avatar-card-image {
+		background-color: transparent
     }
     .light-theme .avatar-container img, .dark-theme .avatar-container img {
         background-color: transparent
-    }
-    
-    .dark-theme .avatar-card-fullbody .avatar-card-image, .dark-theme .avatar .avatar-card-image {
-        width: 100%;
-        height: 100%;
-        word-break: break-all;
-        vertical-align: top;
-		& when (@BoxShadows = 0) {
-			background-color: #2E2E2E;
-		}
-		& when (@BoxShadows = 1) {
-			background-color: #000;
-		}
     }
 	
     .light-theme .dialogs .dialog-container .dialog-header .dialog-header-active-game .dialog-header-active-game-image, .dark-theme .dialogs .dialog-container .dialog-header .dialog-header-active-game .dialog-header-active-game-image {
@@ -5834,15 +5812,6 @@
 			}
 		}
 		
-		.light-theme .avatar {
-			background-color: #d1d1d1;
-			position: relative;
-		}
-		.dark-theme .avatar {
-			background-color: #2e2e2e;
-			position: relative;
-		}
-		
 		.game-home-page-container:has(.game-error) h2 {
 			font-size: 0
 		}
@@ -6449,6 +6418,13 @@
 		background-image: none;
 		background-repeat: no-repeat;
 		background-size: 0;
+	}
+	
+	.light-theme .avatar {
+		background-color: #d1d1d1;
+	}
+	.dark-theme .avatar {
+		background-color: #2e2e2e;
 	}
 	
     .icon-robux-130x130 {
