@@ -1,224 +1,208 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.1.4
+// @version      1.2.0
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
+// @match        *.roblox.com*
 // @match        *.roblox.com/*
 // @icon         https://images.rbxcdn.com/23421382939a9f4ae8bbe60dbe2a3e7e.ico.gzip
 // @grant        GM_xmlhttpRequest
-// @run-at       document-end
+// @run-at       document-start
 // ==/UserScript==
 
 /*/== Variables ==/*/
 
-const CustomEvents = {
-    Event1: false,
-    Event1Link: "",
-    Event1Source: "",
-    Event1Title: "",
-    Event2: false,
-    Event2Link: "",
-    Event2Source: "",
-    Event2Title: "",
-    Event3: false,
-    Event3Link: "",
-    Event3Source: "",
-    Event3Title: "",
-}
+const url = window.location.protocol+"//"+window.location.hostname
 
-var Data = {
-    loaded: false,
-    loadedstop: false,
-    P1: false,
-    P1Error: false,
-    P1Stop: false,
-    P2: false,
-    P2Error: false,
-    P2Stop: false,
-    P3: false,
-    P3Error: false,
-    P3Stop: false,
-}
-
-var userData = {
-    avatardataP1: null,
-    avatardataP2: null,
-    data: null,
-    displayName: null,
-    hasMembership: null,
-    id: '{id}',
-    imageUrl: null,
-    name: null,
-    userPresence: {
-        P1: false,
-        P2: false,
-        Presence: false,
-        gameId: null,
-        gameName: null,
-        invisibleModeExpiry: null,
-        lastLocation: 'string',
-        lastOnline: null,
-        placeId: 0,
-        rootPlaceId: 0,
-        userPresenceType: 0,
-        userLastPresenceType: 0,
-        universeId: 0,
-    }
+var Events = {
+    CustomEvents: {
+        Event1: {
+            Enabled: false,
+            Link: "",
+            Source: "",
+            Title: "",
+        },
+        Event2: {
+            Enabled: false,
+            Link: "",
+            Source: "",
+            Title: "",
+        },
+        Event3: {
+            Enabled: false,
+            Link: "",
+            Source: "",
+            Title: "",
+        },
+    },
+    RobloxEvents: {
+        GiftCards: {
+            Enabled: false,
+            Link: url+"/sponsored/Giftcards",
+            Source: "https://images.rbxcdn.com/9efed3e5941099646c48c0ce4f0fae40",
+            Title: "Giftcards",
+        }
+    },
 }
 
 var Settings = {
-    AddJSClasses: true, /*/ Adds classes for options for those working with themes or extentions. /*/
-    BulkLoading: false, /*/ If true loads everything at once then in chunks /*/
-    debugMode: false,
-    demoMode: false,
-    homeGreeting: true, /*/ Starting 2020, the home greeting was removed. /*/
-    homeFormat: "2017", /*/ {"2017", "2020", "2021", "2022"} /*/
-    homeavatarPresence: false,
-    MembershipType: "OBC", /*/ 'Default/Legacy Types' > {"BC", "TBC", "OBC"}, 'Extra/Modern Types' > {"Premium"} /*/
+    BulkLoading: false, /*/ Loads everything at once then in chunks /*/
+    CustomEvents: false, /*/ Uses your custom events then Roblox events. /*/
+    DeveloperOptions: {
+        demoMode: false,
+        forceMembership: false,
+        forceinfLoading: false,
+        fix2020homeFormat: false,
+    },
+    DisplayNames: false, /*/ Swaps usernames with displaynames on the home header /*/
+    FavIcon: "2018L", /*/ {"2012M", "2015L", "2017E", "2017L", "2018L"} /*/
+    homeGreeting: true,
+    homeGreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome"} /*/
+    homeFormat: "2017", /*/ {"2017", "2020", "2021", "2022"} (Warning: If you use RoPro please use "2017" or "2020" as anything later breaks most played.) /*/
+    homeavatarPresences: false, /*/ Adds the status icon to your home header avatar /*/
+    JSClasses: true, /*/ Adds classes for options for those working with themes or extentions. /*/
+    MembershipType: "OBC", /*/ {"BC", "TBC", "OBC", "Premium"} /*/
     ORHCompatible: false, /*/ if true will use aubymori Old Roblox Header for legacy theme compatibility, requires homeFormat to be 2021. /*/
-    useCustomEvents: true,
-    useDisplayNames: false, /*/ Started being used around Early to Mid 2021. /*/
+    RestoreLegacyFavIcon: true,
     RestoreEvents: true,
     RestoreHomePage: true,
     RestoreMyFeed: true,
-    RestoreUpgradeNowLbl: true,
+    RestoreUpgradeNow: true,
+}
+
+var userData = {
+    avatar: {
+        data: {
+            imageUrl: null,
+            Response: {},
+            state: null,
+            targetId: 1,
+        }
+    },
+    displayName: null,
+    id: "{id}",
+    Membership: false,
+    name: null,
+    Response: {},
+    userPresences: {
+        Errored: false,
+        gameId: null,
+        invisibleModeExpiry: null,
+        lastLocation: "string",
+        lastOnline: null,
+        placeId: 0,
+        Response: {},
+        rootPlaceId: 0,
+        universeId: 0,
+        userLastPresenceType: 0,
+        userPresenceType: 0,
+        userId: 0,
+    },
+    Status: {
+        AvatarDataErrored: false,
+        AvatarDataPaused: false,
+        AvatarDataLoaded: false,
+        ErrorStatus: {},
+        FullyLoaded: false,
+        FullyLoadedErrored: false,
+        FullyLoadedPaused: false,
+        InfoDataErrored: false,
+        InfoDataPaused: false,
+        InfoDataLoaded: false,
+        MembershipDataErrored: false,
+        MembershipDataPaused: false,
+        MembershipDataLoaded: false,
+    },
 }
 
 /*/== Functions ==/*/
 
-function GetHeaderStyle() {
-    if (Settings.homeFormat === "2017") {
-        return `
-.home-container {
-	float: left;
-	max-width: 970px;
-	width: 100%;
+function homeGreeting() {
+    if ((Settings.homeGreetingType == "Dynamic" || Settings.homeGreetingType == "Hello" || Settings.homeGreetingType == "Welcome") && Settings.homeGreeting) {
+        const hours = new Date().getHours()
+        return ((Settings.homeGreetingType == "Dynamic" && (hours < 5 ? "Night" : hours < 12 ? "Morning" : hours < 18 ? "Afternoon" : "Evening") || Settings.homeGreetingType) + ", ")
+    } else {
+        return ""
+    }
 }
-
-@media(max-width:1174px) {
-	.home-container {
-		float: none;
-		margin: 0 auto;
-	}
+function insertAfter(NewElement, ExistingElement) {
+    ExistingElement.parentNode.insertBefore(NewElement, ExistingElement.nextSibling)
 }
-
-.home-header {
-	margin-bottom: 12px;
+function MembershipTemplate(parentElement) {
+    var membershipiconcontainer, membershipicon
+    switch(Settings.MembershipType) {
+        case "BC":
+            membershipicon = document.createElement("span")
+            membershipicon.classList.add("icon-bc")
+            parentElement.appendChild(membershipicon)
+            break
+        case "TBC":
+            membershipicon = document.createElement("span")
+            membershipicon.classList.add("icon-tbc")
+            parentElement.appendChild(membershipicon)
+            break
+        case "OBC":
+            membershipicon = document.createElement("span")
+            membershipicon.classList.add("icon-obc")
+            parentElement.appendChild(membershipicon)
+            console.log(membershipicon)
+            break
+        case "Premium":
+            if (Settings.homeFormat == "2020") {
+                membershipicon = document.createElement("span")
+                membershipicon.classList.add("medium-icon", "icon-premium-medium")
+                parentElement.parentNode.insertBefore(membershipicon, parentElement)
+                membershipicon = document.createElement("span")
+                membershipicon.classList.add("small-icon", "icon-premium-small")
+                parentElement.parentNode.insertBefore(membershipicon, parentElement)
+            } else if (Settings.homeFormat == "2021" || Settings.homeFormat == "2022") {
+                membershipiconcontainer = document.createElement("div")
+                membershipiconcontainer.classList.add("user-icon-container")
+                parentElement.parentNode.insertBefore(membershipiconcontainer, parentElement)
+                membershipicon = document.createElement("span")
+                membershipicon.classList.add("medium-icon", "icon-premium-medium")
+                membershipiconcontainer.appendChild(membershipicon)
+                membershipicon = document.createElement("span")
+                membershipicon.classList.add("small-icon", "icon-premium-small")
+                membershipiconcontainer.appendChild(membershipicon)
+            }
+            break
+        default:
+            var errorcontainer = document.createElement("div");
+            errorcontainer.classList.add("error-container");
+            parentElement.appendChild(errorcontainer);
+            membershipicon = document.createElement('span');
+            membershipicon.classList.add("icon-warning");
+            errorcontainer.appendChild(membershipicon);
+            var iconerrorlabel = document.createElement("span");
+            iconerrorlabel.classList.add("text-error", "ng-binding");
+            iconerrorlabel.textContent = " Invalid Membership Type";
+            errorcontainer.appendChild(iconerrorlabel)
+    }
 }
-
-.home-header:before, .home-header:after {
-	content: " ";
-	display: table;
+function SponsorTemplate(parentChild, link, title, source, InsertAfter) {
+    const sponsorBase = document.createElement("li")
+    sponsorBase.classList.add("rbx-nav-sponsor")
+    sponsorBase.setAttribute("ng-non-bindable", "")
+    if (InsertAfter) {
+        insertAfter(sponsorBase, parentChild)
+    } else {
+        parentChild.appendChild(sponsorBase)
+    }
+    const sponsorItem = document.createElement("a")
+    sponsorItem.classList.add("text-nav", "menu-item")
+    sponsorItem.setAttribute("href", link)
+    sponsorItem.setAttribute("title", title)
+    sponsorBase.appendChild(sponsorItem)
+    const sponsorimg = document.createElement("img")
+    sponsorimg.setAttribute("src", source)
+    sponsorItem.appendChild(sponsorimg)
 }
-
-.home-header:after {
-	clear: both;
-}
-
-.home-header .avatar, .home-header .home-header-content {
-	float: left;
-}
-
-.home-header .avatar {
-	margin-right: 24px;
-}
-
-.home-header-content {
-	width: 75%;
-	width: calc(100% - 180px - 36px);
-	position: relative;
-}
-
-@media(max-width:991px) {
-	.home-header-content {
-		padding: 0 15px;
-	}
-}
-
-.home-header-content h1 {
-	margin: 36px 0 12px;
-}
-
-.non-bc h1 {
-	margin-top: 60px;
-}
-
-@media(max-width:991px) {
-	.home-header .avatar {
-		height: 120px;
-		width: 120px;
-	}
-
-	.home-header .avatar img {
-		height: 120px;
-		width: 120px;
-	}
-
-	.home-header-content {
-		width: 75%;
-		width: calc(100% - 120px - 36px);
-	}
-
-	.home-header-content h1 {
-		margin: 12px 0 6px;
-	}
-
-	.non-bc h1 {
-		margin-top: 36px;
-	}
-}
-
-@media(max-width:767px) {
-	.home-header .avatar {
-		display: none;
-	}
-
-	.home-header-content {
-		width: 100%;
-	}
-
-	.home-header-content:before, .home-header-content:after {
-		content: " ";
-		display: table;
-	}
-
-	.home-header-content:after {
-		clear: both;
-	}
-
-	.home-header-content h1, .home-header-content span[class^="icon"] {
-		float: left;
-		margin: 12px 0;
-	}
-
-	.home-header-content h1 {
-		max-width: 80%;
-		max-width: calc(100% - 52px - 12px);
-	}
-
-	.home-header-content span[class^="icon"] {
-		margin: 24px 0 0 12px;
-	}
-}
-
-@media(max-width:543px) {
-	.home-header-content {
-		width: 100%;
-	}
-
-	.home-header-content h1, .home-header-content span[class^="icon"] {
-		float: none;
-		margin: 6px 0;
-	}
-
-	.home-header-content span[class^="icon"] {
-		float: left;
-	}
-}
-        `
-    } else if (Settings.homeFormat === "2020") {
-        return `
+function StyleSheet() {
+    switch(Settings.homeFormat) {
+        case "2017":
+            return `
 .home-header {
     margin-bottom: 12px;
 }
@@ -245,6 +229,10 @@ function GetHeaderStyle() {
     width: calc(100% - 180px - 36px);
     position: relative;
 }
+.ropro-enabled .home-header-content {
+    width: 40%;
+    width: calc(100% - 180px - 400px);
+}
 
 @media(max-width: 991px) {
     .home-header-content {
@@ -254,6 +242,134 @@ function GetHeaderStyle() {
 
 .home-header-content h1 {
     margin: 36px 0 12px;
+}
+
+.non-bc h1 {
+    margin-top: 60px;
+}
+
+@media(max-width: 991px) {
+    .home-header .avatar {
+        height:120px;
+        width: 120px;
+    }
+
+    .home-header .avatar img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .home-header-content {
+        width: 75%;
+        width: calc(100% - 120px - 36px);
+    }
+    .ropro-enabled .home-header-content {
+        width: 25%;
+        width: calc(100% - 120px - 425px);
+    }
+
+    .home-header-content h1 {
+        margin: 12px 0 6px;
+    }
+
+    .non-bc h1 {
+        margin-top: 36px;
+    }
+}
+
+@media(max-width: 767px) {
+    .home-header .avatar {
+        display:none;
+    }
+
+    .home-header-content {
+        width: 100%;
+    }
+
+    .home-header-content:before,.home-header-content:after {
+        content: " ";
+        display: table;
+    }
+
+    .home-header-content:after {
+        clear: both;
+    }
+
+    .home-header-content h1,.home-header-content span[class^="icon"] {
+        float: left;
+        margin: 12px 0;
+    }
+
+    .home-header-content h1 {
+        max-width: 80%;
+        max-width: calc(100% - 52px - 12px);
+    }
+
+    .home-header-content span[class^="icon"] {
+        margin: 24px 0 0 12px;
+    }
+}
+
+@media(max-width: 543px) {
+    .home-header-content {
+        width:100%;
+    }
+
+    .home-header-content h1,.home-header-content span[class^="icon"] {
+        float: none;
+        margin: 6px 0;
+    }
+
+    .home-header-content span[class^="icon"] {
+        float: left;
+    }
+}
+        `
+            break
+        case "2020":
+            return `
+.home-header {
+    margin-bottom: 12px;
+}
+
+.home-header:before,.home-header:after {
+    content: " ";
+    display: table;
+}
+
+.home-header:after {
+    clear: both;
+}
+
+.home-header .avatar,.home-header .home-header-content {
+    float: left;
+}
+
+.home-header .avatar {
+    margin-right: 24px;
+}
+
+.home-header-content {
+    width: 75%;
+    width: calc(100% - 180px - 36px);
+    position: relative;
+}
+.ropro-enabled .home-header-content {
+    width: 40%;
+    width: calc(100% - 180px - 400px);
+}
+
+@media(max-width: 991px) {
+    .home-header-content {
+        padding:0 15px;
+    }
+}
+
+.home-header-content h1 {
+    margin: 36px 0 12px;
+}
+.home-header-content.hF2020PositionFix h1 {
+    margin: 56px 0 12px;
 }
 
 .home-header-content h1 .icon-premium-medium {
@@ -280,9 +396,16 @@ function GetHeaderStyle() {
         width: 75%;
         width: calc(100% - 120px - 36px);
     }
+    .ropro-enabled .home-header-content {
+        width: 25%;
+        width: calc(100% - 120px - 425px);
+    }
 
     .home-header-content h1 {
         margin: 12px 0 6px;
+    }
+    .home-header-content.hF2020PositionFix h1 {
+        margin: 42px 0 12px;
     }
 
     .home-header-content h1 .icon-premium-medium {
@@ -316,6 +439,9 @@ function GetHeaderStyle() {
     .home-header-content h1,.home-header-content span[class^="icon"] {
         margin: 12px 0;
     }
+    .home-header-content.hF2020PositionFix h1 {
+        margin: 12px 0;
+    }
 
     .home-header-content h1 {
         max-width: 80%;
@@ -340,10 +466,52 @@ function GetHeaderStyle() {
         margin: 8px 0;
     }
 }
-        `
-    } else if (Settings.homeFormat === "2021") {
-        if (Settings.ORHCompatible) {
-            return `
+            `
+            break
+        case "2021":
+            if (Settings.ORHCompatible) {
+                return `
+.home-header-shimmer {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+@media(max-width: 767px) {
+    .home-header-shimmer {
+        padding:0 0 0 15px;
+    }
+}
+
+.home-header-shimmer .shimmer-home-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 24px 0 0;
+}
+
+@media(max-width: 767px) {
+    .home-header-shimmer .shimmer-home-avatar {
+        display:none;
+    }
+}
+
+.home-header-shimmer .shimmer-home-user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+
+@media(max-width: 767px) {
+    .home-header-shimmer .shimmer-home-user-info {
+        width:60%;
+    }
+}
+
+.home-header-shimmer .shimmer-home-user-info .shimmer-line {
+    height: 32px;
+}
+
 .home-header {
     display: flex;
     flex-direction: row;
@@ -359,9 +527,9 @@ function GetHeaderStyle() {
 .user-avatar-container {
     min-width: 150px;
 }
-`
-        } else {
-            return `
+                `
+            } else {
+                return `
 .home-header {
     margin-bottom: 12px;
 }
@@ -580,183 +748,11 @@ function GetHeaderStyle() {
         padding:0 0 0 15px
     }
 }
-            `
-        }
-    } else if (Settings.homeFormat === "2022") {
-        return `
-.home-header {
-    margin-bottom: 12px;
-}
-
-.home-header:before,.home-header:after {
-    content: " ";
-    display: table;
-}
-
-.home-header:after {
-    clear: both;
-}
-
-.home-header .avatar,.home-header .home-header-content {
-    float: left;
-}
-
-.home-header .avatar {
-    margin-right: 24px;
-}
-
-.home-header-container {
-    min-height: 150px;
-    margin-bottom: 12px;
-}
-
-@media(max-width: 767px) {
-    .home-header-container {
-        min-height:60px;
-    }
-}
-
-.home-header-content {
-    width: 75%;
-    width: calc(100% - 180px - 36px);
-    position: relative;
-}
-
-@media(max-width: 991px) {
-    .home-header-content {
-        padding:0 15px;
-    }
-}
-
-.home-header-content h1 {
-    margin: 36px 0 12px;
-}
-
-.home-header-content h1 .icon-premium-medium {
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.home-header-content h1 .icon-premium-small {
-    display: none;
-}
-
-.home-header-shimmer {
-    display: flex;
-}
-
-@media(max-width: 767px) {
-    .home-header-shimmer {
-        padding:0 0 0 15px;
-    }
-}
-
-.home-header-shimmer .shimmer-home-avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 24px 0 0;
-}
-
-@media(max-width: 767px) {
-    .home-header-shimmer .shimmer-home-avatar {
-        display:none;
-    }
-}
-
-.home-header-shimmer .shimmer-home-user-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 30%;
-}
-
-@media(max-width: 767px) {
-    .home-header-shimmer .shimmer-home-user-info {
-        width:60%;
-    }
-}
-
-.home-header-shimmer .shimmer-home-user-info .shimmer-line {
-    height: 32px;
-}
-
-@media(max-width: 991px) {
-    .home-header .avatar {
-        height:120px;
-        width: 120px;
-    }
-
-    .home-header .avatar img {
-        height: 120px;
-        width: 120px;
-    }
-
-    .home-header-content {
-        width: 75%;
-        width: calc(100% - 120px - 36px);
-    }
-
-    .home-header-content h1 {
-        margin: 12px 0 6px;
-    }
-
-    .home-header-content h1 .icon-premium-medium {
-        display: inline-block;
-        margin-bottom: 5px;
-    }
-
-    .home-header-content h1 .icon-premium-small {
-        display: none;
-    }
-}
-
-@media(max-width: 767px) {
-    .home-header .avatar {
-        display:none;
-    }
-
-    .home-header-content {
-        width: 100%;
-    }
-
-    .home-header-content:before,.home-header-content:after {
-        content: " ";
-        display: table;
-    }
-
-    .home-header-content:after {
-        clear: both;
-    }
-
-    .home-header-content h1,.home-header-content span[class^="icon"] {
-        margin: 12px 0;
-    }
-
-    .home-header-content h1 {
-        max-width: 80%;
-        max-width: calc(100% - 52px - 12px);
-    }
-
-    .home-header-content h1 .icon-premium-medium {
-        display: none;
-    }
-
-    .home-header-content h1 .icon-premium-small {
-        display: inline-block;
-    }
-}
-
-@media(max-width: 543px) {
-    .home-header-content {
-        width:100%;
-    }
-
-    .home-header-content h1,.home-header-content span[class^="icon"] {
-        margin: 8px 0;
-    }
-}
-
+                `
+            }
+            break
+        case "2022":
+            return `
 @media (max-width: 767px) {
     .user-avatar-container {
         display:none
@@ -808,261 +804,368 @@ function GetHeaderStyle() {
     flex-direction: column;
     justify-content: center
 }
-        `
+
+.home-header {
+    margin-bottom: 12px;
+}
+
+.home-header:before,.home-header:after {
+    content: " ";
+    display: table;
+}
+
+.home-header:after {
+    clear: both;
+}
+
+.home-header .avatar,.home-header .home-header-content {
+    float: left;
+}
+
+.home-header .avatar {
+    margin-right: 24px;
+}
+
+.home-header-container {
+    min-height: 150px;
+    margin-bottom: 12px;
+}
+
+@media(max-width: 767px) {
+    .home-header-container {
+        min-height:60px;
+    }
+}
+
+.home-header-content {
+    width: 75%;
+    width: calc(100% - 180px - 36px);
+    position: relative;
+}
+
+@media(max-width: 991px) {
+    .home-header-content {
+        padding:0 15px;
+    }
+}
+
+.home-header-content h1 {
+    margin: 36px 0 12px;
+}
+
+.home-header-content h1 .icon-premium-medium {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.home-header-content h1 .icon-premium-small {
+    display: none;
+}
+
+.home-header-shimmer {
+    display: flex;
+}
+
+@media(max-width: 767px) {
+    .home-header-shimmer {
+        padding:0 0 0 15px;
+    }
+}
+
+.home-header-shimmer .shimmer-home-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 24px 0 0;
+}
+
+@media(max-width: 767px) {
+    .home-header-shimmer .shimmer-home-avatar {
+        display:none;
+    }
+}
+
+.home-header-shimmer .shimmer-home-user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+
+@media(max-width: 767px) {
+    .home-header-shimmer .shimmer-home-user-info {
+        width:60%;
+    }
+}
+
+.home-header-shimmer .shimmer-home-user-info .shimmer-line {
+    height: 32px;
+}
+
+@media(max-width: 991px) {
+    .home-header .avatar {
+        height:120px;
+        width: 120px;
+    }
+
+    .home-header .avatar img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .home-header-content {
+        width: 75%;
+        width: calc(100% - 120px - 36px);
+    }
+
+    .home-header-content h1 {
+        margin: 12px 0 6px;
+    }
+
+    .home-header-content h1 .icon-premium-medium {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .home-header-content h1 .icon-premium-small {
+        display: none;
+    }
+}
+
+@media(max-width: 767px) {
+    .home-header .avatar {
+        display:none;
+    }
+
+    .home-header-content {
+        width: 100%;
+    }
+
+    .home-header-content:before,.home-header-content:after {
+        content: " ";
+        display: table;
+    }
+
+    .home-header-content:after {
+        clear: both;
+    }
+
+    .home-header-content h1,.home-header-content span[class^="icon"] {
+        margin: 12px 0;
+    }
+
+    .home-header-content h1 {
+        max-width: 80%;
+        max-width: calc(100% - 52px - 12px);
+    }
+
+    .home-header-content h1 .icon-premium-medium {
+        display: none;
+    }
+
+    .home-header-content h1 .icon-premium-small {
+        display: inline-block;
+    }
+}
+
+@media(max-width: 543px) {
+    .home-header-content {
+        width:100%;
+    }
+
+    .home-header-content h1,.home-header-content span[class^="icon"] {
+        margin: 8px 0;
+    }
+}
+            `
     }
 }
 
 /*/== RunTime ==/*/
 
-if (Settings.MembershipType === "Premium" && Settings.homeFormat === "2017") {
+if (Settings.MembershipType == "Premium" && (Settings.homeFormat == "2017")) {
     Settings.homeFormat = "2020"
-} else if (Settings.MembershipType !== "Premium" && Settings.homeFormat !== "2017") {
+} else if ((Settings.MembershipType == "BC" || Settings.MembershipType == "TBC" || Settings.MembershipType == "OBC") && (Settings.homeFormat == "2020" || Settings.homeFormat == "2021" || Settings.homeFormat == "2022")) {
     Settings.homeFormat = "2017"
 }
 
-if (Settings.RestoreMyFeed) {
-    if (Settings.AddJSClasses) {
-        document.body.classList.add("MyFeedEnabled")
-    }
-    const NavGroup = document.getElementById('nav-group');
-    const feedlistorder = document.createElement('li');
-    NavGroup.parentElement.parentNode.insertBefore(feedlistorder, NavGroup.parentElement.nextSibling);
-    const feedlink = document.createElement("a");
-    feedlink.classList.add("dynamic-overflow-container", "text-nav");
-    feedlistorder.appendChild(feedlink);
-    feedlink.setAttribute("href", window.location.protocol+"//"+window.location.hostname+"/feeds/");
-    feedlink.setAttribute("id", "nav-my-feed");
-    feedlink.setAttribute("target", "_self");
-    const feeddiv = document.createElement("div");
-    feedlink.appendChild(feeddiv);
-    const feedicon = document.createElement("span");
-    feedicon.classList.add("icon-nav-my-feed");
-    feeddiv.appendChild(feedicon);
-    const feedfontheader = document.createElement("span")
-    feedlink.appendChild(feedfontheader);
-    feedfontheader.classList.add("font-header-2", "dynamic-ellipsis-item");
-    feedfontheader.textContent = "My Feed";
+async function waitForElm(q) {
+    while (document.querySelector(q) == null) {
+        await new Promise(r => requestAnimationFrame(r));
+    };
+    return document.querySelector(q);
 }
 
-if (Settings.RestoreEvents) {
-    if (Settings.AddJSClasses) {
-        document.body.classList.add("EventsEnabled")
+if (Settings.RestoreLegacyFavIcon) {
+    try {
+        var link = document.head.querySelector("link[rel*='icon']")
+        switch(Settings.FavIcon) {
+            case "2012M":
+                link.href = "data:image/x-icon;base64,AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAA7KeYAY0vbAVxE3QWAT80Hw3q9BwAA/wCqfb4A3KWwBl1C38VdP9Zy/+2eEv//TAAAAPUAKB3wAEYy5gD/5p0AUjrgAGlQ2QA7K+cAjlbIALJsvwBwVdIIbFPZHlM73FIgHvj/Kyr5/xYS9vAjFu3RHxPtpDMm7X1IN+No/8ioLGhN2wB7XtYUSDTgTWBL4mx0WuiTQTbs2FI83544LOzEysr+/vz9/vrT1P3/wsP+/3J0/f8TDvb/PC3qvDYl7SIiEOYASjLbbTIu9f/d3P3/6+3//z48+f00Hd+5kpP8//////37+v7+////+b/B//9DOfDqYU7aWVE95QBMN+cAEAHlADwl22tGRPf9////9dHT//s1JuflVUfr6uvt//7///79////+5WW/f83KOnTPSTiKl1G3wBTPuABAAD/AQEA6QAmEuBsWFb4/v39/vmfn/z+OSLc96Ce+v3///7+/////oSE/P9CLeO5ak/XDEUv5wCygsQCQjLmAXhb0gAAAOwAEgPkanJx+f/////6VU7y/Tgq6P/p7P/+9PX+/HNw+Po+ItuSMiHhCGxcxRc4JeMs/9mwB0w54gBMOeIBAADzAC8a4YeIh/r/////+nl5+f6nqPz9///+/o6P/P8lIPH2WUnrvTMu9tM7NvTtJiP2+jUl4qYuJO0IKh/uAgAA+wAhEeqSmZn8//////n///////////////z///79+Pn//+fp///o6P7/7u///+Pk//1maPv/OSznsg4L+wAAAP4AKRvmq6Wm/P/////7bm35+VRP9vqMifv/vb7+//z8/v7///78///+/f7+/f7////6lpb8/DQh5MQCAPcAAAD/AC8h57m3t/z//////11V8tjHs90qNCDZXgwA6LuYmPz+/v7//Pn5/f79/f7+/v7++UtI9v9fPNN0US/VAAME/gAfFu60v7/9/v7+/vtZVPT4QDHiw0lB8MJNSPTqxcX8/v7+/v76+v7+///+/ePl//01K+371KWmLduvmQAAAP8LHhn1ydrb//7////45+j++9vc///s7f////////////z+/v799/f9/vv7//ykpv7/MyLkzk1U2gEDB/YB/+mUQUIz6eB+evb7qKX6/7++/P/R0f7/5+f//+7v///3+P///////////v/////7Y2H4/00w2YMKAvIAMSPvBt2ixgvjtq4oKQTEKUIe50YjE+VuPy7njk9D7K5US/DFYlv31Xd0+OSDgPn0dXX7/C8l7/25h705nnHGAIRh1QPurr4As4zBABgAzwApGeQAFAvvAAAA/wAeMf8AJJn/AAAAAAwAAMQuMQ/TfB8K4NQxD9N8/8uoGOCpuQDDkL0B/z8AAP8BAADgAQAAgAcAAIAPAACAHwAAgD8AAIADAACAAQAAgAEAAIYBAACAAwAAgAMAAIADAADwBwAA/8cAAA=="
+                break
+            case "2015L":
+                link.href = "http://images.rbxcdn.com/7aee41db80c1071f60377c3575a0ed87.ico"
+                break
+            case "2017E":
+                link.href = "https://images.rbxcdn.com/2bb82200dbc00ef3d000c5cf2c8f457b.ico"
+                break
+            case "2017L":
+                link.href = "https://images.rbxcdn.com/1387da00c070fd34110985aee87f3155.ico.gzip"
+                break
+            case "2018L":
+                link.href = "https://images.rbxcdn.com/23421382939a9f4ae8bbe60dbe2a3e7e.ico.gzip"
+                break
+        }
+    } catch {
     }
-    function SponsorTemplate(parentChild, link, title, source, useAfter) {
-        const rbxnavsponsor = document.createElement("li");
-        if (useAfter) {
-            parentChild.insertBefore(rbxnavsponsor, parentChild.nextSibling);
+}
+
+waitForElm(".left-col-list").then(async (hdrSec) => {
+    if (Settings.RestoreMyFeed) {
+        if (Settings.JSClasses) {
+            document.body.classList.add("MyFeedEnabled")
+        }
+        const navgroup = document.getElementById("nav-group")
+        const feedsBase = document.createElement("li")
+        insertAfter(feedsBase, navgroup.parentElement)
+        const navmyfeed = document.createElement("a")
+        navmyfeed.classList.add("dynamic-overflow-container", "text-nav")
+        navmyfeed.setAttribute("href", url+"/feeds/")
+        navmyfeed.setAttribute("id", "nav-my-feed")
+        navmyfeed.setAttribute("target", "_self")
+        feedsBase.appendChild(navmyfeed)
+        const feeddiv = document.createElement("div")
+        navmyfeed.appendChild(feeddiv)
+        const feedsicon = document.createElement("span")
+        feedsicon.classList.add("icon-nav-my-feed")
+        feeddiv.appendChild(feedsicon)
+        const feedsfontheader = document.createElement("span")
+        feedsfontheader.classList.add("font-header-2", "dynamic-ellipsis-item")
+        feedsfontheader.textContent = "My Feed"
+        navmyfeed.appendChild(feedsfontheader)
+    }
+    if (Settings.RestoreUpgradeNow) {
+        if (Settings.JSClasses) {
+            document.body.classList.add("UNRenamedEnabled")
+        }
+        document.getElementById("upgrade-now-button").innerHTML = document.getElementById("upgrade-now-button").innerHTML.replace(/Get Premium/g, "Upgrade Now");
+    }
+    if (Settings.RestoreEvents) {
+        if (Settings.JSClasses) {
+            document.body.classList.add("EventsEnabled")
+        }
+        const EventsLbl = document.createElement("li")
+        EventsLbl.classList.add("font-bold", "text-nav")
+        EventsLbl.textContent = "Events"
+        hdrSec.appendChild(EventsLbl)
+        if (Settings.CustomEvents) {
+            if (Events.CustomEvents.Event1.Enabled) {
+                SponsorTemplate(hdrSec, Events.CustomEvents.Event1.Link, Events.CustomEvents.Event1.Title, Events.CustomEvents.Event1.Source, false)
+            }
+            if (Events.CustomEvents.Event2.Enabled) {
+                SponsorTemplate(hdrSec, Events.CustomEvents.Event2.Link, Events.CustomEvents.Event2.Title, Events.CustomEvents.Event2.Source, Events.CustomEvents.Event2.Enabled && true || false)
+            }
+            if (Events.CustomEvents.Event3.Enabled) {
+                SponsorTemplate(hdrSec, Events.CustomEvents.Event3.Link, Events.CustomEvents.Event3.Title, Events.CustomEvents.Event3.Source, (Events.CustomEvents.Event3.Enabled || Events.CustomEvents.Event2.Enabled) && true || false)
+            }
         } else {
-            parentChild.appendChild(rbxnavsponsor);
-        }
-        rbxnavsponsor.classList.add("rbx-nav-sponsor");
-        rbxnavsponsor.setAttribute("ng-non-bindable", true);
-        const sponsormenuitem = document.createElement("a");
-        rbxnavsponsor.appendChild(sponsormenuitem)
-        sponsormenuitem.classList.add("text-nav", "menu-item");
-        sponsormenuitem.setAttribute("href", link);
-        sponsormenuitem.setAttribute("title", title);
-        const sponsorimage = document.createElement("img");
-        sponsormenuitem.appendChild(sponsorimage);
-        sponsorimage.setAttribute("src", source)
-    }
-    const LeftColList = document.querySelector('.left-col-list');
-    const EventsText = document.createElement("li");
-    EventsText.classList.add("font-bold", "small", "text-nav");
-    EventsText.textContent = " Events";
-    LeftColList.appendChild(EventsText);
-    if (Settings.useCustomEvents) {
-        if (CustomEvents.Event1) {
-            SponsorTemplate(LeftColList, CustomEvents.Event1Link, CustomEvents.Event1Title, CustomEvents.Event1Source, false)
-        }
-        if (CustomEvents.Event2) {
-            SponsorTemplate(LeftColList, CustomEvents.Event2Link, CustomEvents.Event2Title, CustomEvents.Event2Source, CustomEvents.Event1 && true || false)
-        }
-        if (CustomEvents.Event3) {
-            SponsorTemplate(LeftColList, CustomEvents.Event3Link, CustomEvents.Event3Title, CustomEvents.Event3Source, (CustomEvents.Event1 || CustomEvents.Event2) && true || false)
+            if (Events.RobloxEvents.GiftCards.Enabled) {
+                SponsorTemplate(hdrSec, Events.RobloxEvents.GiftCards.Link, Events.RobloxEvents.GiftCards.Title, Events.RobloxEvents.GiftCards.Source, false)
+            }
         }
     }
-}
+});
 
-if (Settings.RestoreUpgradeNowLbl) {
-    if (Settings.AddJSClasses) {
-        document.body.classList.add("UNRenamedEnabled")
-    }
-    document.getElementById("upgrade-now-button").innerHTML = document.getElementById("upgrade-now-button").innerHTML.replace(/Get Premium/g, "Upgrade Now");
-}
-
-if (Settings.RestoreHomePage) {
-    var Style = document.createElement("style");
-    Style.innerHTML = GetHeaderStyle()
-    document.getElementsByTagName("head")[0].appendChild(Style);
-    const HomeContainer = document.getElementById('HomeContainer');
-    const HomeContainerFirstSection = HomeContainer.querySelector('.section:first-child');
-    const homeheader = document.createElement('div');
-    HomeContainer.insertBefore(homeheader, HomeContainerFirstSection);
-    HomeContainer.removeChild(HomeContainerFirstSection);
-    var homeheaderalt, headeravatarframe, headerloaderavatarthumb, headeravatarthumb, homeuserinfocontainer, homeheadercontent, homeheaderloadercontenth1, homeheadercontenth1, homeheaderloadercontentlink, homeheadercontentlink, usericoncontainer, iconcontainerlabel, iconcontainerextralabel;
-    var PresenceDiv, PresenceSpan, PresenceStatus = null;
-    function GetMembership(parentElement) {
-        if (Settings.homeFormat === "2021" && Settings.homeFormat === "2022") {
-            usericoncontainer = document.createElement('div');
-            usericoncontainer.classList.add("user-icon-container");
-            parentElement.parentNode.insertBefore(usericoncontainer, parentElement)
-        }
-        switch(Settings.MembershipType) {
-            case "BC":
-                iconcontainerlabel = document.createElement('span');
-                iconcontainerlabel.classList.add("icon-bc");
-                parentElement.appendChild(iconcontainerlabel);
-                break;
-            case "TBC":
-                iconcontainerlabel = document.createElement('span');
-                iconcontainerlabel.classList.add("icon-tbc");
-                parentElement.appendChild(iconcontainerlabel);
-                break;
-            case "OBC":
-                iconcontainerlabel = document.createElement('span');
-                iconcontainerlabel.classList.add("icon-obc");
-                parentElement.appendChild(iconcontainerlabel);
-                break;
-            case "Premium":
-                iconcontainerlabel = document.createElement('span');
-                iconcontainerlabel.classList.add("medium-icon", "icon-premium-medium");
-                if (Settings.homeFormat === "2020") {
-                    parentElement.parentNode.insertBefore(iconcontainerlabel, parentElement);
-                } else {
-                    usericoncontainer.appendChild(iconcontainerlabel);
-                }
-                iconcontainerextralabel = document.createElement('span');
-                iconcontainerextralabel.classList.add("small-icon", "icon-premium-small");
-                if (Settings.homeFormat === "2020") {
-                    parentElement.parentNode.insertBefore(iconcontainerextralabel, parentElement);
-                } else {
-                    usericoncontainer.appendChild(iconcontainerextralabel);
-                }
-                break;
-            default:
-                var iconcontainer = document.createElement("div");
-                iconcontainer.classList.add("has-error");
-                parentElement.appendChild(iconcontainer);
-                iconcontainerlabel = document.createElement('span');
-                iconcontainerlabel.classList.add("icon-warning");
-                iconcontainer.appendChild(iconcontainerlabel);
-                var iconerrorlabel = document.createElement("span");
-                iconerrorlabel.classList.add("text-error");
-                iconerrorlabel.textContent = " Invalid Membership Type";
-                iconcontainer.appendChild(iconerrorlabel)
-        }
-    }
-    function userPresenceTemplate(parentElement) {
-        if (PresenceDiv) {
-            PresenceSpan.classList.remove(PresenceStatus);
-            PresenceStatus = userData.userPresence.userPresenceType === 1 && "icon-online" || userData.userPresence.userPresenceType === 2 && "icon-game" || userData.userPresence.userPresenceType === 3 && "icon-studio";
-            PresenceSpan.classList.add(PresenceStatus);
-            PresenceSpan.setAttribute("title", userData.userPresence.lastLocation);
-        } else {
-            PresenceDiv = document.createElement("div");
-            parentElement.appendChild(PresenceDiv);
-            PresenceDiv.setAttribute("ng-non-bindable", "");
-            PresenceSpan = document.createElement("span");
-            PresenceDiv.appendChild(PresenceSpan);
-            PresenceStatus = userData.userPresence.userPresenceType === 1 && "icon-online" || userData.userPresence.userPresenceType === 2 && "icon-game" || userData.userPresence.userPresenceType === 3 && "icon-studio";
-            PresenceSpan.classList.add("avatar-status", PresenceStatus);
-            PresenceSpan.setAttribute("title", userData.userPresence.lastLocation);
-        }
-    }
-    switch(Settings.homeFormat) {
-        case "2017":
-        case "2020":
-            if (Settings.AddJSClasses) {
-                switch (Settings.homeFormat) {
+if (Settings.RestoreHomePage && window.location.href == url+"/home") {
+    var Style = document.createElement("style")
+    Style.innerHTML = StyleSheet()
+    document.head.appendChild(Style)
+    var avatarLoadingHeadshot, avatarLoadingThumb, headerLoadingcontent, homeLoadingheader, headerLoadingLbl
+    var homecontainer, hcfirstsection, homeheaderBase, homeheaderBaseSub, homeheaderSubBase, avatarHeadshot, thumbnail2dcontainer, avatarThumb, headeruserinfo, headercontent, homeheader, headerLbl
+    var PresenceDiv, PresenceSpan, PresenceStatus
+    var initialSetup = setInterval(function() {
+        try {
+            homecontainer = document.getElementById("HomeContainer")
+            hcfirstsection = homecontainer.querySelector(".section:first-child")
+            /*/ Swap "home" section element to our home template /*/
+            if (homecontainer && hcfirstsection) {
+                switch(Settings.homeFormat) {
                     case "2017":
-                        document.body.classList.add("HP2017");
-                        break;
                     case "2020":
-                        document.body.classList.add("HP2020");
-                        break;
+                        homeheaderBase = document.createElement("div")
+                        homeheaderBase.classList.add("col-xs-12", "home-header")
+                        homecontainer.insertBefore(homeheaderBase, hcfirstsection)
+                        homecontainer.removeChild(hcfirstsection)
+                        avatarLoadingHeadshot = document.createElement("span")
+                        avatarLoadingHeadshot.classList.add("avatar", "avatar-headshot-lg", "placeholder", "shimmer")
+                        homeheaderBase.appendChild(avatarLoadingHeadshot)
+                        //==========//
+                        headerLoadingcontent = document.createElement("div")
+                        headerLoadingcontent.classList.add("home-header-content", "non-bc")
+                        homeheaderBase.appendChild(headerLoadingcontent)
+                        if (Settings.DeveloperOptions.fix2020homeFormat && Settings.homeFormat == "2020") {
+                            headerLoadingcontent.classList.add("hF2020PositionFix")
+                        }
+                        homeLoadingheader = document.createElement("h1")
+                        homeLoadingheader.classList.add("col-xs-3", "shimmer-lines")
+                        headerLoadingcontent.appendChild(homeLoadingheader)
+                        headerLoadingLbl = document.createElement("span")
+                        headerLoadingLbl.classList.add("placeholder", "shimmer", "shimmer-line")
+                        homeLoadingheader.appendChild(headerLoadingLbl)
+                        break
+                    case "2021":
+                    case "2022":
+                        ` Shimmer Template ( Formatted )
+                        <div id="home-header" class="col-xs-12 home-header-container">
+                            <div id="home-header-shimmer" class="home-header-shimmer">
+                                <span class="placeholder shimmer shimmer-home-avatar"></span>
+                                <span class="shimmer-lines shimmer-home-user-info">
+                                    <div class="placeholder shimmer-line"></div>
+                                </span>
+                            </div>
+                        </div>
+                        `
+                        homeheaderBase = document.createElement("div")
+                        homeheaderBase.classList.add("col-xs-12", "home-header-container")
+                        homecontainer.insertBefore(homeheaderBase, hcfirstsection)
+                        homecontainer.removeChild(hcfirstsection)
+                        homeheaderBaseSub = document.createElement("div")
+                        homeheaderBaseSub.setAttribute("id", "home-header-shimmer")
+                        homeheaderBaseSub.classList.add("home-header-shimmer")
+                        homeheaderBase.appendChild(homeheaderBaseSub)
+                        avatarLoadingHeadshot = document.createElement("span")
+                        avatarLoadingHeadshot.classList.add("placeholder", "shimmer", "shimmer-home-avatar")
+                        homeheaderBaseSub.appendChild(avatarLoadingHeadshot)
+                        //==========//
+                        headerLoadingcontent = document.createElement("span")
+                        headerLoadingcontent.classList.add("shimmer-lines", "shimmer-home-user-info")
+                        homeheaderBaseSub.appendChild(headerLoadingcontent)
+                        headerLoadingLbl = document.createElement("span")
+                        headerLoadingLbl.classList.add("placeholder", "shimmer-line")
+                        headerLoadingcontent.appendChild(headerLoadingLbl)
+                        break
                 }
+                clearInterval(initialSetup)
             }
-            homeheader.classList.add("col-xs-12", "home-header");
-            headeravatarframe = document.createElement('a');
-            homeheader.appendChild(headeravatarframe);
-            headeravatarframe.classList.add("avatar", "avatar-headshot-lg");
-            headerloaderavatarthumb = document.createElement('span');
-            headeravatarframe.appendChild(headerloaderavatarthumb);
-            headerloaderavatarthumb.setAttribute('id','home-avatar-thumb');
-            headerloaderavatarthumb.classList.add("avatar-card-image", "shimmer");
-            homeheadercontent = document.createElement('div');
-            homeheadercontent.classList.add("home-header-content", "non-bc");
-            homeheader.appendChild(homeheadercontent);
-            homeheaderloadercontenth1 = document.createElement('h1');
-            homeheaderloadercontenth1.classList.add("shimmer-lines", "col-xs-3");
-            homeheadercontent.appendChild(homeheaderloadercontenth1);
-            homeheaderloadercontentlink = document.createElement('a');
-            homeheaderloadercontentlink.classList.add("placeholder", "shimmer", "shimmer-line");
-            homeheaderloadercontenth1.appendChild(homeheaderloadercontentlink);
-            break;
-        case "2021":
-            if (Settings.AddJSClasses) {
-                document.body.classList.add("HP2021")
+        } catch {
+        }
+    }, 0)
+    setInterval(function() {
+        if (document.getElementById("mostPlayedContainer") && (Settings.homeFormat == "2017" || Settings.homeFormat == "2020")) {
+            homeheaderBase.classList.add("ropro-enabled")
+            if (homeLoadingheader.classList.contains("col-xs-3", "shimmer-lines")) {
+                homeLoadingheader.classList.remove("col-xs-3", "shimmer-lines")
+                homeLoadingheader.classList.add("col-xs-6", "shimmer-lines")
             }
-            homeheader.classList.add("col-xs-12", "home-header-container");
-            homeheaderalt = document.createElement('div');
-            homeheader.appendChild(homeheaderalt);
-            homeheaderalt.classList.add("home-header");
-            headeravatarframe = document.createElement('a');
-            homeheaderalt.appendChild(headeravatarframe);
-            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
-            headerloaderavatarthumb = document.createElement('span');
-            headeravatarframe.appendChild(headerloaderavatarthumb);
-            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image", "shimmer");
-            homeheadercontent = document.createElement('div');
-            if (Settings.ORHCompatible) {
-                homeheadercontent.classList.add("user-info-container", "col-xs-12");
-            } else {
-                homeheadercontent.classList.add("user-info-container", "col-xs-10");
-            }
-            homeheaderalt.appendChild(homeheadercontent);
-            homeheaderloadercontenth1 = document.createElement('h1');
-            homeheaderloadercontenth1.classList.add("user-name-container", "shimmer-lines", "col-xs-3");
-            homeheadercontent.appendChild(homeheaderloadercontenth1);
-            homeheaderloadercontentlink = document.createElement('a');
-            homeheaderloadercontentlink.classList.add("placeholder", "shimmer", "shimmer-line");
-            homeheaderloadercontenth1.appendChild(homeheaderloadercontentlink);
-            break;
-        case "2022":
-            if (Settings.AddJSClasses) {
-                document.body.classList.add("HP2022")
-            }
-            homeheader.setAttribute("id", "home-header")
-            homeheader.classList.add("col-xs-12", "home-header-container");
-            homeheaderalt = document.createElement('div');
-            homeheader.appendChild(homeheaderalt);
-            homeheaderalt.classList.add("home-header-shimmer");
-            headeravatarframe = document.createElement('a');
-            homeheaderalt.appendChild(headeravatarframe);
-            headeravatarframe.classList.add("user-avatar-container", "avatar", "shimmer-home-avatar");
-            headerloaderavatarthumb = document.createElement('span');
-            headeravatarframe.appendChild(headerloaderavatarthumb);
-            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "shimmer", "avatar-card-image");
-            homeuserinfocontainer = document.createElement('div');
-            homeheaderalt.appendChild(homeuserinfocontainer);
-            homeuserinfocontainer.classList.add("shimmer-home-user-info")
-            homeheadercontent = document.createElement('div');
-            homeheadercontent.classList.add("shimmer-lines");
-            homeuserinfocontainer.appendChild(homeheadercontent);
-            homeheaderloadercontenth1 = document.createElement('h1');
-            homeheaderloadercontenth1.classList.add("placeholder", "shimmer-line");
-            homeheadercontent.appendChild(homeheaderloadercontenth1);
-    }
-    (function() {
-        setInterval(function() {
-            if (!Data.P1) {
-                if (Settings.demoMode) {
-                    userData.data = {id: 1, name: "Roblox", displayName: "Roblox"};
-                    userData.id = userData.data.id;
-                    userData.name = userData.data.name;
-                    userData.displayName = userData.data.displayName;
-                    Data.P1 = true;
+        }
+        if (!Settings.DeveloperOptions.forceinfLoading) {
+            if (!userData.Status.InfoDataLoaded) {
+                if (Settings.DeveloperOptions.demoMode) {
+                    userData.Response = {id: 1, name: "Roblox", displayName: "Roblox"}
+                    userData.id = userData.Response.id
+                    userData.name = userData.Response.name
+                    userData.displayName = userData.Response.displayName
+                    userData.Status.InfoDataLoaded = true
                 } else {
                     GM_xmlhttpRequest({
                         method: "GET",
@@ -1071,340 +1174,412 @@ if (Settings.RestoreHomePage) {
                             "Content-Type": "application/json"
                         },
                         onload: function(response) {
-                            userData.data = JSON.parse(response.responseText);
-                            userData.id = userData.data.id;
-                            userData.name = userData.data.name;
-                            userData.displayName = userData.data.displayName;
-                            Data.P1 = true;
+                            userData.Response = JSON.parse(response.responseText)
+                            userData.id = userData.Response.id
+                            userData.name = userData.Response.name
+                            userData.displayName = userData.Response.displayName
+                            userData.Status.InfoDataLoaded = true
                         },
                         onerror: function(error) {
-                            Data.P1Error = true;
-                            if (Settings.debugMode) {
-                                console.error(error)
-                            }
+                            userData.Status.InfoDataErrored = true;
                         }
                     });
                 }
             }
-            if (!Data.P2) {
-                GM_xmlhttpRequest({
-                    method: "GET",
-                    url: "https://premiumfeatures.roblox.com/v1/users/"+userData.id+"/validate-membership",
-                    onload: function(response) {
-                        if (Settings.demoMode) {
-                            userData.hasMembership = true;
-                        } else {
-                            userData.hasMembership = JSON.parse(response.responseText);
+            if (!userData.Status.MembershipDataLoaded) {
+                if (Settings.DeveloperOptions.forceMembership) {
+                    userData.Membership = true
+                    userData.Status.MembershipDataLoaded = true
+                } else {
+                    GM_xmlhttpRequest({
+                        method: "GET",
+                        url: "https://premiumfeatures.roblox.com/v1/users/"+userData.id+"/validate-membership",
+                        onload: function(response) {
+                            userData.Membership = JSON.parse(response.responseText)
+                            userData.Status.MembershipDataLoaded = true
+                        },
+                        onerror: function(error) {
+                            userData.Status.MembershipDataErrored = true
                         }
-                        Data.P2 = true;
-                        if (Settings.debugMode) {
-                            console.log(userData.hasMembership)
-                        }
-                    },
-                    onerror: function(error) {
-                        Data.P2Error = true
-                        if (Settings.debugMode) {
-                            console.error(error)
-                        }
-                    }
-                });
+                    });
+                }
             }
-            if (!Data.P3) {
+            if (!userData.Status.AvatarDataLoaded) {
                 GM_xmlhttpRequest({
                     method: "GET",
                     url: "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds="+userData.id+"&size=150x150&format=Png",
                     onload: function(response) {
-                        userData.avatardataP1 = JSON.parse(response.responseText)
-                        userData.avatardataP2 = userData.avatardataP1.data[0];
-                        userData.imageUrl = userData.avatardataP2.imageUrl;
-                        Data.P3 = true
+                        try {
+                            userData.avatar.data.Response = JSON.parse(response.responseText).data[0]
+                            userData.avatar.data.imageUrl = userData.avatar.data.Response.imageUrl
+                            userData.Status.AvatarDataLoaded = true
+                        } catch {
+                        }
                     },
                     onerror: function(error) {
-                        Data.P3Error = true
-                        if (Settings.debugMode) {
-                            console.error(error)
-                        }
+                        userData.Status.AvatarDataErrored = true
                     }
-                });
+                })
             }
-            if (Data.P1 && Data.P2 && Data.P3) {
-                Data.loaded = true
-            } else {
-                Data.loaded = false
-            }
-            if (Data.loaded && !Data.loadedstop) {
-                Data.loadedstop = true
-                if (Settings.debugMode) {
-                    console.log("All neccessary data has loaded.\n\nAccount Name : "+userData.name+"\nDisplay Name : "+userData.displayName+"\nId : "+userData.id+"\nMembership : "+userData.hasMembership+"\nimageUrl : "+userData.imageUrl)
-                    if (Settings.homeavatarPresence) {
-                        console.log("Game ID : "+userData.userPresence.gameId+"\nLast Location : "+userData.userPresence.lastLocation+"\nLast Online : "+userData.userPresence.lastOnline+"\nPlace Id : "+userData.userPresence.placeId+"\nRoot Place Id : "+userData.userPresence.rootPlaceId+"\nUser Presence Type : "+userData.userPresence.userPresenceType+"\nUniverse Id : "+userData.userPresence.universeId)
-                    }
-                }
-                if (Settings.BulkLoading) {
+            if (Settings.BulkLoading && userData.Status.InfoDataLoaded && userData.Status.MembershipDataLoaded && userData.Status.AvatarDataLoaded) {
+                userData.Status.FullyLoaded = true
+                if (!userData.Status.FullyLoadedPaused && Settings.BulkLoading) {
+                    userData.Status.FullyLoadedPaused = true
                     switch(Settings.homeFormat) {
                         case "2017":
                         case "2020":
-                            homeheader.removeChild(headeravatarframe);
-                            headeravatarframe = document.createElement('a');
-                            homeheader.appendChild(headeravatarframe);
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            headeravatarframe.classList.add("avatar", "avatar-headshot-lg");
-                            homeheader.appendChild(homeheadercontent);
-                            headeravatarthumb = document.createElement('img');
-                            headeravatarframe.appendChild(headeravatarthumb);
-                            headeravatarthumb.setAttribute('alt','avatar');
-                            headeravatarthumb.setAttribute('src', userData.imageUrl);
-                            headeravatarthumb.setAttribute('id','home-avatar-thumb');
-                            headeravatarthumb.classList.add("avatar-card-image");
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            //======//
-                            homeheadercontent.removeChild(homeheaderloadercontenth1);
-                            homeheadercontenth1 = document.createElement('h1');
-                            homeheadercontent.appendChild(homeheadercontenth1);
-                            homeheadercontentlink = document.createElement('a');
-                            homeheadercontenth1.appendChild(homeheadercontentlink);
-                            if (userData.hasMembership && Settings.homeFormat === "2020") {
-                                GetMembership(homeheadercontentlink)
+                            if (Settings.JSClasses) {
+                                switch(Settings.homeFormat) {
+                                    case "2017":
+                                        document.body.classList.add("HP2017")
+                                        break
+                                    case "2020":
+                                        document.body.classList.add("HP2020")
+                                        break
+                                }
                             }
-                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                            if (Settings.homeFormat === "2017" && userData.hasMembership || Settings.homeFormat === "2020") {
-                                homeheadercontent.classList.remove("non-bc");
-                            }
-                            if (userData.hasMembership && Settings.homeFormat === "2017") {
-                                GetMembership(homeheadercontent)
-                            }
-                            break;
-                        case "2021":
-                            homeheaderalt.removeChild(headeravatarframe);
-                            headeravatarframe = document.createElement('a');
-                            homeheaderalt.appendChild(headeravatarframe);
-                            homeheaderalt.appendChild(homeheadercontent);
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
-                            headerloaderavatarthumb = document.createElement('span');
-                            headeravatarframe.appendChild(headerloaderavatarthumb);
-                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
-                            if (Settings.ORHCompatible) {
-                                homeheadercontent.classList.remove("col-xs-12");
+                            homeheaderBase.removeChild(avatarLoadingHeadshot)
+                            avatarHeadshot = document.createElement("a")
+                            avatarHeadshot.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            avatarHeadshot.classList.add("avatar", "avatar-headshot-lg")
+                            homeheaderBase.appendChild(avatarHeadshot)
+                            avatarThumb = document.createElement("img")
+                            avatarThumb.setAttribute("alt", "avatar")
+                            avatarThumb.setAttribute("src", userData.avatar.data.imageUrl)
+                            avatarThumb.setAttribute("id", "home-avatar-thumb")
+                            avatarThumb.classList.add("avatar-card-image")
+                            avatarHeadshot.appendChild(avatarThumb)
+                            //==========//
+                            homeheaderBase.removeChild(headerLoadingcontent)
+                            headercontent = document.createElement("div")
+                            if (userData.Membership || Settings.homeFormat == "2020") {
+                                headercontent.classList.add("home-header-content")
                             } else {
-                                homeheadercontent.classList.remove("col-xs-10");
+                                headercontent.classList.add("home-header-content", "non-bc")
                             }
-                            headeravatarthumb = document.createElement('img');
-                            headerloaderavatarthumb.appendChild(headeravatarthumb);
-                            headeravatarthumb.setAttribute('src', userData.imageUrl);
-                            headeravatarthumb.classList.add("avatar-card-image");
-                            //======//
-                            homeheaderloadercontenth1.classList.remove("shimmer-lines", "col-xs-3");
-                            homeheaderloadercontenth1.removeChild(homeheaderloadercontentlink);
-                            if (userData.hasMembership && !Settings.ORHCompatible) {
-                                GetMembership(homeheaderloadercontenth1)
+                            if (Settings.DeveloperOptions.fix2020homeFormat && Settings.homeFormat == "2020") {
+                                headercontent.classList.add("hF2020PositionFix")
                             }
-                            homeheadercontentlink = document.createElement('a');
-                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
-                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                            break;
+                            homeheaderBase.appendChild(headercontent)
+                            homeheader = document.createElement("h1")
+                            headercontent.appendChild(homeheader)
+                            if (userData.Membership && Settings.homeFormat == "2017") {
+                                MembershipTemplate(headercontent)
+                            }
+                            headerLbl = document.createElement("a")
+                            headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            homeheader.appendChild(headerLbl)
+                            if (userData.Membership && Settings.homeFormat == "2020") {
+                                MembershipTemplate(headerLbl)
+                            }
+                            break
+                        case "2021":
+                            ` Fully Loaded Template ( Formatted )
+                            <div id="home-header" class="col-xs-12 home-header-container">
+                                <div class="home-header">
+                                    <a class="user-avatar-container avatar avatar-headshot-lg" href="userData.id">
+                                        <span class="thumbnail-2d-container avatar-card-image"></span>
+                                    </a>
+                                    <div class="user-info-container">
+                                        <h1 class="user-name-container">
+                                            <a class="" href="userData.id">userData.name</a>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+                            if (Settings.JSClasses) {
+                                document.body.classList.add("HP2021")
+                            }
+                            homeheaderBaseSub.removeAttribute("id")
+                            homeheaderBaseSub.classList.remove("home-header-shimmer")
+                            homeheaderBaseSub.classList.add("home-header")
+                            homeheaderBaseSub.removeChild(avatarLoadingHeadshot)
+                            avatarHeadshot = document.createElement("a")
+                            avatarHeadshot.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            avatarHeadshot.classList.add("thumbnail-2d-container", "avatar", "avatar-headshot-lg")
+                            homeheaderBaseSub.appendChild(avatarHeadshot)
+                            thumbnail2dcontainer = document.createElement("span")
+                            thumbnail2dcontainer.classList.add("thumbnail-2d-container", "avatar-card-image")
+                            avatarHeadshot.appendChild(thumbnail2dcontainer)
+                            avatarThumb = document.createElement("img")
+                            avatarThumb.setAttribute("src", userData.avatar.data.imageUrl)
+                            avatarThumb.classList.add("avatar-card-image")
+                            thumbnail2dcontainer.appendChild(avatarThumb)
+                            //==========//
+                            homeheaderBaseSub.removeChild(headerLoadingcontent)
+                            headercontent = document.createElement("div")
+                            headercontent.classList.add("user-info-container")
+                            homeheaderBaseSub.appendChild(headercontent)
+                            homeheader = document.createElement("h1")
+                            homeheader.classList.add("user-name-container")
+                            headercontent.appendChild(homeheader)
+                            if (userData.Membership && !Settings.ORHCompatible) {
+                                MembershipTemplate(homeheader)
+                            }
+                            headerLbl = document.createElement("a")
+                            headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            homeheader.appendChild(headerLbl)
+                            break
                         case "2022":
-                            homeheaderalt.classList.remove("home-header-shimmer");
-                            homeheaderalt.classList.add("home-header");
-                            homeheaderalt.removeChild(headeravatarframe);
-                            headeravatarframe = document.createElement('a');
-                            homeheaderalt.appendChild(headeravatarframe);
-                            homeheaderalt.appendChild(homeheadercontent);
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
-                            headerloaderavatarthumb = document.createElement('span');
-                            headeravatarframe.appendChild(headerloaderavatarthumb);
-                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
-                            headeravatarthumb = document.createElement('img');
-                            headerloaderavatarthumb.appendChild(headeravatarthumb);
-                            headeravatarthumb.setAttribute('src', userData.imageUrl);
-                            headeravatarthumb.classList.add("avatar-card-image");
-                            //======//
-                            homeuserinfocontainer.classList.add("home-userinfo-upsell-container")
-                            homeuserinfocontainer.classList.remove("shimmer-home-user-info")
-                            homeheadercontent.classList.remove("shimmer-lines");
-                            homeheadercontent.classList.add("user-info-container");
-                            if (userData.hasMembership && !Settings.ORHCompatible) {
-                                GetMembership(homeheaderloadercontenth1)
+                            ` Fully Loaded Template ( Formatted )
+                            <div id="home-header" class="col-xs-12 home-header-container">
+                                <div class="home-header">
+                                    <a class="user-avatar-container avatar avatar-headshot-lg" href="userData.id">
+                                        <span class="thumbnail-2d-container avatar-card-image"></span>
+                                    </a>
+                                    <div class="home-userinfo-upsell-container">
+                                        <div class="user-info-container">
+                                            <h1 class="user-name-container">
+                                                <a class="" href="userData.id">userData.name</a>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+                            if (Settings.JSClasses) {
+                                document.body.classList.add("HP2022")
                             }
-                            homeheaderloadercontenth1.classList.remove("placeholder", "shimmer-line");
-                            homeheaderloadercontenth1.classList.add("user-name-container");
-                            homeheadercontentlink = document.createElement('a');
-                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
-                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                            break;
-
+                            homeheaderBaseSub.removeAttribute("id")
+                            homeheaderBaseSub.classList.remove("home-header-shimmer")
+                            homeheaderBaseSub.classList.add("home-header")
+                            homeheaderBaseSub.removeChild(avatarLoadingHeadshot)
+                            avatarHeadshot = document.createElement("a")
+                            avatarHeadshot.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            avatarHeadshot.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg")
+                            homeheaderBaseSub.appendChild(avatarHeadshot)
+                            thumbnail2dcontainer = document.createElement("span")
+                            thumbnail2dcontainer.classList.add("thumbnail-2d-container", "avatar-card-image")
+                            avatarHeadshot.appendChild(thumbnail2dcontainer)
+                            avatarThumb = document.createElement("img")
+                            avatarThumb.setAttribute("src", userData.avatar.data.imageUrl)
+                            avatarThumb.classList.add("avatar-card-image")
+                            thumbnail2dcontainer.appendChild(avatarThumb)
+                            //==========//
+                            homeheaderBaseSub.removeChild(headerLoadingcontent)
+                            headeruserinfo = document.createElement("div")
+                            headeruserinfo.classList.add("home-userinfo-upsell-container")
+                            homeheaderBaseSub.appendChild(headeruserinfo)
+                            headercontent = document.createElement("div")
+                            headercontent.classList.add("user-info-container")
+                            headeruserinfo.appendChild(headercontent)
+                            homeheader = document.createElement("h1")
+                            homeheader.classList.add("user-name-container")
+                            headercontent.appendChild(homeheader)
+                            if (userData.Membership) {
+                                MembershipTemplate(homeheader)
+                            }
+                            headerLbl = document.createElement("a")
+                            headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            homeheader.appendChild(headerLbl)
+                            break
                     }
                 }
-            } else if (!Data.loaded && !Data.loadedstop) {
-                if (Settings.debugMode) {
-                    console.log("Not all data has loaded.\n======\nP1 : "+Data.P1+"\nP2 : "+Data.P2+"\nP3 : "+Data.P3+"\n======\nP1Error : "+Data.P1Error+"\nP2Error : "+Data.P2Error+"\nP3Error : "+Data.P3Error)
-                }
-            }
-            if (!Settings.BulkLoading) {
-                if (Data.P1 && !Data.P1Stop) {
-                    Data.P1Stop = true;
+            } else if (!Settings.BulkLoading) {
+                if (userData.Status.AvatarDataLoaded && !userData.Status.AvatarDataPaused) {
+                    userData.Status.AvatarDataPaused = true
                     switch(Settings.homeFormat) {
                         case "2017":
                         case "2020":
-                            homeheadercontent.removeChild(homeheaderloadercontenth1);
-                            homeheadercontenth1 = document.createElement('h1');
-                            homeheadercontent.appendChild(homeheadercontenth1);
-                            homeheadercontentlink = document.createElement('a');
-                            homeheadercontenth1.appendChild(homeheadercontentlink);
-                            if (userData.hasMembership && Settings.homeFormat === "2020") {
-                                GetMembership(homeheadercontentlink)
+                            if (Settings.JSClasses) {
+                                switch (Settings.homeFormat) {
+                                    case "2017":
+                                        document.body.classList.add("HP2017");
+                                        break;
+                                    case "2020":
+                                        document.body.classList.add("HP2020");
+                                        break;
+                                }
                             }
-                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                            if (Settings.homeFormat === "2017" && userData.hasMembership || Settings.homeFormat === "2020") {
-                                homeheadercontent.classList.remove("non-bc");
+                            homeheaderBase.removeChild(avatarLoadingHeadshot)
+                            avatarHeadshot = document.createElement("a")
+                            avatarHeadshot.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            avatarHeadshot.classList.add("avatar", "avatar-headshot-lg")
+                            homeheaderBase.appendChild(avatarHeadshot)
+                            if (userData.Status.InfoDataPaused) {
+                                homeheaderBase.appendChild(headercontent)
                             }
-                            if (userData.hasMembership && Settings.homeFormat === "2017") {
-                                GetMembership(homeheadercontent)
-                            }
-                            break;
+                            avatarThumb = document.createElement("img")
+                            avatarThumb.setAttribute("alt", "avatar")
+                            avatarThumb.setAttribute("src", userData.avatar.data.imageUrl)
+                            avatarThumb.setAttribute("id", "home-avatar-thumb")
+                            avatarThumb.classList.add("avatar-card-image")
+                            avatarHeadshot.appendChild(avatarThumb)
+                            break
                         case "2021":
-                            homeheaderloadercontenth1.classList.remove("shimmer-lines", "col-xs-3");
-                            homeheaderloadercontenth1.removeChild(homeheaderloadercontentlink);
-                            if (userData.hasMembership && !Settings.ORHCompatible) {
-                                GetMembership(homeheaderloadercontenth1)
+                            if (Settings.JSClasses) {
+                                document.body.classList.add("HP2021")
                             }
-                            homeheadercontentlink = document.createElement('a');
-                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
-                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                            break;
+                            homeheaderBaseSub.removeAttribute("id")
+                            homeheaderBaseSub.classList.remove("home-header-shimmer")
+                            homeheaderBaseSub.classList.add("home-header")
+                            homeheaderBaseSub.removeChild(avatarLoadingHeadshot)
+                            avatarHeadshot = document.createElement("a")
+                            avatarHeadshot.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            avatarHeadshot.classList.add("thumbnail-2d-container", "avatar", "avatar-headshot-lg")
+                            homeheaderBaseSub.appendChild(avatarHeadshot)
+                            if (userData.Status.InfoDataPaused) {
+                                homeheaderBaseSub.appendChild(headercontent)
+                            }
+                            thumbnail2dcontainer = document.createElement("span")
+                            thumbnail2dcontainer.classList.add("thumbnail-2d-container", "avatar-card-image")
+                            avatarHeadshot.appendChild(thumbnail2dcontainer)
+                            avatarThumb = document.createElement("img")
+                            avatarThumb.setAttribute("src", userData.avatar.data.imageUrl)
+                            avatarThumb.classList.add("avatar-card-image")
+                            thumbnail2dcontainer.appendChild(avatarThumb)
+                            break
                         case "2022":
-                            homeuserinfocontainer.classList.add("home-userinfo-upsell-container")
-                            homeuserinfocontainer.classList.remove("shimmer-home-user-info")
-                            homeheadercontent.classList.remove("shimmer-lines");
-                            homeheadercontent.classList.add("user-info-container");
-                            if (userData.hasMembership && !Settings.ORHCompatible) {
-                                GetMembership(homeheaderloadercontenth1)
+                            if (Settings.JSClasses) {
+                                document.body.classList.add("HP2022")
                             }
-                            homeheaderloadercontenth1.classList.remove("placeholder", "shimmer-line");
-                            homeheaderloadercontenth1.classList.add("user-name-container");
-                            homeheadercontentlink = document.createElement('a');
-                            homeheaderloadercontenth1.appendChild(homeheadercontentlink);
-                            homeheadercontentlink.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            homeheadercontentlink.textContent = (Settings.homeGreeting) && " Hello, " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + "! " || " " + ((Settings.useDisplayNames) && userData.displayName || userData.name) + " ";
-                            break;
-
+                            homeheaderBaseSub.removeAttribute("id")
+                            homeheaderBaseSub.classList.remove("home-header-shimmer")
+                            homeheaderBaseSub.classList.add("home-header")
+                            homeheaderBaseSub.removeChild(avatarLoadingHeadshot)
+                            avatarHeadshot = document.createElement("a")
+                            avatarHeadshot.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            avatarHeadshot.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg")
+                            homeheaderBaseSub.appendChild(avatarHeadshot)
+                            if (userData.Status.InfoDataPaused) {
+                                homeheaderBaseSub.appendChild(headeruserinfo)
+                            }
+                            thumbnail2dcontainer = document.createElement("span")
+                            thumbnail2dcontainer.classList.add("thumbnail-2d-container", "avatar-card-image")
+                            avatarHeadshot.appendChild(thumbnail2dcontainer)
+                            avatarThumb = document.createElement("img")
+                            avatarThumb.setAttribute("src", userData.avatar.data.imageUrl)
+                            avatarThumb.classList.add("avatar-card-image")
+                            thumbnail2dcontainer.appendChild(avatarThumb)
                     }
                 }
-                if (Data.P3 && !Data.P3Stop) {
-                    Data.P3Stop = true;
+                if (userData.Status.InfoDataLoaded && userData.Status.MembershipDataLoaded && !userData.Status.InfoDataPaused && !userData.Status.MembershipDataPaused) {
+                    userData.Status.InfoDataPaused = true
+                    userData.Status.MembershipDataPaused = true
                     switch(Settings.homeFormat) {
                         case "2017":
                         case "2020":
-                            homeheader.removeChild(headeravatarframe);
-                            headeravatarframe = document.createElement('a');
-                            homeheader.appendChild(headeravatarframe);
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            headeravatarframe.classList.add("avatar", "avatar-headshot-lg");
-                            homeheader.appendChild(homeheadercontent);
-                            headeravatarthumb = document.createElement('img');
-                            headeravatarframe.appendChild(headeravatarthumb);
-                            headeravatarthumb.setAttribute('alt','avatar');
-                            headeravatarthumb.setAttribute('src', userData.imageUrl);
-                            headeravatarthumb.setAttribute('id','home-avatar-thumb');
-                            headeravatarthumb.classList.add("avatar-card-image");
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            break;
-                        case "2021":
-                            homeheaderalt.removeChild(headeravatarframe);
-                            headeravatarframe = document.createElement('a');
-                            homeheaderalt.appendChild(headeravatarframe);
-                            homeheaderalt.appendChild(homeheadercontent);
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
-                            headerloaderavatarthumb = document.createElement('span');
-                            headeravatarframe.appendChild(headerloaderavatarthumb);
-                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
-                            if (Settings.ORHCompatible) {
-                                homeheadercontent.classList.remove("col-xs-12");
+                            homeheaderBase.removeChild(headerLoadingcontent)
+                            headercontent = document.createElement("div")
+                            if (userData.Membership || Settings.homeFormat == "2020") {
+                                headercontent.classList.add("home-header-content")
                             } else {
-                                homeheadercontent.classList.remove("col-xs-10");
+                                headercontent.classList.add("home-header-content", "non-bc")
                             }
-                            headeravatarthumb = document.createElement('img');
-                            headerloaderavatarthumb.appendChild(headeravatarthumb);
-                            headeravatarthumb.setAttribute('src', userData.imageUrl);
-                            headeravatarthumb.classList.add("avatar-card-image");
-                            break;
+                            if (Settings.DeveloperOptions.fix2020homeFormat && Settings.homeFormat == "2020") {
+                                headercontent.classList.add("hF2020PositionFix")
+                            }
+                            homeheaderBase.appendChild(headercontent)
+                            homeheader = document.createElement("h1")
+                            headercontent.appendChild(homeheader)
+                            if (userData.Membership && Settings.homeFormat == "2017") {
+                                MembershipTemplate(headercontent)
+                            }
+                            headerLbl = document.createElement("a")
+                            headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            homeheader.appendChild(headerLbl)
+                            if (userData.Membership && Settings.homeFormat == "2020") {
+                                MembershipTemplate(headerLbl)
+                            }
+                            break
+                        case "2021":
+                            homeheaderBaseSub.removeChild(headerLoadingcontent)
+                            headercontent = document.createElement("div")
+                            headercontent.classList.add("user-info-container")
+                            homeheaderBaseSub.appendChild(headercontent)
+                            homeheader = document.createElement("h1")
+                            homeheader.classList.add("user-name-container")
+                            headercontent.appendChild(homeheader)
+                            if (userData.Membership && !Settings.ORHCompatible) {
+                                MembershipTemplate(homeheader)
+                            }
+                            headerLbl = document.createElement("a")
+                            headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            homeheader.appendChild(headerLbl)
+                            break
                         case "2022":
-                            homeheaderalt.classList.remove("home-header-shimmer");
-                            homeheaderalt.classList.add("home-header");
-                            homeheaderalt.removeChild(headeravatarframe);
-                            headeravatarframe = document.createElement('a');
-                            homeheaderalt.appendChild(headeravatarframe);
-                            homeheaderalt.appendChild(homeheadercontent);
-                            headeravatarframe.setAttribute('href', window.location.protocol+"//"+window.location.hostname+"/users/"+userData.id+"/profile");
-                            headeravatarframe.classList.add("user-avatar-container", "avatar", "avatar-headshot-lg");
-                            headerloaderavatarthumb = document.createElement('span');
-                            headeravatarframe.appendChild(headerloaderavatarthumb);
-                            headerloaderavatarthumb.classList.add("thumbnail-2d-container", "avatar-card-image");
-                            headeravatarthumb = document.createElement('img');
-                            headerloaderavatarthumb.appendChild(headeravatarthumb);
-                            headeravatarthumb.setAttribute('src', userData.imageUrl);
-                            headeravatarthumb.classList.add("avatar-card-image");
-                            break;
-
+                            homeheaderBaseSub.removeChild(headerLoadingcontent)
+                            headeruserinfo = document.createElement("div")
+                            headeruserinfo.classList.add("home-userinfo-upsell-container")
+                            homeheaderBaseSub.appendChild(headeruserinfo)
+                            headercontent = document.createElement("div")
+                            headercontent.classList.add("user-info-container")
+                            headeruserinfo.appendChild(headercontent)
+                            homeheader = document.createElement("h1")
+                            homeheader.classList.add("user-name-container")
+                            headercontent.appendChild(homeheader)
+                            if (userData.Membership) {
+                                MembershipTemplate(homeheader)
+                            }
+                            headerLbl = document.createElement("a")
+                            headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            homeheader.appendChild(headerLbl)
+                            break
                     }
                 }
             }
-            if (Settings.homeavatarPresence && Data.P1) {
-                GM_xmlhttpRequest({
-                    method: 'POST',
-                    url: "https://presence.roblox.com/v1/presence/users",
-                    headers: {
-                        'accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    data: JSON.stringify(
-                        {
-                            userIds: [
-                                userData.id
-                            ]
-                        }
-                    ),
-                    onload: function (response) {
-                        userData.userPresence.P1 = JSON.parse(response.responseText);
-                        userData.userPresence.P2 = userData.userPresence.P1.userPresences[0];
-                        userData.userPresence.gameId = userData.userPresence.P2.gameId;
-                        userData.userPresence.invisibleModeExpiry = userData.userPresence.P2.invisibleModeExpiry;
-                        userData.userPresence.lastLocation = userData.userPresence.P2.lastLocation;
-                        userData.userPresence.lastOnline = userData.userPresence.P2.lastOnline;
-                        userData.userPresence.placeId = userData.userPresence.P2.placeId;
-                        userData.userPresence.rootPlaceId = userData.userPresence.P2.rootPlaceId;
-                        userData.userPresence.userPresenceType = userData.userPresence.P2.userPresenceType;
-                        userData.userPresence.universeId = userData.userPresence.P2.universeId;
-                    },
-                    onerror: function (error) {
-                        if (Settings.debugMode) {
-                            console.error(error);
-                        }
+        }
+        if (Settings.homeavatarPresences && userData.Status.InfoDataLoaded) {
+            function userPresenceTemplate(parentElement) {
+                if (PresenceDiv) {
+                    PresenceSpan.classList.remove(PresenceStatus)
+                    PresenceStatus = userData.userPresences.userPresenceType === 1 && "icon-online" || userData.userPresences.userPresenceType === 2 && "icon-game" || userData.userPresences.userPresenceType === 3 && "icon-studio"
+                    PresenceSpan.classList.add(PresenceStatus)
+                    PresenceSpan.setAttribute("title", userData.userPresences.lastLocation)
+                } else {
+                    PresenceDiv = document.createElement("div")
+                    PresenceDiv.setAttribute("ng-non-bindable", "")
+                    parentElement.appendChild(PresenceDiv)
+                    PresenceSpan = document.createElement("span")
+                    PresenceDiv.appendChild(PresenceSpan)
+                    PresenceStatus = userData.userPresences.userPresenceType === 1 && "icon-online" || userData.userPresences.userPresenceType === 2 && "icon-game" || userData.userPresences.userPresenceType === 3 && "icon-studio"
+                    PresenceSpan.classList.add("avatar-status", PresenceStatus)
+                    PresenceSpan.setAttribute("title", userData.userPresences.lastLocation)
+                }
+            }
+            GM_xmlhttpRequest({
+                method: 'POST',
+                url: "https://Presence.roblox.com/v1/Presence/users",
+                headers: {
+                    'accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify(
+                    {
+                        userIds: [
+                            userData.id
+                        ]
                     }
-                });
-                if (userData.userPresence.userLastPresenceType !== userData.userPresence.userPresenceType && userData.userPresence.userPresenceType === 0) {
-                    userData.userPresence.userLastPresenceType = userData.userPresence.userPresenceType;
-                    PresenceDiv = null;
-                } else if (userData.userPresence.userLastPresenceType !== userData.userPresence.userPresenceType && userData.userPresence.userPresenceType !== 0) {
-                    userData.userPresence.userLastPresenceType = userData.userPresence.userPresenceType;
-                    userPresenceTemplate(headeravatarframe);
+                ),
+                onload: function (response) {
+                    userData.userPresences.Response = JSON.parse(response.responseText).userPresences[0];
+                    userData.userPresences.gameId = userData.userPresences.Response.gameId;
+                    userData.userPresences.invisibleModeExpiry = userData.userPresences.Response.invisibleModeExpiry;
+                    userData.userPresences.lastLocation = userData.userPresences.Response.lastLocation;
+                    userData.userPresences.lastOnline = userData.userPresences.Response.lastOnline;
+                    userData.userPresences.placeId = userData.userPresences.Response.placeId;
+                    userData.userPresences.rootPlaceId = userData.userPresences.Response.rootPlaceId;
+                    userData.userPresences.userPresenceType = userData.userPresences.Response.userPresenceType;
+                    userData.userPresences.universeId = userData.userPresences.Response.universeId;
+                },
+                onerror: function (error) {
+                    userData.userPresences.Errored = true
                 }
+            });
+            if (userData.userPresences.userLastPresenceType !== userData.userPresences.userPresenceType && userData.userPresences.userPresenceType === 0) {
+                userData.userPresences.userLastPresenceType = userData.userPresences.userPresenceType;
+                PresenceDiv = null;
+            } else if (userData.userPresences.userLastPresenceType !== userData.userPresences.userPresenceType && userData.userPresences.userPresenceType !== 0) {
+                userData.userPresences.userLastPresenceType = userData.userPresences.userPresenceType;
+                userPresenceTemplate(avatarHeadshot);
             }
-        }, 125);
-        setTimeout(function() {
-            if (Settings.BulkLoading && !Data.loaded || !Settings.BulkLoading && !Data.P3) {
-                if (headerloaderavatarthumb) {
-                    headerloaderavatarthumb.classList.remove("shimmer");
-                    headerloaderavatarthumb.classList.add("thumbnail-2d-container", "icon-broken");
-                }
-            }
-        }, 8000);
-    })();
+        }
+    }, 62.5)
 }
