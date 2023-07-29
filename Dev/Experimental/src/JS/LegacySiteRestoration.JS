@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.0
+// @version      1.2.1
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -48,27 +48,27 @@ var Events = {
 
 var Settings = {
     BulkLoading: false, /*/ Loads everything at once then in chunks /*/
-    CustomEvents: false, /*/ Uses your custom events then Roblox events. /*/
+    CustomEvents: false, /*/ (Configurable) Uses your custom events then Roblox events. /*/
     DeveloperOptions: {
         demoMode: false,
         forceMembership: false,
         forceinfLoading: false,
         fix2020homeFormat: false,
     },
-    DisplayNames: false, /*/ Swaps usernames with displaynames on the home header /*/
+    DisplayNames: false, /*/ (2021+) Swaps usernames with displaynames on the home header /*/
     FavIcon: "2018L", /*/ {"2012M", "2015L", "2017E", "2017L", "2018L"} /*/
-    homeGreeting: true,
+    homeGreeting: true, /*/ (Configurable => homeGreetingType) Adds the Greeting back to the homepage, requires RestoreHomePage to be enabled. (This was eventually removed in 2021+) /*/
     homeGreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome"} /*/
     homeFormat: "2017", /*/ {"2017", "2020", "2021", "2022"} (Warning: If you use RoPro please use "2017" or "2020" as anything later breaks most played.) /*/
     homeavatarPresences: false, /*/ Adds the status icon to your home header avatar /*/
-    JSClasses: true, /*/ Adds classes for options for those working with themes or extentions. /*/
-    MembershipType: "OBC", /*/ {"BC", "TBC", "OBC", "Premium"} /*/
-    ORHCompatible: false, /*/ if true will use aubymori Old Roblox Header for legacy theme compatibility, requires homeFormat to be 2021. /*/
-    RestoreLegacyFavIcon: true,
-    RestoreEvents: true,
-    RestoreHomePage: true,
-    RestoreMyFeed: true,
-    RestoreUpgradeNow: true,
+    JSClasses: true, /*/ Adds classes to the body for certain options are enabled for themes/extentions. /*/
+    MembershipType: "OBC", /*/ (2017){"BC", "TBC", "OBC"} (2020 - 2022){"Premium"} /*/
+    ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
+    RestoreLegacyFavIcon: true, /*/ (Configurable => FavIcon) Replaces the favicon in your browser to what year is set. /*/
+    RestoreEvents: true, /*/ Brings back events in the sidebar, used along customevents. /*/
+    RestoreHomePage: true, /*/ (Configurable => homeFormat) Brings back the username and user avatar back on the home page /*/
+    RestoreMyFeed: true, /*/ Restores "My Feed" back onto the side navigation bar /*/
+    RestoreUpgradeNow: true, /*/ Replaces "Get Premium" to "Upgrade Now" /*/
 }
 
 var userData = {
