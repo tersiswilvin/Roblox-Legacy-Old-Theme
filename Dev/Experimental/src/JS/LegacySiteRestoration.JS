@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.1
+// @version      1.2.2
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -48,7 +48,7 @@ var Events = {
 
 var Settings = {
     BulkLoading: false, /*/ Loads everything at once then in chunks /*/
-    CustomEvents: false, /*/ (Configurable) Uses your custom events then Roblox events. /*/
+    CustomEvents: false, /*/ (Configurable => Events.CustomEvents) Uses your custom events then Roblox events. /*/
     DeveloperOptions: {
         demoMode: false,
         forceMembership: false,
@@ -61,7 +61,7 @@ var Settings = {
     homeGreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome"} /*/
     homeFormat: "2017", /*/ {"2017", "2020", "2021", "2022"} (Warning: If you use RoPro please use "2017" or "2020" as anything later breaks most played.) /*/
     homeavatarPresences: false, /*/ Adds the status icon to your home header avatar /*/
-    JSClasses: true, /*/ Adds classes to the body for certain options are enabled for themes/extentions. /*/
+    JSClasses: true, /*/ Adds classes to the body for certain options that are enabled for themes/extentions. /*/
     MembershipType: "OBC", /*/ (2017){"BC", "TBC", "OBC"} (2020 - 2022){"Premium"} /*/
     ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
     RestoreLegacyFavIcon: true, /*/ (Configurable => FavIcon) Replaces the favicon in your browser to what year is set. /*/
