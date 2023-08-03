@@ -1,62 +1,62 @@
 =={ UserStyle Data }==
 
-Name : Roblox 2019 Old Theme
+Name : Roblox Legacy Old Theme
 
-Version : 1.2.9.38
-Patch Version : 3
-Version Release Date : 03/17/2023
-Patch Release Date : 03/28/2023
+Version : 1.3
+Patch Version : 0
+Version Release Date : 08/02/2023
+Patch Release Date : --/--/----
 
 Author URL : userstyles.world/user/tersiswilvin
 
-Description : A heavily modified Roblox 2019 theme by GalactiCosmo aimed to be more accurate.
+Description : A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 
 Author : TersisWilvin (9T2K)
 
-License : No License
+License : CC-BY-SA-4.0
 
 Preprocessor : Less
 
-Theme Type : UserCSS
-Theme Color Pallette {
+Type : UserCSS
+Color Pallette {
     Gray {
-        Gray 1 : #191919 > #e6e6e6;
-        Gray 2 : #757575 > #8A8A8A;
-        Gray 3 : #B8B8B8 > #474747;
-        Gray 4 : #E3E3E3 > #1C1C1C;
-        Gray 5 : #F2F2F2 > #0D0D0D;
-        Background > #F5F5F5 > #0A0A0A;
-        White : #FFFFFF > #000000;
+        Gray 1 : #191919 => #E6E6E6;
+        Gray 2 : #757575 => #8A8A8A;
+        Gray 3 : #B8B8B8 => #474747;
+        Gray 4 : #E3E3E3 => #1C1C1C;
+        Gray 5 : #F2F2F2 => #0D0D0D;
+        Background > #F5F5F5 => #0A0A0A;
+        White : #FFFFFF => #000000;
     }
     Blue {
-        Blue Primary : #00A2FF;
-        Blue Hover : #00A2FF;
-        Blue Pressed : #0074BD;
-        Blue Disabled : #99DAFF;
+        Blue Primary : #00A2FF => #004266;
+        Blue Hover : #32B5FF => #144966;
+        Blue Pressed : #0074BD => #001623;
+        Blue Disabled : #99DAFF => #3D5766;
     }
     Green {
-        Green Primary : #02B757;
-        Green Hover : #3FC679;
-        Green Pressed : #108237 > #118237 (Main)
-        Green Disabled : #A3E2BD
+        Green Primary : #02B757 => #001E0E;
+        Green Hover : #3FC679 => #0D2B1A;
+        Green Pressed : #118237 => #010C05;
+        Green Disabled : #A3E2BD => #34473B;
     }
     Red {
-        Red Primary : #E2231A;
-        Red Negative : #D86868;
-        Red Hover : #AC1E2D > #E27676 (Main);
-        Red Pressed : #E27676 > #AC1E2D (Main);
+        Red Primary : #E2231A => #470A08;
+        Red Negative : #D86868 => #3D1D1D;
+        Red Hover : #E27676 => #472525;
+        Red Pressed : #AC1E2D => #110304;
     }
     Orange {
-        Orange Warning : #F68802;
-        Orange Favorite : #F6B702;
+        Orange Warning : #F68802 => #5B3100;
+        Orange Favorite : #F6B702 => #5B4300;
     }
     Shadow {
-        Shadow Primary : rgba(25,25,25,0.3) > rgba(230,230,230,0.3);
-        Shadow Hover : rgba(25,25,25,0.75) > rgba(230,230,230,0.75);
-        Shadow Secondary : rgb(150 150 150 / 74%) > rgb(105 105 105 / 74%)
+        Shadow Primary : rgba(25,25,25,0.3) => rgba(230,230,230,0.3);
+        Shadow Hover : rgba(25,25,25,0.75) => rgba(230,230,230,0.75);
+        Shadow Secondary : rgb(150 150 150 / 74%) => rgb(105 105 105 / 74%)
     }
 }
-Theme Links Used {
+Links Used {
     Site Branding {
         1408 {
             Short : data:image/png;base64,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
@@ -109,9 +109,7 @@ Theme Links Used {
     Loading : https://images.rbxcdn.com/4bed93c91f909002b1f17f05c0ce13d1-loading.gif
 }
 
-Special thanks to friends who helped me.
-
-== Theme Default Settings ==
+== Default Settings ==
 
 Variables (@var) {
     BadgeStyle {
@@ -122,6 +120,11 @@ Variables (@var) {
     BoxShadows {
         Type : checkbox
         Description : "Box Shadows"
+        Value : 0
+    }
+    BrighterDarkThemeColors {
+        Type : checkbox
+        Description : "Brighter Dark theme Colors"
         Value : 0
     }
     SiteCurrency {
@@ -136,27 +139,42 @@ Variables (@var) {
     }
     fiveColumn {
         Type : checkbox
-        Description : "Five column in Avatar Editor."
+        Description : "Five column Avatar Editor."
         Value : 1
+    }
+    greetingTxt {
+        Type : checkbox
+        Description : "Greeting Text Style"
+        Value : None (Default), Hello, HelloExclamation, Exclamation
     }
     CardStyle {
         Type : select
         Description : "Item Card Style"
-        Value : Pre-2018, 2019M (Default), 2019L
+        Value : Pre-2018, 2019E, 2019M (Default), 2019L
     }
-    LogoStyle {
+    CustomTheme {
         Type : select
-        Description : "Site Brand Style"
-        Value : 201408, 201412, 201511, 201701 (Default)
+        Description : "Custom Site Theme"
+        Value : None (Default), BTR_Night, BTR_Red, BTR_Simblk, BTR_Sky, L_Red, RPlus_Easter (Hidden), RPlus_OBC
+    }
+    LegacyBTRGameHeaders {
+        Type : checkbox
+        Description : "Legacy Game Headers (BTRoblox)"
+        Value : 0
+    }
+    LegacyFooterText {
+        Type : select
+        Description : "Legacy Footer Text"
+        Value : None (Default), BrandSync, 2014E, 2015E, 2016E, 2016L, 2017E, 2017M, 2018E, 2018L, 2019E
     }
     LegacyNextStyleGuideButtons {
         Type : checkbox
-        Description : "Legacy Styleguide Buttons"
+        Description : "Legacy Next Styleguide"
         Value : 0
     }
     SponsorSizing {
         Type : checkbox
-        Description : "Original Sponsor sizing."
+        Description : "Original Sponsor Size"
         Value : 1
     }
     PlayButtonStyle {
@@ -166,7 +184,7 @@ Variables (@var) {
     }
     RestoreSidebarPadding {
         Type : checkbox
-        Description : "Restore sidebars old padding."
+        Description : "Restore legacy sidebar padding"
         Value : 0
     }
     RemoveUpdates {
@@ -174,19 +192,29 @@ Variables (@var) {
         Description : "Revert 2019L+ changes"
         Value : 1
     }
-    StyleGuideStyle {
+    PremiumToBC {
+        Type : checkbox
+        Description : "Premium To BC (BTRoblox)"
+        Value : 0
+    }
+    LogoStyle {
         Type : select
-        Description : "Styleguide Style"
-        Value : 2016, 2017, 2018 (Default)
+        Description : "Site Brand Style"
+        Value : 201408, 201412, 201511, 201701 (Default)
     }
     SignUpStyle {
         Type : select
-        Description : "Signup Style"
+        Description : "Signup Theme"
         Value : 2017, 2018 (Default), 2019L, 2020+
+    }
+    StyleGuideStyle {
+        Type : select
+        Description : "Styleguide Page Theme"
+        Value : 2016, 2017, 2018 (Default)
     }
     SourceSansPro {
         Type : checkbox
-        Description : "Source San Pro font"
+        Description : "Source San Pro Font"
         Value : 0
     }
     TransitionalAnimations {
@@ -196,12 +224,12 @@ Variables (@var) {
     }
     RedLogoStyle {
         Type : checkbox
-        Description : "Use Red logo variant"
+        Description : "Use 2017 Red icon logo"
         Value : 0
     }
 }
 
-== Theme Notes History ==
+== Version History ==
 
 (03/17/2023)
 Release 1.2.9.38 :
