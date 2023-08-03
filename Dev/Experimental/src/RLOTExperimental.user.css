@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230729.1.3
+@version      20230802.1.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -6324,6 +6324,10 @@
 		}
 	}
 	
+	.subscribe-button {
+		height: auto;
+	}
+	
 	.store-card .store-card-caption, .light-theme .store-card .store-card-caption {
 		border-top: 1px solid #b8b8b8;
 	}
@@ -6710,6 +6714,19 @@
 		border-bottom-right-radius: 0;
 		border-top-right-radius: 0;
 		border-right: 0;
+	}
+	
+	.light-theme .feeds .icon-develop, .light-theme .feeds .icon-charactercustomizer, .dark-theme .feeds .icon-develop, .dark-theme .feeds .icon-charactercustomizer {
+    	background-image: url(/images/Shared/creation.svg);
+	}
+	.light-theme .feeds .feed-game, .dark-theme .feeds .feed-game {
+    	border-color: #02b757;
+	}
+	.light-theme .feeds .feed-creation, .dark-theme .feeds .feed-creation {
+		border-color: #F68802;
+	}
+	.light-theme .feeds .feed-social, .dark-theme .feeds .feed-social {
+		border-color: #00A2FF;
 	}
 	
     & when (@SponsorSizing = 1) {
