@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report an issue to allow the project to improve.
+description: Report an issue.
 labels: [bug]
 body:
   - type: markdown

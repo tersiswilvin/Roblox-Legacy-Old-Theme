@@ -1,5 +1,5 @@
 name: Feature Request
-description: Request a new feature.
+description: Request a new feature or suggestion.
 labels: [enhancement]
 body:
   - type: markdown
@@ -12,4 +12,6 @@ body:
     attributes:
       label: Describe the Feature
       description: Describe the Feature you would like to be added. Please provide a screenshot, a video, or a URL if you have any.
-      placeholder: Describe it here.
+      placeholder: Describe the feature you want added.
+    validations:
+      required: true
