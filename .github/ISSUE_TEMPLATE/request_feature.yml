@@ -1,0 +1,15 @@
+name: Feature Request
+description: Request a new feature.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Feature Request
+        Before requesting a new feature make sure this feature has not been requested before.
+  - type: textarea
+    id: describe-feature
+    attributes:
+      label: Describe the Feature
+      description: Describe the Feature you would like to be added. Please provide a screenshot, a video, or a URL if you have any.
+      placeholder: Describe it here.

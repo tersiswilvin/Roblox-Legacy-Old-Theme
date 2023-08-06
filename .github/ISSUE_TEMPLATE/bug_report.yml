@@ -1,11 +1,11 @@
-name: Bug report
+name: Bug Report
 description: Report an issue to allow the project to improve.
 labels: [bug]
 body:
   - type: markdown
     attributes:
       value: |
-        # Bug report
+        # Bug Report
         Before you begin make sure you're fully up to date before you start filling out the form.
   - type: input
     id: browser
@@ -21,8 +21,8 @@ body:
       label: Channel
       description: The channel you were on when it occured.
       options:
-        - Experimental
         - Release
+        - Experimental
     validations:
       required: true
   - type: input
@@ -31,7 +31,7 @@ body:
       label: Page URL
       placeholder: E.g https://www.roblox.com/home
     validations:
-      required: true
+      required: false
   - type: textarea
     id: describe-issue
     attributes:
