@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.4
+// @version      1.2.5
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -13,7 +13,7 @@
 
 /*/== Variables ==/*/
 
-const url = window.location.protocol+"//"+window.location.hostname
+var url = window.location.protocol+"//"+window.location.hostname
 
 var Events = {
     CustomEvents: {
@@ -55,8 +55,8 @@ var Settings = {
         forceinfLoading: false,
         fix2020homeFormat: false,
         /*/ My Feed FFlags /*/
-        Soothsayer: true, /*/ Swaps the /feeds/ error page content with the my feed page content /*/
-        enablePosting: true, /*/ Currently not function, however adds the input field and post button back on the page /*/
+        Soothsayer: true, /*/ FFlag for enabling the my feed page restoration /*/
+        enablePosting: true, /*/ Currently not functional, however adds the input field and post button back on the page /*/
         GamestoExperience: false, /*/ Swaps Game(s) text to Experience(s) /*/
         CatalogtoAvatarShop: false, /*/ Swaps Catalog to Avatar Shop /*/
         enableforumlistItem: false, /*/ Enables the last list item for forums /*/
@@ -1116,12 +1116,42 @@ if (window.location.href == url+"/feeds" || window.location.href == url+"/feeds/
                 }
                 listBody.appendChild(listContent)
                 if (secClassName == "feed-game" && iconName == "icon-games") {
+                    var InfoLoaded, ThumbnailLoaded = false
+                    var GamesInfo, GamesThumbnail = null
+                    function placeItemTemplate(name, url, thumbnail, parentElement) {
+                        console.log(name, thumbnail, parentElement)
+                        var itemplace = document.createElement("li")
+                        itemplace.classList.add("item-place")
+                        parentElement.appendChild(itemplace)
+                        var itemplaceimage = document.createElement("img")
+                        itemplaceimage.setAttribute("src", thumbnail)
+                        itemplace.appendChild(itemplaceimage)
+                        var itemplacename = document.createElement("a")
+                        itemplacename.classList.add("font-bold")
+                        itemplacename.setAttribute("href", url)
+                        itemplacename.textContent = name
+                        itemplace.appendChild(itemplacename)
+                    }
+                    function GetGamesInfo(Id, parentElement) {
+                        GM_xmlhttpRequest({
+                            method: "GET",
+                            url: "https://www.roblox.com/item-thumbnails?params=%5B%7BassetId:"+Id+"%7D%5D",
+                            onload: function(response) {
+                                var InfoLoaded = JSON.parse(response.responseText)[0]
+                                placeItemTemplate(InfoLoaded.name, InfoLoaded.url, InfoLoaded.thumbnailUrl, parentElement)
+                            },
+                        });
+                    }
                     var FeaturedGamesContainer = document.createElement("div")
                     FeaturedGamesContainer.setAttribute("id", "FeaturedGamesContainer")
                     FeaturedGamesContainer.classList.add("list-gallery")
                     listBody.appendChild(FeaturedGamesContainer)
+                    GetGamesInfo(69184822, FeaturedGamesContainer)
+                    GetGamesInfo(3527629287, FeaturedGamesContainer)
+                    GetGamesInfo(13822889, FeaturedGamesContainer)
+                    GetGamesInfo(139613645, FeaturedGamesContainer)
                 }
-                if (secClassName == "feed-creation" && (iconName == "icon-charactercustomizer" || iconName == "icon-nav-charactercustomizer")) {
+                if (secClassName == "feed-creation" && iconName == "icon-charactercustomizer") {
                     var listGallery = document.createElement("ul")
                     listGallery.classList.add("list-gallery")
                     listBody.appendChild(listGallery)
@@ -1194,8 +1224,7 @@ if (window.location.href == url+"/feeds" || window.location.href == url+"/feeds/
 }
 
 .content .list-gallery .item-place img {
-    width: 100%;
-    height: auto;
+    height: 150px;
 }
 
 ${ (!Settings.DeveloperOptions.ModernFormat) && `
@@ -1381,7 +1410,7 @@ ${ (!Settings.DeveloperOptions.ModernFormat) && `
             sectioncontent.appendChild(feedvlist)
             listItemTemplate("gameFeed", "feed-game", "icon-games", url+((Settings.DeveloperOptions.GamestoExperience) && "/discover" || "/games"), (Settings.DeveloperOptions.GamestoExperience) && "Play Experiences" || "Play Games", (Settings.DeveloperOptions.GamestoExperience) && "Nearly all Roblox experiences are built by players like you. Here are some of our favorites:" || "Nearly all Roblox games are built by players like you. Here are some of our favorites:", feedvlist, false)
             listItemTemplate("None", "feed-creation", "icon-charactercustomizer", url+"/catalog/browse.aspx?CatalogContext=1&Subcategory=1&CreatorID=1&CurrencyType=0&pxMin=0&pxMax=0&SortType=4&SortAggregation=3&SortCurrency=0&IncludeNotForSale=false&LegendExpanded=true&Category=1", "Customize Your Avatar", `Visit the <a href="${ url }/my/avatar"> Avatar ${ Settings.DeveloperOptions.ModernFormat && "Editor" || "page" } </a> to customize your ${ Settings.DeveloperOptions.ModernFormat && "character" || "avatar" }. ${ Settings.DeveloperOptions.ModernFormat && "Shop for clothing in the" || "Get new clothing in the" } <a href="${ url }/catalog/browse.aspx?CatalogContext=1&amp;Subcategory=1&amp;CreatorID=1&amp;CurrencyType=0&amp;pxMin=0&amp;pxMax=0&amp;SortType=4&amp;SortAggregation=3&amp;SortCurrency=0&amp;IncludeNotForSale=false&amp;LegendExpanded=true&amp;Category=1">${ (Settings.DeveloperOptions.ModernFormat) && (Settings.DeveloperOptions.CatalogtoAvatarShop && "Avatar Shop" || "Catalog") || Settings.DeveloperOptions.CatalogtoAvatarShop && "avatar shop" || "catalog" }</a>`, feedvlist, true)
-            listItemTemplate("None", "feed-creation", "icon-develop", url+"/develop", "Build Something", `Builders will enjoy playing our multiplayer building ${ Settings.DeveloperOptions.GamestoExperience && "experience" || "game" }. Professional builders will want to check out Roblox Studio, our ${ (!Settings.DeveloperOptions.ModernFormat && (Settings.DeveloperOptions.GamestoExperience && "experience" || "game") || "") } development environment on your <a href="h${ url }/develop">Develop page</a>.`, feedvlist, true)
+            listItemTemplate("None", "feed-creation", "icon-develop", url+"/develop", "Build Something", `Builders will enjoy playing our multiplayer building ${ Settings.DeveloperOptions.GamestoExperience && "experience" || "game" }. Professional builders will want to check out Roblox Studio, our ${ (!Settings.DeveloperOptions.ModernFormat && (Settings.DeveloperOptions.GamestoExperience && "experience" || "game") || "") } development environment on your <a href="${ url }/develop">Develop page</a>.`, feedvlist, true)
             listItemTemplate("None", "feed-social", "icon-friends", url+"/search/users", "Make Friends", `Meet other players in-${ Settings.DeveloperOptions.GamestoExperience && "experience" || "game" } and send them a friend request. If you miss your opportunity you can always send a request later by <a href="${ url }/search/users">searching</a> for their user profile.`, feedvlist, true)
             if (Settings.DeveloperOptions.enableforumlistItem) {
                 listItemTemplate("None", "feed-social", "icon-forum", url+"/forum", "Roblox forums for help", `No matter what you're looking for, if it's Roblox related, there are people talking about it <a href="${ url }/forum">here</a>.`, feedvlist, true)
@@ -1411,7 +1440,7 @@ if (Settings.RestoreHomePage && window.location.href == url+"/home") {
     document.head.appendChild(Style)
     var avatarLoadingHeadshot, avatarLoadingThumb, headerLoadingcontent, homeLoadingheader, headerLoadingLbl
     var homecontainer, hcfirstsection, homeheaderBase, homeheaderBaseSub, homeheaderSubBase, avatarHeadshot, thumbnail2dcontainer, avatarThumb, headeruserinfo, headercontent, homeheader, headerLbl
-    var PresenceDiv, PresenceSpan, PresenceStatus
+    var PresenceDiv, PresenceLink, PresenceSpan, PresenceStatus
     var initialSetup = setInterval(function() {
         try {
             homecontainer = document.getElementById("HomeContainer")
@@ -1525,7 +1554,12 @@ if (Settings.RestoreHomePage && window.location.href == url+"/home") {
                         method: "GET",
                         url: "https://premiumfeatures.roblox.com/v1/users/"+userData.id+"/validate-membership",
                         onload: function(response) {
-                            userData.Membership = JSON.parse(response.responseText)
+                            if (userData.Membership.errors) {
+                                /*/ Return false if the API returns an error /*/
+                                userData.Membership = false
+                            } else {
+                                userData.Membership = JSON.parse(response.responseText)
+                            }
                             userData.Status.MembershipDataLoaded = true
                         },
                         onerror: function(error) {
@@ -1536,14 +1570,28 @@ if (Settings.RestoreHomePage && window.location.href == url+"/home") {
             }
             if (!userData.Status.AvatarDataLoaded) {
                 GM_xmlhttpRequest({
-                    method: "GET",
-                    url: "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds="+userData.id+"&size=150x150&format=Png",
+                    method: "POST",
+                    url: "https://thumbnails.roblox.com/v1/batch",
+                    headers: {
+                        "accept": "application/json",
+                        "Content-Type": "text/json"
+                    },
+                    data: JSON.stringify(
+                        [{
+                            targetId: userData.id,
+                            type: "AvatarHeadshot",
+                            size: "150x150",
+                            format: "png",
+                        }]
+                    ),
                     onload: function(response) {
-                        try {
-                            userData.avatar.data.Response = JSON.parse(response.responseText).data[0]
-                            userData.avatar.data.imageUrl = userData.avatar.data.Response.imageUrl
-                            userData.Status.AvatarDataLoaded = true
-                        } catch {
+                        if (!JSON.parse(response.responseText).data[0].errorCode > 0) {
+                            try {
+                                userData.avatar.data.Response = JSON.parse(response.responseText).data[0]
+                                userData.avatar.data.imageUrl = userData.avatar.data.Response.imageUrl
+                                userData.Status.AvatarDataLoaded = true
+                            } catch {
+                            }
                         }
                     },
                     onerror: function(error) {
@@ -1860,7 +1908,7 @@ if (Settings.RestoreHomePage && window.location.href == url+"/home") {
             function userPresenceTemplate(parentElement) {
                 if (PresenceDiv) {
                     PresenceSpan.classList.remove(PresenceStatus)
-                    PresenceStatus = userData.userPresences.userPresenceType === 1 && "icon-online" || userData.userPresences.userPresenceType === 2 && "icon-game" || userData.userPresences.userPresenceType === 3 && "icon-studio"
+                    PresenceStatus = userData.userPresences.userPresenceType === 1 && "icon-online" || userData.userPresences.userPresenceType === 2 && "icon-game" || userData.userPresences.userPresenceType === 3 && "icon-studio" || userData.userPresences.userPresenceType === 4 && "icon-invisible-mode"
                     PresenceSpan.classList.add(PresenceStatus)
                     PresenceSpan.setAttribute("title", userData.userPresences.lastLocation)
                 } else {
@@ -1869,17 +1917,17 @@ if (Settings.RestoreHomePage && window.location.href == url+"/home") {
                     parentElement.appendChild(PresenceDiv)
                     PresenceSpan = document.createElement("span")
                     PresenceDiv.appendChild(PresenceSpan)
-                    PresenceStatus = userData.userPresences.userPresenceType === 1 && "icon-online" || userData.userPresences.userPresenceType === 2 && "icon-game" || userData.userPresences.userPresenceType === 3 && "icon-studio"
+                    PresenceStatus = userData.userPresences.userPresenceType === 1 && "icon-online" || userData.userPresences.userPresenceType === 2 && "icon-game" || userData.userPresences.userPresenceType === 3 && "icon-studio" || userData.userPresences.userPresenceType === 4 && "icon-invisible-mode"
                     PresenceSpan.classList.add("avatar-status", PresenceStatus)
                     PresenceSpan.setAttribute("title", userData.userPresences.lastLocation)
                 }
             }
             GM_xmlhttpRequest({
-                method: 'POST',
+                method: "POST",
                 url: "https://Presence.roblox.com/v1/Presence/users",
                 headers: {
-                    'accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    "accept": "application/json",
+                    "Content-Type": "application/json"
                 },
                 data: JSON.stringify(
                     {
