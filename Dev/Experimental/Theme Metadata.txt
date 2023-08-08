@@ -3,9 +3,9 @@
 Name : Roblox Legacy Old Theme
 
 Version : 1.3
-Patch Version : 0
-Version Release Date : --/--/2023
-Patch Release Date : --/--/----
+Patch Version : 1
+Version Release Date : 08/02/2023
+Patch Release Date : 08/08/2023
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -230,6 +230,28 @@ Variables (@var) {
 }
 
 == Version History ==
+
+(08/02/2023)
+Release 1.3 :
+Added back events text on the sidebar.
+Added Custom Themes. > [BTR_Night, BTR_Red, BTR_Simblk, L_Red, RPlus_OBC]
+Added Game Card Friend Activity support.
+Added Greeting Text option.
+Added legacy profile background color (Toggle via Box Shadows).
+Added Premium To BC option for btroblox.
+Added Style Guide Text back to 2016 styleguide.
+Added Toggleable Brighter Dark Theme colors option.
+App bumper syncs with site Brand settings.
+Legacy Footer Text has more customizable options.
+Re-added VIP Server text swap (Toggleable via Remove Updates).
+Removed Events container (Toggleable via Remove Updates).
+Removed unnecessary CSS.
+Renamed some items for better clarity.
+Revamped Main Site button CSS.
+Reverted Roblox Help button changes.
+Roblox+ logo syncs with site Brand settings.
+Improved chat for better accuracy.
+Improved SourceSansPro (Thanks Aubymori).
 
 (03/17/2023)
 Release 1.2.9.38 :
