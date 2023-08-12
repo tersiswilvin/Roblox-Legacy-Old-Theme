@@ -7,6 +7,15 @@ body:
       value: |
         # Feature Request
         Before requesting a new feature make sure this feature has not been requested before.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - JavaScript
+        - CSS
+    validations:
+      required: true
   - type: textarea
     id: describe-feature
     attributes:

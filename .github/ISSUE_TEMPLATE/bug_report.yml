@@ -9,6 +9,13 @@ body:
         Before you begin make sure you're fully up to date before you start filling out the form.
   - type: input
     id: browser
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      placeholder: E.g https://www.roblox.com/home
+    validations:
+      required: false
     attributes:
       label: Browser
       description: What browser were you using?
@@ -25,13 +32,15 @@ body:
         - Experimental
     validations:
       required: true
-  - type: input
-    id: page-url
+  - type: dropdown
+    id: type
     attributes:
-      label: Page URL
-      placeholder: E.g https://www.roblox.com/home
+      label: Type
+      options:
+        - JavaScript
+        - CSS
     validations:
-      required: false
+      required: true
   - type: textarea
     id: describe-issue
     attributes:
