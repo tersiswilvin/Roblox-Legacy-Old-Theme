@@ -9,6 +9,12 @@ body:
         Before you begin make sure you're fully up to date before you start filling out the form.
   - type: input
     id: browser
+    attributes:
+      label: Browser
+      description: What browser were you using?
+      placeholder: E.g Google Chrome
+    validations:
+      required: true
   - type: input
     id: page-url
     attributes:
@@ -16,12 +22,6 @@ body:
       placeholder: E.g https://www.roblox.com/home
     validations:
       required: false
-    attributes:
-      label: Browser
-      description: What browser were you using?
-      placeholder: E.g Google Chrome
-    validations:
-      required: true
   - type: dropdown
     id: channel
     attributes:
@@ -37,8 +37,8 @@ body:
     attributes:
       label: Type
       options:
-        - JavaScript
         - CSS
+        - JavaScript
     validations:
       required: true
   - type: textarea

@@ -12,8 +12,8 @@ body:
     attributes:
       label: Type
       options:
-        - JavaScript
         - CSS
+        - JavaScript
     validations:
       required: true
   - type: textarea
