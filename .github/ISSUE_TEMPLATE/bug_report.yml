@@ -12,14 +12,14 @@ body:
     attributes:
       label: Browser
       description: What browser were you using?
-      placeholder: E.g Google Chrome
+      placeholder: Example > Google Chrome
     validations:
       required: true
   - type: input
     id: page-url
     attributes:
       label: Page URL
-      placeholder: E.g https://www.roblox.com/home
+      placeholder: Example > https://www.roblox.com/home
     validations:
       required: false
   - type: dropdown
@@ -39,6 +39,7 @@ body:
       options:
         - CSS
         - JavaScript
+        - Both
     validations:
       required: true
   - type: textarea
