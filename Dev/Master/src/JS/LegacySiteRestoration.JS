@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.7
+// @version      1.2.7.1
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -83,10 +83,10 @@ var Settings = {
             avatarPresences: false, /*/ Adds the status icon to your home header avatar /*/
             BulkLoading: false, /*/ Loads everything at once then in chunks (may be slower) /*/
             DisplayNames: false, /*/ (2021+) Swaps usernames with displaynames /*/
-            Format: "2022", /*/ {"2017", "2020", "2021", "2022"} (Warning: If you use RoPro please use "2017" or "2020" as anything later breaks most played.) /*/
+            Format: "2017", /*/ {"2017", "2020", "2021", "2022"} (Warning: If you use RoPro please use "2017" or "2020" as anything later breaks most played.) /*/
             Greeting: true, /*/ (Configurable => Pages.home.GreetingType) Adds the Greeting back to the homepage, requires RestoreHomePage to be enabled. (This was eventually removed in 2021+) /*/
             GreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome"} /*/
-            MembershipType: "Premium", /*/ (2017){"BC", "TBC", "OBC"} (2020 - 2022){"Premium"} /*/
+            MembershipType: "OBC", /*/ (2017){"BC", "TBC", "OBC"} (2020 - 2022){"Premium"} /*/
         },
         MyFeeds: {
             enablePosting: true, /*/ Currently not functional, however adds the input field and post button back on the page /*/
