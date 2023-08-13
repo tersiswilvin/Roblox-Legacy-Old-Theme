@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.7.1
+// @version      1.2.7
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
