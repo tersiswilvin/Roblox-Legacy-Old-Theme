@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230814.1.3.2
+@version      20230815.1.3.3
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -14351,6 +14351,9 @@
 		& when (@LogoStyle = 201701) {
 			background-image: url(https://i.imgur.com/skK6z2b.png), url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAC8UlEQVRYw7XXzYuVVRwH8M+9PiOKpmagOFg6g8poTOqM6KgpuGoRFC3Cjbs2ka6C/otCciOZCApCuyIdUEEXgmj4VpHQSAnjy0Rkvk0Lc0Zvi3PudHx87tznOne+cLjc85xzft/n+3s7T0UOw92dMIBDuIyTuICbeALLboxoFyoFxuEjfB2f/4s7uIqzOI/reITaVMk0IrAfHxesr+EhhiKRs5HYHYy9jDpFBObhBDaX2D+G2zl1hlpRp4jAmziDRS2q+VLqTBBI5N+Jo5jRIoGW1KkTygo29rfBOHSgK44PojrXcQpf4AFUc5tmo68NxvOoYAE24t3Ubp5AJ1ZNA4EUP+N+IwI9WDzNBC6KMTBBIAnAPsycRuOj+JH/MyJVoEMIwOnEbfyeTqQEFmFNiUPu44bYF1rENdxtRGClEITN8B124EN8LuT3PyUJXMJ4OpEl/l+HOSUO+UHojDfxvZBeh/FewdoR7BOKz3Y5/2OiEFWxoYTxR/ipfkgkX8XSBuv/xsH4+5dQiJ5D3QUL0VuCwLDg/xRdWF5i76/4sxGBLrxR4pAR0YeJ63rxaom9f+BxIwJvCb5shrcxKNTy9yPpAbmumkMNs7BaUoDqqMdA2fyfEw0OYI/QaudPsv4Jngopvg7niggswNqSBFLMFFxXx7fCRabeSSv4TeiC/fgkkhhL3CdDdxxTxXkcSFMsl+Kr40hRy7Aer7WBQCUaTe8Sz+L8huR/LVlfy7BV6ANTxa5oqB7YVaHzHRGC/AK+lK+Eyl0+y6DXi7VkuVC4luErfMPzlbCK40J03lOQJm3AWswV5H8BGT7DK0Iz2izU7H68bup3g0yTEp9FOUaHuzuv4EqUaokQuduEGOkRqt1kBacI8zVJ8YlbceKXcdwa7u68hWPCh8pKofi0qs7ChHShC0q9UZLPWaLOdmxpos4gDghZNoRfci/bsqR5QvOwIlGnL6ozKz7/FHvzRltWoCSZDuFesAnvCAG9G6cn+0b8D59bxILpb4EoAAAAAElFTkSuQmCC);
 		}
+        filter: none;
+    }
+    #navigation.dark-theme #nav-rplus:hover .rplus-icon, .dark-theme #navigation #nav-rplus:hover .rplus-icon {
         filter: none;
     }
     
