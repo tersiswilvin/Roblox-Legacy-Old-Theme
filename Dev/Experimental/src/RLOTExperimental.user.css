@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230815.1.3.3
+@version      20230815.1.3.4
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -10183,6 +10183,23 @@
             margin-right: 40px;
             padding: 0;
         }
+        #signup-container #signup-header-container .icon-logo {
+            height: 129.85px;
+			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+				background-size: auto 110px;
+				background-position: 10px;
+			}
+			& when (@LogoStyle = 201511) {
+				background-size: 457px 110px;
+			}
+            padding: 0;
+            width: 457px;
+        }
+        @media (min-width: 1199px) {
+            #signup-container #signup-header-container .icon-logo {
+              height: 129.85px;
+            }
+        }
         .signup-container .birthday-container .birthday-select-group:before {
             content: 'Birthday';
             color: #191919;
@@ -10266,6 +10283,26 @@
             margin: 0;
             margin-right: 40px;
             padding: 0;
+        }
+        #signup-container #signup-header-container .icon-logo {
+            height: 130px;
+            & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+				background-size: auto 110px;
+				background-position: 10px;
+			}
+			& when (@LogoStyle = 201511) {
+				background-size: 457px 110px;
+			}
+			& when (@LogoStyle = 201701) {
+				background-size: auto 130px;
+			}
+            padding: 0;
+            width: 457px;
+        }
+        @media (min-width: 1199px) {
+            #signup-container #signup-header-container .icon-logo {
+              height: 130px;
+            }
         }
     }
     
@@ -10441,10 +10478,6 @@
             float: none;
             text-align: center;
         }
-        #RollerContainer .icon-logo {
-            float: none;
-            margin: auto;
-        }
         .light-theme .rbx-login-form, .dark-theme .rbx-login-form {
             float: none;
             display: block;
@@ -10461,7 +10494,7 @@
         }
     }
     @media (max-width: 543px) {
-        #RollerContainer .icon-logo {
+        #RollerContainer .icon-logo, #signup-container #signup-header-container .icon-logo {
             width: 332px;
             height: 94px;
             background-size: auto 94px;
