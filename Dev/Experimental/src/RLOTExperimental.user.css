@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230817.1.3.5
+@version      20230819.1.3.6
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5983,7 +5983,7 @@
 				line-height: 22px;
 			}
 		}
-		.gotham-font .small, .gotham-font .small-oneline {
+		.gotham-font .small, .gotham-font .small-oneline, .gotham-font .text-pastname {
 			&, &:hover, &:focus, &:link, &:visited, &:active {
 				font-size: 14px;
 				font-weight: 400;
@@ -12852,6 +12852,37 @@
 			background-color: #E2231A;
 			color: #fff;
 		}
+        
+        .stack .stack-list .stack-row.selected{
+            .light-theme & {
+                background-color:#99DAFF;
+                transition:background-color 1.5s ease-in;
+            }
+            .dark-theme & {
+                & when (@BrighterDarkThemeColors = 0) {
+                    background-color:#3D5766;
+                }
+                & when (@BrighterDarkThemeColors = 1) {
+                    background-color:#99DAFF;
+                }
+                transition:background-color 1.5s ease-in;
+            }
+        }
+        
+        .rbx-tabs-horizontal .game-stat-footer:not(:has(.game-copylocked-footnote)):before {
+            content: "This game is copylocked";
+            & when (@SourceSansPro = 0) {
+                font-size: 12px;
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 14px;
+                font-weight: 400;
+            }
+            color: #B8B8B8;
+                float: left;
+            cursor: text;
+        }
     }
     
     .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon {
@@ -12883,7 +12914,7 @@
 	
     /*/Robux/*/
     
-	.light-theme .text-robux, .light-theme .text-robux-tile, .dark-theme .text-robux, .dark-theme .text-robux-tile {
+	.light-theme .text-robux, .light-theme .text-robux-tile, .dark-theme .text-robux, .dark-theme .text-robux-tile, .price-info .item-price-value .text {
 		& when (@SiteCurrency = Robux) {
 			color: #02b757;
 		}
