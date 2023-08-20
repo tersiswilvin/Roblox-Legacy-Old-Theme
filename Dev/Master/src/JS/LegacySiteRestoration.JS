@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.7
+// @version      1.2.8
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -11,6 +11,10 @@
 // @downloadURL  https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.JS
 // @grant        GM_xmlhttpRequest
 // @run-at       document-start
+// @connect      users.roblox.com
+// @connect      premiumfeatures.roblox.com
+// @connect      thumbnails.roblox.com
+// @connect      presence.roblox.com
 // ==/UserScript==
 
 /*/== Variables ==/*/
@@ -55,7 +59,7 @@ var Settings = {
         DevForumFavTitle: "2017M", /*/ {"2015L", "2017M"} /*/
         RobloxFavIcon: "2018L", /*/ {"2012M", "2015L", "2017E", "2017L", "2018L"} /*/
         RestoreLegacyFavIcon: true, /*/ (Configurable => Global.RobloxFavIcon) Replaces the favicon in your browser to what year is set. /*/
-        RestoreLegacyFavTitle: false,
+        RestoreLegacyFavTitle: false, /*/ Replaces "Roblox" to "ROBLOX" for the site title. /*/
         RestoreEvents: true, /*/ Brings back events in the sidebar, used along customevents. /*/
         // RestoreForums: false, /*/ Restores Forums on the sidebar and page ( ! ) /*/
         RestoreMyFeed: true, /*/ Restores My Feed on the sidebar and page /*/
@@ -68,36 +72,39 @@ var Settings = {
             demoPreference: 1, /*/ {[1]: "Roblox", [2]: "OnlyTwentyCharacters"} /*/
             disablebrokenicon: false,
             forceinfLoading: {
-                Enabled: false, /*/ When true is the same effect as enabling info, membership, and thumbnail infinite loading /*/
+                Enabled: false, /*/ When true is the same effect as enabling info, membership, and thumbnail infinite loading. /*/
                 info: false,
                 membership: false,
                 thumbnail: false,
             },
             forceMembership: false,
             fix2020homeFormat: false,
+            RoProFix: true, /*/ Attempts to fix the most played container for ropro users. /*/
         },
         Forums: {
             /*/ Coming Soon /*/
         },
         home: {
-            avatarPresences: false, /*/ Adds the status icon to your home header avatar /*/
-            BulkLoading: false, /*/ Loads everything at once then in chunks (may be slower) /*/
-            DisplayNames: false, /*/ (2021+) Swaps usernames with displaynames /*/
-            Format: "2017", /*/ {"2017", "2020", "2021", "2022"} (Warning: If you use RoPro please use "2017" or "2020" as anything later breaks most played.) /*/
+            avatarPresences: false, /*/ Adds the status icon to your home header avatar. /*/
+            BulkLoading: false, /*/ Loads everything at once then in chunks (may be slower). /*/
+            DisplayNames: false, /*/ Swaps usernames with displaynames. (Added around early to mid 2021) /*/
+            Format: "2017", /*/ {"2017", "2020", "2021", "2022"} /*/
             Greeting: true, /*/ (Configurable => Pages.home.GreetingType) Adds the Greeting back to the homepage, requires RestoreHomePage to be enabled. (This was eventually removed in 2021+) /*/
-            GreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome"} /*/
-            MembershipType: "OBC", /*/ (2017){"BC", "TBC", "OBC"} (2020 - 2022){"Premium"} /*/
+            GreetingComma: true, /*/ Toggles the comma (,) for the home greeting. /*/
+            GreetingExclamationMark: true, /*/ Toggles the exclamation mark (!) for the home greeting. /*/
+            GreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome", "Welcome back"} /*/
+            MembershipType: "OBC", /*/ 2017 => {"BC", "TBC", "OBC"} | 2020- 2022 => {"Premium"} /*/
+            ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
         },
         MyFeeds: {
-            enablePosting: true, /*/ Currently not functional, however adds the input field and post button back on the page /*/
-            entirecardislink: false, /*/ makes the entire game card into a clickable link instead of the title /*/
-            GamestoExperience: false, /*/ Swaps Game(s) text to Experience(s) /*/
-            CatalogtoAvatarShop: false, /*/ Swaps Catalog to Avatar Shop /*/
-            enableforumlistItem: false, /*/ Enables the last list item for forums /*/
-            ModernFormat: true, /*/ Uses 2021/2022 HTML then the 2018 HTML originally used /*/
+            enablePosting: true, /*/ Currently not functional, however adds the input field and post button back on the page. /*/
+            entirecardislink: false, /*/ makes the entire game card into a clickable link instead of the title. /*/
+            GamestoExperience: false, /*/ Swaps Game(s) text to Experience(s). /*/
+            CatalogtoAvatarShop: false, /*/ Swaps Catalog to Avatar Shop. /*/
+            enableforumlistItem: false, /*/ Enables the last list item for forums. /*/
+            ModernFormat: true, /*/ Uses 2021/2022 HTML then the 2018 HTML originally used. /*/
         },
-        ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
-        RestoreHomePage: true, /*/ (Configurable => Pages.home.Format) Brings back the username and user avatar back on the home page /*/
+        RestoreHomePage: true, /*/ (Configurable => Pages.home.Format) Brings back the username and user avatar back on the home page. /*/
     },
 }
 
@@ -150,11 +157,11 @@ var userData = {
 
 function homeGreeting() {
     if (Settings.Pages.home.Greeting) {
-        if (Settings.Pages.home.GreetingType == "Dynamic" || Settings.Pages.home.GreetingType == "Hello" || Settings.Pages.home.GreetingType == "Welcome") {
+        if (Settings.Pages.home.GreetingType == "Dynamic" || Settings.Pages.home.GreetingType == "Hello" || Settings.Pages.home.GreetingType == "Welcome" || Settings.Pages.home.GreetingType == "Welcome back") {
             const hours = new Date().getHours()
-            return ((Settings.Pages.home.GreetingType == "Dynamic" && (hours < 5 ? "Night" : hours < 12 ? "Morning" : hours < 18 ? "Afternoon" : "Evening") || Settings.Pages.home.GreetingType) + ", ")
+            return ((Settings.Pages.home.GreetingType == "Dynamic" && (hours < 5 ? "Night" : hours < 12 ? "Morning" : hours < 18 ? "Afternoon" : "Evening") || Settings.Pages.home.GreetingType) + (Settings.Pages.home.GreetingComma && ", " || " "))
         } else {
-            return "Hello, "
+            return "Hello"+(Settings.Pages.home.GreetingComma && ", " || " ")
         }
     } else {
         return ""
@@ -612,6 +619,7 @@ function StyleSheet() {
     min-height: 150px;
     margin-bottom: 12px;
 }
+${ (Settings.Pages.DeveloperOptions.RoProFix) && ".container-header {margin-top: 0;}" }
 
 @media(max-width: 767px) {
     .home-header-container {
@@ -887,6 +895,7 @@ function StyleSheet() {
     min-height: 150px;
     margin-bottom: 12px;
 }
+${ (Settings.Pages.DeveloperOptions.RoProFix) && ".container-header {margin-top: 0;}" }
 
 @media(max-width: 767px) {
     .home-header-container {
@@ -1580,7 +1589,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             document.body.classList.add("HP2020", "HPNoORHActive")
                             break
                         case "2021":
-                            if (Settings.Pages.ORHCompatible) {
+                            if (Settings.Pages.home.ORHCompatible) {
                                 document.body.classList.add("HP2021")
                             } else {
                                 document.body.classList.add("HP2021", "HPNoORHActive")
@@ -1628,7 +1637,11 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                         </div>
                         `
                         homeheaderBase = document.createElement("div")
-                        homeheaderBase.classList.add("col-xs-12", "home-header-container")
+                        if (Settings.Pages.DeveloperOptions.RoProFix) {
+                            homeheaderBase.classList.add("col-xs-12", "home-header-container", "container-header")
+                        } else {
+                            homeheaderBase.classList.add("col-xs-12", "home-header-container")
+                        }
                         homecontainer.insertBefore(homeheaderBase, hcfirstsection)
                         homecontainer.removeChild(hcfirstsection)
                         homeheaderBaseSub = document.createElement("div")
@@ -1784,7 +1797,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             }
                             headerLbl = document.createElement("a")
                             headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
-                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && Settings.Pages.home.GreetingExclamationMark && "!" || "") + " "
                             homeheader.appendChild(headerLbl)
                             if (userData.Membership && Settings.Pages.home.Format == "2020") {
                                 MembershipTemplate(headerLbl)
@@ -1833,7 +1846,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             }
                             headerLbl = document.createElement("a")
                             headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
-                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && Settings.Pages.home.GreetingExclamationMark && "!" || "") + " "
                             homeheader.appendChild(headerLbl)
                             break
                         case "2022":
@@ -1884,7 +1897,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             }
                             headerLbl = document.createElement("a")
                             headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
-                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && Settings.Pages.home.GreetingExclamationMark && "!" || "") + " "
                             homeheader.appendChild(headerLbl)
                             break
                     }
@@ -1978,7 +1991,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             }
                             headerLbl = document.createElement("a")
                             headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
-                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && Settings.Pages.home.GreetingExclamationMark && "!" || "") + " "
                             homeheader.appendChild(headerLbl)
                             if (userData.Membership && Settings.Pages.home.Format == "2020") {
                                 MembershipTemplate(headerLbl)
@@ -1997,7 +2010,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             }
                             headerLbl = document.createElement("a")
                             headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
-                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && Settings.Pages.home.GreetingExclamationMark && "!" || "") + " "
                             homeheader.appendChild(headerLbl)
                             break
                         case "2022":
@@ -2016,7 +2029,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             }
                             headerLbl = document.createElement("a")
                             headerLbl.setAttribute("href", url+"/users/"+userData.id+"/profile")
-                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && "!") + " "
+                            headerLbl.textContent = " " + homeGreeting() + ((Settings.Pages.home.DisplayNames) && userData.displayName || userData.name) + (homeGreeting() && Settings.Pages.home.GreetingExclamationMark && "!" || "") + " "
                             homeheader.appendChild(headerLbl)
                             break
                     }
