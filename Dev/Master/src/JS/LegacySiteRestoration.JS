@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.8
+// @version      1.2.9
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -1583,20 +1583,32 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                 if (Settings.Global.JSClasses) {
                     switch(Settings.Pages.home.Format) {
                         case "2017":
-                            document.body.classList.add("HP2017", "HPNoORHActive")
+                            if (document.getElementById("roseal-home-header")) {
+                                document.body.classList.add("HP2017")
+                            } else {
+                                document.body.classList.add("HP2017", "HPNoORHActive")
+                            }
                             break
                         case "2020":
-                            document.body.classList.add("HP2020", "HPNoORHActive")
+                            if (document.getElementById("roseal-home-header")) {
+                                document.body.classList.add("HP2020")
+                            } else {
+                                document.body.classList.add("HP2020", "HPNoORHActive")
+                            }
                             break
                         case "2021":
-                            if (Settings.Pages.home.ORHCompatible) {
+                            if (Settings.Pages.home.ORHCompatible || document.getElementById("roseal-home-header")) {
                                 document.body.classList.add("HP2021")
                             } else {
                                 document.body.classList.add("HP2021", "HPNoORHActive")
                             }
                             break
                         case "2022":
-                            document.body.classList.add("HP2022", "HPNoORHActive")
+                            if (document.getElementById("roseal-home-header")) {
+                                document.body.classList.add("HP2022")
+                            } else {
+                                document.body.classList.add("HP2022", "HPNoORHActive")
+                            }
                             break
                     }
                 }
