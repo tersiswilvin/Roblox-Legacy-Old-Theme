@@ -34,6 +34,7 @@
   - Btroblox
   - Roblox+
   - Ropro
+  - Roseal
   - Rogold
 - Supports both Light and Dark themes.
 - Supports low resolution devices and high PPI/DPI (Pixels Per Inch/Dots Per Inch) monitors.
