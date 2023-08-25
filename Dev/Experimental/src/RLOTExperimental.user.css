@@ -13032,6 +13032,10 @@
                 float: left;
             cursor: text;
         }
+        
+        #login-base .login-header {
+            text-align: left
+        }
     }
     
     .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon {
