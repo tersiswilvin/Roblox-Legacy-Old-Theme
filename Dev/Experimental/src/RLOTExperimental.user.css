@@ -4758,7 +4758,7 @@
 	}
 	
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li a[href="https://www.roblox.com/crossdevicelogin/ConfirmCode"], .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), .redraw-avatar [ng-click="openAdvancedAccessories()"] {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li a[href="https://www.roblox.com/crossdevicelogin/ConfirmCode"], .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), .redraw-avatar [ng-click="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button {
             display: none !important;
         }
         .menu-vertical .menu-option-content[href="#!/classic-heads"]:after {
@@ -5821,6 +5821,157 @@
 			}
 		}
 		
+        .login-container {
+            display: block;
+            place-items: unset;
+            min-height: unset;
+            height: 100%;
+        }
+        #crossDeviceLoginDisplayCodeModal-container {
+            &, .light-theme &, .dark-theme & {
+                &:before {
+                    content: "";
+                    background-image: url(https://static.rbxcdn.com/images/Shared/facebook.svg);
+                    background-repeat: no-repeat;
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    background-size: 24px 24px;
+                    position: absolute;
+                    top: 6px;
+                    left: 10px;
+                    @media (max-width: 767px) {
+                        & {
+                            background-size: 20px 20px;
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+            .light-theme & {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-color: #fff;
+                border: 1px solid #b8b8b8;
+                color: #191919;
+                cursor: pointer;
+                display: inline-block;
+                font-weight: 500;
+                height: auto;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                padding: 9px;
+                font-size: 18px;
+                line-height: 100%;
+                border-radius: 3px;
+                width: 100%;
+            }
+            .dark-theme & {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-color: #000;
+                border: 1px solid #474747;
+                color: #e6e6e6;
+                cursor: pointer;
+                display: inline-block;
+                font-weight: 500;
+                height: auto;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                padding: 9px;
+                font-size: 18px;
+                line-height: 100%;
+                border-radius: 3px;
+                width: 100%;
+            }
+            @media (max-width: 767px) {
+                .light-theme &, .dark-theme & {
+                    padding: 7px;
+                    font-size: 16px;
+                    line-height: 100%;
+                    border-radius: 3px;
+                }
+            }
+            &:focus, &:hover {
+                .light-theme & {
+                    background-color: #fff;
+                    border-color: #b8b8b8;
+                    color: #191919;
+                    cursor: pointer;
+                }
+                .dark-theme & {
+                    background-color: #000;
+                    border-color: #474747;
+                    color: #e6e6e6;
+                    cursor: pointer;
+                }
+            }
+            &.active, &:active {
+                background-color: #fff;
+                color: #191919;
+                .light-theme & {
+                    background-color: #fff;
+                    color: #191919;
+                }
+                .dark-theme & {
+                    background-color: #000;
+                    color: #e6e6e6;
+                }
+            }
+            &, .light-theme &, .dark-theme &, .light-theme &:active, .dark-theme &:active {
+                background: #3b5998;
+                border-color: #3b5998;
+                color: #fff;
+                position: relative;
+            }
+             &:hover, .light-theme &:hover, .dark-theme &:hover {
+                 background: #627aad;
+                 border-color: #627aad;
+                 color: #fff;
+            }
+            &:after {
+                content: "Facebook";
+            }
+        }
+        .login-container .alternative-login-divider-container {
+            text-align: center
+        }
+        .login-container .alternative-login-divider-container:after {
+            content: "login with your";
+            & when (@SourceSansPro = 0) {
+                font-size: 10px;
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 12px;
+                font-weight: 400;
+            }
+            background: #fff;
+            padding: 12px;
+            position: relative;
+            top: -13px;
+            text-align: center;
+            @media (max-width: 767px) {
+                & {
+                    top: -11px;
+                }
+            }
+        }
+        .login-container .login-section .text-center:not(.forgot-credentials-link) {
+            position: absolute;
+            width: 100%;
+            margin-top: 15px;
+            left: 0;
+        }
+        
 		@media (max-width: 767px) {
 			#rbx-private-servers .container-header h2:after {
 				font-size: 16px;
