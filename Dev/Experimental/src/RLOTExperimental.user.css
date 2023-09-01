@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230825.1.3.6
+@version      20230831.1.3.6
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -21,6 +21,7 @@
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"     0
 @var          select   LegacyFooterText            "Legacy Footer Text"                 ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"             0
+@var          checkbox LegacyNSGOlder              "  ↳  Older"                         0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size (Deprecated)" 1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
@@ -5821,15 +5822,15 @@
 			}
 		}
 		
-        .login-container {
-            display: block;
-            place-items: unset;
-            min-height: unset;
-            height: 100%;
-        }
-        #crossDeviceLoginDisplayCodeModal-container {
-            &, .light-theme &, .dark-theme & {
-                &:before {
+        body:not(.LoginRevert) {
+            .login-container {
+                display: block;
+                place-items: unset;
+                min-height: unset;
+                height: 100%;
+            }
+            &.light-theme, &.dark-theme {
+                #crossDeviceLoginDisplayCodeModal-container:before {
                     content: "";
                     background-image: url(https://static.rbxcdn.com/images/Shared/facebook.svg);
                     background-repeat: no-repeat;
@@ -5850,126 +5851,147 @@
                     }
                 }
             }
-            .light-theme & {
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                background-color: #fff;
-                border: 1px solid #b8b8b8;
-                color: #191919;
-                cursor: pointer;
-                display: inline-block;
-                font-weight: 500;
-                height: auto;
-                text-align: center;
-                white-space: nowrap;
-                vertical-align: middle;
-                padding: 9px;
-                font-size: 18px;
-                line-height: 100%;
-                border-radius: 3px;
-                width: 100%;
-            }
-            .dark-theme & {
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                background-color: #000;
-                border: 1px solid #474747;
-                color: #e6e6e6;
-                cursor: pointer;
-                display: inline-block;
-                font-weight: 500;
-                height: auto;
-                text-align: center;
-                white-space: nowrap;
-                vertical-align: middle;
-                padding: 9px;
-                font-size: 18px;
-                line-height: 100%;
-                border-radius: 3px;
-                width: 100%;
-            }
-            @media (max-width: 767px) {
-                .light-theme &, .dark-theme & {
-                    padding: 7px;
-                    font-size: 16px;
+            &.light-theme {
+                #crossDeviceLoginDisplayCodeModal-container {
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    background-color: #fff;
+                    border: 1px solid #b8b8b8;
+                    color: #191919;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-weight: 500;
+                    height: auto;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    padding: 9px;
+                    font-size: 18px;
                     line-height: 100%;
                     border-radius: 3px;
+                    width: 100%;
+                    &:focus, &:hover {
+                        background-color: #fff;
+                        border-color: #b8b8b8;
+                        color: #191919;
+                        cursor: pointer;
+                    }
+                    &.active, &:active {
+                        background-color: #fff;
+                        color: #191919;
+                    }
+                    &, &:active {
+                        background: #3b5998;
+                        border-color: #3b5998;
+                        color: #fff;
+                        position: relative;
+                    }
+                     &:hover {
+                         background: #627aad;
+                         border-color: #627aad;
+                         color: #fff;
+                    }
+                    &:after {
+                        content: "Facebook";
+                    }
+                    @media (max-width: 767px) {
+                        & {
+                            padding: 7px;
+                            font-size: 16px;
+                            line-height: 100%;
+                            border-radius: 3px;
+                        }
+                    }
                 }
             }
-            &:focus, &:hover {
-                .light-theme & {
-                    background-color: #fff;
-                    border-color: #b8b8b8;
-                    color: #191919;
-                    cursor: pointer;
-                }
-                .dark-theme & {
+            &.dark-theme {
+                #crossDeviceLoginDisplayCodeModal-container {
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
                     background-color: #000;
-                    border-color: #474747;
+                    border: 1px solid #474747;
                     color: #e6e6e6;
                     cursor: pointer;
+                    display: inline-block;
+                    font-weight: 500;
+                    height: auto;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    padding: 9px;
+                    font-size: 18px;
+                    line-height: 100%;
+                    border-radius: 3px;
+                    width: 100%;
+                    &:focus, &:hover {
+                        background-color: #000;
+                        border-color: #474747;
+                        color: #e6e6e6;
+                        cursor: pointer;
+                    }
+                    &.active, &:active {
+                        background-color: #000;
+                        color: #e6e6e6;
+                    }
+                    &, &:active {
+                        background: #3b5998;
+                        border-color: #3b5998;
+                        color: #fff;
+                        position: relative;
+                    }
+                     &:hover {
+                         background: #627aad;
+                         border-color: #627aad;
+                         color: #fff;
+                    }
+                    &:after {
+                        content: "Facebook";
+                    }
+                    @media (max-width: 767px) {
+                        & {
+                            padding: 7px;
+                            font-size: 16px;
+                            line-height: 100%;
+                            border-radius: 3px;
+                        }
+                    }
                 }
             }
-            &.active, &:active {
-                background-color: #fff;
-                color: #191919;
-                .light-theme & {
-                    background-color: #fff;
-                    color: #191919;
-                }
-                .dark-theme & {
-                    background-color: #000;
-                    color: #e6e6e6;
-                }
+            .login-container .alternative-login-divider-container {
+                text-align: center
             }
-            &, .light-theme &, .dark-theme &, .light-theme &:active, .dark-theme &:active {
-                background: #3b5998;
-                border-color: #3b5998;
-                color: #fff;
+            .login-container .alternative-login-divider-container:after {
+                content: "login with your";
+                & when (@SourceSansPro = 0) {
+                    font-size: 10px;
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+                background: #fff;
+                padding: 12px;
                 position: relative;
-            }
-             &:hover, .light-theme &:hover, .dark-theme &:hover {
-                 background: #627aad;
-                 border-color: #627aad;
-                 color: #fff;
-            }
-            &:after {
-                content: "Facebook";
-            }
-        }
-        .login-container .alternative-login-divider-container {
-            text-align: center
-        }
-        .login-container .alternative-login-divider-container:after {
-            content: "login with your";
-            & when (@SourceSansPro = 0) {
-                font-size: 10px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 12px;
-                font-weight: 400;
-            }
-            background: #fff;
-            padding: 12px;
-            position: relative;
-            top: -13px;
-            text-align: center;
-            @media (max-width: 767px) {
-                & {
-                    top: -11px;
+                top: -13px;
+                text-align: center;
+                cursor: text;
+                @media (max-width: 767px) {
+                    & {
+                        top: -11px;
+                    }
                 }
             }
-        }
-        .login-container .login-section .text-center:not(.forgot-credentials-link) {
-            position: absolute;
-            width: 100%;
-            margin-top: 15px;
-            left: 0;
+            .login-container .login-section .text-center:not(.forgot-credentials-link) {
+                position: absolute;
+                width: 100%;
+                margin-top: 15px;
+                left: 0;
+            }
         }
         
 		@media (max-width: 767px) {
@@ -6712,6 +6734,23 @@
     
     .dark-theme .left-col-list li a:hover div span[class^="icon"], .dark-theme .left-col-list li div:hover div span[class^="icon"], .dark-theme .left-col-list li button:hover div span[class^="icon"] {
         filter: none;
+    }
+    
+    body:not(.LegacyRobuxDropdown) {
+        .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden {
+            display: block;
+            & li.dropdown-wallet {
+                & a {
+                    cursor: pointer;
+                }
+                #nav-robux-balance:after {
+                    content: " Robux"
+                }
+            }
+        }
+        .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .icon-menu-wallet, .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .icon-robux-28x28, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .icon-menu-wallet, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .icon-robux-28x28, .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden .rbx-divider, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden .rbx-divider, .dropdown-menu .wallet-hidden ~ li:nth-last-child(-n+2) {
+            display: none;
+        }
     }
     
     .light-theme .left-col-list li div:hover div span.icon-nav-shop {
@@ -13035,6 +13074,83 @@
         
         #login-base .login-header {
             text-align: left
+        }
+        
+        #chat-main .chat-header-title:after {
+            content: " & Party";
+        }
+        
+        & when (@LegacyNSGOlder = 1) {
+            .avatar-card-fullbody .avatar-card-image, .avatar-card-fullbody .avatar-card-link, .avatar .avatar-card-image, .avatar .avatar-card-link {
+                border-radius: 0;
+            }
+            .avatar-card-fullbody .avatar-card-image, .avatar .avatar-card-image, .avatar {
+                .light-theme &, .dark-theme {
+                    background-color: transparent
+                }
+            }
+            .friend .friend-avatar {
+                background: transparent;
+                border: 1px solid #b8b8b8;
+            }
+            .light-theme .avatar.card-plain, .dark-theme .avatar.card-plain {
+                border: none;
+            }
+            .profile-header .profile-avatar-image .avatar-image-link {
+                display: block;
+                border: 1px solid #ccc;
+            }
+            .people-list .friend .friend-name {
+                text-align: left;
+            }
+            .profile-header .profile-avatar-image .icon-online, .profile-header .profile-avatar-image .icon-game, .profile-header .profile-avatar-image .icon-studio {
+                background-size: 38px auto;
+                width: 38px;
+                height: 38px;
+            }
+            .profile-header .profile-avatar-image .profile-avatar-status {
+                right: -12px;
+                bottom: -12px;
+            }
+            .profile-header .profile-avatar-image .icon-game {
+                background-position: 0 0;
+            }
+
+            .profile-header .profile-avatar-image .icon-studio {
+                background-position: 0 -38px;
+            }
+
+            .profile-header .profile-avatar-image .icon-online {
+                background-position: 0 -76px;
+            }
+            @media(max-width: 991px) {
+                .profile-header .profile-avatar-image .profile-avatar-status {
+                    background-image:none;
+                    display: block;
+                    height: 6px;
+                    width: 100%;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                .profile-header .profile-avatar-image .profile-avatar-status.icon-ingame {
+                    background-color: #02b757;
+                }
+
+                .profile-header .profile-avatar-image .profile-avatar-status.icon-studio {
+                    background-color: #f68802;
+                }
+
+                .profile-header .profile-avatar-image .profile-avatar-status.icon-online {
+                    background-color: #00a2ff;
+                }
+            }
+
+            @media(max-width: 767px) {
+                .profile-header .profile-avatar-image .profile-avatar-status {
+                    display:none;
+                }
+            }
         }
     }
     
