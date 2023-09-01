@@ -415,6 +415,9 @@
         .games-list-container .horizontal-scroller .horizontal-scroll-window .game-tile-list, .touch .horizontal-scroll-window .game-tile-list {
             overflow: hidden;
         }
+        .touch .horizontal-scroller .horizontal-scroll-window .game-tile-list {
+            overflow: auto
+        }
     }
     
     .touch .horizontal-scroller
