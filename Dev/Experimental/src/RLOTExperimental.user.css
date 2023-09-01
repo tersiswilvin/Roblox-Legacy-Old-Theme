@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230831.1.3.6
+@version      20230901.1.3.6
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -401,6 +401,9 @@
 	
     .games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window {
         overflow: hidden;
+    }
+    .touch .horizontal-scroller .horizontal-scroll-window {
+        overflow: auto;
     }
     @media (max-width: 543px) {
         .games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window {
@@ -6736,23 +6739,6 @@
         filter: none;
     }
     
-    body:not(.LegacyRobuxDropdown) {
-        .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden {
-            display: block;
-            & li.dropdown-wallet {
-                & a {
-                    cursor: pointer;
-                }
-                #nav-robux-balance:after {
-                    content: " Robux"
-                }
-            }
-        }
-        .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .icon-menu-wallet, .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .icon-robux-28x28, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .icon-menu-wallet, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .icon-robux-28x28, .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden .rbx-divider, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden .rbx-divider, .dropdown-menu .wallet-hidden ~ li:nth-last-child(-n+2) {
-            display: none;
-        }
-    }
-    
     .light-theme .left-col-list li div:hover div span.icon-nav-shop {
         background-position: -28px -420px;
     }
@@ -7425,6 +7411,38 @@
     
     #navbar-stream .nav-robux-icon, .rbx-header .rbx-navbar-icon-group>li, .rbx-header .rbx-navbar-right-nav>li {
         padding: 0;
+    }
+    
+    body:not(.LegacyRobuxDropdown) {
+        .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden {
+            display: block;
+            & li.dropdown-wallet {
+                & a {
+                    cursor: pointer;
+                }
+                #nav-robux-balance:after {
+                    & when (@SiteCurrency = Robux) {
+                        content: " Robux"
+                    }
+                    & when (@SiteCurrency = Tickets) {
+                        content: " Tickets"
+                    }
+                }
+            }
+        }
+        .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .icon-menu-wallet, .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .icon-robux-28x28, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .icon-menu-wallet, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .icon-robux-28x28, .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden .rbx-divider, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden .rbx-divider, .dropdown-menu:has(.wallet-hidden) li:not(.dropdown-wallet):nth-last-child(-n+2) {
+            display: none;
+        }
+    }
+    & when (@SiteCurrency = Tickets) {
+        #buy-robux-popover-menu.dropdown-menu:has(.wallet-hidden) li:not(.dropdown-wallet):nth-child(2), #buy-robux-popover-menu.dropdown-menu:not(.wallet-hidden) li:not(.dropdown-wallet):nth-child(2) {
+            font-size: 0
+        }
+        #buy-robux-popover-menu.dropdown-menu:has(.wallet-hidden) li:not(.dropdown-wallet):nth-child(2) a:before, #buy-robux-popover-menu.dropdown-menu:not(.wallet-hidden) li:not(.dropdown-wallet):nth-child(2) a:before {
+            content: "Buy Tickets";
+            font-size: 16px;
+            line-height: 1.42857;
+        }
     }
     
     .light-theme .btn-navigation-nav-search-white-md, .light-theme .btn-navigation-nav-notification-stream-md, .light-theme .btn-navigation-nav-robux-md, .light-theme .btn-navigation-nav-settings-md, .light-theme .btn-navigation-nav-search-white-md:focus, .light-theme .btn-navigation-nav-search-white-md:hover, .light-theme .btn-navigation-nav-notification-stream-md:focus, .light-theme .btn-navigation-nav-notification-stream-md:hover, .light-theme .btn-navigation-nav-notification-stream-md.active, .light-theme .btn-navigation-nav-notification-stream-md:active, .light-theme .btn-navigation-nav-robux-md:focus, .light-theme .btn-navigation-nav-robux-md:hover, .light-theme .btn-navigation-nav-robux-md.active, .light-theme .btn-navigation-nav-robux-md:active, .light-theme .btn-navigation-nav-search-white-md.active, .light-theme .btn-navigation-nav-search-white-md:active, .light-theme .btn-navigation-nav-settings-md:focus, .light-theme .btn-navigation-nav-settings-md:hover, .light-theme .btn-navigation-nav-settings-md.active, .light-theme .btn-navigation-nav-settings-md:active, .light-theme .btn-navigation-nav-menu-md, .light-theme .btn-navigation-nav-menu-md:focus, .light-theme .btn-navigation-nav-menu-md:hover, .light-theme .btn-uiblox-common-common-notification-bell-md, .light-theme .btn-uiblox-common-common-notification-bell-md:focus, .light-theme .btn-uiblox-common-common-notification-bell-md:hover, .light-theme .btn-uiblox-common-common-notification-bell-md.active, .light-theme .btn-uiblox-common-common-notification-bell-md:active, .light-theme .btn-navigation-nav-settings-md.disabled, .light-theme .btn-navigation-nav-settings-md.disabled.active, .light-theme .btn-navigation-nav-settings-md.disabled:active, .light-theme .btn-navigation-nav-settings-md.disabled:focus, .light-theme .btn-navigation-nav-settings-md.disabled:hover, .light-theme .btn-navigation-nav-settings-md[disabled], .light-theme .btn-navigation-nav-settings-md[disabled].active, .light-theme .btn-navigation-nav-settings-md[disabled]:active, .light-theme .btn-navigation-nav-settings-md[disabled]:focus, .light-theme .btn-navigation-nav-settings-md[disabled]:hover, .light-theme .btn-navigation-nav-robux-md.disabled, .light-theme .btn-navigation-nav-robux-md.disabled.active, .light-theme .btn-navigation-nav-robux-md.disabled:active, .light-theme .btn-navigation-nav-robux-md.disabled:focus, .light-theme .btn-navigation-nav-robux-md.disabled:hover, .light-theme .btn-navigation-nav-robux-md[disabled], .light-theme .btn-navigation-nav-robux-md[disabled].active, .light-theme .btn-navigation-nav-robux-md[disabled]:active, .light-theme .btn-navigation-nav-robux-md[disabled]:focus, .light-theme .btn-navigation-nav-robux-md[disabled]:hover, .light-theme .btn-navigation-nav-notification-stream-md.disabled, .light-theme .btn-navigation-nav-notification-stream-md.disabled.active, .light-theme .btn-navigation-nav-notification-stream-md.disabled:active, .light-theme .btn-navigation-nav-notification-stream-md.disabled:focus, .light-theme .btn-navigation-nav-notification-stream-md.disabled:hover, .light-theme .btn-navigation-nav-notification-stream-md[disabled], .light-theme .btn-navigation-nav-notification-stream-md[disabled].active, .light-theme .btn-navigation-nav-notification-stream-md[disabled]:active, .light-theme .btn-navigation-nav-notification-stream-md[disabled]:focus, .light-theme .btn-navigation-nav-notification-stream-md[disabled]:hover, .light-theme .btn-navigation-nav-search-white-md.disabled, .light-theme .btn-navigation-nav-search-white-md.disabled.active, .light-theme .btn-navigation-nav-search-white-md.disabled:active, .light-theme .btn-navigation-nav-search-white-md.disabled:focus, .light-theme .btn-navigation-nav-search-white-md.disabled:hover, .light-theme .btn-navigation-nav-search-white-md[disabled], .light-theme .btn-navigation-nav-search-white-md[disabled].active, .light-theme .btn-navigation-nav-search-white-md[disabled]:active, .light-theme .btn-navigation-nav-search-white-md[disabled]:focus, .light-theme .btn-navigation-nav-search-white-md[disabled]:hover, .light-theme .btn-navigation-nav-menu-md.disabled, .light-theme .btn-navigation-nav-menu-md.disabled.active, .light-theme .btn-navigation-nav-menu-md.disabled:active, .light-theme .btn-navigation-nav-menu-md.disabled:focus, .light-theme .btn-navigation-nav-menu-md.disabled:hover, .light-theme .btn-navigation-nav-menu-md[disabled], .light-theme .btn-navigation-nav-menu-md[disabled].active, .light-theme .btn-navigation-nav-menu-md[disabled]:active, .light-theme .btn-navigation-nav-menu-md[disabled]:focus, .light-theme .btn-navigation-nav-menu-md[disabled]:hover, .light-theme .touch .btn-navigation-nav-settings-md:focus, .light-theme .touch .btn-navigation-nav-settings-md:hover, .light-theme .touch .btn-navigation-nav-settings-md:visited, .light-theme .touch .btn-navigation-nav-settings-md.active, .light-theme .touch .btn-navigation-nav-settings-md:active, .light-theme .touch .btn-navigation-nav-robux-md:focus, .light-theme .touch .btn-navigation-nav-robux-md:hover, .light-theme .touch .btn-navigation-nav-robux-md:visited, .light-theme .touch .btn-navigation-nav-robux-md.active, .light-theme .touch .btn-navigation-nav-robux-md:active, .light-theme .touch .btn-navigation-nav-menu-md:focus, .light-theme .touch .btn-navigation-nav-menu-md:hover, .light-theme .touch .btn-navigation-nav-menu-md:visited, .light-theme .touch .btn-navigation-nav-menu-md.active, .light-theme .touch .btn-navigation-nav-menu-md:active {
