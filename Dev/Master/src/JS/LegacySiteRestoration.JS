@@ -92,7 +92,7 @@ var Settings = {
             GreetingExclamationMark: true, /*/ Toggles the exclamation mark (!) for the home greeting. /*/
             GreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome", "Welcome back"} /*/
             MembershipType: "OBC", /*/ 2017 => {"BC", "TBC", "OBC"} | 2020- 2022 => {"Premium"} /*/
-            LegacyColumn: true, /*/ Restores the my feed and blog on the home page, requires RestoreMyFeed to be enabled. /*/
+            LegacyColumn: false, /*/ Restores the my feed and blog on the home page, requires RestoreMyFeed to be enabled. /*/
             ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
         },
         MyFeeds: {
