@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.9
+// @version      1.2.10
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -11,6 +11,7 @@
 // @downloadURL  https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.JS
 // @grant        GM_xmlhttpRequest
 // @run-at       document-start
+// @connect      blog.roblox.com
 // @connect      users.roblox.com
 // @connect      premiumfeatures.roblox.com
 // @connect      thumbnails.roblox.com
@@ -81,9 +82,6 @@ var Settings = {
             fix2020homeFormat: false,
             RoProFix: true, /*/ Attempts to fix the most played container for ropro users. /*/
         },
-        Forums: {
-            /*/ Coming Soon /*/
-        },
         home: {
             avatarPresences: false, /*/ Adds the status icon to your home header avatar. /*/
             BulkLoading: false, /*/ Loads everything at once then in chunks (may be slower). /*/
@@ -94,6 +92,7 @@ var Settings = {
             GreetingExclamationMark: true, /*/ Toggles the exclamation mark (!) for the home greeting. /*/
             GreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome", "Welcome back"} /*/
             MembershipType: "OBC", /*/ 2017 => {"BC", "TBC", "OBC"} | 2020- 2022 => {"Premium"} /*/
+            LegacyColumn: true, /*/ Restores the my feed and blog on the home page, requires RestoreMyFeed to be enabled. /*/
             ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
         },
         MyFeeds: {
@@ -105,6 +104,7 @@ var Settings = {
             ModernFormat: true, /*/ Uses 2021/2022 HTML then the 2018 HTML originally used. /*/
         },
         RestoreHomePage: true, /*/ (Configurable => Pages.home.Format) Brings back the username and user avatar back on the home page. /*/
+        RestoreLegacyLogin: true, /*/ Reverts the changes made to make the login feel like the one used in 2019 /*/
     },
 }
 
@@ -1055,6 +1055,12 @@ if (Settings.Pages.home.MembershipType == "Premium" && (Settings.Pages.home.Form
     Settings.Pages.home.Format = "2017"
 }
 
+if (Settings.Pages.home.LegacyColumn) {
+    Settings.Pages.MyFeeds.GamestoExperience = false
+    Settings.Pages.MyFeeds.CatalogtoAvatarShop = false
+    Settings.Pages.MyFeeds.ModernFormat = false
+}
+
 async function waitForElm(q) {
     while (document.querySelector(q) == null) {
         await new Promise(r => requestAnimationFrame(r));
@@ -1099,13 +1105,31 @@ if (Settings.Global.RestoreLegacyFavTitle) {
     document.title = titlename
 }
 
+if (Settings.Pages.RestoreLegacyLogin && (window.location.href == url+"/login" || window.location.href == url+"/Login")) {
+    waitForElm(".alternative-login-divider-container").then(async (hdrSec) => {
+        if (Settings.Global.JSClasses) {
+            document.body.classList.add("LoginRevert")
+        }
+        document.head.querySelector('link[data-bundlename="ReactLogin"]').href = "https://css.rbxcdn.com/e0bcc553b7b9a1dd061c6ade9b1da1fcd7a10d3c86940c321b8823d97689038a.css"
+        hdrSec.parentNode.outerHTML = `
+        <!-- ngIf: loginParams.isFacebookSignInEnabled --><div ng-if="loginParams.isFacebookSignInEnabled" class="ng-scope"> <div class="fb-divider-container"> <div class="rbx-divider fb-divider"></div> <div class="divider-text-container"> <span class="divider-text xsmall ng-binding" ng-bind="'Label.LoginWithYour' | translate">login with your</span> </div> </div> <!-- ngIf: !loginParams.useFacebookRedirect --><button id="facebook-login-button" ng-if="!loginParams.useFacebookRedirect" class="btn-full-width btn-control-md fb-button social-login ng-scope" data-rbx-provider="facebook"> <span class="fb-icon"></span> <span ng-bind="'Action.Facebook' | translate" class="ng-binding">Facebook</span> </button><!-- end ngIf: !loginParams.useFacebookRedirect -->
+        `
+        document.querySelector(".login-section").removeChild(document.getElementById("crossDeviceLoginDisplayCodeModal-container"))
+        document.querySelector(".login-section").removeChild(document.getElementById("otp-login-container"))
+        document.querySelector(".login-section").removeChild(document.getElementById("account-switcher-confirmation-modal-container"))
+        document.getElementById("login-base").appendChild(document.querySelector(".login-container .signup-option").parentNode)
+    })
+}
+
 waitForElm(".left-col-list").then(async (hdrSec) => {
     const navgroup = document.getElementById("nav-group")
     if (Settings.Global.RestoreMyFeed) {
         if (Settings.Global.JSClasses) {
             document.body.classList.add("MyFeedEnabled")
         }
-        SideBarItem(url+"/feeds/", "nav-my-feed", "icon-nav-my-feed", "My Feed", navgroup.parentElement, true)
+        if (!Settings.Pages.home.LegacyColumn) {
+            SideBarItem(url+"/feeds/", "nav-my-feed", "icon-nav-my-feed", "My Feed", navgroup.parentElement, true)
+        }
     }
     if (Settings.Global.RestoreForums) {
         function StyleFix() {
@@ -1190,147 +1214,143 @@ if (Settings.Global.RestoreForums) {
     }
 }
 
-if (window.location.href == url+"/feeds" || window.location.href == url+"/feeds/") {
-    waitForElm(".content").then(async (hdrSec) => {
-        if (Settings.Global.RestoreMyFeed) {
-            waitForElm(".request-error-page-content").then(async (hdrSec) => {
-                document.querySelector(".content").removeChild(hdrSec)
-            })
-            function listItemTemplate(id, secClassName, iconName, URL, body, content, parentElement, useInnerHTML) {
-                var listitemBody = document.createElement("li")
-                if (id != "None") {
-                    listitemBody.setAttribute("id", id)
+if (Settings.Global.RestoreMyFeed) {
+    function listItemTemplate(id, secClassName, iconName, URL, body, content, parentElement, useInnerHTML) {
+        var listitemBody = document.createElement("li")
+        if (id != "None") {
+            listitemBody.setAttribute("id", id)
+        }
+        listitemBody.classList.add("list-item", (secClassName != "None") && secClassName)
+        listitemBody.setAttribute("data-default-roblox-feed", "")
+        parentElement.appendChild(listitemBody)
+        var listHeader = document.createElement("a")
+        listHeader.classList.add("list-header")
+        listHeader.setAttribute("href", URL)
+        listitemBody.appendChild(listHeader)
+        var listIcon = document.createElement("span")
+        listIcon.classList.add(iconName)
+        listHeader.appendChild(listIcon)
+        var listBody = document.createElement("div")
+        listBody.classList.add("list-body")
+        listitemBody.appendChild(listBody)
+        var listBodyHeader
+        if (Settings.Pages.MyFeeds.ModernFormat) {
+            listBodyHeader = document.createElement("h1")
+        } else {
+            listBodyHeader = document.createElement("h2")
+        }
+        listBodyHeader.textContent = body
+        listBody.appendChild(listBodyHeader)
+        var listContent = document.createElement("p")
+        listContent.classList.add("list-content")
+        if (useInnerHTML) {
+            listContent.innerHTML = content
+        } else {
+            listContent.textContent = content
+        }
+        listBody.appendChild(listContent)
+        if (secClassName == "feed-game" && iconName == "icon-games") {
+            var itemplace, itemcard, itemplaceimage, itemplacename, getItemParent
+            var InfoLoaded, ThumbnailLoaded = false
+            var GamesInfo, GamesThumbnail = null
+            function placeItemTemplate(name, url, thumbnail, Id, parentElement) {
+                getItemParent = parentElement
+                itemplace = document.createElement("li")
+                itemplace.classList.add("item-place", "item"+Id)
+                parentElement.appendChild(itemplace)
+                if (Settings.Pages.MyFeeds.entirecardislink) {
+                    itemcard = document.createElement("a")
+                    itemcard.setAttribute("href", url)
+                    itemplace.appendChild(itemcard)
                 }
-                listitemBody.classList.add("list-item", (secClassName != "None") && secClassName)
-                listitemBody.setAttribute("data-default-roblox-feed", "")
-                parentElement.appendChild(listitemBody)
-                var listHeader = document.createElement("a")
-                listHeader.classList.add("list-header")
-                listHeader.setAttribute("href", URL)
-                listitemBody.appendChild(listHeader)
-                var listIcon = document.createElement("span")
-                listIcon.classList.add(iconName)
-                listHeader.appendChild(listIcon)
-                var listBody = document.createElement("div")
-                listBody.classList.add("list-body")
-                listitemBody.appendChild(listBody)
-                var listBodyHeader
-                if (Settings.Pages.MyFeeds.ModernFormat) {
-                    listBodyHeader = document.createElement("h1")
+                itemplaceimage = document.createElement("img")
+                itemplaceimage.setAttribute("src", thumbnail)
+                if (Settings.Pages.MyFeeds.entirecardislink) {
+                    itemcard.appendChild(itemplaceimage)
+                    itemplacename = document.createElement("div")
                 } else {
-                    listBodyHeader = document.createElement("h2")
+                    itemplace.appendChild(itemplaceimage)
+                    itemplacename = document.createElement("a")
                 }
-                listBodyHeader.textContent = body
-                listBody.appendChild(listBodyHeader)
-                var listContent = document.createElement("p")
-                listContent.classList.add("list-content")
-                if (useInnerHTML) {
-                    listContent.innerHTML = content
+                itemplacename.classList.add("font-bold", "text-overflow")
+                if (!Settings.Pages.MyFeeds.entirecardislink) {
+                    itemplacename.setAttribute("href", url)
+                }
+                itemplacename.textContent = name
+                if (Settings.Pages.MyFeeds.entirecardislink) {
+                    itemcard.appendChild(itemplacename)
                 } else {
-                    listContent.textContent = content
+                    itemplace.appendChild(itemplacename)
                 }
-                listBody.appendChild(listContent)
-                if (secClassName == "feed-game" && iconName == "icon-games") {
-                    var itemplace, itemcard, itemplaceimage, itemplacename, getItemParent
-                    var InfoLoaded, ThumbnailLoaded = false
-                    var GamesInfo, GamesThumbnail = null
-                    function placeItemTemplate(name, url, thumbnail, Id, parentElement) {
-                        getItemParent = parentElement
-                        itemplace = document.createElement("li")
-                        itemplace.classList.add("item-place", "item"+Id)
-                        parentElement.appendChild(itemplace)
-                        if (Settings.Pages.MyFeeds.entirecardislink) {
-                            itemcard = document.createElement("a")
-                            itemcard.setAttribute("href", url)
-                            itemplace.appendChild(itemcard)
-                        }
-                        itemplaceimage = document.createElement("img")
-                        itemplaceimage.setAttribute("src", thumbnail)
-                        if (Settings.Pages.MyFeeds.entirecardislink) {
-                            itemcard.appendChild(itemplaceimage)
-                            itemplacename = document.createElement("div")
-                        } else {
-                            itemplace.appendChild(itemplaceimage)
-                            itemplacename = document.createElement("a")
-                        }
-                        itemplacename.classList.add("font-bold")
-                        if (!Settings.Pages.MyFeeds.entirecardislink) {
-                            itemplacename.setAttribute("href", url)
-                        }
-                        itemplacename.textContent = name
-                        if (Settings.Pages.MyFeeds.entirecardislink) {
-                            itemcard.appendChild(itemplacename)
-                        } else {
-                            itemplace.appendChild(itemplacename)
-                        }
-                    }
-                    function GetGamesInfo(Id, parentElement) {
-                        GM_xmlhttpRequest({
-                            method: "GET",
-                            url: "https://www.roblox.com/item-thumbnails?params=%5B%7BassetId:"+Id+"%7D%5D",
-                            onload: function(response) {
-                                var InfoLoaded = JSON.parse(response.responseText)[0]
-                                placeItemTemplate(InfoLoaded.name, InfoLoaded.url, InfoLoaded.thumbnailUrl, Id, parentElement)
-                            },
-                        });
-                    }
-                    var FeaturedGamesContainer = document.createElement("div")
-                    FeaturedGamesContainer.setAttribute("id", "FeaturedGamesContainer")
-                    FeaturedGamesContainer.classList.add("list-gallery")
-                    listBody.appendChild(FeaturedGamesContainer)
-                    GetGamesInfo(69184822, FeaturedGamesContainer)
-                    GetGamesInfo(3527629287, FeaturedGamesContainer)
-                    GetGamesInfo(13822889, FeaturedGamesContainer)
-                    GetGamesInfo(139613645, FeaturedGamesContainer)
-                    waitForElm(".item69184822").then(async (hdrSec) => {
-                        getItemParent.appendChild(hdrSec)
-                        hdrSec.classList.remove("item69184822")
-                    })
-                    waitForElm(".item3527629287").then(async (hdrSec) => {
-                        getItemParent.appendChild(hdrSec)
-                        hdrSec.classList.remove("item3527629287")
-                    })
+            }
+            function GetGamesInfo(Id, parentElement) {
+                GM_xmlhttpRequest({
+                    method: "GET",
+                    url: "https://www.roblox.com/item-thumbnails?params=%5B%7BassetId:"+Id+"%7D%5D",
+                    onload: function(response) {
+                        var InfoLoaded = JSON.parse(response.responseText)[0]
+                        placeItemTemplate(InfoLoaded.name, InfoLoaded.url, InfoLoaded.thumbnailUrl, Id, parentElement)
+                    },
+                });
+            }
+            var FeaturedGamesContainer = document.createElement("div")
+            FeaturedGamesContainer.setAttribute("id", "FeaturedGamesContainer")
+            FeaturedGamesContainer.classList.add("list-gallery")
+            listBody.appendChild(FeaturedGamesContainer)
+            GetGamesInfo(69184822, FeaturedGamesContainer)
+            GetGamesInfo(3527629287, FeaturedGamesContainer)
+            GetGamesInfo(13822889, FeaturedGamesContainer)
+            GetGamesInfo(139613645, FeaturedGamesContainer)
+            waitForElm(".item69184822").then(async (hdrSec) => {
+                getItemParent.appendChild(hdrSec)
+                hdrSec.classList.remove("item69184822")
+                waitForElm(".item3527629287").then(async (hdrSec) => {
+                    getItemParent.appendChild(hdrSec)
+                    hdrSec.classList.remove("item3527629287")
                     waitForElm(".item13822889").then(async (hdrSec) => {
                         getItemParent.appendChild(hdrSec)
                         hdrSec.classList.remove("item13822889")
+                        waitForElm(".item139613645").then(async (hdrSec) => {
+                            getItemParent.appendChild(hdrSec)
+                            hdrSec.classList.remove("item139613645")
+                        })
                     })
-                    waitForElm(".item139613645").then(async (hdrSec) => {
-                        getItemParent.appendChild(hdrSec)
-                        hdrSec.classList.remove("item139613645")
-                    })
-                }
-                if (secClassName == "feed-creation" && iconName == "icon-charactercustomizer") {
-                    var listGallery = document.createElement("ul")
-                    listGallery.classList.add("list-gallery")
-                    listBody.appendChild(listGallery)
-                    var itemasset = document.createElement("li")
-                    itemasset.classList.add("item-asset")
-                    listGallery.appendChild(itemasset)
-                    var itemassetimg = document.createElement("img")
-                    itemassetimg.setAttribute("src", "https://images.rbxcdn.com/005a0f4d764d9c609ff4c37a2bb99006.png")
-                    itemasset.appendChild(itemassetimg)
-                    itemasset = document.createElement("li")
-                    itemasset.classList.add("item-asset")
-                    listGallery.appendChild(itemasset)
-                    itemassetimg = document.createElement("img")
-                    itemassetimg.setAttribute("src", "https://images.rbxcdn.com/e861c0c517df63e9f17e96685cc4bb14.png")
-                    itemasset.appendChild(itemassetimg)
-                    itemasset = document.createElement("li")
-                    itemasset.classList.add("item-asset")
-                    listGallery.appendChild(itemasset)
-                    itemassetimg = document.createElement("img")
-                    itemassetimg.setAttribute("src", "https://images.rbxcdn.com/7fd0bef40b29834e8add92234b352c3e.png")
-                    itemasset.appendChild(itemassetimg)
-                    itemasset = document.createElement("li")
-                    itemasset.classList.add("item-asset")
-                    listGallery.appendChild(itemasset)
-                    itemassetimg = document.createElement("img")
-                    itemassetimg.setAttribute("src", "https://images.rbxcdn.com/294ebb9ceaac3c5352de0ebecab909ec.png")
-                    itemasset.appendChild(itemassetimg)
-                }
-            }
-            var HomePageCSS = document.createElement("Style")
-            HomePageCSS.innerHTML = `
+                })
+            })
+        }
+        if (secClassName == "feed-creation" && iconName == "icon-charactercustomizer") {
+            var listGallery = document.createElement("ul")
+            listGallery.classList.add("list-gallery")
+            listBody.appendChild(listGallery)
+            var itemasset = document.createElement("li")
+            itemasset.classList.add("item-asset")
+            listGallery.appendChild(itemasset)
+            var itemassetimg = document.createElement("img")
+            itemassetimg.setAttribute("src", "https://images.rbxcdn.com/005a0f4d764d9c609ff4c37a2bb99006.png")
+            itemasset.appendChild(itemassetimg)
+            itemasset = document.createElement("li")
+            itemasset.classList.add("item-asset")
+            listGallery.appendChild(itemasset)
+            itemassetimg = document.createElement("img")
+            itemassetimg.setAttribute("src", "https://images.rbxcdn.com/e861c0c517df63e9f17e96685cc4bb14.png")
+            itemasset.appendChild(itemassetimg)
+            itemasset = document.createElement("li")
+            itemasset.classList.add("item-asset")
+            listGallery.appendChild(itemasset)
+            itemassetimg = document.createElement("img")
+            itemassetimg.setAttribute("src", "https://images.rbxcdn.com/7fd0bef40b29834e8add92234b352c3e.png")
+            itemasset.appendChild(itemassetimg)
+            itemasset = document.createElement("li")
+            itemasset.classList.add("item-asset")
+            listGallery.appendChild(itemasset)
+            itemassetimg = document.createElement("img")
+            itemassetimg.setAttribute("src", "https://images.rbxcdn.com/294ebb9ceaac3c5352de0ebecab909ec.png")
+            itemasset.appendChild(itemassetimg)
+        }
+    }
+    var FeedCSS = document.createElement("Style")
+    FeedCSS.innerHTML = `
+
 .icon-default-creation, .icon-profile, .icon-develop, .icon-charactercustomizer, .icon-place, .icon-shirt, .icon-tshirt, .icon-decal, .icon-pants, .icon-models, .icon-tutorial, .feeds .icon-develop, .feeds .icon-charactercustomizer {
     background-image: url(/images/Shared/creation.svg);
     background-repeat: no-repeat;
@@ -1347,109 +1367,167 @@ if (window.location.href == url+"/feeds" || window.location.href == url+"/feeds/
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='56px' height='308px' viewBox='0 0 56 308' enable-background='new 0 0 56 308' xml:space='preserve'%3E%3Cg id='label'%3E%3C/g%3E%3Cg id='BC'%3E%3C/g%3E%3Cg id='brand'%3E%3C/g%3E%3Cg id='generic'%3E%3C/g%3E%3Cg id='negative'%3E%3C/g%3E%3Cg id='creation'%3E%3Cpath id='tutorial-on' fill='%23BDBEBE' d='M42,304c-0.4,0-0.8-0.3-0.9-0.7c0-0.1-0.9-2.3-4.1-2.3c-3.6,0-5.5,0.9-5.6,0.9 c-0.3,0.1-0.7,0.1-1-0.1c-0.3-0.2-0.5-0.5-0.5-0.8v-15c0-0.4,0.2-0.7,0.6-0.9c0.1,0,2.3-1.1,6.4-1.1c2.6,0,4.1,1.1,5,2.1 c0.9-1,2.4-2.1,5-2.1c4.2,0,6.4,1.1,6.4,1.1c0.3,0.2,0.6,0.5,0.6,0.9v15c0,0.3-0.2,0.7-0.5,0.8c-0.3,0.2-0.7,0.2-1,0.1 c0,0-1.9-0.9-5.6-0.9c-3.2,0-4,2.3-4.1,2.3C42.8,303.7,42.4,304,42,304z M43,298v-8c0-0.6-0.4-1-1-1s-1,0.4-1,1v8c0,0.6,0.4,1,1,1 S43,298.6,43,298z'/%3E%3Cg id='tutorial'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,304c-0.4,0-0.8-0.3-0.9-0.7c0-0.1-0.9-2.3-4.1-2.3c-3.6,0-5.5,0.9-5.6,0.9c-0.3,0.1-0.7,0.1-1-0.1 C2.2,301.7,2,301.3,2,301v-15c0-0.4,0.2-0.7,0.6-0.9c0.1,0,2.3-1.1,6.4-1.1c4.6,0,5.9,3.5,5.9,3.7c0,0.1,0.1,0.2,0.1,0.3v15 c0,0.5-0.4,0.9-0.8,1C14.1,304,14.1,304,14,304z M9,299c1.8,0,3.1,0.5,4,1.2v-12c-0.2-0.5-1.2-2.2-4-2.2c-2.5,0-4.2,0.4-5,0.7 v12.9C5.1,299.3,6.8,299,9,299z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,304c-0.1,0-0.1,0-0.2,0c-0.5-0.1-0.8-0.5-0.8-1v-15c0-0.1,0-0.2,0.1-0.3c0.1-0.2,1.3-3.7,5.9-3.7 c4.2,0,6.4,1.1,6.4,1.1c0.3,0.2,0.6,0.5,0.6,0.9v15c0,0.3-0.2,0.7-0.5,0.8c-0.3,0.2-0.7,0.2-1,0.1c0,0-1.9-0.9-5.6-0.9 c-3.2,0-4,2.3-4.1,2.3C14.8,303.7,14.4,304,14,304z M15,288.2v12c0.9-0.7,2.2-1.2,4-1.2c2.2,0,3.9,0.3,5,0.6v-12.9 c-0.8-0.3-2.5-0.7-5-0.7C16.2,286,15.2,287.7,15,288.2z'/%3E%3C/g%3E%3C/g%3E%3Cg id='model-on'%3E%3Cpath fill='%23BDBEBE' d='M53,239h-9c-0.6,0-1,0.4-1,1v9c0,0.6,0.4,1,1,1h9c0.6,0,1-0.4,1-1v-9C54,239.4,53.6,239,53,239z'/%3E%3Cpath fill='%23BDBEBE' d='M36,237h12c0,0,0,0,0,0c0.6,0,1-0.4,1-1c0-0.3-0.1-0.5-0.3-0.7l-5.9-8.9c-0.4-0.6-1.3-0.6-1.7,0l-6,9 c-0.2,0.3-0.2,0.7,0,1S35.6,237,36,237z'/%3E%3Cpath fill='%23BDBEBE' d='M35.5,239c-3,0-5.5,2.5-5.5,5.5s2.5,5.5,5.5,5.5s5.5-2.5,5.5-5.5S38.5,239,35.5,239z'/%3E%3C/g%3E%3Cg id='model'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M25,250h-9c-0.6,0-1-0.4-1-1v-9c0-0.6,0.4-1,1-1h9c0.6,0,1,0.4,1,1v9C26,249.6,25.6,250,25,250z M17,248 h7v-7h-7V248z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M20,237C20,237,20,237,20,237H8c-0.4,0-0.7-0.2-0.9-0.5s-0.2-0.7,0-1l6-9c0.4-0.6,1.3-0.6,1.7,0l5.9,8.9 c0.2,0.2,0.3,0.4,0.3,0.7C21,236.6,20.6,237,20,237z M9.9,235h8.3l-4.1-6.2L9.9,235z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M7.5,250c-3,0-5.5-2.5-5.5-5.5s2.5-5.5,5.5-5.5s5.5,2.5,5.5,5.5S10.5,250,7.5,250z M7.5,241 c-1.9,0-3.5,1.6-3.5,3.5s1.6,3.5,3.5,3.5s3.5-1.6,3.5-3.5S9.4,241,7.5,241z'/%3E%3C/g%3E%3C/g%3E%3Cpolygon id='pants-on' fill='%23BDBEBE' points='47,199 37,199 35,204 35,221 39,221 42,207 45,221 49,221 49,204 '/%3E%3Cg id='pants'%3E%3Cpath fill='%23BDBEBE' d='M21,221h-4c-0.5,0-0.9-0.3-1-0.8l-2-8.8l-2,8.8c-0.1,0.5-0.5,0.8-1,0.8H7c-0.6,0-1-0.4-1-1v-16 c0-0.2,0-0.3,0.1-0.4l2-4c0.2-0.3,0.5-0.6,0.9-0.6h10c0.4,0,0.7,0.2,0.9,0.6l2,4c0.1,0.1,0.1,0.3,0.1,0.4v16 C22,220.6,21.6,221,21,221z M17.8,219H20v-14.8l-1.6-3.2H9.6L8,204.2V219h2.2l2.8-12.2c0.1-0.5,0.5-0.8,1-0.8s0.9,0.3,1,0.8 L17.8,219z'/%3E%3C/g%3E%3Cg id='decal-on'%3E%3Cpath fill='%23BDBEBE' d='M53,256c0-0.6-0.4-1-1-1H32c-0.6,0-1,0.4-1,1v20c0,0.6,0.4,1,1,1h20c0.6,0,1-0.4,1-1V256z M46.4,271.8 L42,269l-4.4,2.8l1.7-4.6l-3.3-2.8l4.3,0l1.7-4.6l1.7,4.6l4.3,0l-3.3,2.8L46.4,271.8z'/%3E%3C/g%3E%3Cg id='decal'%3E%3Cg%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M24,277h-3c-0.6,0-1-0.4-1-1s0.4-1,1-1h2v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v3C25,276.6,24.6,277,24,277z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M16.3,277h-4.7c-0.6,0-1-0.4-1-1s0.4-1,1-1h4.7c0.6,0,1,0.4,1,1S16.9,277,16.3,277z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M7,277H4c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1s1,0.4,1,1v2h2c0.6,0,1,0.4,1,1S7.6,277,7,277z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M4,269.3c-0.6,0-1-0.4-1-1v-4.7c0-0.6,0.4-1,1-1s1,0.4,1,1v4.7C5,268.9,4.6,269.3,4,269.3z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M4,260c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1h3c0.6,0,1,0.4,1,1s-0.4,1-1,1H5v2C5,259.6,4.6,260,4,260z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M16.3,257h-4.7c-0.6,0-1-0.4-1-1s0.4-1,1-1h4.7c0.6,0,1,0.4,1,1S16.9,257,16.3,257z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M24,260c-0.6,0-1-0.4-1-1v-2h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h3c0.6,0,1,0.4,1,1v3 C25,259.6,24.6,260,24,260z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M24,269.3c-0.6,0-1-0.4-1-1v-4.7c0-0.6,0.4-1,1-1s1,0.4,1,1v4.7C25,268.9,24.6,269.3,24,269.3z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpolygon fill='%23BDBEBE' points='14,259.8 15.7,264.3 20,264.4 16.7,267.2 18.4,271.8 14,269 9.6,271.8 11.3,267.2 8,264.4 12.3,264.3 '/%3E%3C/g%3E%3C/g%3E%3Cg id='tshirt-on'%3E%3Cpath fill='%23BDBEBE' d='M51,173l-5-2c0,0-1.4,2-4,2s-4-2-4-2l-5,2l-3,6l4,3v11h16v-11l4-3L51,173z M39,189h-2c-0.6,0-1-0.4-1-1v-2 c0-0.6,0.4-1,1-1s1,0.4,1,1v1h1c0.6,0,1,0.4,1,1S39.6,189,39,189z M36,183c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0 c0.2,0.2,0.3,0.5,0.3,0.7s-0.1,0.5-0.3,0.7c-0.2,0.2-0.5,0.3-0.7,0.3s-0.5-0.1-0.7-0.3C36.1,183.5,36,183.3,36,183z M39,179h-1v1 c0,0.6-0.4,1-1,1s-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h2c0.6,0,1,0.4,1,1S39.6,179,39,179z M42.7,188.7c-0.2,0.2-0.5,0.3-0.7,0.3 s-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0c0.2,0.2,0.3,0.4,0.3,0.7 C43,188.3,42.9,188.5,42.7,188.7z M42.7,178.7c-0.2,0.2-0.5,0.3-0.7,0.3s-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.5-0.3-0.7 c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0c0.2,0.2,0.3,0.4,0.3,0.7C43,178.3,42.9,178.5,42.7,178.7z M48,188c0,0.6-0.4,1-1,1h-2 c-0.6,0-1-0.4-1-1s0.4-1,1-1h1v-1c0-0.6,0.4-1,1-1s1,0.4,1,1V188z M47.7,183.7c-0.2,0.2-0.5,0.3-0.7,0.3s-0.5-0.1-0.7-0.3 c-0.2-0.2-0.3-0.5-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0c0.2,0.2,0.3,0.5,0.3,0.7S47.9,183.5,47.7,183.7z M48,180 c0,0.6-0.4,1-1,1s-1-0.4-1-1v-1h-1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1V180z'/%3E%3C/g%3E%3Cg id='tshirt'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M22,193H6c-0.6,0-1-0.4-1-1v-10.5l-2.6-1.7c-0.4-0.3-0.6-0.8-0.3-1.3l3-6c0.1-0.3,0.4-0.5,0.7-0.5l4-1 c0.4-0.1,0.8,0.1,1.1,0.4c0,0.1,1.1,1.6,3.2,1.6s3.1-1.5,3.2-1.6c0.2-0.3,0.7-0.5,1.1-0.4l4,1c0.3,0.1,0.5,0.3,0.7,0.5l3,6 c0.2,0.5,0.1,1-0.3,1.3l-2.6,1.7V192C23,192.6,22.6,193,22,193z M7,191h14v-10c0-0.3,0.2-0.6,0.4-0.8l2.3-1.5l-2.4-4.8l-3-0.7 c-0.7,0.7-2.2,1.9-4.4,1.9s-3.7-1.2-4.4-1.9l-3,0.7l-2.4,4.8l2.3,1.5c0.3,0.2,0.4,0.5,0.4,0.8V191z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M9,181c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1h2c0.6,0,1,0.4,1,1s-0.4,1-1,1h-1v1C10,180.6,9.6,181,9,181z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M19,181c-0.6,0-1-0.4-1-1v-1h-1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1v2 C20,180.6,19.6,181,19,181z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M11,189H9c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v1h1c0.6,0,1,0.4,1,1S11.6,189,11,189z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M19,189h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h1v-1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C20,188.6,19.6,189,19,189z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,189c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0 c0.2,0.2,0.3,0.5,0.3,0.7s-0.1,0.5-0.3,0.7C14.5,188.9,14.3,189,14,189z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,179c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0 c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C14.5,178.9,14.3,179,14,179z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M9,184c-0.3,0-0.5-0.1-0.7-0.3C8.1,183.5,8,183.3,8,183s0.1-0.5,0.3-0.7c0.4-0.4,1.1-0.4,1.4,0 c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C9.5,183.9,9.3,184,9,184z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M19,184c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0 c0.2,0.2,0.3,0.5,0.3,0.7s-0.1,0.5-0.3,0.7C19.5,183.9,19.3,184,19,184z'/%3E%3C/g%3E%3C/g%3E%3Cg id='shirt-on'%3E%3Cpath fill='%23BDBEBE' d='M51.2,146.7l-1.8-0.6c-0.3-0.1-0.5-0.3-0.6-0.6l-0.6-1.8c-0.1-0.4-0.5-0.7-0.9-0.7H42h-5.3 c-0.4,0-0.8,0.3-0.9,0.7l-0.6,1.8c-0.1,0.3-0.3,0.5-0.6,0.6l-1.8,0.6c-0.4,0.1-0.7,0.6-0.7,1.1l1.8,15.3c0.1,0.5,0.5,0.9,1,0.9 h14.2c0.5,0,0.9-0.4,1-0.9l1.8-15.3C52,147.3,51.7,146.9,51.2,146.7z M42,162c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1 S42.6,162,42,162z M42,158c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S42.6,158,42,158z M42,154c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1 S42.6,154,42,154z M48.3,147.4l-3,2c-0.1,0.1-0.2,0.1-0.3,0.1s-0.2,0-0.3-0.1l-2.7-1.8l-2.7,1.8c-0.2,0.1-0.4,0.1-0.6,0l-3-2 c-0.2-0.2-0.3-0.5-0.1-0.7c0.2-0.2,0.5-0.3,0.7-0.1l2.7,1.8l2.7-1.8c0.2-0.1,0.4-0.1,0.6,0l2.7,1.8l2.7-1.8 c0.2-0.2,0.5-0.1,0.7,0.1C48.6,147,48.5,147.3,48.3,147.4z'/%3E%3C/g%3E%3Cg id='shirt'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M22,165H6c-0.5,0-0.9-0.4-1-0.9l-2-16c-0.1-0.5,0.2-0.9,0.7-1.1l2.5-0.8l0.8-2.5c0.1-0.3,0.4-0.6,0.7-0.6 c0.3-0.1,0.7,0,0.9,0.2l5.4,4.5l5.4-4.5c0.3-0.2,0.6-0.3,0.9-0.2c0.3,0.1,0.6,0.3,0.7,0.6l0.8,2.5l2.5,0.8 c0.5,0.2,0.7,0.6,0.7,1.1l-2,16C22.9,164.6,22.5,165,22,165z M6.9,163h14.2l1.8-14.3l-2.2-0.7c-0.3-0.1-0.5-0.3-0.6-0.6l-0.5-1.6 l-4.9,4.1c-0.4,0.3-0.9,0.3-1.3,0l-4.9-4.1l-0.5,1.6c-0.1,0.3-0.3,0.5-0.6,0.6l-2.2,0.7L6.9,163z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,154c-0.6,0-1,0.4-1,1s0.4,1,1,1s1-0.4,1-1S14.6,154,14,154L14,154z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,158c-0.6,0-1,0.4-1,1s0.4,1,1,1s1-0.4,1-1S14.6,158,14,158L14,158z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,162c-0.6,0-1,0.4-1,1s0.4,1,1,1s1-0.4,1-1S14.6,162,14,162L14,162z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M17,153c-0.3,0-0.5-0.1-0.7-0.3l-2.3-2.3l-2.3,2.3c-0.2,0.2-0.5,0.3-0.8,0.3c-0.3,0-0.5-0.2-0.7-0.4l-4-5 c-0.3-0.4-0.3-1.1,0.2-1.4c0.4-0.3,1.1-0.3,1.4,0.2l3.3,4.1l2.2-2.2c0.4-0.4,1-0.4,1.4,0l2.2,2.2l3.3-4.1c0.3-0.4,1-0.5,1.4-0.2 c0.4,0.3,0.5,1,0.2,1.4l-4,5C17.6,152.8,17.3,153,17,153C17,153,17,153,17,153z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M20,145H8c-0.6,0-1-0.4-1-1s0.4-1,1-1h12c0.6,0,1,0.4,1,1S20.6,145,20,145z'/%3E%3C/g%3E%3C/g%3E%3Cg id='personalserver-on'%3E%3Cpath fill='%23BDBEBE' d='M49,115H35c-0.6,0-1,0.4-1,1v20c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-20C50,115.4,49.6,115,49,115z M38.5,118c0.8,0,1.5,0.7,1.5,1.5s-0.7,1.5-1.5,1.5s-1.5-0.7-1.5-1.5S37.7,118,38.5,118z M47,133H37c-0.6,0-1-0.4-1-1s0.4-1,1-1 h10c0.6,0,1,0.4,1,1S47.6,133,47,133z M47,129H37c-0.6,0-1-0.4-1-1s0.4-1,1-1h10c0.6,0,1,0.4,1,1S47.6,129,47,129z'/%3E%3C/g%3E%3Cg id='personalserver'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M21,137H7c-0.6,0-1-0.4-1-1v-20c0-0.6,0.4-1,1-1h14c0.6,0,1,0.4,1,1v20C22,136.6,21.6,137,21,137z M8,135 h12v-18H8V135z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M10.5,118c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S11.3,118,10.5,118L10.5,118z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M21,129H7c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S21.6,129,21,129z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M21,133H7c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S21.6,133,21,133z'/%3E%3C/g%3E%3C/g%3E%3Cg id='place'%3E%3Cpath fill='%23BDBEBE' d='M52,106h-2v-2h1.7c0.9,0,1.5-1,1-1.8L50.8,99h0.8c0.9,0,1.5-1,1-1.7L50,92.6c-0.4-0.8-1.6-0.8-2,0 l-2.7,4.7c-0.4,0.8,0.1,1.7,1,1.7h0.8l-1.9,3.2c-0.4,0.8,0.1,1.8,1,1.8H48v2h-4V89c0-0.6-0.4-1-1-1H33c-0.6,0-1,0.4-1,1v17 c-0.6,0-1,0.4-1,1s0.4,1,1,1h20c0.6,0,1-0.4,1-1S52.6,106,52,106z M40,99h-4c-0.6,0-1-0.4-1-1s0.4-1,1-1h4c0.6,0,1,0.4,1,1 S40.6,99,40,99z M40,96h-4c-0.6,0-1-0.4-1-1s0.4-1,1-1h4c0.6,0,1,0.4,1,1S40.6,96,40,96z M40,93h-4c-0.6,0-1-0.4-1-1s0.4-1,1-1h4 c0.6,0,1,0.4,1,1S40.6,93,40,93z'/%3E%3C/g%3E%3Cg id='place_1_'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M24,99C24,99,24,99,24,99h-6c-0.4,0-0.7-0.2-0.9-0.5s-0.2-0.7,0-1l3-5c0.4-0.6,1.4-0.6,1.7,0l2.9,4.9 c0.2,0.2,0.3,0.4,0.3,0.7C25,98.6,24.6,99,24,99z M19.8,97h2.5L21,94.9L19.8,97z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M24,104C24,104,24,104,24,104h-6c-0.4,0-0.7-0.2-0.9-0.5s-0.2-0.7,0-1l3-5c0.4-0.6,1.4-0.6,1.7,0l2.9,4.9 c0.2,0.2,0.3,0.4,0.3,0.7C25,103.6,24.6,104,24,104z M19.8,102h2.5L21,99.9L19.8,102z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M21,107c-0.6,0-1-0.4-1-1v-3c0-0.6,0.4-1,1-1s1,0.4,1,1v3C22,106.6,21.6,107,21,107z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M24,108H4c-0.6,0-1-0.4-1-1s0.4-1,1-1h20c0.6,0,1,0.4,1,1S24.6,108,24,108z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M15,108H5c-0.6,0-1-0.4-1-1V89c0-0.6,0.4-1,1-1h10c0.6,0,1,0.4,1,1v18C16,107.6,15.6,108,15,108z M6,106 h8V90H6V106z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M12,93H8c-0.6,0-1-0.4-1-1s0.4-1,1-1h4c0.6,0,1,0.4,1,1S12.6,93,12,93z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M12,96H8c-0.6,0-1-0.4-1-1s0.4-1,1-1h4c0.6,0,1,0.4,1,1S12.6,96,12,96z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M12,99H8c-0.6,0-1-0.4-1-1s0.4-1,1-1h4c0.6,0,1,0.4,1,1S12.6,99,12,99z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Ccircle fill='%23BDBEBE' cx='39' cy='62' r='4'/%3E%3Cpath fill='%23BDBEBE' d='M43,67H31c-0.5,0-1,0.5-1,1v1c0,0.5,0.4,1.1,1,1.2l3,0.6c0.5,0.1,0.9,0.6,0.8,1.2l-1.6,9 c-0.1,0.5,0.3,1,0.8,1h1c0.5,0,1.2-0.4,1.5-0.9l7.1-13.2C43.8,67.4,43.5,67,43,67z'/%3E%3Cpath fill='%23BDBEBE' d='M53.8,61.4C53.6,61.2,53.3,61,53,61h-2c-0.4,0-0.7,0.2-0.9,0.5l-6,10C44,71.7,44,72,44,72.3 c0.1,0.3,0.3,0.5,0.5,0.6l4,2C48.7,75,48.8,75,49,75c0.1,0,0.3,0,0.4-0.1c0.3-0.1,0.5-0.3,0.6-0.6l4-12C54.1,62,54,61.7,53.8,61.4 z'/%3E%3Cpath fill='%23BDBEBE' d='M45,75c-2.7,0-3.2,1.5-3.7,2.9c-0.3,0.7-0.6,1.6-1.2,2.6c-0.2,0.3-0.2,0.7,0,1c0.2,0.3,0.5,0.5,0.9,0.5 c1.7,0,7,0,7-4C48,76.4,46.6,75,45,75z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M11,66c2.2,0,4-1.8,4-4s-1.8-4-4-4s-4,1.8-4,4S8.8,66,11,66z M11,60c1.1,0,2,0.9,2,2s-0.9,2-2,2 s-2-0.9-2-2S9.9,60,11,60z'/%3E%3Cpath fill='%23BDBEBE' d='M11.4,74.1c-0.5-0.2-1.1,0-1.3,0.4L7.4,80H6.2L8,72.2c0.1-0.5-0.2-1.1-0.7-1.2L4,70.2V69h10 c0.6,0,1-0.4,1-1s-0.4-1-1-1H3c-0.6,0-1,0.4-1,1v3c0,0.5,0.3,0.9,0.8,1l3.1,0.8l-1.8,8c-0.1,0.3,0,0.6,0.2,0.8 C4.4,81.9,4.7,82,5,82h3c0.4,0,0.7-0.2,0.9-0.6l3-6C12.1,75,11.9,74.4,11.4,74.1z'/%3E%3Cpath fill='%23BDBEBE' d='M25.8,61.4C25.6,61.2,25.3,61,25,61h-2c-0.3,0-0.6,0.2-0.8,0.4l-7,10C15,71.7,15,72,15,72.3 c0.1,0.3,0.3,0.5,0.6,0.6l5,2c0.1,0,0.2,0.1,0.4,0.1c0.1,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.3,0.5-0.6l4-12C26.1,62,26,61.7,25.8,61.4 z M20.4,72.7l-2.8-1.1l6-8.5h0.1L20.4,72.7z'/%3E%3Cpath fill='%23BDBEBE' d='M16,74c-2.6,0-3.2,1.9-3.6,3.5c-0.3,0.9-0.6,1.9-1.2,3c-0.2,0.3-0.2,0.7,0,1c0.2,0.3,0.5,0.5,0.9,0.5 c7,0,8-2.5,8-4C20,75.4,17.7,74,16,74z M13.7,79.9c0.3-0.7,0.5-1.3,0.6-1.9C14.8,76.3,15,76,16,76c0.5,0,2,0.5,2,2 C18,79,16.3,79.7,13.7,79.9z'/%3E%3C/g%3E%3Cg id='develop-on'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M52,38c-0.6,0-1-0.4-1-1v-4h-4c-0.6,0-1-0.4-1-1s0.4-1,1-1h5c0.6,0,1,0.4,1,1v5C53,37.6,52.6,38,52,38z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M37,53h-5c-0.6,0-1-0.4-1-1v-5c0-0.6,0.4-1,1-1s1,0.4,1,1v4h4c0.6,0,1,0.4,1,1S37.6,53,37,53z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M34,31h4.6c0.3,0,0.5,0.1,0.7,0.3l2.4,2.4c0.2,0.2,0.3,0.4,0.3,0.7v4.2c0,0.3,0.1,0.5,0.3,0.7l2.4,2.4 c0.2,0.2,0.4,0.3,0.7,0.3h4.2c0.3,0,0.5,0.1,0.7,0.3l2.4,2.4c0.2,0.2,0.3,0.4,0.3,0.7V50l-3.7-3.7c-0.2-0.2-0.4-0.3-0.7-0.3H47 c-0.6,0-1,0.4-1,1v1.6c0,0.3,0.1,0.5,0.3,0.7L50,53h-4.6c-0.3,0-0.5-0.1-0.7-0.3l-2.4-2.4c-0.2-0.2-0.3-0.4-0.3-0.7v-4.2 c0-0.3-0.1-0.5-0.3-0.7l-2.4-2.4c-0.2-0.2-0.4-0.3-0.7-0.3h-4.2c-0.3,0-0.5-0.1-0.7-0.3l-2.4-2.4c-0.2-0.2-0.3-0.4-0.3-0.7V34 l3.7,3.7c0.2,0.2,0.4,0.3,0.7,0.3H37c0.6,0,1-0.4,1-1v-1.6c0-0.3-0.1-0.5-0.3-0.7L34,31z'/%3E%3C/g%3E%3C/g%3E%3Cg id='develop'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M24,38c-0.6,0-1-0.4-1-1v-4h-4c-0.6,0-1-0.4-1-1s0.4-1,1-1h5c0.6,0,1,0.4,1,1v5C25,37.6,24.6,38,24,38z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M9,53H4c-0.6,0-1-0.4-1-1v-5c0-0.6,0.4-1,1-1s1,0.4,1,1v4h4c0.6,0,1,0.4,1,1S9.6,53,9,53z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M21,53C21,53,21,53,21,53h-5c-0.3,0-0.5-0.1-0.7-0.3l-2-2C13.1,50.5,13,50.3,13,50v-4.6L10.6,43H6 c-0.3,0-0.5-0.1-0.7-0.3l-2-2C3.1,40.5,3,40.3,3,40v-5c0-0.4,0.2-0.8,0.6-0.9s0.8-0.1,1.1,0.2L7.4,37H9v-1.6l-2.7-2.7 C6,32.4,5.9,32,6.1,31.6C6.2,31.2,6.6,31,7,31h5c0.3,0,0.5,0.1,0.7,0.3l2,2c0.2,0.2,0.3,0.4,0.3,0.7v4.6l2.4,2.4H22 c0.3,0,0.5,0.1,0.7,0.3l2,2c0.2,0.2,0.3,0.4,0.3,0.7v5c0,0.4-0.2,0.8-0.6,0.9c-0.4,0.2-0.8,0.1-1.1-0.2L20.6,47H19v1.6l2.6,2.6 c0.3,0.2,0.4,0.5,0.4,0.8C22,52.6,21.6,53,21,53z M16.4,51h2.2l-1.3-1.3C17.1,49.5,17,49.3,17,49v-3c0-0.6,0.4-1,1-1h3 c0.3,0,0.5,0.1,0.7,0.3l1.3,1.3v-2.2L21.6,43H17c-0.3,0-0.5-0.1-0.7-0.3l-3-3C13.1,39.5,13,39.3,13,39v-4.6L11.6,33H9.4l1.3,1.3 c0.2,0.2,0.3,0.4,0.3,0.7v3c0,0.6-0.4,1-1,1H7c-0.3,0-0.5-0.1-0.7-0.3L5,37.4v2.2L6.4,41H11c0.3,0,0.5,0.1,0.7,0.3l3,3 c0.2,0.2,0.3,0.4,0.3,0.7v4.6L16.4,51z'/%3E%3C/g%3E%3C/g%3E%3Cg id='profile-on'%3E%3Ccircle fill='%23BDBEBE' cx='42' cy='8' r='6'/%3E%3Cpath fill='%23BDBEBE' d='M42,16c0,0,6,0,7,1c0.8,0.8,1.6,4.6,1.9,6.2c0.1,0.5-0.2,0.9-0.6,1.1C48.9,24.9,45.7,26,42,26 s-6.9-1.1-8.3-1.7c-0.4-0.2-0.7-0.6-0.6-1.1c0.3-1.7,1.1-5.4,1.9-6.2C36,16,42,16,42,16z'/%3E%3C/g%3E%3Cg id='profile'%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S17.3,14,14,14z M14,4c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4 S16.2,4,14,4z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='%23BDBEBE' d='M14,26c-5.2,0-8.4-2.1-8.5-2.2c-0.3-0.2-0.5-0.6-0.4-1c0.2-1.2,1.1-5.4,2.3-6.5C8.5,15.1,12.4,15,14,15 c1.6,0,5.5,0.1,6.7,1.3c1.1,1.1,2,5.3,2.3,6.5c0.1,0.4-0.1,0.8-0.4,1C22.4,23.9,19.2,26,14,26z M7.1,22.5C8.2,23,10.6,24,14,24 c3.4,0,5.8-1,6.9-1.5c-0.5-2.1-1.2-4.3-1.6-4.8C18.9,17.3,16.4,17,14,17c-2.4,0-4.9,0.3-5.3,0.7C8.3,18.1,7.6,20.4,7.1,22.5z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg id='games'%3E%3C/g%3E%3Cg id='Social_and_Interaction'%3E%3C/g%3E%3Cg id='Navigation'%3E%3C/g%3E%3Cg id='Friends_Status'%3E%3C/g%3E%3C/svg%3E");
 }
 
-.form-horizontal .form-control-label {
-    display: none;
+.home-left-col,.home-right-col {
+    float: right;
 }
 
-.content .list-gallery {
+.home-left-col .section {
+    margin-right: 10px;
+}
+
+.home-left-col .section .flex-box, .content .section .flex-box {
+    display: flex;
+    align-items: flex-start;
+}
+
+.home-left-col .section .flex-box #shareButton, .content .section .flex-box #shareButton {
+    flex-grow: 1;
+}
+
+@media(max-width: 543px) {
+    .home-left-col .section .flex-box, .content .section .flex-box {
+        flex-wrap:wrap;
+    }
+}
+
+.home-left-col .checkbox, .content .checkbox {
+    margin: 0 0 16px;
+}
+
+.home-left-col .share-login, .content .share-login {
+    display: none;
+    margin: 8px;
+}
+
+.home-left-col .list-gallery, .content .list-gallery {
     display: inline-block;
     width: 100%;
 }
 
-.content .list-gallery li {
+.home-left-col .list-gallery li, .content .list-gallery li {
     display: inline-block;
     padding: 0 0 20px 0;
     margin-right: 1%;
 }
 
-.content .list-gallery .item-place {
+.home-left-col .list-gallery .item-place, .content .list-gallery .item-place {
     margin-right: 4px;
     width: 20%;
 }
 
-.content .list-gallery .item-place a {
+.home-left-col .list-gallery .item-place a, .content .list-gallery .item-place a {
     display: block;
 }
 
-.content .list-gallery .item-place img {
-    height: 150px;
+.home-left-col .list-gallery .item-place img, .content .list-gallery .item-place img {
+    ${(Settings.Pages.home.LegacyColumn && `width: 100%; ` || `width: 150px;`)}
+    height: auto;
 }
 
-${ (!Settings.Pages.MyFeeds.ModernFormat) && `
-.content .list-gallery .item-asset {
+${(!Settings.Pages.MyFeeds.ModernFormat && `
+.home-left-col .list-gallery .item-asset, .content .list-gallery .item-asset {
     width: 23%;
 }
-`}
+`)}
 
-.content .list-gallery .font-bold {
+.home-left-col .list-gallery .font-bold, .content .list-gallery .font-bold {
     white-space: nowrap;
     margin: 0;
 }
 
-.content .share-login {
-    display: none;
-    margin: 8px;
-}
-
 @media(max-width: 767px) {
-    .content .list-gallery li.item-place {
+    .home-left-col .list-gallery li.item-place, .content .list-gallery li.item-place {
         margin-right:1%;
         width: 48%;
     }
 
-    .content .list-gallery li.item-place:nth-child(4) {
+    .home-left-col .list-gallery li.item-place:nth-child(4), .content .list-gallery li.item-place:nth-child(4) {
         display: inline-block;
     }
 
-    .content .list-gallery li.item-place img {
+    .home-left-col .list-gallery li.item-place img, .content .list-gallery li.item-place img {
         min-width: 150px;
         min-height: 150px;
     }
 }
 
 @media(max-width: 543px) {
-    .content .list-gallery li.item-place {
+    .home-left-col .list-gallery li.item-place, .content .list-gallery li.item-place {
         width:99%;
     }
 
-    .content .list-gallery li.item-place:nth-child(4) {
+    .home-left-col .list-gallery li.item-place:nth-child(4), .content .list-gallery li.item-place:nth-child(4) {
         display: none;
     }
 
-    .content .list-gallery li.item-place img {
+    .home-left-col .list-gallery li.item-place img, .content .list-gallery li.item-place img {
         min-width: 60px;
         min-height: 60px;
     }
 }
 
-.content .item-place {
+.home-left-col.col-sm-6 .item-place, .content .col-sm-6 .item-place {
     margin-right: 1%;
     width: 48%;
 }
 
-.content .item-place img {
+.home-left-col.col-sm-6 .item-place img, .content .col-sm-6 .item-place img {
     min-width: 150px;
     min-height: 150px;
 }
 
 @media(max-width: 991px) {
-    .content .item-place {
+    .home-left-col.col-sm-6 .item-place, .content .col-sm-6 .item-place {
         width:99%;
     }
 
-    .content .item-place:nth-child(4) {
+    .home-left-col.col-sm-6 .item-place:nth-child(4), .content .col-sm-6 .item-place:nth-child(4) {
         display: none;
     }
 }
 
+.home-right-col .section {
+    margin-left: 10px;
+}
+
 @media(max-width: 767px) {
-    .content .section-content {
+    .home-left-col .section-content,.home-right-col .section-content,.content .section-content {
         padding-bottom:54px;
     }
 
-    .content .section {
+    .home-left-col .section, .content .section {
         margin-right: 0;
     }
+
+    .home-right-col .section {
+        margin-left: 0;
+    }
+}
+
+.blog-news .news {
+    margin: 6px 0;
+}
+
+.blog-news .news:before,.blog-news .news:after {
+    content: " ";
+    display: table;
+}
+
+.blog-news .news:after {
+    clear: both;
+}
+
+.blog-news .news .icon-page {
+    vertical-align: middle;
+}
+
+.blog-news .news span {
+    float: left;
+}
+
+.blog-news .news .news-link {
+    width: 100%;
+    padding-top: 3px;
 }
 
 .feeds .feed-game span[class^="icon"],.feeds .feed-creation span[class^="icon"],.feeds .feed-social span[class^="icon"] {
@@ -1468,6 +1546,12 @@ ${ (!Settings.Pages.MyFeeds.ModernFormat) && `
 
 .feeds .feed-social {
     border-top: 2px solid #00A2FF;
+}
+
+.feeds .feed-sample-avatars-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
 }
 
 .feeds .icon-games {
@@ -1498,79 +1582,165 @@ ${ (!Settings.Pages.MyFeeds.ModernFormat) && `
 .feeds .list-item a span {
     display: block;
 }
-            `
-            document.head.appendChild(HomePageCSS)
-            var sectionheader = document.createElement("div")
-            sectionheader.classList.add("container-header")
-            hdrSec.appendChild(sectionheader)
-            var sectionheaderh1 = document.createElement("h1")
-            sectionheaderh1.textContent = "My Feed"
-            sectionheader.appendChild(sectionheaderh1)
-            var sectioncontent = document.createElement("div")
-            sectioncontent.classList.add("section-content")
-            hdrSec.appendChild(sectioncontent)
-            if (Settings.Pages.MyFeeds.enablePosting) {
-                var statusForm = document.createElement("div")
-                statusForm.classList.add("form-horizontal")
-                statusForm.setAttribute("id", "statusForm")
-                statusForm.setAttribute("role", "form")
-                sectioncontent.appendChild(statusForm)
-                var formgroup = document.createElement("div")
-                formgroup.classList.add("form-group")
-                statusForm.appendChild(formgroup)
-                var inputfield = document.createElement("input")
-                inputfield.classList.add("form-control", "input-field")
-                inputfield.setAttribute("id", "txtStatusMessage")
-                inputfield.setAttribute("maxlength", 254)
-                inputfield.setAttribute("placeholder", "What are you up to?")
-                inputfield.setAttribute("value", "")
-                formgroup.appendChild(inputfield)
-                var formcontrollabel = document.createElement("p")
-                formcontrollabel.classList.add("form-control-label")
-                formcontrollabel.textContent = "Status update failed."
-                formgroup.appendChild(formcontrollabel)
-                var btnprimarymd = document.createElement("a")
-                btnprimarymd.setAttribute("type", "button")
-                btnprimarymd.classList.add("btn-primary-md", "btn-fixed-width")
-                btnprimarymd.setAttribute("id", "shareButton")
-                btnprimarymd.textContent = "Share"
-                statusForm.appendChild(btnprimarymd)
-                var loadingImage = document.createElement("img")
-                loadingImage.setAttribute("id", "loadingImage")
-                loadingImage.classList.add("share-login")
-                loadingImage.setAttribute("alt", "Sharing...")
-                loadingImage.setAttribute("src", "https://images.rbxcdn.com/ec4e85b0c4396cf753a06fade0a8d8af.gif")
-                loadingImage.setAttribute("height", 17)
-                loadingImage.setAttribute("width", 48)
-                statusForm.appendChild(loadingImage)
-                btnprimarymd.addEventListener("click", function() {
-                    btnprimarymd.style = "display: none"
-                    loadingImage.style = "display: inline-block"
-                    setTimeout(function() {
-                        btnprimarymd.removeAttribute("style")
-                        loadingImage.removeAttribute("style")
-                        formcontrollabel.style = "display: block"
-                    }, 4000)
-                });
-            }
-            var feedvlist = document.createElement("ul")
-            feedvlist.classList.add("vlist", "feeds")
-            sectioncontent.appendChild(feedvlist)
-            listItemTemplate("gameFeed", "feed-game", "icon-games", url+((Settings.Pages.MyFeeds.GamestoExperience) && "/discover" || "/games"), (Settings.Pages.MyFeeds.GamestoExperience) && "Play Experiences" || "Play Games", (Settings.Pages.MyFeeds.GamestoExperience) && "Nearly all Roblox experiences are built by players like you. Here are some of our favorites:" || "Nearly all Roblox games are built by players like you. Here are some of our favorites:", feedvlist, false)
-            listItemTemplate("None", "feed-creation", "icon-charactercustomizer", url+"/catalog/browse.aspx?CatalogContext=1&Subcategory=1&CreatorID=1&CurrencyType=0&pxMin=0&pxMax=0&SortType=4&SortAggregation=3&SortCurrency=0&IncludeNotForSale=false&LegendExpanded=true&Category=1", "Customize Your Avatar", `Visit the <a href="${ url }/my/avatar"> Avatar ${ Settings.Pages.MyFeeds.ModernFormat && "Editor" || "page" } </a> to customize your ${ Settings.Pages.MyFeeds.ModernFormat && "character" || "avatar" }. ${ Settings.Pages.MyFeeds.ModernFormat && "Shop for clothing in the" || "Get new clothing in the" } <a href="${ url }/catalog/browse.aspx?CatalogContext=1&amp;Subcategory=1&amp;CreatorID=1&amp;CurrencyType=0&amp;pxMin=0&amp;pxMax=0&amp;SortType=4&amp;SortAggregation=3&amp;SortCurrency=0&amp;IncludeNotForSale=false&amp;LegendExpanded=true&amp;Category=1">${ (Settings.Pages.MyFeeds.ModernFormat) && (Settings.Pages.MyFeeds.CatalogtoAvatarShop && "Avatar Shop" || "Catalog") || Settings.Pages.MyFeeds.CatalogtoAvatarShop && "avatar shop" || "catalog" }</a>`, feedvlist, true)
-            listItemTemplate("None", "feed-creation", "icon-develop", url+"/develop", "Build Something", `Builders will enjoy playing our multiplayer building ${ Settings.Pages.MyFeeds.GamestoExperience && "experience" || "game" }. Professional builders will want to check out Roblox Studio, our ${ (!Settings.Pages.MyFeeds.ModernFormat && (Settings.Pages.MyFeeds.GamestoExperience && "experience" || "game") || "") } development environment on your <a href="${ url }/develop">Develop page</a>.`, feedvlist, true)
-            listItemTemplate("None", "feed-social", "icon-friends", url+"/search/users", "Make Friends", `Meet other players in-${ Settings.Pages.MyFeeds.GamestoExperience && "experience" || "game" } and send them a friend request. If you miss your opportunity you can always send a request later by <a href="${ url }/search/users">searching</a> for their user profile.`, feedvlist, true)
-            if (Settings.Pages.MyFeeds.enableforumlistItem) {
-                listItemTemplate("None", "feed-social", "icon-forum", url+"/forum", "Roblox forums for help", `No matter what you're looking for, if it's Roblox related, there are people talking about it <a href="${ url }/forum">here</a>.`, feedvlist, true)
-            }
+
+.form-horizontal .form-control-label {
+    display: none;
+}
+`
+    function MyFeed(parentNode) {
+        var sectionheader = document.createElement("div")
+        sectionheader.classList.add("container-header")
+        parentNode.appendChild(sectionheader)
+        var sectionheaderh1
+        if (Settings.Pages.home.LegacyColumn) {
+            sectionheaderh1 = document.createElement("h3")
+        } else {
+            sectionheaderh1 = document.createElement("h1")
         }
-    })
+        sectionheaderh1.textContent = "My Feed"
+        sectionheader.appendChild(sectionheaderh1)
+        var sectioncontent = document.createElement("div")
+        sectioncontent.classList.add("section-content")
+        parentNode.appendChild(sectioncontent)
+        if (Settings.Pages.MyFeeds.enablePosting) {
+            var statusForm = document.createElement("div")
+            statusForm.classList.add("form-horizontal", "flex-box")
+            statusForm.setAttribute("id", "statusForm")
+            statusForm.setAttribute("role", "form")
+            sectioncontent.appendChild(statusForm)
+            var formgroup = document.createElement("div")
+            formgroup.classList.add("form-group")
+            statusForm.appendChild(formgroup)
+            var inputfield = document.createElement("input")
+            inputfield.classList.add("form-control", "input-field")
+            inputfield.setAttribute("id", "txtStatusMessage")
+            inputfield.setAttribute("maxlength", 254)
+            inputfield.setAttribute("placeholder", "What are you up to?")
+            inputfield.setAttribute("value", "")
+            formgroup.appendChild(inputfield)
+            var formcontrollabel = document.createElement("p")
+            formcontrollabel.classList.add("form-control-label")
+            formcontrollabel.textContent = "Status update failed."
+            formgroup.appendChild(formcontrollabel)
+            var btnprimarymd = document.createElement("a")
+            btnprimarymd.setAttribute("type", "button")
+            btnprimarymd.classList.add("btn-primary-md", "btn-fixed-width")
+            btnprimarymd.setAttribute("id", "shareButton")
+            btnprimarymd.textContent = "Share"
+            statusForm.appendChild(btnprimarymd)
+            var loadingImage = document.createElement("img")
+            loadingImage.setAttribute("id", "loadingImage")
+            loadingImage.classList.add("share-login")
+            loadingImage.setAttribute("alt", "Sharing...")
+            loadingImage.setAttribute("src", "https://images.rbxcdn.com/ec4e85b0c4396cf753a06fade0a8d8af.gif")
+            loadingImage.setAttribute("height", 17)
+            loadingImage.setAttribute("width", 48)
+            statusForm.appendChild(loadingImage)
+            btnprimarymd.addEventListener("click", function() {
+                btnprimarymd.style = "display: none"
+                loadingImage.style = "display: inline-block"
+                setTimeout(function() {
+                    btnprimarymd.removeAttribute("style")
+                    loadingImage.removeAttribute("style")
+                    formcontrollabel.style = "display: block"
+                }, 4000)
+            });
+        }
+        var feedvlist = document.createElement("ul")
+        feedvlist.classList.add("vlist", "feeds")
+        sectioncontent.appendChild(feedvlist)
+        listItemTemplate("gameFeed", "feed-game", "icon-games", url+((Settings.Pages.MyFeeds.GamestoExperience) && "/discover" || "/games"), (Settings.Pages.MyFeeds.GamestoExperience) && "Play Experiences" || "Play Games", (Settings.Pages.MyFeeds.GamestoExperience) && "Nearly all Roblox experiences are built by players like you. Here are some of our favorites:" || "Nearly all Roblox games are built by players like you. Here are some of our favorites:", feedvlist, false)
+        listItemTemplate("None", "feed-creation", "icon-charactercustomizer", url+"/catalog/browse.aspx?CatalogContext=1&Subcategory=1&CreatorID=1&CurrencyType=0&pxMin=0&pxMax=0&SortType=4&SortAggregation=3&SortCurrency=0&IncludeNotForSale=false&LegendExpanded=true&Category=1", "Customize Your Avatar", `Visit the <a href="${ url }/my/avatar"> Avatar ${ Settings.Pages.MyFeeds.ModernFormat && "Editor" || "page" } </a> to customize your ${ Settings.Pages.MyFeeds.ModernFormat && "character" || "avatar" }. ${ Settings.Pages.MyFeeds.ModernFormat && "Shop for clothing in the" || "Get new clothing in the" } <a href="${ url }/catalog/browse.aspx?CatalogContext=1&amp;Subcategory=1&amp;CreatorID=1&amp;CurrencyType=0&amp;pxMin=0&amp;pxMax=0&amp;SortType=4&amp;SortAggregation=3&amp;SortCurrency=0&amp;IncludeNotForSale=false&amp;LegendExpanded=true&amp;Category=1">${ (Settings.Pages.MyFeeds.ModernFormat) && (Settings.Pages.MyFeeds.CatalogtoAvatarShop && "Avatar Shop" || "Catalog") || Settings.Pages.MyFeeds.CatalogtoAvatarShop && "avatar shop" || "catalog" }</a>`, feedvlist, true)
+        listItemTemplate("None", "feed-creation", "icon-develop", url+"/develop", "Build Something", `Builders will enjoy playing our multiplayer building ${ Settings.Pages.MyFeeds.GamestoExperience && "experience" || "game" }. Professional builders will want to check out Roblox Studio, our ${ (!Settings.Pages.MyFeeds.ModernFormat && (Settings.Pages.MyFeeds.GamestoExperience && "experience" || "game") || "") } development environment on your <a href="${ url }/develop">Develop page</a>.`, feedvlist, true)
+        listItemTemplate("None", "feed-social", "icon-friends", url+"/search/users", "Make Friends", `Meet other players in-${ Settings.Pages.MyFeeds.GamestoExperience && "experience" || "game" } and send them a friend request. If you miss your opportunity you can always send a request later by <a href="${ url }/search/users">searching</a> for their user profile.`, feedvlist, true)
+        if (Settings.Pages.MyFeeds.enableforumlistItem) {
+            listItemTemplate("None", "feed-social", "icon-forum", url+"/forum", "Roblox forums for help", `No matter what you're looking for, if it's Roblox related, there are people talking about it <a href="${ url }/forum">here</a>.`, feedvlist, true)
+        }
+    }
+    if (Settings.Pages.home.LegacyColumn && window.location.href == url+"/home") {
+        const escape = { amp: "&", gt: ">", lt: "<", apos: "'", quot: "\"" }
+        const content = data => {
+            return data.replace(/<!\[CDATA\[([^]*?)\]\]>/g, "$1").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").replace(/&(?:(amp|gt|lt|apos|quot)|(?:#x([a-fA-F0-9]+))|(?:#([0-9]+)));/g, (_, name, hex, dec) => (name ? escape[name] : hex ? String.fromCodePoint(parseInt(hex, 16)) : String.fromCodePoint(parseInt(dec, 10)))).trim()
+        }
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: "https://blog.roblox.com/feed/",
+            onload: function(response) {
+                const text = response.responseText
+                const regex = /<item>[^]*?<\/item>/g
+
+                const posts = []
+
+                for(let i = 0; i < 3; i++) {
+                    const match = regex.exec(text)
+                    if(!match) { break }
+
+                    const [, title, link, date, desc] = match[0].match(/<title>([^]*?)<\/title>[^]*?<link>([^]*?)<\/link>[^]*?<pubDate>([^]*?)<\/pubDate>[^]*?<description>([^]*?)<\/description>/) || []
+                    if(!link) { continue }
+
+                    posts.push({
+                        url: content(link),
+                        date: content(date),
+                        title: content(title),
+                        desc: content(desc)
+                    })
+                }
+                const homerightcol = document.createElement("div")
+                document.body.appendChild(homerightcol)
+                homerightcol.classList.add("col-xs-12", "col-sm-6", "home-right-col")
+                waitForElm(".home-container").then(async (hdrSec) => {
+                    homerightcol.innerHTML = `
+                        <div class="section"><div class="section-header"><h3>Blog News</h3><a href="https://blog.roblox.com" class="btn-control-xs btn-more refresh-link-icon btn-min-width">See More</a></div><div class="section-content"><ul class="blog-news"></ul></div></div>
+                    `
+                    const blognews = document.querySelector(".blog-news")
+                    posts.forEach(function(Post) {
+                        const news = document.createElement("li")
+                        news.classList.add("news")
+                        blognews.appendChild(news)
+                        const newsLink = document.createElement("span")
+                        newsLink.classList.add("text-overflow", "news-link")
+                        news.appendChild(newsLink)
+                        var newsHyperLink = document.createElement("a")
+                        newsHyperLink.setAttribute("href", Post.url)
+                        newsHyperLink.setAttribute("ref", "news-article")
+                        newsHyperLink.classList.add("text-name", "text-lead")
+                        newsHyperLink.textContent = Post.title
+                        newsLink.appendChild(newsHyperLink)
+                    })
+                })
+            },
+        })
+        document.head.appendChild(FeedCSS)
+        const homeleftcol = document.createElement("div")
+        homeleftcol.classList.add("col-xs-12", "col-sm-6", "home-left-col")
+        waitForElm(".home-container").then(async (container) => {
+            container.appendChild(homeleftcol)
+            const section = document.createElement("div")
+            section.classList.add("section")
+            section.setAttribute("id", "feed-container")
+            section.setAttribute("data-update-status-url", "/home/updatestatus")
+            homeleftcol.appendChild(section)
+            MyFeed(section)
+            waitForElm(".home-right-col").then(async (hdrSec) => {
+                container.appendChild(hdrSec)
+                container.appendChild(homeleftcol)
+            })
+        })
+    } else if (!Settings.Pages.home.LegacyColumn && (window.location.href == url+"/feeds" || window.location.href == url+"/feeds/")) {
+        document.head.appendChild(FeedCSS)
+        waitForElm(".content").then(async (hdrSec) => {
+            waitForElm(".request-error-page-content").then(async (hdrSec) => {
+                document.querySelector(".content").removeChild(hdrSec)
+            })
+            MyFeed(hdrSec)
+        })
+    }
 }
 
 if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
-    var Style = document.createElement("style")
-    Style.innerHTML = StyleSheet()
-    document.head.appendChild(Style)
+    var homeStyle = document.createElement("style")
+    homeStyle.innerHTML = StyleSheet()
+    document.head.appendChild(homeStyle)
     var avatarLoadingHeadshot, avatarLoadingThumb, headerLoadingcontent, homeLoadingheader, headerLoadingLbl
     var homecontainer, hcfirstsection, homeheaderBase, homeheaderBaseSub, homeheaderSubBase, avatarHeadshot, thumbnail2dcontainer, avatarThumb, headeruserinfo, headercontent, homeheader, headerLbl
     var PresenceDiv, PresenceLink, PresenceSpan, PresenceStatus
@@ -1586,28 +1756,28 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                             if (document.getElementById("roseal-home-header")) {
                                 document.body.classList.add("HP2017")
                             } else {
-                                document.body.classList.add("HP2017", "HPNoORHActive")
+                                document.body.classList.add("HP2017", "HPNoCSS")
                             }
                             break
                         case "2020":
                             if (document.getElementById("roseal-home-header")) {
                                 document.body.classList.add("HP2020")
                             } else {
-                                document.body.classList.add("HP2020", "HPNoORHActive")
+                                document.body.classList.add("HP2020", "HPNoCSS")
                             }
                             break
                         case "2021":
                             if (Settings.Pages.home.ORHCompatible || document.getElementById("roseal-home-header")) {
                                 document.body.classList.add("HP2021")
                             } else {
-                                document.body.classList.add("HP2021", "HPNoORHActive")
+                                document.body.classList.add("HP2021", "HPNoCSS")
                             }
                             break
                         case "2022":
                             if (document.getElementById("roseal-home-header")) {
                                 document.body.classList.add("HP2022")
                             } else {
-                                document.body.classList.add("HP2022", "HPNoORHActive")
+                                document.body.classList.add("HP2022", "HPNoCSS")
                             }
                             break
                     }
