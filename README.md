@@ -1,5 +1,5 @@
 # Roblox Legacy Old Theme
-**[Roblox Legacy Old Theme](//userstyles.world/style/5399/)** is a theme for [stylus](https://add0n.com/stylus.html) (see [Installation](#Installation) for installation details) that brings back the 2019 theme primarily from June - September 2019 with customizable options for the end user.
+**[Roblox Legacy Old Theme](//userstyles.world/style/5399/)** is a theme for [stylus](//add0n.com/stylus.html) (see [Installation](#Installation) for installation details) that brings back the 2019 theme primarily from June - September 2019 with customizable options for the end user.
 
 <p align="center">
     <img src="Dev/Master/Thumbnails/Outputs/RLOT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
@@ -37,7 +37,7 @@
   - Roseal
   - Rogold
 - Supports both Light and Dark themes.
-- Supports low resolution devices and high PPI/DPI (Pixels Per Inch/Dots Per Inch) monitors.
+- Supports low resolution devices and high PPI/DPI ([Pixels Per Inch](//en.wikipedia.org/wiki/Pixel_density)/[Dots Per Inch](//en.wikipedia.org/wiki/Dots_per_inch)) monitors.
 - Supports touchscreen devices.
 
 ## Installation
@@ -63,8 +63,8 @@ Please report any issues you find in [Issues](//github.com/tersiswilvin/Roblox-2
 ## Credits
 
 Sites used to make this possible :
-- [CodePen](https://codepen.io)
-- [WayBack Machine](https://web.archive.org)
-- [YouTube](https://www.YouTube.com)
+- [CodePen](//codepen.io)
+- [WayBack Machine](//web.archive.org)
+- [YouTube](//www.YouTube.com)
 
 Special thanks to those that helped make this theme possible.
