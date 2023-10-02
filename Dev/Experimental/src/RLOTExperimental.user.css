@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20230927.1.3.6
+@version      20231001.1.3.6
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -10084,10 +10084,10 @@
         border-radius: 0;
     }
     
-    .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper {
+    .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper, .light-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .sendr-notification-background {
         border-bottom: 1px solid #e3e3e3;
     }
-    .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper {
+    .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper, .dark-theme .new-notification-stream-2022 .notification-stream-container .notification-content-view .notification-stream-body .notification-stream-scrollbar .notification-stream-list .sendr-notification-background {
         border-bottom: 1px solid #1c1c1c;
     }
     
@@ -10095,6 +10095,12 @@
         width: auto;
         min-width: auto;
         height: auto;
+    }
+    
+    .new-notification-stream-2022 .notification-stream-body .notification-stream-data .notification-stream-scrollbar .notification-stream-list .notification-stream-item, .new-notification-stream-2022 .notification-stream-body .notification-stream-data .notification-stream-scrollbar .notification-stream-list .sendr-notification-background {
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
     }
     
     .new-notification-stream-2022 .notification-stream-body .notification-stream-data .notification-stream-scrollbar .notification-stream-list .notification-stream-item .notification-action-container, .new-notification-stream-2022 .notification-stream-body .notification-stream-data .notification-stream-scrollbar .notification-stream-list .react-notification-wrapper .notification-action-container {
