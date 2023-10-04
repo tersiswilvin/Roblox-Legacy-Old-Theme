@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.10
+// @version      1.2.11
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -80,6 +80,7 @@ var Settings = {
             },
             forceMembership: false,
             fix2020homeFormat: false,
+            higherDPISupport: true,
             RoProFix: true, /*/ Attempts to fix the most played container for ropro users. /*/
         },
         home: {
@@ -91,7 +92,7 @@ var Settings = {
             GreetingComma: true, /*/ Toggles the comma (,) for the home greeting. /*/
             GreetingExclamationMark: true, /*/ Toggles the exclamation mark (!) for the home greeting. /*/
             GreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome", "Welcome back"} /*/
-            MembershipType: "OBC", /*/ 2017 => {"BC", "TBC", "OBC"} | 2020- 2022 => {"Premium"} /*/
+            MembershipType: "OBC", /*/ 2017 => {"BC", "TBC", "OBC"} | 2020 - 2022 => {"Premium"} /*/
             LegacyColumn: false, /*/ Restores the my feed and blog on the home page, requires RestoreMyFeed to be enabled. /*/
             ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
         },
@@ -1289,6 +1290,7 @@ if (Settings.Global.RestoreMyFeed) {
                     url: "https://www.roblox.com/item-thumbnails?params=%5B%7BassetId:"+Id+"%7D%5D",
                     onload: function(response) {
                         var InfoLoaded = JSON.parse(response.responseText)[0]
+                        InfoLoaded.thumbnailUrl = InfoLoaded.thumbnailUrl.replace(/420/g, "150")
                         placeItemTemplate(InfoLoaded.name, InfoLoaded.url, InfoLoaded.thumbnailUrl, Id, parentElement)
                     },
                 });
@@ -1690,7 +1692,7 @@ ${(!Settings.Pages.MyFeeds.ModernFormat && `
                 homerightcol.classList.add("col-xs-12", "col-sm-6", "home-right-col")
                 waitForElm(".home-container").then(async (hdrSec) => {
                     homerightcol.innerHTML = `
-                        <div class="section"><div class="section-header"><h3>Blog News</h3><a href="https://blog.roblox.com" class="btn-control-xs btn-more refresh-link-icon btn-min-width">See More</a></div><div class="section-content"><ul class="blog-news"></ul></div></div>
+                        <div class="section"><div class="section-header"><h3>Blog News</h3><a href="https://blog.roblox.com" class="btn-control-xs btn-more see-all-link-icon refresh-link-icon btn-min-width">See More</a></div><div class="section-content"><ul class="blog-news"></ul></div></div>
                     `
                     const blognews = document.querySelector(".blog-news")
                     posts.forEach(function(Post) {
@@ -1851,7 +1853,7 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
         /*/ Check if ropro is enabled and add our class /*/
         if (document.getElementById("mostPlayedContainer") && (Settings.Pages.home.Format == "2017" || Settings.Pages.home.Format == "2020")) {
             homeheaderBase.classList.add("ropro-enabled")
-            if (homeLoadingheader.classList.contains("col-xs-3", "shimmer-lines")) {
+            if (homeLoadingheader != null && homeLoadingheader.classList.contains("col-xs-3", "shimmer-lines")) {
                 homeLoadingheader.classList.remove("col-xs-3", "shimmer-lines")
                 homeLoadingheader.classList.add("col-xs-6", "shimmer-lines")
             }
@@ -2289,6 +2291,21 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
             }
         }
     }, 62.5)
+    if (Settings.Pages.DeveloperOptions.higherDPISupport) {
+        waitForElm(".home-container .avatar-headshot-lg img").then(async (avatarThumb) => {
+            const updateThumbSize = () => {
+                var resString = `(resolution: ${window.devicePixelRatio}dppx)`
+                const matchmedia = matchMedia(resString)
+                matchmedia.addEventListener("change", updateThumbSize)
+                if (window.devicePixelRatio > 1) {
+                    avatarThumb.setAttribute("src", avatarThumb.getAttribute("src").replace(/150/g, "720"))
+                } else {
+                    avatarThumb.setAttribute("src", avatarThumb.getAttribute("src").replace(/720/g, "150"))
+                }
+            }
+            updateThumbSize()
+        })
+    }
     if (!Settings.Pages.DeveloperOptions.disablebrokenicon) {
         setTimeout(function() {
             if (!userData.Status.AvatarDataLoaded) {
