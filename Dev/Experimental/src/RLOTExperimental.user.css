@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20231027.1.3.6
+@version      20231030.1.3.7
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -8667,6 +8667,10 @@
         padding: 12px;
     }
     
+    .header-title .tooltip-container {
+        display: none;
+    }
+    
     .game-stat p {
         margin-bottom: 0;
     }
@@ -8787,14 +8791,14 @@
         color: #191919;
     }
     
-    .light-theme .btn-generic-more-sm, .light-theme .btn-generic-more-sm:hover, .light-theme .btn-generic-more-sm:focus, .light-theme .btn-generic-more-sm.active, .light-theme .btn-generic-more-sm:active, .light-theme .touch .btn-generic-more-sm.active, .light-theme .touch .btn-generic-more-sm:active, .light-theme .btn-navigation-nav-menu-md.active, .light-theme .btn-navigation-nav-menu-md:active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active {
+    .light-theme .btn-generic-more-sm, .light-theme .btn-generic-more-sm:hover, .light-theme .btn-generic-more-sm:focus, .light-theme .btn-generic-more-sm.active, .light-theme .btn-generic-more-sm:active, .light-theme .touch .btn-generic-more-sm.active, .light-theme .touch .btn-generic-more-sm:active, .light-theme .btn-navigation-nav-menu-md.active, .light-theme .btn-navigation-nav-menu-md:active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:focus, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:hover, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:active {
         background: transparent;
         border: 0 transparent;
         border-radius: 0;
         padding: 0;
         color: #191919;
     }
-    .dark-theme .btn-generic-more-sm, .dark-theme .btn-generic-more-sm:hover, .dark-theme .btn-generic-more-sm:focus, .dark-theme .btn-generic-more-sm.active, .dark-theme .btn-generic-more-sm:active, .dark-theme .touch .btn-generic-more-sm.active, .dark-theme .touch .btn-generic-more-sm:active, .dark-theme .btn-navigation-nav-menu-md.active, .dark-theme .btn-navigation-nav-menu-md:active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:focus, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:hover, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active {
+    .dark-theme .btn-generic-more-sm, .dark-theme .btn-generic-more-sm:hover, .dark-theme .btn-generic-more-sm:focus, .dark-theme .btn-generic-more-sm.active, .dark-theme .btn-generic-more-sm:active, .dark-theme .touch .btn-generic-more-sm.active, .dark-theme .touch .btn-generic-more-sm:active, .dark-theme .btn-navigation-nav-menu-md.active, .dark-theme .btn-navigation-nav-menu-md:active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:focus, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:hover, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:focus, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:hover, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:active {
         background: transparent;
         border: 0 transparent;
         border-radius: 0;
@@ -8819,6 +8823,17 @@
         background-position: 0 -84px;
         width: 28px;
         height: 28px;
+    }
+    .profile-header-more .profile-dropdown .input-dropdown-btn .icon-down-16x16 {
+        .light-theme &, .dark-theme & {
+            background-position: 0 -616px;
+            background-size: 200% auto;
+            width: 28px;
+            height: 28px;
+            &:hover {
+                background-position: -28px -616px;
+            }
+        }
     }
         
     .light-theme .icon-default-games-16x16, .light-theme .icon-dislike-gray-16x16, .light-theme .icon-like-gray-16x16, .dark-theme .icon-default-games-16x16, .dark-theme .icon-dislike-gray-16x16, .dark-theme .icon-like-gray-16x16 {
@@ -17440,8 +17455,36 @@
                     color: #FF5D00
                 }
             }
-            .spinner {
+            .people-list .friend .friend-link {
+                &:hover, &:focus {
+                    color: #FF5D00
+                }
+            }
+            .details-members-container .add-friends-option .add-friends-cirle-container {
+                border-color: #FF5D00;
+                &:hover {
+                    background-color: #FF5D00;
+                    border-color: #FF5D00;
+                    .icon-chat-add-friends {
+                        background-color: white
+                    }
+                }
+            }
+            .icon-chat-add-friends {
+                background-image: none;
+                background-color: #FF5D00;
+                -webkit-mask: url(https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg);
+                mask: url(https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg);
+                -webkit-mask-size: 40px auto;
+                mask-size: 40px auto;
+                -webkit-mask-position: 0 -260px;
+                mask-position: 0 -260px;
+            }
+            .icon-online, .spinner {
                 filter: hue-rotate(180deg);
+            }
+            .avatar-headshot-sm .avatar-status.chat-friend-status.online, .avatar-headshot-sm .avatar-status.icon-online, .avatar-headshot-sm .avatar-status span.chat-friend-status.online, .avatar-headshot-sm .avatar-status span.icon-online, .avatar-headshot-xs .avatar-status.chat-friend-status.online, .avatar-headshot-xs .avatar-status.icon-online, .avatar-headshot-xs .avatar-status span.chat-friend-status.online, .avatar-headshot-xs .avatar-status span.icon-online {
+                background-color: #FF5D00;
             }
             .dropdown-menu li {
                 &.active, &:focus, &:hover {
@@ -17466,8 +17509,62 @@
             .messages .messageDivider:hover, .notification-stream-list .notification-stream-item:hover, .notification-stream-list .notification-stream-item.unInteracted:hover {
                 box-shadow: inset 4px 0 0 0 #FF5D00
             }
-            .pill-toggle input:checked + label, .tab-horizontal-submenu li.active, .tab-horizontal-submenu li:hover {
+            .pill-toggle input:checked + label, .tab-horizontal-submenu li.active, .tab-horizontal-submenu li:hover, .owl-carousel .owl-dots .owl-dot.active {
                 background-color: #FF5D00
+            }
+            .footer .text-footer-nav.privacy {
+                &, &:active, &:link, &:visited {
+                    color: #FF5D00;
+                }
+            }
+            .catalog-content .search-options .menu-link {
+                 &.active, &.text-link-secondary:hover {
+                    color: #FF5D00;
+                }
+            }
+            .catalog-content .search-options .icon-down:hover {
+                filter: invert(100%)
+            }
+            .breadcrumb-container li.breadcrumb-filter {
+                background-color: #FF5D00;
+                &:hover {
+                    background-color: #FF7B32
+                }
+            }
+            .profile-avatar-right, .slide-switcher.groups {
+                background-color: #FFA542
+            }
+            .input-group-btn .input-dropdown-btn {
+                &:focus, &:hover {
+                    background-color: #FF5D00;
+                    border-color: #FF5D00
+                }
+            }
+            .radio input[type="radio"] {
+                & + label {
+                    &:hover::before {
+                        border-color: #FF5D00
+                    }
+                }
+                &:checked + label {
+                    &::after {
+                        background-color: #FF5D00
+                    }
+                    &:hover::before {
+                        border-color: #FF5D00
+                    }
+                }
+            }
+            #nav-message:hover, #nav-friends:hover, #nav-money:hover, #nav-trade:hover, #nav-group:hover, #nav-my-feed:hover, #nav-forum:hover, #nav-blog:hover, #nav-shop:hover, #nav-premium:hover, #nav-Transactions:hover, #nav-Redeem:hover {
+                color: #FF5D00;
+                div:not(.align-right) span {
+                    filter: invert()
+                }
+                .notification- {
+                    &blue, &red {
+                        color: #fff
+                    }
+                }
             }
         }
         .icon-logo {
@@ -17560,6 +17657,20 @@
         }
         .category-wrapper .icon-logo-r {
             filter: none;
+        }
+        .icon-logo-notification {
+            .light-theme &, .dark-theme & {
+                -webkit-mask-size: 48px;
+                mask-size: 48px;
+                &:before {
+                    width: 52px;
+                    height: 52px;
+                    background-size: 52px;
+                    left: -2px;
+                    top: -4px;
+                        transform: rotate(15deg) scale(1.2);
+                }
+            }
         }
         .chat-windows-header, .chat-main .chat-header, .chat-container .chat-main .chat-header, .dialogs .dialog-container .dialog-header {
             .light-theme & {
