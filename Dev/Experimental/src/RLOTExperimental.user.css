@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20231030.1.3.7
+@version      20231031.1.3.8
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -8689,7 +8689,7 @@
 		display: none;
 	}
 	@media (min-width: 768px) {
-		.groups-list .menu-vertical-container .menu-vertical, .groups-list.col-sm-3 {
+		.groups-list .menu-vertical-container .menu-vertical, .groups-list.col-sm-3, .groups-list .col-xs-12.col-sm-3 {
 			width: 160px;
 			margin-right: 10px
 		}
@@ -17492,7 +17492,7 @@
                 }
             }
             .rbx-tabs-horizontal .rbx-tab {
-                &.active .rbx-tab-heading, &.active, .rbx-tab-heading:hover, .rbx-tab-heading:focus, .rbx-tab-heading:active {
+                &.active .rbx-tab-heading, .rbx-tab-heading.active, &.active, .rbx-tab-heading:hover, .rbx-tab-heading:focus, .rbx-tab-heading:active {
                     box-shadow: inset 0 -4px 0 0 #FF5D00
                 }
             }
@@ -17907,7 +17907,7 @@
                 &.light-theme, &.dark-theme {
                     &, .touch {
                         .refresh-link, .refresh-link-icon, .see-all-link-icon, .see-all-link {
-                            &:active, &:hover, &:link, &:visited {
+                            &, &:active, &:hover, &:link, &:visited {
                                 color: #FF5D00
                             }
                         }
