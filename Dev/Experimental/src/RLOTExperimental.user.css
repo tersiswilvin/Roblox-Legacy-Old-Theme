@@ -7368,7 +7368,7 @@
         margin-right: 40px;
     }
     
-    .setting-section .remove-panel:not(.section-content) {
+    .setting-section .remove-panel:not(.section-content):not(:has(.section-content)) {
         &, .light-theme & {
             background-color: #fff;
             padding: 15px;
@@ -7384,6 +7384,11 @@
         & when (@SiteCurrency = Tickets) {
             color: #CC9E71;
         }
+    }
+    
+    #save-social-settings {
+        min-width: auto;
+        max-width: auto
     }
     
     .light-theme .text-success, .dark-theme .text-success {
