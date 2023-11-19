@@ -6,20 +6,29 @@ body:
     attributes:
       value: |
         # Bug Report
-        Before you begin make sure you're fully up to date before you start filling out the form.
+  - type: checkboxes
+    attributes:
+      options:
+        - label: I've confirmed that I am completely up-to-date.
+          required: true
+  - type: checkboxes
+    attributes:
+      options:
+        - label: I've verified that the problem persists in the Experimental Branch.
+          required: true
   - type: input
     id: browser
     attributes:
       label: Browser
       description: What browser were you using?
-      placeholder: Example > Google Chrome
+      placeholder: (Example > Google Chrome, Edge, Firefox, Opera)
     validations:
       required: true
   - type: input
     id: page-url
     attributes:
       label: Page URL
-      placeholder: Example > https://www.roblox.com/home
+      placeholder: (Example > https://www.roblox.com/home)
     validations:
       required: false
   - type: dropdown
@@ -46,6 +55,6 @@ body:
     id: describe-issue
     attributes:
       label: Describe the Problem
-      description: Describe the issue you're facing. Please provide a screenshot or a video into recreating the problem.
+      description: Describe the issue you're facing. ([Optional] Provide a screenshot or a video that recreates the bug.)
     validations:
       required: true
