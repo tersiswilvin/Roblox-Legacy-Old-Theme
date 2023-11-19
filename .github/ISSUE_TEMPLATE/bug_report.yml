@@ -59,6 +59,6 @@ body:
     id: describe-issue
     attributes:
       label: Describe the Problem
-      description: Describe the issue you're facing. (Optional | Provide a screenshot or a video that recreates the bug.)
+      description: Describe the issue you're facing. (Optional | You may include a screenshot or video demonstrating the bug.)
     validations:
       required: true
