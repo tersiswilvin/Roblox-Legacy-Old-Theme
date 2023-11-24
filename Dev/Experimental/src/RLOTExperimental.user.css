@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20231119.1.3.10
+@version      20231124.1.3.10
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2979,10 +2979,14 @@
 		width: auto;
 		height: 32px;
 	}
-	.dialog-container .dialog-input-container .dialog-input {
-		min-height: 32px;
-		height: 32px !important;
-	}
+    .dialog-container .dialog-input-container {
+        height: 32px;
+        min-height: 32px;
+        .dialog-input {
+            min-height: 32px;
+        }
+    }
+    
 	.chat-loading.loading-top {
 		top: 32px;
 	}
