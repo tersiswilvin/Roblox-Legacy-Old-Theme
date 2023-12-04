@@ -3,7 +3,7 @@
 Name : Roblox Legacy Old Theme
 
 Version : 1.3
-Patch Version : 1
+Patch Version : 10
 Version Release Date : 08/02/2023
 Patch Release Date : 12/04/2023
 
