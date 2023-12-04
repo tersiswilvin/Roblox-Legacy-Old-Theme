@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20231125.1.3.10
+@version      20231204.1.3.11
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -7113,7 +7113,7 @@
 			}
 		}
 		&:after {
-			content: 'Milestone 1.3.10';
+			content: 'Milestone 1.3.11';
 			& when (@SourceSansPro = 0) {
 				font-size: 12px;
 				line-height: 12px;
@@ -13740,7 +13740,7 @@
     }
     .light-theme input[type=range]::-ms-track {
 		& when (@BoxShadows = 1) {
-			box-shadow: none);
+			box-shadow: none;
 		}
         background: transparent;
         border-color: transparent;
