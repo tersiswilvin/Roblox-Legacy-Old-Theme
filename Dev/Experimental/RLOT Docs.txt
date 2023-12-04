@@ -1,0 +1,35 @@
+/*=={ Legacy Old Theme Dev Documents }==*/
+
+/*|==={ Experimental Discord Announcement }===|*/
+
+@Experimental Updates
+
+:info: Prerelease 1.3.11 is available.
+
+What's new :
+
+
+
+/*/=={{ Legend }}==/*/
+
+/*/=={ Headers }==/*/
+/*|=={ Secondary Headers }==|*/
+
+-- Comments --
+
+(Note)
+[List Item]
+
+YYYYMM(I.E : 197001) -- (Default 1) --
+YYYYMA(I.E : 1970E) -- (Default 2) --
+||||||
+|||||\_ Alt
+||||\__ Month
+|||\___ Year
+||\____ Year
+|\_____ Year
+\______ Year
+
+Y => Year (I.E : 1970(70))
+M => Month (I.E : January(J))
+MA => Month Alt (I.E : Early(E), Mid(M), Late(L))
