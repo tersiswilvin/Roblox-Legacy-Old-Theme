@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20231204.1.3.11
+@version      20231208.1.3.11
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -7558,10 +7558,21 @@
     
     body:not(.LegacyRobuxDropdown) {
         .dropdown-menu:has(.wallet-hidden) {
-            &:has(li a[href="https://www.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
-                box-shadow: inset 4px 0 0 0 #00a2ff;
+            &:has(li a[href="https://www.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet, &:has(li a[href="https://web.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
+                & when not ((@CustomTheme = BTR_Red) or (@CustomTheme = L_Red) or (@CustomTheme = RPlus_OBC)) {
+                    box-shadow: inset 4px 0 0 0 #00a2ff;
+                }
+                & when (@CustomTheme = BTR_Red) {
+                    box-shadow: 4px 0 0 0 #ff0000 inset
+                }
+                & when (@CustomTheme = L_Red) {
+                    box-shadow: inset 4px 0 0 0 #ea0000
+                }
+                & when (@CustomTheme = RPlus_OBC) {
+                    box-shadow: 4px 0 0 0 #1f1f1f inset
+                }
             }
-            li a[href="https://www.roblox.com/transactions"] {
+            li a[href="https://www.roblox.com/transactions"], li a[href="https://web.roblox.com/transactions"] {
                 font-size: 0;
                 &:after {
                     content: "Hi";
@@ -7570,7 +7581,7 @@
                     line-height: 1.42857;
                 }
             }
-            li:has(a[href="https://www.roblox.com/transactions"]) {
+            li:has(a[href="https://www.roblox.com/transactions"]), li:has(a[href="https://web.roblox.com/transactions"]) {
                 background: transparent;
                 position: absolute;
                 top: 0;
@@ -7583,10 +7594,15 @@
                 }
             }
         }
-        .light-theme .dropdown-menu:has(.wallet-hidden):has(li a[href="https://www.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
-            background: #f2f2f2;
+        .light-theme .dropdown-menu:has(.wallet-hidden):has(li a[href="https://www.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet, .light-theme .dropdown-menu:has(.wallet-hidden):has(li a[href="https://web.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
+            & when not (@CustomTheme = BTR_Night) {
+                background: #f2f2f2
+            }
+            & when (@CustomTheme = BTR_Night) {
+                background-color: var(--btr-theme-item-hover);
+            }
         }
-        .dark-theme .dropdown-menu:has(.wallet-hidden):has(li a[href="https://www.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
+        .dark-theme .dropdown-menu:has(.wallet-hidden):has(li a[href="https://www.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet, .dark-theme .dropdown-menu:has(.wallet-hidden):has(li a[href="https://web.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
             background: #0d0d0d;
         }
         .rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden {
