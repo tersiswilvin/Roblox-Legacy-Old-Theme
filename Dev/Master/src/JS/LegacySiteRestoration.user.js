@@ -1,14 +1,15 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.13
+// @version      1.2.14
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
+// @license      CC-BY-SA-4.0
 // @match        *.roblox.com*
 // @match        *.roblox.com/*
 // @icon         https://images.rbxcdn.com/23421382939a9f4ae8bbe60dbe2a3e7e.ico.gzip
 // @updateURL    https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.user.js
-// @downloadURL  https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.user.js
+// @downloadURL  https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.meta.js
 // @grant        GM_xmlhttpRequest
 // @run-at       document-start
 // @connect      blog.roblox.com
