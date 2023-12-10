@@ -7422,7 +7422,7 @@
         }
     }
     
-    #save-social-settings {
+    #save-social-settings, .legacy-description.react-enabled #save-info-settings {
         min-width: auto;
         max-width: auto
     }
