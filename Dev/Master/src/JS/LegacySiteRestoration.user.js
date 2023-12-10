@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.12
+// @version      1.2.13
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @match        *.roblox.com*
@@ -16,6 +16,7 @@
 // @connect      premiumfeatures.roblox.com
 // @connect      thumbnails.roblox.com
 // @connect      presence.roblox.com
+// @connect      accountinformation.roblox.com
 // ==/UserScript==
 
 /*/== Variables ==/*/
@@ -58,6 +59,7 @@ var Settings = {
         CustomEvents: false, /*/ (Configurable => Events.CustomEvents) Uses your custom events then Roblox events. /*/
         DevForumFavIcon: "Modern", /*/ {"2015L", "2018M"} /*/
         DevForumFavTitle: "2017M", /*/ {"2015L", "2017M"} /*/
+        LegacyEditDescription: true, /*/ Moves the edit description and edit description button into the settings Page /*/
         RobloxFavIcon: "2018L", /*/ {"2012M", "2015L", "2017E", "2017L", "2018L"} /*/
         RestoreLegacyFavIcon: true, /*/ (Configurable => Global.RobloxFavIcon) Replaces the favicon in your browser to what year is set. /*/
         RestoreLegacyFavTitle: false, /*/ Replaces "Roblox" to "ROBLOX" for the site title. /*/
@@ -98,7 +100,7 @@ var Settings = {
         },
         MyFeeds: {
             enablePosting: true, /*/ Currently not functional, however adds the input field and post button back on the page. /*/
-            entirecardislink: false, /*/ makes the entire game card into a clickable link instead of the title. /*/
+            entirecardislink: false, /*/ Makes the entire game card into a clickable link instead of the title. /*/
             GamestoExperience: false, /*/ Swaps Game(s) text to Experience(s). /*/
             CatalogtoAvatarShop: false, /*/ Swaps Catalog to Avatar Shop. /*/
             enableforumlistItem: false, /*/ Enables the last list item for forums. /*/
@@ -1737,6 +1739,189 @@ ${(!Settings.Pages.MyFeeds.ModernFormat && `
             MyFeed(hdrSec)
         })
     }
+}
+
+if (Settings.Global.LegacyEditDescription) {
+    if (Settings.Global.JSClasses) {
+        waitForElm('body').then(async (Elm) => {
+            Elm.classList.add("legacy-description");
+        })
+    }
+    var saveSettingsStyle;
+
+    waitForElm(".btn-generic-edit-sm").then(async (Elm) => {
+        var aboutcontainerheader;
+        if (document.querySelector(".btr-profile")) {
+            aboutcontainerheader = document.querySelector(".btr-profile profile-description .profile-about .container-header");
+        } else {
+            aboutcontainerheader = document.querySelector(".profile-about .container-header");
+        }
+        aboutcontainerheader.removeChild(Elm.parentNode)
+        const editSelection = document.getElementById("CancelInfoSettings").parentNode.parentNode.parentNode;
+        editSelection.parentNode.removeChild(editSelection);
+    })
+    waitForElm(".section-content.settings-personal-container .birthday-container").then(async (Elm) => {
+        saveSettingsStyle = document.createElement("style");
+        saveSettingsStyle.innerHTML = `
+.content .page-content .rbx-tab-content .settings-personal-container .save-settings-container {
+    float: right;
+    margin: 9px 0 0;
+}
+    `;
+        document.head.appendChild(saveSettingsStyle);
+        const beforeDiv = document.createElement("div");
+        Elm.parentNode.insertBefore(beforeDiv, Elm);
+        beforeDiv.outerHTML = `
+    <div class="form-group description-container"><textarea class="form-control input-field personal-field-description ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched" placeholder="Describe yourself(1000 character limit)" rows="4" ng-model="personal.description" maxlength="1000"></textarea> <span class="small text ng-binding" ng-bind="'Description.HelpText.Description'|translate">Do not provide any details that can be used to identify you outside Roblox.</span></div>
+    `;
+        const afterDiv = document.createElement("div");
+        Elm.parentNode.appendChild(afterDiv);
+        afterDiv.outerHTML = `
+    <div class="form-group col-sm-2 save-settings-container"><button id="SaveInfoSettings" class="btn-control-sm acct-settings-btn ng-binding" ng-click="updateDescription()" ng-bind="'Action.Save'|translate">Save</button></div>
+    `;
+        waitForElm('meta[name="csrf-token"]').then(async (Elm) => {
+            document.getElementById("SaveInfoSettings").addEventListener("click", function() {
+                var fieldValue = document.querySelector(".settings-personal-container .description-container .input-field").value;
+                GM_xmlhttpRequest({
+                    method: "POST",
+                    url: "https://accountinformation.roblox.com/v1/description",
+                    headers: {
+                        "accept": "application/json",
+                        "Content-Type": "application/json",
+                        "X-Csrf-Token": Elm.getAttribute("data-token"),
+                    },
+                    data: JSON.stringify(
+                        {
+                            description: fieldValue
+                        }
+                    ),
+                    onload: function(response) {
+                        var errorCode;
+                        const description_container = document.querySelector(".setting-section .description-container");
+                        const small = description_container.querySelector(".small");
+                        if (JSON.parse(response.responseText) && !JSON.parse(response.responseText).errors) {
+                            errorCode = JSON.parse(response.responseText).code;
+                        } else if (JSON.parse(response.responseText).errors) {
+                            errorCode = JSON.parse(response.responseText).errors[0].code;
+                        }
+                        console.log(response.status, JSON.parse(response.responseText), errorCode);
+                        if (response.status >= 400 && response.status <= 503) {
+                            small.classList.remove("text");
+                            small.classList.add("text-error");
+                            description_container.classList.remove("form-has-success");
+                            description_container.classList.add("form-has-error", "form-has-feedback");
+                        }
+                        if (response.status == 200) {
+                            description_container.classList.add("form-has-success");
+                            small.classList.add("text");
+                            small.classList.remove("text-error");
+                            small.textContent = "Do not provide any details that can be used to identify you outside Roblox.";
+                            description_container.classList.remove("form-has-error", "form-has-feedback");
+                        } else if (response.status == 400 && errorCode == 1) {
+                            small.textContent = "You cannot perform this action. User was not found.";
+                        } else if (response.status == 401 && errorCode == 0) {
+                            small.textContent = "Authorization has been denied for this request.";
+                        } else if (response.status == 403) {
+                            if (errorCode == 0) {
+                                small.textContent = "Token Validation Failed";
+                            } else if (errorCode == 2) {
+                                small.textContent = "You cannot perform this action with a locked pin. Unlock your pin to continue.";
+                            }
+                        } else if (response.status == 500 && errorCode == 0) {
+                            small.textContent = "An unknown error occured.";
+                        } else if (response.status == 503 && errorCode == 3) {
+                            small.textContent = "This feature is currently disabled. Please try again later.";
+                        }
+                    },
+                });
+            });
+        })
+    })
+    waitForElm(".setting-section .collapsible-user-input.birthday-container").then(async (Elm) => {
+        if (Settings.Global.JSClasses) {
+            document.body.classList.remove("legacy-description");
+            document.body.classList.add("legacy-description", "react-enabled");
+        }
+        if (saveSettingsStyle) {
+            saveSettingsStyle.innerHTML = `
+.content .page-content .rbx-tab-content .settings-personal-container .save-settings-container {
+    float: right;
+    margin: 9px 0 0;
+}
+.save-settings-container {
+    width: 100%;
+    text-align: right;
+}
+    `;
+        }
+        const beforeDiv = document.createElement("div");
+        Elm.parentNode.insertBefore(beforeDiv, Elm);
+        beforeDiv.outerHTML = `
+    <div class="collapsible-user-input description-container"><textarea class="form-control input-field personal-field-description ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched" placeholder="Describe yourself(1000 character limit)" rows="4" ng-model="personal.description" maxlength="1000"></textarea> <span class="small text ng-binding" ng-bind="'Description.HelpText.Description'|translate">Do not provide any details that can be used to identify you outside Roblox.</span></div>
+    `;
+        const afterDiv = document.createElement("div");
+        Elm.parentNode.appendChild(afterDiv);
+        afterDiv.outerHTML = `
+    <div class="save-settings-container"><button type="button" class="btn-control-sm btn-min-width" id="save-info-settings">Save</button></div>
+    `;
+        waitForElm('meta[name="csrf-token"]').then(async (Elm) => {
+            document.getElementById("save-info-settings").addEventListener("click", function() {
+                var fieldValue = document.querySelector(".setting-section .description-container .input-field").value;
+                GM_xmlhttpRequest({
+                    method: "POST",
+                    url: "https://accountinformation.roblox.com/v1/description",
+                    headers: {
+                        "accept": "application/json",
+                        "Content-Type": "application/json",
+                        "X-Csrf-Token": Elm.getAttribute("data-token"),
+                    },
+                    data: JSON.stringify(
+                        {
+                            description: fieldValue
+                        }
+                    ),
+                    onload: function(response) {
+                        var errorCode;
+                        const description_container = document.querySelector(".setting-section .description-container");
+                        const small = description_container.querySelector(".small");
+                        if (JSON.parse(response.responseText) && !JSON.parse(response.responseText).errors) {
+                            errorCode = JSON.parse(response.responseText).code;
+                        } else if (JSON.parse(response.responseText).errors) {
+                            errorCode = JSON.parse(response.responseText).errors[0].code;
+                        }
+                        console.log(response.status, JSON.parse(response.responseText), errorCode);
+                        if (response.status >= 400 && response.status <= 503) {
+                            small.classList.remove("text");
+                            small.classList.add("text-error");
+                            description_container.classList.remove("form-has-success");
+                            description_container.classList.add("form-has-error", "form-has-feedback");
+                        }
+                        if (response.status == 200) {
+                            description_container.classList.add("form-has-success");
+                            small.classList.add("text");
+                            small.classList.remove("text-error");
+                            small.textContent = "Do not provide any details that can be used to identify you outside Roblox.";
+                            description_container.classList.remove("form-has-error", "form-has-feedback");
+                        } else if (response.status == 400 && errorCode == 1) {
+                            small.textContent = "You cannot perform this action. User was not found.";
+                        } else if (response.status == 401 && errorCode == 0) {
+                            small.textContent = "Authorization has been denied for this request.";
+                        } else if (response.status == 403) {
+                            if (errorCode == 0) {
+                                small.textContent = "Token Validation Failed";
+                            } else if (errorCode == 2) {
+                                small.textContent = "You cannot perform this action with a locked pin. Unlock your pin to continue.";
+                            }
+                        } else if (response.status == 500 && errorCode == 0) {
+                            small.textContent = "An unknown error occured.";
+                        } else if (response.status == 503 && errorCode == 3) {
+                            small.textContent = "This feature is currently disabled. Please try again later.";
+                        }
+                    },
+                });
+            });
+        })
+    })
 }
 
 if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
