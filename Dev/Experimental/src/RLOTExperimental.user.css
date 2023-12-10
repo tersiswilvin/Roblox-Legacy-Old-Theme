@@ -5841,7 +5841,9 @@
                 display: none
             }
             .remove-panel:not(.section-content):not(:has(.section-content)) {
-                padding: 0 15px 15px;
+                &, .light-theme &, .dark-theme & {
+                    padding: 0 15px 15px;
+                }
             }
         }
         .section:has(.passkey-upsell-banner) #rbx-account-info-header {
@@ -9114,6 +9116,9 @@
 	.profile-about .section-content.remove-panel:nth-child(3):not([ng-show="$ctrl.layout.showEditBox"]) {
 		padding-top: 0
 	}
+    .legacy-description .profile-about .section-content.remove-panel[ng-if="$ctrl.data.description && !$ctrl.layout.showEditBox"] {
+        padding-top: 15px;
+    }
 	.profile-about .section-content.remove-panel:nth-child(2), .profile-about .profile-about .section-content.remove-panel {
 		margin-bottom: 0;
 	}
