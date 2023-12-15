@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.15
+// @version      1.2.16
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
