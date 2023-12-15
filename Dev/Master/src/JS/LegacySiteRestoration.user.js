@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.14
+// @version      1.2.15
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -2484,9 +2484,9 @@ if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
                 const matchmedia = matchMedia(resString)
                 matchmedia.addEventListener("change", updateThumbSize)
                 if (window.devicePixelRatio > 1) {
-                    avatarThumb.setAttribute("src", avatarThumb.getAttribute("src").replace(/150/g, "720"))
+                    avatarThumb.setAttribute("src", avatarThumb.getAttribute("src").replace(/150\//g, "720/"))
                 } else {
-                    avatarThumb.setAttribute("src", avatarThumb.getAttribute("src").replace(/720/g, "150"))
+                    avatarThumb.setAttribute("src", avatarThumb.getAttribute("src").replace(/720\//g, "150/"))
                 }
             }
             updateThumbSize()
