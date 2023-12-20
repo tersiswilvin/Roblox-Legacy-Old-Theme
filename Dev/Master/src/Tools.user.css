@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Legacy Old Theme Tools
 @namespace      github.com/tersiswilvin
-@version        1.2.0
+@version        1.2.1
 @description    Experimental Tools/Addons for the Roblox Legacy Old Theme
 @author         TersisWilvin
 @preprocessor   less
@@ -61,10 +61,10 @@
             }
             body.dark-theme &:before {
                 & when (@WatermarkStyle = DEV) {
-                    content: "(Light Theme) Development Purposes Only";
+                    content: "(Dark Theme) Development Purposes Only";
                 }
                 & when (@WatermarkStyle = Experimental) {
-                    content: "(Light Theme) Testing Purposes Only";
+                    content: "(Dark Theme) Testing Purposes Only";
                 }
             }
             body.gotham-font &:before when (@SourceSansPro = 0) {
