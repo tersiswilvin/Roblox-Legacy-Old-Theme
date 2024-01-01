@@ -51,7 +51,7 @@
     - 2019E
   - Legacy Next StyleGuide
     -   ↳  Older
-  My Avatar Gogo Spinner
+  - My Avatar Gogo Spinner
   - Original Sponsor Size (Deprecated)
   - Play Button Style
     - 2018M
@@ -70,7 +70,7 @@
     - 2017
     - 2018
     - 2019L
-  2020+
+    - 2020+
   - Styleguide Page Theme
     - 2016
     - 2017
