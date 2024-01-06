@@ -19105,6 +19105,12 @@
         font-size: 12px;
         font-weight: 700;
     }
+    .evergreen-theme {
+            display: none !important;
+        }
+    .evergreen-background {
+            padding-top: 20px;
+        }
 }
 
     @-moz-document url("https://careers.roblox.com/") {
