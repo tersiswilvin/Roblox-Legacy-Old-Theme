@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.17
+// @version      1.2.18
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -60,12 +60,15 @@ var Settings = {
         CustomEvents: false, /*/ (Configurable => Events.CustomEvents) Uses your custom events then Roblox events. /*/
         DevForumFavIcon: "Modern", /*/ {"2015L", "2018M"} /*/
         DevForumFavTitle: "2017M", /*/ {"2015L", "2017M"} /*/
-        LegacyEditDescription: true, /*/ Moves the edit description and edit description button into the settings Page /*/
+        LegacyEditDescription: {
+            Enabled: true, /*/ When enabled, moves edit description from profile to the settings Page /*/
+            ModernFormat: true, /*/ Uses the newer 2022 HTML format /*/
+        },
         RobloxFavIcon: "2018L", /*/ {"2012M", "2015L", "2017E", "2017L", "2018L"} /*/
         RestoreLegacyFavIcon: true, /*/ (Configurable => Global.RobloxFavIcon) Replaces the favicon in your browser to what year is set. /*/
         RestoreLegacyFavTitle: false, /*/ Replaces "Roblox" to "ROBLOX" for the site title. /*/
         RestoreEvents: true, /*/ Brings back events in the sidebar, used along customevents. /*/
-        // RestoreForums: false, /*/ Restores Forums on the sidebar and page ( ! ) /*/
+        RestoreForums: false, /*/ Restores Forums on the sidebar (Pages will be restored in the future). /*/
         RestoreMyFeed: true, /*/ Restores My Feed on the sidebar and page /*/
         RestoreUpgradeNow: true, /*/ Replaces "Get Premium" to "Upgrade Now" /*/
         JSClasses: true, /*/ Adds classes to the body for certain options that are enabled for themes/extentions. /*/
@@ -76,7 +79,7 @@ var Settings = {
             demoPreference: 1, /*/ {[1]: "Roblox", [2]: "OnlyTwentyCharacters"} /*/
             disablebrokenicon: false,
             forceinfLoading: {
-                Enabled: false, /*/ When true is the same effect as enabling info, membership, and thumbnail infinite loading. /*/
+                Enabled: false, /*/ When enabled is the same effect as enabling info, membership, and thumbnail infinite loading. /*/
                 info: false,
                 membership: false,
                 thumbnail: false,
@@ -105,7 +108,7 @@ var Settings = {
             GamestoExperience: false, /*/ Swaps Game(s) text to Experience(s). /*/
             CatalogtoAvatarShop: false, /*/ Swaps Catalog to Avatar Shop. /*/
             enableforumlistItem: false, /*/ Enables the last list item for forums. /*/
-            ModernFormat: true, /*/ Uses 2021/2022 HTML then the 2018 HTML originally used. /*/
+            ModernFormat: true, /*/ Uses the newer 2021/2022 HTML format /*/
         },
         RestoreHomePage: true, /*/ (Configurable => Pages.home.Format) Brings back the username and user avatar back on the home page. /*/
         RestoreLegacyLogin: true, /*/ Reverts the changes made to make the login feel like the one used in 2019 /*/
@@ -1212,12 +1215,6 @@ button:hover .icon-nav-forum, a:hover .icon-nav-forum {
     }
 })
 
-if (Settings.Global.RestoreForums) {
-    if (window.location.href == "https://forum.roblox.com/forum/" || window.location.href == url+"/forum/") {
-        window.location.href = "https://bit.ly/45oTkkg";
-    }
-}
-
 if (Settings.Global.RestoreMyFeed) {
     function listItemTemplate(id, secClassName, iconName, URL, body, content, parentElement, useInnerHTML) {
         var listitemBody = document.createElement("li")
@@ -1742,7 +1739,7 @@ ${(!Settings.Pages.MyFeeds.ModernFormat && `
     }
 }
 
-if (Settings.Global.LegacyEditDescription) {
+if (Settings.Global.LegacyEditDescription.Enabled) {
     if (Settings.Global.JSClasses) {
         waitForElm('body').then(async (Elm) => {
             Elm.classList.add("legacy-description");
@@ -1750,7 +1747,7 @@ if (Settings.Global.LegacyEditDescription) {
     }
     var saveSettingsStyle;
 
-    waitForElm(".btn-generic-edit-sm").then(async (Elm) => {
+    waitForElm(".profile-about .btn-generic-edit-sm").then(async (Elm) => {
         var aboutcontainerheader;
         if (document.querySelector(".btr-profile")) {
             aboutcontainerheader = document.querySelector(".btr-profile profile-description .profile-about .container-header");
@@ -1769,12 +1766,64 @@ if (Settings.Global.LegacyEditDescription) {
     margin: 9px 0 0;
 }
     `;
+        if (Settings.Global.LegacyEditDescription.ModernFormat) {
+            saveSettingsStyle.innerHTML = `
+.content .page-content .rbx-tab-content .settings-personal-container .save-settings-container {
+    float: right;
+    margin: 9px 0 0;
+}
+.save-settings-container {
+    width: 100%;
+    text-align: right;
+}
+.description-container .personal-field-description {
+    resize: vertical
+}
+.description-container .description-event {
+    display: flex;
+    justify-content: space-between
+}
+    `;
+        }
         document.head.appendChild(saveSettingsStyle);
         const beforeDiv = document.createElement("div");
         Elm.parentNode.insertBefore(beforeDiv, Elm);
-        beforeDiv.outerHTML = `
+        if (Settings.Global.LegacyEditDescription.ModernFormat) {
+            beforeDiv.outerHTML = `
+            <div class="form-group form-has-feedback description-container" ng-class="{'form-has-error': $ctrl.layout.descriptionError }"> <textarea class="form-control input-field personal-field-description ng-pristine ng-valid ng-valid-maxlength ng-not-empty ng-touched" id="descriptionTextBox" placeholder="Tell the Roblox community about what you like to make, build, and explore..." rows="4" ng-model="$ctrl.data.description" maxlength="1000"></textarea> <div class="description-event"> <span class="small text ng-binding" ng-bind="'Description.AboutWarning' | translate">Keep yourself safe, do not share personal details online.</span> <p ng-if="!$ctrl.layout.descriptionError" class="form-control-label ng-binding ng-scope" ng-bind="$ctrl.data.description.length | formatCharacterCount: $ctrl.layout.maxDescriptionLength">0/0</p> </div>  </div>
+            `
+        } else {
+            beforeDiv.outerHTML = `
     <div class="form-group description-container"><textarea class="form-control input-field personal-field-description ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched" placeholder="Describe yourself(1000 character limit)" rows="4" ng-model="personal.description" maxlength="1000"></textarea> <span class="small text ng-binding" ng-bind="'Description.HelpText.Description'|translate">Do not provide any details that can be used to identify you outside Roblox.</span></div>
     `;
+        }
+        const description_container = document.querySelector(".setting-section .description-container");
+        var small = null;
+        if (Settings.Global.LegacyEditDescription.ModernFormat) {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: "https://accountinformation.roblox.com/v1/description",
+                headers: {
+                    "accept": "application/json",
+                    "Content-Type": "application/json",
+                },
+                onload: function(response) {
+                    if (!description_container.querySelector(".form-has-error")) {
+                        document.getElementById("descriptionTextBox").value = JSON.parse(response.responseText).description;
+                        small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+                    }
+                },
+            });
+            small = description_container.querySelector(".form-control-label");
+            small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+            document.getElementById("descriptionTextBox").addEventListener("input", function() {
+                if (!description_container.querySelector(".form-has-error")) {
+                    small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+                }
+            })
+        } else {
+            small = description_container.querySelector(".small");
+        }
         const afterDiv = document.createElement("div");
         Elm.parentNode.appendChild(afterDiv);
         afterDiv.outerHTML = `
@@ -1798,26 +1847,34 @@ if (Settings.Global.LegacyEditDescription) {
                     ),
                     onload: function(response) {
                         var errorCode;
-                        const description_container = document.querySelector(".setting-section .description-container");
-                        const small = description_container.querySelector(".small");
                         if (JSON.parse(response.responseText) && !JSON.parse(response.responseText).errors) {
                             errorCode = JSON.parse(response.responseText).code;
                         } else if (JSON.parse(response.responseText).errors) {
                             errorCode = JSON.parse(response.responseText).errors[0].code;
                         }
-                        console.log(response.status, JSON.parse(response.responseText), errorCode);
                         if (response.status >= 400 && response.status <= 503) {
-                            small.classList.remove("text");
-                            small.classList.add("text-error");
+                            if (!Settings.Global.LegacyEditDescription.ModernFormat) {
+                                small.classList.remove("text");
+                                small.classList.add("text-error");
+                            }
                             description_container.classList.remove("form-has-success");
-                            description_container.classList.add("form-has-error", "form-has-feedback");
+                            if (Settings.Global.LegacyEditDescription.ModernFormat) {
+                                description_container.classList.add("form-has-error");
+                            } else {
+                                description_container.classList.add("form-has-error", "form-has-feedback");
+                            }
                         }
                         if (response.status == 200) {
                             description_container.classList.add("form-has-success");
-                            small.classList.add("text");
-                            small.classList.remove("text-error");
-                            small.textContent = "Do not provide any details that can be used to identify you outside Roblox.";
-                            description_container.classList.remove("form-has-error", "form-has-feedback");
+                            if (Settings.Global.LegacyEditDescription.ModernFormat) {
+                                small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+                                description_container.classList.remove("form-has-error");
+                            } else {
+                                small.classList.add("text");
+                                small.classList.remove("text-error");
+                                small.textContent = "Do not provide any details that can be used to identify you outside Roblox.";
+                                description_container.classList.remove("form-has-error", "form-has-feedback");
+                            }
                         } else if (response.status == 400 && errorCode == 1) {
                             small.textContent = "You cannot perform this action. User was not found.";
                         } else if (response.status == 401 && errorCode == 0) {
@@ -1855,11 +1912,63 @@ if (Settings.Global.LegacyEditDescription) {
 }
     `;
         }
+        if (Settings.Global.LegacyEditDescription.ModernFormat) {
+            saveSettingsStyle.innerHTML = `
+.content .page-content .rbx-tab-content .settings-personal-container .save-settings-container {
+    float: right;
+    margin: 9px 0 0;
+}
+.save-settings-container {
+    width: 100%;
+    text-align: right;
+}
+.description-container .personal-field-description {
+    resize: vertical
+}
+.description-container .description-event {
+    display: flex;
+    justify-content: space-between
+}
+    `;
+        }
         const beforeDiv = document.createElement("div");
         Elm.parentNode.insertBefore(beforeDiv, Elm);
-        beforeDiv.outerHTML = `
+        if (Settings.Global.LegacyEditDescription.ModernFormat) {
+            beforeDiv.outerHTML = `
+            <div class="collapsible-user-input form-has-feedback description-container" ng-class="{'form-has-error': $ctrl.layout.descriptionError }"> <textarea class="form-control input-field personal-field-description ng-pristine ng-valid ng-valid-maxlength ng-not-empty ng-touched" id="descriptionTextBox" placeholder="Tell the Roblox community about what you like to make, build, and explore..." rows="4" ng-model="$ctrl.data.description" maxlength="1000"></textarea> <div class="description-event"> <span class="small text ng-binding" ng-bind="'Description.AboutWarning' | translate">Keep yourself safe, do not share personal details online.</span> <p ng-if="!$ctrl.layout.descriptionError" class="form-control-label ng-binding ng-scope" ng-bind="$ctrl.data.description.length | formatCharacterCount: $ctrl.layout.maxDescriptionLength">0/0</p> </div>  </div>
+            `
+        } else {
+            beforeDiv.outerHTML = `
     <div class="collapsible-user-input description-container"><textarea class="form-control input-field personal-field-description ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched" placeholder="Describe yourself(1000 character limit)" rows="4" ng-model="personal.description" maxlength="1000"></textarea> <span class="small text ng-binding" ng-bind="'Description.HelpText.Description'|translate">Do not provide any details that can be used to identify you outside Roblox.</span></div>
     `;
+        }
+        const description_container = document.querySelector(".setting-section .description-container");
+        var small = null;
+        if (Settings.Global.LegacyEditDescription.ModernFormat) {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: "https://accountinformation.roblox.com/v1/description",
+                headers: {
+                    "accept": "application/json",
+                    "Content-Type": "application/json",
+                },
+                onload: function(response) {
+                    if (!description_container.querySelector(".form-has-error")) {
+                        document.getElementById("descriptionTextBox").value = JSON.parse(response.responseText).description;
+                        small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+                    }
+                },
+            });
+            small = description_container.querySelector(".form-control-label");
+            small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+            document.getElementById("descriptionTextBox").addEventListener("input", function() {
+                if (!description_container.querySelector(".form-has-error")) {
+                    small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+                }
+            })
+        } else {
+            small = description_container.querySelector(".small");
+        }
         const afterDiv = document.createElement("div");
         Elm.parentNode.appendChild(afterDiv);
         afterDiv.outerHTML = `
@@ -1883,26 +1992,34 @@ if (Settings.Global.LegacyEditDescription) {
                     ),
                     onload: function(response) {
                         var errorCode;
-                        const description_container = document.querySelector(".setting-section .description-container");
-                        const small = description_container.querySelector(".small");
                         if (JSON.parse(response.responseText) && !JSON.parse(response.responseText).errors) {
                             errorCode = JSON.parse(response.responseText).code;
                         } else if (JSON.parse(response.responseText).errors) {
                             errorCode = JSON.parse(response.responseText).errors[0].code;
                         }
-                        console.log(response.status, JSON.parse(response.responseText), errorCode);
                         if (response.status >= 400 && response.status <= 503) {
-                            small.classList.remove("text");
-                            small.classList.add("text-error");
+                            if (!Settings.Global.LegacyEditDescription.ModernFormat) {
+                                small.classList.remove("text");
+                                small.classList.add("text-error");
+                            }
                             description_container.classList.remove("form-has-success");
-                            description_container.classList.add("form-has-error", "form-has-feedback");
+                            if (Settings.Global.LegacyEditDescription.ModernFormat) {
+                                description_container.classList.add("form-has-error");
+                            } else {
+                                description_container.classList.add("form-has-error", "form-has-feedback");
+                            }
                         }
                         if (response.status == 200) {
                             description_container.classList.add("form-has-success");
-                            small.classList.add("text");
-                            small.classList.remove("text-error");
-                            small.textContent = "Do not provide any details that can be used to identify you outside Roblox.";
-                            description_container.classList.remove("form-has-error", "form-has-feedback");
+                            if (Settings.Global.LegacyEditDescription.ModernFormat) {
+                                small.textContent = document.getElementById("descriptionTextBox").value.length+"/"+document.getElementById("descriptionTextBox").getAttribute("maxlength");
+                                description_container.classList.remove("form-has-error");
+                            } else {
+                                small.classList.add("text");
+                                small.classList.remove("text-error");
+                                small.textContent = "Do not provide any details that can be used to identify you outside Roblox.";
+                                description_container.classList.remove("form-has-error", "form-has-feedback");
+                            }
                         } else if (response.status == 400 && errorCode == 1) {
                             small.textContent = "You cannot perform this action. User was not found.";
                         } else if (response.status == 401 && errorCode == 0) {
