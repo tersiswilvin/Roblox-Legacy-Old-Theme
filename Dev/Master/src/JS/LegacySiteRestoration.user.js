@@ -62,7 +62,7 @@ var Settings = {
         DevForumFavTitle: "2017M", /*/ {"2015L", "2017M"} /*/
         LegacyEditDescription: {
             Enabled: true, /*/ When enabled, moves edit description from profile to the settings Page /*/
-            ModernFormat: true, /*/ Uses the newer 2022 HTML format /*/
+            ModernFormat: false, /*/ Uses the newer 2022 HTML format /*/
         },
         RobloxFavIcon: "2018L", /*/ {"2012M", "2015L", "2017E", "2017L", "2018L"} /*/
         RestoreLegacyFavIcon: true, /*/ (Configurable => Global.RobloxFavIcon) Replaces the favicon in your browser to what year is set. /*/
