@@ -3,9 +3,9 @@
 Name : Roblox Legacy Old Theme
 
 Version : 1.3
-Patch Version : 11
+Patch Version : 12
 Version Release Date : 08/02/2023
-Patch Release Date : 12/04/2023
+Patch Release Date : 01/21/2024
 
 Author URL : userstyles.world/user/tersiswilvin
 
