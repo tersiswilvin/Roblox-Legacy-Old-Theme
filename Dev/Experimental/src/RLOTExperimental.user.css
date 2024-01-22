@@ -8836,6 +8836,9 @@
 	.groups-list .rbx-divider {
 		display: none;
 	}
+    .catalog-container .sticky .search-options-scrollbar-container .mCustomScrollBox {
+        max-height: unset !important;
+    }
 	@media (min-width: 768px) {
 		.groups-list .menu-vertical-container .menu-vertical, .groups-list.col-sm-3, .groups-list .col-xs-12.col-sm-3 {
 			width: 160px;
@@ -8851,7 +8854,41 @@
 		.group-details-container-desktop-and-tablet {
 			max-width: 1080px;
 		}
+        .light-theme .catalog-container .sticky .search-bars, .dark-theme .catalog-container .sticky .search-bars {
+            background-color: transparent;
+            position: unset;
+            z-index: unset;
+            padding-top: 0;
+        }
+        .light-theme .catalog-container .sticky .topic-container, .dark-theme .catalog-container .sticky .topic-container {
+            background-color: transparent;
+            position: unset;
+            z-index: unset;
+            display: block;
+            overflow: unset;
+            height: unset;
+            padding-top: 0;
+        }
+        .catalog-container .sticky .search-options {
+            position: unset;
+        }
+        .catalog-container .sticky .search-options-scrollbar-container {
+    		overflow-x: unset;
+	    }
 	}
+    @media (min-width: 768px) and (min-width: 992px) {
+        .catalog-container .sticky .search-bars, .catalog-container .sticky .search-options, .catalog-container .sticky .topic-container {
+            top: unset;
+        }
+        .catalog-container .sticky .search-options-scrollbar-container {
+            max-height: unset;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        .catalog-container .sticky .search-options-scrollbar-container {
+                max-height: unset;
+        }
+    }
 	.groups-list .menu-dropdown-container .group-cards, .groups-list .menu-vertical-container .group-cards {
 		margin-bottom: 10px;
 	}
