@@ -8775,6 +8775,11 @@
             padding-top: 5px;
         }
     }
+    @media (min-width: 1850px) {
+        .content:has(#group-container) {
+            max-width: 1264px;
+        }
+    }
     
 	.items-list .item-card .item-card-caption {
 		width: 100%;
