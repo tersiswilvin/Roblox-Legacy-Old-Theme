@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240123.1.3.12
+@version      20240126.1.3.12
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5852,7 +5852,7 @@
                 }
             }
         }
-        .section:has(.passkey-upsell-banner) #rbx-account-info-header {
+        .section:has(.passkey-upsell-banner) #rbx-account-info-header, #settings-container:has(.passkey-upsell-banner) #rbx-account-info-header {
             padding: 5px 0 0;
             .remove-panel:not(.section-content):not(:has(.section-content)) {
                 padding: 15px 15px 10px 15px;
