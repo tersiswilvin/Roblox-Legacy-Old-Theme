@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240220.1.3.12
+@version      20240221.1.3.12
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5291,15 +5291,13 @@
         .game-follow-button-container div[role="tooltip"] .tooltip-inner, .container-header div[role="tooltip"] .tooltip-inner {
             font-size: 0 !important;
         }
-        .game-follow-button-container div[data-original-title="Follow Experience"] ~ [role="tooltip"] .tooltip-inner:after, .game-follow-button-container div[data-original-title="Turn on Notifications"] ~ [role="tooltip"] .tooltip-inner:after {
+        .game-follow-button-container .tooltip-container ~ [role="tooltip"] .tooltip-inner:after {
             content: 'Follow Game';
             font-size: 12px;
             line-height: 1.3em;
         }
-        .game-follow-button-container div[data-original-title="Unfollow Experience"] ~ [role="tooltip"] .tooltip-inner:after, .game-follow-button-container div[data-original-title="Turn off Notifications"] ~ [role="tooltip"] .tooltip-inner:after {
+        .game-follow-button-container .tooltip-container:has(.followed) ~ [role="tooltip"] .tooltip-inner:after {
             content: 'Unfollow Game';
-            font-size: 12px;
-            line-height: 1.3em;
         }
         .follow-button .icon-notifications-bell {
             background-image: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
@@ -5328,10 +5326,10 @@
                 line-height: 1.3em;
             }
         }
-        div[data-original-title="Turn on Notifications"] .follow-button .icon-label:after {
+        .tooltip-container .follow-button .icon-label:after {
             content: "Follow";
         }
-        div[data-original-title="Turn off Notifications"] .follow-button .icon-label:after {
+        .tooltip-container:has(.followed) .follow-button .icon-label:after {
             content: "Following";
         }
         #recommended-games-container h2 {
