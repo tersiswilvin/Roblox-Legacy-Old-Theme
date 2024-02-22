@@ -3,9 +3,9 @@
 Name : Roblox Legacy Old Theme
 
 Version : 1.3
-Patch Version : 11
+Patch Version : 12
 Version Release Date : 08/02/2023
-Patch Release Date : 01/21/2024
+Patch Release Date : 02/22/2024
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -230,6 +230,18 @@ Variables (@var) {
 }
 
 == Version History ==
+
+(02/22/2024)
+Release 1.3.12 :
+Added RemoveExtras (removes themes in settings).
+Added support for new notify update on the games page.
+Groups are now centered aligned.
+Reverted new homepage changes.
+Reverted side menu box shadow colors.
+Removed account switcher (toggleable via remove updates).
+Removed "passkey" notification in settings (toggleable via remove updates).
+Removed id verification form (toggleable via remove updates).
+Reverted new audio thumbnails (toggleable via remove updates).
 
 (01/21/2024)
 Release 1.3.11 :
