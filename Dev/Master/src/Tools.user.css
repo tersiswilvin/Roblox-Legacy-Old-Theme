@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Legacy Old Theme Tools
 @namespace      github.com/tersiswilvin
-@version        1.2.2
+@version        1.2.3
 @description    Experimental Tools/Addons for the Roblox Legacy Old Theme
 @author         TersisWilvin
 @preprocessor   less
@@ -12,9 +12,6 @@
 ==/UserStyle== */
 
 @-moz-document domain("web.roblox.com"), domain("www.roblox.com") {
-    :root {
-        --RLOTVersion: "1.3.12";
-    }
 	/*/=={ Watermark }==/*/
     .rbx-left-col when not (@WatermarkStyle = None) {
         & when (@WatermarkStyle = Hidden) {
@@ -73,7 +70,7 @@
                 margin: 0 0 24px;
             }
             body &:after {
-                content: "Milestone " var(--RLOTVersion);
+                content: "Milestone 1.3.13";
                 color: #b8b8b8;
                 font-size: 14px;
                 line-height: 14px;

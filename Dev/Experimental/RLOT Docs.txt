@@ -4,7 +4,7 @@
 
 @Experimental Updates
 
-:info: Prerelease 1.3.12 is available.
+:info: Prerelease 1.3.13 is available.
 
 What's new :
 
