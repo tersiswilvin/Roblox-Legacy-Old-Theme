@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240301.1.3.13
+@version      20240305.1.3.13
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5311,10 +5311,10 @@
                 background-position: -28px -252px;
             }
         }
-        .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label {
+        .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container:has(.icon-notifications-bell) .icon-label {
             font-size: 0
         }
-        .follow-button .icon-label:after {
+        .follow-button:has(.icon-notifications-bell) .icon-label:after {
             content: "";
             font-size: 12px;
             & when (@SourceSansPro = 0) {
@@ -5326,10 +5326,10 @@
                 line-height: 1.3em;
             }
         }
-        .tooltip-container .follow-button .icon-label:after {
+        .tooltip-container .follow-button:has(.icon-notifications-bell) .icon-label:after {
             content: "Follow";
         }
-        .tooltip-container:has(.followed) .follow-button .icon-label:after {
+        .tooltip-container:has(.followed) .follow-button:has(.icon-notifications-bell) .icon-label:after {
             content: "Following";
         }
         #recommended-games-container h2 {
