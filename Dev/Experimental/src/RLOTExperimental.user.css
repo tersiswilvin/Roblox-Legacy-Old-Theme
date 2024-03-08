@@ -11378,7 +11378,8 @@
         margin: 0;
         display: block
     }
-    .virtual-item-content {
+    .virtual-item-content, .light-theme .virtual-item-content, .dark-theme .virtual-item-content {
+        background-color: transparent;
         width: 100%;
         height: unset;
         border-radius: 0;
@@ -11606,7 +11607,7 @@
 			margin-top: 5px
 		}
     }
-    .dark-theme .premium-container .page-content:before {
+    .premium-container .page-content:before, .premium-container .page-content:has([robux-package-bonus-item]) .robux-table:before {
         & when (@RedLogoStyle = 0) {
             filter: invert(100%);
         }
@@ -11627,7 +11628,7 @@
             padding-left: 15px;
         }
         
-        .robux-page .premium-container .robux-table .robux-cell:nth-child(1), .robux-page .premium-container .robux-table .robux-cell:nth-child(2), .robux-price-button-box .virtual-item-button-box .virtual-item-robux-button {
+        .robux-page .premium-container .robux-table .robux-cell:nth-child(1), .robux-page .premium-container .robux-table .robux-cell:nth-child(2), .robux-price-button-box .virtual-item-button-box .virtual-item-robux-button, .robux-price-button-box .virtual-item-button-box .virtual-item-price {
             padding: 12px 20px;
         }
     }
@@ -11643,6 +11644,9 @@
         .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .virtual-item-robux-button .inline-text.ng-binding {
             font-size: 16px;
             line-height: 100%;
+        }
+        .robux-price-button-box .virtual-item-button-box .virtual-item-price .font-title {
+            font-size: 16px;
         }
         .light-theme .container-main .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .dark-theme .container-main .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .virtual-item-robux-button .icon-robux-reverse {
             width: 20px;
