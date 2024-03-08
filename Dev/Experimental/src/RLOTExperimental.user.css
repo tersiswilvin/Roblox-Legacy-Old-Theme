@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240306.1.3.13
+@version      20240307.1.3.13
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -11349,14 +11349,56 @@
         background: none;
     }
     
-    .light-theme .premium-container .robux-body .robux-row {
+    .premium-container .page-content:has([robux-package-bonus-item]) {
+        display: grid
+    }
+    .premium-container .page-content:has([robux-package-bonus-item]) .robux-table {
+        order: 1
+    }
+    .premium-container .page-content [robux-package-bonus-item] {
+        order: 2
+    }
+    
+    .icon-robux-reverse, .light-theme .icon-robux-reverse, .dark-theme .icon-robux-reverse {
+        background-image: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
+        background-repeat: no-repeat;
+        background-size: auto auto;
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    .virtual-item-badge, .bonus-item-box, .robux-price-button-box .rbx-divider, .premium-container .page-content:has([robux-package-bonus-item]):before {
+        display: none;
+    }
+    
+    .virtual-item-container {
+        max-width: unset;
+        margin: 0;
+        display: block
+    }
+    .virtual-item-content {
+        width: 100%;
+        height: unset;
+        border-radius: 0;
+        display: block;
+    }
+    .robux-price-button-box {
+        min-height: unset;
+        padding: 0;
+        display: block;
+        flex: 0;
+    }
+    
+    .light-theme .premium-container .robux-body .robux-row, .light-theme .robux-price-button-box .virtual-item-button-box {
         background-color: #fff;
         display: block;
         height: 72px;
         position: relative;
         margin-bottom: 15px;
     }
-    .dark-theme .premium-container .robux-body .robux-row {
+    .dark-theme .premium-container .robux-body .robux-row, .dark-theme .robux-price-button-box .virtual-item-button-box {
         background-color: #000;
         display: block;
         height: 72px;
@@ -11381,11 +11423,28 @@
         left: 0;
         padding: 12px;
     }
+    .robux-price-button-box .virtual-item-button-box .virtual-item-price {
+        min-width: unset;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        padding: 12px;
+    }
+    .robux-price-button-box .virtual-item-button-box .virtual-item-price .font-title {
+        font-size: 20px;
+        font-weight: 700;
+    }
     
     .robux-page .premium-container .robux-table .robux-cell:nth-child(2) {
         position: absolute;
         right: 0;
         padding: 12px;
+    }
+    .robux-price-button-box .virtual-item-button-box .virtual-item-robux-button {
+        position: absolute;
+        right: 0;
+        padding: 12px;
+        width: unset;
     }
     
     .robux-page .page-content > .robux-table .robux-body::before {
@@ -11464,6 +11523,10 @@
     .light-theme .robux-page .robux-body .robux-button-container, .dark-theme .robux-page .robux-body .robux-button-container {
         width: 240px;
     }
+    .virtual-item-robux-button .btn-primary-md {
+        width: 240px;
+        height: 38px;
+    }
     
     .light-theme .robux-page .robux-body .robux-button-container .btn-control-md, .light-theme .touch .robux-page .robux-body .robux-button-container .btn-control-md:focus, .light-theme .touch .robux-page .robux-body .robux-button-container .btn-control-md:hover, .light-theme .touch .robux-page .robux-body .robux-button-container .btn-control-md:visited, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md, .dark-theme .touch .robux-page .robux-body .robux-button-container .btn-control-md:focus, .dark-theme .touch .robux-page .robux-body .robux-button-container .btn-control-md:hover, .dark-theme .touch .robux-page .robux-body .robux-button-container .btn-control-md:visited {
         user-select: none;
@@ -11482,7 +11545,7 @@
         line-height: 100%;
         border-radius: 3px;
     }
-    .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding {
+    .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .virtual-item-robux-button .inline-text.ng-binding {
         font-size: 18px;
         line-height: 100%;
         font-weight: 500;
@@ -11510,11 +11573,22 @@
 			filter: brightness(3);
 		}
     }
+    .virtual-item-robux-button .icon-robux-reverse {
+		& when (@SiteCurrency = Robux) {
+			background-position: 0 -195px;
+		}
+		& when (@SiteCurrency = Tickets) {
+			background-position: 0 -140px;
+			filter: brightness(3);
+		}
+        margin-top: -5px;
+        margin-right: 6px;
+    }
     
     .premium-container .robux-table .robux-head-group, .premium-container .text-footer.legal-text-holder, .library-autocomplete-items {
         display: none;
     }
-    .premium-container .page-content:before {
+    .premium-container .page-content:before, .premium-container .page-content:has([robux-package-bonus-item]) .robux-table:before {
 		& when (@LogoStyle = 201701) {
 			content: '';
 			& when (@RedLogoStyle = 0) {
@@ -11549,32 +11623,28 @@
             margin: 0;
         }
         
-        .robux-page .page-content > .robux-table .robux-body::before, .robux-page div:not(.page-content) > .robux-table .robux-body::before {
+        .robux-page .page-content > .robux-table .robux-body::before, .robux-page div:not(.page-content) > .robux-table .robux-body::before, .robux-page .page-content > .robux-table .robux-body .robux-row:nth-child(4)::before {
             padding-left: 15px;
         }
         
-        .robux-page .premium-container .robux-table .robux-cell:nth-child(1) {
-            padding: 12px 20px;
-        }
-    
-        .robux-page .premium-container .robux-table .robux-cell:nth-child(2) {
+        .robux-page .premium-container .robux-table .robux-cell:nth-child(1), .robux-page .premium-container .robux-table .robux-cell:nth-child(2), .robux-price-button-box .virtual-item-button-box .virtual-item-robux-button {
             padding: 12px 20px;
         }
     }
     
     @media (max-width: 767px) {
-        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md {
+        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md, .virtual-item-robux-button .btn-primary-md {
             padding: 7px;
             font-size: 16px;
             line-height: 100%;
             border-radius: 3px;
             height: 32px
         }
-        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding {
+        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .virtual-item-robux-button .inline-text.ng-binding {
             font-size: 16px;
             line-height: 100%;
         }
-        .light-theme .container-main .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .dark-theme .container-main .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray {
+        .light-theme .container-main .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .dark-theme .container-main .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .virtual-item-robux-button .icon-robux-reverse {
             width: 20px;
             height: 20px;
             background-position: 0 -131px;
@@ -11583,15 +11653,15 @@
     }
     
     @media (max-width: 543px) {
-        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md, .light-theme .robux-page .robux-body .robux-button-container, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md, .dark-theme .robux-page .robux-body .robux-button-container {
+        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md, .light-theme .robux-page .robux-body .robux-button-container, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md, .dark-theme .robux-page .robux-body .robux-button-container, .light-theme .virtual-item-robux-button .btn-primary-md, .light-theme .virtual-item-robux-button .btn-primary-md:hover, .light-theme .virtual-item-robux-button .btn-primary-md:active, .light-theme .virtual-item-robux-button .btn-primary-md:focus, .dark-theme .virtual-item-robux-button .btn-primary-md, .dark-theme .virtual-item-robux-button .btn-primary-md:hover, .dark-theme .virtual-item-robux-button .btn-primary-md:active, .dark-theme .virtual-item-robux-button .btn-primary-md:focus {
             width: 120px;
             height: 26px;
             font-size: 10px;
         }
-        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray {
+        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .icon-robux-gray, .virtual-item-robux-button .icon-robux-reverse {
             display: none
         }
-        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding {
+        .light-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .dark-theme .robux-page .robux-body .robux-button-container .btn-control-md .inline-text.ng-binding, .virtual-item-robux-button .inline-text.ng-binding {
             font-size: 10px;
         }
     }
@@ -11618,11 +11688,7 @@
             padding-left: 15px;
         }
         
-        .robux-page .premium-container .robux-table .robux-cell:nth-child(1) {
-            padding: 12px 20px;
-        }
-    
-        .robux-page .premium-container .robux-table .robux-cell:nth-child(2) {
+        .robux-page .premium-container .robux-table .robux-cell:nth-child(1), .robux-page .premium-container .robux-table .robux-cell:nth-child(2) {
             padding: 12px 20px;
         }
     }
