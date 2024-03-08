@@ -11607,7 +11607,7 @@
 			margin-top: 5px
 		}
     }
-    .premium-container .page-content:before, .premium-container .page-content:has([robux-package-bonus-item]) .robux-table:before {
+    .dark-theme .premium-container .page-content:before, .dark-theme .premium-container .page-content:has([robux-package-bonus-item]) .robux-table:before {
         & when (@RedLogoStyle = 0) {
             filter: invert(100%);
         }
