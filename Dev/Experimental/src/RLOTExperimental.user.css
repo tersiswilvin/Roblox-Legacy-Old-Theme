@@ -6307,7 +6307,12 @@
             filter: none;
         }
         .rbx-the-hunt-header {
-            color: #191919;
+            &, .light-theme & {
+                color: #191919;
+            }
+            .dark-theme & {
+                color: #e6e6e6;
+            }
             margin: 5px 0;
             &:hover {
                 & when (@RemoveExtras = 0) {
@@ -6317,12 +6322,19 @@
                     cursor: text;
                 }
                 .rbx-event-icon {
-                    background-color: #00a2ff;
+                    &, .light-theme &, .dark-theme & {
+                        background-color: #00a2ff;
+                    }
                 }
             }
             .rbx-event-icon {
                 background: none;
-                background-color: #191919;
+                .light-theme & {
+                    background-color: #191919;
+                }
+                .dark-theme & {
+                    background-color: #e6e6e6;
+                }
                 -webkit-mask-image: url(https://images.rbxcdn.com/fa19ef50c08b32e14b9aca461cb07e74-calendar.svg);
                 mask-image: url(https://images.rbxcdn.com/fa19ef50c08b32e14b9aca461cb07e74-calendar.svg);
                 -webkit-mask-repeat: no-repeat;
