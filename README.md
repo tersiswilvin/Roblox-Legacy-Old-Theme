@@ -23,6 +23,7 @@
     - BTR_Simblk
     - BTR_Sky
     - L_Red
+    - RPlus_Easter
     - RPlus_OBC
   - Force light theme on signup
   - Five column Avatar Editor
