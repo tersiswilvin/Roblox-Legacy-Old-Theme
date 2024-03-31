@@ -231,6 +231,10 @@ Variables (@var) {
 
 == Version History ==
 
+(03/30/2024)
+Release 1.3.13 :
+Enabled Easter Theme (Happy Easter).
+
 (02/22/2024)
 Release 1.3.12 :
 Added RemoveExtras (removes themes in settings).

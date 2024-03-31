@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20240222.1.3.12
+@version      20240330.1.3.13
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -13,7 +13,7 @@
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
 @var          select   SiteCurrency                "Currency Brand Style"               ["Robux*","Tickets"]
-@var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
+@var          select   CustomTheme                 "Custom Site Theme"                  ["None","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_Easter*","RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
 @var          checkbox fiveColumn                  "Five column Avatar Editor."         1
 @var          select   greetingTxt                 "Greeting Text Style"                ["None*", "Hello", "HelloExclamation", "Exclamation"]
@@ -17132,8 +17132,11 @@
 		.light-theme .dialog-container .dialog-header .dialog-header-title:after,.light-theme .notification-blue, .dark-theme .dialog-container .dialog-header .dialog-header-title:after,.dark-theme .notification-blue{
 			background: rgb(220, 126, 207);
 		}
-	
-	
+        
+        .light-theme .game-card-info[data-testid="game-tile-stats-friend-activity"], .light-theme .game-card-info[data-testid="game-tile-stats-friend-activity"] {
+            background: rgb(220, 126, 207)
+        }
+        
 		/* Navigation */
 		.light-theme .rbx-header .rbx-navbar-icon-group>li>.rbx-menu-item,.light-theme #header .nav.rbx-navbar a,.light-theme #header .nav.rbx-navbar a:visited{
 			background-color: rgba(220,126,207,.5);
@@ -17152,6 +17155,9 @@
 		.light-theme #header .nav.rbx-navbar a:hover, .dark-theme #header .nav.rbx-navbar a:hover{
 			background-color: rgba(233,185,227,.5) !important;
 		}
+        body:not(.LegacyRobuxDropdown) .dropdown-menu:has(.wallet-hidden):has(li a[href="https://www.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet, body:not(.LegacyRobuxDropdown) .dropdown-menu:has(.wallet-hidden):has(li a[href="https://web.roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
+            box-shadow: 4px 0 0 0 #dc7ecf inset;
+        }
 		
 		/* Chat */
 		@-webkit-keyframes easter-blink-dialog{
