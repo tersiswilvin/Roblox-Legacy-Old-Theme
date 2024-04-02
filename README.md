@@ -19,7 +19,6 @@
     - Tickets
   - Custom Site Theme
     - None
-    - April_Fools
     - BTR_Night
     - BTR_Simblk
     - BTR_Sky

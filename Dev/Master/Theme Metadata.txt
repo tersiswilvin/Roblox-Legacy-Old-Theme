@@ -3,9 +3,9 @@
 Name : Roblox Legacy Old Theme
 
 Version : 1.3
-Patch Version : 14
+Patch Version : 15
 Version Release Date : 08/02/2023
-Patch Release Date : 03/31/2024
+Patch Release Date : 04/02/2024
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -230,6 +230,10 @@ Variables (@var) {
 }
 
 == Version History ==
+
+(04/02/2024)
+Release 1.3.15 :
+Reverted April Fools Update.
 
 (03/31/2024)
 Release 1.3.14 :
