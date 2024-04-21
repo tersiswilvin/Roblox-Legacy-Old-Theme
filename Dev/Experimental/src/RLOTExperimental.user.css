@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240404.1.3.16
+@version      20240421.1.3.16
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -912,6 +912,144 @@
         background-color: #1C1C1C;
     }
     
+    .builder-font {
+        font-weight: 400;
+        .text,body,button,html,input,pre,select,textarea {
+            font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+        &,.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+            font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif
+        }
+        .font-title,.h1,h1 {
+            font-size: 32px;
+            font-weight: 800;
+            @media (max-width: 767px) {
+                & {
+                    font-size:24px
+                }
+            }
+        }
+        .text-link,.vlist .list-item .list-body .list-content a,.vlist .list-item .list-body .list-content & a {
+            font-weight: 500
+        }
+        div {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4em;
+            @media (max-width: 767px) {
+                & {
+                    font-size:16px;
+                    font-weight: 400
+                }
+            }
+            @media (max-width: 543px) {
+                & {
+                    font-size:12px;
+                    font-weight: 400
+                }
+            }
+        }
+        .ad-identification-text, .font-small, .small, .small-oneline, .text-date-hint, .text-secondary, .text-tooltips {
+            &, &:active, &:focus, &:hover, &:link, &:visited {
+                font-size: 12px;
+                font-weight: 400
+            }
+        }
+        .font-header-1,.h2,.h3,.h4,.text-robux-lg,h2,h3,h4 {
+            font-size: 20px;
+            font-weight: 700;
+            @media (max-width: 767px) {
+                & {
+                    font-size:16px
+                }
+            }
+        }
+        .font-bold, .font-header-2, .h5, .h6, .text-footer-nav, .text-label, .text-lead, .text-name, .text-subject, .text-warning, h5, h6, strong {
+            &, &:active, &:hover, &:link, &:visited {
+                font-size: 16px;
+                font-weight: 500;
+                @media (max-width: 767px) {
+                    & {
+                        font-size:12px;
+                        font-weight: 500
+                    }
+                }
+            }
+        }
+        .font-subheader-2 {
+            font-size: 16px;
+            font-weight: 500;
+            @media (max-width: 767px) {
+                & {
+                    font-size:12px
+                }
+            }
+        }
+        .font-body,.text-description,.text-favorite,p {
+            font-size: 16px;
+            font-weight: 400
+        }
+        .font-caption-header, .small.font-caption-header, .small.text-error, .small.text-pastname, .small.text-report, .text-error, .text-pastname, .text-report {
+            &, 7:active, &:focus, &:hover, &:link, &:visited {
+                font-size: 12px;
+                font-weight: 500
+            }
+        }
+        .font-footer, .text-footer, .xsmall, .xxsmall {
+            &, &:active, &:focus, &:hover, &:link, &:visited {
+                font-size: 10px;
+                font-weight: 500;
+                @media (max-width: 767px) {
+                    & {
+                        font-size:8px
+                    }
+                }
+            }
+        }
+        .tooltip .tooltip-inner {
+            max-width: 220px
+        }
+        .font-caption-body, .tooltip .tooltip-inner {
+            &, &:active, &:focus, &:hover, &:link, &:visited {
+                font-size: 12px;
+                font-weight: 400
+            }
+        }
+        .input-field,.line-height {
+            line-height: 1.4em
+        }
+        .chat-friend-list .chat-friend-info .chat-brief-timestamp {
+            width: 70px;
+            padding: 0;
+            margin: 2px 0 0
+        }
+        .builder-font.chat-container .btn-control-xs,.chat-container .btn-control-xs,.builder-font.chat-container .chat-search-input,.chat-container .chat-search-input,.chat-main .btn-control-md,.create-chat-container .select-friends-btns .select-friends-cancel,.create-chat-container .select-friends-btns .select-friends-save,.details-btns-fixed button,.details-btns button,.details-container .details-input,.details-header-container .details-input,.dialog-container .dialog-input,.game-item-container .game-btn,.group-dialog .group-name-editor .group-name-input,.group-dialog .group-name-editor .group-name-save,.group-dialog .play-together-game-editor .group-name-input,.group-dialog .play-together-game-editor .group-name-save {
+            font-family: HCo Gotham SSm
+        }
+        &.chat-container .chat-friend-message.font-bold,.chat-container .chat-friend-message.font-bold,&.chat-container .chat-friend-message.font-bold:active,.chat-container .chat-friend-message.font-bold:active,&.chat-container .chat-friend-message.font-bold:focus,.chat-container .chat-friend-message.font-bold:focus,&.chat-container .chat-friend-message.font-bold:hover,.chat-container .chat-friend-message.font-bold:hover,&.chat-container .chat-friend-message.font-bold:link,.chat-container .chat-friend-message.font-bold:link,&.chat-container .chat-friend-message.font-bold:visited,.chat-container .chat-friend-message.font-bold:visited,&.chat-container .font-bold,.chat-container .font-bold,&.chat-container .font-bold:active,.chat-container .font-bold:active,&.chat-container .font-bold:link,.chat-container .font-bold:link,&.chat-container .font-bold:visited,.chat-container .font-bold:visited {
+            font-weight: 700
+        }
+        .game-item-container .game-btn,.game-list-container .game-btn {
+            padding: 7px;
+            font-size: 16px;
+            line-height: 100%;
+            border-radius: 3px;
+            border-radius: 8px
+        }
+        .game-item-container .game-info {
+            margin-top: 6px
+        }
+        .game-item-container .recommended-game-info {
+            margin-top: -18px
+        }
+        .game-card-container .game-card-name {
+            font-weight: 500;
+        }
+    }
+    
     .input-group-btn .input-dropdown-btn:focus .light-theme .icon-down, .input-group-btn .input-dropdown-btn:hover .light-theme .icon-down, .light-theme .icon-checkmark-16x16, .light-theme .icon-close-16x16, .light-theme .icon-close-gray-16x16, .light-theme .icon-default-generic-16x16, .light-theme .icon-down-16x16, .light-theme .icon-edit-16x16, .light-theme .icon-left-16x16, .light-theme .icon-moreinfo-16x16, .light-theme .icon-red-timer-16x16, .light-theme .icon-right-16x16, .light-theme .icon-settings-16x16, .light-theme .icon-up-16x16, .light-theme .input-group-btn .input-dropdown-btn:focus .icon-down, .light-theme .input-group-btn .input-dropdown-btn:hover .icon-down, .light-theme .open .input-dropdown-btn .icon-down, .light-theme .rbx-select-group:hover .icon-down, .open .input-dropdown-btn .light-theme .icon-down, .rbx-select-group:hover .light-theme .icon-down {
         background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
         background-repeat: no-repeat;
@@ -998,7 +1136,7 @@
         background-image: url(https://images.rbxcdn.com/153fd3209692232cd8087cad74a669b0-games.svg);
     }
     
-    .dark-theme .game-card-info .light-theme .info-label.icon-playing-counts-gray, .dark-theme .game-card-info .light-theme .info-label.icon-playing-counts-gray-white-70, .dark-theme .game-card-info .light-theme .info-label.icon-votes-gray, .dark-theme .game-card-info .light-theme .info-label.icon-votes-gray-white-70, .dark-theme .gotham-font .light-theme .refresh-link-icon:after, .dark-theme .gotham-font .light-theme .see-all-link-icon:after, .gotham-font.dark-theme .light-theme .refresh-link-icon:after, .gotham-font.dark-theme .light-theme .see-all-link-icon:after, .gotham-font.light-theme .refresh-link-icon:after, .gotham-font.light-theme .see-all-link-icon:after, .light-theme .game-card-info .info-label.icon-playing-counts-gray, .light-theme .game-card-info .info-label.icon-playing-counts-gray-white-70, .light-theme .game-card-info .info-label.icon-votes-gray, .light-theme .game-card-info .info-label.icon-votes-gray-white-70, .light-theme .gotham-font .refresh-link-icon:after, .light-theme .gotham-font .see-all-link-icon:after, .light-theme .icon-currently-playing-sm, .light-theme .icon-default-common-sm, .light-theme .icon-push-right-sm, .light-theme .icon-rating-sm, .light-theme .icon-refresh-sm
+    .dark-theme .game-card-info .light-theme .info-label.icon-playing-counts-gray, .dark-theme .game-card-info .light-theme .info-label.icon-playing-counts-gray-white-70, .dark-theme .game-card-info .light-theme .info-label.icon-votes-gray, .dark-theme .game-card-info .light-theme .info-label.icon-votes-gray-white-70, .dark-theme .gotham-font .light-theme .refresh-link-icon:after, .dark-theme .builder-font .light-theme .refresh-link-icon:after, .dark-theme .gotham-font .light-theme .see-all-link-icon:after, .dark-theme .builder-font .light-theme .see-all-link-icon:after, .gotham-font.dark-theme .light-theme .refresh-link-icon:after, .builder-font.dark-theme .light-theme .refresh-link-icon:after, .gotham-font.dark-theme .light-theme .see-all-link-icon:after, .builder-font.dark-theme .light-theme .see-all-link-icon:after, .gotham-font.light-theme .refresh-link-icon:after, .builder-font.light-theme .refresh-link-icon:after, .gotham-font.light-theme .see-all-link-icon:after, .builder-font.light-theme .see-all-link-icon:after, .light-theme .game-card-info .info-label.icon-playing-counts-gray, .light-theme .game-card-info .info-label.icon-playing-counts-gray-white-70, .light-theme .game-card-info .info-label.icon-votes-gray, .light-theme .game-card-info .info-label.icon-votes-gray-white-70, .light-theme .gotham-font .refresh-link-icon:after, .light-theme .builder-font .refresh-link-icon:after, .light-theme .gotham-font .see-all-link-icon:after, .light-theme .builder-font .see-all-link-icon:after, .light-theme .icon-currently-playing-sm, .light-theme .icon-default-common-sm, .light-theme .icon-push-right-sm, .light-theme .icon-rating-sm, .light-theme .icon-refresh-sm
     {
         background-image: url(https://images.rbxcdn.com/153fd3209692232cd8087cad74a669b0-games.svg);
     }
@@ -3083,7 +3221,7 @@
         background-color: #000;
     }
     
-    .dark-theme .game-card-info .info-label.icon-playing-counts-gray, .dark-theme .game-card-info .info-label.icon-playing-counts-gray-white-70, .dark-theme .game-card-info .info-label.icon-votes-gray, .dark-theme .game-card-info .info-label.icon-votes-gray-white-70, .dark-theme .gotham-font .refresh-link-icon:after, .dark-theme .gotham-font .see-all-link-icon:after, .dark-theme .icon-currently-playing-sm, .dark-theme .icon-default-common-sm, .dark-theme .icon-push-right-sm, .dark-theme .icon-rating-sm, .dark-theme .icon-refresh-sm, .gotham-font.dark-theme .refresh-link-icon:after, .gotham-font.dark-theme .see-all-link-icon:after, .gotham-font.light-theme .dark-theme .refresh-link-icon:after, .gotham-font.light-theme .dark-theme .see-all-link-icon:after, .light-theme .game-card-info .dark-theme .info-label.icon-playing-counts-gray, .light-theme .game-card-info .dark-theme .info-label.icon-playing-counts-gray-white-70, .light-theme .game-card-info .dark-theme .info-label.icon-votes-gray, .light-theme .game-card-info .dark-theme .info-label.icon-votes-gray-white-70, .light-theme .gotham-font .dark-theme .refresh-link-icon:after, .light-theme .gotham-font .dark-theme .see-all-link-icon:after
+    .dark-theme .game-card-info .info-label.icon-playing-counts-gray, .dark-theme .game-card-info .info-label.icon-playing-counts-gray-white-70, .dark-theme .game-card-info .info-label.icon-votes-gray, .dark-theme .game-card-info .info-label.icon-votes-gray-white-70, .dark-theme .gotham-font .refresh-link-icon:after, .dark-theme .builder-font .refresh-link-icon:after, .dark-theme .gotham-font .see-all-link-icon:after, .dark-theme .builder-font .see-all-link-icon:after, .dark-theme .icon-currently-playing-sm, .dark-theme .icon-default-common-sm, .dark-theme .icon-push-right-sm, .dark-theme .icon-rating-sm, .dark-theme .icon-refresh-sm, .gotham-font.dark-theme .refresh-link-icon:after, .builder-font.dark-theme .refresh-link-icon:after, .gotham-font.dark-theme .see-all-link-icon:after, .builder-font.dark-theme .see-all-link-icon:after, .gotham-font.light-theme .dark-theme .refresh-link-icon:after, .builder-font.light-theme .dark-theme .refresh-link-icon:after, .gotham-font.light-theme .dark-theme .see-all-link-icon:after, .builder-font.light-theme .dark-theme .see-all-link-icon:after, .light-theme .game-card-info .dark-theme .info-label.icon-playing-counts-gray, .light-theme .game-card-info .dark-theme .info-label.icon-playing-counts-gray-white-70, .light-theme .game-card-info .dark-theme .info-label.icon-votes-gray, .light-theme .game-card-info .dark-theme .info-label.icon-votes-gray-white-70, .light-theme .gotham-font .dark-theme .refresh-link-icon:after, .light-theme .gotham-font .dark-theme .see-all-link-icon:after, .light-theme .builder-font .dark-theme .refresh-link-icon:after, .light-theme .builder-font .dark-theme .see-all-link-icon:after
     {
         background-image: url(https://static.rbxcdn.com/images/Shared/games_08302018.svg);
     }
@@ -3493,7 +3631,7 @@
     .dark-theme .recommended-game-container:hover {
         background-color: #0D0D0D;
     }
-    .gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn {
+    .gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn, .builder-font .game-item-container .game-btn, .builder-font .game-list-container .game-btn {
         border-radius: 3px;
     }
     
@@ -3640,7 +3778,7 @@
 		margin: 6px auto;
 	}
 	
-    body.rbx-body.light-theme.gotham-font.modal-open[data-internal-page-name="Login"] div[role="dialog"] .fade.modal-modern.in.modal .modal-lock-icon {
+    [data-internal-page-name="Login"] div[role="dialog"] .fade.modal-modern.in.modal .modal-lock-icon {
         background-image: url(https://images.rbxcdn.com/d57e529d96e8ec75fe0aca50c21b2226-shield-email.png);
     }
     
@@ -5456,7 +5594,7 @@
 			line-height: 14px;
 			margin: 0 0 2px;
 		}
-		body.gotham-font .chat-friend-list .chat-friend-info .chat-friend-name {
+		body.gotham-font .chat-friend-list .chat-friend-info .chat-friend-name, body.builder-font .chat-friend-list .chat-friend-info .chat-friend-name {
 			width: 100%;
 			margin: 0;
 		}
@@ -5792,7 +5930,7 @@
 			cursor: text
 		}
 		
-		.private-server-container .container-header.see-all-container-header h1, .private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"], .gotham-font .private-server-container .container-header.see-all-container-header .see-all-link-icon {
+		.private-server-container .container-header.see-all-container-header h1, .private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"], .gotham-font .private-server-container .container-header.see-all-container-header .see-all-link-icon, .builder-font .private-server-container .container-header.see-all-container-header .see-all-link-icon {
 			&, &:hover, &:active, &:focus, &:visited {
 				font-size: 0;
 			}
@@ -6384,38 +6522,177 @@
 			src: local("Source Sans Pro Semibold"),local("SourceSansPro-Semibold"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.woff2") format("woff2"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.woff") format("woff"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.svg#SourceSansPro") format("svg");
 		}
 		
-        .gotham-font, .gotham-font .h1, .gotham-font .h2, .gotham-font .h3, .gotham-font .h4, .gotham-font .h5, .gotham-font .h6, .gotham-font h1, .gotham-font h2, .gotham-font h3, .gotham-font h4, .gotham-font h5, .gotham-font h6, .gotham-font .text, .gotham-font body, .gotham-font button, .gotham-font html, .gotham-font input, .gotham-font pre, .gotham-font select, .gotham-font textarea, 	.gotham-font.chat-container .btn-control-xs, .gotham-font .chat-container .btn-control-xs, .gotham-font.chat-container .chat-search-input, .gotham-font .chat-container .chat-search-input, .gotham-font .chat-main .btn-control-md, .gotham-font .create-chat-container .select-friends-btns .select-friends-cancel, .gotham-font .create-chat-container .select-friends-btns .select-friends-save, .gotham-font .details-btns-fixed button, .gotham-font .details-btns button, .gotham-font .details-container .details-input, .gotham-font .details-header-container .details-input, .gotham-font .dialog-container .dialog-input, .gotham-font .game-item-container .game-btn, .gotham-font .group-dialog .group-name-editor .group-name-input, .gotham-font .group-dialog .group-name-editor .group-name-save, .gotham-font .group-dialog .play-together-game-editor .group-name-input, .gotham-font .group-dialog .play-together-game-editor .group-name-save, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details .text-name span {
-            font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+        .gotham-font, .builder-font {
+            &, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, .text, body, button, html, input, pre, select, textarea, 	&.chat-container .btn-control-xs, .chat-container .btn-control-xs, &.chat-container .chat-search-input, .chat-container .chat-search-input, .chat-main .btn-control-md, .create-chat-container .select-friends-btns .select-friends-cancel, .create-chat-container .select-friends-btns .select-friends-save, .details-btns-fixed button, .details-btns button, .details-container .details-input, .details-header-container .details-input, .dialog-container .dialog-input, .game-item-container .game-btn, .group-dialog .group-name-editor .group-name-input, .group-dialog .group-name-editor .group-name-save, .group-dialog .play-together-game-editor .group-name-input, .group-dialog .play-together-game-editor .group-name-save, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details .text-name span {
+                font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+            }
+            div {
+                &, &:hover, &:focus, &:active {
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+            }
+            .text-robux-lg {
+                font-size: 24px;
+                font-weight: 400;
+            }
+            .text-footer-nav {
+                &, &:active, &:hover, &:link {
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+            }
+            .text-lead {
+                &, &:active, &:hover, &:link, &:visited {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+            .font-caption-body, .item-card-creator, .font-caption-header, .font-header-1 {
+                &, &:active, &:focus, &:hover, &:link, &:visited {
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+            }
+            .font-bold, strong {
+                &, &:hover, &:link, &:visited, &:active {
+                    font-weight: 600;
+                }
+            }
+            .game-name-title {
+                &:hover, &:focus, &:active {
+                    line-height: 22px;
+                }
+            }
+            .small, .small-oneline, .text-pastname {
+                &, &:hover, &:focus, &:link, &:visited, &:active {
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+            .chat-search-input {
+                &, &:hover, &:focus, &:active {
+                    font-size: 14px;
+                }
+                &, &::placeholder {
+                    font-weight: 400;
+                }
+            }
+            .xsmall, &, .item-card-label, .game-card-experimental, .game-card-name-secondary, .sg-color-cell, .text-footer, .dialog-message span {
+                &, &:active, &:focus, &:hover {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
+            .text-date-hint, .text-date-hint {
+                &, &:active, &:focus, &:hover, &:visited, &:link {
+                    font-size: 10px;
+                    font-weight: 400;
+                }
+            }
+            .font-title, .text-name, .text-label {
+                &, &:active, &:focus, &:hover, &:visited, &:link {
+                    font-weight: 400;
+                }
+            }
+            .font-header-2 {
+                &, &:active, &:focus, &:hover, &:visited, &:link {
+                    font-weight: 400;
+                }
+            }
+            .text-description, p, .font-body, .toggle-target .field-content, .font-body, .text-name, #navbar-search-input {
+                &, &:active, &:focus, &:hover, &:visited, &:link {
+                    font-weight: 300;
+                }
+            }
+            .game-name-title {
+                line-height: 22px;
+            }
+            .line-height {
+                line-height: 1em;
+            }
+            .game-main-content .game-calls-to-action {
+                padding: 0 12px 0 24px;
+            }
+            .game-main-content .game-calls-to-action .game-title-container {
+                padding: 0 24px 0 0;
+            }
+            .game-main-content .game-calls-to-action #game-context-menu {
+                top: 10px;
+                right: 12px;
+            }
+            h1, .h1, .font-title {
+                &, &:hover, &:focus, &:active {
+                    font-size: 36px;
+                    font-weight: 400
+                }
+                @media (max-width: 767px) {
+                    & {
+                        &, &:hover, &:focus, &:active {
+                            font-size:30px
+                        }
+                    }
+                }
+            }
+            h2, .h2 {
+                &, &:hover, &:focus, &:active {
+                    font-size: 30px;
+                    font-weight: 400
+                }
+                @media (max-width: 767px) {
+                    & {
+                        &, &:hover, &:focus, &:active {
+                            font-size:24px
+                        }
+                    }
+                }
+            }
+            h3, .h3, .container-header h2 {
+                &, &:hover, &:focus, &:active {
+                    font-size: 24px;
+                    font-weight: 300
+                }
+                @media (max-width: 767px) {
+                    & {
+                        &, &:hover, &:focus, &:active {
+                            font-size:21px
+                        }
+                    }
+                }
+            }
+            h4, .h4 {
+                &, &:hover, &:focus, &:active {
+                    font-size: 21px;
+                    font-weight: 400
+                }
+                @media (max-width: 767px) {
+                    & {
+                        &, &:hover, &:focus, &:active {
+                            font-size:18px
+                        }
+                    }
+                }
+            }
+            h5, .h5 {
+                &, &:hover, &:focus, &:active {
+                    font-size: 18px;
+                    font-weight: 400
+                }
+                @media (max-width: 767px) {
+                    & {
+                        &, &:hover, &:focus, &:active {
+                            font-size:16px
+                        }
+                    }
+                }
+            }
+            .chat-friend-list .chat-friend-info .chat-brief-timestamp {
+                margin: 3px 0 0;
+                padding: 0 0 0 5px;
+                width: 72px;
+            }
         }
 		
-		.gotham-font div {
-			&, &:hover, &:focus, &:active {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-        }
-        .gotham-font .text-robux-lg {
-            font-size: 24px;
-            font-weight: 400;
-        }
-        .gotham-font .text-footer-nav {
-			&, &:active, &:hover, &:link {
-				font-size: 20px;
-				font-weight: 300;
-			}
-        }
-		.gotham-font .text-lead {
-			&, &:active, &:hover, &:link, &:visited {
-				font-size: 18px;
-				font-weight: 400;
-			}
-		}
-        .gotham-font .font-caption-body, .gotham-font .item-card-creator, .gotham-font .font-caption-header, .gotham-font .font-header-1 {
-			&, &:active, &:focus, &:hover, &:link, &:visited {
-				font-size: 16px;
-				font-weight: 300;
-			}
-        }
         .game-stats-container li:nth-child(1) p:nth-child(1):after, .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
             font-size: 16px;
         }
@@ -6424,33 +6701,9 @@
 				font-weight: 600;
 			}
 		}
-        .gotham-font .font-bold, .gotham-font strong {
-            &, &:hover, &:link, &:visited, &:active {
-                font-weight: 600;
-            }
-        }
 		.item-card-container .item-card-name, .game-card-container .game-card-name {
 			&, &:hover, &:focus, &:active {
 				font-weight: 500;
-			}
-		}
-		.gotham-font .game-name-title {
-			&:hover, &:focus, &:active {
-				line-height: 22px;
-			}
-		}
-		.gotham-font .small, .gotham-font .small-oneline, .gotham-font .text-pastname {
-			&, &:hover, &:focus, &:link, &:visited, &:active {
-				font-size: 14px;
-				font-weight: 400;
-			}
-		}
-		.gotham-font .chat-search-input {
-			&, &:hover, &:focus, &:active {
-				font-size: 14px;
-			}
-			&, &::placeholder {
-				font-weight: 400;
 			}
 		}
 		.chat-friend-list .chat-friend-info .chat-friend-name {
@@ -6463,54 +6716,11 @@
 				font-size: 12px;
 			}
 		}
-		.gotham-font .xsmall, .gotham-font, .gotham-font .item-card-label, .game-card-experimental, .gotham-font .game-card-name-secondary, .gotham-font .sg-color-cell, .gotham-font .text-footer, .dialog-message span {
-			&, &:active, &:focus, &:hover {
-				font-size: 12px;
-				font-weight: 400;
-			}
-		}
-		.gotham-font .text-date-hint, .gotham-font .text-date-hint {
-			&, &:active, &:focus, &:hover, &:visited, &:link {
-				font-size: 10px;
-				font-weight: 400;
-			}
-        }
 		.chat-friend-message span.read {
 			font-weight: 700;
 		}
-        .gotham-font .font-title, .gotham-font .text-name, .gotham-font .text-label {
-			&, &:active, &:focus, &:hover, &:visited, &:link {
-				font-weight: 400;
-			}
-        }
-		.gotham-font .font-header-2 {
-            &, &:active, &:focus, &:hover, &:visited, &:link {
-                font-weight: 400;
-            }
-        }
-        .gotham-font .text-description, .gotham-font p, .gotham-font .font-body, .gotham-font .toggle-target .field-content, .gotham-font .font-body, .gotham-font .text-name, #navbar-search-input {
-			&, &:active, &:focus, &:hover, &:visited, &:link {
-				font-weight: 300;
-			}
-        }
-        .gotham-font .game-name-title {
-            line-height: 22px;
-        }
-        .gotham-font .line-height {
-            line-height: 1em;
-        }
         .robux-page .premium-container .page-top .top-header > .ng-binding::after {
             font-weight: inherit;
-        }
-        .gotham-font .game-main-content .game-calls-to-action {
-            padding: 0 12px 0 24px;
-        }
-        .gotham-font .game-main-content .game-calls-to-action .game-title-container {
-            padding: 0 24px 0 0;
-        }
-        .gotham-font .game-main-content .game-calls-to-action #game-context-menu {
-            top: 10px;
-            right: 12px;
         }
         body .icon-robux-price-container .icon-robux-16x16 {
             margin-top: 0;
@@ -6518,75 +6728,11 @@
         .light-theme .redirection-banner, .dark-theme .redirection-banner {
             font-size: 20px;
         }
-        .gotham-font .chat-friend-list .chat-friend-info .chat-brief-timestamp {
-            margin: 3px 0 0;
-            padding: 0 0 0 5px;
-            width: 72px;
-        }
 		.game-card-link .friend-activity-label, .game-card-link .native-ad-label {
 			&, &:hover, &:focus, &:active {
 				font-size: 12px;
 				font-weight: 400;
 				line-height: 1.866em;
-			}
-		}
-		
-		.gotham-font h1, .gotham-font .h1, .gotham-font .font-title {
-			&, &:hover, &:focus, &:active {
-				font-size: 36px;
-				font-weight: 400
-			}
-		}
-		.gotham-font h2, .gotham-font .h2 {
-			&, &:hover, &:focus, &:active {
-				font-size: 30px;
-				font-weight: 400
-			}
-		}
-		.gotham-font h3, .gotham-font .h3, .container-header h2 {
-			&, &:hover, &:focus, &:active {
-				font-size: 24px;
-				font-weight: 300
-			}
-		}
-		.gotham-font h4, .gotham-font .h4 {
-			&, &:hover, &:focus, &:active {
-				font-size: 21px;
-				font-weight: 400
-			}
-		}
-		.gotham-font h5, .gotham-font .h5 {
-			&, &:hover, &:focus, &:active {
-				font-size: 18px;
-				font-weight: 400
-			}
-		}
-		
-		@media (max-width: 767px) {
-			.gotham-font h1, .gotham-font .h1, .gotham-font .font-title {
-				&, &:hover, &:focus, &:active {
-					font-size:30px
-				}
-			}
-			.gotham-font h2, .gotham-font .h2 {
-				&, &:hover, &:focus, &:active {
-					font-size:24px
-				}
-			}
-			.gotham-font h3, .gotham-font .h3, .container-header h2 {
-				&, &:hover, &:focus, &:active {
-					font-size:21px
-				}
-			}
-			.gotham-font h4, .gotham-font .h4 {
-				&, &:hover, &:focus, &:active {
-					font-size:18px
-				}
-			}
-			.gotham-font h5, .gotham-font .h5 {
-				&, &:hover, &:focus, &:active {
-					font-size:16px
-				}
 			}
 		}
 		
@@ -7987,7 +8133,7 @@
         margin: 0 0 2px;
     }
 	& when (@SourceSansPro = 0) {
-		.gotham-font .chat-friend-list .chat-friend-info .chat-friend-name {
+		.gotham-font .chat-friend-list .chat-friend-info .chat-friend-name, .builder-font .chat-friend-list .chat-friend-info .chat-friend-name {
 			width: 67%;
 			width: calc(100% - 70px);
 		}
@@ -8196,7 +8342,7 @@
             max-width: 1154px;
         }
         & when (@SourceSansPro = 1) {
-            .gotham-font .alert-warning, .gotham-font .alert-loading, .gotham-font .alert-success {
+            .gotham-font .alert-warning, .gotham-font .alert-loading, .gotham-font .alert-success, .builder-font .alert-warning, .builder-font .alert-loading, .builder-font .alert-success {
                 font-size: 18px;
                 font-weight: 300;
                 line-height: 1em;
@@ -8257,7 +8403,7 @@
 			cursor: text;
 		}
 		& when (@SourceSansPro = 0) {
-			.gotham-font .sg-navigation .navbar-header #menu-btn:before {
+			.gotham-font .sg-navigation .navbar-header #menu-btn:before, .builder-font .sg-navigation .navbar-header #menu-btn:before {
 				font-size: 18px;
 				font-weight: 400;
 			}
@@ -8306,7 +8452,7 @@
             padding: 0 12px;
         }
         & when not (@SourceSansPro = 1) {
-            .gotham-font .side-nav-container .side-nav .menu-item a {
+            .gotham-font .side-nav-container .side-nav .menu-item a, .builder-font .side-nav-container .side-nav .menu-item a {
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 1.4em
@@ -8536,7 +8682,7 @@
     }
     
     & when (@PlayButtonStyle = 2018M) {
-        .game-main-content .game-calls-to-action .game-buttons-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container {
+        .game-main-content .game-calls-to-action .game-buttons-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container {
             padding: 0 12px 0 24px;
             position: absolute;
         }
@@ -8568,7 +8714,7 @@
             display: table-cell;
             vertical-align: middle;
         }
-        .gotham-font .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .favorite-button {
+        .gotham-font .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .favorite-button, .builder-font .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .favorite-button {
             width: 100%;
         }
         .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container {
@@ -8608,7 +8754,7 @@
         }
     }
     & when (@PlayButtonStyle = 2018M) or (@PlayButtonStyle = 2018L) {
-        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg {
+        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg {
             padding: 15px 15px;
         }
         #game-details-play-button-container .btn-common-play-game-lg:not(.random-server-button) .icon-common-play {
@@ -8626,7 +8772,7 @@
         }
     }
     & when (@PlayButtonStyle = 2019E) {
-        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg {
+        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg {
             padding: 12px 12px;
         }
         .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
@@ -8637,13 +8783,13 @@
         }
     }
     & when (@PlayButtonStyle = 2019M) {
-        .gotham-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
+        .gotham-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .builder-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
             width: 100%;
         }
-        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg {
+        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg {
             padding: 4px 16px;
         }
-        .gotham-font .game-main-content .game-calls-to-action #game-details-play-button-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container {
+        .gotham-font .game-main-content .game-calls-to-action #game-details-play-button-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container, .builder-font .game-main-content .game-calls-to-action #game-details-play-button-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container {
             border-top: 0 none;
             padding-bottom: 5px;
         }
@@ -8683,7 +8829,7 @@
             .game-main-content #game-details-play-button-container {
                 padding: 24px 12px;
             }
-            .gotham-font .game-main-content .game-calls-to-action .game-buttons-container {
+            .gotham-font .game-main-content .game-calls-to-action .game-buttons-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container {
                 margin: 0;
             }
             .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
@@ -8691,7 +8837,7 @@
             }
         }
         @media (max-width: 991px) and (min-width: 767px) {
-            .game-main-content.follow-button-enabled .favorite-follow-vote-share, .gotham-font .game-main-content .game-calls-to-action .game-title-container {
+            .game-main-content.follow-button-enabled .favorite-follow-vote-share, .gotham-font .game-main-content .game-calls-to-action .game-title-container, .builder-font .game-main-content .game-calls-to-action .game-title-container {
                 padding-left: 0;
                 padding-right: 0;
             }
@@ -9135,14 +9281,14 @@
         }
     }
     
-    .light-theme .btn-generic-more-sm, .light-theme .btn-generic-more-sm:hover, .light-theme .btn-generic-more-sm:focus, .light-theme .btn-generic-more-sm.active, .light-theme .btn-generic-more-sm:active, .light-theme .touch .btn-generic-more-sm.active, .light-theme .touch .btn-generic-more-sm:active, .light-theme .btn-navigation-nav-menu-md.active, .light-theme .btn-navigation-nav-menu-md:active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:focus, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:hover, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:active {
+    .light-theme .btn-generic-more-sm, .light-theme .btn-generic-more-sm:hover, .light-theme .btn-generic-more-sm:focus, .light-theme .btn-generic-more-sm.active, .light-theme .btn-generic-more-sm:active, .light-theme .touch .btn-generic-more-sm.active, .light-theme .touch .btn-generic-more-sm:active, .light-theme .btn-navigation-nav-menu-md.active, .light-theme .btn-navigation-nav-menu-md:active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .light-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:focus, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:hover, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn:active, .light-theme .profile-header-more .profile-dropdown .input-dropdown-btn.btn-default.dropdown-toggle {
         background: transparent;
         border: 0 transparent;
         border-radius: 0;
         padding: 0;
         color: #191919;
     }
-    .dark-theme .btn-generic-more-sm, .dark-theme .btn-generic-more-sm:hover, .dark-theme .btn-generic-more-sm:focus, .dark-theme .btn-generic-more-sm.active, .dark-theme .btn-generic-more-sm:active, .dark-theme .touch .btn-generic-more-sm.active, .dark-theme .touch .btn-generic-more-sm:active, .dark-theme .btn-navigation-nav-menu-md.active, .dark-theme .btn-navigation-nav-menu-md:active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:focus, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:hover, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:focus, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:hover, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:active {
+    .dark-theme .btn-generic-more-sm, .dark-theme .btn-generic-more-sm:hover, .dark-theme .btn-generic-more-sm:focus, .dark-theme .btn-generic-more-sm.active, .dark-theme .btn-generic-more-sm:active, .dark-theme .touch .btn-generic-more-sm.active, .dark-theme .touch .btn-generic-more-sm:active, .dark-theme .btn-navigation-nav-menu-md.active, .dark-theme .btn-navigation-nav-menu-md:active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:focus, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:hover, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md.active, .dark-theme #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md:active, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:focus, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:hover, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn:active, .dark-theme .profile-header-more .profile-dropdown .input-dropdown-btn.btn-default.dropdown-toggle {
         background: transparent;
         border: 0 transparent;
         border-radius: 0;
@@ -9658,7 +9804,7 @@
             content: ' Playing';
         }
 		& when (@SourceSansPro = 0) {
-			.gotham-font .game-card-info .info-label.playing-counts-label {
+			.gotham-font .game-card-info .info-label.playing-counts-label, .builder-font .game-card-info .info-label.playing-counts-label {
 				font-size: 16px;
 				font-weight: 400;
 			}
@@ -9776,7 +9922,7 @@
             font-size: 10px;
             line-height: 12px;
         }
-        .gotham-font .game-cards .game-card .game-card-info .playing-counts-label, .gotham-font .game-cards .game-card .game-card-info .vote-percentage-label {
+        .gotham-font .game-cards .game-card .game-card-info .playing-counts-label, .gotham-font .game-cards .game-card .game-card-info .vote-percentage-label, .builder-font .game-cards .game-card .game-card-info .playing-counts-label, .builder-font .game-cards .game-card .game-card-info .vote-percentage-label {
             padding: 0;
         }
     }
@@ -13315,7 +13461,7 @@
 		}
 	}
 	/*/== Fixes ==/*/
-	.gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn {
+	.gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn, .builder-font .game-item-container .game-btn, .builder-font .game-list-container .game-btn {
 		&, &:hover, &:focus, &:active {
 			font-size: 16px
 		}
@@ -13398,7 +13544,7 @@
     /*/Extras/*/
     
 	& when (@SourceSansPro = 0) {
-		.light-theme.gotham-font, .dark-theme.gotham-font {
+		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
 			& .btn-growth-md, & a.btn-growth-md {
 				&, &:active, &:hover, &:link {
 					font-size: 16px;
@@ -13407,7 +13553,7 @@
 		}
 	}
 	& when (@SourceSansPro = 1) {
-		.light-theme.gotham-font, .dark-theme.gotham-font {
+		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
 			& .btn-growth-md, & a.btn-growth-md {
 				&, &:active, &:hover, &:link {
 					font-size: 18px;
@@ -13540,25 +13686,45 @@
     }
     
     & when (@SourceSansPro = 0) {
-        .gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited {
-            & when (@BoxShadows = 1) {
-                box-shadow: none;
+        .gotham-font, .builder-font {
+            &.light-theme, &.dark-theme {
+                .refresh-link, .see-all-link {
+                    &, &-icon {
+                        &, &:active, &:hover, &:link, &:visited {
+                            &, .touch {
+                                & when (@BoxShadows = 1) {
+                                    box-shadow: none;
+                                }
+                                background-color: transparent;
+                                border-color: transparent;
+                                color: #00a2ff;
+                            }
+                        }
+                    }
+                }
             }
-            background-color: transparent;
-            border-color: transparent;
-            color: #00a2ff;
         }
     }
     & when (@SourceSansPro = 1) {
-        .gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited {
-            color: #fff;
-            font-size: 14px;
-            text-decoration: none;
+        .gotham-font, .builder-font {
+            &.light-theme, &.dark-theme {
+                .refresh-link, .see-all-link {
+                    &, &-icon {
+                        &, &:active, &:hover, &:link, &:visited {
+                            &, .touch {
+                                color: #fff;
+                                font-size: 14px;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
-        .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:focus, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:focus, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon.btn-control-xs, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:focus, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:hover, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs:active, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs:focus, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs:hover, .gotham-font.light-theme .see-all-link.btn-control-xs, .gotham-font.light-theme .see-all-link.btn-control-xs:active, .gotham-font.light-theme .see-all-link.btn-control-xs:hover, .gotham-font.light-theme .see-all-link.btn-control-xs:link, .gotham-font.light-theme .see-all-link.btn-control-xs:visited, .gotham-font.light-theme .touch .see-all-link.btn-control-xs, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:active, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:hover, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:link, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:visited {
+        .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:focus, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:focus, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon.btn-control-xs, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:focus, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:hover, .gotham-font.light-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs:active, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs:focus, .gotham-font.light-theme .touch .refresh-link-icon.btn-control-xs:hover, .gotham-font.light-theme .see-all-link.btn-control-xs, .gotham-font.light-theme .see-all-link.btn-control-xs:active, .gotham-font.light-theme .see-all-link.btn-control-xs:hover, .gotham-font.light-theme .see-all-link.btn-control-xs:link, .gotham-font.light-theme .see-all-link.btn-control-xs:visited, .gotham-font.light-theme .touch .see-all-link.btn-control-xs, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:active, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:hover, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:link, .gotham-font.light-theme .touch .see-all-link.btn-control-xs:visited, .builder-font.light-theme .refresh-link-icon, .builder-font.light-theme .refresh-link-icon:active, .builder-font.light-theme .refresh-link-icon:focus, .builder-font.light-theme .refresh-link-icon:hover, .builder-font.light-theme .touch .refresh-link-icon, .builder-font.light-theme .touch .refresh-link-icon:active, .builder-font.light-theme .touch .refresh-link-icon:focus, .builder-font.light-theme .touch .refresh-link-icon:hover, .builder-font.light-theme .refresh-link-icon.btn-control-xs, .builder-font.light-theme .refresh-link-icon.btn-control-xs:active, .builder-font.light-theme .refresh-link-icon.btn-control-xs:focus, .builder-font.light-theme .refresh-link-icon.btn-control-xs:hover, .builder-font.light-theme .refresh-link-icon.btn-control-xs:active, .builder-font.light-theme .touch .refresh-link-icon.btn-control-xs, .builder-font.light-theme .touch .refresh-link-icon.btn-control-xs:active, .builder-font.light-theme .touch .refresh-link-icon.btn-control-xs:focus, .builder-font.light-theme .touch .refresh-link-icon.btn-control-xs:hover, .builder-font.light-theme .see-all-link.btn-control-xs, .builder-font.light-theme .see-all-link.btn-control-xs:active, .builder-font.light-theme .see-all-link.btn-control-xs:hover, .builder-font.light-theme .see-all-link.btn-control-xs:link, .builder-font.light-theme .see-all-link.btn-control-xs:visited, .builder-font.light-theme .touch .see-all-link.btn-control-xs, .builder-font.light-theme .touch .see-all-link.btn-control-xs:active, .builder-font.light-theme .touch .see-all-link.btn-control-xs:hover, .builder-font.light-theme .touch .see-all-link.btn-control-xs:link, .builder-font.light-theme .touch .see-all-link.btn-control-xs:visited {
             color: #191919;
         }
-        .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:focus, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:focus, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:focus, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:hover, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs:active, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs:focus, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs:hover, .gotham-font.dark-theme .see-all-link.btn-control-xs, .gotham-font.dark-theme .see-all-link.btn-control-xs:active, .gotham-font.dark-theme .see-all-link.btn-control-xs:hover, .gotham-font.dark-theme .see-all-link.btn-control-xs:link, .gotham-font.dark-theme .see-all-link.btn-control-xs:visited, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:active, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:hover, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:link, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:visited {
+        .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:focus, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:focus, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:focus, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:hover, .gotham-font.dark-theme .refresh-link-icon.btn-control-xs:active, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs:active, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs:focus, .gotham-font.dark-theme .touch .refresh-link-icon.btn-control-xs:hover, .gotham-font.dark-theme .see-all-link.btn-control-xs, .gotham-font.dark-theme .see-all-link.btn-control-xs:active, .gotham-font.dark-theme .see-all-link.btn-control-xs:hover, .gotham-font.dark-theme .see-all-link.btn-control-xs:link, .gotham-font.dark-theme .see-all-link.btn-control-xs:visited, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:active, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:hover, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:link, .gotham-font.dark-theme .touch .see-all-link.btn-control-xs:visited, .builder-font.dark-theme .refresh-link-icon, .builder-font.dark-theme .refresh-link-icon:active, .builder-font.dark-theme .refresh-link-icon:focus, .builder-font.dark-theme .refresh-link-icon:hover, .builder-font.dark-theme .touch .refresh-link-icon, .builder-font.dark-theme .touch .refresh-link-icon:active, .builder-font.dark-theme .touch .refresh-link-icon:focus, .builder-font.dark-theme .touch .refresh-link-icon:hover, .builder-font.dark-theme .refresh-link-icon.btn-control-xs, .builder-font.dark-theme .refresh-link-icon.btn-control-xs:active, .builder-font.dark-theme .refresh-link-icon.btn-control-xs:focus, .builder-font.dark-theme .refresh-link-icon.btn-control-xs:hover, .builder-font.dark-theme .refresh-link-icon.btn-control-xs:active, .builder-font.dark-theme .touch .refresh-link-icon.btn-control-xs, .builder-font.dark-theme .touch .refresh-link-icon.btn-control-xs:active, .builder-font.dark-theme .touch .refresh-link-icon.btn-control-xs:focus, .builder-font.dark-theme .touch .refresh-link-icon.btn-control-xs:hover, .builder-font.dark-theme .see-all-link.btn-control-xs, .builder-font.dark-theme .see-all-link.btn-control-xs:active, .builder-font.dark-theme .see-all-link.btn-control-xs:hover, .builder-font.dark-theme .see-all-link.btn-control-xs:link, .builder-font.dark-theme .see-all-link.btn-control-xs:visited, .builder-font.dark-theme .touch .see-all-link.btn-control-xs, .builder-font.dark-theme .touch .see-all-link.btn-control-xs:active, .builder-font.dark-theme .touch .see-all-link.btn-control-xs:hover, .builder-font.dark-theme .touch .see-all-link.btn-control-xs:link, .builder-font.dark-theme .touch .see-all-link.btn-control-xs:visited {
             color: #e6e6e6;
         }
     }
@@ -13725,7 +13891,7 @@
         }
     }
     
-    .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon {
+    .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .refresh-link-icon, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .refresh-link-icon {
         padding: 4px;
         & when (@SourceSansPro = 0) {
             min-width: min-content;
@@ -13734,18 +13900,18 @@
             min-width: 90px;
         }
     }
-    .gotham-font.light-theme .see-all-link-icon:after, .gotham-font.light-theme .refresh-link-icon:after, .gotham-font.dark-theme .see-all-link-icon:after, .gotham-font.dark-theme .refresh-link-icon:after {
+    .gotham-font.light-theme .see-all-link-icon:after, .gotham-font.light-theme .refresh-link-icon:after, .gotham-font.dark-theme .see-all-link-icon:after, .gotham-font.dark-theme .refresh-link-icon:after, .builder-font.light-theme .see-all-link-icon:after, .builder-font.light-theme .refresh-link-icon:after, .builder-font.dark-theme .see-all-link-icon:after, .builder-font.dark-theme .refresh-link-icon:after {
         display: none;
     }
     
 	& when (@SourceSansPro = 0) {
 		.light-theme, .dark-theme {
-			&.gotham-font .btn-to-link, &.gotham-font .btn-to-link:active, &.gotham-font .btn-to-link:focus, &.gotham-font .btn-to-link:hover, &.gotham-font .refresh-link, &.gotham-font .refresh-link-icon, &.gotham-font .refresh-link-icon:active, &.gotham-font .refresh-link-icon:focus, &.gotham-font .refresh-link-icon:hover, &.gotham-font .refresh-link:active, &.gotham-font .refresh-link:focus, &.gotham-font .refresh-link:hover, &.gotham-font .see-all-link, &.gotham-font .see-all-link-icon, &.gotham-font .see-all-link-icon:active, &.gotham-font .see-all-link-icon:focus, &.gotham-font .see-all-link-icon:hover, &.gotham-font .see-all-link:active, &.gotham-font .see-all-link:focus, &.gotham-font .see-all-link:hover, &.gotham-font .touch .btn-to-link, &.gotham-font .touch .btn-to-link:active, &.gotham-font .touch .btn-to-link:focus, &.gotham-font .touch .btn-to-link:hover, &.gotham-font .touch .refresh-link, &.gotham-font .touch .refresh-link-icon, &.gotham-font .touch .refresh-link-icon:active, &.gotham-font .touch .refresh-link-icon:focus, &.gotham-font .touch .refresh-link-icon:hover, &.gotham-font .touch .refresh-link:active, &.gotham-font .touch .refresh-link:focus, &.gotham-font .touch .refresh-link:hover, &.gotham-font .touch .see-all-link, &.gotham-font .touch .see-all-link-icon, &.gotham-font .touch .see-all-link-icon:active, &.gotham-font .touch .see-all-link-icon:focus, &.gotham-font .touch .see-all-link-icon:hover, &.gotham-font .touch .see-all-link:active, &.gotham-font .touch .see-all-link:focus, &.gotham-font .touch .see-all-link:hover {
+			&.gotham-font .btn-to-link, &.gotham-font .btn-to-link:active, &.gotham-font .btn-to-link:focus, &.gotham-font .btn-to-link:hover, &.gotham-font .refresh-link, &.gotham-font .refresh-link-icon, &.gotham-font .refresh-link-icon:active, &.gotham-font .refresh-link-icon:focus, &.gotham-font .refresh-link-icon:hover, &.gotham-font .refresh-link:active, &.gotham-font .refresh-link:focus, &.gotham-font .refresh-link:hover, &.gotham-font .see-all-link, &.gotham-font .see-all-link-icon, &.gotham-font .see-all-link-icon:active, &.gotham-font .see-all-link-icon:focus, &.gotham-font .see-all-link-icon:hover, &.gotham-font .see-all-link:active, &.gotham-font .see-all-link:focus, &.gotham-font .see-all-link:hover, &.gotham-font .touch .btn-to-link, &.gotham-font .touch .btn-to-link:active, &.gotham-font .touch .btn-to-link:focus, &.gotham-font .touch .btn-to-link:hover, &.gotham-font .touch .refresh-link, &.gotham-font .touch .refresh-link-icon, &.gotham-font .touch .refresh-link-icon:active, &.gotham-font .touch .refresh-link-icon:focus, &.gotham-font .touch .refresh-link-icon:hover, &.gotham-font .touch .refresh-link:active, &.gotham-font .touch .refresh-link:focus, &.gotham-font .touch .refresh-link:hover, &.gotham-font .touch .see-all-link, &.gotham-font .touch .see-all-link-icon, &.gotham-font .touch .see-all-link-icon:active, &.gotham-font .touch .see-all-link-icon:focus, &.gotham-font .touch .see-all-link-icon:hover, &.gotham-font .touch .see-all-link:active, &.gotham-font .touch .see-all-link:focus, &.gotham-font .touch .see-all-link:hover, &.builder-font .btn-to-link, &.builder-font .btn-to-link:active, &.builder-font .btn-to-link:focus, &.builder-font .btn-to-link:hover, &.builder-font .refresh-link, &.builder-font .refresh-link-icon, &.builder-font .refresh-link-icon:active, &.builder-font .refresh-link-icon:focus, &.builder-font .refresh-link-icon:hover, &.builder-font .refresh-link:active, &.builder-font .refresh-link:focus, &.builder-font .refresh-link:hover, &.builder-font .see-all-link, &.builder-font .see-all-link-icon, &.builder-font .see-all-link-icon:active, &.builder-font .see-all-link-icon:focus, &.builder-font .see-all-link-icon:hover, &.builder-font .see-all-link:active, &.builder-font .see-all-link:focus, &.builder-font .see-all-link:hover, &.builder-font .touch .btn-to-link, &.builder-font .touch .btn-to-link:active, &.builder-font .touch .btn-to-link:focus, &.builder-font .touch .btn-to-link:hover, &.builder-font .touch .refresh-link, &.builder-font .touch .refresh-link-icon, &.builder-font .touch .refresh-link-icon:active, &.builder-font .touch .refresh-link-icon:focus, &.builder-font .touch .refresh-link-icon:hover, &.builder-font .touch .refresh-link:active, &.builder-font .touch .refresh-link:focus, &.builder-font .touch .refresh-link:hover, &.builder-font .touch .see-all-link, &.builder-font .touch .see-all-link-icon, &.builder-font .touch .see-all-link-icon:active, &.builder-font .touch .see-all-link-icon:focus, &.builder-font .touch .see-all-link-icon:hover, &.builder-font .touch .see-all-link:active, &.builder-font .touch .see-all-link:focus, &.builder-font .touch .see-all-link:hover {
 				background-color: transparent;
 				border: 0;
 			}
 		}
-		.gotham-font .btn-to-link, .gotham-font .refresh-link, .gotham-font .refresh-link-icon, .gotham-font .see-all-link, .gotham-font .see-all-link-icon, .gotham-font .touch .btn-to-link, .gotham-font .touch .refresh-link, .gotham-font .touch .refresh-link-icon, .gotham-font .touch .see-all-link, .gotham-font .touch .see-all-link-icon {
+		.gotham-font .btn-to-link, .gotham-font .refresh-link, .gotham-font .refresh-link-icon, .gotham-font .see-all-link, .gotham-font .see-all-link-icon, .gotham-font .touch .btn-to-link, .gotham-font .touch .refresh-link, .gotham-font .touch .refresh-link-icon, .gotham-font .touch .see-all-link, .gotham-font .touch .see-all-link-icon, .builder-font .btn-to-link, .builder-font .refresh-link, .builder-font .refresh-link-icon, .builder-font .see-all-link, .builder-font .see-all-link-icon, .builder-font .touch .btn-to-link, .builder-font .touch .refresh-link, .builder-font .touch .refresh-link-icon, .builder-font .touch .see-all-link, .builder-font .touch .see-all-link-icon {
 			&, &:hover, &:focus, &:active, &:link, &:visited {
 				font-size: 16px;
 			}
@@ -13910,7 +14076,7 @@
 		.content .page-content .rbx-tab-content .account-field-verified-icon {
 			background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Generic' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='56px' height='2212px' viewBox='0 0 56 2212' style='enable-background:new 0 0 56 2212;' xml:space='preserve' preserveAspectRatio='none'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:none;stroke:%23000000;stroke-width:2;stroke-miterlimit:10;%7D .st2%7Bfill:none;stroke:%23000000;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;%7D .st3%7Bfill:none;stroke:%23000000;stroke-width:1.9928;stroke-miterlimit:10;%7D .st4%7Bfill:none;stroke:%23000000;stroke-width:1.9928;stroke-linecap:round;stroke-miterlimit:10;%7D .st5%7Bfill:none;%7D .st6%7Bfill:%23757575;%7D .st7%7Bfill:%23191919;%7D .st8%7Bfill:none;stroke:%23231F20;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;%7D .st9%7Bfill:none;stroke:%23231F20;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st10%7Bfill:none;stroke:%23757575;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st11%7Bfill:none;stroke:%23757575;stroke-width:2;stroke-miterlimit:10;%7D .st12%7Bfill:%23E3E3E3;%7D .st13%7Bfill:%2300A2FF;%7D .st14%7Bfill:%23191919;stroke:%23191919;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st15%7Bfill:none;stroke:%23191919;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st16%7Bfill:none;stroke:%23191919;stroke-width:2;stroke-miterlimit:10;%7D .st17%7Bfill:none;stroke:%2300A2FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st18%7Bfill:none;stroke:%2300A2FF;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st19%7Bfill:%23B8B8B8;%7D .st20%7Bfill:none;stroke:%23B8B8B8;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st21%7Bfill:%23E2231A;%7D .st22%7Bfill:none;stroke:%23FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st23%7Bfill:none;stroke:%23B8B8B8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st24%7Bfill:none;stroke:%23FFFFFF;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st25%7Bfill:none;stroke:%23B8B8B8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D .st26%7Bfill:%23D86868;%7D .st27%7Bfill:%23CC9E71;%7D .st28%7Bfill:%23FD8192;%7D .st29%7Bfill:%23CCCCCC;%7D .st30%7Bfill:%2366C7FF;%7D .st31%7Bfill:%23F6B702;%7D%0A%3C/style%3E%3Cg id='femaleWhite-on'%3E%3Ccircle id='XMLID_149_' class='st0' cx='42' cy='2134' r='4'/%3E%3Cg id='XMLID_146_'%3E%3Cpath id='XMLID_147_' class='st0' d='M41,2139c-0.5,0-1.2,0.4-1.6,0.8l-4.9,7.3c-0.3,0.5-0.1,0.9,0.4,1.1l6.1,1.5 c0.5,0.1,1.4,0.1,1.9,0l6.1-1.5c0.5-0.1,0.7-0.6,0.4-1.1l-4.9-7.3c-0.3-0.5-1-0.8-1.6-0.8H41z'/%3E%3C/g%3E%3Cg id='XMLID_138_'%3E%3Cpath id='XMLID_139_' class='st0' d='M39,2146c-0.5,0-0.9,0.4-0.8,1l1.5,6.1c0.1,0.5,0.7,1,1.2,1h2c0.5,0,1.1-0.4,1.2-1l1.5-6.1 c0.1-0.5-0.2-1-0.8-1H39z'/%3E%3C/g%3E%3C/g%3E%3Cg id='femaleWhite'%3E%3Cg id='XMLID_128_'%3E%3Cpath id='XMLID_129_' class='st0' d='M14,2138c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S16.2,2138,14,2138z M14,2132 c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S15.1,2132,14,2132z'/%3E%3C/g%3E%3Cg id='XMLID_124_'%3E%3Cpath id='XMLID_125_' class='st0' d='M16,2154h-4c-0.5,0-0.9-0.3-1-0.8l-0.9-4.4l-3.3-0.8c-0.3-0.1-0.6-0.3-0.7-0.6 s-0.1-0.7,0.1-0.9l5-7c0.2-0.3,0.5-0.4,0.8-0.4h4c0.3,0,0.6,0.2,0.8,0.4l5,7c0.2,0.3,0.2,0.6,0.1,0.9c-0.1,0.3-0.4,0.5-0.7,0.6 l-3.4,0.8l-0.9,4.4C16.9,2153.7,16.5,2154,16,2154z M12.8,2152h2.4l0.8-4.2c0.1-0.4,0.4-0.7,0.7-0.8l2.6-0.6l-3.8-5.4h-3l-3.8,5.4 l2.6,0.6c0.4,0.1,0.7,0.4,0.7,0.8L12.8,2152z'/%3E%3C/g%3E%3C/g%3E%3Cg id='maleWhite-on'%3E%3Ccircle id='XMLID_119_' class='st0' cx='42' cy='2106' r='4'/%3E%3Cg id='XMLID_104_'%3E%3Cpath id='XMLID_118_' class='st0' d='M39,2118c-0.5,0-0.9,0.4-0.8,1l1.5,6.1c0.1,0.5,0.7,1,1.2,1h2c0.5,0,1.1-0.4,1.2-1l1.5-6.1 c0.1-0.5-0.2-1-0.8-1H39z'/%3E%3C/g%3E%3Cg id='XMLID_100_'%3E%3Cpath id='XMLID_103_' class='st0' d='M36,2112c0-0.6,0.5-1,1-1h10c0.5,0,1,0.4,1,1v5c0,0.6-0.4,1.2-0.9,1.4l-4.2,2.1 c-0.5,0.2-1.3,0.2-1.8,0l-4.2-2.1c-0.5-0.2-0.9-0.9-0.9-1.4C36,2117,36,2112,36,2112z'/%3E%3C/g%3E%3C/g%3E%3Cg id='maleWhite'%3E%3Cg id='XMLID_95_'%3E%3Cpath id='XMLID_99_' class='st0' d='M14,2110c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S16.2,2110,14,2110z M14,2104c-1.1,0-2,0.9-2,2 s0.9,2,2,2s2-0.9,2-2S15.1,2104,14,2104z'/%3E%3C/g%3E%3Cg id='XMLID_89_'%3E%3Cpath id='XMLID_92_' class='st0' d='M16,2126h-4c-0.5,0-0.9-0.4-1-0.8l-0.9-5.5l-1.5-0.8c-0.4-0.2-0.6-0.5-0.6-0.9v-6 c0-0.6,0.4-1,1-1h10c0.6,0,1,0.4,1,1v6c0,0.4-0.2,0.7-0.6,0.9l-1.5,0.8l-0.9,5.5C16.9,2125.6,16.5,2126,16,2126z M12.8,2124h2.3 l0.9-5.2c0.1-0.3,0.3-0.6,0.5-0.7l1.4-0.7v-4.4h-8v4.4l1.4,0.7c0.3,0.1,0.5,0.4,0.5,0.7L12.8,2124z'/%3E%3C/g%3E%3C/g%3E%3Cg id='password-hide'%3E%3Cpath class='st1' d='M11.9,2060.5c-1.2-0.7-2-2-1.9-3.4c0-2.2,1.8-4,4-4c1.5,0,2.7,0.8,3.4,1.9'/%3E%3Cpath class='st1' d='M11.9,2060.5'/%3E%3Cpath class='st2' d='M17.9,2058c-0.4,1.4-1.5,2.6-2.9,2.9'/%3E%3Cpath class='st2' d='M21.9,2054.2c1.1,0.6,2.1,1.4,3.1,2.3'/%3E%3Cpath class='st2' d='M3,2056.4c2.9-2.7,6.8-4.4,11-4.3c1.7,0,3.4,0.3,4.9,0.8'/%3E%3Cpath class='st2' d='M8.7,2063c-1-0.4-1.9-0.9-2.7-1.5'/%3E%3Cpath class='st2' d='M22,2061.6c-2.3,1.6-5,2.5-8,2.5c-0.7,0-1.4-0.1-2-0.2'/%3E%3Cline class='st2' x1='23.9' y1='2048' x2='3.9' y2='2068'/%3E%3C/g%3E%3Cg id='password-show'%3E%3Cg%3E%3Cellipse class='st3' cx='14' cy='2028.9' rx='4' ry='4'/%3E%3Cpath class='st4' d='M3,2028.3c2.9-2.7,6.8-4.4,11-4.3c4.3,0,8.1,1.7,11,4.4'/%3E%3Cpath class='st4' d='M21.9,2033.5c-2.3,1.6-5,2.5-8,2.5s-5.7-0.9-8-2.5'/%3E%3C/g%3E%3Crect x='0.2' y='2016.2' transform='matrix(3.589645e-03 -1 1 3.589645e-03 -2016.0522 2037.02)' class='st5' width='27.9' height='27.9'/%3E%3C/g%3E%3Cg id='more_x5F_vertical'%3E%3Cg%3E%3Cpath class='st6' d='M14.5,2001.5v1h-1v-1H14.5 M16.5,1999.5h-5v5h5V1999.5L16.5,1999.5z'/%3E%3C/g%3E%3Cg%3E%3Cpath class='st6' d='M14.5,2009v1h-1v-1H14.5 M16.5,2007h-5v5h5V2007L16.5,2007z'/%3E%3C/g%3E%3Cg%3E%3Cpath class='st6' d='M14.5,1994v1h-1v-1H14.5 M16.5,1992h-5v5h5V1992L16.5,1992z'/%3E%3C/g%3E%3C/g%3E%3Cg id='pause-fill'%3E%3Cpath class='st7' d='M10,1984H6c-0.6,0-1-0.4-1-1v-18c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v18C11,1983.6,10.6,1984,10,1984z'/%3E%3Cpath class='st7' d='M22,1984h-4c-0.6,0-1-0.4-1-1v-18c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v18C23,1983.6,22.6,1984,22,1984z'/%3E%3C/g%3E%3Cg id='regenerate'%3E%3Cpath class='st8' d='M22,1945.2v0.8c0,5-4,9-9,9s-9-4-9-9s4-9,9-9c2.8,0,5.3,1.3,7,3.3'/%3E%3Cpolyline class='st9' points='19.2,1947 22,1944.2 24.8,1947 '/%3E%3C/g%3E%3Cg id='playgame-on'%3E%3Cg%3E%3Cpath class='st6' d='M53.5,1913.2l-4.8-3c-0.2-0.1-0.3-0.2-0.5-0.2H36c-0.2,0-0.4,0-0.5,0.1l-5,3c-0.3,0.2-0.5,0.5-0.5,0.9v11 c0,0.6,0.4,1,1,1h4c0.1,0,0.3,0,0.4-0.1l4.8-1.9H42c0.6,0,1-0.4,1-1v-7.3l9.5,5.2c0.3,0.2,0.7,0.2,1,0s0.5-0.5,0.5-0.9v-6 C54,1913.7,53.8,1913.3,53.5,1913.2z M39,1919h-1v1c0,0.6-0.4,1-1,1s-1-0.4-1-1v-1h-1c-0.6,0-1-0.4-1-1s0.4-1,1-1h1v-1 c0-0.6,0.4-1,1-1s1,0.4,1,1v1h1c0.6,0,1,0.4,1,1S39.6,1919,39,1919z'/%3E%3C/g%3E%3Cg%3E%3Cpath class='st6' d='M46,1930c-0.2,0-0.3,0-0.5-0.1c-0.3-0.2-0.5-0.5-0.5-0.9v-8c0-0.4,0.2-0.7,0.5-0.9c0.3-0.2,0.7-0.2,1,0l7,4 c0.3,0.2,0.5,0.5,0.5,0.9s-0.2,0.7-0.5,0.9l-7,4C46.3,1930,46.2,1930,46,1930z'/%3E%3C/g%3E%3C/g%3E%3Cg id='playgame'%3E%3Cpolyline class='st10' points='25,1921 25,1914 20.2,1911 8,1911 3,1914 3,1925 7,1925 12,1923 14,1923 '/%3E%3Cline class='st10' x1='7' y1='1918' x2='11' y2='1918'/%3E%3Cline class='st10' x1='9' y1='1916' x2='9' y2='1920'/%3E%3Cpath class='st6' d='M18,1915c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S18.8,1915,18,1915L18,1915z'/%3E%3Cpolygon class='st10' points='18,1921 25,1925 18,1929 '/%3E%3C/g%3E%3Cg id='viewdetails-on'%3E%3Cpath class='st6' d='M53.7,1900.3l-3.8-3.8c0.7-1,1.1-2.2,1.1-3.5c0-3.3-2.7-6-6-6s-6,2.7-6,6s2.7,6,6,6c1.3,0,2.5-0.4,3.5-1.1 l3.8,3.8c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3C54.1,1901.3,54.1,1900.7,53.7,1900.3z M45,1897c-2.2,0-4-1.8-4-4s1.8-4,4-4 s4,1.8,4,4S47.2,1897,45,1897z'/%3E%3Cpath class='st6' d='M41.2,1900c-0.2-0.1-0.5-0.2-0.7-0.4c-2.2-1.5-3.6-4-3.6-6.7c0-0.3,0-0.7,0.1-1h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1 h2.6c0.3-0.7,0.7-1.4,1.2-2H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h6h0.1c1.6-0.9,3.6-1.3,5.7-0.8c0.5,0.1,1.1-0.2,1.2-0.8 c0-0.1,0-0.3,0-0.4c0,0,0,0,0-0.1v-5c0-0.6-0.4-1-1-1H31c-0.6,0-1,0.4-1,1v22c0,0.6,0.4,1,1,1h9.7H41h0.3c0.2-0.1,0.4-0.2,0.6-0.5 c0.1-0.1,0.1-0.3,0.1-0.5c0,0,0,0,0-0.1C42,1900.5,41.7,1900.2,41.2,1900z M35,1882h8c0.6,0,1,0.4,1,1s-0.4,1-1,1h-8 c-0.6,0-1-0.4-1-1S34.4,1882,35,1882z'/%3E%3C/g%3E%3Cg id='viewdetails'%3E%3Cg%3E%3Cpolyline class='st10' points='19,1884 19,1879 3,1879 3,1901 14,1901 '/%3E%3C/g%3E%3Ccircle class='st10' cx='17' cy='1893' r='5'/%3E%3Cline class='st10' x1='21' y1='1897' x2='25' y2='1901'/%3E%3Cline class='st10' x1='7' y1='1883' x2='15' y2='1883'/%3E%3Cline class='st10' x1='7' y1='1887' x2='10' y2='1887'/%3E%3Cline class='st10' x1='7' y1='1891' x2='8' y2='1891'/%3E%3C/g%3E%3Cpath id='chat-on_1_' class='st6' d='M54,1852v14c0,0.6-0.4,1-1,1h-8.4l-4.8,5.6c-0.2,0.2-0.5,0.4-0.8,0.4c-0.1,0-0.2,0-0.3-0.1 c-0.4-0.1-0.7-0.5-0.7-0.9v-5h-7c-0.6,0-1-0.4-1-1v-14c0-0.6,0.4-1,1-1h22C53.6,1851,54,1851.4,54,1852z M38,1859c0-1.1-0.9-2-2-2 s-2,0.9-2,2s0.9,2,2,2S38,1860.1,38,1859z M44,1859c0-1.1-0.9-2-2-2s-2,0.9-2,2s0.9,2,2,2S44,1860.1,44,1859z M50,1859 c0-1.1-0.9-2-2-2s-2,0.9-2,2s0.9,2,2,2S50,1860.1,50,1859z'/%3E%3Cg id='chat'%3E%3Cpolygon class='st10' points='25,1852 3,1852 3,1866 11,1866 11,1872 16.1,1866 25,1866 '/%3E%3Ccircle class='st11' cx='8' cy='1859' r='1'/%3E%3Ccircle class='st11' cx='14' cy='1859' r='1'/%3E%3Ccircle class='st11' cx='20' cy='1859' r='1'/%3E%3C/g%3E%3Cpath id='global-on' class='st0' d='M42,1822c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S48.6,1822,42,1822z M51.8,1835.8 l-0.8-0.4v-0.8l1-0.5C52,1834.7,51.9,1835.3,51.8,1835.8z M39.1,1824.4L39.1,1824.4l1,2c0.2,0.3,0.5,0.6,0.9,0.6h3 c0.3,0,0.5-0.1,0.7-0.3l1.7-1.7c0.2,0.1,0.3,0.2,0.5,0.3l-0.9,3.5c0,0.1,0,0.2,0,0.2v2.6l-2.5,2.5l-4.7,0.9c-0.5,0.1-0.8,0.5-0.8,1 v2.6l-3.1-3.1l-1.9-4.8c-0.1-0.1-0.1-0.2-0.2-0.3C33.8,1827.5,36.2,1825.3,39.1,1824.4z M41,1843.9v-1.5l1.2-1.2l1.4,0.7 c0.1,0,0.2,0.1,0.3,0.1l3.2,0.6c-1.5,0.9-3.2,1.4-5,1.4C41.7,1844,41.3,1844,41,1843.9z'/%3E%3Cg id='global_3_'%3E%3Cpath class='st7' d='M14,1846c-6.6,0-12-5.4-12-12s5.4-12,12-12s12,5.4,12,12S20.6,1846,14,1846z M14,1824c-5.5,0-10,4.5-10,10 s4.5,10,10,10s10-4.5,10-10S19.5,1824,14,1824z'/%3E%3Cpath class='st7' d='M10,1841c-0.3,0-0.5-0.1-0.7-0.3l-4-4c-0.1-0.1-0.2-0.2-0.2-0.3l-2-5c-0.2-0.5,0-1.1,0.6-1.3 c0.5-0.2,1.1,0,1.3,0.6l1.9,4.8l3.1,3.1v-2.6c0-0.5,0.3-0.9,0.8-1l4.7-0.9l2.5-2.5v-2.6c0-0.1,0-0.2,0-0.2l1-4 c0.1-0.5,0.7-0.9,1.2-0.7c0.5,0.1,0.9,0.7,0.7,1.2l-1,3.9v2.9c0,0.3-0.1,0.5-0.3,0.7l-3,3c-0.1,0.1-0.3,0.2-0.5,0.3l-4.2,0.8v2.2 c0,0.3-0.1,0.5-0.3,0.7l-1,1C10.5,1840.9,10.3,1841,10,1841z'/%3E%3Cpath class='st7' d='M16,1827h-3c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3c0.5-0.2,1.1,0,1.3,0.4l0.7,1.4h2l1.7-1.7 c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-2,2C16.5,1826.9,16.3,1827,16,1827z'/%3E%3Cpath class='st7' d='M12,1845c-0.6,0-1-0.4-1-1v-2c0-0.3,0.1-0.5,0.3-0.7l2-2c0.3-0.3,0.8-0.4,1.2-0.2l1.9,0.9l4.9,1 c0.5,0.1,0.9,0.6,0.8,1.2c-0.1,0.5-0.6,0.9-1.2,0.8l-5-1c-0.1,0-0.2,0-0.3-0.1l-1.4-0.7l-1.2,1.2v1.6C13,1844.6,12.6,1845,12,1845z '/%3E%3Cpath class='st7' d='M24,1838c-0.1,0-0.3,0-0.4-0.1l-2-1c-0.3-0.2-0.6-0.5-0.6-0.9v-2c0-0.4,0.2-0.7,0.6-0.9l2-1 c0.5-0.2,1.1,0,1.3,0.4s0,1.1-0.4,1.3l-1.4,0.7v0.8l1.4,0.7c0.5,0.2,0.7,0.8,0.4,1.3C24.7,1837.8,24.4,1838,24,1838z'/%3E%3C/g%3E%3Cpath id='windows' class='st12' d='M32,1798.8l8.1-1.1v7.9H32V1798.8z M40.2,1806.5v7.9l-8.1-1.1v-6.8H40.2z M41.1,1797.6l10.8-1.6 v9.5l-10.8,0.1V1797.6z M52,1806.6v9.4l-10.8-1.5v-7.9H52z'/%3E%3Cpath id='apple' class='st12' d='M21.9,1811.6c-0.3,0.7-0.7,1.3-1.1,1.9c-0.6,0.8-1,1.4-1.4,1.7c-0.6,0.5-1.1,0.8-1.8,0.8 c-0.5,0-1-0.1-1.6-0.4s-1.2-0.4-1.8-0.4s-1.2,0.1-1.8,0.4s-1.2,0.4-1.6,0.4c-0.6,0-1.2-0.2-1.8-0.8c-0.4-0.3-0.9-0.9-1.4-1.7 c-0.6-0.9-1.1-1.9-1.5-3c-0.4-1.2-0.6-2.5-0.6-3.6c0-1.3,0.3-2.5,0.9-3.5c0.5-0.8,1.1-1.4,1.8-1.8s1.6-0.7,2.5-0.7 c0.5,0,1.1,0.1,1.9,0.4c0.8,0.3,1.3,0.4,1.5,0.4s0.7-0.2,1.7-0.5c0.9-0.3,1.7-0.5,2.3-0.4c1.7,0.1,2.9,0.8,3.8,2 c-1.5,0.9-2.2,2.2-2.2,3.8c0,1.3,0.5,2.3,1.4,3.2c0.4,0.4,0.9,0.7,1.4,0.9C22.2,1811.1,22.1,1811.4,21.9,1811.6L21.9,1811.6z M18.1,1796.4c0,1-0.4,1.9-1.1,2.8c-0.9,1-1.9,1.6-3.1,1.5c0-0.1,0-0.2,0-0.4c0-1,0.4-2,1.2-2.8c0.4-0.4,0.8-0.8,1.4-1.1 c0.6-0.3,1.1-0.4,1.6-0.5C18.1,1796.1,18.1,1796.4,18.1,1796.4L18.1,1796.4z'/%3E%3Cg id='right-link'%3E%3Cpath id='XMLID_11_' class='st13' d='M10,1787c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C10.5,1786.9,10.3,1787,10,1787z'/%3E%3C/g%3E%3Cg id='close-white_1_'%3E%3Cg id='XMLID_91_'%3E%3Cpath id='XMLID_94_' class='st0' d='M7,1758c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l14-14c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 l-14,14C7.5,1757.9,7.3,1758,7,1758z'/%3E%3C/g%3E%3Cg id='XMLID_17_'%3E%3Cpath id='XMLID_23_' class='st0' d='M21,1758c-0.3,0-0.5-0.1-0.7-0.3l-14-14c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l14,14 c0.4,0.4,0.4,1,0,1.4C21.5,1757.9,21.3,1758,21,1758z'/%3E%3C/g%3E%3C/g%3E%3Crect id='stop-on' x='33' y='1713' class='st14' width='18' height='18'/%3E%3Crect id='stop' x='5' y='1713' class='st15' width='18' height='18'/%3E%3Cpolygon id='play2-on' class='st14' points='35,1685 51,1694 35,1703 '/%3E%3Cpolygon id='play2' class='st15' points='7,1685 23,1694 7,1703 '/%3E%3Cg id='unlock'%3E%3Crect x='11' y='1665' class='st15' width='14' height='12'/%3E%3Ccircle class='st15' cx='18' cy='1670' r='2'/%3E%3Cline class='st15' x1='18' y1='1672' x2='18' y2='1674'/%3E%3Cpath class='st15' d='M3,1665v-5c0-2.8,2.2-5,5-5s5,2.2,5,5v5'/%3E%3C/g%3E%3Cg id='lock'%3E%3Crect x='7' y='1637' class='st15' width='14' height='12'/%3E%3Ccircle class='st15' cx='14' cy='1642' r='2'/%3E%3Cline class='st15' x1='14' y1='1644' x2='14' y2='1646'/%3E%3Cpath class='st15' d='M9,1637v-5c0-2.8,2.2-5,5-5s5,2.2,5,5v5'/%3E%3C/g%3E%3Cg id='copy-on'%3E%3Cg%3E%3Cpath class='st16' d='M37,1603.1v-3.8c0-0.2,0.1-0.3,0.3-0.3h11.6c0.1,0,0.2,0,0.2,0.1l3.8,4c0.1,0.1,0.1,0.1,0.1,0.2v13.4 c0,0.2-0.1,0.3-0.3,0.3H47'/%3E%3Cpath class='st16' d='M48,1600v3.7c0,0.2,0.1,0.3,0.3,0.3H52'/%3E%3C/g%3E%3Cpath class='st7' d='M47.6,1606.4l-3.7-3.9c-0.2-0.3-0.5-0.5-1-0.5H31.3c-0.8,0-1.3,0.6-1.3,1.3v17.4c0,0.8,0.5,1.3,1.3,1.3h15.4 c0.8,0,1.3-0.6,1.3-1.3v-13.4C48,1606.9,47.8,1606.6,47.6,1606.4z M34,1608h6c0.5,0,1,0.5,1,1s-0.5,1-1,1h-6c-0.5,0-1-0.5-1-1 S33.4,1608,34,1608z M44,1618H34c-0.5,0-1-0.5-1-1s0.5-1,1-1h10c0.5,0,1,0.5,1,1S44.5,1618,44,1618z M44,1614H34c-0.5,0-1-0.4-1-1 s0.5-1,1-1h10c0.5,0,1,0.4,1,1S44.5,1614,44,1614z M43,1607v-3l3,3H43z'/%3E%3C/g%3E%3Cg id='copy'%3E%3Cline id='minus_2_' class='st15' x1='6' y1='1613' x2='16' y2='1613'/%3E%3Cline id='minus_8_' class='st15' x1='6' y1='1609' x2='11' y2='1609'/%3E%3Cline id='minus_1_' class='st15' x1='6' y1='1617' x2='16' y2='1617'/%3E%3Cpath class='st16' d='M3.3,1603h11.6c0.1,0,0.2,0,0.2,0.1l3.8,4c0.1,0.1,0.1,0.1,0.1,0.2v13.4c0,0.2-0.1,0.3-0.3,0.3H3.3 c-0.2,0-0.3-0.1-0.3-0.3v-17.4C3,1603.1,3.1,1603,3.3,1603z'/%3E%3Cpath class='st16' d='M14,1604v3.7c0,0.2,0.1,0.3,0.3,0.3H18'/%3E%3Cg%3E%3Cpath class='st16' d='M9,1603.1v-3.8c0-0.2,0.1-0.3,0.3-0.3h11.6c0.1,0,0.2,0,0.2,0.1l3.8,4c0.1,0.1,0.1,0.1,0.1,0.2v13.4 c0,0.2-0.1,0.3-0.3,0.3H19'/%3E%3Cpath class='st16' d='M20,1600v3.7c0,0.2,0.1,0.3,0.3,0.3H24'/%3E%3C/g%3E%3C/g%3E%3Cline id='minus-on' class='st17' x1='32' y1='1582' x2='52' y2='1582'/%3E%3Cline id='minus' class='st15' x1='4' y1='1582' x2='24' y2='1582'/%3E%3Cg id='plus-on'%3E%3Cline class='st17' x1='32' y1='1554' x2='52' y2='1554'/%3E%3Cline class='st17' x1='42' y1='1544' x2='42' y2='1564'/%3E%3C/g%3E%3Cg id='plus'%3E%3Cline class='st15' x1='4' y1='1554' x2='24' y2='1554'/%3E%3Cline class='st15' x1='14' y1='1544' x2='14' y2='1564'/%3E%3C/g%3E%3Cpolyline id='checkmark-blue-thick' class='st18' points='33,1526 39,1532 51,1520 '/%3E%3Cpolyline id='checkmark-blue' class='st17' points='5,1526 11,1532 23,1520 '/%3E%3Cg id='menu-black'%3E%3Cg id='XMLID_14_'%3E%3Cpath id='XMLID_15_' class='st7' d='M22,1494H6c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S22.6,1494,22,1494z'/%3E%3C/g%3E%3Cg id='XMLID_9_'%3E%3Cpath id='XMLID_10_' class='st7' d='M22,1499H6c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S22.6,1499,22,1499z'/%3E%3C/g%3E%3Cg id='XMLID_6_'%3E%3Cpath id='XMLID_8_' class='st7' d='M22,1504H6c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S22.6,1504,22,1504z'/%3E%3C/g%3E%3C/g%3E%3Cg id='clear-on'%3E%3Cpath class='st19' d='M42.1,1458c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S48.7,1458,42.1,1458z M46.6,1472.5 c0.6,0.6,0.6,1.5,0,2.1c-0.3,0.3-0.7,0.4-1.1,0.4s-0.8-0.1-1.1-0.4l-2.5-2.5l-2.5,2.5c-0.3,0.3-0.7,0.4-1.1,0.4s-0.8-0.1-1.1-0.4 c-0.6-0.6-0.6-1.5,0-2.1l2.5-2.5l-2.5-2.5c-0.6-0.6-0.6-1.5,0-2.1s1.5-0.6,2.1,0l2.5,2.5l2.5-2.5c0.6-0.6,1.5-0.6,2.1,0 s0.6,1.5,0,2.1l-2.5,2.5L46.6,1472.5z'/%3E%3C/g%3E%3Cg id='clear'%3E%3Cg%3E%3Cpath class='st19' d='M13.8,1461c5,0,9,4,9,9s-4,9-9,9s-9-4-9-9S8.8,1461,13.8,1461 M13.8,1458c-6.6,0-12,5.4-12,12s5.4,12,12,12 s12-5.4,12-12S20.4,1458,13.8,1458L13.8,1458z'/%3E%3C/g%3E%3Cline class='st20' x1='10.3' y1='1466.5' x2='17.3' y2='1473.5'/%3E%3Cline class='st20' x1='10.3' y1='1473.5' x2='17.3' y2='1466.5'/%3E%3C/g%3E%3Cg id='alarmclock-red'%3E%3Cg id='XMLID_362_'%3E%3Cpath id='XMLID_363_' class='st21' d='M14,1453c-5.5,0-10-4.5-10-10s4.5-10,10-10s10,4.5,10,10S19.5,1453,14,1453z M14,1435 c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S18.4,1435,14,1435z'/%3E%3C/g%3E%3Cg id='XMLID_240_'%3E%3Cg id='XMLID_360_'%3E%3Cpath id='XMLID_361_' class='st21' d='M23.2,1436.3c-0.3,0-0.6-0.1-0.8-0.4c-1.2-1.5-2.8-2.6-4.7-3.3c-0.5-0.2-0.8-0.8-0.6-1.3 c0.2-0.5,0.8-0.8,1.3-0.6c2.1,0.8,4.1,2.1,5.5,3.9c0.4,0.4,0.3,1.1-0.1,1.4C23.6,1436.2,23.4,1436.3,23.2,1436.3z'/%3E%3C/g%3E%3Cg id='XMLID_241_'%3E%3Cpath id='XMLID_359_' class='st21' d='M4.8,1436.3c-0.2,0-0.5-0.1-0.6-0.2c-0.4-0.4-0.5-1-0.1-1.4c1.5-1.7,3.4-3.1,5.5-3.9 c0.5-0.2,1.1,0.1,1.3,0.6s-0.1,1.1-0.6,1.3c-1.8,0.7-3.4,1.8-4.7,3.3C5.4,1436.2,5.1,1436.3,4.8,1436.3z'/%3E%3C/g%3E%3C/g%3E%3Cg id='XMLID_237_'%3E%3Cpath id='XMLID_238_' class='st21' d='M17,1447c-0.3,0-0.5-0.1-0.7-0.3l-3-3c-0.2-0.2-0.3-0.4-0.3-0.7v-6c0-0.6,0.4-1,1-1 s1,0.4,1,1v5.6l2.7,2.7c0.4,0.4,0.4,1,0,1.4C17.5,1446.9,17.3,1447,17,1447z'/%3E%3C/g%3E%3C/g%3E%3Cg id='notification-on_1_'%3E%3Cpath class='st0' d='M48,1290H36c-3.3,0-6,2.7-6,6v12c0,3.3,2.7,6,6,6h12c3.3,0,6-2.7,6-6v-12C54,1292.7,51.3,1290,48,1290z M49,1309H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S49.6,1309,49,1309z M49,1305H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h14 c0.6,0,1,0.4,1,1S49.6,1305,49,1305z M49,1301H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S49.6,1301,49,1301z M49,1297H35 c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S49.6,1297,49,1297z'/%3E%3C/g%3E%3Cg id='notification_1_'%3E%3Cpath class='st22' d='M20,1313H8c-2.8,0-5-2.2-5-5v-12c0-2.8,2.2-5,5-5h12c2.8,0,5,2.2,5,5v12C25,1310.8,22.8,1313,20,1313z'/%3E%3Cline class='st22' x1='7' y1='1300' x2='21' y2='1300'/%3E%3Cline class='st22' x1='7' y1='1304' x2='21' y2='1304'/%3E%3Cline class='st22' x1='7' y1='1308' x2='21' y2='1308'/%3E%3Cline class='st22' x1='7' y1='1296' x2='21' y2='1296'/%3E%3C/g%3E%3Cg id='sandglass-white'%3E%3Cpolygon class='st22' points='35,1263 49,1263 49,1270 45,1274 49,1278 49,1285 35,1285 35,1278 39,1274 35,1270 '/%3E%3Cpolygon class='st22' points='38,1282 38,1280 42,1277 46,1280 46,1282 '/%3E%3Cpolygon class='st22' points='46,1268 46,1269 42,1272 38,1269 38,1268 '/%3E%3C/g%3E%3Cg id='sandglass'%3E%3Cpolygon class='st15' points='7,1263 21,1263 21,1270 17,1274 21,1278 21,1285 7,1285 7,1278 11,1274 7,1270 '/%3E%3Cpolygon class='st15' points='10,1282 10,1280 14,1277 18,1280 18,1282 '/%3E%3Cpolygon class='st15' points='18,1268 18,1269 14,1272 10,1269 10,1268 '/%3E%3C/g%3E%3Cg id='close-white'%3E%3Cg id='XMLID_3_'%3E%3Cpath id='XMLID_4_' class='st0' d='M7,1254c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l14-14c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 l-14,14C7.5,1253.9,7.3,1254,7,1254z'/%3E%3C/g%3E%3Cg id='XMLID_1_'%3E%3Cpath id='XMLID_2_' class='st0' d='M21,1254c-0.3,0-0.5-0.1-0.7-0.3l-14-14c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l14,14 c0.4,0.4,0.4,1,0,1.4C21.5,1253.9,21.3,1254,21,1254z'/%3E%3C/g%3E%3C/g%3E%3Cpolyline id='checkmark-gray-thick' class='st23' points='33,1218 39,1224 51,1212 '/%3E%3Cpolyline id='checkmark-white-thick' class='st24' points='5,1218 11,1224 23,1212 '/%3E%3Cpolyline id='checkmark-gray' class='st25' points='33,1190 39,1196 51,1184 '/%3E%3Cpolyline id='checkmark-white' class='st22' points='5,1190 11,1196 23,1184 '/%3E%3Cg id='first-white'%3E%3Cpolyline class='st22' points='48,1170 40,1162 48,1154 '/%3E%3Cline class='st22' x1='36' y1='1170' x2='36' y2='1154'/%3E%3C/g%3E%3Cg id='first'%3E%3Cpolyline class='st15' points='20,1170 12,1162 20,1154 '/%3E%3Cline class='st15' x1='8' y1='1170' x2='8' y2='1154'/%3E%3C/g%3E%3Cg id='last-white'%3E%3Cpolyline class='st22' points='36,1126 44,1134 36,1142 '/%3E%3Cline class='st22' x1='48' y1='1126' x2='48' y2='1142'/%3E%3C/g%3E%3Cg id='last'%3E%3Cpolyline class='st15' points='8,1126 16,1134 8,1142 '/%3E%3Cline class='st15' x1='20' y1='1126' x2='20' y2='1142'/%3E%3C/g%3E%3Cg id='first_1_'%3E%3Cpolyline class='st25' points='20,1422 12,1414 20,1406 '/%3E%3Cline class='st25' x1='8' y1='1422' x2='8' y2='1406'/%3E%3C/g%3E%3Cg id='last_1_'%3E%3Cpolyline class='st25' points='8,1378 16,1386 8,1394 '/%3E%3Cline class='st25' x1='20' y1='1378' x2='20' y2='1394'/%3E%3C/g%3E%3Cg id='history-on'%3E%3Cpath class='st15' d='M34.9,1113c-1.8-1.8-2.9-4.3-2.9-7c0-5.5,4.5-10,10-10s10,4.5,10,10s-4.5,10-10,10c-1,0-2.1-0.2-3-0.5'/%3E%3Cpolyline class='st15' points='42,1100.5 42,1106 45,1109.2 '/%3E%3Cpolyline class='st15' points='36,1109 35,1113 31,1112 '/%3E%3C/g%3E%3Cg id='history'%3E%3Cpath class='st25' d='M6.9,1113c-1.8-1.8-2.9-4.3-2.9-7c0-5.5,4.5-10,10-10s10,4.5,10,10s-4.5,10-10,10c-1,0-2.1-0.2-3-0.5'/%3E%3Cpolyline class='st25' points='14,1100.5 14,1106 17,1109.2 '/%3E%3Cpolyline class='st25' points='8,1109 7,1113 3,1112 '/%3E%3C/g%3E%3Cg id='slideshow-w'%3E%3Cpath id='XMLID_356_' class='st0' d='M53,1085H31c-0.6,0-1-0.4-1-1v-12c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1v12 C54,1084.6,53.6,1085,53,1085z M32,1083h20v-10H32V1083z'/%3E%3C/g%3E%3Cg id='slideshow'%3E%3Cpath id='XMLID_353_' class='st7' d='M25,1085H3c-0.6,0-1-0.4-1-1v-12c0-0.6,0.4-1,1-1h22c0.6,0,1,0.4,1,1v12 C26,1084.6,25.6,1085,25,1085z M4,1083h20v-10H4V1083z'/%3E%3C/g%3E%3Cg id='grid-w'%3E%3Cg id='XMLID_349_'%3E%3Cpath id='XMLID_350_' class='st0' d='M35,1049h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C36,1048.6,35.6,1049,35,1049z M32,1047h2v-2h-2V1047z'/%3E%3C/g%3E%3Cg id='XMLID_345_'%3E%3Cpath id='XMLID_346_' class='st0' d='M53,1049h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C54,1048.6,53.6,1049,53,1049z M50,1047h2v-2h-2V1047z'/%3E%3C/g%3E%3Cg id='XMLID_341_'%3E%3Cpath id='XMLID_342_' class='st0' d='M44,1049h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C45,1048.6,44.6,1049,44,1049z M41,1047h2v-2h-2V1047z'/%3E%3C/g%3E%3Cg id='XMLID_337_'%3E%3Cpath id='XMLID_338_' class='st0' d='M35,1057h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C36,1056.6,35.6,1057,35,1057z M32,1055h2v-2h-2V1055z'/%3E%3C/g%3E%3Cg id='XMLID_333_'%3E%3Cpath id='XMLID_334_' class='st0' d='M53,1057h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C54,1056.6,53.6,1057,53,1057z M50,1055h2v-2h-2V1055z'/%3E%3C/g%3E%3Cg id='XMLID_329_'%3E%3Cpath id='XMLID_330_' class='st0' d='M44,1057h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C45,1056.6,44.6,1057,44,1057z M41,1055h2v-2h-2V1055z'/%3E%3C/g%3E%3C/g%3E%3Cg id='grid'%3E%3Cg id='XMLID_325_'%3E%3Cpath id='XMLID_326_' class='st7' d='M7,1049H3c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C8,1048.6,7.6,1049,7,1049z M4,1047h2v-2H4V1047z'/%3E%3C/g%3E%3Cg id='XMLID_321_'%3E%3Cpath id='XMLID_322_' class='st7' d='M25,1049h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C26,1048.6,25.6,1049,25,1049z M22,1047h2v-2h-2V1047z'/%3E%3C/g%3E%3Cg id='XMLID_317_'%3E%3Cpath id='XMLID_318_' class='st7' d='M16,1049h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C17,1048.6,16.6,1049,16,1049z M13,1047h2v-2h-2V1047z'/%3E%3C/g%3E%3Cg id='XMLID_313_'%3E%3Cpath id='XMLID_314_' class='st7' d='M7,1057H3c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C8,1056.6,7.6,1057,7,1057z M4,1055h2v-2H4V1055z'/%3E%3C/g%3E%3Cg id='XMLID_309_'%3E%3Cpath id='XMLID_310_' class='st7' d='M25,1057h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C26,1056.6,25.6,1057,25,1057z M22,1055h2v-2h-2V1055z'/%3E%3C/g%3E%3Cg id='XMLID_305_'%3E%3Cpath id='XMLID_306_' class='st7' d='M16,1057h-4c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v4 C17,1056.6,16.6,1057,16,1057z M13,1055h2v-2h-2V1055z'/%3E%3C/g%3E%3C/g%3E%3Cg id='alarmclock-white'%3E%3Cg id='XMLID_290_'%3E%3Cpath id='XMLID_291_' class='st0' d='M42,1033c-5.5,0-10-4.5-10-10s4.5-10,10-10s10,4.5,10,10S47.5,1033,42,1033z M42,1015 c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S46.4,1015,42,1015z'/%3E%3C/g%3E%3Cg id='XMLID_285_'%3E%3Cg id='XMLID_288_'%3E%3Cpath id='XMLID_289_' class='st0' d='M51.2,1016.3c-0.3,0-0.6-0.1-0.8-0.4c-1.2-1.5-2.8-2.6-4.7-3.3c-0.5-0.2-0.8-0.8-0.6-1.3 s0.8-0.8,1.3-0.6c2.1,0.8,4.1,2.1,5.5,3.9c0.4,0.4,0.3,1.1-0.1,1.4C51.6,1016.2,51.4,1016.3,51.2,1016.3z'/%3E%3C/g%3E%3Cg id='XMLID_286_'%3E%3Cpath id='XMLID_287_' class='st0' d='M32.8,1016.3c-0.2,0-0.5-0.1-0.6-0.2c-0.4-0.4-0.5-1-0.1-1.4c1.5-1.7,3.4-3.1,5.5-3.9 c0.5-0.2,1.1,0.1,1.3,0.6s-0.1,1.1-0.6,1.3c-1.8,0.7-3.4,1.8-4.7,3.3C33.4,1016.2,33.1,1016.3,32.8,1016.3z'/%3E%3C/g%3E%3C/g%3E%3Cg id='XMLID_283_'%3E%3Cpath id='XMLID_284_' class='st0' d='M45,1027c-0.3,0-0.5-0.1-0.7-0.3l-3-3c-0.2-0.2-0.3-0.4-0.3-0.7v-6c0-0.6,0.4-1,1-1 s1,0.4,1,1v5.6l2.7,2.7c0.4,0.4,0.4,1,0,1.4C45.5,1026.9,45.3,1027,45,1027z'/%3E%3C/g%3E%3C/g%3E%3Cg id='alarmclock'%3E%3Cg id='XMLID_301_'%3E%3Cpath id='XMLID_302_' class='st7' d='M14,1033c-5.5,0-10-4.5-10-10s4.5-10,10-10s10,4.5,10,10S19.5,1033,14,1033z M14,1015 c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S18.4,1015,14,1015z'/%3E%3C/g%3E%3Cg id='XMLID_296_'%3E%3Cg id='XMLID_299_'%3E%3Cpath id='XMLID_300_' class='st7' d='M23.2,1016.3c-0.3,0-0.6-0.1-0.8-0.4c-1.2-1.5-2.8-2.6-4.7-3.3c-0.5-0.2-0.8-0.8-0.6-1.3 c0.2-0.5,0.8-0.8,1.3-0.6c2.1,0.8,4.1,2.1,5.5,3.9c0.4,0.4,0.3,1.1-0.1,1.4C23.6,1016.2,23.4,1016.3,23.2,1016.3z'/%3E%3C/g%3E%3Cg id='XMLID_297_'%3E%3Cpath id='XMLID_298_' class='st7' d='M4.8,1016.3c-0.2,0-0.5-0.1-0.6-0.2c-0.4-0.4-0.5-1-0.1-1.4c1.5-1.7,3.4-3.1,5.5-3.9 c0.5-0.2,1.1,0.1,1.3,0.6s-0.1,1.1-0.6,1.3c-1.8,0.7-3.4,1.8-4.7,3.3C5.4,1016.2,5.1,1016.3,4.8,1016.3z'/%3E%3C/g%3E%3C/g%3E%3Cg id='XMLID_294_'%3E%3Cpath id='XMLID_295_' class='st7' d='M17,1027c-0.3,0-0.5-0.1-0.7-0.3l-3-3c-0.2-0.2-0.3-0.4-0.3-0.7v-6c0-0.6,0.4-1,1-1 s1,0.4,1,1v5.6l2.7,2.7c0.4,0.4,0.4,1,0,1.4C17.5,1026.9,17.3,1027,17,1027z'/%3E%3C/g%3E%3C/g%3E%3Cg id='left-gray1'%3E%3Cpath id='XMLID_402_' class='st7' d='M45,1003c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C45.5,1002.9,45.3,1003,45,1003z'/%3E%3C/g%3E%3Cg id='left-gray2'%3E%3Cpath id='XMLID_425_' class='st6' d='M17,1003c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C17.5,1002.9,17.3,1003,17,1003z'/%3E%3C/g%3E%3Cg id='right-gray1'%3E%3Cpath id='XMLID_458_' class='st7' d='M38,975c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C38.5,974.9,38.3,975,38,975z'/%3E%3C/g%3E%3Cg id='right-gray2'%3E%3Cpath id='XMLID_543_' class='st6' d='M10,975c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C10.5,974.9,10.3,975,10,975z'/%3E%3C/g%3E%3Cg id='left-on_2_'%3E%3Cpath id='XMLID_20_' class='st0' d='M18,947c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C18.5,946.9,18.3,947,18,947z'/%3E%3C/g%3E%3Cg id='right-on_2_'%3E%3Cpath id='XMLID_19_' class='st0' d='M11,919c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C11.5,918.9,11.3,919,11,919z'/%3E%3C/g%3E%3Cg id='close-on_1_'%3E%3Cg id='XMLID_52_'%3E%3Cpath id='XMLID_53_' class='st26' d='M35,890c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l14-14c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 l-14,14C35.5,889.9,35.3,890,35,890z'/%3E%3C/g%3E%3Cg id='XMLID_49_'%3E%3Cpath id='XMLID_50_' class='st26' d='M49,890c-0.3,0-0.5-0.1-0.7-0.3l-14-14c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l14,14 c0.4,0.4,0.4,1,0,1.4C49.5,889.9,49.3,890,49,890z'/%3E%3C/g%3E%3C/g%3E%3Cg id='close_1_'%3E%3Cg id='XMLID_45_'%3E%3Cpath id='XMLID_46_' class='st7' d='M7,890c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l14-14c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 l-14,14C7.5,889.9,7.3,890,7,890z'/%3E%3C/g%3E%3Cg id='XMLID_41_'%3E%3Cpath id='XMLID_42_' class='st7' d='M21,890c-0.3,0-0.5-0.1-0.7-0.3l-14-14c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l14,14 c0.4,0.4,0.4,1,0,1.4C21.5,889.9,21.3,890,21,890z'/%3E%3C/g%3E%3C/g%3E%3Cg id='checkmark-on_1_'%3E%3Cpath id='XMLID_34_' class='st27' d='M40,860c-0.3,0-0.5-0.1-0.7-0.3l-7-7c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l6.3,6.3 l10.3-10.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-11,11C40.5,859.9,40.3,860,40,860z'/%3E%3C/g%3E%3Cg id='checkmark_1_'%3E%3Cpath id='XMLID_33_' class='st7' d='M12,860c-0.3,0-0.5-0.1-0.7-0.3l-7-7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6.3,6.3l10.3-10.3 c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-11,11C12.5,859.9,12.3,860,12,860z'/%3E%3C/g%3E%3Cg id='down-small-on'%3E%3Cpath id='XMLID_27_' class='st0' d='M42,831c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7.3,7.3l7.3-7.3 c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8,8C42.5,830.9,42.3,831,42,831z'/%3E%3C/g%3E%3Cg id='down-small'%3E%3Cpath id='XMLID_25_' class='st7' d='M14,831c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7.3,7.3l7.3-7.3 c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8,8C14.5,830.9,14.3,831,14,831z'/%3E%3C/g%3E%3Cg id='up-small-on'%3E%3Cpath id='XMLID_24_' class='st0' d='M50,803c-0.3,0-0.5-0.1-0.7-0.3l-7.3-7.3l-7.3,7.3c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l8-8 c0.4-0.4,1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4C50.5,802.9,50.3,803,50,803z'/%3E%3C/g%3E%3Cg id='up-small'%3E%3Cpath id='XMLID_22_' class='st7' d='M22,803c-0.3,0-0.5-0.1-0.7-0.3l-7.3-7.3l-7.3,7.3c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l8-8 c0.4-0.4,1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4C22.5,802.9,22.3,803,22,803z'/%3E%3C/g%3E%3Cg id='left-small-on'%3E%3Cpath id='XMLID_18_' class='st0' d='M46,779c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C46.5,778.9,46.3,779,46,779z'/%3E%3C/g%3E%3Cg id='left-small'%3E%3Cpath id='XMLID_16_' class='st7' d='M18,779c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C18.5,778.9,18.3,779,18,779z'/%3E%3C/g%3E%3Cg id='right-small-on_1_'%3E%3Cpath id='XMLID_13_' class='st0' d='M38,751c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C38.5,750.9,38.3,751,38,751z'/%3E%3C/g%3E%3Cg id='right-small_1_'%3E%3Cpath id='XMLID_12_' class='st7' d='M10,751c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C10.5,750.9,10.3,751,10,751z'/%3E%3C/g%3E%3Cg id='edit-small-on_1_'%3E%3Cg id='XMLID_85_'%3E%3Cpath id='XMLID_88_' class='st7' d='M51,724H33c-0.6,0-1-0.4-1-1v-18c0-0.6,0.4-1,1-1h8c0.6,0,1,0.4,1,1s-0.4,1-1,1h-7v16h16v-7 c0-0.6,0.4-1,1-1s1,0.4,1,1v8C52,723.6,51.6,724,51,724z'/%3E%3C/g%3E%3Cg id='XMLID_77_'%3E%3Cpath id='XMLID_84_' class='st7' d='M52.3,708.7l-9,9c-0.2,0.2-0.4,0.3-0.7,0.3H39c-0.6,0-1-0.4-1-1v-3.6c0-0.3,0.1-0.5,0.3-0.7 l9-9c0.4-0.4,1-0.4,1.4,0l3.6,3.6C52.7,707.7,52.7,708.3,52.3,708.7z'/%3E%3C/g%3E%3C/g%3E%3Cg id='edit-small_1_'%3E%3Cg id='XMLID_75_'%3E%3Cpath id='XMLID_76_' class='st7' d='M23,724H5c-0.6,0-1-0.4-1-1v-18c0-0.6,0.4-1,1-1h8c0.6,0,1,0.4,1,1s-0.4,1-1,1H6v16h16v-7 c0-0.6,0.4-1,1-1s1,0.4,1,1v8C24,723.6,23.6,724,23,724z'/%3E%3C/g%3E%3Cg id='XMLID_56_'%3E%3Cpath id='XMLID_57_' class='st7' d='M15,719h-5c-0.6,0-1-0.4-1-1v-5c0-0.3,0.1-0.5,0.3-0.7l9-9c0.4-0.4,1-0.4,1.4,0l5,5 c0.4,0.4,0.4,1,0,1.4l-9,9C15.5,718.9,15.3,719,15,719z M11,717h3.6l8-8l-3.6-3.6l-8,8V717z'/%3E%3C/g%3E%3C/g%3E%3Cpath id='additem-on' class='st7' d='M53,686c0,6.1-4.9,11-11,11s-11-4.9-11-11s4.9-11,11-11S53,679.9,53,686z M48,685h-5v-5 c0-0.6-0.4-1-1-1s-1,0.4-1,1v5h-5c-0.6,0-1,0.4-1,1s0.4,1,1,1h5v5c0,0.6,0.4,1,1,1s1-0.4,1-1v-5h5c0.6,0,1-0.4,1-1S48.6,685,48,685z '/%3E%3Cg id='XMLID_249_'%3E%3Cpath id='XMLID_253_' class='st7' d='M20,685h-5v-5c0-0.6-0.4-1-1-1s-1,0.4-1,1v5H8c-0.6,0-1,0.4-1,1s0.4,1,1,1h5v5 c0,0.6,0.4,1,1,1s1-0.4,1-1v-5h5c0.6,0,1-0.4,1-1S20.6,685,20,685z'/%3E%3Cpath id='XMLID_250_' class='st7' d='M14,675c-6.1,0-11,4.9-11,11s4.9,11,11,11s11-4.9,11-11S20.1,675,14,675z M14,695 c-5,0-9-4-9-9s4-9,9-9s9,4,9,9S19,695,14,695z'/%3E%3C/g%3E%3Cg id='sorting'%3E%3Cpath id='XMLID_248_' class='st7' d='M6,654h10c0.6,0,1-0.4,1-1s-0.4-1-1-1H6c-0.6,0-1,0.4-1,1S5.4,654,6,654z'/%3E%3Cpath id='XMLID_247_' class='st7' d='M6,659h6c0.6,0,1-0.4,1-1s-0.4-1-1-1H6c-0.6,0-1,0.4-1,1S5.4,659,6,659z'/%3E%3Cpath id='XMLID_246_' class='st7' d='M6,664h2c0.6,0,1-0.4,1-1s-0.4-1-1-1H6c-0.6,0-1,0.4-1,1S5.4,664,6,664z'/%3E%3Cpath id='XMLID_245_' class='st7' d='M16.9,661.5c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l2.8,2.8c0.1,0.1,0.2,0.2,0.3,0.2 c0.1,0.1,0.3,0.1,0.4,0.1s0.3,0,0.4-0.1s0.2-0.1,0.3-0.2l2.8-2.8c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-1.1,1.1V656c0-0.6-0.4-1-1-1 s-1,0.4-1,1v6.6L16.9,661.5z'/%3E%3Cpath id='XMLID_242_' class='st7' d='M26,648c0-0.6-0.4-1-1-1H3c-0.6,0-1,0.4-1,1v20c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V648z M24,667H4v-18h20V667z'/%3E%3C/g%3E%3Cg id='more-on'%3E%3Cg id='XMLID_239_'%3E%3Crect id='XMLID_106_' x='39' y='627' class='st7' width='6' height='6'/%3E%3C/g%3E%3Cg id='XMLID_236_'%3E%3Crect id='XMLID_113_' x='48' y='627' class='st7' width='6' height='6'/%3E%3C/g%3E%3Cg id='XMLID_233_'%3E%3Crect id='XMLID_234_' x='30' y='627' class='st7' width='6' height='6'/%3E%3C/g%3E%3C/g%3E%3Cg id='more'%3E%3Cg id='XMLID_229_'%3E%3Cpath id='XMLID_230_' class='st7' d='M15,629v2h-2v-2H15 M17,627h-6v6h6V627L17,627z'/%3E%3C/g%3E%3Cg id='XMLID_225_'%3E%3Cpath id='XMLID_226_' class='st7' d='M24,629v2h-2v-2H24 M26,627h-6v6h6V627L26,627z'/%3E%3C/g%3E%3Cg id='XMLID_221_'%3E%3Cpath id='XMLID_222_' class='st7' d='M6,629v2H4v-2H6 M8,627H2v6h6V627L8,627z'/%3E%3C/g%3E%3C/g%3E%3Cg id='close-on'%3E%3Cg id='XMLID_219_'%3E%3Cpath id='XMLID_220_' class='st26' d='M35,610c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l14-14c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-14,14C35.5,609.9,35.3,610,35,610z'/%3E%3C/g%3E%3Cg id='XMLID_217_'%3E%3Cpath id='XMLID_218_' class='st26' d='M49,610c-0.3,0-0.5-0.1-0.7-0.3l-14-14c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l14,14 c0.4,0.4,0.4,1,0,1.4C49.5,609.9,49.3,610,49,610z'/%3E%3C/g%3E%3C/g%3E%3Cg id='close'%3E%3Cg id='XMLID_215_'%3E%3Cpath id='XMLID_216_' class='st7' d='M7,610c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l14-14c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 l-14,14C7.5,609.9,7.3,610,7,610z'/%3E%3C/g%3E%3Cg id='XMLID_213_'%3E%3Cpath id='XMLID_214_' class='st7' d='M21,610c-0.3,0-0.5-0.1-0.7-0.3l-14-14c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l14,14 c0.4,0.4,0.4,1,0,1.4C21.5,609.9,21.3,610,21,610z'/%3E%3C/g%3E%3C/g%3E%3Cg id='checkmark-on'%3E%3Cpath id='XMLID_212_' class='st27' d='M40,580c-0.3,0-0.5-0.1-0.7-0.3l-7-7c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l6.3,6.3 l10.3-10.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-11,11C40.5,579.9,40.3,580,40,580z'/%3E%3C/g%3E%3Cg id='checkmark'%3E%3Cpath id='XMLID_211_' class='st7' d='M12,580c-0.3,0-0.5-0.1-0.7-0.3l-7-7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6.3,6.3l10.3-10.3 c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-11,11C12.5,579.9,12.3,580,12,580z'/%3E%3C/g%3E%3Cg id='back-on'%3E%3Cg id='XMLID_209_'%3E%3Cpath id='XMLID_210_' class='st0' d='M43,555c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C43.5,554.9,43.3,555,43,555z'/%3E%3C/g%3E%3Cg id='XMLID_207_'%3E%3Cpath id='XMLID_208_' class='st0' d='M48,547H36c-0.6,0-1-0.4-1-1s0.4-1,1-1h12c0.6,0,1,0.4,1,1S48.6,547,48,547z'/%3E%3C/g%3E%3C/g%3E%3Cg id='back'%3E%3Cg id='XMLID_205_'%3E%3Cpath id='XMLID_206_' class='st7' d='M15,555c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 c0.4,0.4,0.4,1,0,1.4L8.4,546l7.3,7.3c0.4,0.4,0.4,1,0,1.4C15.5,554.9,15.3,555,15,555z'/%3E%3C/g%3E%3Cg id='XMLID_203_'%3E%3Cpath id='XMLID_204_' class='st7' d='M20,547H8c-0.6,0-1-0.4-1-1s0.4-1,1-1h12c0.6,0,1,0.4,1,1S20.6,547,20,547z'/%3E%3C/g%3E%3C/g%3E%3Cg id='next-on'%3E%3Cg id='XMLID_201_'%3E%3Cpath id='XMLID_202_' class='st0' d='M40,527c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C40.5,526.9,40.3,527,40,527z'/%3E%3C/g%3E%3Cg id='XMLID_199_'%3E%3Cpath id='XMLID_200_' class='st0' d='M47,519H35c-0.6,0-1-0.4-1-1s0.4-1,1-1h12c0.6,0,1,0.4,1,1S47.6,519,47,519z'/%3E%3C/g%3E%3C/g%3E%3Cg id='next'%3E%3Cg id='XMLID_197_'%3E%3Cpath id='XMLID_198_' class='st7' d='M12,527c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C12.5,526.9,12.3,527,12,527z'/%3E%3C/g%3E%3Cg id='XMLID_195_'%3E%3Cpath id='XMLID_196_' class='st7' d='M19,519H7c-0.6,0-1-0.4-1-1s0.4-1,1-1h12c0.6,0,1,0.4,1,1S19.6,519,19,519z'/%3E%3C/g%3E%3C/g%3E%3Cg id='down-on'%3E%3Cpath id='XMLID_194_' class='st0' d='M42,495c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7.3,7.3l7.3-7.3 c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8,8C42.5,494.9,42.3,495,42,495z'/%3E%3C/g%3E%3Cg id='down'%3E%3Cpath id='XMLID_193_' class='st7' d='M14,495c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l7.3,7.3l7.3-7.3 c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8,8C14.5,494.9,14.3,495,14,495z'/%3E%3C/g%3E%3Cg id='up-on'%3E%3Cpath id='XMLID_192_' class='st0' d='M50,467c-0.3,0-0.5-0.1-0.7-0.3l-7.3-7.3l-7.3,7.3c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l8-8 c0.4-0.4,1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4C50.5,466.9,50.3,467,50,467z'/%3E%3C/g%3E%3Cg id='up'%3E%3Cpath id='XMLID_191_' class='st7' d='M22,467c-0.3,0-0.5-0.1-0.7-0.3l-7.3-7.3l-7.3,7.3c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l8-8 c0.4-0.4,1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4C22.5,466.9,22.3,467,22,467z'/%3E%3C/g%3E%3Cg id='left-on'%3E%3Cpath id='XMLID_190_' class='st0' d='M46,443c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C46.5,442.9,46.3,443,46,443z'/%3E%3C/g%3E%3Cg id='left'%3E%3Cpath id='XMLID_189_' class='st7' d='M18,443c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C18.5,442.9,18.3,443,18,443z'/%3E%3C/g%3E%3Cg id='right-on'%3E%3Cpath id='XMLID_188_' class='st0' d='M39,415c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C39.5,414.9,39.3,415,39,415z'/%3E%3C/g%3E%3Cg id='right'%3E%3Cpath id='XMLID_187_' class='st7' d='M11,415c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C11.5,414.9,11.3,415,11,415z'/%3E%3C/g%3E%3Cg id='left_3_'%3E%3Cpath id='XMLID_7_' class='st19' d='M18,1367c-0.3,0-0.5-0.1-0.7-0.3l-8-8c-0.4-0.4-0.4-1,0-1.4l8-8c0.4-0.4,1-0.4,1.4,0 s0.4,1,0,1.4l-7.3,7.3l7.3,7.3c0.4,0.4,0.4,1,0,1.4C18.5,1366.9,18.3,1367,18,1367z'/%3E%3C/g%3E%3Cg id='right_3_'%3E%3Cpath id='XMLID_5_' class='st19' d='M10,1339c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l7.3-7.3l-7.3-7.3c-0.4-0.4-0.4-1,0-1.4 s1-0.4,1.4,0l8,8c0.4,0.4,0.4,1,0,1.4l-8,8C10.5,1338.9,10.3,1339,10,1339z'/%3E%3C/g%3E%3Cg id='menu-on'%3E%3Cg id='XMLID_185_'%3E%3Cpath id='XMLID_186_' class='st13' d='M50,374H34c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S50.6,374,50,374z'/%3E%3C/g%3E%3Cg id='XMLID_183_'%3E%3Cpath id='XMLID_184_' class='st13' d='M50,379H34c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S50.6,379,50,379z'/%3E%3C/g%3E%3Cg id='XMLID_181_'%3E%3Cpath id='XMLID_182_' class='st13' d='M50,384H34c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S50.6,384,50,384z'/%3E%3C/g%3E%3C/g%3E%3Cg id='menu'%3E%3Cg id='XMLID_179_'%3E%3Cpath id='XMLID_180_' class='st0' d='M22,374H6c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S22.6,374,22,374z'/%3E%3C/g%3E%3Cg id='XMLID_177_'%3E%3Cpath id='XMLID_178_' class='st0' d='M22,379H6c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S22.6,379,22,379z'/%3E%3C/g%3E%3Cg id='XMLID_175_'%3E%3Cpath id='XMLID_176_' class='st0' d='M22,384H6c-0.6,0-1-0.4-1-1s0.4-1,1-1h16c0.6,0,1,0.4,1,1S22.6,384,22,384z'/%3E%3C/g%3E%3C/g%3E%3Cg id='pause-on'%3E%3Cpath id='XMLID_171_' class='st7' d='M41.9,339.1c-6.1,0-11,4.9-11,11s4.9,11,11,11s11-4.9,11-11S48,339.1,41.9,339.1z M40,353 c0,0.6-0.4,1-1,1s-1-0.4-1-1v-6c0-0.6,0.4-1,1-1s1,0.4,1,1V353z M46,353c0,0.6-0.4,1-1,1s-1-0.4-1-1v-6c0-0.6,0.4-1,1-1s1,0.4,1,1 V353z'/%3E%3C/g%3E%3Cg id='pause'%3E%3Cg id='XMLID_167_'%3E%3Cpath id='XMLID_168_' class='st7' d='M13.9,361.1c-6.1,0-11-4.9-11-11s4.9-11,11-11s11,4.9,11,11S20,361.1,13.9,361.1z M13.9,341.1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S18.9,341.1,13.9,341.1z'/%3E%3C/g%3E%3Cg id='XMLID_165_'%3E%3Cpath id='XMLID_166_' class='st7' d='M11,354c-0.6,0-1-0.4-1-1v-6c0-0.6,0.4-1,1-1s1,0.4,1,1v6C12,353.6,11.6,354,11,354z'/%3E%3C/g%3E%3Cg id='XMLID_163_'%3E%3Cpath id='XMLID_164_' class='st7' d='M17,354c-0.6,0-1-0.4-1-1v-6c0-0.6,0.4-1,1-1s1,0.4,1,1v6C18,353.6,17.6,354,17,354z'/%3E%3C/g%3E%3C/g%3E%3Cg id='play-on_1_'%3E%3Cpath id='XMLID_160_' class='st7' d='M41.9,311.1c-6.1,0-11,4.9-11,11s4.9,11,11,11s11-4.9,11-11S48,311.1,41.9,311.1z M40,326v-8 l6,4.1L40,326z'/%3E%3C/g%3E%3Cg id='play_1_'%3E%3Cg id='XMLID_156_'%3E%3Cpath id='XMLID_157_' class='st7' d='M13.9,333.1c-6.1,0-11-4.9-11-11s4.9-11,11-11s11,4.9,11,11S20,333.1,13.9,333.1z M13.9,313.1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S18.9,313.1,13.9,313.1z'/%3E%3C/g%3E%3Cg id='XMLID_152_'%3E%3Cpath id='XMLID_153_' class='st7' d='M12,327c-0.2,0-0.3,0-0.5-0.1c-0.3-0.2-0.5-0.5-0.5-0.9v-8c0-0.4,0.2-0.7,0.5-0.9 c0.3-0.2,0.7-0.2,1,0.1l6,4.1c0.3,0.2,0.4,0.5,0.4,0.8s-0.2,0.6-0.5,0.8l-6,3.9C12.4,326.9,12.2,327,12,327z M13,319.9v4.3 l3.2-2.1L13,319.9z'/%3E%3C/g%3E%3C/g%3E%3Cg id='moreinfo-on'%3E%3Cpath id='XMLID_148_' class='st7' d='M42,283c-6.1,0-11,4.9-11,11s4.9,11,11,11s11-4.9,11-11S48.1,283,42,283z M42.7,299.7 c-0.2,0.2-0.5,0.3-0.7,0.3s-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.5-0.3-0.7c0-0.3,0.1-0.5,0.3-0.7c0.4-0.4,1-0.4,1.4,0 c0.2,0.2,0.3,0.5,0.3,0.7S42.9,299.5,42.7,299.7z M44.3,293.8c-0.8,0.6-1.3,1.1-1.3,2.2c0,0.6-0.4,1-1,1s-1-0.4-1-1 c0-2.1,1.2-3,2.1-3.8c0.7-0.6,0.9-0.8,0.9-1.2c0-1.1-0.9-2-2-2s-2,0.9-2,2c0,0.6-0.4,1-1,1s-1-0.4-1-1c0-2.2,1.8-4,4-4s4,1.8,4,4 C46,292.4,45.1,293.2,44.3,293.8z'/%3E%3C/g%3E%3Cg id='moreinfo'%3E%3Cg id='XMLID_144_'%3E%3Cpath id='XMLID_145_' class='st7' d='M14,305c-6.1,0-11-4.9-11-11s4.9-11,11-11s11,4.9,11,11S20.1,305,14,305z M14,285 c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S19,285,14,285z'/%3E%3C/g%3E%3Cg id='XMLID_142_'%3E%3Cpath id='XMLID_143_' class='st7' d='M14,300c-0.3,0-0.5-0.1-0.7-0.3c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5,0.3-0.7 c0.4-0.4,1-0.4,1.4,0c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7C14.5,299.9,14.3,300,14,300z'/%3E%3C/g%3E%3Cg id='XMLID_140_'%3E%3Cpath id='XMLID_141_' class='st7' d='M14,297c-0.6,0-1-0.4-1-1c0-2.1,1.2-3,2.1-3.8c0.7-0.6,0.9-0.8,0.9-1.2c0-1.1-0.9-2-2-2 s-2,0.9-2,2c0,0.6-0.4,1-1,1s-1-0.4-1-1c0-2.2,1.8-4,4-4s4,1.8,4,4c0,1.4-0.9,2.2-1.7,2.8c-0.8,0.6-1.3,1.1-1.3,2.2 C15,296.6,14.6,297,14,297z'/%3E%3C/g%3E%3C/g%3E%3Cg id='audio'%3E%3Cg id='XMLID_136_'%3E%3Cpath id='XMLID_137_' class='st7' d='M11,274c-0.2,0-0.4-0.1-0.6-0.2L5.6,270H3c-0.6,0-1-0.4-1-1v-5c0-0.6,0.4-1,1-1h2.6l4.7-3.8 c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.6,0.5,0.6,0.9v13c0,0.4-0.2,0.7-0.6,0.9C11.3,274,11.1,274,11,274z M4,268h2 c0.2,0,0.4,0.1,0.6,0.2l3.4,2.7v-8.8l-3.4,2.7C6.4,264.9,6.2,265,6,265H4V268z'/%3E%3C/g%3E%3Cg id='XMLID_134_'%3E%3Cpath id='XMLID_135_' class='st7' d='M21,275c-0.3,0-0.6-0.1-0.8-0.4c-0.3-0.4-0.3-1.1,0.2-1.4c2.1-1.6,3.2-4,3.4-6.5 c0.1-2.9-1.1-5.8-3.4-8c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0c2.7,2.6,4.2,6,4,9.5c-0.1,3.2-1.6,6-4.1,8C21.4,274.9,21.2,275,21,275z' /%3E%3C/g%3E%3Cg id='XMLID_132_'%3E%3Cpath id='XMLID_133_' class='st7' d='M18,272c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4c1.3-1.3,2-2.7,2-4.3c0-1.5-0.7-3-2-4.3 c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0c1.7,1.7,2.5,3.6,2.5,5.7s-0.9,4.1-2.5,5.7C18.5,271.9,18.3,272,18,272z'/%3E%3C/g%3E%3Cg id='XMLID_130_'%3E%3Cpath id='XMLID_131_' class='st7' d='M15,269c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4c0.6-0.6,0.6-1.8-0.1-2.6 c-0.4-0.4-0.3-1.1,0.1-1.4c0.4-0.4,1.1-0.3,1.4,0.1c1.3,1.6,1.3,4-0.1,5.3C15.5,268.9,15.3,269,15,269z'/%3E%3C/g%3E%3C/g%3E%3Cg id='brokenpage'%3E%3Cg id='XMLID_126_'%3E%3Cpath id='XMLID_127_' class='st7' d='M22,240c-0.1,0-0.3,0-0.4-0.1l-4.7-1.9l-5.7,1.9c-0.2,0.1-0.5,0.1-0.7,0l-5-2 C5.2,237.8,5,237.4,5,237v-10c0-0.6,0.4-1,1-1h10c0.3,0,0.5,0.1,0.7,0.3l6,6c0.2,0.2,0.3,0.4,0.3,0.7v6c0,0.3-0.2,0.6-0.4,0.8 C22.4,239.9,22.2,240,22,240z M7,236.3l4,1.6l5.7-1.9c0.2-0.1,0.5-0.1,0.7,0l3.6,1.5v-4.1l-5.4-5.4H7V236.3z'/%3E%3C/g%3E%3Cg id='XMLID_122_'%3E%3Cpath id='XMLID_123_' class='st7' d='M22,250H6c-0.6,0-1-0.4-1-1v-8c0-0.3,0.2-0.6,0.4-0.8c0.3-0.2,0.6-0.2,0.9-0.1L11,242 l5.7-1.9c0.2-0.1,0.5-0.1,0.7,0l5,2c0.4,0.2,0.6,0.5,0.6,0.9v6C23,249.6,22.6,250,22,250z M7,248h14v-4.3l-4-1.6l-5.7,1.9 c-0.2,0.1-0.5,0.1-0.7,0L7,242.5V248z'/%3E%3C/g%3E%3Cg id='XMLID_120_'%3E%3Cpath id='XMLID_121_' class='st7' d='M22,234h-6c-0.6,0-1-0.4-1-1v-6c0-0.6,0.4-1,1-1s1,0.4,1,1v5h5c0.6,0,1,0.4,1,1 S22.6,234,22,234z'/%3E%3C/g%3E%3C/g%3E%3Cg id='page'%3E%3Cg id='XMLID_116_'%3E%3Cpath id='XMLID_117_' class='st7' d='M22,222H6c-0.6,0-1-0.4-1-1v-22c0-0.6,0.4-1,1-1h10c0.3,0,0.5,0.1,0.7,0.3l6,6 c0.2,0.2,0.3,0.4,0.3,0.7v16C23,221.6,22.6,222,22,222z M7,220h14v-14.6l-5.4-5.4H7V220z'/%3E%3C/g%3E%3Cg id='XMLID_114_'%3E%3Cpath id='XMLID_115_' class='st7' d='M22,206h-6c-0.6,0-1-0.4-1-1v-6c0-0.6,0.4-1,1-1s1,0.4,1,1v5h5c0.6,0,1,0.4,1,1 S22.6,206,22,206z'/%3E%3C/g%3E%3C/g%3E%3Cg id='female-on'%3E%3Ccircle id='XMLID_111_' class='st28' cx='42' cy='174' r='4'/%3E%3Cg id='XMLID_108_'%3E%3Cpath id='XMLID_107_' class='st28' d='M41,179c-0.5,0-1.2,0.4-1.6,0.8l-4.9,7.3c-0.3,0.5-0.1,0.9,0.4,1.1l6.1,1.5 c0.5,0.1,1.4,0.1,1.9,0l6.1-1.5c0.5-0.1,0.7-0.6,0.4-1.1l-4.9-7.3c-0.3-0.5-1-0.8-1.6-0.8H41z'/%3E%3C/g%3E%3Cg id='XMLID_105_'%3E%3Cpath id='XMLID_109_' class='st28' d='M39,186c-0.5,0-0.9,0.4-0.8,1l1.5,6.1c0.1,0.5,0.7,1,1.2,1h2c0.5,0,1.1-0.4,1.2-1l1.5-6.1 c0.1-0.5-0.2-1-0.8-1H39z'/%3E%3C/g%3E%3C/g%3E%3Cg id='female'%3E%3Cg id='XMLID_101_'%3E%3Cpath id='XMLID_102_' class='st29' d='M14,178c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S16.2,178,14,178z M14,172c-1.1,0-2,0.9-2,2 s0.9,2,2,2s2-0.9,2-2S15.1,172,14,172z'/%3E%3C/g%3E%3Cg id='XMLID_97_'%3E%3Cpath id='XMLID_98_' class='st29' d='M16,194h-4c-0.5,0-0.9-0.3-1-0.8l-0.9-4.4L6.8,188c-0.3-0.1-0.6-0.3-0.7-0.6 s-0.1-0.7,0.1-0.9l5-7c0.2-0.3,0.5-0.4,0.8-0.4h4c0.3,0,0.6,0.2,0.8,0.4l5,7c0.2,0.3,0.2,0.6,0.1,0.9s-0.4,0.5-0.7,0.6l-3.4,0.8 l-0.9,4.4C16.9,193.7,16.5,194,16,194z M12.8,192h2.4l0.8-4.2c0.1-0.4,0.4-0.7,0.7-0.8l2.6-0.6l-3.8-5.4h-3l-3.8,5.4l2.6,0.6 c0.4,0.1,0.7,0.4,0.7,0.8L12.8,192z'/%3E%3C/g%3E%3C/g%3E%3Cg id='male-on'%3E%3Ccircle id='XMLID_96_' class='st30' cx='42' cy='146' r='4'/%3E%3Cg id='XMLID_93_'%3E%3Cpath id='XMLID_112_' class='st30' d='M39,158c-0.5,0-0.9,0.4-0.8,1l1.5,6.1c0.1,0.5,0.7,1,1.2,1h2c0.5,0,1.1-0.4,1.2-1l1.5-6.1 c0.1-0.5-0.2-1-0.8-1H39z'/%3E%3C/g%3E%3Cg id='XMLID_90_'%3E%3Cpath id='XMLID_110_' class='st30' d='M36,152c0-0.6,0.5-1,1-1h10c0.5,0,1,0.4,1,1v5c0,0.6-0.4,1.2-0.9,1.4l-4.2,2.1 c-0.5,0.2-1.3,0.2-1.8,0l-4.2-2.1c-0.5-0.2-0.9-0.9-0.9-1.4C36,157,36,152,36,152z'/%3E%3C/g%3E%3C/g%3E%3Cg id='male'%3E%3Cg id='XMLID_86_'%3E%3Cpath id='XMLID_87_' class='st29' d='M14,150c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S16.2,150,14,150z M14,144c-1.1,0-2,0.9-2,2 s0.9,2,2,2s2-0.9,2-2S15.1,144,14,144z'/%3E%3C/g%3E%3Cg id='XMLID_82_'%3E%3Cpath id='XMLID_83_' class='st29' d='M16,166h-4c-0.5,0-0.9-0.4-1-0.8l-0.9-5.5l-1.5-0.8C8.2,158.7,8,158.4,8,158v-6 c0-0.6,0.4-1,1-1h10c0.6,0,1,0.4,1,1v6c0,0.4-0.2,0.7-0.6,0.9l-1.5,0.8l-0.9,5.5C16.9,165.6,16.5,166,16,166z M12.8,164h2.3 l0.9-5.2c0.1-0.3,0.3-0.6,0.5-0.7l1.4-0.7V153h-8v4.4l1.4,0.7c0.3,0.1,0.5,0.4,0.5,0.7L12.8,164z'/%3E%3C/g%3E%3C/g%3E%3Cg id='active'%3E%3Cg id='XMLID_80_'%3E%3Cpath id='XMLID_81_' class='st31' d='M44,138h-4c-0.6,0-1-0.4-1-1s0.4-1,1-1h4c0.6,0,1,0.4,1,1S44.6,138,44,138z'/%3E%3C/g%3E%3Cg id='XMLID_78_'%3E%3Cpath id='XMLID_79_' class='st31' d='M45,135h-6c-0.6,0-1-0.4-1-1s0.4-1,1-1h6c0.6,0,1,0.4,1,1S45.6,135,45,135z'/%3E%3C/g%3E%3Cpath id='XMLID_74_' class='st31' d='M48.8,124L48.8,124l-3.4,8h-6.8l-3.4-8l0,0c-1.1-3-0.6-5.8,1.6-8c2.9-2.9,7.5-2.8,10.3,0 C49.3,118.2,49.9,121,48.8,124z M47,120c0-2.2-1.8-4-4-4c-0.6,0-1,0.4-1,1s0.4,1,1,1c1.1,0,2,0.9,2,2c0,0.6,0.4,1,1,1 S47,120.6,47,120z'/%3E%3C/g%3E%3Cg id='inactive'%3E%3Cg id='XMLID_72_'%3E%3Cpath id='XMLID_73_' class='st7' d='M16,138h-4c-0.6,0-1-0.4-1-1s0.4-1,1-1h4c0.6,0,1,0.4,1,1S16.6,138,16,138z'/%3E%3C/g%3E%3Cg id='XMLID_70_'%3E%3Cpath id='XMLID_71_' class='st7' d='M17,135h-6c-0.6,0-1-0.4-1-1s0.4-1,1-1h6c0.6,0,1,0.4,1,1S17.6,135,17,135z'/%3E%3C/g%3E%3Cg id='XMLID_68_'%3E%3Cpath id='XMLID_69_' class='st7' d='M20,125c-0.1,0-0.3,0-0.4-0.1c-0.5-0.2-0.8-0.8-0.5-1.3c0.9-2.1,0.4-4.4-1.2-6 c-2.1-2.1-5.6-2.1-7.8,0c-1.6,1.6-2,3.9-1.2,6c0.2,0.5,0,1.1-0.5,1.3c-0.5,0.2-1.1,0-1.3-0.5c-1.2-2.8-0.5-6,1.6-8.2 c2.9-2.9,7.7-2.9,10.6,0c2.2,2.2,2.8,5.4,1.6,8.2C20.8,124.8,20.4,125,20,125z'/%3E%3C/g%3E%3Cg id='XMLID_66_'%3E%3Cpath id='XMLID_67_' class='st7' d='M17,132h-6c-0.4,0-0.8-0.2-0.9-0.6l-3-7c-0.2-0.5,0-1.1,0.5-1.3c0.5-0.2,1.1,0,1.3,0.5 l2.7,6.4h4.7l2.7-6.4c0.2-0.5,0.8-0.7,1.3-0.5s0.7,0.8,0.5,1.3l-3,7C17.8,131.8,17.4,132,17,132z'/%3E%3C/g%3E%3Cg id='XMLID_64_'%3E%3Cpath id='XMLID_65_' class='st7' d='M17,122c-0.6,0-1-0.4-1-1c0-1.1-0.9-2-2-2c-0.6,0-1-0.4-1-1s0.4-1,1-1c2.2,0,4,1.8,4,4 C18,121.6,17.6,122,17,122z'/%3E%3C/g%3E%3C/g%3E%3Cg id='edit-on'%3E%3Cg id='XMLID_62_'%3E%3Cpath id='XMLID_63_' class='st7' d='M51,108H33c-0.6,0-1-0.4-1-1V89c0-0.6,0.4-1,1-1h8c0.6,0,1,0.4,1,1s-0.4,1-1,1h-7v16h16v-7 c0-0.6,0.4-1,1-1s1,0.4,1,1v8C52,107.6,51.6,108,51,108z'/%3E%3C/g%3E%3Cg id='XMLID_60_'%3E%3Cpath id='XMLID_61_' class='st7' d='M52.3,92.7l-9,9c-0.2,0.2-0.4,0.3-0.7,0.3H39c-0.6,0-1-0.4-1-1v-3.6c0-0.3,0.1-0.5,0.3-0.7 l9-9c0.4-0.4,1-0.4,1.4,0l3.6,3.6C52.7,91.7,52.7,92.3,52.3,92.7z'/%3E%3C/g%3E%3C/g%3E%3Cg id='edit'%3E%3Cg id='XMLID_58_'%3E%3Cpath id='XMLID_59_' class='st7' d='M23,108H5c-0.6,0-1-0.4-1-1V89c0-0.6,0.4-1,1-1h8c0.6,0,1,0.4,1,1s-0.4,1-1,1H6v16h16v-7 c0-0.6,0.4-1,1-1s1,0.4,1,1v8C24,107.6,23.6,108,23,108z'/%3E%3C/g%3E%3Cg id='XMLID_54_'%3E%3Cpath id='XMLID_55_' class='st7' d='M15,103h-5c-0.6,0-1-0.4-1-1v-5c0-0.3,0.1-0.5,0.3-0.7l9-9c0.4-0.4,1-0.4,1.4,0l5,5 c0.4,0.4,0.4,1,0,1.4l-9,9C15.5,102.9,15.3,103,15,103z M11,101h3.6l8-8L19,89.4l-8,8V101z'/%3E%3C/g%3E%3C/g%3E%3Cg id='settings-on'%3E%3Cpath id='XMLID_51_' class='st7' d='M53,68h-1.2c-0.3-1.3-0.8-2.5-1.5-3.5l0.9-0.9c0.4-0.4,0.4-1,0-1.4l-1.4-1.4 c-0.4-0.4-1-0.4-1.4,0l-0.9,0.9c-1-0.7-2.2-1.2-3.5-1.5V59c0-0.6-0.4-1-1-1h-2c-0.6,0-1,0.4-1,1v1.2c-1.3,0.3-2.5,0.8-3.5,1.5 l-0.9-0.9c-0.4-0.4-1-0.4-1.4,0l-1.4,1.4c-0.4,0.4-0.4,1,0,1.4l0.9,0.9c-0.7,1-1.2,2.2-1.5,3.5H31c-0.6,0-1,0.4-1,1v2 c0,0.6,0.4,1,1,1h1.2c0.3,1.3,0.8,2.5,1.5,3.5l-0.9,0.9c-0.4,0.4-0.4,1,0,1.4l1.4,1.4c0.4,0.4,1,0.4,1.4,0l0.9-0.9 c1,0.7,2.2,1.2,3.5,1.5V81c0,0.6,0.4,1,1,1h2c0.6,0,1-0.4,1-1v-1.2c1.3-0.3,2.5-0.8,3.5-1.5l0.9,0.9c0.4,0.4,1,0.4,1.4,0l1.4-1.4 c0.4-0.4,0.4-1,0-1.4l-0.9-0.9c0.7-1,1.2-2.2,1.5-3.5H53c0.6,0,1-0.4,1-1v-2C54,68.4,53.6,68,53,68z M42,76c-3.3,0-6-2.7-6-6 s2.7-6,6-6s6,2.7,6,6S45.3,76,42,76z'/%3E%3C/g%3E%3Cg id='settings'%3E%3Cg id='XMLID_47_'%3E%3Cpath id='XMLID_48_' class='st7' d='M16,82h-4c-0.6,0-1-0.4-1-1v-1.5c-0.6-0.2-1.1-0.4-1.6-0.7l-0.9,0.9c-0.4,0.4-1,0.4-1.4,0 L4.2,77c-0.4-0.4-0.4-1,0-1.4l0.9-0.9c-0.3-0.5-0.5-1.1-0.7-1.6H3c-0.6,0-1-0.4-1-1v-4c0-0.6,0.4-1,1-1h1.5 c0.2-0.6,0.4-1.1,0.7-1.6l-0.9-0.9c-0.4-0.4-0.4-1,0-1.4l2.7-3c0.2-0.2,0.4-0.3,0.7-0.3l0,0c0.3,0,0.5,0.1,0.7,0.3l0.9,0.9 c0.5-0.3,1.1-0.5,1.6-0.7V59c0-0.6,0.4-1,1-1h4c0.6,0,1,0.4,1,1v1.5c0.6,0.2,1.1,0.4,1.6,0.7l0.9-0.9c0.4-0.4,1-0.4,1.4,0l2.8,2.8 c0.4,0.4,0.4,1,0,1.4l-0.9,0.9c0.3,0.5,0.5,1.1,0.7,1.6H25c0.6,0,1,0.4,1,1v4c0,0.6-0.4,1-1,1h-1.5c-0.2,0.6-0.4,1.1-0.7,1.6 l0.9,0.9c0.4,0.4,0.4,1,0,1.4L21,79.8c-0.2,0.2-0.4,0.3-0.7,0.3l0,0c-0.3,0-0.5-0.1-0.7-0.3l-0.9-0.9c-0.5,0.3-1.1,0.5-1.6,0.7V81 C17,81.6,16.6,82,16,82z M13,80h2v-1.2c0-0.5,0.3-0.9,0.8-1c0.9-0.2,1.7-0.5,2.5-1c0.4-0.2,0.9-0.2,1.2,0.1l0.8,0.8l1.4-1.4 l-0.8-0.8c-0.3-0.3-0.4-0.8-0.1-1.2c0.5-0.8,0.8-1.6,1-2.5c0.1-0.5,0.5-0.8,1-0.8H24v-2h-1.2c-0.5,0-0.9-0.3-1-0.8 c-0.2-0.9-0.5-1.7-1-2.5c-0.2-0.4-0.2-0.9,0.1-1.2l0.8-0.8l-1.4-1.4l-0.8,0.8c-0.3,0.3-0.8,0.4-1.2,0.1c-0.8-0.5-1.6-0.8-2.5-1 c-0.5-0.1-0.8-0.5-0.8-1V60h-2v1.2c0,0.5-0.3,0.9-0.8,1c-0.9,0.2-1.7,0.5-2.5,1c-0.4,0.2-0.9,0.2-1.2-0.1l-0.8-0.8l-1.4,1.4 l0.8,0.8c0.3,0.3,0.4,0.8,0.1,1.2c-0.5,0.8-0.8,1.6-1,2.5c-0.1,0.5-0.5,0.8-1,0.8H4v2h1.2c0.5,0,0.9,0.3,1,0.8 c0.2,0.9,0.5,1.7,1,2.5c0.2,0.4,0.2,0.9-0.1,1.2l-0.8,0.8l1.4,1.4l0.8-0.8c0.3-0.3,0.8-0.4,1.2-0.1c0.8,0.5,1.6,0.8,2.5,1 c0.5,0.1,0.8,0.5,0.8,1V80z'/%3E%3C/g%3E%3Cg id='XMLID_43_'%3E%3Cpath id='XMLID_44_' class='st7' d='M14,76c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S17.3,76,14,76z M14,66c-2.2,0-4,1.8-4,4 s1.8,4,4,4s4-1.8,4-4S16.2,66,14,66z'/%3E%3C/g%3E%3C/g%3E%3Cg id='search'%3E%3Cg id='XMLID_39_'%3E%3Cpath id='XMLID_40_' class='st7' d='M12,49c-5,0-9-4-9-9s4-9,9-9s9,4,9,9S17,49,12,49z M12,33c-3.9,0-7,3.1-7,7s3.1,7,7,7 s7-3.1,7-7S15.9,33,12,33z'/%3E%3C/g%3E%3Cg id='XMLID_37_'%3E%3Cpath id='XMLID_38_' class='st7' d='M24,53c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6 c0.4,0.4,0.4,1,0,1.4C24.5,52.9,24.3,53,24,53z'/%3E%3C/g%3E%3Cg id='XMLID_35_'%3E%3Cpath id='XMLID_36_' class='st7' d='M16,41c-0.6,0-1-0.4-1-1c0-1.7-1.3-3-3-3c-0.6,0-1-0.4-1-1s0.4-1,1-1c2.8,0,5,2.2,5,5 C17,40.6,16.6,41,16,41z'/%3E%3C/g%3E%3C/g%3E%3Cg id='search_5_'%3E%3Cg id='XMLID_31_'%3E%3Cpath id='XMLID_32_' class='st13' d='M40,49c-5,0-9-4-9-9s4-9,9-9s9,4,9,9S45,49,40,49z M40,33c-3.9,0-7,3.1-7,7s3.1,7,7,7 s7-3.1,7-7S43.9,33,40,33z'/%3E%3C/g%3E%3Cg id='XMLID_29_'%3E%3Cpath id='XMLID_30_' class='st13' d='M52,53c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6 c0.4,0.4,0.4,1,0,1.4C52.5,52.9,52.3,53,52,53z'/%3E%3C/g%3E%3Cg id='XMLID_26_'%3E%3Cpath id='XMLID_28_' class='st13' d='M44,41c-0.6,0-1-0.4-1-1c0-1.7-1.3-3-3-3c-0.6,0-1-0.4-1-1s0.4-1,1-1c2.8,0,5,2.2,5,5 C45,40.6,44.6,41,44,41z'/%3E%3C/g%3E%3C/g%3E%3Cpath id='home-on' class='st7' d='M42.7,3.6c-0.4-0.4-1-0.4-1.4,0L30.2,14H32v10c0,0.6,0.4,1,1,1h7v-8h4v8h7c0.6,0,1-0.4,1-1V14h1.9 L42.7,3.6z'/%3E%3Cg id='home'%3E%3Cpath id='XMLID_21_' class='st7' d='M23,25h-7c-0.6,0-1-0.4-1-1v-6h-2v6c0,0.6-0.4,1-1,1H5c-0.6,0-1-0.4-1-1v-9H3 c-0.4,0-0.8-0.3-0.9-0.6c-0.1-0.4,0-0.8,0.3-1.1l11-10c0.4-0.3,1-0.3,1.3,0l11,10c0.3,0.3,0.4,0.7,0.3,1.1c-0.2,0.3-0.6,0.6-1,0.6 h-1v9C24,24.6,23.6,25,23,25z M17,23h5v-9c0-0.4,0.2-0.7,0.5-0.9L14,5.4l-8.5,7.8C5.8,13.3,6,13.6,6,14v9h5v-6c0-0.6,0.4-1,1-1h4 c0.6,0,1,0.4,1,1V23z'/%3E%3C/g%3E%3Cg id='trashbin-on'%3E%3Cpath class='st19' d='M53,2079h-2h-3v-3c0-1.1-0.9-2-2-2h-8c-1.1,0-2,0.9-2,2v3h-3h-2c-0.6,0-1,0.4-1,1s0.4,1,1,1h1v14 c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3v-14h1c0.6,0,1-0.4,1-1S53.6,2079,53,2079z M38,2076h8v3h-8V2076z M39,2093c0,0.6-0.4,1-1,1 s-1-0.4-1-1v-9c0-0.6,0.4-1,1-1s1,0.4,1,1V2093z M43,2093c0,0.6-0.4,1-1,1s-1-0.4-1-1v-9c0-0.6,0.4-1,1-1s1,0.4,1,1V2093z M47,2093 c0,0.6-0.4,1-1,1s-1-0.4-1-1v-9c0-0.6,0.4-1,1-1s1,0.4,1,1V2093z'/%3E%3C/g%3E%3Cg id='trashbin'%3E%3Cline class='st25' x1='3' y1='2080' x2='25' y2='2080'/%3E%3Cpath class='st25' d='M5,2080v15c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2v-15'/%3E%3Cline class='st25' x1='14' y1='2084' x2='14' y2='2093'/%3E%3Cline class='st25' x1='10' y1='2084' x2='10' y2='2093'/%3E%3Cline class='st25' x1='18' y1='2084' x2='18' y2='2093'/%3E%3Cpath class='st25' d='M9,2079v-3c0-0.6,0.4-1,1-1h8c0.6,0,1,0.4,1,1v3'/%3E%3Cpath class='st25' d='M23,2080'/%3E%3Cpath class='st25' d='M5,2080'/%3E%3C/g%3E%3Cg%3E%3Cpath class='st7' d='M14,2156c-7.7,0-14,6.3-14,14s6.3,14,14,14s14-6.3,14-14S21.7,2156,14,2156z M22.3,2176.7l-4.8,4.8 c-1.1,0.3-2.3,0.5-3.5,0.5c-0.3,0-0.6,0-1,0l1.2-1.2c0.4-0.4,0.4-1,0-1.4L13,2178v-4c0-1.1-0.9-2-2-2H7c-1.1,0-2-0.9-2-2v-7.9 c2.2-2.5,5.4-4.1,9-4.1c1,0,2,0.1,3,0.4v0.6c0,0.6-0.4,1-1,1s-1,0.4-1,1v1l1.3,1.3c0.4,0.4,0.4,1,0,1.4l-3.6,3.6 c-0.4,0.4-0.4,1,0,1.4l2.3,2.3h4l3.3,3.3C22.7,2175.7,22.7,2176.3,22.3,2176.7z'/%3E%3C/g%3E%3Cg%3E%3Cpath class='st7' d='M19,2197h-2v-7c0-1.6-1-3-2.2-3h-1.6c-1.2,0-2.2,1.4-2.2,3v7H9v-7c0-2.8,1.9-5,4.2-5h1.6c2.3,0,4.2,2.2,4.2,5 V2197z'/%3E%3C/g%3E%3Cpath class='st7' d='M19,2196H9c-2.2,0-4,1.8-4,4v9c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2v-9C23,2197.8,21.2,2196,19,2196z'/%3E%3C/svg%3E%0A");
 		}
-        .sg-section .text-robux, .sg-section .text-robux-l, .premium-landing-page .more-benefit-container .div-table-row .div-table-cell:nth-child(1) .benefit-desc, .gotham-font .catalog-container .search-bars .input-group .buy-robux, .gotham-font .catalog-container .search-bars a.buy-robux {
+        .sg-section .text-robux, .sg-section .text-robux-l, .premium-landing-page .more-benefit-container .div-table-row .div-table-cell:nth-child(1) .benefit-desc, .gotham-font .catalog-container .search-bars .input-group .buy-robux, .gotham-font .catalog-container .search-bars a.buy-robux, .builder-font .catalog-container .search-bars .input-group .buy-robux, .builder-font .catalog-container .search-bars a.buy-robux {
             font-size: 0
         }
         .sg-section .text-robux:after {
@@ -13934,7 +14100,7 @@
             line-height: 1.4em;
             cursor: text;
         }
-        .gotham-font .catalog-container .search-bars .input-group .buy-robux:after, .catalog-container .search-bars .buy-robux:after {
+        .gotham-font .catalog-container .search-bars .input-group .buy-robux:after, .builder-font .catalog-container .search-bars .input-group .buy-robux:after, .catalog-container .search-bars .buy-robux:after {
             content: "Buy Tickets";
             font-size: 16px;
             font-weight: 500;
@@ -13945,7 +14111,7 @@
                 font-size: 12px;
                 font-weight: 500;
             }
-            .gotham-font .catalog-container .search-bars .input-group .buy-robux:after {
+            .gotham-font .catalog-container .search-bars .input-group .buy-robux:after, .builder-font .catalog-container .search-bars .input-group .buy-robux:after {
                 font-size: 16px;
                 line-height: 100%;
             }
@@ -15462,7 +15628,7 @@
 		position: relative
 	}
 	
-	.gotham-font .game-main-content .game-calls-to-action #game-details-play-button-container:has(.random-server-button), .gotham-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container:has(.random-server-button) {
+	.gotham-font .game-main-content .game-calls-to-action #game-details-play-button-container:has(.random-server-button), .gotham-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container:has(.random-server-button), .builder-font .game-main-content .game-calls-to-action #game-details-play-button-container:has(.random-server-button), .builder-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container:has(.random-server-button) {
 		display: flex
 	}
 	
@@ -17041,7 +17207,7 @@
 		}
 
 		& when (@SourceSansPro = 0) {
-			.gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:focus, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:focus, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited {
+			.gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:focus, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:focus, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited, .builder-font.light-theme .refresh-link, .builder-font.light-theme .refresh-link-icon, .builder-font.light-theme .refresh-link-icon:active, .builder-font.light-theme .refresh-link-icon:hover, .builder-font.light-theme .refresh-link-icon:focus, .builder-font.light-theme .refresh-link-icon:link, .builder-font.light-theme .refresh-link-icon:visited, .builder-font.light-theme .refresh-link:active, .builder-font.light-theme .refresh-link:hover, .builder-font.light-theme .refresh-link:link, .builder-font.light-theme .refresh-link:visited, .builder-font.light-theme .see-all-link, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .see-all-link-icon:active, .builder-font.light-theme .see-all-link-icon:hover, .builder-font.light-theme .see-all-link-icon:link, .builder-font.light-theme .see-all-link-icon:visited, .builder-font.light-theme .see-all-link:active, .builder-font.light-theme .see-all-link:hover, .builder-font.light-theme .see-all-link:link, .builder-font.light-theme .see-all-link:visited, .builder-font.light-theme .touch .refresh-link, .builder-font.light-theme .touch .refresh-link-icon, .builder-font.light-theme .touch .refresh-link-icon:active, .builder-font.light-theme .touch .refresh-link-icon:hover, .builder-font.light-theme .touch .refresh-link-icon:link, .builder-font.light-theme .touch .refresh-link-icon:visited, .builder-font.light-theme .touch .refresh-link:active, .builder-font.light-theme .touch .refresh-link:hover, .builder-font.light-theme .touch .refresh-link:link, .builder-font.light-theme .touch .refresh-link:visited, .builder-font.light-theme .touch .see-all-link, .builder-font.light-theme .touch .see-all-link-icon, .builder-font.light-theme .touch .see-all-link-icon:active, .builder-font.light-theme .touch .see-all-link-icon:hover, .builder-font.light-theme .touch .see-all-link-icon:link, .builder-font.light-theme .touch .see-all-link-icon:visited, .builder-font.light-theme .touch .see-all-link:active, .builder-font.light-theme .touch .see-all-link:hover, .builder-font.light-theme .touch .see-all-link:link, .builder-font.light-theme .touch .see-all-link:visited, .builder-font.dark-theme .refresh-link, .builder-font.dark-theme .refresh-link-icon, .builder-font.dark-theme .refresh-link-icon:active, .builder-font.dark-theme .refresh-link-icon:hover, .builder-font.dark-theme .refresh-link-icon:focus, .builder-font.dark-theme .refresh-link-icon:link, .builder-font.dark-theme .refresh-link-icon:visited, .builder-font.dark-theme .refresh-link:active, .builder-font.dark-theme .refresh-link:hover, .builder-font.dark-theme .refresh-link:link, .builder-font.dark-theme .refresh-link:visited, .builder-font.dark-theme .see-all-link, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .see-all-link-icon:active, .builder-font.dark-theme .see-all-link-icon:hover, .builder-font.dark-theme .see-all-link-icon:link, .builder-font.dark-theme .see-all-link-icon:visited, .builder-font.dark-theme .see-all-link:active, .builder-font.dark-theme .see-all-link:hover, .builder-font.dark-theme .see-all-link:link, .builder-font.dark-theme .see-all-link:visited, .builder-font.dark-theme .touch .refresh-link, .builder-font.dark-theme .touch .refresh-link-icon, .builder-font.dark-theme .touch .refresh-link-icon:active, .builder-font.dark-theme .touch .refresh-link-icon:hover, .builder-font.dark-theme .touch .refresh-link-icon:link, .builder-font.dark-theme .touch .refresh-link-icon:visited, .builder-font.dark-theme .touch .refresh-link:active, .builder-font.dark-theme .touch .refresh-link:hover, .builder-font.dark-theme .touch .refresh-link:link, .builder-font.dark-theme .touch .refresh-link:visited, .builder-font.dark-theme .touch .see-all-link, .builder-font.dark-theme .touch .see-all-link-icon, .builder-font.dark-theme .touch .see-all-link-icon:active, .builder-font.dark-theme .touch .see-all-link-icon:hover, .builder-font.dark-theme .touch .see-all-link-icon:link, .builder-font.dark-theme .touch .see-all-link-icon:visited, .builder-font.dark-theme .touch .see-all-link:active, .builder-font.dark-theme .touch .see-all-link:hover, .builder-font.dark-theme .touch .see-all-link:link, .builder-font.dark-theme .touch .see-all-link:visited {
 				color: #ea0000;
 			}
 		}
@@ -17875,10 +18041,10 @@
 		}
 		
 		& when (@SourceSansPro = 0) {
-			.gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited {
+			.gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .builder-font.light-theme .refresh-link, .builder-font.light-theme .refresh-link-icon, .builder-font.light-theme .refresh-link-icon:active, .builder-font.light-theme .refresh-link-icon:hover, .builder-font.light-theme .refresh-link-icon:link, .builder-font.light-theme .refresh-link-icon:visited, .builder-font.light-theme .refresh-link:active, .builder-font.light-theme .refresh-link:hover, .builder-font.light-theme .refresh-link:link, .builder-font.light-theme .refresh-link:visited, .builder-font.light-theme .see-all-link, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .see-all-link-icon:active, .builder-font.light-theme .see-all-link-icon:hover, .builder-font.light-theme .see-all-link-icon:link, .builder-font.light-theme .see-all-link-icon:visited, .builder-font.light-theme .see-all-link:active, .builder-font.light-theme .see-all-link:hover, .builder-font.light-theme .see-all-link:link, .builder-font.light-theme .see-all-link:visited, .builder-font.light-theme .touch .refresh-link, .builder-font.light-theme .touch .refresh-link-icon, .builder-font.light-theme .touch .refresh-link-icon:active, .builder-font.light-theme .touch .refresh-link-icon:hover, .builder-font.light-theme .touch .refresh-link-icon:link, .builder-font.light-theme .touch .refresh-link-icon:visited, .builder-font.light-theme .touch .refresh-link:active, .builder-font.light-theme .touch .refresh-link:hover, .builder-font.light-theme .touch .refresh-link:link, .builder-font.light-theme .touch .refresh-link:visited, .builder-font.light-theme .touch .see-all-link, .builder-font.light-theme .touch .see-all-link-icon, .builder-font.light-theme .touch .see-all-link-icon:active, .builder-font.light-theme .touch .see-all-link-icon:hover, .builder-font.light-theme .touch .see-all-link-icon:link, .builder-font.light-theme .touch .see-all-link-icon:visited, .builder-font.light-theme .touch .see-all-link:active, .builder-font.light-theme .touch .see-all-link:hover, .builder-font.light-theme .touch .see-all-link:link, .builder-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited, .builder-font.dark-theme .refresh-link, .builder-font.dark-theme .refresh-link-icon, .builder-font.dark-theme .refresh-link-icon:active, .builder-font.dark-theme .refresh-link-icon:hover, .builder-font.dark-theme .refresh-link-icon:link, .builder-font.dark-theme .refresh-link-icon:visited, .builder-font.dark-theme .refresh-link:active, .builder-font.dark-theme .refresh-link:hover, .builder-font.dark-theme .refresh-link:link, .builder-font.dark-theme .refresh-link:visited, .builder-font.dark-theme .see-all-link, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .see-all-link-icon:active, .builder-font.dark-theme .see-all-link-icon:hover, .builder-font.dark-theme .see-all-link-icon:link, .builder-font.dark-theme .see-all-link-icon:visited, .builder-font.dark-theme .see-all-link:active, .builder-font.dark-theme .see-all-link:hover, .builder-font.dark-theme .see-all-link:link, .builder-font.dark-theme .see-all-link:visited, .builder-font.dark-theme .touch .refresh-link, .builder-font.dark-theme .touch .refresh-link-icon, .builder-font.dark-theme .touch .refresh-link-icon:active, .builder-font.dark-theme .touch .refresh-link-icon:hover, .builder-font.dark-theme .touch .refresh-link-icon:link, .builder-font.dark-theme .touch .refresh-link-icon:visited, .builder-font.dark-theme .touch .refresh-link:active, .builder-font.dark-theme .touch .refresh-link:hover, .builder-font.dark-theme .touch .refresh-link:link, .builder-font.dark-theme .touch .refresh-link:visited, .builder-font.dark-theme .touch .see-all-link, .builder-font.dark-theme .touch .see-all-link-icon, .builder-font.dark-theme .touch .see-all-link-icon:active, .builder-font.dark-theme .touch .see-all-link-icon:hover, .builder-font.dark-theme .touch .see-all-link-icon:link, .builder-font.dark-theme .touch .see-all-link-icon:visited, .builder-font.dark-theme .touch .see-all-link:active, .builder-font.dark-theme .touch .see-all-link:hover, .builder-font.dark-theme .touch .see-all-link:link, .builder-font.dark-theme .touch .see-all-link:visited {
 				color: #dc7ecf;
 			}
-			.gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited {
+			.gotham-font.light-theme .refresh-link, .gotham-font.light-theme .refresh-link-icon, .gotham-font.light-theme .refresh-link-icon:active, .gotham-font.light-theme .refresh-link-icon:hover, .gotham-font.light-theme .refresh-link-icon:link, .gotham-font.light-theme .refresh-link-icon:visited, .gotham-font.light-theme .refresh-link:active, .gotham-font.light-theme .refresh-link:hover, .gotham-font.light-theme .refresh-link:link, .gotham-font.light-theme .refresh-link:visited, .gotham-font.light-theme .see-all-link, .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .see-all-link-icon:active, .gotham-font.light-theme .see-all-link-icon:hover, .gotham-font.light-theme .see-all-link-icon:link, .gotham-font.light-theme .see-all-link-icon:visited, .gotham-font.light-theme .see-all-link:active, .gotham-font.light-theme .see-all-link:hover, .gotham-font.light-theme .see-all-link:link, .gotham-font.light-theme .see-all-link:visited, .gotham-font.light-theme .touch .refresh-link, .gotham-font.light-theme .touch .refresh-link-icon, .gotham-font.light-theme .touch .refresh-link-icon:active, .gotham-font.light-theme .touch .refresh-link-icon:hover, .gotham-font.light-theme .touch .refresh-link-icon:link, .gotham-font.light-theme .touch .refresh-link-icon:visited, .gotham-font.light-theme .touch .refresh-link:active, .gotham-font.light-theme .touch .refresh-link:hover, .gotham-font.light-theme .touch .refresh-link:link, .gotham-font.light-theme .touch .refresh-link:visited, .gotham-font.light-theme .touch .see-all-link, .gotham-font.light-theme .touch .see-all-link-icon, .gotham-font.light-theme .touch .see-all-link-icon:active, .gotham-font.light-theme .touch .see-all-link-icon:hover, .gotham-font.light-theme .touch .see-all-link-icon:link, .gotham-font.light-theme .touch .see-all-link-icon:visited, .gotham-font.light-theme .touch .see-all-link:active, .gotham-font.light-theme .touch .see-all-link:hover, .gotham-font.light-theme .touch .see-all-link:link, .gotham-font.light-theme .touch .see-all-link:visited, .builder-font.light-theme .refresh-link, .builder-font.light-theme .refresh-link-icon, .builder-font.light-theme .refresh-link-icon:active, .builder-font.light-theme .refresh-link-icon:hover, .builder-font.light-theme .refresh-link-icon:link, .builder-font.light-theme .refresh-link-icon:visited, .builder-font.light-theme .refresh-link:active, .builder-font.light-theme .refresh-link:hover, .builder-font.light-theme .refresh-link:link, .builder-font.light-theme .refresh-link:visited, .builder-font.light-theme .see-all-link, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .see-all-link-icon:active, .builder-font.light-theme .see-all-link-icon:hover, .builder-font.light-theme .see-all-link-icon:link, .builder-font.light-theme .see-all-link-icon:visited, .builder-font.light-theme .see-all-link:active, .builder-font.light-theme .see-all-link:hover, .builder-font.light-theme .see-all-link:link, .builder-font.light-theme .see-all-link:visited, .builder-font.light-theme .touch .refresh-link, .builder-font.light-theme .touch .refresh-link-icon, .builder-font.light-theme .touch .refresh-link-icon:active, .builder-font.light-theme .touch .refresh-link-icon:hover, .builder-font.light-theme .touch .refresh-link-icon:link, .builder-font.light-theme .touch .refresh-link-icon:visited, .builder-font.light-theme .touch .refresh-link:active, .builder-font.light-theme .touch .refresh-link:hover, .builder-font.light-theme .touch .refresh-link:link, .builder-font.light-theme .touch .refresh-link:visited, .builder-font.light-theme .touch .see-all-link, .builder-font.light-theme .touch .see-all-link-icon, .builder-font.light-theme .touch .see-all-link-icon:active, .builder-font.light-theme .touch .see-all-link-icon:hover, .builder-font.light-theme .touch .see-all-link-icon:link, .builder-font.light-theme .touch .see-all-link-icon:visited, .builder-font.light-theme .touch .see-all-link:active, .builder-font.light-theme .touch .see-all-link:hover, .builder-font.light-theme .touch .see-all-link:link, .builder-font.light-theme .touch .see-all-link:visited, .gotham-font.dark-theme .refresh-link, .gotham-font.dark-theme .refresh-link-icon, .gotham-font.dark-theme .refresh-link-icon:active, .gotham-font.dark-theme .refresh-link-icon:hover, .gotham-font.dark-theme .refresh-link-icon:link, .gotham-font.dark-theme .refresh-link-icon:visited, .gotham-font.dark-theme .refresh-link:active, .gotham-font.dark-theme .refresh-link:hover, .gotham-font.dark-theme .refresh-link:link, .gotham-font.dark-theme .refresh-link:visited, .gotham-font.dark-theme .see-all-link, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .see-all-link-icon:active, .gotham-font.dark-theme .see-all-link-icon:hover, .gotham-font.dark-theme .see-all-link-icon:link, .gotham-font.dark-theme .see-all-link-icon:visited, .gotham-font.dark-theme .see-all-link:active, .gotham-font.dark-theme .see-all-link:hover, .gotham-font.dark-theme .see-all-link:link, .gotham-font.dark-theme .see-all-link:visited, .gotham-font.dark-theme .touch .refresh-link, .gotham-font.dark-theme .touch .refresh-link-icon, .gotham-font.dark-theme .touch .refresh-link-icon:active, .gotham-font.dark-theme .touch .refresh-link-icon:hover, .gotham-font.dark-theme .touch .refresh-link-icon:link, .gotham-font.dark-theme .touch .refresh-link-icon:visited, .gotham-font.dark-theme .touch .refresh-link:active, .gotham-font.dark-theme .touch .refresh-link:hover, .gotham-font.dark-theme .touch .refresh-link:link, .gotham-font.dark-theme .touch .refresh-link:visited, .gotham-font.dark-theme .touch .see-all-link, .gotham-font.dark-theme .touch .see-all-link-icon, .gotham-font.dark-theme .touch .see-all-link-icon:active, .gotham-font.dark-theme .touch .see-all-link-icon:hover, .gotham-font.dark-theme .touch .see-all-link-icon:link, .gotham-font.dark-theme .touch .see-all-link-icon:visited, .gotham-font.dark-theme .touch .see-all-link:active, .gotham-font.dark-theme .touch .see-all-link:hover, .gotham-font.dark-theme .touch .see-all-link:link, .gotham-font.dark-theme .touch .see-all-link:visited, .builder-font.dark-theme .refresh-link, .builder-font.dark-theme .refresh-link-icon, .builder-font.dark-theme .refresh-link-icon:active, .builder-font.dark-theme .refresh-link-icon:hover, .builder-font.dark-theme .refresh-link-icon:link, .builder-font.dark-theme .refresh-link-icon:visited, .builder-font.dark-theme .refresh-link:active, .builder-font.dark-theme .refresh-link:hover, .builder-font.dark-theme .refresh-link:link, .builder-font.dark-theme .refresh-link:visited, .builder-font.dark-theme .see-all-link, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .see-all-link-icon:active, .builder-font.dark-theme .see-all-link-icon:hover, .builder-font.dark-theme .see-all-link-icon:link, .builder-font.dark-theme .see-all-link-icon:visited, .builder-font.dark-theme .see-all-link:active, .builder-font.dark-theme .see-all-link:hover, .builder-font.dark-theme .see-all-link:link, .builder-font.dark-theme .see-all-link:visited, .builder-font.dark-theme .touch .refresh-link, .builder-font.dark-theme .touch .refresh-link-icon, .builder-font.dark-theme .touch .refresh-link-icon:active, .builder-font.dark-theme .touch .refresh-link-icon:hover, .builder-font.dark-theme .touch .refresh-link-icon:link, .builder-font.dark-theme .touch .refresh-link-icon:visited, .builder-font.dark-theme .touch .refresh-link:active, .builder-font.dark-theme .touch .refresh-link:hover, .builder-font.dark-theme .touch .refresh-link:link, .builder-font.dark-theme .touch .refresh-link:visited, .builder-font.dark-theme .touch .see-all-link, .builder-font.dark-theme .touch .see-all-link-icon, .builder-font.dark-theme .touch .see-all-link-icon:active, .builder-font.dark-theme .touch .see-all-link-icon:hover, .builder-font.dark-theme .touch .see-all-link-icon:link, .builder-font.dark-theme .touch .see-all-link-icon:visited, .builder-font.dark-theme .touch .see-all-link:active, .builder-font.dark-theme .touch .see-all-link:hover, .builder-font.dark-theme .touch .see-all-link:link, .builder-font.dark-theme .touch .see-all-link:visited {
 				background-color: transparent !important;
 				border-color: transparent !important;
 			}
@@ -18656,7 +18822,7 @@
             }
         }
         & when (@SourceSansPro = 0) {
-            .gotham-font {
+            .gotham-font, .builder-font {
                 &.light-theme, &.dark-theme {
                     &, .touch {
                         .refresh-link, .refresh-link-icon, .see-all-link-icon, .see-all-link {
@@ -18669,7 +18835,7 @@
             }
         }
         & when (@SourceSansPro = 1) {
-            .gotham-font {
+            .gotham-font, .builder-font {
                 &.light-theme, &.dark-theme {
                     &, .touch {
                         .refresh-link, .refresh-link-icon, .see-all-link-icon, .see-all-link {
@@ -19015,12 +19181,12 @@
         }
         & when (@SourceSansPro = 0) {
             .light-theme, .dark-theme {
-                &.gotham-font .btn-to-link, &.gotham-font .btn-to-link:active, &.gotham-font .btn-to-link:focus, &.gotham-font .btn-to-link:hover, &.gotham-font .refresh-link, &.gotham-font .refresh-link-icon, &.gotham-font .refresh-link-icon:active, &.gotham-font .refresh-link-icon:focus, &.gotham-font .refresh-link-icon:hover, &.gotham-font .refresh-link:active, &.gotham-font .refresh-link:focus, &.gotham-font .refresh-link:hover, &.gotham-font .see-all-link, &.gotham-font .see-all-link-icon, &.gotham-font .see-all-link-icon:active, &.gotham-font .see-all-link-icon:focus, &.gotham-font .see-all-link-icon:hover, &.gotham-font .see-all-link:active, &.gotham-font .see-all-link:focus, &.gotham-font .see-all-link:hover, &.gotham-font .touch .btn-to-link, &.gotham-font .touch .btn-to-link:active, &.gotham-font .touch .btn-to-link:focus, &.gotham-font .touch .btn-to-link:hover, &.gotham-font .touch .refresh-link, &.gotham-font .touch .refresh-link-icon, &.gotham-font .touch .refresh-link-icon:active, &.gotham-font .touch .refresh-link-icon:focus, &.gotham-font .touch .refresh-link-icon:hover, &.gotham-font .touch .refresh-link:active, &.gotham-font .touch .refresh-link:focus, &.gotham-font .touch .refresh-link:hover, &.gotham-font .touch .see-all-link, &.gotham-font .touch .see-all-link-icon, &.gotham-font .touch .see-all-link-icon:active, &.gotham-font .touch .see-all-link-icon:focus, &.gotham-font .touch .see-all-link-icon:hover, &.gotham-font .touch .see-all-link:active, &.gotham-font .touch .see-all-link:focus, &.gotham-font .touch .see-all-link:hover {
+                &.gotham-font .btn-to-link, &.gotham-font .btn-to-link:active, &.gotham-font .btn-to-link:focus, &.gotham-font .btn-to-link:hover, &.gotham-font .refresh-link, &.gotham-font .refresh-link-icon, &.gotham-font .refresh-link-icon:active, &.gotham-font .refresh-link-icon:focus, &.gotham-font .refresh-link-icon:hover, &.gotham-font .refresh-link:active, &.gotham-font .refresh-link:focus, &.gotham-font .refresh-link:hover, &.gotham-font .see-all-link, &.gotham-font .see-all-link-icon, &.gotham-font .see-all-link-icon:active, &.gotham-font .see-all-link-icon:focus, &.gotham-font .see-all-link-icon:hover, &.gotham-font .see-all-link:active, &.gotham-font .see-all-link:focus, &.gotham-font .see-all-link:hover, &.gotham-font .touch .btn-to-link, &.gotham-font .touch .btn-to-link:active, &.gotham-font .touch .btn-to-link:focus, &.gotham-font .touch .btn-to-link:hover, &.gotham-font .touch .refresh-link, &.gotham-font .touch .refresh-link-icon, &.gotham-font .touch .refresh-link-icon:active, &.gotham-font .touch .refresh-link-icon:focus, &.gotham-font .touch .refresh-link-icon:hover, &.gotham-font .touch .refresh-link:active, &.gotham-font .touch .refresh-link:focus, &.gotham-font .touch .refresh-link:hover, &.gotham-font .touch .see-all-link, &.gotham-font .touch .see-all-link-icon, &.gotham-font .touch .see-all-link-icon:active, &.gotham-font .touch .see-all-link-icon:focus, &.gotham-font .touch .see-all-link-icon:hover, &.gotham-font .touch .see-all-link:active, &.gotham-font .touch .see-all-link:focus, &.gotham-font .touch .see-all-link:hover, &.builder-font .btn-to-link, &.builder-font .btn-to-link:active, &.builder-font .btn-to-link:focus, &.builder-font .btn-to-link:hover, &.builder-font .refresh-link, &.builder-font .refresh-link-icon, &.builder-font .refresh-link-icon:active, &.builder-font .refresh-link-icon:focus, &.builder-font .refresh-link-icon:hover, &.builder-font .refresh-link:active, &.builder-font .refresh-link:focus, &.builder-font .refresh-link:hover, &.builder-font .see-all-link, &.builder-font .see-all-link-icon, &.builder-font .see-all-link-icon:active, &.builder-font .see-all-link-icon:focus, &.builder-font .see-all-link-icon:hover, &.builder-font .see-all-link:active, &.builder-font .see-all-link:focus, &.builder-font .see-all-link:hover, &.builder-font .touch .btn-to-link, &.builder-font .touch .btn-to-link:active, &.builder-font .touch .btn-to-link:focus, &.builder-font .touch .btn-to-link:hover, &.builder-font .touch .refresh-link, &.builder-font .touch .refresh-link-icon, &.builder-font .touch .refresh-link-icon:active, &.builder-font .touch .refresh-link-icon:focus, &.builder-font .touch .refresh-link-icon:hover, &.builder-font .touch .refresh-link:active, &.builder-font .touch .refresh-link:focus, &.builder-font .touch .refresh-link:hover, &.builder-font .touch .see-all-link, &.builder-font .touch .see-all-link-icon, &.builder-font .touch .see-all-link-icon:active, &.builder-font .touch .see-all-link-icon:focus, &.builder-font .touch .see-all-link-icon:hover, &.builder-font .touch .see-all-link:active, &.builder-font .touch .see-all-link:focus, &.builder-font .touch .see-all-link:hover {
                     background-color: transparent;
                     border: 0;
                 }
             }
-            .gotham-font .btn-to-link, .gotham-font .refresh-link, .gotham-font .refresh-link-icon, .gotham-font .see-all-link, .gotham-font .see-all-link-icon, .gotham-font .touch .btn-to-link, .gotham-font .touch .refresh-link, .gotham-font .touch .refresh-link-icon, .gotham-font .touch .see-all-link, .gotham-font .touch .see-all-link-icon {
+            .gotham-font .btn-to-link, .gotham-font .refresh-link, .gotham-font .refresh-link-icon, .gotham-font .see-all-link, .gotham-font .see-all-link-icon, .gotham-font .touch .btn-to-link, .gotham-font .touch .refresh-link, .gotham-font .touch .refresh-link-icon, .gotham-font .touch .see-all-link, .gotham-font .touch .see-all-link-icon, .builder-font .btn-to-link, .builder-font .refresh-link, .builder-font .refresh-link-icon, .builder-font .see-all-link, .builder-font .see-all-link-icon, .builder-font .touch .btn-to-link, .builder-font .touch .refresh-link, .builder-font .touch .refresh-link-icon, .builder-font .touch .see-all-link, .builder-font .touch .see-all-link-icon {
                 &, &:hover, &:focus, &:active, &:link, &:visited {
                     font-size: 16px;
                 }
