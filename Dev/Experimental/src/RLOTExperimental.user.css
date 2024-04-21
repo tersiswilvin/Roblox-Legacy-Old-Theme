@@ -993,7 +993,7 @@
             font-weight: 400
         }
         .font-caption-header, .small.font-caption-header, .small.text-error, .small.text-pastname, .small.text-report, .text-error, .text-pastname, .text-report {
-            &, 7:active, &:focus, &:hover, &:link, &:visited {
+            &, &:active, &:focus, &:hover, &:link, &:visited {
                 font-size: 12px;
                 font-weight: 500
             }
