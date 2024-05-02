@@ -9,6 +9,7 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
+@var          select   ABHPVersion                 "A/B Homepage Version"               ["V1*", "V2", "V3"]
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
@@ -21,13 +22,13 @@
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"     0
 @var          select   LegacyFooterText            "Legacy Footer Text"                 ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"             0
-@var          checkbox LegacyNSGOlder              "  ↳  Older"                         0
+@var          checkbox LegacyNSGOlder              "  ↳  Older"                     0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size (Deprecated)" 1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
 @var          checkbox RemoveUpdates               "Revert 2019L+ changes"              1
-@var          checkbox RemoveExtras                "  ↳  Extras"                        0
+@var          checkbox RemoveExtras                "    ↳  Extras"                      0
 @var          checkbox PremiumToBC                 "Premium To BC (BTRoblox)"           0
 @var          select   LogoStyle                   "Site Brand Style"                   ["201408", "201412", "201511", "201701*"]
 @var          select   SignUpStyle                 "Signup Theme"                       ["2017", "2018*", "2019L", "2020+"]
@@ -1310,6 +1311,18 @@
     }
     .dark-theme .tooltip.bottom-left .tooltip-arrow, .dark-theme .tooltip.bottom .tooltip-arrow {
         border-bottom-color: #8A8A8A;
+    }
+    
+    #games-info-tooltip .tooltip-inner {
+        background-color: #757575;
+        border-radius: 0;
+        text-align: center;
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 6px;
+        .dark-theme & {
+            background-color: #8A8A8A
+        }
     }
     
     .light-theme .dialogs .dialog-container .dialog-header
@@ -4924,6 +4937,11 @@
 		}
 	}
 	
+    /*/ Let's hope this doesn't affect other A/B homepage layouts, can't test as all my accounts have V3. /*/
+    [data-testid="home-page-game-grid"], .game-sort-header-container:nth-child(-n+5), .game-carousel.wide-game-tile-carousel, .game-sort-header-container:nth-child(5) + .game-carousel {
+        display: none
+    }
+    
     & when (@RemoveUpdates = 1) {
         .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href="https://web.roblox.com/crossdevicelogin/ConfirmCode"]), #settings-popover-menu li:has(a[href="https://www.roblox.com/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), .redraw-avatar [ng-click="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .shopping-cart .right, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit {
             display: none !important;
@@ -6303,8 +6321,15 @@
 			}
 		}
         
-        .game-home-page-container .container-header:not(:first-child):not(:nth-last-child(4)), .game-home-page-container .game-carousel:not(:nth-child(3)):not(:nth-last-child(3)) {
-            display: none
+        & when (@ABHPVersion = V1) {
+            .game-home-page-container .container-header:not(:first-child):not(:nth-last-child(3)), .game-home-page-container .game-carousel:not(:nth-child(2)):not(:nth-last-child(2)) {
+                display: none
+            }
+        }
+        & when (@ABHPVersion = V2) {
+            .game-home-page-container .container-header:not(:first-child):not(:nth-last-child(4)), .game-home-page-container .game-carousel:not(:nth-child(2)):not(:nth-last-child(3)) {
+                display: none
+            }
         }
         
         [notification-preferences-base] {
