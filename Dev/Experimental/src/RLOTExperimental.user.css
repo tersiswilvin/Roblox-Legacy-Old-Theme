@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240505.1.3.16
+@version      20240506.1.3.16
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -4597,15 +4597,30 @@
         border-color: #474747;
     }
     
-    .light-theme .breadcrumb-container li.breadcrumb-filter, .dark-theme .breadcrumb-container li.breadcrumb-filter {
-        font-size: 12px;
-		font-weight: 500;
+    .breadcrumb-container li.breadcrumb-filter {
         background-color: #00a2ff;
         border-radius: 10px;
-    }
-    
-    .light-theme .breadcrumb-container li.breadcrumb-filter:hover, .dark-theme .breadcrumb-container li.breadcrumb-filter:hover {
-        background-color: #32b5ff;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1em;
+        padding: 2px 6px;
+        margin: 3px 3px 0;
+        &:hover {
+            background-color: #32b5ff;
+            cursor: pointer;
+        }
+        .light-theme &, .dark-theme & {
+            background-color: #00a2ff;
+            border-color: transparent;
+            &:hover {
+                background-color: #32b5ff;
+                border-color: transparent;
+            }
+        }
+        .breadcrumbs & {
+            font-size: 12px;
+            padding: 2px 6px;
+        }
     }
     
     .light-theme .toast-container .toast-content {
@@ -4949,6 +4964,9 @@
         & when (@RemoveExtras = 1) {
             .theme-update-container {
                 display: none !important;
+            }
+            [href*="/users/1/profile"], :has([data-profileuserid="1"]) .profile-name, :has([data-profileuserid="1"]) .profile-display-name {
+                text-transform: uppercase
             }
         }
         .menu-vertical .menu-option-content[href="#!/classic-heads"]:after {
