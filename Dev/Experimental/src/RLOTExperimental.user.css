@@ -9,7 +9,7 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   ABHPVersion                 "A/B Homepage Version"               ["V1", "V2*", "V4", "V5"]
+@var          select   ABHPVersion                 "A/B Homepage Version"               ["V1", "V2*", "V4", "V5", "V6"]
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
@@ -4952,7 +4952,7 @@
 		}
 	}
 	
-    & when not (@ABHPVersion = V5) {
+    & when not ((@ABHPVersion = V5) or (@ABHPVersion = V6)) {
         .home-container .game-sort-header-container:nth-child(-n+5), .home-container .game-sort-header-container:nth-child(5) + .game-carousel {
             display: none;
         }
@@ -4960,12 +4960,17 @@
     .home-container .game-carousel.wide-game-tile-carousel {
         display: none;
     }
-    & when (@ABHPVersion = V4) or (@ABHPVersion = V5) {
+    & when (@ABHPVersion = V5) {
+        .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:nth-child(-n+5), .home-container .game-carousel.wide-game-tile-carousel, .home-container .game-sort-header-container:nth-child(5) + .game-carousel {
+            display: none;
+        }
+    }
+    & when (@ABHPVersion = V4) or (@ABHPVersion = V6) {
         .home-container .game-sort-header-container:nth-child(-n+4) {
             display: none;
         }
     }
-    & when (@ABHPVersion = V5) {
+    & when (@ABHPVersion = V6) {
         .home-container .game-sort-header-container:nth-child(7), .home-container .game-sort-header-container:nth-child(7) + .game-carousel {
             display: none;
         }
@@ -5572,7 +5577,7 @@
             font-size: 16px;
             line-height: 100%;
         }
-        .home-container a[href*="https://www.roblox.com/games#/sortName/v2/Continue"]:after {
+        .home-container a[href*="/sortName/v2/Continue"]:not([class*="btn"]):after {
             content: ' Playing';
         }
         #build-page .divider-right a.tab-item:nth-child(1), #build-page .divider-right .groups-dropdown-container ~ a.tab-item:nth-child(2) {
