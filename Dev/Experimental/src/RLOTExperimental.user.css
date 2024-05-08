@@ -9,7 +9,7 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   ABHPVersion                 "A/B Homepage Version"               ["V1", "V2*", "V4", "V5", "V6"]
+@var          select   ABHPVersion                 "A/B Homepage Version"               ["V1", "V2*", "V4", "V5", "V6", "V7"]
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
@@ -4965,12 +4965,17 @@
             display: none;
         }
     }
+    & when (@ABHPVersion = V6) {
+        .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:nth-child(-n+1), .home-container .game-carousel.wide-game-tile-carousel, .home-container .game-sort-header-container:nth-child(5) + .game-carousel {
+            display: none;
+        }
+    }
     & when (@ABHPVersion = V4) or (@ABHPVersion = V6) {
         .home-container .game-sort-header-container:nth-child(-n+4) {
             display: none;
         }
     }
-    & when (@ABHPVersion = V6) {
+    & when (@ABHPVersion = V7) {
         .home-container .game-sort-header-container:nth-child(7), .home-container .game-sort-header-container:nth-child(7) + .game-carousel {
             display: none;
         }
