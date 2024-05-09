@@ -6342,17 +6342,6 @@
 			}
 		}
         
-        & when (@ABHPVersion = V1) {
-            .game-home-page-container .container-header:not(:first-child):not(:nth-last-child(3)), .game-home-page-container .game-carousel:not(:nth-child(2)):not(:nth-last-child(2)) {
-                display: none
-            }
-        }
-        & when (@ABHPVersion = V2) {
-            .game-home-page-container .container-header:not(:first-child):not(:nth-last-child(4)), .game-home-page-container .game-carousel:not(:nth-child(2)):not(:nth-last-child(3)) {
-                display: none
-            }
-        }
-        
         [notification-preferences-base] {
             .sg-system-feedback .alert-system-feedback:after {
                 clear: none;
