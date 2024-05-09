@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240508.1.3.16
+@version      20240509.1.3.16
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,7 +9,6 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   ABHPVersion                 "A/B Homepage Version"               ["V1", "V2*", "V4", "V5", "V6", "V7"]
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
@@ -4952,33 +4951,8 @@
 		}
 	}
 	
-    & when not ((@ABHPVersion = V5) or (@ABHPVersion = V6)) {
-        .home-container .game-sort-header-container:nth-child(-n+5), .home-container .game-sort-header-container:nth-child(5) + .game-carousel {
-            display: none;
-        }
-    }
-    .home-container .game-carousel.wide-game-tile-carousel {
+    .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel {
         display: none;
-    }
-    & when (@ABHPVersion = V5) {
-        .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:nth-child(-n+5), .home-container .game-carousel.wide-game-tile-carousel, .home-container .game-sort-header-container:nth-child(5) + .game-carousel {
-            display: none;
-        }
-    }
-    & when (@ABHPVersion = V6) {
-        .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:nth-child(-n+1), .home-container .game-carousel.wide-game-tile-carousel, .home-container .game-sort-header-container:nth-child(5) + .game-carousel {
-            display: none;
-        }
-    }
-    & when (@ABHPVersion = V4) or (@ABHPVersion = V6) {
-        .home-container .game-sort-header-container:nth-child(-n+4) {
-            display: none;
-        }
-    }
-    & when (@ABHPVersion = V7) {
-        .home-container .game-sort-header-container:nth-child(7), .home-container .game-sort-header-container:nth-child(7) + .game-carousel {
-            display: none;
-        }
     }
     
     & when (@RemoveUpdates = 1) {
