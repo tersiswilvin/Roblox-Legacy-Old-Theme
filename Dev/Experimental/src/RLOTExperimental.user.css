@@ -5511,13 +5511,18 @@
         }
         #recommended-games-container h2 {
             font-size: 0;
-        }
-        #recommended-games-container h2:after {
-            content: "Recommended Games";
-            font-size: 20px;
-            font-weight: inherit;
-            line-height: 1em;
-            cursor: text;
+            &:after {
+                content: "Recommended Games";
+                & when (@SourceSansPro = 0) {
+                    font-size: 20px;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 24px;
+                }
+                font-weight: inherit;
+                line-height: 1em;
+                cursor: text;
+            }
         }
     
         #player-badges-container .container-header h2:before {
@@ -5526,17 +5531,19 @@
         }
     
         .profile-container .profile-game h3 {
-            font-size: 0px;
-        }
-        .profile-container .profile-game h3:after {
-            content: "Games";
-            font-size: 20px;
-            line-height: 1em;
-			cursor: text;
-        }
-        @media (max-width: 767px) {
-            .profile-container .profile-game h3:after {
-                font-size: 16px;
+            &, &:hover, &:focus, &:active {
+                font-size: 0px;
+            }
+            &:after {
+                content: "Games";
+                font-size: 20px;
+                line-height: 1em;
+                cursor: text;
+                @media (max-width: 767px) {
+                    & {
+                        font-size: 16px;
+                    }
+                }
             }
         }
         body:not(.btr-profile) .profile-container .profile-game #games-switcher .list-item:nth-child(1) .text-label:nth-child(1) {
@@ -6682,7 +6689,7 @@
                     }
                 }
             }
-            h3, .h3, .container-header h2 {
+            h3, .h3, .container-header h2, .container-list h2 {
                 &, &:hover, &:focus, &:active {
                     font-size: 24px;
                     font-weight: 300
