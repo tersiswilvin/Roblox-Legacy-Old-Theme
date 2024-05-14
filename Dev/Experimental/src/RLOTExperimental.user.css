@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240509.1.3.16
+@version      20240514.1.3.16
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -13836,17 +13836,15 @@
     & when (@SourceSansPro = 0) {
         .gotham-font, .builder-font {
             &.light-theme, &.dark-theme {
-                .refresh-link, .see-all-link {
+                .refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link {
                     &, &-icon {
                         &, &:active, &:hover, &:link, &:visited {
-                            &, .touch {
-                                & when (@BoxShadows = 1) {
-                                    box-shadow: none;
-                                }
-                                background-color: transparent;
-                                border-color: transparent;
-                                color: #00a2ff;
+                            & when (@BoxShadows = 1) {
+                                box-shadow: none;
                             }
+                            background-color: transparent;
+                            border-color: transparent;
+                            color: #00a2ff;
                         }
                     }
                 }
@@ -13856,14 +13854,12 @@
     & when (@SourceSansPro = 1) {
         .gotham-font, .builder-font {
             &.light-theme, &.dark-theme {
-                .refresh-link, .see-all-link {
+                .refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link {
                     &, &-icon {
                         &, &:active, &:hover, &:link, &:visited {
-                            &, .touch {
-                                color: #fff;
-                                font-size: 14px;
-                                text-decoration: none;
-                            }
+                            color: #fff;
+                            font-size: 14px;
+                            text-decoration: none;
                         }
                     }
                 }
