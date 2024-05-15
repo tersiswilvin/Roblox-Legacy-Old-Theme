@@ -5600,21 +5600,35 @@
             font-size: 15px;
             line-height: 1.428;
         }
+        
         .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/catalog"] {
             font-size: 0;
-            height: 34.39px;
         }
         .rbx-header .rbx-navbar li a[href="/discover"]:after {
             content: 'Games';
             font-size: 16px;
-            font-weight: inherit;
-            line-height: inherit;
+            font-weight: 400;
+            line-height: 0;
+            vertical-align: middle;
+            display: inline-block;
+            @media (max-width: 767px) {
+                & {
+                    font-size: 12px;
+                }
+            }
         }
         .rbx-header .rbx-navbar li a[href="/catalog"]:after {
             content: 'Catalog';
             font-size: 16px;
-            font-weight: inherit;
-            line-height: inherit;
+            font-weight: 400;
+            line-height: 0;
+            vertical-align: middle;
+            display: inline-block;
+            @media (max-width: 767px) {
+                & {
+                    font-size: 12px;
+                }
+            }
         }
 		
         .game-creator {
@@ -5684,22 +5698,7 @@
 			white-space: break-spaces;
 			cursor: text;
 		}
-        @media (max-width: 767px) {
-            .rbx-header .rbx-navbar li a[href="/discover"] {
-                width: 61.75px;
-            }
-			.rbx-header .rbx-navbar li a[href="/discover"]:after, .rbx-header .rbx-navbar li a[href="/catalog"]:after {
-                font-size: 12px;
-                line-height: 22px;
-            }
-        }
         @media (max-width: 543px) {
-            .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/catalog"] {
-                height: 28.8px;
-            }
-            .rbx-header .rbx-navbar li a[href="/discover"]:after, .rbx-header .rbx-navbar li a[href="/catalog"]:after {
-                line-height: 16px;
-            }
 			.avatar-editor-header .catalog-header div:nth-child(n+1):after {
 				font-size: 12px;
 				& when (@SourceSansPro = 0) {
@@ -6446,36 +6445,21 @@
     }
     
 	& when (@SiteCurrency = Tickets) {
-		.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"], .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"] {
-			font-size: 0;
-			height: 34.39px;
-		}
-		.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"]:after, .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"]:after {
-			content: 'Tickets';
-			font-size: 16px;
-			font-weight: inherit;
-			line-height: inherit;
-		}
-		.rbx-header .rbx-navbar li .robux-menu-btn .menu-text-container {
-			display: none
-		}
-		@media (max-width: 767px) {
-			.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"], .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"] {
-				width: 61.75px;
-				}
-			.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"]:after, .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"]:after {
-				font-size: 12px;
-				line-height: 22px;
-			}
-		}
-		@media (max-width: 543px) {
-			.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"], .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"] {
-				height: 28.8px;
-			}
-			.rbx-header .rbx-navbar li a[href="/robux?ctx-nav"]:after, .rbx-header .rbx-navbar li a[href="/robux?ctx=nav"]:after {
-				line-height: 16px;
-			}
-		}
+        .rbx-header .rbx-navbar li a[href*="/robux"] .menu-text-container {
+            display: none;
+        }
+		.rbx-header .rbx-navbar li a[href*="/robux"]:after {
+            content: 'Tickets';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 0;
+            display: inline-block;
+            @media (max-width: 767px) {
+                & {
+                    font-size: 12px;
+                }
+            }
+        }
 	}
 	
     .rbx-the-hunt-container {
