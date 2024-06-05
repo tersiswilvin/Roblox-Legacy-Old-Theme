@@ -2850,6 +2850,7 @@
 	& when (@fiveColumn = 0) {
 		.items-list.avatar-item-list .item-card.six-column {
 			height: 188px;
+            min-height: auto;
 		}
 	}
     & when (@fiveColumn = 1) {
@@ -2879,6 +2880,7 @@
 		.items-list.avatar-item-list .item-card.six-column {
 			width: 20%;
 			height: 188px;
+            min-height: auto;
 		}
     }
     
@@ -5607,7 +5609,12 @@
         .rbx-header .rbx-navbar li a[href="/discover"]:after {
             content: 'Games';
             font-size: 16px;
-            font-weight: 400;
+            & when (@SourceSansPro = 0) {
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-weight: 400;
+            }
             line-height: 0;
             vertical-align: middle;
             display: inline-block;
@@ -5620,7 +5627,12 @@
         .rbx-header .rbx-navbar li a[href="/catalog"]:after {
             content: 'Catalog';
             font-size: 16px;
-            font-weight: 400;
+            & when (@SourceSansPro = 0) {
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-weight: 400;
+            }
             line-height: 0;
             vertical-align: middle;
             display: inline-block;
@@ -6451,7 +6463,12 @@
 		.rbx-header .rbx-navbar li a[href*="/robux"]:after {
             content: 'Tickets';
             font-size: 16px;
-            font-weight: 400;
+            & when (@SourceSansPro = 0) {
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-weight: 400;
+            }
             line-height: 0;
             display: inline-block;
             @media (max-width: 767px) {
@@ -9700,12 +9717,18 @@
     
     .game-description-container {
         background: #fff;
+        & when (@BoxShadows = 1) {
+            box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+        }
         padding: 15px;
         margin: 0 0 18px;
         margin-top: 41px;
         position: relative;
         .dark-theme & {
             background-color: #000;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(230, 230, 230, 0.3);
+            }
         }
         .container-header {
             position: absolute;
@@ -9720,11 +9743,15 @@
         }
         ~ * .game-social-links {
             background-color: #fff;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+            }
             padding: 15px;
             position: relative;
-            > .btn-secondary-lg {
+            > .btn-secondary-lg, > .btn-secondary-lg:hover, > .btn-secondary-lg:focus, > .btn-secondary-lg:active {
                 font-size: inherit;
                 line-height: inherit;
+                color: #191919;
                 background-color: #fff;
                 border: 0.5px solid #b8b8b8;
                 height: 100%;
@@ -9759,12 +9786,16 @@
                     background-position: 0 -429px
                 }
                 .dark-theme & {
+                    color: #e6e6e6;
                     background-color: #000;
                     border: 0.5px solid #474747;
                 }
             }
             .dark-theme & {
                 background-color: #000;
+                & when (@BoxShadows = 1) {
+                    box-shadow: 0 1px 4px 0 rgba(230, 230, 230, 0.3);
+                }
             }
         }
         @media (max-width: 767px) {
