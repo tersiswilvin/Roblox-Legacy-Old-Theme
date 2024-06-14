@@ -15179,19 +15179,34 @@
 		}
 	}
 	
-	#header .btr-nav-notif {
-		top: 2px;
-		right: 2px;
-		font-size: 11px;
-		line-height: 28px;
-	}
-    .light-theme #header .btr-nav-notif {
-        background-color: white;
-        border: 2px solid #0074bd;
+    #header .btr-nav-notif {
+        box-sizing: content-box;
+        position: absolute;
+        display: flex;
+        top: 2px;
+        right: 2px;
+        background: white;
+        padding: 0px 4px;
+        height: 16px;
+        min-width: 8px;
+        align-items: center;
+        justify-content: center;
         color: #191919;
-    }
-    .dark-theme #header .btr-nav-notif {
-        border-color: #000;
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 28px;
+        border-radius: 10px;
+        border: 2px solid #0074bd;
+        .light-theme & {
+            background-color: white;
+            border: 2px solid #0074bd;
+            color: #191919;
+        }
+        .dark-theme & {
+            background-color: white;
+            border: 2px solid #000;
+            color: #191919;
+        }
     }
     .btr-light-theme .btr-settings-header, .btr-dark-theme .btr-settings-header {
         background: #0074bd;
