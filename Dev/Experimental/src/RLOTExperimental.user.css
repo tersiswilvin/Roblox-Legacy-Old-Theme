@@ -10263,6 +10263,7 @@
             overflow-y: visible;
             .grid-item-container {
                 margin: 0 14px 0 0;
+                width: 150px;
             }
         }
     }
