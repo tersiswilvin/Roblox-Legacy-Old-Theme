@@ -10255,7 +10255,7 @@
     .game-carousel {
         overflow-x: visible;
         overflow-y: visible;
-        &.expand-home-content-disabled {
+        &.expand-home-content, &.expand-home-content-disabled {
             display: block;
             margin-bottom: 12px;
             margin-right: -15px;
@@ -10355,7 +10355,7 @@
 	}
 	
     @media (max-width: 767px) {
-        .game-carousel>.grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container {
+        .game-carousel>.grid-item-container, .game-carousel.expand-home-content .grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container {
             width: 150px;
         }
         .game-card-container .game-card-name {
@@ -10402,7 +10402,7 @@
             height: 10px;
             background-position: 0 -310px;
         }
-        .game-carousel>.grid-item-container, .grid-item-container>.game-card-link, .game-tile-list .game-tile .game-card-container, .profile-container .game-cards .game-card .game-card-container, .game-carousel.expand-home-content-disabled .grid-item-container {
+        .game-carousel>.grid-item-container, .grid-item-container>.game-card-link, .game-tile-list .game-tile .game-card-container, .profile-container .game-cards .game-card .game-card-container, .game-carousel.expand-home-content .grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container {
             width: 90px;
         }
         .light-theme .profile-container .game-cards .game-card, .dark-theme .profile-container .game-cards .game-card {
@@ -10458,7 +10458,7 @@
 				padding: 0 14px 0 0;
 			}
         }
-        .game-carousel .grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container, .dark-theme .game-carousel .grid-item-container, .dark-theme .game-carousel .grid-item-container {
+        .game-carousel .grid-item-container, .game-carousel.expand-home-content .grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container, .dark-theme .game-carousel .grid-item-container, .dark-theme .game-carousel .grid-item-container {
             background-color: transparent;
 			& when (@CardStyle = Pre-2018) {
 				width: 161px;
@@ -10488,7 +10488,7 @@
             white-space: nowrap;
         }
         @media (max-width: 543px) {
-            .game-cards .game-card, .game-cards .game-card.game-tile, .game-carousel>.grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container, .dark-theme .game-carousel>.grid-item-container {
+            .game-cards .game-card, .game-cards .game-card.game-tile, .game-carousel>.grid-item-container, .game-carousel.expand-home-content .grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container, .dark-theme .game-carousel>.grid-item-container {
                 width: 102px;
                 height: 143px;
                 padding: 0;
