@@ -5451,21 +5451,37 @@
         .profile-join-game.btn-growth-md:after {
             content: ' Game';
         }
-    
-        .game-stats-container li:nth-child(1) p:nth-child(1), .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1), .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1) {
-            font-size: 0;
-        }
-        .game-stats-container li:nth-child(1) p:nth-child(1):after {
-            content: "Playing";
-            line-height: 1.5em;
-            font-size: 12px;
-            cursor: text;
-        }
-        .game-stats-container li:not(.game-stat-width-voice):nth-child(6) p:nth-child(1):after, .game-stats-container li.game-stat-width-voice:nth-child(7) p:nth-child(1):after {
-            content: "Max Players";
-            line-height: 1.5em;
-            font-size: 12px;
-            cursor: text;
+        
+        .game-stat {
+            display: unset;
+            &s-container li:first-child p:first-child, &-container li:first-child p:first-child {
+                font-size: 0;
+                &:after {
+                    content: "Playing";
+                    line-height: 1.5em;
+                    font-size: 12px;
+                    cursor: text;
+                }
+            }
+            &s-container li:not(.game-stat-width-voice):nth-child(6) p:first-child:after, &s-container li.game-stat-width-voice:nth-child(7) p:first-child {
+                font-size: 0;
+                &:after {
+                    content: "Max Players";
+                    line-height: 1.5em;
+                    font-size: 12px;
+                    cursor: text;
+                }
+            }
+            /*/ Preprocessor less can't handle more items so just put it into a different section for now. /*/
+            &-container:has(.chat-feature-list) li:nth-child(7) p:first-child, &-container:not(:has(.chat-feature-list)) li:nth-child(6) p:first-child {
+                font-size: 0;
+                &:after {
+                    content: "Max Players";
+                    line-height: 1.5em;
+                    font-size: 12px;
+                    cursor: text;
+                }
+            }
         }
         .game-follow-button-container div[role="tooltip"] .tooltip-inner, .container-header div[role="tooltip"] .tooltip-inner {
             font-size: 0 !important;
@@ -6301,10 +6317,6 @@
                 background-color: #000;
                 border-bottom: 1px solid #1c1c1c;
             }
-        }
-        
-        .game-stat {
-            display: unset;
         }
         
 		@media (max-width: 767px) {
