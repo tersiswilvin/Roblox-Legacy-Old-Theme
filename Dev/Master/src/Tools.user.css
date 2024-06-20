@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Legacy Old Theme Tools
 @namespace      github.com/tersiswilvin
-@version        1.2.3
+@version        1.2.4
 @description    Experimental Tools/Addons for the Roblox Legacy Old Theme
 @author         TersisWilvin
 @preprocessor   less
@@ -64,10 +64,12 @@
                     content: "(Dark Theme) Testing Purposes Only";
                 }
             }
-            body.gotham-font &:before when (@SourceSansPro = 0) {
-                font-size: 16px;
-                line-height: 16px;
-                margin: 0 0 24px;
+            & when (@SourceSansPro = 0) {
+                body.gotham-font &:before, body.builder-font &:before {
+                    font-size: 16px;
+                    line-height: 16px;
+                    margin: 0 0 24px;
+                }
             }
             body &:after {
                 content: "Milestone 1.3.13";
@@ -98,10 +100,12 @@
                     color: #474747
                 }
             }
-            body.gotham-font &:after when (@SourceSansPro = 0) {
-                font-size: 12px;
-                line-height: 12px;
-                margin: 0 0 6px;
+            & when (@SourceSansPro = 0) {
+                body.gotham-font &:after, body.builder-font &:after {
+                    font-size: 12px;
+                    line-height: 12px;
+                    margin: 0 0 6px;
+                }
             }
             & when (@MatchDefaultSiteColors = 1) {
                 .light-theme &:before, .dark-theme &:before {
