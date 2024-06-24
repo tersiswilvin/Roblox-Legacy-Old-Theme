@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240620.1.3.16
+@version      20240624.1.3.16
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -6484,7 +6484,10 @@
         }
         
         .home-container.expand-max-width {
-            max-width: 970px;
+            max-width: 1120px;
+            .game-home-page-container > div > div:not(.expand-home-content) {
+                margin-right: 150px
+            }
         }
     }
     
@@ -10272,9 +10275,6 @@
         overflow-x: visible;
         overflow-y: visible;
         &.expand-home-content, &.expand-home-content-disabled {
-            display: block;
-            margin-bottom: 12px;
-            margin-right: -15px;
             overflow-x: visible;
             overflow-y: visible;
             .grid-item-container {
