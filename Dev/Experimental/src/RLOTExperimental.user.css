@@ -10285,6 +10285,9 @@
                 width: 150px;
             }
         }
+        &.expand-home-content:has(:nth-child(7)) .grid-item-container:nth-child(n+7) {
+            display: none
+        }
     }
     
     .game-card-thumb-container:before {
