@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240720.1.3.17
+@version      20240722.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9669,11 +9669,9 @@
     }
     .social-links .YouTube {
         background-position: 0 -61px;
-        height: 60px
     }
     .social-links .Twitter {
         background-position: 0 -122px;
-        height: 60px
     }
     .social-links .Twitch {
         background-position: 0 -183px;
@@ -9708,25 +9706,25 @@
     social-link-icon-list .social-link-icon:not(.Guilded):not(.Amazon) {
         background-image: url(https://images.rbxcdn.com/e865d90881e86036276e306301c7b9ea-SocialLinkSquareIconsV2.svg);
     }
-    social-link-icon-list .Facebook {
+    social-link-icon-list .Facebook, .social-link-icon-list .Facebook {
         background-position: 0 0
     }
-    social-link-icon-list .Twitter {
+    social-link-icon-list .Twitter, .social-link-icon-list .Twitter {
         background-position: 0 -33px
     }
-    social-link-icon-list .YouTube {
+    social-link-icon-list .YouTube, .social-link-icon-list .YouTube {
         background-position: 0 -66px
     }
-    social-link-icon-list .Twitch {
+    social-link-icon-list .Twitch, .social-link-icon-list .Twitch {
         background-position: 0 -98px
     }
-    social-link-icon-list .Discord {
+    social-link-icon-list .Discord, .social-link-icon-list .Discord {
         background-position: 0 -131px
     }
-    social-link-icon-list .RobloxGroup {
+    social-link-icon-list .RobloxGroup, .social-link-icon-list .RobloxGroup {
         background-position: 0 -164px
     }
-    social-link-icon-list .GitHub {
+    social-link-icon-list .GitHub, .social-link-icon-list .GitHub {
         background-position: 0 -196.5px
     }
     .icon-default-social-media, .icon-social-media-amazon, .icon-social-media-discord, .icon-social-media-facebook, .icon-social-media-github, .icon-social-media-google-plus, .icon-social-media-guilded, .icon-social-media-roblox, .icon-social-media-twitch, .icon-social-media-twitter, .icon-social-media-wechat, .icon-social-media-youtube {
