@@ -10311,6 +10311,9 @@
             grid-column-gap: normal;
             overflow-x: visible;
             overflow-y: visible;
+            .game-sort-carousel-wrapper & {
+                margin-right: -150px;
+            }
             .grid-item-container {
                 margin: 0 14px 0 0;
                 width: 150px;
