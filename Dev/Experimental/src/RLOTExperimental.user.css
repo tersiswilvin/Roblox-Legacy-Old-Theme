@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240726.1.3.17
+@version      20240727.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -16,7 +16,8 @@
 @var          select   SiteCurrency                "Currency Brand Style"               ["Robux*","Tickets"]
 @var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
-@var          checkbox fiveColumn                  "Five column Avatar Editor."         1
+@var          checkbox fiveColumn                  "Five column Avatar Editor"          1
+@var          checkbox FAEei                       "Fix Avatar Editor edit icon"        0
 @var          select   greetingTxt                 "Greeting Text Style"                ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                    ["Pre-2018", "2019E", "2019M*", "2019L"]
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"     0
@@ -6505,6 +6506,17 @@
             .game-home-page-container .game-card-loading {
                 margin: 0;
             }
+        }
+    }
+    
+    & when (@FAEei = 1) {
+        .items-list .item-card .item-card-caption .item-card-name-link {
+            display: inline-block;
+            max-width: 80%;
+            max-width: calc(100% - 22px);
+        }
+        .items-list .outfit-card .item-card-name {
+            max-width: 100%;
         }
     }
     
