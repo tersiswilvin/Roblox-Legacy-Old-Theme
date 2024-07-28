@@ -8195,6 +8195,11 @@
         color: #8A8A8A;
     }
     
+    .dialog-container .dialog-message-container .indicated-message {
+        text-align: center;
+        margin: 0 0 9px;
+    }
+    
     .light-theme .active-game-container a.game-link, .light-theme .active-game-container a.game-link:active, .light-theme .active-game-container a.game-link:focus, .light-theme .active-game-container a.game-link:hover, .light-theme .pinned-game-container a.game-link, .light-theme .pinned-game-container a.game-link:active, .light-theme .pinned-game-container a.game-link:focus, .light-theme .pinned-game-container a.game-link:hover {
         color: #191919;
     }
