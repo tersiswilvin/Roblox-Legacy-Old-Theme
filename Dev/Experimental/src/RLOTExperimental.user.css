@@ -6553,7 +6553,7 @@
             display: none
         }
         margin: 0;
-        .light-theme &:hover .rbx-the-hunt-header .rbx-event-icon, .light-theme &:hover .rbx-the-hunt-header .rbx-event-icon {
+        .light-theme &:hover .rbx-the-hunt-header .rbx-event-icon, .dark-theme &:hover .rbx-the-hunt-header .rbx-event-icon {
             filter: none;
         }
         .rbx-the-hunt-header {
@@ -6611,6 +6611,69 @@
             max-width: 100%;
             height: auto;
             display: block;
+        }
+    }
+    .rbx-platform-event-container {
+        body:not(.RestoreEvents):not(.EventsEnabled) .rbx-left-col .rbx-scrollbar .left-col-list:has(&):after, .left-col-list:has(&) .font-bold.text-nav {
+            display: none
+        }
+        margin: 0;
+        .light-theme &:hover .rbx-platform-event-header .rbx-event-icon, .dark-theme &:hover .rbx-platform-event-header .rbx-event-icon {
+            filter: none;
+        }
+        .rbx-platform-event-header {
+            &, .light-theme & {
+                color: #191919;
+            }
+            .dark-theme & {
+                color: #e6e6e6;
+            }
+            margin: 5px 0;
+            &:hover {
+                & when (@RemoveExtras = 0) {
+                    color: #00a2ff;
+                }
+                & when (@RemoveExtras = 1) {
+                    cursor: text;
+                }
+                .rbx-event-icon {
+                    &, .light-theme &, .dark-theme & {
+                        background-color: #00a2ff;
+                    }
+                }
+            }
+            .rbx-event-icon {
+                background: url(https://images.rbxcdn.com/fa19ef50c08b32e14b9aca461cb07e74-calendar.svg);
+            }
+            .rbx-event-icon {
+                background: none;
+                .light-theme & {
+                    background-color: #191919;
+                }
+                .dark-theme & {
+                    background-color: #e6e6e6;
+                }
+                -webkit-mask-image: url(https://images.rbxcdn.com/fa19ef50c08b32e14b9aca461cb07e74-calendar.svg);
+                mask-image: url(https://images.rbxcdn.com/fa19ef50c08b32e14b9aca461cb07e74-calendar.svg);
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-size: auto auto;
+                mask-size: auto auto;
+                -webkit-mask-position: 3px 2px;
+                mask-position: 3px 2px;
+                margin: 0;
+                width: 28px;
+                height: 28px;
+                & when (@RemoveExtras = 1) {
+                    display: none
+                }
+                .light-theme &, .dark-theme & {
+                    filter: none,
+                }
+            }
+        }
+        .rbx-platform-event-thumbnail {
+            display: none;
         }
     }
     
