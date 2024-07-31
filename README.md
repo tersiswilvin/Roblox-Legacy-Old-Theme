@@ -5,6 +5,11 @@
     <img src="Dev/Master/Thumbnails/Outputs/RLOT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
 </p>
 
+## Community
+Roblox Legacy Old Theme now has a discord server! You must be 13 years or older to join.
+<br>
+You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
+
 ## Features
 - Highly Customizable :
   - Badge Style
@@ -87,12 +92,6 @@
 - Supports both Light and Dark themes.
 - Supports low resolution devices and high PPI/DPI ([Pixels Per Inch](https://en.wikipedia.org/wiki/Pixel_density)/[Dots Per Inch](https://en.wikipedia.org/wiki/Dots_per_inch)) monitors.
 - Supports touchscreen devices.
-
-## Community
-
-Roblox Legacy Old Theme now has a discord server! You must be 13 years or older to join.
-<br>
-You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 
 ## Installation
 
