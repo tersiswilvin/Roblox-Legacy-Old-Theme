@@ -90,9 +90,7 @@
 
 ## Community
 
-Roblox Legacy Old Theme now has a discord server!
-<br>
-You must be 13 years or older to join.
+Roblox Legacy Old Theme now has a discord server! You must be 13 years or older to join.
 <br>
 You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 
