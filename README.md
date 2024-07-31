@@ -88,6 +88,12 @@
 - Supports low resolution devices and high PPI/DPI ([Pixels Per Inch](https://en.wikipedia.org/wiki/Pixel_density)/[Dots Per Inch](https://en.wikipedia.org/wiki/Dots_per_inch)) monitors.
 - Supports touchscreen devices.
 
+## Community
+
+Roblox Legacy Old Theme now has a discord server!
+You must be 13 years or older to join.
+You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
+
 ## Installation
 
 If you don't have stylus already installed, you can get it here for your browser :
