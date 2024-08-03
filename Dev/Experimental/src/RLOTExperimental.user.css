@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240729.1.3.17
+@version      20240803.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -24,7 +24,7 @@
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"             0
 @var          checkbox LegacyNSGOlder              "  ↳  Older"                     0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
-@var          checkbox SponsorSizing               "Original Sponsor Size (Deprecated)" 1
+@var          checkbox SponsorSizing               "Original Sponsor Size"              1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
 @var          checkbox RemoveUpdates               "Revert 2019L+ changes"              1
@@ -6675,7 +6675,12 @@
             }
         }
         .rbx-platform-event-thumbnail {
-            display: none;
+            background-size: unset;
+            border-radius: 0;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
     }
     
@@ -7580,7 +7585,7 @@
 	}
 	
     & when (@SponsorSizing = 1) {
-        .rbx-nav-sponsor img {
+        .rbx-nav-sponsor img, .rbx-the-hunt-container .rbx-the-hunt-thumbnail, .rbx-platform-event-container .rbx-platform-event-thumbnail {
             width: 155px;
             height: 46.14px;
             image-rendering: optimizequality;
