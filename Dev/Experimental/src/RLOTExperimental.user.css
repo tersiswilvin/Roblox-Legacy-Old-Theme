@@ -1012,7 +1012,12 @@
             }
         }
         .tooltip .tooltip-inner {
-            max-width: 220px
+            & when (@SourceSansPro = 0) {
+                max-width: 220px;
+            }
+            & when (@SourceSansPro = 1) {
+                max-width: 200px;
+            }
         }
         .font-caption-body, .tooltip .tooltip-inner {
             &, &:active, &:focus, &:hover, &:link, &:visited {
