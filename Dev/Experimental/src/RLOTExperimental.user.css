@@ -5518,19 +5518,21 @@
         .tooltip-container:has(.followed) .follow-button:has(.icon-notifications-bell) .icon-label:after {
             content: "Following";
         }
-        #recommended-games-container h2, .games-detail h2 {
-            font-size: 0;
-            &:after {
-                content: "Recommended Games";
-                & when (@SourceSansPro = 0) {
-                    font-size: 20px;
+        .gotham-font, .builder-font {
+            #recommended-games-container h2, .games-detail h2, .container-list.games-detail h2 {
+                font-size: 0;
+                &:after {
+                    content: "Recommended Games";
+                    & when (@SourceSansPro = 0) {
+                        font-size: 20px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 24px;
+                    }
+                    font-weight: inherit;
+                    line-height: 1em;
+                    cursor: text;
                 }
-                & when (@SourceSansPro = 1) {
-                    font-size: 24px;
-                }
-                font-weight: inherit;
-                line-height: 1em;
-                cursor: text;
             }
         }
     
