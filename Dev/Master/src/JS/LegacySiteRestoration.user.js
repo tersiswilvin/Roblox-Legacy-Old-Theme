@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.18
+// @version      1.2.19
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -12,12 +12,12 @@
 // @downloadURL  https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.user.js
 // @grant        GM_xmlhttpRequest
 // @run-at       document-start
-// @connect      blog.roblox.com
 // @connect      users.roblox.com
 // @connect      premiumfeatures.roblox.com
 // @connect      thumbnails.roblox.com
 // @connect      presence.roblox.com
 // @connect      accountinformation.roblox.com
+// @connect      api.buttercms.com
 // ==/UserScript==
 
 /*/== Variables ==/*/
@@ -1666,33 +1666,30 @@ ${(!Settings.Pages.MyFeeds.ModernFormat && `
         }
         GM_xmlhttpRequest({
             method: "GET",
-            url: "https://blog.roblox.com/feed/",
+            url: "https://api.buttercms.com/v2/pages/long_form_page/?locale=en&preview=0&page=1&page_size=3&fields.page_type.slug=newsroom&order=-displayed_publish_date&auth_token=137ac5a15935fab769262b6167858b427157ee3d",
             onload: function(response) {
-                const text = response.responseText
-                const regex = /<item>[^]*?<\/item>/g
-
+                const json = JSON.parse(response.responseText);
                 const posts = []
 
                 for(let i = 0; i < 3; i++) {
-                    const match = regex.exec(text)
-                    if(!match) { break }
+                    const post = json.data[i]
+					if(!post) { break }
 
-                    const [, title, link, date, desc] = match[0].match(/<title>([^]*?)<\/title>[^]*?<link>([^]*?)<\/link>[^]*?<pubDate>([^]*?)<\/pubDate>[^]*?<description>([^]*?)<\/description>/) || []
-                    if(!link) { continue }
+					const published = new Date(post.fields.displayed_publish_date)
 
-                    posts.push({
-                        url: content(link),
-                        date: content(date),
-                        title: content(title),
-                        desc: content(desc)
-                    })
+					posts.push({
+						url: `https://corp.roblox.com/newsroom/${published.getUTCFullYear()}/${("0" + (published.getUTCMonth() + 1)).slice(-2)}/${post.slug}`,
+						date: post.fields.displayed_publish_date,
+						title: post.fields.title,
+						desc: post.fields.long_form_content?.find(x => x.type === "long-form-text")?.fields.body ?? ""
+					})
                 }
                 const homerightcol = document.createElement("div")
                 document.body.appendChild(homerightcol)
                 homerightcol.classList.add("col-xs-12", "col-sm-6", "home-right-col")
                 waitForElm(".home-container").then(async (hdrSec) => {
                     homerightcol.innerHTML = `
-                        <div class="section"><div class="section-header"><h3>Blog News</h3><a href="https://blog.roblox.com" class="btn-control-xs btn-more see-all-link-icon refresh-link-icon btn-min-width">See More</a></div><div class="section-content"><ul class="blog-news"></ul></div></div>
+                        <div class="section"><div class="section-header"><h3>Blog News</h3><a href="https://corp.roblox.com/newsroom" class="btn-control-xs btn-more see-all-link-icon refresh-link-icon btn-min-width">See More</a></div><div class="section-content"><ul class="blog-news"></ul></div></div>
                     `
                     const blognews = document.querySelector(".blog-news")
                     posts.forEach(function(Post) {
