@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240811.1.3.17
+@version      20240818.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -299,6 +299,10 @@
     .light-theme {
         background-color: #e3e3e3;
         color: #191919;
+        .rogold& {
+            background-color: #e3e3e3;
+            color: #191919;
+        }
     }
     .light-theme .rbx-left-col {
         background-color: #fff;
@@ -307,6 +311,10 @@
     .light-theme .content {
         background-color: #e3e3e3;
         color: #191919;
+        .rogold& {
+            background-color: #e3e3e3;
+            color: #191919;
+        }
     }
     .light-theme .mobile-search-options {
         background-color: #e3e3e3;
@@ -360,6 +368,10 @@
     .dark-theme {
         background-color: #1C1C1C;
         color: #E6E6E6;
+        .rogold& {
+            background-color: #1C1C1C;
+            color: #E6E6E6;
+        }
     }
     .dark-theme .rbx-left-col {
         background-color: #000;
@@ -368,6 +380,10 @@
     .dark-theme .content {
         background-color: #1C1C1C;
         color: #E6E6E6;
+        .rogold& {
+            background-color: #1C1C1C;
+            color: #E6E6E6;
+        }
     }
     .dark-theme .mobile-search-options {
         background-color: #1C1C1C;
@@ -6469,6 +6485,24 @@
             margin: 0 auto;
             padding-left: 0;
             padding-right: 0;
+            @media (max-width: 1338px) {
+                & {
+                    max-width: 1154px;
+                }
+            }
+            @media (max-width: 1154px) {
+                & {
+                    max-width: 970px;
+                }
+            }
+            @media (max-width: 991px) {
+                .section .container-header {
+                    padding: 0 15px;
+                }
+                .game-home-page-container {
+                    padding: 0;
+                }
+            }
         }
         @media (min-width: 1688px) {
             [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
@@ -6477,12 +6511,12 @@
         }
         
         .home-container.expand-max-width, .content .home-container.expand-max-width {
-            max-width: 1120px;
+            max-width: 970px;
             & when (@HomeAdSpacing = 1) {
-                margin: 0 34px 0 184px;
+                margin: 0 184px;
                 @media (max-width: 1358px) {
                     & {
-                        margin: 0 34px 0 0;
+                        margin: 0 184px 0 0;
                     }
                 }
                 @media (max-width: 1174px) {
@@ -6491,11 +6525,17 @@
                     }
                 }
             }
-            .game-home-page-container > div > div:not(.expand-home-content):not(.game-card-loading) {
-                margin-right: 150px
+            .game-home-page-container > div {
+                margin-right: -150px;
+                > div {
+                    margin-right: 150px;
+                }
             }
             .game-home-page-container .game-card-loading {
                 margin: 0;
+            }
+            .game-home-page-container .game-error {
+                margin: auto;
             }
         }
         
@@ -8265,6 +8305,13 @@
     .dialog-container .dialog-message-container .indicated-message {
         text-align: center;
         margin: 0 0 9px;
+    }
+    
+    .dialog-container .dialog-message-container.message-cluster-master {
+        margin-top: 21px;
+    }
+    .dialog-container .dialog-message-container {
+        margin-bottom: 2px;
     }
     
     .light-theme .active-game-container a.game-link, .light-theme .active-game-container a.game-link:active, .light-theme .active-game-container a.game-link:focus, .light-theme .active-game-container a.game-link:hover, .light-theme .pinned-game-container a.game-link, .light-theme .pinned-game-container a.game-link:active, .light-theme .pinned-game-container a.game-link:focus, .light-theme .pinned-game-container a.game-link:hover {
