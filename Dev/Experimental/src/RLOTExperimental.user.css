@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240818.1.3.17
+@version      20240825.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,7 +9,6 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          checkbox HomeAdSpacing               "Home Ad Spacing"                    0
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
@@ -27,6 +26,7 @@
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size"              1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
+@var          checkbox RestoreAds                  "Restore Ads"                        0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
 @var          checkbox RemoveUpdates               "Revert 2019L+ changes"              1
 @var          checkbox RemoveExtras                "    ↳ Extras"                       0
@@ -6485,6 +6485,9 @@
             margin: 0 auto;
             padding-left: 0;
             padding-right: 0;
+            & when (@RestoreAds = 1) {
+                overflow: auto ;
+            }
             @media (max-width: 1338px) {
                 & {
                     max-width: 1154px;
@@ -6504,27 +6507,46 @@
                 }
             }
         }
-        @media (min-width: 1688px) {
-            [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
-                margin-left: auto;
-            }
-        }
-        
-        .home-container.expand-max-width, .content .home-container.expand-max-width {
-            max-width: 970px;
-            & when (@HomeAdSpacing = 1) {
-                margin: 0 184px;
+        [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
+            &:before when (@RestoreAds = 1) {
+                content: "";
+                display: block;
+                font-size: 12px;
+                line-height: 1.25;
+                color: #757575;
+                text-align: center;
+                background-color: transparent;
+                margin: 0 auto;
+                float: left;
+                margin-right: 24px;
+                width: 160px;
+                min-height: 600px;
+                background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                background-size: 160px 600px;
+                background-repeat: no-repeat;
+                aspect-ratio: auto 160 / 600;
+                position: relative;
+                clear: unset;
+                cursor: pointer;
                 @media (max-width: 1358px) {
                     & {
-                        margin: 0 184px 0 0;
+                        display: none;
                     }
                 }
                 @media (max-width: 1174px) {
                     & {
-                        margin: 0;
+                        display: none;
                     }
                 }
             }
+            @media (min-width: 1688px) {
+                & {
+                    margin-left: auto;
+                }
+            }
+        }
+        .home-container.expand-max-width, .content .home-container.expand-max-width {
+            max-width: 970px;
             .game-home-page-container > div {
                 margin-right: -150px;
                 > div {
@@ -6536,6 +6558,96 @@
             }
             .game-home-page-container .game-error {
                 margin: auto;
+            }
+        }
+        
+        & when (@RestoreAds = 1) {
+            .abp, .profile-ads-container {
+                display: none;
+            }
+            [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content, [data-internal-page-name="Messages"] .content {
+                overflow: auto
+            }
+            [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content, [data-internal-page-name="Messages"] .content {
+                &:after {
+                    content: "";
+                    display: block;
+                    font-size: 12px;
+                    line-height: 1.25;
+                    color: #757575;
+                    text-align: center;
+                    background-color: transparent;
+                    margin: 0 auto;
+                    float: left;
+                    margin-left: 24px;
+                    width: 160px;
+                    min-height: 600px;
+                    background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                    background-size: 160px 600px;
+                    background-repeat: no-repeat;
+                    aspect-ratio: auto 160 / 600;
+                    position: relative;
+                    clear: unset;
+                    cursor: pointer;
+                    @media (max-width: 1174px) {
+                        & {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            [data-internal-page-name="Avatar"] .content, [data-internal-page-name="Catalog"] .content, [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="Messages"] .content, [data-internal-page-name="Profile"] .content {
+                &:before {
+                    content: "";
+                    display: block;
+                    font-size: 12px;
+                    line-height: 1.25;
+                    color: #757575;
+                    text-align: center;
+                    background-color: transparent;
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 0;
+                    height: 90px;
+                    width: 728px;
+                    min-height: 110px;
+                    background-image: url(https://images.rbxcdn.com/bb3b528306366a8b1a5a6ca40ead504a.png);
+                    background-size: 728px 90px;
+                    background-repeat: no-repeat;
+                    aspect-ratio: auto 728 / 90;
+                    clear: unset;
+                    cursor: pointer;
+                    @media (max-width: 728px) {
+                        & {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            [data-internal-page-name="Profile"] .content {
+                &:after {
+                    content: "";
+                    width: 100%;
+                    max-width: 655px;
+                    height: 270px;
+                    display: block;
+                    background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                    background-size: 300px 270px;
+                    background-position: center;
+                    background-repeat: space;
+                    margin: auto;
+                    @media (max-width: 991px) {
+                        & {
+                            display: none;
+                        }
+                    }
+                    @media (max-width: 752px) {
+                        & {
+                            width: 350px;
+                            height: 547px;
+                        }
+                    }
+                }
             }
         }
         
@@ -11031,11 +11143,10 @@
 		display: block;
 		position: relative;
 		margin: 0;
+        float: right;
+        bottom: 24px;
 	}
 	.legacy-notif-base .notif-row-left-button, .legacy-notif-base .notif-row-right-button {
-		position: absolute;
-		right: 0;
-		bottom: 0;
 		width: auto;
 		height: auto;
 		padding: 4px;
