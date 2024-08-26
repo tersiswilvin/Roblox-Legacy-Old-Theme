@@ -6636,6 +6636,7 @@
                     background-position: center;
                     background-repeat: space;
                     margin: auto;
+                    cursor: pointer;
                     @media (max-width: 991px) {
                         & {
                             display: none;
