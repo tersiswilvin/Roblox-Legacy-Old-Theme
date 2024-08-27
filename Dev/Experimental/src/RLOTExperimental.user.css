@@ -5518,12 +5518,13 @@
         }
         .follow-button:has(.icon-notifications-bell) .icon-label:after {
             content: "";
-            font-size: 12px;
             & when (@SourceSansPro = 0) {
+                font-size: 12px;
                 font-weight: 400;
                 line-height: 1.4em;
             }
             & when (@SourceSansPro = 1) {
+                font-size: 14px;
                 font-weight: 300;
                 line-height: 1.3em;
             }
@@ -5811,52 +5812,52 @@
 
 		.create-server-banner .play-with-others-text {
 			font-size: 0px;
-			height: 44.78px
+            &:before {
+                content: 'Visit this game with friends and other people you invite.';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 0;
+                vertical-align: middle;
+                cursor: text;
+            }
+            .text-link {
+                font-size: 16px;
+                line-height: 0;
+                vertical-align: middle;
+            }
+            span:before {
+                content: 'See all your VIP servers in the ';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 0;
+                vertical-align: middle;
+                cursor: text;
+            }
+            span:after {
+                content: ' tab.';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 0;
+                vertical-align: middle;
+                cursor: text;
+            }
 		}
-		.game-instances .create-server-banner .play-with-others-text, #running-game-instances-container .create-server-banner .play-with-others-text {
-			height: 22.39px
-		}
-
-		.create-server-banner .play-with-others-text:before {
-			content: 'Visit this game with friends and other people you invite.';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-			}
-			line-height: 1.4em;
-			cursor: text;
-		}
-		.create-server-banner .play-with-others-text .text-link {
-			font-size: 16px;
-			line-height: 0.5em;
-		}
-		.create-server-banner .play-with-others-text span:before {
-			content: 'See all your VIP servers in the ';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-			}
-			line-height: 0.5em;
-			cursor: text;
-		}
-		.create-server-banner .play-with-others-text span:after {
-			content: ' tab.';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-			}
-			line-height: 0.5em;
-			cursor: text;
-		}
+        
 		.rbx-private-server-create .rbx-private-server-create-button:after {
 			content: 'Create VIP Server';
 			font-size: 18px;
@@ -6084,30 +6085,30 @@
 			}
 		}
 		
-		body:not(.RestoreEvents):not(.EventsEnabled) .rbx-left-col .rbx-scrollbar .left-col-list {
-			&:after {
-				content: 'Events';
-				font-size: 16px;
-				font-weight: 600;
-				line-height: 1.42857;
-				margin: 5px 0;
-				position: relative;
-				display: block;
-				cursor: text;
-			}
-			& when (@SourceSansPro = 0) {
-				&:after {
-					font-size: 16px;
-					font-weight: 500;
-                    @media (max-width: 767px) {
-                        & {
-                            font-size: 12px;
-                            font-weight: 500
-                        }
+		body:not(.RestoreEvents):not(.EventsEnabled) .rbx-left-col .rbx-scrollbar .left-col-list:after {
+            content: 'Events';
+            & when (@SourceSansPro = 0) {
+                font-size: 16px;
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 16px;
+                font-weight: 600;
+            }
+            line-height: 1.42857;
+            margin: 5px 0;
+            position: relative;
+            display: block;
+            cursor: text;
+            & when (@SourceSansPro = 0) {
+                @media (max-width: 767px) {
+                    & {
+                        font-size: 12px;
+                        font-weight: 500
                     }
-				}
-			}
-		}
+                }
+            }
+        }
         
         .setting-section:has(.passkey-upsell-banner) {
             padding: 0 0 5px;
@@ -6696,6 +6697,9 @@
                     }
                 }
             }
+            .menu-text-container {
+                display: none;
+            }
         }
 	}
 	
@@ -6908,6 +6912,12 @@
                 &, &::placeholder {
                     font-weight: 400;
                 }
+            }
+            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label {
+                font-size: 14px;
+            }
+            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label when (@RemoveUpdates = 0) {
+                font-size: 14px;
             }
             .xsmall, &, .item-card-label, .game-card-experimental, .game-card-name-secondary, .sg-color-cell, .text-footer, .dialog-message span {
                 &, &:active, &:focus, &:hover {
