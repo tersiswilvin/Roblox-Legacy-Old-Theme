@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240825.1.3.17
+@version      20240827.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5628,42 +5628,45 @@
             line-height: 1.428;
         }
         
-        .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/charts"], .rbx-header .rbx-navbar li a[href="/catalog"] {
+        .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/charts"] {
             font-size: 0;
-        }
-        .rbx-header .rbx-navbar li a[href="/discover"]:after, .rbx-header .rbx-navbar li a[href="/charts"]:after {
-            content: 'Games';
-            font-size: 16px;
-            & when (@SourceSansPro = 0) {
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 400;
-            }
-            line-height: 0;
-            vertical-align: middle;
-            display: inline-block;
-            @media (max-width: 767px) {
-                & {
-                    font-size: 12px;
+            &:after {
+                content: 'Games';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+                line-height: 0;
+                vertical-align: middle;
+                display: inline-block;
+                @media (max-width: 767px) {
+                    & {
+                        font-size: 12px;
+                    }
                 }
             }
         }
-        .rbx-header .rbx-navbar li a[href="/catalog"]:after {
-            content: 'Catalog';
-            font-size: 16px;
-            & when (@SourceSansPro = 0) {
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 400;
-            }
-            line-height: 0;
-            vertical-align: middle;
-            display: inline-block;
-            @media (max-width: 767px) {
-                & {
-                    font-size: 12px;
+        .rbx-header .rbx-navbar li a[href="/catalog"] {
+            font-size: 0;
+            &:after {
+                content: 'Catalog';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+                line-height: 0;
+                vertical-align: middle;
+                display: inline-block;
+                @media (max-width: 767px) {
+                    & {
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -6096,12 +6099,12 @@
 				&:after {
 					font-size: 16px;
 					font-weight: 500;
-				}
-				@media (max-width: 767px) {
-					&:after {
-						font-size: 12px;
-						font-weight: 500
-					}
+                    @media (max-width: 767px) {
+                        & {
+                            font-size: 12px;
+                            font-weight: 500
+                        }
+                    }
 				}
 			}
 		}
@@ -6673,23 +6676,24 @@
     }
     
 	& when (@SiteCurrency = Tickets) {
-        .rbx-header .rbx-navbar li a[href*="/robux"] .menu-text-container {
-            display: none;
-        }
-		.rbx-header .rbx-navbar li a[href*="/robux"]:after {
-            content: 'Tickets';
-            font-size: 16px;
-            & when (@SourceSansPro = 0) {
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 400;
-            }
-            line-height: 0;
-            display: inline-block;
-            @media (max-width: 767px) {
-                & {
-                    font-size: 12px;
+        .rbx-header .rbx-navbar li a[href*="/robux"] {
+            font-size: 0;
+            &:after {
+                content: 'Tickets';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+                line-height: 0;
+                vertical-align: middle;
+                display: inline-block;
+                @media (max-width: 767px) {
+                    & {
+                        font-size: 12px;
+                    }
                 }
             }
         }
