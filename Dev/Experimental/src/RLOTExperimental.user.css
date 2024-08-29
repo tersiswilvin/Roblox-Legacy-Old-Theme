@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240827.1.3.17
+@version      20240830.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -10917,6 +10917,9 @@
         }
     }
     
+    /*/ Revert New Game Cards /*/
+    // TODO
+    
     /*/ Revert Server Playerlist /*/
     
     .dark-theme .stack .card-list .card-item {
@@ -11490,7 +11493,7 @@
         .signup-or-log-in .signup-input-area div .font-caption-header {
             display: none;
         }
-        #RollerContainer .icon-logo {
+        #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
 			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
 				background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
 			}
@@ -11515,7 +11518,7 @@
             margin-right: 40px;
             padding: 0;
         }
-        #signup-container #signup-header-container .icon-logo {
+        #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
             height: 129.85px;
 			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
 				background-size: auto 110px;
@@ -11528,7 +11531,7 @@
             width: 457px;
         }
         @media (min-width: 1199px) {
-            #signup-container #signup-header-container .icon-logo {
+            #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
               height: 129.85px;
             }
         }
@@ -11587,7 +11590,7 @@
         .signup-or-log-in .signup-input-area div:nth-child(n+3) .font-caption-header {
             display: none;
         }
-        #RollerContainer .icon-logo {
+        #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
 			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
 				background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
 			}
@@ -11616,7 +11619,7 @@
             margin-right: 40px;
             padding: 0;
         }
-        #signup-container #signup-header-container .icon-logo {
+        #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
             height: 130px;
             & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
 				background-size: auto 110px;
@@ -11632,7 +11635,7 @@
             width: 457px;
         }
         @media (min-width: 1199px) {
-            #signup-container #signup-header-container .icon-logo {
+            #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
               height: 130px;
             }
         }
@@ -11802,7 +11805,7 @@
         #signup-container {
             padding-top: 0;
         }
-        #RollerContainer .icon-logo {
+        #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
             float: none;
             margin: auto;
         }
@@ -11826,7 +11829,7 @@
         }
     }
     @media (max-width: 543px) {
-        #RollerContainer .icon-logo, #signup-container #signup-header-container .icon-logo {
+        #RollerContainer .icon-logo, #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
             width: 332px;
             height: 94px;
             background-size: auto 94px;
