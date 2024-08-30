@@ -3832,7 +3832,8 @@
     
     .light-theme .item-card-container .item-card-name, .dark-theme .item-card-container .item-card-name {
         height: 45px;
-        margin: 0
+        margin: 0;
+        display: block;
     }
     
     .light-theme .typing
@@ -10252,17 +10253,17 @@
 		& when (@SourceSansPro = 1) or (@CardStyle = Pre-2018) {
 			height: 223px;
 		}
+        @media (max-width: 543px) {
+            & {
+                & when (@SourceSansPro = 0) {
+                    height: 150px;
+                }
+                & when (@SourceSansPro = 1) {
+                    height: 152px;
+                }
+            }
+        }
     }
-	@media (max-width: 543px) {
-		.horizontal-scroller .scroller {
-			& when (@SourceSansPro = 0) {
-				height: 150px;
-			}
-			& when (@SourceSansPro = 1) {
-				height: 152px;
-			}
-		}
-	}
     
     & when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
 		& when (@CardStyle = Pre-2018) {
@@ -10356,7 +10357,6 @@
     & when not (@CardStyle = 2019L) {
         .game-card-container:hover .game-card-thumb-container:before {
             opacity: 0;
-            z-index: 0;
         }
     }
     
@@ -10400,10 +10400,6 @@
         font-size: 14px;
         font-weight: 500;
         line-height: 18px;
-    }
-    
-    .game-card-container:hover .game-card-thumb-container:before {
-        z-index: 1;
     }
     
     @media (max-width: 543px) {
@@ -10577,6 +10573,7 @@
     
     .game-card-thumb-container:before {
         border-radius: 0;
+        z-index: 1;
     }
     
     .profile-container .container-list .game-cards .game-card {
@@ -10659,7 +10656,7 @@
     }
     
 	.featured-grid-item-container .game-card-link .game-card-name-info {
-		display: revert
+		display: unset
 	}
 	
     @media (max-width: 767px) {
@@ -10878,6 +10875,10 @@
         height: 150px;
         width: 150px;
         border-radius: 0;
+        & when (@CardStyle = Pre-2018) {
+            border-top-right-radius: 3px;
+			border-top-left-radius: 3px;
+        }
     }
     
     .hover-game-tile .featured-game-container, .light-theme .hover-game-tile.focused .featured-game-container {
@@ -10887,7 +10888,12 @@
         height: 100%;
         max-height: 100%;
         margin: 0;
-        border-radius: 0;
+        & when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
+            border-radius: 3px;
+        }
+        & when (@CardStyle = 2019M) or (@CardStyle = 2019L)  {
+            border-radius: 0;
+        }
     }
     .dark-theme .hover-game-tile .featured-game-container, .dark-theme .hover-game-tile.focused .featured-game-container {
         background-color: #000;
@@ -10918,7 +10924,219 @@
     }
     
     /*/ Revert New Game Cards /*/
-    // TODO
+    .hover-game-tile {
+        .featured-game-container .info-container, &.focused .featured-game-container .info-container {
+            transition: unset
+        }
+        &.event-tile, &.grid-tile, &.interest-tile {
+            vertical-align: top;
+            white-space: normal;
+            & when (@Fix19MICT = 0) or not (@CardStyle = 2019M) {
+                transition: unset;
+            }
+            & when (@Fix19MICT = 1) and (@CardStyle = 2019M) {
+                -webkit-transition: transform .15s;
+                -o-transition: transform .15s;
+                transition: transform .15s;
+                transform: scale(1);
+            }
+            .featured-game-container {
+                margin: 0 auto;
+                transition: unset;
+                .featured-game-icon-container {
+                    float: unset;
+                    border-radius: 0;
+                    transition: unset;
+                    .brief-game-icon {
+                        border-radius: 0;
+                        & when (@CardStyle = Pre-2018) {
+                            border-top-right-radius: 3px;
+                            border-top-left-radius: 3px;
+                        }
+                    }
+                    &:before when (@CardStyle = 2019L) {
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: radial-gradient(transparent, rgba(0, 0, 0, .4));
+                        transition: opacity .3s linear;
+                        opacity: 0;
+                    }
+                }
+                .info-metadata-container {
+                    margin-top: 0;
+                    transition: unset;
+                    .game-card-name {
+                        overflow: hidden;
+                        & when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
+                            white-space: nowrap;
+                        }
+                        & when (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                            white-space: wrap;
+                        }
+                        text-overflow: ellipsis;
+                        padding: 0 6px;
+                        margin: 3px 0;
+                        margin-top: 6px;
+                        margin-bottom: 6px;
+                    }
+                    .wide-game-tile-metadata {
+                        display: block;
+                        .base-metadata {
+                            min-height: unset;
+                            .game-card-info {
+                                display: block;
+                                height: unset;
+                                bottom: 6px;
+                                .info-label {
+                                    overflow: unset;
+                                    text-overflow: unset;
+                                    padding-right: 0;
+                                    white-space: unset;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.focused.old-hover.first-tile, .grid-tile.focused.old-hover, &.event-tile.focused.old-hover, &.grid-tile.focused.old-hover, &.interest-tile.focused.old-hover {
+                margin: 0;
+                margin-bottom: 12px;
+                & when (@CardStyle = Pre-2018) {
+                    padding: 0 11px 0 0;
+                }
+                & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                    padding: 0 14px 0 0;
+                }
+                border-radius: 0;
+                z-index: 4;
+                & when (@CardStyle = 2019M) {
+                    -webkit-transition: transform .15s;
+                    -o-transition: transform .15s;
+                    transition: transform .15s;
+                    transform: scale(1.08);
+                }
+                .featured-game-icon-container:before when (@CardStyle = 2019L) {
+                    opacity: 1;
+                }
+            }
+            .light-theme &.focused.old-hover {
+                background-color: transparent;
+                color: #191919;
+            }
+            .dark-theme &.focused.old-hover {
+                background-color: transparent;
+                color: #e6e6e6;
+            }
+        }
+        @media (max-width: 543px) {
+            & {
+                margin: 0;
+                margin-bottom: 12px;
+                & when (@CardStyle = Pre-2018) {
+                    padding: 0 11px 0 0;
+                }
+                & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                    padding: 0 14px 0 0;
+                }
+            }
+        }
+    }
+
+    .game-carousel.wide-game-tile-carousel.expand-home-content, .game-carousel.wide-game-tile-carousel.games-page-carousel, .game-carousel.wide-game-tile-carousel.expand-home-content.games-page-carousel, .game-carousel.wide-game-tile-carousel.games-page-carousel.games-page-carousel {
+        padding-top: 12px;
+        display: block;
+        .home-container & {
+            display: none;
+        }
+        .hover-game-tile.event-tile, .hover-game-tile.grid-tile, .hover-game-tile.interest-tile {
+            & when (@CardStyle = Pre-2018) {
+                width: 161px;
+                height: 223px;
+                padding: 0 11px 0 0;
+            }
+            & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                width: 164px;
+                & when (@SourceSansPro = 0) {
+                    height: 240px;
+                }
+                & when (@SourceSansPro = 1) {
+                    height: 223px;
+                }
+                padding: 0 14px 0 0;
+            }
+            max-height: unset;
+            .featured-game-container {
+                height: 100%;
+                max-height: 100%;
+                width: 100%;
+                .featured-game-icon-container, .featured-game-icon-container .brief-game-icon {
+                    height: 150px;
+                    width: 150px;
+                    @media (max-width: 543px) {
+                        & {
+                            height: 90px;
+                            width: 90px;
+                        }
+                    }
+                    img {
+                        object-fit: cover
+                    }
+                }
+            }
+            .info-container, .info-metadata-container {
+                width: 100%;
+            }
+            &.focused {
+                & when (@CardStyle = Pre-2018) {
+                    width: 161px;
+                }
+                & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                    width: 164px;
+                }
+                max-height: unset;
+                @media (max-width: 543px) {
+                    & {
+                        & when (@CardStyle = Pre-2018) {
+                            width: 101px;
+                        }
+                        & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                            width: 104px;
+                        }
+                        & when (@SourceSansPro = 0) {
+                            height: 150px;
+                            max-height: 150px;
+                        }
+                        & when (@SourceSansPro = 1) {
+                            height: 148px;
+                            max-height: 148px;
+                        }
+                    }
+                }
+            }
+            @media (max-width: 543px) {
+                & {
+                    & when (@CardStyle = Pre-2018) {
+                        width: 101px;
+                    }
+                    & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                        width: 104px;
+                    }
+                    & when (@SourceSansPro = 0) {
+                        height: 150px;
+                        max-height: 150px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        height: 148px;
+                        max-height: 148px;
+                    }
+                }
+            }
+        }
+    }
     
     /*/ Revert Server Playerlist /*/
     
