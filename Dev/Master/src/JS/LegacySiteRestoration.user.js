@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.19
+// @version      1.2.20
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -1076,7 +1076,7 @@ async function waitForElm(q) {
 }
 
 if (Settings.Global.RestoreLegacyFavIcon) {
-    waitForElm("link[rel*='icon']").then(async (hdrSec) => {
+    waitForElm("link[rel='icon']").then(async (hdrSec) => {
         if (url == "https://devforum.roblox.com") {
             switch(Settings.Global.DevForumFavIcon) {
                 case "2015L":
