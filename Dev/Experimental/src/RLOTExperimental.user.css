@@ -3152,10 +3152,11 @@
 		height: 32px;
 	}
     .dialog-container .dialog-input-container {
-        height: 32px;
+        height: 33px !important;
         min-height: 32px;
         .dialog-input {
             min-height: 32px;
+            height: 32px !important;
         }
     }
     
@@ -14607,6 +14608,28 @@
                 background-color: #8A8A8A;
                 color: #fff;
             }
+            .chat-header-label {
+                width: 84%;
+                width: calc(100% - 40px);
+                float: left;
+                padding: 6px 6px 0;
+                span {
+                    line-height: inherit;
+                }
+            }
+            .chat-header-action {
+                float: right;
+                padding: 6px 0;
+                .dialog-header-active-game, span[class^=icon] {
+                    float: right;
+                    margin-right: 6px;
+                    margin-left: 0;
+                }
+            }
+        }
+        .chat-container .chat-header-label {
+            width: 84%;
+            width: calc(100% - 52px);
         }
         .light-theme .chat-search {
             border-top: 1px solid #e3e3e3
@@ -14731,10 +14754,26 @@
                 box-shadow: 0 1px 3px rgba(105, 105, 105, 0.74);
             }
             .dialog-header {
-                box-shadow: 0 1px 0 rgb(255, 255, 255);
-            }
-            .dark-theme .dialog-header {
-                box-shadow: 0 1px 0 rgb(0, 0, 0);
+                box-shadow: none;
+                .chat-header-label {
+                    width: 60%;
+                    width: calc(100% - 78px);
+                    padding: 6px 6px 0;
+                }
+                .dialog-header-title {
+                    width: 100%;
+                    & when (@SourceSansPro = 0) {
+                        padding: 0 0 5px 6px;
+                        font-size: 12px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        padding: 0 0 6px 6px;
+                        font-size: 14px;
+                    }
+                }
+                .chat-header-action {
+                    padding-right: 0;
+                }
             }
             .dialog-body {
                 background-color: #E3E3E3;
@@ -14947,7 +14986,7 @@
                     }
                     border: 0 none;
                     width: 100%;
-                    height: 32px;
+                    height: 32px !important;
                     max-height: 64px;
                     padding: 6px 6px 0 12px;
                 }
