@@ -912,8 +912,14 @@
     
     .light-theme .people-list, .dark-theme .people-list
     {
-        height: 163px;
-        max-height: 163px;
+        & when (@LegacyNextStyleGuideButtons = 0) {
+            height: 163px;
+            max-height: 163px;
+        }
+        & when (@LegacyNextStyleGuideButtons = 1) {
+            height: 150px;
+            max-height: 150px;
+        }
     }
     
     .people-list-container, .places-list {
@@ -14548,6 +14554,10 @@
             }
         }
         
+        .people-list .friend .place-name {
+            display: none;
+        }
+        
         .rbx-tabs-horizontal .game-stat-footer:not(:has(.game-copylocked-footnote)):before {
             content: "This game is copylocked";
             & when (@SourceSansPro = 0) {
@@ -14994,6 +15004,32 @@
         }
         .group-dialog .dialog-message-container.message-inbound .dialog-message-author {
             margin: 0 12px
+        }
+        .chat-disconnect {
+            text-align: center;
+            padding-top: 20%;
+            .text-info {
+                margin: 12px 18%;
+                font-size: 0;
+                &:before {
+                    content: "Trying to connect ...";
+                    & when (@SourceSansPro = 0) {
+                        font-size: 15px;
+                        font-weight: 400;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                    line-height: 1.5em;
+                    cursor: text;
+                }
+            }
+            .spinner {
+                height: 16px;
+                background-size: auto 16px;
+                margin: 0;
+            }
         }
         
         & when (@LegacyNSGOlder = 1) {
@@ -17364,6 +17400,10 @@
         .chat-main {
             border-top-right-radius: 0;
             border-top-left-radius: 0;
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-bottom-right-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
             bottom: unset;
             top: 0;
             display: flex;
@@ -17388,6 +17428,12 @@
                 border-top: 1px solid #1c1c1c;
             }
         }
+        .chat-windows-header when (@LegacyNextStyleGuideButtons = 1) {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
         .dialog-container {
             .light-theme & {
                 box-shadow: 0 0 4px rgba(25, 25, 25, 0.75);
@@ -17397,18 +17443,24 @@
             }
             border-top-right-radius: 0;
             border-top-left-radius: 0;
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-bottom-right-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
             bottom: unset;
             top: 0;
             display: flex;
             flex-direction: column-reverse;
-            .dialog-header {
+            .dialog-header & when (@LegacyNextStyleGuideButtons = 0) {
                 box-shadow: 0 -1px 0 rgba(25, 25, 25, 0.3);
                 .dark-theme & {
                     box-shadow: 0 -1px 0 rgba(230, 230, 230, 0.3);
                 }
             }
             .dialog-input-container.border-top {
-                border-top: 0;
+                & when (@LegacyNextStyleGuideButtons = 0) {
+                    border-top: 0;
+                }
                 .light-theme & .dialog-input {
                     border-bottom: 1px solid #e3e3e3;
                 }
@@ -17877,7 +17929,7 @@
 		.light-theme .dialogs .dialog-container .dialog-body {
 			background-color: var(--btr-theme-item-hover-hover);
 		}
-		.light-theme .dialogs .dialog-container .dialog-message-container .indicated-message-bubble {
+		.light-theme .dialogs .dialog-container .dialog-message-container .indicated-message-bubble when (@LegacyNextStyleGuideButtons = 0) {
 			background-color: var(--btr-theme-background);
 		}
 		.light-theme .dialog-container .dialog-input-container, .light-theme .dialog-container .dialog-input-container .dialog-input, .light-theme .dialog-container .dialog-input-container .dialog-input:focus {
@@ -17890,8 +17942,13 @@
 			border-color: var(--btr-theme-background);
 		}
 		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
-			border-color: transparent var(--btr-theme-background) transparent transparent;
-			border-width: 0 4px 4px 0;
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                border-color: transparent var(--btr-theme-background) transparent transparent;
+                border-width: 0 4px 4px 0;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-color: transparent var(--btr-theme-item) transparent transparent;
+            }
 		}
 		.light-theme .details-container {
 			background-color: var(--btr-theme-item-hover-hover);
@@ -17925,6 +17982,9 @@
 		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
 			border-color: transparent transparent transparent var(--btr-theme-item);
 		}
+        .light-theme .dialogs .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
+            border-color: transparent transparent transparent var(--btr-theme-background);
+        }
 		
 		/* BC page */
 		
@@ -18904,7 +18964,12 @@
 			border-color: transparent transparent transparent #800000;
 		}
 		.light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
-			border-color: transparent #e3e3e3 transparent transparent;
+            & when (@LegacyNextStyleGuideButtons = 0) {
+			    border-color: transparent #e3e3e3 transparent transparent;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+			    border-color: transparent #fff transparent transparent;
+            }
 		}
 		.light-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:before {
 			border-color: transparent transparent transparent #e3e3e3;
@@ -19295,7 +19360,29 @@
         .dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
             border-color: transparent transparent transparent #000;
         }
-
+        .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                border-color: transparent #e3e3e3 transparent transparent;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-color: transparent #fff transparent transparent;
+            }
+        }
+        .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                border-color: transparent #1c1c1c transparent transparent;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-color: transparent #000 transparent transparent;
+            }
+        }
+        .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+            border-color: transparent #fff transparent transparent;
+        }
+        .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+            border-color: transparent #000 transparent transparent;
+        }
+        
         /* WebGL3D */
 	}
 	& when (@CustomTheme = RPlus_OBC) {
@@ -19353,6 +19440,7 @@
         .dark-theme .open > .btn-default.dropdown-toggle {
             background-color: rgb(79, 79, 79);
             border-color: rgb(79, 79, 79);
+            color: #fff;
         }
 
         .light-theme .radio label:hover::before,
@@ -19490,6 +19578,28 @@
         }
         .dark-theme .dialog-container .dialog-message-container.message-cluster-master .link-card-container.dialog-triangle:after {
             border-color: transparent transparent transparent #000;
+        }
+        .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                border-color: transparent #e3e3e3 transparent transparent;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-color: transparent #fff transparent transparent;
+            }
+        }
+        .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before {
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                border-color: transparent #1c1c1c transparent transparent;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-color: transparent #000 transparent transparent;
+            }
+        }
+        .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+            border-color: transparent #fff transparent transparent;
+        }
+        .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:after {
+            border-color: transparent #000 transparent transparent;
         }
 
         /* WebGL3D */
