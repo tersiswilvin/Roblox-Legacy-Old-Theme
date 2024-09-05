@@ -17451,7 +17451,7 @@
             top: 0;
             display: flex;
             flex-direction: column-reverse;
-            .dialog-header & when (@LegacyNextStyleGuideButtons = 0) {
+            .dialog-header when (@LegacyNextStyleGuideButtons = 0) {
                 box-shadow: 0 -1px 0 rgba(25, 25, 25, 0.3);
                 .dark-theme & {
                     box-shadow: 0 -1px 0 rgba(230, 230, 230, 0.3);
