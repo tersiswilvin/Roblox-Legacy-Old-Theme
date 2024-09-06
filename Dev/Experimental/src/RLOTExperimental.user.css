@@ -920,6 +920,16 @@
             height: 150px;
             max-height: 150px;
         }
+        .rogold& {
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                height: 163px;
+                max-height: 163px;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                height: 150px;
+                max-height: 150px;
+            }
+        }
     }
     
     .people-list-container, .places-list {
