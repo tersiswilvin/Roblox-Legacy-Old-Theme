@@ -1552,10 +1552,16 @@
     .light-theme .section-content, .light-theme .section-content.remove-panel {
         background-color: #fff;
         padding: 15px;
+        .rogold& {
+            background-color: #fff;
+        }
     }
     .dark-theme .section-content, .dark-theme .section-content.remove-panel {
         background-color: #000;
         padding: 15px;
+        .rogold& {
+            background-color: #000;
+        }
     }
     .light-theme .game-main-content, .light-theme .game-main-content.remove-panel, .dark-theme .game-main-content, .dark-theme .game-main-content.remove-panel {
         height: 384px;
@@ -4840,7 +4846,7 @@
 			height: inherit;
 			display: block
 		}
-		.profile-avatar-left .thumbnail-loader, .profile-avatar-left .spinner, #avatar-container .thumbnail-loader, #avatar-container .spinner {
+		.profile-avatar-left .thumbnail-loader, .profile-avatar-left .spinner, #avatar-container .thumbnail-loader, #avatar-container .spinner, #UserAvatar .thumbnail-loader, #UserAvatar .spinner {
 			background-image: none;
 			display: inline-block;
 			white-space: normal;
@@ -4860,7 +4866,7 @@
 			left: 50%;
 			transform: translate(-35px, 0);
 		}
-		#avatar-container .thumbnail-loader:after {
+		#avatar-container .thumbnail-loader:after, #UserAvatar .thumbnail-loader:after {
 			content: 'Loading';
 			color: #191919;
 			font-size: 16px;
@@ -4925,7 +4931,7 @@
 				box-shadow: 0 0 50px #5D9CFB, inset 0 0 50px #5D9CFB;
 			}
 		}
-		#avatar-container .thumbnail-loader .spinner:before, #avatar-container .thumbnail-loader .spinner:after {
+		#avatar-container .thumbnail-loader .spinner:before, #avatar-container .thumbnail-loader .spinner:after, #UserAvatar .spinner:before, #UserAvatar .spinner:after {
 			opacity: 0;
 			box-sizing: border-box;
 			content: "\0020";
@@ -4963,13 +4969,13 @@
 				box-shadow: 0 0 50px #5D9CFB, inset 0 0 50px #5D9CFB;
 			}
 		}
-		.profile-avatar-left .spinner:before, #avatar-container .thumbnail-loader .spinner:before {
+		.profile-avatar-left .spinner:before, #avatar-container .thumbnail-loader .spinner:before, #UserAvatar .spinner:before {
 			z-index: 2;
 			-webkit-animation: gogoloader 2s infinite;
 			-o-animation: gogoloader 2s infinite;
 			animation: gogoloader 2s infinite;
 		}
-		.profile-avatar-left .spinner:after, #avatar-container .thumbnail-loader .spinner:after {
+		.profile-avatar-left .spinner:after, #avatar-container .thumbnail-loader .spinner:after, #UserAvatar .spinner:after {
 			-webkit-animation: gogoloader 2s infinite 1s;
 			-o-animation: gogoloader 2s infinite 1s;
 			animation: gogoloader 2s infinite 1s;
