@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240909.1.3.17
+@version      20240912.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -28,6 +28,7 @@
 @var          checkbox SponsorSizing               "Original Sponsor Size"              1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
 @var          checkbox RestoreAds                  "Restore Ads"                        0
+@var          checkbox RestoreGameAds              "    ↳ Games Page"                   0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
 @var          checkbox RemoveUpdates               "Revert 2019L+ changes"              1
 @var          checkbox RemoveExtras                "    ↳ Extras"                       0
@@ -995,9 +996,7 @@
             font-size: 32px;
             font-weight: 800;
             @media (max-width: 767px) {
-                & {
-                    font-size:24px
-                }
+                font-size:24px
             }
         }
         .text-link,.vlist .list-item .list-body .list-content a,.vlist .list-item .list-body .list-content & a {
@@ -1008,16 +1007,12 @@
             font-weight: 400;
             line-height: 1.4em;
             @media (max-width: 767px) {
-                & {
-                    font-size:16px;
-                    font-weight: 400
-                }
+                font-size:16px;
+                font-weight: 400
             }
             @media (max-width: 543px) {
-                & {
-                    font-size:12px;
-                    font-weight: 400
-                }
+                font-size:12px;
+                font-weight: 400
             }
         }
         .ad-identification-text, .font-small, .small, .small-oneline, .text-date-hint, .text-secondary, .text-tooltips {
@@ -1030,9 +1025,7 @@
             font-size: 20px;
             font-weight: 700;
             @media (max-width: 767px) {
-                & {
-                    font-size:16px
-                }
+                font-size:16px
             }
         }
         .font-bold, .font-header-2, .h5, .h6, .text-footer-nav, .text-label, .text-lead, .text-name, .text-subject, .text-warning, h5, h6, strong {
@@ -1040,10 +1033,8 @@
                 font-size: 16px;
                 font-weight: 500;
                 @media (max-width: 767px) {
-                    & {
-                        font-size:12px;
-                        font-weight: 500
-                    }
+                    font-size:12px;
+                    font-weight: 500
                 }
             }
         }
@@ -1051,9 +1042,7 @@
             font-size: 16px;
             font-weight: 500;
             @media (max-width: 767px) {
-                & {
-                    font-size:12px
-                }
+                font-size:12px
             }
         }
         .font-body,.text-description,.text-favorite,p {
@@ -1071,9 +1060,7 @@
                 font-size: 10px;
                 font-weight: 500;
                 @media (max-width: 767px) {
-                    & {
-                        font-size:8px
-                    }
+                    font-size:8px
                 }
             }
         }
@@ -5445,9 +5432,7 @@
         .game-stats-container.follow-button-enabled .game-stat-width-voice {
             width: 12.5%;
             @media (max-width: 767px) {
-                & {
-                    width: 100%;
-                }
+                width: 100%;
             }
         }
         .game-stats-container.follow-button-enabled .game-stat-width-voice:nth-child(4) {
@@ -5630,9 +5615,7 @@
                 line-height: 1em;
                 cursor: text;
                 @media (max-width: 767px) {
-                    & {
-                        font-size: 16px;
-                    }
+                    font-size: 16px;
                 }
             }
         }
@@ -5706,9 +5689,7 @@
                 vertical-align: middle;
                 display: inline-block;
                 @media (max-width: 767px) {
-                    & {
-                        font-size: 12px;
-                    }
+                    font-size: 12px;
                 }
             }
         }
@@ -5727,9 +5708,7 @@
                 vertical-align: middle;
                 display: inline-block;
                 @media (max-width: 767px) {
-                    & {
-                        font-size: 12px;
-                    }
+                    font-size: 12px;
                 }
             }
         }
@@ -6164,10 +6143,8 @@
             cursor: text;
             & when (@SourceSansPro = 0) {
                 @media (max-width: 767px) {
-                    & {
-                        font-size: 12px;
-                        font-weight: 500
-                    }
+                    font-size: 12px;
+                    font-weight: 500
                 }
             }
         }
@@ -6188,9 +6165,7 @@
             .remove-panel:not(.section-content):not(:has(.section-content)) {
                 padding: 15px 15px 10px 15px;
                 @media (max-width: 543px) {
-                    & {
-                        padding: 15px 15px 6px 15px;
-                    }
+                    padding: 15px 15px 6px 15px;
                 }
             }
             .form-group:last-child {
@@ -6219,11 +6194,9 @@
                     top: 6px;
                     left: 10px;
                     @media (max-width: 767px) {
-                        & {
-                            background-size: 20px 20px;
-                            width: 20px;
-                            height: 20px;
-                        }
+                        background-size: 20px 20px;
+                        width: 20px;
+                        height: 20px;
                     }
                 }
             }
@@ -6273,12 +6246,10 @@
                         content: "Facebook";
                     }
                     @media (max-width: 767px) {
-                        & {
-                            padding: 7px;
-                            font-size: 16px;
-                            line-height: 100%;
-                            border-radius: 3px;
-                        }
+                        padding: 7px;
+                        font-size: 16px;
+                        line-height: 100%;
+                        border-radius: 3px;
                     }
                 }
             }
@@ -6328,12 +6299,10 @@
                         content: "Facebook";
                     }
                     @media (max-width: 767px) {
-                        & {
-                            padding: 7px;
-                            font-size: 16px;
-                            line-height: 100%;
-                            border-radius: 3px;
-                        }
+                        padding: 7px;
+                        font-size: 16px;
+                        line-height: 100%;
+                        border-radius: 3px;
                     }
                 }
             }
@@ -6360,9 +6329,7 @@
                 text-align: center;
                 cursor: text;
                 @media (max-width: 767px) {
-                    & {
-                        top: -11px;
-                    }
+                    top: -11px;
                 }
             }
             .login-container .login-section .text-center:not(.forgot-credentials-link) {
@@ -6555,14 +6522,10 @@
                 overflow: auto ;
             }
             @media (max-width: 1338px) {
-                & {
-                    max-width: 1154px;
-                }
+                max-width: 1154px;
             }
             @media (max-width: 1154px) {
-                & {
-                    max-width: 970px;
-                }
+                max-width: 970px;
             }
             @media (max-width: 991px) {
                 .section .container-header {
@@ -6595,20 +6558,14 @@
                 clear: unset;
                 cursor: pointer;
                 @media (max-width: 1358px) {
-                    & {
-                        display: none;
-                    }
+                    display: none;
                 }
                 @media (max-width: 1174px) {
-                    & {
-                        display: none;
-                    }
+                    display: none;
                 }
             }
             @media (min-width: 1688px) {
-                & {
-                    margin-left: auto;
-                }
+                margin-left: auto;
             }
         }
         .home-container.expand-max-width, .content .home-container.expand-max-width {
@@ -6656,9 +6613,7 @@
                     clear: unset;
                     cursor: pointer;
                     @media (max-width: 1174px) {
-                        & {
-                            display: none;
-                        }
+                        display: none;
                     }
                 }
             }
@@ -6684,9 +6639,7 @@
                     clear: unset;
                     cursor: pointer;
                     @media (max-width: 728px) {
-                        & {
-                            display: none;
-                        }
+                        display: none;
                     }
                 }
             }
@@ -6704,16 +6657,35 @@
                     margin: auto;
                     cursor: pointer;
                     @media (max-width: 991px) {
-                        & {
-                            display: none;
-                        }
+                        display: none;
                     }
                     @media (max-width: 752px) {
-                        & {
-                            width: 350px;
-                            height: 547px;
-                        }
+                        width: 350px;
+                        height: 547px;
                     }
+                }
+            }
+            #games-carousel-page when (@RestoreGameAds = 1) {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 56px;
+                    right: 0;
+                    width: 330px;
+                    height: 100%;
+                    max-height: 525px;
+                    display: none;
+                    background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                    background-size: 300px 250px;
+                    background-position: 15px 0;
+                    background-repeat: space;
+                    cursor: pointer;
+                    @media (min-width: 1024px) {
+                        display: inherit;
+                    } 
+                }
+                @media (min-width: 1024px) {
+                    margin-right: 345px;
                 }
             }
         }
@@ -6722,6 +6694,12 @@
             width: 33.33%;
             width: 33.33333%;
         }
+    }
+    
+    [data-internal-page-name="Games"] .content {
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .items-list .item-card .item-card-caption .item-card-name-link {
@@ -6754,9 +6732,7 @@
                 vertical-align: middle;
                 display: inline-block;
                 @media (max-width: 767px) {
-                    & {
-                        font-size: 12px;
-                    }
+                    font-size: 12px;
                 }
             }
             .menu-text-container {
@@ -7030,10 +7006,8 @@
                     font-weight: 400
                 }
                 @media (max-width: 767px) {
-                    & {
-                        &, &:hover, &:focus, &:active {
-                            font-size:30px
-                        }
+                    &, &:hover, &:focus, &:active {
+                        font-size:30px
                     }
                 }
             }
@@ -7043,10 +7017,8 @@
                     font-weight: 400
                 }
                 @media (max-width: 767px) {
-                    & {
-                        &, &:hover, &:focus, &:active {
-                            font-size:24px
-                        }
+                    &, &:hover, &:focus, &:active {
+                        font-size:24px
                     }
                 }
             }
@@ -7056,10 +7028,8 @@
                     font-weight: 300
                 }
                 @media (max-width: 767px) {
-                    & {
-                        &, &:hover, &:focus, &:active {
-                            font-size:21px
-                        }
+                    &, &:hover, &:focus, &:active {
+                        font-size:21px
                     }
                 }
             }
@@ -7069,10 +7039,8 @@
                     font-weight: 400
                 }
                 @media (max-width: 767px) {
-                    & {
-                        &, &:hover, &:focus, &:active {
-                            font-size:18px
-                        }
+                    &, &:hover, &:focus, &:active {
+                        font-size:18px
                     }
                 }
             }
@@ -7082,10 +7050,8 @@
                     font-weight: 400
                 }
                 @media (max-width: 767px) {
-                    & {
-                        &, &:hover, &:focus, &:active {
-                            font-size:16px
-                        }
+                    &, &:hover, &:focus, &:active {
+                        font-size:16px
                     }
                 }
             }
@@ -10181,9 +10147,7 @@
                     border: 0.5px solid #474747;
                 }
                 @media (max-width: 991px) {
-                    & {
-                        width: 100%;
-                    }
+                    width: 100%;
                 }
             }
             .dark-theme & {
@@ -10194,11 +10158,9 @@
             }
         }
         @media (max-width: 767px) {
-            & {
-                margin: 0 0 12px;
-                margin-top: 41px;
-                padding: 15px;
-            }
+            margin: 0 0 12px;
+            margin-top: 41px;
+            padding: 15px;
             .container-header {
                 padding: 0 15px;
             }
@@ -10325,13 +10287,11 @@
 			height: 223px;
 		}
         @media (max-width: 543px) {
-            & {
-                & when (@SourceSansPro = 0) {
-                    height: 150px;
-                }
-                & when (@SourceSansPro = 1) {
-                    height: 152px;
-                }
+            & when (@SourceSansPro = 0) {
+                height: 150px;
+            }
+            & when (@SourceSansPro = 1) {
+                height: 152px;
             }
         }
     }
@@ -11111,15 +11071,13 @@
             }
         }
         @media (max-width: 543px) {
-            & {
-                margin: 0;
-                margin-bottom: 12px;
-                & when (@CardStyle = Pre-2018) {
-                    padding: 0 11px 0 0;
-                }
-                & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
-                    padding: 0 14px 0 0;
-                }
+            margin: 0;
+            margin-bottom: 12px;
+            & when (@CardStyle = Pre-2018) {
+                padding: 0 11px 0 0;
+            }
+            & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                padding: 0 14px 0 0;
             }
         }
     }
@@ -11155,10 +11113,8 @@
                     height: 150px;
                     width: 150px;
                     @media (max-width: 543px) {
-                        & {
-                            height: 90px;
-                            width: 90px;
-                        }
+                        height: 90px;
+                        width: 90px;
                     }
                     img {
                         object-fit: cover
@@ -11177,26 +11133,6 @@
                 }
                 max-height: unset;
                 @media (max-width: 543px) {
-                    & {
-                        & when (@CardStyle = Pre-2018) {
-                            width: 101px;
-                        }
-                        & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
-                            width: 104px;
-                        }
-                        & when (@SourceSansPro = 0) {
-                            height: 150px;
-                            max-height: 150px;
-                        }
-                        & when (@SourceSansPro = 1) {
-                            height: 148px;
-                            max-height: 148px;
-                        }
-                    }
-                }
-            }
-            @media (max-width: 543px) {
-                & {
                     & when (@CardStyle = Pre-2018) {
                         width: 101px;
                     }
@@ -11211,6 +11147,22 @@
                         height: 148px;
                         max-height: 148px;
                     }
+                }
+            }
+            @media (max-width: 543px) {
+                & when (@CardStyle = Pre-2018) {
+                    width: 101px;
+                }
+                & when (@CardStyle = 2019E) or (@CardStyle = 2019M) or (@CardStyle = 2019L) {
+                    width: 104px;
+                }
+                & when (@SourceSansPro = 0) {
+                    height: 150px;
+                    max-height: 150px;
+                }
+                & when (@SourceSansPro = 1) {
+                    height: 148px;
+                    max-height: 148px;
                 }
             }
         }
@@ -12467,9 +12419,7 @@
         padding: 12px;
         width: unset;
         @media (min-width: 319px) {
-            & {
-                max-width: unset;
-            }
+            max-width: unset;
         }
     }
     
@@ -17255,10 +17205,8 @@
             padding-bottom: 0;
             padding-top: 40px;
             @media (max-width: 991px) {
-                & {
-                    margin-bottom: 90px;
-                    padding-top: 0;
-                }
+                margin-bottom: 90px;
+                padding-top: 0;
             }
             &.no-header-nav {
                 margin-bottom: 0
@@ -17329,10 +17277,8 @@
         }
         .rbx-header .navbar-search {
             @media (max-width: 992px) {
-                & {
-                    margin-top: 0;
-                    margin-bottom: 6px;
-                }
+                margin-top: 0;
+                margin-bottom: 6px;
             }
             &.navbar-search-open .dropdown-menu {
                 top: unset;
@@ -17360,9 +17306,7 @@
                 }
             }
             @media (min-width: 992px) {
-                & {
-                    top: 0;
-                }
+                top: 0;
             }
             .simplebar-content-wrapper {
                 display: flex;
@@ -17539,9 +17483,7 @@
             bottom: unset;
             top: 0;
             @media (max-width: 991px) {
-                & {
-                    position: absolute
-                }
+                position: absolute
             }
         }
         .copyright-container {
@@ -20205,9 +20147,7 @@
             top: 37px;
             right: -3px;
             @media (max-width: 991px) {
-                & {
-                    top: 87px;
-                }
+                top: 87px;
             }
         }
         & when (@SourceSansPro = 0) {
