@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240912.1.3.17
+@version      20240915.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5015,7 +5015,7 @@
     }
     
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .shopping-cart .right, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .shopping-cart .right, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container {
             display: none !important;
         }
         & when (@RemoveExtras = 1) {
@@ -7722,7 +7722,11 @@
     }
     
     .container-main .catalog-full-screen .catalog-results .item-cards-stackable .item-card .item-card-container, .container-main .splash.catalog-full-screen .catalog-results .item-cards-stackable .item-card .item-card-container {
-        width: 100%;
+        width: 126px;
+    }
+    
+    .item-cards-stackable .text-secondary, .item-card-creator {
+        margin: 0
     }
     
     .container-main .catalog-full-screen .catalog-results .item-cards-stackable .item-card .item-card-thumb-container, .container-main .splash.catalog-full-screen .catalog-results .item-cards-stackable .item-card .item-card-thumb-container {
@@ -9532,8 +9536,21 @@
 	.groups-list .rbx-divider {
 		display: none;
 	}
-    .catalog-container .sticky .search-options-scrollbar-container .mCustomScrollBox {
+    .catalog-container .sticky .search-options-scrollbar-container {
+        position: unset !important;
         max-height: unset !important;
+        @media (min-width: 768px) {
+            overflow-x: hidden;
+            @media (max-width: 992px) {
+                max-height: unset;
+            }
+            @media (min-width: 992px) {
+                max-height: unset;
+            }
+        }
+         .mCustomScrollBox {
+            max-height: unset !important;
+        }
     }
 	@media (min-width: 768px) {
 		.groups-list .menu-vertical-container .menu-vertical, .groups-list.col-sm-3, .groups-list .col-xs-12.col-sm-3 {
@@ -9568,23 +9585,12 @@
         .catalog-container .sticky .search-options {
             position: unset;
         }
-        .catalog-container .sticky .search-options-scrollbar-container {
-    		overflow-x: unset;
-	    }
+        @media (min-width: 992px) {
+            .catalog-container .sticky .search-bars, .catalog-container .sticky .search-options, .catalog-container .sticky .topic-container {
+                top: unset;
+            }
+        }
 	}
-    @media (min-width: 768px) and (min-width: 992px) {
-        .catalog-container .sticky .search-bars, .catalog-container .sticky .search-options, .catalog-container .sticky .topic-container {
-            top: unset;
-        }
-        .catalog-container .sticky .search-options-scrollbar-container {
-            max-height: unset;
-        }
-    }
-    @media (min-width: 768px) and (max-width: 992px) {
-        .catalog-container .sticky .search-options-scrollbar-container {
-                max-height: unset;
-        }
-    }
 	.groups-list .menu-dropdown-container .group-cards, .groups-list .menu-vertical-container .group-cards {
 		margin-bottom: 10px;
 	}
@@ -10090,8 +10096,13 @@
             top: -34px;
             left: 0;
         }
+        & when (@RemoveUpdates = 1) {
+            .game-stat:has(.chat-feature-list) {
+                display: none;
+            }
+        }
         & when (@LegacyNextStyleGuideButtons = 1) {
-            .game-stat:has(.chat-feature-list), ~ *:has(.game-social-links) {
+            ~ *:has(.game-social-links) {
                 display: none;
             }
         }
@@ -10170,6 +10181,95 @@
                 align-items: flex-start;
                 flex-direction: row;
                 margin-bottom: 12px;
+            }
+        }
+    }
+    
+    .filters-container .filter-items-container {
+        .filter-select {
+            border-color: #fff;
+            .dark-theme & {
+                border-color: #000;
+            }
+            &.btn-secondary-md {
+                background-color: #fff;
+                border-color: #fff;
+                color: #191919;
+                .light-theme & {
+                    background-color: #fff;
+                    border-color: #fff;
+                    color: #191919;
+                    &:hover {
+                        background-color: #f2f2f2;
+                        border-color: #f2f2f2;
+                    }
+                }
+                .dark-theme & {
+                    background-color: #000;
+                    border-color: #000;
+                    color: #e6e6e6;
+                    &:hover {
+                        background-color: #0d0d0d;
+                        border-color: #0d0d0d;
+                    }
+                }
+            }
+            &.btn-primary-md {
+                background-color: #191919;
+                border-color: #191919;
+                color: #fff;
+                .light-theme & {
+                    background-color: #191919;
+                    border-color: #191919;
+                    color: #fff;
+                }
+                .dark-theme & {
+                    background-color: #e6e6e6;
+                    border-color: #e6e6e6;
+                    color: #000;
+                }
+            }
+        }
+        .filters-modal-container {
+            box-shadow: none;
+            border-radius: 5px;
+            .light-theme & {
+                background-color: #fff;
+                border-color: #b8b8b8;
+                .filter-options-container {
+                    background-color: #fff;
+                    color: #757575;
+                    .filter-option-divider {
+                        border-color: #b8b8b8;
+                    }
+                    .filter-option {
+                        &:hover {
+                            background-color: #f2f2f2;
+                        }
+                        &.selected-option {
+                            color: #191919;
+                        }
+                    }
+                }
+            }
+            .dark-theme & {
+                background-color: #000;
+                border-color: #474747;
+                .filter-options-container {
+                    background-color: #000;
+                    color: #8A8A8A;
+                    .filter-option-divider {
+                        border-color: #474747;
+                    }
+                    .filter-option {
+                        &:hover {
+                            background-color: #0d0d0d;
+                        }
+                        &.selected-option {
+                            color: #e6e6e6;
+                        }
+                    }
+                }
             }
         }
     }
@@ -10369,7 +10469,7 @@
         }
     }
     & when (@CardStyle = 2019M) {
-        .game-tile, .grid-item-container, .featured-grid-item-container, .hover-game-tile {
+        .game-tile, .grid-item-container:not(.item-card), .featured-grid-item-container, .hover-game-tile {
             & when (@Fix19MICT = 1) {
                 -webkit-transition: transform .15s;
                 -o-transition: transform .15s;
@@ -10378,7 +10478,7 @@
             }
             cursor: pointer;
         }
-        .game-tile:hover, .grid-item-container:hover, .featured-grid-item-container:hover, .hover-game-tile.focused, .hover-game-tile:not(.focused):hover {
+        .game-tile:hover, .grid-item-container:not(.item-card):hover, .featured-grid-item-container:hover, .hover-game-tile.focused, .hover-game-tile:not(.focused):hover {
             -webkit-transition: transform .15s;
             -o-transition: transform .15s;
             transition: transform .15s;
@@ -10459,7 +10559,7 @@
     .dark-theme .game-carousel .grid-item-container {
         background-color: #000;
     }
-    .grid-item-container {
+    .grid-item-container:not(.item-card) {
         float: none;
 		& when (@CardStyle = Pre-2018) {
 			width: 161px;
@@ -11060,6 +11160,9 @@
                 }
                 .featured-game-icon-container:before when (@CardStyle = 2019L) {
                     opacity: 1;
+                }
+                .featured-game-container .info-metadata-container .wide-game-tile-metadata .hover-metadata {
+                    display: none;
                 }
             }
             .light-theme &.focused.old-hover {
@@ -12764,7 +12867,7 @@
 			border-radius: 5px;
 		}
 	}
-	.btn-cta-md, .btn-growth-md, .btn-primary-md, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .not-approved-page-content .action-buttons .btn-primary-md {
+	.btn-cta-md, .btn-growth-md, .btn-primary-md, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .not-approved-page-content .action-buttons .btn-primary-md, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -12893,7 +12996,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-cta-lg, .btn-cta-md, .btn-cta-sm, .btn-cta-xs, .btn-growth-lg, .btn-growth-md, .not-approved-page-content .action-buttons .btn-primary-md, .btn-growth-sm, .btn-growth-xs, .btn-primary-lg, .btn-primary-md, .btn-primary-sm, .btn-primary-xs, .btn-common-play-game-lg, .btn-branded-robux-white-lg, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link {
+	.btn-cta-lg, .btn-cta-md, .btn-cta-sm, .btn-cta-xs, .btn-growth-lg, .btn-growth-md, .not-approved-page-content .action-buttons .btn-primary-md, .btn-growth-sm, .btn-growth-xs, .btn-primary-lg, .btn-primary-md, .btn-primary-sm, .btn-primary-xs, .btn-common-play-game-lg, .btn-branded-robux-white-lg, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #3fc679;
 			& when (@BoxShadows = 1) {
@@ -21040,24 +21143,27 @@
 	}
 }
     
-    @-moz-document url("https://en.help.roblox.com/hc/en-us"), url("https://en.help.roblox.com/hc/de"), url("https://en.help.roblox.com/hc/fr"), url("https://en.help.roblox.com/hc/it"), url("https://en.help.roblox.com/hc/es"), url("https://en.help.roblox.com/hc/ja"), url("https://en.help.roblox.com/hc/ko"), url("https://en.help.roblox.com/hc/pt-br"), url("https://en.help.roblox.com/hc/ru"), url("https://en.help.roblox.com/hc/zh-cn"), url("https://en.help.roblox.com/hc/zh-tw") {
+@-moz-document url("https://en.help.roblox.com/hc/en-us"), url("https://en.help.roblox.com/hc/de"), url("https://en.help.roblox.com/hc/fr"), url("https://en.help.roblox.com/hc/it"), url("https://en.help.roblox.com/hc/es"), url("https://en.help.roblox.com/hc/ja"), url("https://en.help.roblox.com/hc/ko"), url("https://en.help.roblox.com/hc/pt-br"), url("https://en.help.roblox.com/hc/ru"), url("https://en.help.roblox.com/hc/zh-cn"), url("https://en.help.roblox.com/hc/zh-tw") {
     /*/Secondary Help Page/*/
     .container
     {
         background-color: transparent;
         box-shadow: none;
     }
-    }
+}
     
-    @-moz-document url-prefix("https://www.roblox.com/catalog?Category=15"), url-prefix("https://web.roblox.com/catalog?Category=15"), url-prefix("https://www.roblox.com/catalog?Category=1&salesTypeFilter=1"), url-prefix("https://web.roblox.com/catalog?Category=1&salesTypeFilter=1") {
+@-moz-document url-prefix("https://www.roblox.com/catalog?Category=15"), url-prefix("https://web.roblox.com/catalog?Category=15"), url-prefix("https://www.roblox.com/catalog?Category=1&salesTypeFilter=1"), url-prefix("https://web.roblox.com/catalog?Category=1&salesTypeFilter=1") {
     /*/Catalog/*/
+    .container-main .catalog-full-screen .catalog-results .item-cards-stackable .item-card:nth-child(-n+5) .item-card-container, .container-main .splash.catalog-full-screen .catalog-results .item-cards-stackable .item-card:nth-child(-n+5) .item-card-container {
+            width: 150px;
+    }
     @media (min-width: 991px) {
         .catalog-container .catalog-content .catalog-results .item-cards-stackable .item-card:nth-child(-n+5) {
             width: 20%;
         }
         .container-main .catalog-full-screen .catalog-results .item-cards-stackable .item-card .item-card-container, .container-main .splash.catalog-full-screen .catalog-results .item-cards-stackable .item-card .item-card-container {
             margin: 0;
-    }
+        }
         .catalog-container .catalog-content .catalog-results .item-cards-stackable .item-card:nth-last-child(-n+1) {
             display: none;
         }
@@ -21074,7 +21180,7 @@
     #expandable-menu-category-0 .toggle-submenu {
         display: none;
     }
-    }
+}
     @-moz-document url-prefix("https://www.roblox.com/develop"), url-prefix("https://web.roblox.com/develop"), url-prefix("https://www.roblox.com/universes"), url-prefix("https://web.roblox.com/universes"), url-prefix("https://www.roblox.com/places"), url-prefix("https://web.roblox.com/places"), url-prefix("https://www.roblox.com/Reference"), url-prefix("https://web.roblox.com/Reference") {
     /*/Develop/*/
     /*/ With develop being sunsetted soon this will be useless. /*/
