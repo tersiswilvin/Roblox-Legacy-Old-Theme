@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240915.1.3.17
+@version      20240920.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -3345,105 +3345,207 @@
         background-color: #222121
     }
     
-	@-webkit-keyframes blink-dialog {
-		0% {
-			background-color: #0074bd
-		}
+    & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlderChat = 0) {
+        @-webkit-keyframes blink-dialog {
+            0% {
+                background-color: #0074bd
+            }
 
-		to {
-			background-color: #00a2ff
-		}
-	}
+            to {
+                background-color: #00a2ff
+            }
+        }
 
-	@-moz-keyframes blink-dialog {
-		0% {
-			background-color: #0074bd
-		}
+        @-moz-keyframes blink-dialog {
+            0% {
+                background-color: #0074bd
+            }
 
-		to {
-			background-color: #00a2ff
-		}
-	}
+            to {
+                background-color: #00a2ff
+            }
+        }
 
-	@-ms-keyframes blink-dialog {
-		0% {
-			background-color: #0074bd
-		}
+        @-ms-keyframes blink-dialog {
+            0% {
+                background-color: #0074bd
+            }
 
-		to {
-			background-color: #00a2ff
-		}
-	}
+            to {
+                background-color: #00a2ff
+            }
+        }
 
-	@-o-keyframes blink-dialog {
-		0% {
-			background-color: #0074bd
-		}
+        @-o-keyframes blink-dialog {
+            0% {
+                background-color: #0074bd
+            }
 
-		to {
-			background-color: #00a2ff
-		}
-	}
+            to {
+                background-color: #00a2ff
+            }
+        }
 
-	@keyframes blink-dialog {
-		0% {
-			background-color: #0074bd
-		}
+        @keyframes blink-dialog {
+            0% {
+                background-color: #0074bd
+            }
 
-		to {
-			background-color: #00a2ff
-		}
-	}
-	@-webkit-keyframes darker-blink-dialog {
-		0% {
-			background-color: #001623
-		}
+            to {
+                background-color: #00a2ff
+            }
+        }
+        @-webkit-keyframes darker-blink-dialog {
+            0% {
+                background-color: #001623
+            }
 
-		to {
-			background-color: #004266
-		}
-	}
+            to {
+                background-color: #004266
+            }
+        }
 
-	@-moz-keyframes darker-blink-dialog {
-		0% {
-			background-color: #001623
-		}
+        @-moz-keyframes darker-blink-dialog {
+            0% {
+                background-color: #001623
+            }
 
-		to {
-			background-color: #004266
-		}
-	}
+            to {
+                background-color: #004266
+            }
+        }
 
-	@-ms-keyframes darker-blink-dialog {
-		0% {
-			background-color: #001623
-		}
+        @-ms-keyframes darker-blink-dialog {
+            0% {
+                background-color: #001623
+            }
 
-		to {
-			background-color: #004266
-		}
-	}
+            to {
+                background-color: #004266
+            }
+        }
 
-	@-o-keyframes darker-blink-dialog {
-		0% {
-			background-color: #001623
-		}
+        @-o-keyframes darker-blink-dialog {
+            0% {
+                background-color: #001623
+            }
 
-		to {
-			background-color: #004266
-		}
-	}
+            to {
+                background-color: #004266
+            }
+        }
 
-	@keyframes darker-blink-dialog {
-		0% {
-			background-color: #001623
-		}
+        @keyframes darker-blink-dialog {
+            0% {
+                background-color: #001623
+            }
 
-		to {
-			background-color: #004266
-		}
-	}
-	
+            to {
+                background-color: #004266
+            }
+        }
+    }
+    & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlderChat = 1) {
+        @-webkit-keyframes blink-dialog {
+            from {
+                background-color: #0074BD;
+            }
+
+            to {
+                background-color: #00A2FF;
+            }
+        }
+
+        @-moz-keyframes blink-dialog {
+            from {
+                background-color: #0074BD;
+            }
+
+            to {
+                background-color: #00A2FF;
+            }
+        }
+
+        @-ms-keyframes blink-dialog {
+            from {
+                background-color: #0074BD;
+            }
+
+            to {
+                background-color: #00A2FF;
+            }
+        }
+
+        @-o-keyframes blink-dialog {
+            from {
+                background-color: #0074BD;
+            }
+
+            to {
+                background-color: #00A2FF;
+            }
+        }
+
+        @keyframes blink-dialog {
+            from {
+                background-color: #0074BD;
+            }
+
+            to {
+                background-color: #00A2FF;
+            }
+        }
+        @-webkit-keyframes darker-blink-dialog {
+            from {
+                background-color: #001623
+            }
+
+            to {
+                background-color: #004266
+            }
+        }
+
+        @-moz-keyframes darker-blink-dialog {
+            from {
+                background-color: #001623
+            }
+
+            to {
+                background-color: #004266
+            }
+        }
+
+        @-ms-keyframes darker-blink-dialog {
+            from {
+                background-color: #001623
+            }
+
+            to {
+                background-color: #004266
+            }
+        }
+
+        @-o-keyframes darker-blink-dialog {
+            from {
+                background-color: #001623
+            }
+
+            to {
+                background-color: #004266
+            }
+        }
+
+        @keyframes darker-blink-dialog {
+            from {
+                background-color: #001623
+            }
+
+            to {
+                background-color: #004266
+            }
+        }
+    }
+    
     .light-theme .chat-windows-header
     {
         background-color: #00a2ff;
@@ -4741,11 +4843,14 @@
         border-radius: 3px;
     }
     
-    .light-theme .dialogs .dialog-container .dialog-body {
-        background-color: #F5F5F5
-    }
-    .dark-theme .dialogs .dialog-container .dialog-body {
-        background-color: #0A0A0A
+    .dialog-container .dialog-body {
+        height: 296px !important;
+        .light-theme .dialogs & {
+            background-color: #F5F5F5
+        }
+        .dark-theme .dialogs & {
+            background-color: #0A0A0A
+        }
     }
     
     .dark-theme .top-header .ng-binding {
@@ -10548,17 +10653,6 @@
         background-color: transparent;
     }
     
-    .game-carousel .grid-item-container {
-        background-color: #fff;
-        margin: 0 14px 0 0;
-        padding: 0;
-        & when (@CardStyle = 2019M) {
-            border-radius: 0;
-        }
-    }
-    .dark-theme .game-carousel .grid-item-container {
-        background-color: #000;
-    }
     .grid-item-container:not(.item-card) {
         float: none;
 		& when (@CardStyle = Pre-2018) {
@@ -10580,6 +10674,17 @@
         margin-bottom: 12px;
         vertical-align: top;
         white-space: normal;
+        .game-carousel & {
+            background-color: #fff;
+            margin: 0 14px 0 0;
+            padding: 0;
+            & when (@CardStyle = 2019M) {
+                border-radius: 0;
+            }
+            .dark-theme & {
+                background-color: #000;
+            }
+        }
     }
     .grid-item-container .game-card-link, .featured-grid-item-container .game-card-link {
         background-color: #fff;
@@ -14433,13 +14538,13 @@
         .light-theme .owl-carousel .slide-container .text-box {
             box-shadow: 0 0 15px 0 rgb(25 25 25 / 25%);
         }
-        .light-theme .section-content, .light-theme .avatar, .light-theme .avatar-card-container, .light-theme .item-card-container, .light-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .light-theme .grid-item-container .game-card-link, .light-theme .featured-grid-item-container .game-card-link, .light-theme .robux-row, .light-theme .store-card {
+        .light-theme .section-content, .light-theme .avatar, .light-theme .avatar-card-container, .light-theme .item-card-container, .light-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .light-theme .grid-item-container .game-card-link, .light-theme .featured-grid-item-container .game-card-link, .light-theme .robux-row, .light-theme .store-card, .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .light-theme .setting-section .remove-panel:not(.section-content):not(:has(.section-content)) {
             box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
         }
         .dark-theme .owl-carousel .slide-container .text-box {
             box-shadow: 0 0 15px 0 rgb(230 230 230 / 25%);
         }
-        .dark-theme .section-content, .dark-theme .avatar, .dark-theme .avatar-card-container, .dark-theme .item-card-container, .dark-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .dark-theme .grid-item-container .game-card-link, .dark-theme .featured-grid-item-container .game-card-link, .dark-theme .robux-row, .dark-theme .store-card {
+        .dark-theme .section-content, .dark-theme .avatar, .dark-theme .avatar-card-container, .dark-theme .item-card-container, .dark-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .dark-theme .grid-item-container .game-card-link, .dark-theme .featured-grid-item-container .game-card-link, .dark-theme .robux-row, .dark-theme .store-card, .dark-theme .setting-section .remove-panel:not(.section-content):not(:has(.section-content)) {
             box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
         }
         .light-theme .robux-body .robux-row {
@@ -14669,7 +14774,7 @@
                 font-weight: 400;
             }
             color: #B8B8B8;
-                float: left;
+            float: left;
             cursor: text;
         }
         
@@ -14682,6 +14787,22 @@
             .btr-small-chat-button.collapsed & {
                 display: none;
             }
+        }
+        
+        .dialog-container .dialog-main .chat-windows-header .chat-header-action:after {
+            content: "";
+            background-image: url(https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg);
+            background-repeat: no-repeat;
+            background-size: 40px auto;
+            background-position: 0 -60px;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            float: right;
+            margin-left: 6px;
+            cursor: pointer;
+            clear: unset;
         }
         
         & when (@LegacyNSGOlderChat = 1) {
@@ -14734,16 +14855,31 @@
                 .chat-header-action {
                     float: right;
                     padding: 6px 0;
-                    .dialog-header-active-game, span[class^=icon] {
+                    .dialog-header-active-game, span[class^=icon], .dialog-container .dialog-main &:after {
                         float: right;
                         margin-right: 6px;
                         margin-left: 0;
                     }
                 }
+                .chat-header-back {
+                    width: 28px;
+                    float: left;
+                    padding: 6px 6px 0 6px;
+                    margin: 0;
+                }
+            }
+            .create-chat-container .chat-header-create-group {
+                width: 88%;
+                width: calc(100% - 26px);
+                margin: 0;
             }
             .chat-container .chat-header-label {
                 width: 84%;
                 width: calc(100% - 52px);
+            }
+            .add-friends-container .chat-header-create-group {
+                width: 72%;
+                width: calc(100% - 72px);
             }
             .light-theme .chat-search {
                 border-top: 1px solid #e3e3e3
@@ -14809,7 +14945,13 @@
                     display: none;
                 }
             }
-
+            .details-confirmation-container {
+                height: 320px;
+                .details-negative-confirmation-body {
+                    height: 286px;
+                    text-align: center;
+                }
+            }
             .icon-chat-search {
                 .chat-search & {
                     background-position: 0 -20px;
@@ -14872,6 +15014,9 @@
                 }
                 .dialog-header {
                     box-shadow: none;
+                    .dark-theme & {
+                        box-shadow: none;
+                    }
                     .chat-header-label {
                         width: 60%;
                         width: calc(100% - 78px);
@@ -14892,11 +15037,64 @@
                         padding-right: 0;
                     }
                 }
+                .dialogs &.active {
+                    .dialog-header {
+                        -webkit-animation: blink-dialog .5s alternate infinite;
+                        -o-animation: blink-dialog .5s alternate infinite;
+                        animation: blink-dialog .5s alternate infinite;
+                        background-color: #0074BD;
+                        .light-theme & {
+                            -webkit-animation: blink-dialog .5s alternate infinite;
+                            -o-animation: blink-dialog .5s alternate infinite;
+                            animation: blink-dialog .5s alternate infinite;
+                            background-color: #0074BD;
+                        }
+                        .dark-theme & {
+                            & when (@BrighterDarkThemeColors = 0) {
+                               -webkit-animation: darker-blink-dialog .5s alternate infinite;
+                                -o-animation: darker-blink-dialog .5s alternate infinite;
+                                animation: darker-blink-dialog .5s alternate infinite;
+                                background-color: #001623;
+                            }
+                            & when (@BrighterDarkThemeColors = 1) {
+                               -webkit-animation: blink-dialog .5s alternate infinite;
+                                -o-animation: blink-dialog .5s alternate infinite;
+                                animation: blink-dialog .5s alternate infinite;
+                                background-color: #0074BD;
+                            }
+                        }
+                    }
+                    .dialog-header-title, .dialog-header .dialog-header-title {
+                        -webkit-animation: blink-dialog .5s alternate infinite;
+                        -o-animation: blink-dialog .5s alternate infinite;
+                        animation: blink-dialog .5s alternate infinite;
+                        .light-theme & {
+                            -webkit-animation: blink-dialog .5s alternate infinite;
+                            -o-animation: blink-dialog .5s alternate infinite;
+                            animation: blink-dialog .5s alternate infinite;
+                        }
+                        .dark-theme & {
+                            & when (@BrighterDarkThemeColors = 0) {
+                                -webkit-animation: darker-blink-dialog .5s alternate infinite;
+                                -o-animation: darker-blink-dialog .5s alternate infinite;
+                                animation: darker-blink-dialog .5s alternate infinite;
+                            }
+                            & when (@BrighterDarkThemeColors = 1) {
+                                -webkit-animation: blink-dialog .5s alternate infinite;
+                                -o-animation: blink-dialog .5s alternate infinite;
+                                animation: blink-dialog .5s alternate infinite;
+                            }
+                        }
+                    }
+                }
                 .dialog-body {
                     background-color: #E3E3E3;
                     height: 256px !important;
                     .light-theme &, .light-theme .dialogs & {
                         background-color: #E3E3E3;
+                    }
+                    .dark-theme &, .dark-theme .dialogs & {
+                        background-color: #1C1C1C;
                     }
                     .dialog-messages {
                         padding: 9px 0;
@@ -15006,6 +15204,36 @@
                         }
                         color: #191919;
                         border: none;
+                    }
+                    .dialogs & .dialog-message.message-is-sending {
+                        margin-bottom: 17px;
+                        &:after {
+                            content: "Sending...";
+                            color: #191919;
+                            & when (@SourceSansPro = 0) {
+                                font-size: 10px;
+                                font-weight: 500;
+                            }
+                            & when (@SourceSansPro = 1) {
+                                font-size: 12px;
+                                font-weight: 400;
+                            }
+                            margin: 3px 12px 0 0;
+                            width: 100%;
+                            text-align: right;
+                            display: block;
+                            position: absolute;
+                            top: 100%;
+                            height: auto;
+                            left: unset;
+                            border: none;
+                            .light-theme & {
+                                color: #191919;
+                            }
+                            .dark-theme & {
+                                color: #e6e6e6;
+                            }
+                        }
                     }
                     &.message-cluster-master .dialog-triangle:before {
                         border-color: transparent transparent transparent #99DAFF;
@@ -15137,6 +15365,56 @@
                     background-size: auto 16px;
                     margin: 0;
                 }
+            }
+            .details-container {
+                background-color: #e3e3e3;
+                .light-theme & {
+                    background-color: #e3e3e3;
+                }
+                .dark-theme & {
+                    background-color: #1c1c1c;
+                }
+                .mCustomScrollBox {
+                    height: 288px !important;
+                }
+            }
+            .details-header-container .details-title {
+                padding: 6px 8px 0 8px;
+            }
+            .select-friends-container {
+                height: calc(100% - 113px);
+                .friends-selected-list .friends-selected-placeholder {
+                    display: none;
+                }
+            }
+            .details-header-container .details-input-container, .details-header-container .details-title {
+                width: 100%;
+            }
+            .conversation-title-container {
+                height: auto;
+                .conversation-title-input {
+                    height: 32px;
+                    padding: 6px 6px 6px 26px;
+                }
+                .details-label {
+                    display: none;
+                }
+            }
+            .select-friends-header {
+                height: auto;
+                .select-friends-search {
+                    padding: 0;
+                    .select-friends-input {
+                        height: 32px;
+                        padding: 6px;
+                    }
+                }
+                .details-label {
+                    display: none;
+                }
+            }
+            .friends-list-container .friend-container .friend-info-action {
+                border: none;
             }
         }
         
@@ -16270,36 +16548,40 @@
 	& when (@PremiumToBC = 1) {
 		.btr-nav-sidebar_premium #nav-premium .font-header-2 {
 			font-size: 0;
+            &:after {
+                content: "Builders Club";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+                line-height: 1.42857;
+            }
 		}
-		.btr-nav-sidebar_premium #nav-premium .font-header-2:after {
-			content: 'Builders Club';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 500;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 400;
-			}
-			line-height: 1.42857;
-		}
-		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-17"], .btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-18"] {
+		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-17"] {
 			font-size: 0;
 			line-height: 0;
+            &:after {
+                content: "Show Builders Club";
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 16px;
+                display: inline-block
+            }
 		}
-		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-17"]:after {
-			content: "Show Builders Club";
-			font-size: 16px;
-			font-weight: 300;
-			line-height: 16px;
-			display: inline-block
-		}
-		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-18"]:after {
-			content: "Show Builders Club Button";
-			font-size: 16px;
-			font-weight: 300;
-			line-height: 16px;
-			display: inline-block
-		}
+        .btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-18"] {
+            font-size: 0;
+			line-height: 0;
+            &:after {
+                content: "Show Builders Club Button";
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 16px;
+                display: inline-block
+            }
+        }
 	}
 	
     #header .btr-nav-notif {
@@ -16349,8 +16631,24 @@
         left: 0px;
     }
     
-    body .btr-game-main-container {
+    .btr-game-main-container {
         padding: 12px;
+        .light-theme &, .dark-theme & {
+            padding: 12px;
+        }
+        body & {
+            margin-top: 0;
+            padding: 12px;
+        }
+        .game-description-container when (@BoxShadows = 1) {
+            box-shadow: none;
+        }
+        .game-main-content, .game-description-container {
+            padding: 0;
+            .light-theme &, .dark-theme & {
+                padding: 0;
+            }
+        }
     }
     
     #people-list-container .people-list-container {
@@ -16363,7 +16661,6 @@
         border: 1px solid #474747;
     }
     .dark-theme .btr-settings-checkbox input[type="checkbox"]:checked + label:before {
-        /*background-image: url(chrome-extension://hbkpclpemjeibhioopcebchdmohaieln/res/icon_checkbox.svg), url(moz-extension://225bad08-a007-4832-8416-bc0baf5c1220/res/icon_checkbox.svg);*/
         background-color: #00A2FF;
     }
     
@@ -16392,15 +16689,15 @@
     
     .light-theme .btr-hover-preview-camera-rotate {
         filter: invert(30%);
-    }
-    .light-theme .btr-hover-preview-camera-rotate:hover {
-        filter: invert(0%);
+        &:hover {
+            filter: invert(0%);
+        }
     }
     .dark-theme .btr-hover-preview-camera-rotate {
         filter: invert(50%);
-    }
-    .dark-theme .btr-hover-preview-camera-rotate:hover {
-        filter: invert(100%);
+        &:hover {
+            filter: invert(100%);
+        }
     }
     
     .btr-fastsearch-follow:not([disabled]):hover {
@@ -16479,9 +16776,9 @@
     
     .btr-fastsearch-thumbnail-container {
         border-color: #b8b8b8;
-    }
-    .dark-theme .btr-fastsearch-thumbnail-container {
-        border-color: #474747;
+        .dark-theme & {
+            border-color: #474747;
+        }
     }
     
     .dark-theme.btr-profile .btr-games-list .btr-game-button {
@@ -16514,12 +16811,16 @@
         background: #000;
     }
     
-    .btr-preview-container-itempage {
-        top: 15px;
-    }
-    
-    .dark-theme .btr-preview-container-itempage {
-        --btr-btn-color: #000;
+    .btr-preview-container {
+        &-itempage {
+            top: 15px;
+        }
+        .dark-theme & {
+            background: #222121;
+            &-itempage {
+                --btr-btn-color: #000;
+            }
+        }
     }
     
     #btr-navbar-messages .rbx-menu-item:hover .icon-nav-message-btr {
@@ -16555,17 +16856,6 @@
         opacity: 1;
     }
     
-    body .btr-game-main-container {
-        margin-top: 0;
-    }
-    
-    .light-theme .btr-game-main-container, .dark-theme .btr-game-main-container {
-        padding: 12px;
-    }
-    .light-theme .btr-game-main-container .game-main-content, .dark-theme .btr-game-main-container .game-main-content {
-        padding: 0
-    }
-    
     .btr-home-showUsername .people-list-container, .btr-home-secondRow .people-list-container {
         height: unset;
     }
@@ -16583,11 +16873,11 @@
         background-color: #f2f2f2;
         box-shadow: inset 4px 0 0 0 #00a2ff;
         color: #191919;
-    }
-    .dark-theme .dropdown-menu li:hover {
-        background-color: #0D0D0D;
-        box-shadow: inset 4px 0 0 0 #00a2ff;
-        color: #e6e6e6;
+        .dark-theme & {
+            background-color: #0D0D0D;
+            box-shadow: inset 4px 0 0 0 #00a2ff;
+            color: #e6e6e6;
+        }
     }
     
     .dark-theme.btr-gamedetails #store .store-cards .store-card {
@@ -16602,10 +16892,6 @@
     
     body.dark-theme .btr-bundle-animations .btr-bundle-btn, body.dark-theme .btr-bundle-animations .btr-bundle-btn-alt {
         border-color: #474747;
-    }
-    
-    .dark-theme .btr-preview-container {
-        background: #222121;
     }
     
     .btr-dark-theme .btr-settings-enabled-toggle:before {
