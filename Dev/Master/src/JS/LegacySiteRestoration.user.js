@@ -1758,20 +1758,24 @@ if (Settings.Global.LegacyEditDescription.Enabled) {
     waitForElm(".setting-section:not(#rbx-account-info-header) .remove-panel #account-field-username").then(async (Elm) => {
         saveSettingsStyle = document.createElement("style");
         saveSettingsStyle.innerHTML = `
-.content .page-content .save-settings-container {
-    float: right;
+.save-settings-container {
+    width: 100%;
+    text-align: right;
     margin: 9px 0 0;
+}
+.content .page-content .rbx-tab-content .acct-settings-btn {
+    float: unset;
 }
     `;
         if (Settings.Global.LegacyEditDescription.ModernFormat) {
             saveSettingsStyle.innerHTML = `
-.content .page-content .save-settings-container {
-    float: right;
-    margin: 9px 0 0;
-}
 .save-settings-container {
     width: 100%;
     text-align: right;
+    margin: 9px 0 0;
+}
+.content .page-content .rbx-tab-content .acct-settings-btn {
+    float: unset;
 }
 .description-container .personal-field-description {
     resize: vertical
@@ -1824,7 +1828,7 @@ if (Settings.Global.LegacyEditDescription.Enabled) {
         const afterDiv = document.createElement("div");
         Elm.parentNode.appendChild(afterDiv);
         afterDiv.outerHTML = `
-    <div class="form-group col-sm-2 save-settings-container"><button id="SaveInfoSettings" class="btn-control-sm acct-settings-btn ng-binding" ng-click="updateDescription()" ng-bind="'Action.Save'|translate">Save</button></div>
+    <div class="form-group save-settings-container"><button id="SaveInfoSettings" class="btn-control-sm acct-settings-btn ng-binding" ng-click="updateDescription()" ng-bind="'Action.Save'|translate">Save</button></div>
     `;
         waitForElm('meta[name="csrf-token"]').then(async (Elm) => {
             document.getElementById("SaveInfoSettings").addEventListener("click", function() {
