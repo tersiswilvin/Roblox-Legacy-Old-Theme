@@ -1832,7 +1832,7 @@ if (Settings.Global.LegacyEditDescription.Enabled) {
     `;
         waitForElm('meta[name="csrf-token"]').then(async (Elm) => {
             document.getElementById("SaveInfoSettings").addEventListener("click", function() {
-                var fieldValue = document.querySelector(".settings-personal-container .description-container .input-field").value;
+                var fieldValue = document.querySelector(".description-container .input-field").value;
                 GM_xmlhttpRequest({
                     method: "POST",
                     url: "https://accountinformation.roblox.com/v1/description",
