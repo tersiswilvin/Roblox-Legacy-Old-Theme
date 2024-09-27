@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240920.1.3.17
+@version      20240926.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -3033,8 +3033,7 @@
         padding: 5px 0;
     }
     
-    .light-theme .para-overflow-toggle .toggle-para, .light-theme .para-overflow-toggle .toggle-para:hover, .light-theme .para-overflow .toggle-para, .light-theme .para-overflow .toggle-para:hover, .dark-theme .para-overflow-toggle .toggle-para, .dark-theme .para-overflow-toggle .toggle-para:hover, .dark-theme .para-overflow .toggle-para, .dark-theme .para-overflow .toggle-para:hover
-    {
+    .light-theme .para-overflow-toggle .toggle-para, .light-theme .para-overflow-toggle .toggle-para:hover, .light-theme .para-overflow .toggle-para, .light-theme .para-overflow .toggle-para:hover, .dark-theme .para-overflow-toggle .toggle-para, .dark-theme .para-overflow-toggle .toggle-para:hover, .dark-theme .para-overflow .toggle-para, .dark-theme .para-overflow .toggle-para:hover {
         color: #00a2ff;
     }
     
@@ -4780,6 +4779,9 @@
         .breadcrumbs & {
             font-size: 12px;
             padding: 2px 6px;
+        }
+        button {
+            padding: 0;
         }
     }
     
@@ -8289,9 +8291,24 @@
         opacity: 1;
     }
     
-    .dark-theme .item-card-thumb-container .item-serial-number {
-        background-color: #e6e6e6;
-        color: #000
+    .item-card-thumb-container .item-serial-number {
+        background-color: #191919;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1em;
+        padding: 4px;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        .light-theme & {
+            background-color: #191919;
+            color: #fff;
+        }
+        .dark-theme &{
+            background-color: #e6e6e6;
+            color: #000
+        }
     }
 	
     .light-theme .rbx-select-group .rbx-select.active, .light-theme .rbx-select-group .rbx-select:active, .light-theme .rbx-select-group .rbx-select:focus {
@@ -8612,12 +8629,29 @@
         border-left-color: rgba(255, 255, 255, .25);
     }
     
+    .add-friends-container {
+        height: 360px;
+        display: block;
+        .select-friends-container {
+            height: 328px;
+            .select-friends-list {
+                height: 248px !important;
+                position: relative;
+            }
+        }
+    }
     .select-friends-container .friends-selected-list .friends-selected-item {
         float: left;
         height: 32px;
         width: 32px;
         position: relative;
         margin: 0 3px;
+    }
+    .select-friends-container .select-friends-list {
+        height: 80%;
+        height: calc(100% - 32px);
+        width: 260px;
+        overflow: auto;
     }
     
     .light-theme .details-btns-fixed {
@@ -14789,7 +14823,7 @@
             }
         }
         
-        .dialog-container .dialog-main .chat-windows-header .chat-header-action:after {
+        .dialog-container .dialog-main .chat-windows-header .chat-header-action:not(:has(.dialog-header-active-game)):after {
             content: "";
             background-image: url(https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg);
             background-repeat: no-repeat;
@@ -15376,6 +15410,16 @@
                 }
                 .mCustomScrollBox {
                     height: 288px !important;
+                }
+            }
+            .add-friends-container {
+                height: 320px;
+                .select-friends-container {
+                    height: 288px;
+                    .select-friends-list {
+                        height: 208px !important;
+                        position: relative;
+                    }
                 }
             }
             .details-header-container .details-title {
