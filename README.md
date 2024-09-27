@@ -2,7 +2,7 @@
 **[Roblox Legacy Old Theme](https://userstyles.world/style/5399/)** is a theme for [stylus](https://add0n.com/stylus.html) (see [Installation](#Installation) for installation details) that brings back the 2019 theme primarily from June - September 2019 with customizable options for the end user.
 
 <p align="center">
-    <img src="Dev/Master/Thumbnails/Outputs/RLOT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
+    <img src="Thumbnails/Outputs/RLOT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
 </p>
 
 ## Community
@@ -16,14 +16,14 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201509
     - 201511
     - 201612
-    - 201902
+    - 201902 ( Default )
   - Box Shadows
-  - Brighter Dark Theme Colors
+  - Brighter Dark Theme Colors ( Default )
   - Currency Brand Style
-    - Robux
+    - Robux ( Default )
     - Tickets
   - Custom Site Theme
-    - None
+    - None ( Default )
     - BTR_Night
     - BTR_Red
     - BTR_Simblk
@@ -31,20 +31,20 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - L_Red
     - RPlus_OBC
   - Force light theme on signup
-  - Five column Avatar Editor
+  - Five column Avatar Editor ( Default )
   - Greeting Text Style
-    - None
+    - None ( Default )
     - Hello
     - HelloExclamation
     - Exclamation
   - Item Card Style
     - Pre-2018
     - 2019E
-    - 2019M
+    - 2019M ( Default )
     - 2019L
   - Legacy Game Headers (BTRoblox)
   - Legacy Footer Text
-    - None
+    - None ( Default )
     - BrandSync
     - 2014E
     - 2015E
@@ -56,7 +56,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2018L
     - 2019E
   - Legacy Next StyleGuide
-    -   ↳  Older
+    -    ↳  Older
   - My Avatar Gogo Spinner
   - Original Sponsor Size (Deprecated)
   - Play Button Style
@@ -65,25 +65,25 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
     - 2020+
   - Restore legacy sidebar padding
-  - Revert 2019L+ changes
+  - Revert 2019L+ changes ( Default )
     -     ↳  Extras
   - Premium To BC (BTRoblox)
   - Site Brand Style
     - 201408
     - 201412
     - 201511
-    - 201701
+    - 201701 ( Default )
   - Signup Theme
     - 2017
-    - 2018
+    - 2018 ( Default )
     - 2019L
     - 2020+
   - Styleguide Page Theme
     - 2016
     - 2017
-    - 2018
+    - 2018 ( Default )
   - Source Sans Pro Font
-  - Transition animations
+  - Transition animations ( Default )
   - Use 2017 Red icon logo
 - Extension Support
   - Btroblox
@@ -117,8 +117,8 @@ Please report any issues you find in [Issues](https://github.com/tersiswilvin/Ro
 ## Credits
 
 Sites used to make this possible :
-- [CodePen](//codepen.io)
-- [WayBack Machine](//web.archive.org)
-- [YouTube](//www.YouTube.com)
+- [CodePen](https://codepen.io)
+- [WayBack Machine](https://web.archive.org)
+- [YouTube](https://www.YouTube.com)
 
 Special thanks to those that helped make this theme possible.
