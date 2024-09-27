@@ -1,7 +1,0 @@
-(May 06 2022)
-Prerelease 1.2.9.11 beta 2 is available.
-
-Btr preview button color is now black instead of using new dark theme color.
-Btr preview containers now match the asset thumbnail background colors.
-Fixed an issue where btroblox item pages would have a black background covering the item completely in dark theme.
-Fixed preview containers positioning for btroblox.

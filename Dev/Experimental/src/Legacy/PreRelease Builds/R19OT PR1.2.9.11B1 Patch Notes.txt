@@ -1,8 +1,0 @@
-(May 04 2022)
-Prerelease 1.2.9.11 beta 1 is available.
-
-What's new :
-
-Added dark theme support for btroblox pager cur.
-Fixed primary md text colors returning dark in dark theme.
-Fixed rbx select having only blue borders when active in dark theme.
