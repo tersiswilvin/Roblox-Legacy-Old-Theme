@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240926.1.3.17
+@version      20240927.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
 @homepageURL  https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme
 @supportURL   https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues
-@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css
+@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
 @var          select   BadgeStyle                  "Badge Style"                        ["201509","201511", "201612", "201902*"]
@@ -22,17 +22,17 @@
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"     0
 @var          select   LegacyFooterText            "Legacy Footer Text"                 ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"             0
-@var          checkbox LegacyNSGBoxShadows         "    ↳ Chat Shadows"                 1
-@var          checkbox LegacyNSGOlder              "    ↳ Older"                        0
-@var          checkbox LegacyNSGOlderChat          "    ↳ Older Chat"                   0
+@var          checkbox LegacyNSGBoxShadows         " ↳ Chat Shadows"                    1
+@var          checkbox LegacyNSGOlder              " ↳ Older"                           0
+@var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                      0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size"              1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
 @var          checkbox RestoreAds                  "Restore Ads"                        0
-@var          checkbox RestoreGameAds              "    ↳ Games Page"                   0
+@var          checkbox RestoreGameAds              " ↳ Games Page"                      0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
 @var          checkbox RemoveUpdates               "Revert 2019L+ changes"              1
-@var          checkbox RemoveExtras                "    ↳ Extras"                       0
+@var          checkbox RemoveExtras                " ↳ Extras"                          0
 @var          checkbox PremiumToBC                 "Premium To BC (BTRoblox)"           0
 @var          select   LogoStyle                   "Site Brand Style"                   ["201408", "201412", "201511", "201701*"]
 @var          select   SignUpStyle                 "Signup Theme"                       ["2017", "2018*", "2019L", "2020+"]
