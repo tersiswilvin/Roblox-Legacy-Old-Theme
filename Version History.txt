@@ -1,23 +1,18 @@
 == Version History ==
 
-(07/20/2024)
-Release 1.3.16 :
+(Release 1.3.16 | 07/20/2024)
 1.3.16 adds a lot of fixes & modifications, if you would like to know what has been changed please view it on github.
 
-(04/02/2024)
-Release 1.3.15 :
+(Release 1.3.15 | 04/02/2024)
 Reverted April Fools Update.
 
-(03/31/2024)
-Release 1.3.14 :
+(Release 1.3.14 | 03/31/2024)
 Enabled April Fools Theme.
 
-(03/30/2024)
-Release 1.3.13 :
+(Release 1.3.13 | 03/30/2024)
 Enabled Easter Theme (Happy Easter).
 
-(02/22/2024)
-Release 1.3.12 :
+(Release 1.3.12 | 02/22/2024)
 Added RemoveExtras (removes themes in settings).
 Added support for new notify update on the games page.
 Groups are now centered aligned.
@@ -28,20 +23,40 @@ Removed "passkey" notification in settings (toggleable via remove updates).
 Removed id verification form (toggleable via remove updates).
 Reverted new audio thumbnails (toggleable via remove updates).
 
-(01/21/2024)
-Release 1.2.11 :
+(Release 1.3.11 | 01/21/2024)
 Added support for the new catalog update.
 
-(12/04/2023)
-Release 1.3.10 :
+(Release 1.3.10 | 12/04/2023)
 Fixed an issue with Box Shadows that caused an error.
 
-(08/03/2023 => 12/03/2023)
-Release 1.3.1 => 1.3.9 :
-[Void]
+(Release 1.3.9 | 11/04/2024)
+TODO
 
-(08/02/2023)
-Release 1.3 :
+(Release 1.3.8 | 10/31/2024)
+TODO
+
+(Release 1.3.7 | 10/30/2024)
+TODO
+
+(Release 1.3.6 | 10/27/2024)
+TODO
+
+(Release 1.3.5 | 08/17/2024)
+TODO
+
+(Release 1.3.4 | 08/15/2024)
+TODO
+
+(Release 1.3.3 | 08/15/2024)
+TODO
+
+(Release 1.3.2 | 08/14/2024)
+TODO
+
+(Release 1.3.1 | 08/08/2023)
+TODO
+
+(Release 1.3 | 08/02/2023)
 Added back events text on the sidebar.
 Added Custom Themes. > [BTR_Night, BTR_Red, BTR_Simblk, L_Red, RPlus_OBC]
 Added Game Card Friend Activity support.
@@ -62,13 +77,11 @@ Roblox+ logo syncs with site Brand settings.
 Improved chat for better accuracy.
 Improved SourceSansPro (Thanks Aubymori).
 
-(03/17/2023)
-Release 1.2.9.38 :
+(Release 1.2.9.38 | 03/17/2023)
 Added Site Curency option.
 Changed avatar shop (Marketplace) to catalog in avatar editor (Toggleable).
 
-(01/27/2023)
-Release 1.2.9.37 :
+(Release 1.2.9.37 | 01/27/2023)
 Added themes icon support for ropro users.
 Added badge styling.
 Brand Logos now affect outside of roblox.com.
@@ -78,8 +91,7 @@ Fixed the icons on the help pages defaulting to system icons.
 ForceSignupLightTheme no longer effects other pages.
 Ropro sidebar icons no longer repeat.
 
-(01/10/2023)
-Release 1.2.9.36 :
+(Release 1.2.9.36 | 01/10/2023)
 Added force light theme on signup page option.
 Added legacy next styleguide colors option.
 Added Styleguide Styling option.
@@ -88,8 +100,7 @@ Red Logo now affects the robux page.
 Removed Quick Login from the dropdown (Toggleable).
 Renamed RedOLogoStyle to RedLogoStyle.
 
-(01/01/2023)
-Release 1.2.9.35 :
+(Release 1.2.9.35 | 01/01/2023)
 Added box shadow animations option.
 Added Red O logo variant option.
 Additional fixes for game cards.
@@ -102,20 +113,18 @@ Rearranged some css.
 Renamed Pre-2018 Box shadows to Box Shadows.
 Renamed Game Card style to Item Card style.
 
-(12/24/2022)
-Release 1.2.9.34 :
+(Release 1.2.9.34 | 12/24/2022)
 Added 2018M Play Button styling option.
 Added holiday banner (Toggleable).
 
-(12/15/2022)
-Release 1.2.9.33 :
+(Release 1.2.9.33 | 12/15/2022)
 Added box shadow options.
 Added Game Card options.
 Fixed a few issues when sourcesanspro was enabled.
 Partially reverted recent catalog update change.
 
-Release 1.2.9.32 :
+(Release 1.2.9.32 | 12/03/2022)
 Reverted a few footer pages (More is to come).
 
-Release 1.2.9.31 :
+(Release 1.2.9.31 | 11/30/2022)
 Brought back the old social link and social network icons.
