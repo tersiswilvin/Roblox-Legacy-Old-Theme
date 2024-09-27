@@ -106,7 +106,7 @@ If you don't have stylus already installed, you can get it here for your browser
 
 ### Extras
 
-For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.user.js) which requires [tampermonkey](https://www.tampermonkey.net/index.php#download) to use, if your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102).
+For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://raw.githubusercontent.com/tersiswilvin/Roblox-Legacy-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.user.js) which requires [tampermonkey](https://www.tampermonkey.net/index.php#download) to use, if your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102).
 
 For upcoming updates and features you can try out the [experimental](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](#Issues).
 
