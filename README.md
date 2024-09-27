@@ -16,34 +16,36 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201509
     - 201511
     - 201612
-    - 201902
+    - 201902 ( Default )
   - Box Shadows
-  - Brighter Dark Theme Colors
+  - Brighter Dark Theme Colors ( Default )
   - Currency Brand Style
-    - Robux
+    - Robux ( Default )
     - Tickets
   - Custom Site Theme
-    - None
+    - None ( Default )
     - BTR_Night
+    - BTR_Red
     - BTR_Simblk
     - BTR_Sky
     - L_Red
     - RPlus_OBC
   - Force light theme on signup
-  - Five column Avatar Editor
+  - Five column Avatar Editor ( Default )
+  - Fixed 2019M Item Card Transitions
   - Greeting Text Style
-    - None
+    - None ( Default )
     - Hello
     - HelloExclamation
     - Exclamation
   - Item Card Style
     - Pre-2018
     - 2019E
-    - 2019M
+    - 2019M ( Default )
     - 2019L
   - Legacy Game Headers (BTRoblox)
   - Legacy Footer Text
-    - None
+    - None ( Default )
     - BrandSync
     - 2014E
     - 2015E
@@ -55,33 +57,38 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2018L
     - 2019E
   - Legacy Next StyleGuide
-    -   ↳  Older
+    - ↳ Chat Shadows ( Default )
+    - ↳ Older
+    - ↳ Older Chat
   - My Avatar Gogo Spinner
-  - Original Sponsor Size (Deprecated)
+  - Original Sponsor Size ( Default )
   - Play Button Style
     - 2018M
     - 2018L
     - 2019E
     - 2020+
+  - Restore Ads
+    - ↳ Games Page
   - Restore legacy sidebar padding
-  - Revert 2019L+ changes
+  - Revert 2019L+ changes ( Default )
+    - ↳ Extras
   - Premium To BC (BTRoblox)
   - Site Brand Style
     - 201408
     - 201412
     - 201511
-    - 201701
+    - 201701 ( Default )
   - Signup Theme
     - 2017
-    - 2018
+    - 2018 ( Default )
     - 2019L
     - 2020+
   - Styleguide Page Theme
     - 2016
     - 2017
-    - 2018
+    - 2018 ( Default )
   - Source Sans Pro Font
-  - Transition animations
+  - Transition animations ( Default )
   - Use 2017 Red icon logo
 - Extension Support
   - Btroblox
@@ -106,7 +113,7 @@ If you don't have stylus already installed, you can get it here for your browser
 
 For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.user.js) which requires [tampermonkey](https://www.tampermonkey.net/index.php#download) to use, if your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102).
 
-For upcoming updates and features you can try out the [experimental](https://github.com/tersiswilvin/Roblox-2019-Old-Theme/raw/Release/Dev/Experimental/src/RLOTExperimental.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](#Issues).
+For upcoming updates and features you can try out the [experimental](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](#Issues).
 
 ## Issues
 
@@ -115,8 +122,8 @@ Please report any issues you find in [Issues](https://github.com/tersiswilvin/Ro
 ## Credits
 
 Sites used to make this possible :
-- [CodePen](//codepen.io)
-- [WayBack Machine](//web.archive.org)
-- [YouTube](//www.YouTube.com)
+- [CodePen](https://codepen.io)
+- [WayBack Machine](https://web.archive.org)
+- [YouTube](https://www.YouTube.com)
 
 Special thanks to those that helped make this theme possible.
