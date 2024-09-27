@@ -1,9 +1,0 @@
-(January 12 2022)
-Prerelease 1.2.6.12 is available.
-
-(Mini Update)
-Whats new :
-
-Fixed disabled pager span backgrounds.
-Animation icons are replaced with the old ones.
-Reverted a roblox update with the generic buttons in the settings. (Let me know in bug-reports if you're experiencing any problems with these.)

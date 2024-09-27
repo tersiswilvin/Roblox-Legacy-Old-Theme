@@ -1,7 +1,0 @@
-(June 16 2022)
-Prerelease 1.2.9.13.14 is available.
-
-What's new :
-
-Fixed main chat height being off when collapsed.
-Added support for the new uiblox notification bell (for those that have this weird update).

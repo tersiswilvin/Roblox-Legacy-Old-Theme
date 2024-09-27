@@ -1,9 +1,0 @@
-(March 20 2022)
-Prerelease 1.2.7.9.1 is available.
-
-What's new :
-
-Fixed disabled language containers using the dark theme background while using light theme.
-Fixed the sidebar cutting off when using lower resolutions.
-Redid how the right navigation works, it should now more behave like it did in 2019.
-Redid the group info stats, it now uses css from 2019 and better behaves like it did in 2019.

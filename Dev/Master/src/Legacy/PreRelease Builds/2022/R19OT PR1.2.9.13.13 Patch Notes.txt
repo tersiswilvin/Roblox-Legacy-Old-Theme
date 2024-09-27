@@ -1,7 +1,0 @@
-(June 15 2022)
-Prerelease 1.2.9.13.13 is available.
-
-What's new :
-
-Made the search bar width a bit more accurate.
-Replaced certain searchbar suffix text to be more consistent.

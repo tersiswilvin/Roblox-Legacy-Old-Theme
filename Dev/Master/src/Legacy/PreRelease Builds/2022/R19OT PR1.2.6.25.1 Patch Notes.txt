@@ -1,6 +1,0 @@
-(February 20 2022)
-Prerelease 1.2.6.25.1 is available.
-
-What's new :
-
-This is a quick fix follow up where group dialog text would return #191919 in dark theme (thanks to @Deleted User for spotting this issue.)

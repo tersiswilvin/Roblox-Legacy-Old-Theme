@@ -1,8 +1,0 @@
-(April 29 2022)
-Prerelease 1.2.9.9 is available.
-
-What's new :
-
-Added support for item card menu (temp solution until I can get the right css for the avatar editor).
-Added support for dark theme box shadows around the chat windows.
-Fixed item card thumbnails getting cutoff in the catalog.

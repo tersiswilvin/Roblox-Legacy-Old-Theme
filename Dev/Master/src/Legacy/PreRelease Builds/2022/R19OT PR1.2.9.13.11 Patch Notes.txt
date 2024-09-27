@@ -1,7 +1,0 @@
-(June 10 2022)
-Prerelease 1.2.9.13.11 is available.
-
-What's new :
-
-Made info avatar profile cards on game cards more accurate to 2019s (Let me know in bug-reports if there's any issues).
-Fixed genre color in catalog being different.

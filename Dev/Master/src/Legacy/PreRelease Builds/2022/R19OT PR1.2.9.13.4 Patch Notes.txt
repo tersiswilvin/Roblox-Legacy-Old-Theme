@@ -1,7 +1,0 @@
-(May 26 2022)
-Prerelease 1.2.9.13.4 is available.
-
-What's new :
-
-Avatar status game backgrounds are now the old colors.
-Changed the line height for "Games" on the user profile page.

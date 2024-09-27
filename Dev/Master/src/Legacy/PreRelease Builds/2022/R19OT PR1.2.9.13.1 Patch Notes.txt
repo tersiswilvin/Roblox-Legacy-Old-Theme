@@ -1,6 +1,0 @@
-(May 17 2022)
-Prerelease 1.2.9.13.1 is available.
-
-What's new :
-
-Fixed long names going over the section content.

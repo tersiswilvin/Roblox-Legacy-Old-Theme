@@ -1,6 +1,0 @@
-(May 29 2022)
-Prerelease 1.2.9.13.6 is available.
-
-What's new :
-
-Fixed ignore and accept buttons being the wrong colors when disabled.

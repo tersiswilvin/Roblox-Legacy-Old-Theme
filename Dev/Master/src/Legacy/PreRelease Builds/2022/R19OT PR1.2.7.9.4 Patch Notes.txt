@@ -1,8 +1,0 @@
-(March 23 2022)
-Prerelease 1.2.7.9.4 is available.
-
-What's new :
-
-Changed the toggle target directory so it only effects profiles (due to an issue that was caused on other pages).
-Fixed notifications taking up unattended space when .touch was enabled and the notifications icon was missing.
-Fixed game cards height breaking when .touch was enabled.

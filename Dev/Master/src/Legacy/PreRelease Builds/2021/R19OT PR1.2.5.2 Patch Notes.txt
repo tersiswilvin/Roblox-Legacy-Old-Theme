@@ -1,9 +1,0 @@
-(September 18 2021)
-Prerelease 4.2.5.2 is here!
-(Small update)
-
-This version includes the following :
-This release now introduces what version your on as well as 2 more info
-Revamped the search css I did a release ago, this should fix the issue with the search bar on catalog being messed up.
-If your using btroblox I fixed the Builders club icon as a recent btroblox update removed it + plus corrected the Show Builders club on the btroblox panel to the correct text.
-and lastly additional css corrections / fixes and moved some css items.

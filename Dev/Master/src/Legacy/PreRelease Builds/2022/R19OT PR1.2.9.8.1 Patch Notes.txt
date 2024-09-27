@@ -1,7 +1,0 @@
-(April 27 2022)
-( Stupidly rushed the last one without double checking lol. )
-Prerelease 1.2.9.8.1 is available.
-
-What's new :
-
-Fixed collapsed dialogs height.

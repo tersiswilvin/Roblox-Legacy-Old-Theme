@@ -1,9 +1,0 @@
-(January 24 2022)
-Prerelease 1.2.6.15 is available.
-
-What's new :
-
-Fixed an issue where voting segments background colors in dark mode are the wrong background color.
-Removed a new Roblox update called friend recommendations if you want them back delete line 3224 to 3226.
-Improved parts of dark mode and made somethings close to light mode.
-Reverted another batch of field contents containing generic edit icons.

@@ -1,9 +1,0 @@
-(May 19 2022)
-Prerelease 1.2.9.13.2 is available.
-
-What's new :
-
-Added text success support.
-Fixed search option menu link text color not matching when hovered.
-Toggle submenu icon is now hidden on catalog category 15 section.
-Removed margin for tooltip containers.

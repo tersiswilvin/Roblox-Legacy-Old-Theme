@@ -1,8 +1,0 @@
-(March 22 2022)
-Prerelease 1.2.7.9.3 is available.
-
-( Small Additional Fixes )
-What's new :
-
-Fixed a few popover arrows being missing.
-Retweaked the right navigation once more due to some css affecting some parts of the Roblox site + redid the age indicator and change the font weight on the robux counter.

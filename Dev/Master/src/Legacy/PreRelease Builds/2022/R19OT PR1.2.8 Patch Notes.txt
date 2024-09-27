@@ -1,9 +1,0 @@
-(April 08 2022)
-Prerelease 1.2.8 is available.
-
-What's new :
-
-Catalog now better looks like it did in 2019 + better improved some stuff.
-Fixed menu link secondary showing dark theme colors in light theme.
-Fixed search option headers using dark theme colors in light theme.
-The "New" status now uses 12px font size.

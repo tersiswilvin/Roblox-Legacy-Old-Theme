@@ -1,6 +1,0 @@
-(June 16 2022)
-Prerelease 1.2.9.13.15 is available.
-
-What's new :
-
-Fixed uiblox notification bell (for those that have this) disappearing in develop page.

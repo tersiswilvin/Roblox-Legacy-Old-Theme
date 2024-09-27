@@ -1,9 +1,0 @@
-(February 02 2022)
-Prerelease 1.2.6.16 is available.
-
-What's new :
-
-Fixed a small issue where mobile background color didn't match the theme.
-Fixed multiple issues or inaccuracies in dark mode.
-Fixed a small issue where the signup button when logged out would return a different background color on hover and focus.
-Checkmarks now have their proper background, border color and opacity levels.

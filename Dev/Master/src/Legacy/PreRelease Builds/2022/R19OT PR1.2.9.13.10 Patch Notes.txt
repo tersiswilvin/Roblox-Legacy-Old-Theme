@@ -1,6 +1,0 @@
-(June 09 2022)
-Prerelease 1.2.9.13.10 is available.
-
-What's new :
-
-Made the background transparent for .touch generic edit sm.

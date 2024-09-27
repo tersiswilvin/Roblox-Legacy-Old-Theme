@@ -1,9 +1,0 @@
-(March 13 2022)
-Prerelease 1.2.7.7 is available.
-
-What's new :
-
-Fixed where dialog triangle before when a link was sent didn't change.
-Fixed an issue where the signup button was getting padding in dark theme causing it to appear a bit lower.
-Changed asset thumbnails and profile item accoutrement container backgrounds in dark theme so you can better see faces.
-Changed the dialog triangles background color to match the dialog borders.

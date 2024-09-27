@@ -1,9 +1,0 @@
-(March 03 2022)
-Prerelease 1.2.6.30.2 is available.
-
-( Navigation Update )
-What's new :
-
-Revamped most of the top bar css, changed the navbar icon logo (the main Roblox logo) and navbar icon r (the o icon for smaller resolution) css where it no longer uses weird margins I applied ages ago but instead uses the 2019 css and some slight fixes to get it in the right position, I also fixed btroblox side of things for the navbar.
-The right navbar icons no longer hover when you hover over the icon but instead use the button hover to change the icon (so it also matches the robux hover method as well)
-Fixed an annoying occurrence where the navbar-settings ID would show the pointer before you could even toggle the popover menu.

@@ -1,9 +1,0 @@
-(March 27 2022)
-Prerelease 1.2.7.10.1 is available.
-
-What's new :
-
-Additional fixes where game card container in dark theme would still have a border radius when not intended.
-Added support for bottom nav action buttons.
-rbx nav collapse now better behaves like it did in 2019.
-icon send message, icon join game, icon start chat etc icons on the user profile page now use the colored versions in dark theme.

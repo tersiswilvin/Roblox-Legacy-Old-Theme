@@ -1,6 +1,0 @@
-(May 13 2022)
-Prerelease 1.2.9.12.1 is available.
-
-What's new :
-
-Redid the chat hover css a bit + fixed active using light theme colors.

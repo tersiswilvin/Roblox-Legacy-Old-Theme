@@ -1,6 +1,0 @@
-(June 02 2022)
-Prerelease 1.2.9.13.8 is available.
-
-What's new :
-
-Removed "Discover" on the games page.

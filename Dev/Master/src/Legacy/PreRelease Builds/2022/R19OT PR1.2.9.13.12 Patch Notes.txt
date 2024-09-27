@@ -1,6 +1,0 @@
-(June 12 2022)
-Prerelease 1.2.9.13.12 is available.
-
-What's new :
-
-Fixed input select options.

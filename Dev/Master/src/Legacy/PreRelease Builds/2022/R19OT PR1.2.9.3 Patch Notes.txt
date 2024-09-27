@@ -1,9 +1,0 @@
-(April 20 2022)
-Prerelease 1.2.9.3 is available.
-
-What's new :
-
-Added padding back to profile names.
-Corrected people list height being wrong.
-Removed social links for year accuracy.
-Fixed padding being 0 for the games page.

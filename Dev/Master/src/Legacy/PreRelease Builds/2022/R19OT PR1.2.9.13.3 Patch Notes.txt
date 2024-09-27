@@ -1,7 +1,0 @@
-(May 21 2022)
-Prerelease 1.2.9.13.3 is available.
-
-What's new :
-
-Btroblox enabled toggle flippers are now darker colors when in dark theme.
-Btroblox settings header no longer have a border in dark theme.

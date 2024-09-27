@@ -1,8 +1,0 @@
-(May 28 2022)
-Prerelease 1.2.9.13.5 is available.
-
-What's new :
-
-Additional small changes to btroblox settings panel to better match the theme.
-Fixed interaction item hover background using dark theme colors.
-Fixed favorite game card containers wrapping around.

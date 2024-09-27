@@ -1,9 +1,0 @@
-(December 27 2021)
-Prerelease 1.2.6.10 is now available.
-
-(Small Update)
-This update makes the following changes :
-
-Fixed control-sm buttons using the .touch class, further expanded the .touch class for more buttons for mobile. (expect more mobile friendly updates in the future.)
-Added disabled navigation tab colors.
-Shortened the upgrade now text css.

@@ -1,8 +1,0 @@
-(April 26 2022)
-Prerelease 1.2.9.6 is available.
-
-What's new :
-
-Added support for dropdown menu button hover.
-Revamped the chat css and chat is now much more accurate.
-Fixed border colors css duping twice.

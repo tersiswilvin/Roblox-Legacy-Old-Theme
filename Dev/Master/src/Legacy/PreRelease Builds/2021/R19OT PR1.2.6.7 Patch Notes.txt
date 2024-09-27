@@ -1,9 +1,0 @@
-(December 12 2021)
-Prerelease 1.2.6.7 is now available.
-
-This update makes the following changes :
-
-The left arrows on the /discovery page now has hover + redid how the right arrows work.
-Avatar-group, avatar-group-card-plains and avatar-all now have their correct border and background colors.
-Redid the 2 column status rows for profiles they should now exactly behave like it did in 2019.
-Had to remove icon-error, icon-in-review, icon-blocked, icon-pending, icon-unknown icons due to them displaying incorrectly on some if not most places. (I may reintroduce these in a future release if I get them to show up correctly.)

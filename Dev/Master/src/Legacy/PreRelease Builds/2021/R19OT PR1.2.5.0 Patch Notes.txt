@@ -1,9 +1,0 @@
-(September 09 2021)
-Prerelease 4.2.5 is here!
-
-This version includes the following changes :
-Fixed the coloring of the 2 buttons on the friends page when using dark mode.
-Develops page now has the old games text and the studio box in the corner now has the correct size and logo.
-Replaced as much of game(s) and private servers to its old text this change affects tooltips!
-Fixed some hover colors on the catalog page when using btroblox to make it feel part of the theme.
-If you use roblox+ you will now see the old navigation sidebar icon for the control panel.

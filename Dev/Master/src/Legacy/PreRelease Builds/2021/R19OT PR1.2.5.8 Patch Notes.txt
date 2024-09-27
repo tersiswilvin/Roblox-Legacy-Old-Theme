@@ -1,9 +1,0 @@
-(October 27 2021)
-1.2.5.8 is now available for download!
-
-This update makes the following changes :
-
-Dark mode has been improved to more resemble light mode version, I fixed promocodes and the buy robux page as well as fixing a few issues with the buttons being a bit broken on a few pages.
-Optimized some text and other site colors still using the new site variants.
-The site banners now use the 2019 background colors for warning / error, loading and success.
-I optimized the CSS further and merged a few sections into the main section instead of having to use another section for it. (Please let me know if the emerge of these pages affect the other pages and I'll try to fix them)

@@ -1,9 +1,0 @@
-(April 03 2022)
-Prerelease 1.2.7.10.3 is available.
-
-What's new :
-
-Attempted to fix a few bugs with the game cards while in lower resolutions.
-Changed how the "Join Game" button modifies on user page and no longer replaces the whole text.
-Fixed a line height issue when hovering over the hamburger menu on lower resolutions.
-Finally 100% fixed disabled decline friend request buttons.

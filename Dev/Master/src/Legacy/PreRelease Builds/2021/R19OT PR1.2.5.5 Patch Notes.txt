@@ -1,9 +1,0 @@
-(September 28 2021)
-(I wanted to drop this version to you guys before I start my homeschooling session today so dont expect much from this update)
-Prerelease 1.2.5.5 is here.
-
-This version includes the following changes :
-
-Chat conversation header now blinks when you get a new message or outbound message and goes away when you click on it.
-I corrected a lot and I mean a lot of text colors and hover colors around the roblox site this includes chat and other parts I may had missed in the previous updates.
-Fixed a few issues where the box container while in dark mode was still using light mode elements and has been fixed.

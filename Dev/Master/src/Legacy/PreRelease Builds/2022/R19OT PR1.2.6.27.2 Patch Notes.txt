@@ -1,8 +1,0 @@
-(February 26 2022)
-(Tiny bug fix)
-Prerelease 1.2.6.27.2 is available.
-
-What's new :
-
-Fixed an issue with a few buttons not displaying properly or using alternative colors when logged out.
-Changed the signup background and fixed where the login button would use .7 opacity and a different font weight when in focus.

@@ -1,7 +1,0 @@
-(June 25 2022)
-1.0 Early Access is available.
-
-What's new :
-
-Fixed the padding on input fields.
-Replaced Experiences with Games on the group page when btroblox is present.

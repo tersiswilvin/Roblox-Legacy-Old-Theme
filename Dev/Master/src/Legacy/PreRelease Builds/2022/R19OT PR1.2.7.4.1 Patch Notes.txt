@@ -1,6 +1,0 @@
-(March 07 2022)
-Prerelease 1.2.7.4.1 is available.
-
-What's new :
-
-Fixed the issue with the padding shrinking the users avatar in /users page, fixed where the avatar right background would be overridden by the section content background in dark theme (stupidly rushed the last update without testing whoops).

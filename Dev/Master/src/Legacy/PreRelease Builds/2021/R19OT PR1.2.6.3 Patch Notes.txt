@@ -1,9 +1,0 @@
-(November 24 2021)
-Prerelease 1.2.6.3 is now available.
-
-(Small update)
-This update makes the following changes :
-
-Fixed where green buttons on user profiles would return into the grey and white colors, also fixed the dark mode version of this to.
-Fixed where generic blue buttons on user profiles when hovered wouldn't change to the lighter variations.
-Fixed an issue where Game Card hover on user profiles would cut off at certain corners. 

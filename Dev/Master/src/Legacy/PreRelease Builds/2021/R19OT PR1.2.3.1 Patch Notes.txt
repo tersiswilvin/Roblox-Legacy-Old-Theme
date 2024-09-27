@@ -1,4 +1,0 @@
-(August 29 2021)
-Prerelease 4.2.3.1 is here
-(This is a small update)
-I fixed shop on the sidebar, made the notifications header the correct color 2019 used and some more corrections also just wanted to release something since its been awhile.

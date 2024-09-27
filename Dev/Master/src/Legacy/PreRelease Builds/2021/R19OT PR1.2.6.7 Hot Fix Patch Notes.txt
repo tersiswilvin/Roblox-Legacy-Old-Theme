@@ -1,2 +1,0 @@
-(December 12 2021)
-⚠ If you installed 1.2.6.7 please install this fix, I accidentally forgot to merge a fix in the main theme for the 2 column status rows on lower resolutions, if your experiencing issues with it please install this!

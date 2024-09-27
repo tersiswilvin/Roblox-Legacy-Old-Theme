@@ -1,8 +1,0 @@
-(February 08 2022)
-Prerelease 1.2.6.18 is available.
-
-What's new :
-
-Fixed where a few borders in light and dark mode would return the original colors.
-Added more support for dark mode.
-Reverted the profile accoutrement page buttons (+ hover) in dark mode.

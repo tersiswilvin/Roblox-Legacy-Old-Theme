@@ -1,9 +1,0 @@
-(February 10 2022)
-Prerelease 1.2.6.19 is available.
-
-(Reposted)
-What's new :
-
-Fixed active secondary xs where it would return a transparent background in dark mode.
-Fixed the rbx-select button text colors when hovered.
-Fixed btroblox which would use dark theme borders when in light theme.

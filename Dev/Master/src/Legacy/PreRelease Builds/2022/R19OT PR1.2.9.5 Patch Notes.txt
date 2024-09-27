@@ -1,8 +1,0 @@
-(April 25 2022)
-( Small Adjustments )
-Prerelease 1.2.9.5 is available.
-
-What's new :
-
-Reverted the footer copyright container border update I made ages ago.
-Fixed item cards not having padding on the bottom.

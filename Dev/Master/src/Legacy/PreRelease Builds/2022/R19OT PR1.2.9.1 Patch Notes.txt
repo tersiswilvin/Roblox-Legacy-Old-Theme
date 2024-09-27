@@ -1,7 +1,0 @@
-(April 13 2022)
-(Apology for the ghost ping I forgot to rename the version string in the file.)
-Prerelease 1.2.9.1 is available.
-
-What's new :
-
-Added support for generic first page sm buttons, and generic last page buttons.

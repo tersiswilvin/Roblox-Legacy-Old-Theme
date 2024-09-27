@@ -1,9 +1,0 @@
-(April 26 2022)
-Prerelease 1.2.9.7 is available.
-
-What's new :
-
-Added proper support for inbound dialog message author text.
-Chat friends name now have smaller width.
-Item container game icons now have a border radius.
-Removed some useless code.

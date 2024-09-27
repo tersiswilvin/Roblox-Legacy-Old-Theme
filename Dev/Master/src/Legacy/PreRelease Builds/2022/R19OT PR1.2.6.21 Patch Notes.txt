@@ -1,9 +1,0 @@
-(February 16 2022)
-Prerelease 1.2.6.21 is available.
-
-(Update 2/20/2022 : This update is broken due to me accidently copying the wrong copy template format for stylus  )
-What's new :
-
-Fixed where horizontal submenu borders were bright when using dark theme.
-Theme now supports .xsmall classes.
-Changed the avatar editor to be (hopefully) more accurate based on videos and screenshots from 2019. (I couldn't find any videos on avatar costumes other then a few only showing a glimpse of it in a video so this is sadly unchanged.)

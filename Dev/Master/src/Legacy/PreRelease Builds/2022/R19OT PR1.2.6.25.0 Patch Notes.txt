@@ -1,9 +1,0 @@
-(February 20 2022)
-Prerelease 1.2.6.25 is available.
-
-(Small update)
-What's new :
-
-Theme now supports dark mode hat slots in avatar editor.
-Fixed where a avatar card when disabled would still be using opacity .5 instead of 1 in dark theme.
-Fixed where secondary md button text colors would return a darker color when the page was visited.

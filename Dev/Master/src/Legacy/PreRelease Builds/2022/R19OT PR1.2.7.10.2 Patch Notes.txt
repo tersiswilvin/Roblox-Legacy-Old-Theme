@@ -1,8 +1,0 @@
-(March 31 2022)
-Prerelease 1.2.7.10.2 is available.
-
-[ Apology for the wait despite the fixes being small I haven't been working on the theme much the past few days. ]
-What's new :
-
-Added support for interaction items.
-Added a fix for a roblox issue (not the theme itself) with the new pagers not showing up as disabled when it should be.
