@@ -933,9 +933,142 @@
             }
         }
     }
-    
     .people-list-container, .places-list {
         height: unset;
+    }
+    .content .react-friends-carousel-container {
+        height: unset;
+    }
+    .content .friends-carousel-container {
+        background-color: #fff;
+        padding: 15px;
+        margin: 0 0 18px;
+        & when (@LegacyNextStyleGuideButtons = 0) {
+            height: 163px;
+            max-height: 163px;
+        }
+        & when (@LegacyNextStyleGuideButtons = 1) {
+            height: 150px;
+            max-height: 150px;
+        }
+        @media (max-width: 991px) {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (max-width: 767px) {
+            margin: 0 0 12px;
+        }
+        .dark-theme & {
+            background-color: #000;
+        }
+    }
+    .content .friends-carousel-list-container-not-full {
+        display: block;
+        overflow: visible;
+        > div {
+            width: 11.11111111%;
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                height: 148px;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                height: 120px;
+            }
+            position: relative;
+            float: left;
+            @media (max-width: 991px) {
+                white-space: normal;
+                width: 128px;
+                display: inline-block;
+                vertical-align: top;
+                float: none;
+            }
+        }
+    }
+    .content .friends-carousel-tile {
+        position: relative;
+        width: 90px;
+        margin: 3px auto;
+        button {
+            width: 100%;
+            padding: 0;
+        }
+        &-label {
+            display: block;
+            margin: 0;
+        }
+        &-name {
+            & when (@SourceSansPro = 0) {
+                font-size: 12px;
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 16px;
+                font-weight: 300;
+            }
+            display: block;
+        }
+        &-sublabel {
+            display: block;
+            text-align: center;
+            margin: 0;
+        }
+        &-experience {
+            & when (@SourceSansPro = 0) {
+                font-size: 10px;
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 12px;
+                font-weight: 400;
+            }
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            .light-theme & {
+                color: #b8b8b8;
+            }
+            .dark-theme & {
+                color: #474747;
+            }
+        }
+    }
+    .content .friends-carousel-display-name {
+        margin: 3px 0 0;
+        display: block;
+        text-align: center;
+        max-width: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .friend-tile-content:hover {
+        color: #00a2ff;
+        text-decoration: none;
+    }
+    .people-list .friend {
+        & when (@LegacyNextStyleGuideButtons = 0) {
+            height: 148px;
+        }
+        & when (@LegacyNextStyleGuideButtons = 1) {
+            height: 120px;
+        }
+    }
+    .home-container.expand-max-width .friend-list .hlist, .home-container.expand-max-width .people-list .hlist {
+        display: block;
+        .friend {
+            width: 11.1111111111%;
+            &:nth-child(n+10) {
+                display: none
+            }
+            @media (max-width: 991px) {
+                white-space: normal;
+                width: 128px;
+                display: inline-block;
+                vertical-align: top;
+                float: none;
+            }
+        }
     }
     
     .avatar-thumbnail .enable-three-dee
