@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240928.1.3.17
+@version      20240929.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -25,6 +25,7 @@
 @var          checkbox LegacyNSGBoxShadows         " ↳ Chat Shadows"                    1
 @var          checkbox LegacyNSGOlder              " ↳ Older"                           0
 @var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                      0
+@var          checkbox LegacyNSGRemovePN           " ↳ Remove Place Name"               0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size"              1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
@@ -951,6 +952,16 @@
             height: 150px;
             max-height: 150px;
         }
+        .rogold & {
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                height: 163px;
+                max-height: 163px;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                height: 150px;
+                max-height: 150px;
+            }
+        }
         @media (max-width: 991px) {
             overflow-x: auto;
             white-space: nowrap;
@@ -1025,6 +1036,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+                display: none
+            }
             .light-theme & {
                 color: #b8b8b8;
             }
@@ -12686,7 +12700,7 @@
         line-height: 1em;
     }
     
-    .premium-container .page-content {
+    .premium-container .page-content, .container-main.in-app .premium-container .page-content, .container-main.content-no-ads .premium-container .page-content {
         width: 65%;
         float: right;
         margin: 0;
@@ -14926,7 +14940,7 @@
             }
         }
         
-        .people-list .friend .place-name {
+        .people-list .friend .place-name when (@LegacyNSGRemovePN = 1) {
             display: none;
         }
         
