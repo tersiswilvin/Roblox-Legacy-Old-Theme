@@ -24,11 +24,13 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - Tickets
   - Custom Site Theme
     - None ( Default )
+    - April_Fools ( Hidden )
     - BTR_Night
     - BTR_Red
     - BTR_Simblk
     - BTR_Sky
     - L_Red
+    - RPlus_Easter ( Hidden )
     - RPlus_OBC
   - Force light theme on signup
   - Five column Avatar Editor ( Default )
@@ -106,13 +108,13 @@ If you don't have stylus already installed, you can get it here for your browser
 
 ### Extras
 
-For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://raw.githubusercontent.com/tersiswilvin/Roblox-Legacy-Old-Theme/Release/Dev/Master/src/JS/LegacySiteRestoration.user.js) which requires [tampermonkey](https://www.tampermonkey.net/index.php#download) to use, if your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102).
+For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Release/src/JS/LegacySiteRestoration.user.js) which requires [tampermonkey](https://www.tampermonkey.net/index.php#download) to use, if your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102).
 
 For upcoming updates and features you can try out the [experimental](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](#Issues).
 
 ## Issues
 
-Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-2019-Old-Theme/issues) or on the themes userstyles.world [page](https://userstyles.world/style/5399/), please include what build and or channel you're on, the browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
+Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose) or on the themes userstyles.world [page](https://userstyles.world/style/5399/), please include what build and or channel you're on, the browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
 
 ## Credits
 
