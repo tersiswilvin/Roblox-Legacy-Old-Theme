@@ -120,7 +120,7 @@ For upcoming updates and features you can try out the [experimental](https://git
 
 ## Issues
 
-Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues) or on the themes userstyles.world [page](https://userstyles.world/style/5399/), please include what build and or channel you're on, the browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
+Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose) or on the themes userstyles.world [page](https://userstyles.world/style/5399/), please include what build and or channel you're on, the browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
 
 ## Credits
 
