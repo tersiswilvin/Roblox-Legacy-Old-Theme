@@ -8,8 +8,8 @@
 // @match        *.roblox.com*
 // @match        *.roblox.com/*
 // @icon         https://images.rbxcdn.com/23421382939a9f4ae8bbe60dbe2a3e7e.ico.gzip
-// @updateURL    https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Experimental/src/JS/LegacySiteRestoration.user.js
-// @downloadURL  https://raw.githubusercontent.com/tersiswilvin/Roblox-2019-Old-Theme/Release/Dev/Experimental/src/JS/LegacySiteRestoration.user.js
+// @updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/JS/LegacySiteRestoration.user.js
+// @downloadURL  https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/JS/LegacySiteRestoration.user.js
 // @grant        GM_xmlhttpRequest
 // @run-at       document-start
 // @connect      premiumfeatures.roblox.com
