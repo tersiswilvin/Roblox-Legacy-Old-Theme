@@ -24,11 +24,13 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - Tickets
   - Custom Site Theme
     - None ( Default )
+    - April_Fools ( Hidden )
     - BTR_Night
     - BTR_Red
     - BTR_Simblk
     - BTR_Sky
     - L_Red
+    - RPlus_Easter ( Hidden )
     - RPlus_OBC
   - Force light theme on signup
   - Five column Avatar Editor ( Default )
@@ -60,6 +62,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Chat Shadows ( Default )
     -  ↳ Older
     -  ↳ Older Chat
+    -  ↳ Remove Place Name
   - My Avatar Gogo Spinner
   - Original Sponsor Size ( Default )
   - Play Button Style
@@ -117,7 +120,7 @@ For upcoming updates and features you can try out the [experimental](https://git
 
 ## Issues
 
-Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-2019-Old-Theme/issues) or on the themes userstyles.world [page](https://userstyles.world/style/5399/), please include what build and or channel you're on, the browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
+Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues) or on the themes userstyles.world [page](https://userstyles.world/style/5399/), please include what build and or channel you're on, the browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
 
 ## Credits
 
