@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.21.1
+// @version      1.2.22
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -1763,7 +1763,7 @@ if (Settings.Global.LegacyEditDescription.Enabled) {
     text-align: right;
     margin: 9px 0 0;
 }
-.content .page-content .rbx-tab-content .acct-settings-btn {
+.content .page-content .rbx-tab-content .save-settings-container .acct-settings-btn {
     float: unset;
 }
     `;
@@ -1774,7 +1774,7 @@ if (Settings.Global.LegacyEditDescription.Enabled) {
     text-align: right;
     margin: 9px 0 0;
 }
-.content .page-content .rbx-tab-content .acct-settings-btn {
+.content .page-content .rbx-tab-content .save-settings-container .acct-settings-btn {
     float: unset;
 }
 .description-container .personal-field-description {
