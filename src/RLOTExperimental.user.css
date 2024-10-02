@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20240929.1.3.17
+@version      20241001.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -908,18 +908,16 @@
         text-decoration: underline;
     }
     
-    .light-theme .section-content.remove-panel
-    {
+    .light-theme .section-content.remove-panel {
         background-color: #fff;
     }
     
-    .light-theme .people-list, .dark-theme .people-list
-    {
-        & when (@LegacyNextStyleGuideButtons = 0) {
+    .light-theme .people-list, .dark-theme .people-list {
+        & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
             height: 163px;
             max-height: 163px;
         }
-        & when (@LegacyNextStyleGuideButtons = 1) {
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
             height: 150px;
             max-height: 150px;
         }
@@ -934,10 +932,7 @@
             }
         }
     }
-    .people-list-container, .places-list {
-        height: unset;
-    }
-    .content .react-friends-carousel-container {
+    .people-list-container, .places-list, .content .react-friends-carousel-container {
         height: unset;
     }
     .content .friends-carousel-container {
@@ -979,10 +974,10 @@
         overflow: visible;
         > div {
             width: 11.11111111%;
-            & when (@LegacyNextStyleGuideButtons = 0) {
+            & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
                 height: 148px;
             }
-            & when (@LegacyNextStyleGuideButtons = 1) {
+            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
                 height: 120px;
             }
             position: relative;
@@ -1061,20 +1056,20 @@
         text-decoration: none;
     }
     .people-list .friend {
-        & when (@LegacyNextStyleGuideButtons = 0) {
+        & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
             height: 148px;
         }
-        & when (@LegacyNextStyleGuideButtons = 1) {
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
             height: 120px;
+        }
+        &:nth-child(n+10) {
+            display: none
         }
     }
     .home-container.expand-max-width .friend-list .hlist, .home-container.expand-max-width .people-list .hlist {
         display: block;
         .friend {
             width: 11.1111111111%;
-            &:nth-child(n+10) {
-                display: none
-            }
             @media (max-width: 991px) {
                 white-space: normal;
                 width: 128px;
@@ -14697,6 +14692,10 @@
     
     /*/Extras/*/
     
+    .see-all-link.btn-fixed-width, .touch .see-all-link.btn-fixed-width {
+        width: 90px;
+    }
+    
 	& when (@SourceSansPro = 0) {
 		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
 			& .btn-growth-md, & a.btn-growth-md {
@@ -14804,6 +14803,10 @@
 			overflow: unset;
 		}
 		
+        .avatar-card-container .avatar-card-fullbody {
+            border: 1px solid #B8B8B8;
+        }
+        
         .light-theme .btn-primary-lg:focus, .light-theme .btn-primary-lg:hover, .light-theme .btn-primary-md:focus, .light-theme .btn-primary-md:hover, .light-theme .btn-primary-sm:focus, .light-theme .btn-primary-sm:hover, .light-theme .btn-primary-xs:focus, .light-theme .btn-primary-xs:hover, .light-theme .btn-secondary-lg:focus, .light-theme .btn-secondary-lg:hover, .light-theme .btn-secondary-md:focus, .light-theme .btn-secondary-md:hover, .light-theme .btn-secondary-sm:focus, .light-theme .btn-secondary-sm:hover, .light-theme .btn-secondary-xs:focus, .light-theme .btn-secondary-xs:hover, .light-theme .btn-cta-lg:focus, .light-theme .btn-cta-lg:hover, .light-theme .btn-cta-md:focus, .light-theme .btn-cta-md:hover, .light-theme .btn-cta-sm:focus, .light-theme .btn-cta-sm:hover, .light-theme .btn-cta-xs:focus, .light-theme .btn-cta-xs:hover, .light-theme .btn-growth-lg:focus, .light-theme .btn-growth-lg:hover, .light-theme .btn-growth-md:focus, .light-theme .btn-growth-md:hover, .light-theme .btn-growth-sm:focus, .light-theme .btn-growth-sm:hover, .light-theme .btn-growth-xs:focus, .light-theme .btn-growth-xs:hover, .light-theme .btn-control-lg:focus, .light-theme .btn-control-lg:hover, .light-theme .btn-control-md:focus, .light-theme .btn-control-md:hover, .light-theme .btn-control-sm:focus, .light-theme .btn-control-sm:hover, .light-theme .btn-control-xs:focus, .light-theme .btn-control-xs:hover, .light-theme .btn-alert-lg:focus, .light-theme .btn-alert-lg:hover, .light-theme .btn-alert-md:focus, .light-theme .btn-alert-md:hover, .light-theme .btn-alert-sm:focus, .light-theme .btn-alert-sm:hover, .light-theme .btn-alert-xs:focus, .light-theme .btn-alert-xs:hover, .light-theme .btn-generic-edit-lg:focus, .light-theme .btn-generic-edit-lg:hover, .light-theme .btn-generic-edit-md:focus, .light-theme .btn-generic-edit-md:hover, .light-theme .btn-generic-edit-sm:focus, .light-theme .btn-generic-edit-sm:hover, .light-theme .btn-generic-edit-xs:focus, .light-theme .btn-generic-edit-xs:hover, .light-theme .btn-common-play-game-lg:focus, .light-theme .btn-common-play-game-lg:hover, .light-theme .btn-branded-robux-white-lg:focus, .light-theme .btn-branded-robux-white-lg:hover, .light-theme .btn-buy-lg:focus, .light-theme .btn-buy-lg:hover, .light-theme .btn-buy-md:focus, .light-theme .btn-buy-md:hover, .light-theme .btn-buy-sm:focus, .light-theme .btn-buy-sm:hover, .light-theme .btn-buy-xs:focus, .light-theme .btn-buy-xs:hover, .light-theme .btn-generic-locked-sm:focus, .light-theme .btn-generic-locked-sm:hover, .light-theme .btn-generic-back-sm:focus, .light-theme .btn-generic-back-sm:hover, .light-theme .btn-generic-next-sm:focus, .light-theme .btn-generic-next-sm:hover, .light-theme .rbx-tabs-horizontal .nav-tabs, .light-theme .menu-vertical, .light-theme .stack .stack-list .stack-row {
             box-shadow: 0 1px 3px rgb(150 150 150 / 74%);
         }
