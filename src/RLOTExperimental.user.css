@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20241001.1.3.17
+@version      20241002.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -6399,7 +6399,7 @@
             }
         }
         
-        .setting-section:has(.passkey-upsell-banner) {
+        .setting-section:has(.passkey-upsell-banner), .setting-section:has(.passkey-manage-region) {
             padding: 0 0 5px;
             .container-header {
                 display: none
@@ -6410,7 +6410,7 @@
                 }
             }
         }
-        .section:has(.passkey-upsell-banner) #rbx-account-info-header, #settings-container:has(.passkey-upsell-banner) #rbx-account-info-header {
+        .section:has(.passkey-upsell-banner) #rbx-account-info-header, #settings-container:has(.passkey-upsell-banner) #rbx-account-info-header, .section:has(.passkey-manage-region) #rbx-account-info-header, #settings-container:has(.passkey-manage-region) #rbx-account-info-header {
             padding: 5px 0 0;
             .remove-panel:not(.section-content):not(:has(.section-content)) {
                 padding: 15px 15px 10px 15px;
@@ -9876,6 +9876,9 @@
             }
         }
 	}
+    .light-theme #catalog-react-page .search-bars, .dark-theme #catalog-react-page .search-bars {
+        background: transparent;
+    }
 	.groups-list .menu-dropdown-container .group-cards, .groups-list .menu-vertical-container .group-cards {
 		margin-bottom: 10px;
 	}
