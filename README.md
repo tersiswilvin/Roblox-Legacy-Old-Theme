@@ -25,6 +25,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Custom Site Theme
     - None ( Default )
     - April_Fools ( Hidden )
+    - BloxTober ( Hidden )
     - BTR_Night
     - BTR_Red
     - BTR_Simblk
