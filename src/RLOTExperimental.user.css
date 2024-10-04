@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20241002.1.3.17
+@version      20241004.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -13,7 +13,7 @@
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
 @var          select   SiteCurrency                "Currency Brand Style"               ["Robux*","Tickets"]
-@var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
+@var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BloxTober","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
 @var          checkbox fiveColumn                  "Five column Avatar Editor"          1
 @var          checkbox Fix19MICT                   "Fixed 2019M Item Card Transitions"  0
@@ -922,11 +922,11 @@
             max-height: 150px;
         }
         .rogold& {
-            & when (@LegacyNextStyleGuideButtons = 0) {
+            & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
                 height: 163px;
                 max-height: 163px;
             }
-            & when (@LegacyNextStyleGuideButtons = 1) {
+            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
                 height: 150px;
                 max-height: 150px;
             }
@@ -939,20 +939,20 @@
         background-color: #fff;
         padding: 15px;
         margin: 0 0 18px;
-        & when (@LegacyNextStyleGuideButtons = 0) {
+        & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
             height: 163px;
             max-height: 163px;
         }
-        & when (@LegacyNextStyleGuideButtons = 1) {
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
             height: 150px;
             max-height: 150px;
         }
         .rogold & {
-            & when (@LegacyNextStyleGuideButtons = 0) {
+            & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
                 height: 163px;
                 max-height: 163px;
             }
-            & when (@LegacyNextStyleGuideButtons = 1) {
+            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
                 height: 150px;
                 max-height: 150px;
             }
@@ -6642,29 +6642,27 @@
 		}
 		
 		.game-home-page-container:has(.game-error) h2 {
-			font-size: 0
-		}
-		.game-home-page-container:has(.game-error) h2:after {
-			content: 'Games';
-			& when (@SourceSansPro = 0) {
-				font-size: 20px;
-				font-weight: 700;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 24px;
-				font-weight: 300;
-			}
-			line-height: 1em;
-		}
-		@media (max-width: 767px) {
-			.game-home-page-container:has(.game-error) h2:after {
-				& when (@SourceSansPro - 0) {
-					font-size: 16px;
-				}
-				& when (@SourceSansPro = 1) {
-					font-size: 21px;
-				}
-			}
+			font-size: 0;
+            &:after {
+                content: 'Games';
+                & when (@SourceSansPro = 0) {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 24px;
+                    font-weight: 300;
+                }
+                line-height: 1em;
+                @media (max-width: 767px) {
+                    & when (@SourceSansPro - 0) {
+                        font-size: 16px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 21px;
+                    }
+                }
+            }
 		}
         
         [notification-preferences-base] {
@@ -20714,13 +20712,23 @@
             border-color: transparent #e3e3e3 transparent transparent;
         }
         .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound.message-cluster-master .link-card-container.dialog-triangle:after {
+            border-color: transparent #fff transparent transparent;
+        }
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlderChat = 1) {
+            .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before, .light-theme .dialogs .dialog-container .dialog-message-container.message-inbound.message-cluster-master .link-card-container.dialog-triangle:before {
                 border-color: transparent #fff transparent transparent;
+                border-width: 6px;
+            }
+            .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound .dialog-triangle:before, .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound.message-cluster-master .link-card-container.dialog-triangle:before {
+                border-color: transparent #000 transparent transparent;
+                border-width: 6px;
+            }
         }
         .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound.message-cluster-master .link-card-container.dialog-triangle:before {
             border-color: transparent #1c1c1c transparent transparent;
         }
         .dark-theme .dialogs .dialog-container .dialog-message-container.message-inbound.message-cluster-master .link-card-container.dialog-triangle:after {
-                border-color: transparent #000 transparent transparent;
+            border-color: transparent #000 transparent transparent;
         }
         & when (@LogoStyle = 201701) {
             .messageDivider .roblox-system-image .icon-logo-notification, .messageDivider .roblox-system-image .icon-logo-r {
