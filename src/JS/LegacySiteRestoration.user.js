@@ -17,8 +17,6 @@
 // @connect      users.roblox.com
 // ==/UserScript==
 
-alert("LSR Version 1.3 is in early development. LocalStorage may change during development builds, potentially causing issues. Use at your own risk!");
-
 var location = window.location;
 location.href_origin = location.protocol + "//" + location.hostname + location.pathname;
 location.pathname_origin = location.pathname.replace(/^\/|\/$/g, '');
@@ -26,18 +24,23 @@ location.pathname_origin = location.pathname.replace(/^\/|\/$/g, '');
 // Initial Setup //
 const Default_Settings = {
     AddJSClasses: true,
+    Channel: "Experimental",
     CustomEvents: false,
     DEV: {
         DemoMode: false,
         DisableBrokeIcon: false,
         ForceMembership: false,
         Fix2020HomeFormat: false,
+        RoProFix: true,
         SupportHigherDPI: true,
-        RoProFix: true
     },
     Events: {
         Custom: {},
         Roblox: {}
+    },
+    Flags: {
+        displayV2FRM: false,
+        showFirstRunUI: false,
     },
     Home: {
         DisplayNameSupport: false,
@@ -76,7 +79,8 @@ const Default_Settings = {
         id: 0,
         name: "OnlyTwentyCharacters",
         displayName: "OnlyTwentyCharacters",
-        activeMembership: false,
+        hasVerifiedBadge: false,
+        isPremiumUser: false,
         thumbnail: {
             errorCode: 0,
             errorMessage: "string",
@@ -108,9 +112,14 @@ const Default_Properties = {
     password: null
 }
 
+// Setup Variables and Functions //
+function assign(Template, Property) {
+    return Object.assign({}, Template, Property);
+}
+
 var LSR = {
     httpRequest: async function(Properties, callback) {
-        var MergeProperties = Object.assign({}, Default_Properties, Properties);
+        var MergeProperties = assign(Default_Properties, Properties);
         GM_xmlhttpRequest({
             method: MergeProperties.method,
             url: MergeProperties.url,
@@ -165,11 +174,20 @@ if (!localStorage.getItem("LSRSettings")) {
     localStorage.setItem("LSRSettings", JSON.stringify(Default_Settings));
 };
 LSR.localStorage = JSON.parse(await localStorage.getItem("LSRSettings"));
+if (!localStorage.getItem("LSRSettings") || localStorage.getItem("LSRSettings") && !LSR.localStorage.Flags.showFirstRunUI) {
+    if (LSR.localStorage.Flags.displayV2FRM) {
+        alert("LSR Version 1.3 is in early development. LocalStorage may change during development builds, potentially causing issues. Use at your own risk!");
+    } else {
+        alert("LSR Version 1.3 is in early development and not yet ready for use. Use at your own risk!");
+    }
+    LSR.localStorage.Flags.showFirstRunUI = true;
+    LSR.updateLocalStorage();
+}
 if (Default_Settings.Version > LSR.localStorage.Version) {
     LSR.localStorage = Default_Settings;
     Object.assign(LSR.localStorage, localStorage.getItem("LSRSettings"));
     LSR.localStorage.Version = Default_Settings.Version;
-    LSR.UpdateLocalStorage();
+    LSR.updateLocalStorage();
 }
 
 (function() {
@@ -183,7 +201,7 @@ if (Default_Settings.Version > LSR.localStorage.Version) {
             }
         }, function(request) {
             if (request.status == 200 && (JSON.parse(request.responseText).displayname != LSR.localStorage.userData.displayname || JSON.parse(request.responseText).id != LSR.localStorage.userData.id || JSON.parse(request.responseText).name != LSR.localStorage.userData.name)) {
-                LSR.localStorage.userData = Object.assign(LSR.localStorage.userData, JSON.parse(request.responseText));
+                LSR.localStorage.userData = assign(LSR.localStorage.userData, JSON.parse(request.responseText));
                 LSR.localStorage.LSRStatus.userDataLoaded = true;
                 LSR.updateLocalStorage();
                 clearInterval(AuthReqTimer);
@@ -200,6 +218,7 @@ if (Default_Settings.Version > LSR.localStorage.Version) {
         }, function(request) {
             if (request.status == 200 && !JSON.parse(request.responseText).errors) {
                 LSR.localStorage.LSRStatus.membershipDataLoaded = true;
+                LSR.updateLocalStorage();
                 if (JSON.parse(request.responseText) != LSR.localStorage.userData.activeMembership) {
                     LSR.localStorage.userData.activeMembership = JSON.parse(request.responseText);
                     LSR.updateLocalStorage();
@@ -231,8 +250,7 @@ if (Default_Settings.Version > LSR.localStorage.Version) {
             }
         });
     }, 50)
-    LSR.waitForQuerySelector(".home-container").then(async (element) => {
-        console.log(LSR.localStorage.userData);
-        alert("Dumped userData in console.");
+    LSR.waitForQuerySelector("body").then(async (element) => {
+
     })
 })();
