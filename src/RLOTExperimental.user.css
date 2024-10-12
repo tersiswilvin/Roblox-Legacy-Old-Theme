@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20241010.1.3.17
+@version      20241011.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -939,10 +939,28 @@
         }
     }
     .content .friends-carousel-container {
+        display: block;
+        width: auto;
+        & when (@RemoveUpdates = 1) {
+            overflow: visible;
+        }
+        padding: 0;
+        & when (@RemoveUpdates = 1) {
+            margin-right: -150px;
+        }
+    }
+    .content .friends-carousel-list-container {
+        & when (@RemoveUpdates = 1) {
+            display: block;
+            width: auto;
+        }
         background-color: #fff;
         padding: 15px;
-        overflow: visible;
         margin: 0 0 18px;
+        & when (@RemoveUpdates = 1) {
+            margin-right: 150px;
+            overflow: visible;
+        }
         & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
             height: 163px;
             max-height: 163px;
@@ -972,30 +990,25 @@
         .dark-theme & {
             background-color: #000;
         }
-    }
-    & when (@RemoveUpdates = 1) {
-        .content .friends-carousel-list-container {
-            &, &-not-full {
-                display: block;
-                overflow: visible;
-                > div {
-                    width: 11.11111111%;
-                    & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
-                        height: 148px;
-                    }
-                    & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
-                        height: 120px;
-                    }
-                    position: relative;
-                    float: left;
-                    @media (max-width: 991px) {
-                        white-space: normal;
-                        width: 128px;
-                        display: inline-block;
-                        vertical-align: top;
-                        float: none;
-                    }
-                }
+        & > div when (@RemoveUpdates = 1) {
+            width: 11.11111111%;
+            & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
+                height: 148px;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+                height: 120px;
+            }
+            position: relative;
+            float: left;
+            &:nth-child(n+10) when (@RemoveUpdates = 1) {
+                display: none
+            }
+            @media (max-width: 991px) {
+                white-space: normal;
+                width: 128px;
+                display: inline-block;
+                vertical-align: top;
+                float: none;
             }
         }
     }
