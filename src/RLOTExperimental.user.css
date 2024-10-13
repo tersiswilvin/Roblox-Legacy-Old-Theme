@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20241011.1.3.17
+@version      20241012.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -26,6 +26,7 @@
 @var          checkbox LegacyNSGOlder              " ↳ Older"                           0
 @var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                      0
 @var          checkbox LegacyNSGRemovePN           " ↳ Remove Place Name"               0
+@var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"             0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size"              1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
@@ -950,26 +951,18 @@
         }
     }
     .content .friends-carousel-list-container {
-        & when (@RemoveUpdates = 1) {
-            display: block;
-            width: auto;
-        }
-        background-color: #fff;
-        padding: 15px;
-        margin: 0 0 18px;
-        & when (@RemoveUpdates = 1) {
-            margin-right: 150px;
-            overflow: visible;
-        }
-        & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
-            height: 163px;
-            max-height: 163px;
-        }
-        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
-            height: 150px;
-            max-height: 150px;
-        }
-        .rogold & {
+        &, &-not-full {
+            & when (@RemoveUpdates = 1) {
+                display: block;
+                width: auto;
+            }
+            background-color: #fff;
+            padding: 15px;
+            margin: 0 0 18px;
+            & when (@RemoveUpdates = 1) {
+                margin-right: 150px;
+                overflow: visible;
+            }
             & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
                 height: 163px;
                 max-height: 163px;
@@ -978,37 +971,47 @@
                 height: 150px;
                 max-height: 150px;
             }
-        }
-        @media (max-width: 991px) {
-            overflow-x: auto;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-        @media (max-width: 767px) {
-            margin: 0 0 12px;
-        }
-        .dark-theme & {
-            background-color: #000;
-        }
-        & > div when (@RemoveUpdates = 1) {
-            width: 11.11111111%;
-            & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
-                height: 148px;
-            }
-            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
-                height: 120px;
-            }
-            position: relative;
-            float: left;
-            &:nth-child(n+10) when (@RemoveUpdates = 1) {
-                display: none
+            .rogold & {
+                & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
+                    height: 163px;
+                    max-height: 163px;
+                }
+                & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+                    height: 150px;
+                    max-height: 150px;
+                }
             }
             @media (max-width: 991px) {
-                white-space: normal;
-                width: 128px;
-                display: inline-block;
-                vertical-align: top;
-                float: none;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            @media (max-width: 767px) {
+                margin: 0 0 12px;
+            }
+            .dark-theme & {
+                background-color: #000;
+            }
+            & > div when (@RemoveUpdates = 1) {
+                width: 11.11111111%;
+                & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
+                    height: 148px;
+                }
+                & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+                    height: 120px;
+                }
+                position: relative;
+                float: left;
+                &:nth-child(n+10) when (@RemoveUpdates = 1) {
+                    display: none
+                }
+                @media (max-width: 991px) {
+                    white-space: normal;
+                    width: 128px;
+                    display: inline-block;
+                    vertical-align: top;
+                    float: none;
+                }
             }
         }
     }
@@ -5292,7 +5295,7 @@
     }
     
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, #social-links-container, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .shopping-cart .right, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"] {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .shopping-cart .right, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"] {
             display: none !important;
         }
         & when (@RemoveExtras = 1) {
@@ -5791,7 +5794,12 @@
                 &:after {
                     content: "Playing";
                     line-height: 1.5em;
-                    font-size: 12px;
+                    & when (@SourceSansPro = 0) {
+                        font-size: 12px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 16px;
+                    }
                     cursor: text;
                 }
             }
@@ -5800,7 +5808,12 @@
                 &:after {
                     content: "Max Players";
                     line-height: 1.5em;
-                    font-size: 12px;
+                    & when (@SourceSansPro = 0) {
+                        font-size: 12px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 16px;
+                    }
                     cursor: text;
                 }
             }
@@ -5810,7 +5823,12 @@
                 &:after {
                     content: "Max Players";
                     line-height: 1.5em;
-                    font-size: 12px;
+                    & when (@SourceSansPro = 0) {
+                        font-size: 12px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 16px;
+                    }
                     cursor: text;
                 }
             }
@@ -5862,18 +5880,20 @@
         }
         .gotham-font, .builder-font {
             #recommended-games-container h2, .games-detail h2, .container-list.games-detail h2 {
-                font-size: 0;
-                &:after {
-                    content: "Recommended Games";
-                    & when (@SourceSansPro = 0) {
-                        font-size: 20px;
+                &, &:hover, &:focus, &:active {
+                    font-size: 0;
+                    &:after {
+                        content: "Recommended Games";
+                        & when (@SourceSansPro = 0) {
+                            font-size: 20px;
+                        }
+                        & when (@SourceSansPro = 1) {
+                            font-size: 24px;
+                        }
+                        font-weight: inherit;
+                        line-height: 1em;
+                        cursor: text;
                     }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 24px;
-                    }
-                    font-weight: inherit;
-                    line-height: 1em;
-                    cursor: text;
                 }
             }
         }
@@ -7279,10 +7299,8 @@
             h1, .h1, .font-title {
                 &, &:hover, &:focus, &:active {
                     font-size: 36px;
-                    font-weight: 400
-                }
-                @media (max-width: 767px) {
-                    &, &:hover, &:focus, &:active {
+                    font-weight: 400;
+                    @media (max-width: 767px) {
                         font-size:30px
                     }
                 }
@@ -7290,10 +7308,8 @@
             h2, .h2 {
                 &, &:hover, &:focus, &:active {
                     font-size: 30px;
-                    font-weight: 400
-                }
-                @media (max-width: 767px) {
-                    &, &:hover, &:focus, &:active {
+                    font-weight: 400;
+                    @media (max-width: 767px) {
                         font-size:24px
                     }
                 }
@@ -7301,10 +7317,8 @@
             h3, .h3, .container-header h2, .container-list h2 {
                 &, &:hover, &:focus, &:active {
                     font-size: 24px;
-                    font-weight: 300
-                }
-                @media (max-width: 767px) {
-                    &, &:hover, &:focus, &:active {
+                    font-weight: 300;
+                    @media (max-width: 767px) {
                         font-size:21px
                     }
                 }
@@ -7312,10 +7326,8 @@
             h4, .h4 {
                 &, &:hover, &:focus, &:active {
                     font-size: 21px;
-                    font-weight: 400
-                }
-                @media (max-width: 767px) {
-                    &, &:hover, &:focus, &:active {
+                    font-weight: 400;
+                    @media (max-width: 767px) {
                         font-size:18px
                     }
                 }
@@ -7323,10 +7335,8 @@
             h5, .h5 {
                 &, &:hover, &:focus, &:active {
                     font-size: 18px;
-                    font-weight: 400
-                }
-                @media (max-width: 767px) {
-                    &, &:hover, &:focus, &:active {
+                    font-weight: 400;
+                    @media (max-width: 767px) {
                         font-size:16px
                     }
                 }
@@ -10388,6 +10398,9 @@
         background-position: 0 -429px
     }
     
+    #social-links-container when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemoveSL = 1) or (@LegacyNSGOlder = 1) {
+        display: none;
+    }
     .game-description-container, .btr-game-main-container {
         background: #fff;
         & when (@BoxShadows = 1) {
@@ -10414,9 +10427,36 @@
                 display: none;
             }
         }
-        & when (@LegacyNextStyleGuideButtons = 1) {
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemoveSL = 1) or (@LegacyNSGOlder = 1) {
             ~ *:has(.game-social-links) {
                 display: none;
+            }
+        }
+        ~ *:has(.game-social-links) h2 {
+            & when (@SourceSansPro = 1) {
+                &, &:hover, &:focus, &:active {
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                font-size: 0;
+                &:after {
+                    content: "Social Media";
+                    & when (@SourceSansPro = 0) {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 24px;
+                        font-weight: 300;
+                    }
+                    line-height: 1em;
+                    cursor: text;
+                }
             }
         }
         ~ * .game-social-links {
