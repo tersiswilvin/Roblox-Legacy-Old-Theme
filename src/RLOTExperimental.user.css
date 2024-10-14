@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20241012.1.3.17
+@version      20241014.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -934,12 +934,16 @@
         }
     }
     .people-list-container, .places-list, .content .react-friends-carousel-container {
-        height: unset;
+        height: auto;
         @media (max-width: 991px) {
-            height: unset;
+            height: auto;
         }
     }
-    .content .friends-carousel-container {
+    html .react-friends-carousel-container:has(.btr-friends-secondRow) {
+        min-height: auto;
+        height: auto;
+    }
+    .content .friends-carousel-container, html .btr-friends-list .friends-carousel-container {
         display: block;
         width: auto;
         & when (@RemoveUpdates = 1) {
@@ -950,19 +954,27 @@
             margin-right: -150px;
         }
     }
-    .content .friends-carousel-list-container {
-        &, &-not-full {
-            & when (@RemoveUpdates = 1) {
-                display: block;
-                width: auto;
-            }
-            background-color: #fff;
-            padding: 15px;
-            margin: 0 0 18px;
-            & when (@RemoveUpdates = 1) {
-                margin-right: 150px;
-                overflow: visible;
-            }
+    .content .friends-carousel-list-container, .content .friends-carousel-list-container-not-full, html .btr-friends-list .friends-carousel-container > div {
+        & when (@RemoveUpdates = 1) {
+            display: block;
+            width: auto;
+        }
+        background-color: #fff;
+        padding: 15px;
+        margin: 0 0 18px;
+        & when (@RemoveUpdates = 1) {
+            margin-right: 150px;
+            overflow: visible;
+        }
+        & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
+            height: 163px;
+            max-height: 163px;
+        }
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+            height: 150px;
+            max-height: 150px;
+        }
+        .rogold & {
             & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
                 height: 163px;
                 max-height: 163px;
@@ -971,49 +983,49 @@
                 height: 150px;
                 max-height: 150px;
             }
-            .rogold & {
-                & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
-                    height: 163px;
-                    max-height: 163px;
-                }
-                & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
-                    height: 150px;
-                    max-height: 150px;
-                }
+        }
+        @media (max-width: 991px) {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (max-width: 767px) {
+            margin: 0 0 12px;
+        }
+        .dark-theme & {
+            background-color: #000;
+        }
+        > div when (@RemoveUpdates = 1) {
+            width: 11.11111111%;
+            & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
+                height: 148px;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+                height: 120px;
+            }
+            position: relative;
+            float: left;
+            &:nth-child(n+10) when (@RemoveUpdates = 1) {
+                display: none;
             }
             @media (max-width: 991px) {
-                overflow-x: auto;
-                white-space: nowrap;
-                -webkit-overflow-scrolling: touch;
-            }
-            @media (max-width: 767px) {
-                margin: 0 0 12px;
-            }
-            .dark-theme & {
-                background-color: #000;
-            }
-            & > div when (@RemoveUpdates = 1) {
-                width: 11.11111111%;
-                & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
-                    height: 148px;
-                }
-                & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
-                    height: 120px;
-                }
-                position: relative;
-                float: left;
-                &:nth-child(n+10) when (@RemoveUpdates = 1) {
-                    display: none
-                }
-                @media (max-width: 991px) {
-                    white-space: normal;
-                    width: 128px;
-                    display: inline-block;
-                    vertical-align: top;
-                    float: none;
-                }
+                white-space: normal;
+                width: 128px;
+                display: inline-block;
+                vertical-align: top;
+                float: none;
             }
         }
+    }
+    html .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div when (@RemoveUpdates = 1) {
+        height: 311px;
+        max-height: 311px;
+        > div:nth-child(n+10) {
+            display: block;
+        }
+    }
+    html .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div > div:nth-child(n+19) when (@RemoveUpdates = 1) {
+        display: none;
     }
     .content .friends-carousel-tile {
         & when (@RemoveUpdates = 1) {
@@ -1071,7 +1083,7 @@
             }
         }
     }
-    .content .friends-carousel-display-name {
+    .content .friends-carousel-display-name, html .btr-friends-list .friends-carousel-tile .friends-carousel-display-name {
         margin: 3px 0 0;
         display: block;
         text-align: center;
@@ -10427,12 +10439,10 @@
                 display: none;
             }
         }
-        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemoveSL = 1) or (@LegacyNSGOlder = 1) {
-            ~ *:has(.game-social-links) {
-                display: none;
-            }
+        ~ * .game-about-tab-container *:has(.game-social-links) when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemoveSL = 1) or (@LegacyNSGOlder = 1) {
+            display: none;
         }
-        ~ *:has(.game-social-links) h2 {
+        ~ * .game-about-tab-container *:has(.game-social-links) h2 {
             & when (@SourceSansPro = 1) {
                 &, &:hover, &:focus, &:active {
                     font-size: 24px;
