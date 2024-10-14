@@ -1017,15 +1017,23 @@
             }
         }
     }
-    html .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div when (@RemoveUpdates = 1) {
-        height: 311px;
-        max-height: 311px;
-        > div:nth-child(n+10) {
-            display: block;
+    html .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div {
+        & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
+            height: 311px;
+            max-height: 311px;
         }
-    }
-    html .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div > div:nth-child(n+19) when (@RemoveUpdates = 1) {
-        display: none;
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+            height: 270px;
+            max-height: 270px;
+        }
+        & when (@RemoveUpdates = 1) {
+            > div:nth-child(n+10) {
+                display: block;
+            }
+            > div:nth-child(n+19) {
+                display: none;
+            }
+        }
     }
     .content .friends-carousel-tile {
         & when (@RemoveUpdates = 1) {
@@ -1105,6 +1113,17 @@
         }
         &:nth-child(n+10) when (@RemoveUpdates = 1) {
             display: none
+        }
+        html .btr-home-friends.btr-friends-secondRow & when (@RemoveUpdates = 1) {
+            &:nth-child(n+10) {
+                display: block;
+            }
+            &:nth-child(n+19) {
+                display: none;
+            }
+        }
+        .place-name when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
+            display: none;
         }
     }
     & when (@RemoveUpdates = 1) {
@@ -15023,10 +15042,6 @@
                 }
                 transition:background-color 1.5s ease-in;
             }
-        }
-        
-        .people-list .friend .place-name when (@LegacyNSGRemovePN = 1) {
-            display: none;
         }
         
         .rbx-tabs-horizontal .game-stat-footer:not(:has(.game-copylocked-footnote)):before {
