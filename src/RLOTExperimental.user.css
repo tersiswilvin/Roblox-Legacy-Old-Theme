@@ -6183,7 +6183,7 @@
 		.create-server-banner .play-with-others-text {
 			font-size: 0px;
             &:before {
-                content: 'Visit this game with friends and other people you invite.';
+                content: 'Play this game with friends and other people you invite.';
                 font-size: 16px;
                 & when (@SourceSansPro = 0) {
                     font-weight: 400;
