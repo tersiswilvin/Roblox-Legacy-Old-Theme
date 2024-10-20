@@ -958,6 +958,9 @@
         }
         .spinner {
             background-color: #fff;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
+            }
             padding: 15px;
             position: relative;
             display: block;
@@ -978,10 +981,16 @@
             }
             .light-theme & {
                 background-color: #fff;
+                & when (@BoxShadows = 1) {
+                    box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
+                }
                 padding: 15px;
             }
             .dark-theme & {
                 background-color: #000;
+                & when (@BoxShadows = 1) {
+                    box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
+                }
                 padding: 15px;
             }
             @media (max-width: 767px) {
@@ -1027,8 +1036,17 @@
         @media (max-width: 767px) {
             margin: 0 0 12px;
         }
+        & when (@BoxShadows = 1) {
+            box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
+            .light-theme & {
+                box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
+            }
+        }
         .dark-theme & {
             background-color: #000;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
+            }
         }
         > div when (@RemoveUpdates = 1) {
             width: 11.11111111%;
