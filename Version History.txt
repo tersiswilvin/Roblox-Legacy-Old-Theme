@@ -1,0 +1,214 @@
+== Version History ==
+
+(Release 1.3.17 | 12/29/2024)
+Added "Fixed 2019M Item Card Transitions" option.
+Added "Restore Ads" and Restore Ads "Games Page" options.
+Added Group Forums support.
+Added Legacy Next Styleguide "Chat Shadows" option.
+Added Legacy Next Styleguide "Older Chat" option.
+Added Legacy Next Styleguide "Remove Place Name" option.
+Added Legacy Next Styleguide "Remove Social Links" option.
+Added party chat icon (Toggleable via "Legacy Next Styleguide").
+Added roseal groups switch support.
+Added support for btroblox new horizontal tabs.
+Added support for chart wide hover tile game cards.
+Added support for filter item button if remove updates is disabled.
+Added support for react people list.
+Added support for roblox sidebar events.
+Added support for the little robux badge (notification).
+Chat dialog input height is now forced by default.
+Events Icon is hidden by default (Toggleable via Remove Updates).
+Favorite & Follow/Notify are now a little bigger for Source Sans Pro.
+Fixed a bug where overflow still shows on the home page for smaller resolutions.
+Fixed Audio icon still showing up when it shouldn't.
+Fixed Buy Robux position on the catalog page.
+Fixed Continue & Favorites page cutting off.
+Fixed duplicate robux text when tickets currency is enabled.
+Fixed duplicate recommend titles on the games page when source sans pro is enabled.
+Fixed extra spacing on tooltips when source sans pro is enabled.
+Fixed game cards still hidden when remove updates was enabled.
+Fixed game cards width being off on the homescreen.
+Fixed GoGo loader not affecting Avatar Editor when it should.
+Fixed grid game cards.
+Fixed home page having extra spacing.
+Fixed indicated messages margin.
+Fixed logged out group details gap.
+Fixed login divider container background for dark theme.
+Fixed Login logo.
+Fixed notification buttons.
+Fixed padding on the new hover tile game cards for smaller resolutions.
+Fixed play button still being large when "Play Button Style" is 2019M.
+Fixed profile-avatar-right for RoGold.
+Fixed RoGold breaking multiple custom site themes.
+Fixed RoGold on Firefox.
+Fixed RoPro random server icon going under the play button.
+Fixed roseal Private Note header.
+Fixed see all buttons becoming smaller when touch was enabled.
+Fixed settings background.
+Fixed settings background not having box shadow when enabled.
+Fixed shopping cart button showing up if remove updates was enabled.
+Fixed social link icons on the profile page.
+Fixed Social Media text affecting other headers.
+Fixed VIP Server Tooltip Width not being accurate to 2019.
+Fixed Voice Chat and Camera showing up on the games page again.
+Future proofed "HCo Gotham SSm".
+People about footer border is now #b8b8b8 for "Legacy Next Styleguide".
+Redid the VIP Servers CSS.
+Removed events tab on the groups page (Toggleable via Remove Updates).
+Removed robux icon in breadcrumb containers.
+Removed some of old topbar develop page CSS.
+Renamed "Five column Avatar Editor." to "Five column Avatar Editor".
+Renamed "Original Sponsor Size (Deprecated)" to "Original Sponsor Size".
+Simplified a lot of LESS CSS.
+Social Links are now enabled by default (Toggleable via "Legacy Next Styleguide" now).
+Updated RPlus_Easter & RPlus_OBC to the 2017 versions.
+Removed button padding from breadcrumbs.
+Removed Verified badge on the groups page (Toggleable via "Remove Updates").
+Reverted and redid the hat and layered clothing slots css.
+Reverted item context menu positioning for catalog items.
+Reverted react catalog background.
+Reverted recent catalog update.
+Reverted recent Footer update.
+Reverted recent roblox overflow change for content.
+
+(Release 1.3.16 | 07/20/2024)
+Added cookie banner support.
+Added games info tooltip support.
+Added support to new events container.
+Added support to new wide hover cards.
+Expanded see all icons css.
+Fixed follow button notification bell.
+Fixed item card height.
+Fixed Recommended Games not showing up.
+Fixed Robux page.
+Fixed Social Media icons.
+Redid a lot of CSS.
+Remove extras now capitalizes the roblox account name.
+Removed navigation credits, virtual events, and robux sucriptions (Toggleable via Remove Updates)
+Reverted Builder font update.
+
+(Release 1.3.15 | 04/02/2024)
+Reverted April Fools Update.
+
+(Release 1.3.14 | 03/31/2024)
+Enabled April Fools Theme.
+
+(Release 1.3.13 | 03/30/2024)
+Enabled Easter Theme (Happy Easter).
+
+(Release 1.3.12 | 02/22/2024)
+Added RemoveExtras (removes themes in settings).
+Added support for new notify update on the games page.
+Groups are now centered aligned.
+Reverted new homepage changes.
+Reverted side menu box shadow colors.
+Removed account switcher (toggleable via remove updates).
+Removed "passkey" notification in settings (toggleable via remove updates).
+Removed id verification form (toggleable via remove updates).
+Reverted new audio thumbnails (toggleable via remove updates).
+
+(Release 1.3.11 | 01/21/2024)
+Added support for the new catalog update.
+
+(Release 1.3.10 | 12/04/2023)
+Fixed an issue with Box Shadows that caused an error.
+
+(Release 1.3.9 | 11/04/2024)
+TODO
+
+(Release 1.3.8 | 10/31/2024)
+TODO
+
+(Release 1.3.7 | 10/30/2024)
+TODO
+
+(Release 1.3.6 | 10/27/2024)
+TODO
+
+(Release 1.3.5 | 08/17/2024)
+TODO
+
+(Release 1.3.4 | 08/15/2024)
+TODO
+
+(Release 1.3.3 | 08/15/2024)
+TODO
+
+(Release 1.3.2 | 08/14/2024)
+TODO
+
+(Release 1.3.1 | 08/08/2023)
+TODO
+
+(Release 1.3 | 08/02/2023)
+Added back events text on the sidebar.
+Added Custom Themes. > [BTR_Night, BTR_Red, BTR_Simblk, L_Red, RPlus_OBC]
+Added Game Card Friend Activity support.
+Added Greeting Text option.
+Added legacy profile background color (Toggle via Box Shadows).
+Added Premium To BC option for btroblox.
+Added Style Guide Text back to 2016 styleguide.
+Added Toggleable Brighter Dark Theme colors option.
+App bumper syncs with site Brand settings.
+Legacy Footer Text has more customizable options.
+Re-added VIP Server text swap (Toggleable via Remove Updates).
+Removed Events container (Toggleable via Remove Updates).
+Removed unnecessary CSS.
+Renamed some items for better clarity.
+Revamped Main Site button CSS.
+Reverted Roblox Help button changes.
+Roblox+ logo syncs with site Brand settings.
+Improved chat for better accuracy.
+Improved SourceSansPro (Thanks Aubymori).
+
+(Release 1.2.9.38 | 03/17/2023)
+Added Site Curency option.
+Changed avatar shop (Marketplace) to catalog in avatar editor (Toggleable).
+
+(Release 1.2.9.37 | 01/27/2023)
+Added themes icon support for ropro users.
+Added badge styling.
+Brand Logos now affect outside of roblox.com.
+Chat timestamps are top aligned again like it was in 2019.
+Fixed ropro icon border radius for firefox users.
+Fixed the icons on the help pages defaulting to system icons.
+ForceSignupLightTheme no longer effects other pages.
+Ropro sidebar icons no longer repeat.
+
+(Release 1.2.9.36 | 01/10/2023)
+Added force light theme on signup page option.
+Added legacy next styleguide colors option.
+Added Styleguide Styling option.
+Brand logo now effects the desktop app banner.
+Red Logo now affects the robux page.
+Removed Quick Login from the dropdown (Toggleable).
+Renamed RedOLogoStyle to RedLogoStyle.
+
+(Release 1.2.9.35 | 01/01/2023)
+Added box shadow animations option.
+Added Red O logo variant option.
+Additional fixes for game cards.
+Fixed featured game card names going out of bounds.
+Fixed line height on recommended games header.
+Fixed search group game cards.
+Fixed the robux icon when creating a new group.
+Fixed tooltip not showing up when 2018M play button was selected.
+Rearranged some css.
+Renamed Pre-2018 Box shadows to Box Shadows.
+Renamed Game Card style to Item Card style.
+
+(Release 1.2.9.34 | 12/24/2022)
+Added 2018M Play Button styling option.
+Added holiday banner (Toggleable).
+
+(Release 1.2.9.33 | 12/15/2022)
+Added box shadow options.
+Added Game Card options.
+Fixed a few issues when sourcesanspro was enabled.
+Partially reverted recent catalog update change.
+
+(Release 1.2.9.32 | 12/03/2022)
+Reverted a few footer pages (More is to come).
+
+(Release 1.2.9.31 | 11/30/2022)
+Brought back the old social link and social network icons.

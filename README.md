@@ -25,6 +25,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Custom Site Theme
     - None ( Default )
     - April_Fools ( Hidden )
+    - BloxTober ( Hidden )
     - BTR_Night
     - BTR_Red
     - BTR_Simblk
@@ -34,6 +35,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - RPlus_OBC
   - Force light theme on signup
   - Five column Avatar Editor ( Default )
+  - Fixed 2019M Item Card Transitions
   - Greeting Text Style
     - None ( Default )
     - Hello
@@ -58,17 +60,23 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2018L
     - 2019E
   - Legacy Next StyleGuide
-    -    ↳  Older
+    -  ↳ Chat Shadows ( Default )
+    -  ↳ Older
+    -  ↳ Older Chat
+    -  ↳ Remove Place Name
+    -  ↳ Remove Social Links
   - My Avatar Gogo Spinner
-  - Original Sponsor Size (Deprecated)
+  - Original Sponsor Size ( Default )
   - Play Button Style
     - 2018M
     - 2018L
     - 2019E
     - 2020+
+  - Restore Ads
+    -  ↳ Games Page
   - Restore legacy sidebar padding
   - Revert 2019L+ changes ( Default )
-    -     ↳  Extras
+    -  ↳ Extras
   - Premium To BC (BTRoblox)
   - Site Brand Style
     - 201408
