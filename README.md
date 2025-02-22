@@ -64,6 +64,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Older
     -  ↳ Older Chat
     -  ↳ Remove Place Name
+    -  ↳ Remove Social Links
   - My Avatar Gogo Spinner
   - Original Sponsor Size ( Default )
   - Play Button Style
@@ -72,6 +73,9 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
     - 2020+
   - Restore Ads
+    - None
+    - Default ( Default )
+    - Filler
     -  ↳ Games Page
   - Restore legacy sidebar padding
   - Revert 2019L+ changes ( Default )

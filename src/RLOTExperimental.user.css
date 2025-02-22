@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20241214.1.3.17
+@version      20250222.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -30,7 +30,7 @@
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
 @var          checkbox SponsorSizing               "Original Sponsor Size"              1
 @var          select   PlayButtonStyle             "Play Button Style"                  ["2018M","2018L", "2019E", "2019M*", "2020+"]
-@var          checkbox RestoreAds                  "Restore Ads"                        0
+@var          select   RestoreAds                  "Restore Ads"                        ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                      0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
 @var          checkbox RemoveUpdates               "Revert 2019L+ changes"              1
@@ -42,6 +42,7 @@
 @var          checkbox SourceSansPro               "Source Sans Pro Font"               0
 @var          checkbox TransitionalAnimations      "Transition animations"              1
 @var          checkbox RedLogoStyle                "Use 2017 Red icon logo"             0
+@var          select   WatermarkStyle              "Watermark Branch"                   ["None","DEV","Experimental*"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -2390,6 +2391,12 @@
         background-color: #fff;
     }
     
+    .light-theme .rbx-tabs-horizontal .nav-tabs, .light-theme .rbx-tab .rbx-tab-heading, .light-theme .dropdown-menu, .light-theme .menu-vertical, .light-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .light-theme .menu-vertical .menu-option .menu-secondary, .light-theme .avatar-card-container {
+        background-color: #fff;
+    }
+    .dark-theme .rbx-tabs-horizontal .nav-tabs, .dark-theme .rbx-tab .rbx-tab-heading, .dark-theme .dropdown-menu, .dark-theme .menu-vertical, .dark-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .dark-theme .menu-vertical .menu-option .menu-secondary, .dark-theme .avatar-card-container {
+        background-color: #000;
+    }
     .light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading.active
     {
         box-shadow: inset 0 -4px 0 0 #00a2ff;
@@ -5398,13 +5405,9 @@
 			animation: gogoloader 2s infinite 1s;
 		}
 	}
-	
-    .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel {
-        display: none;
-    }
     
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid]), #forums {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid]), #forums, .home-page-upsell-card-banner-container, .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel {
             display: none !important;
         }
         & when (@RemoveExtras = 1) {
@@ -5898,6 +5901,9 @@
         
         .game-stat {
             display: unset;
+            &-container:has(:nth-child(10)) &:nth-last-child(-n+1) {
+                display: none;
+            }
             &s-container li:first-child p:first-child, &-container li:first-child p:first-child {
                 font-size: 0;
                 &:after {
@@ -5927,7 +5933,7 @@
                 }
             }
             /*/ Preprocessor less can't handle more items so just put it into a different section for now. /*/
-            &-container:has(.chat-feature-list) li:nth-child(7) p:first-child, &-container:not(:has(.chat-feature-list)) li:nth-child(6) p:first-child {
+            &-container:has(.chat-feature-list) li:nth-child(7) p:first-child, &-container:not(:has(.chat-feature-list)) li:nth-child(8) p:first-child {
                 font-size: 0;
                 &:after {
                     content: "Max Players";
@@ -6938,26 +6944,32 @@
             }
         }
         [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
-            &:before when (@RestoreAds = 1) {
+            &:before when not (@RestoreAds = None) {
                 content: "";
                 display: block;
-                font-size: 12px;
-                line-height: 1.25;
-                color: #757575;
-                text-align: center;
-                background-color: transparent;
+                & when (@RestoreAds = Default) {
+                    font-size: 12px;
+                    line-height: 1.25;
+                    color: #757575;
+                    text-align: center;
+                    background-color: transparent;
+                }
                 margin: 0 auto;
                 float: left;
                 margin-right: 24px;
                 width: 160px;
                 min-height: 600px;
-                background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
-                background-size: 160px 600px;
-                background-repeat: no-repeat;
-                aspect-ratio: auto 160 / 600;
+                & when (@RestoreAds = Default) {
+                    background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                    background-size: 160px 600px;
+                    background-repeat: no-repeat;
+                    aspect-ratio: auto 160 / 600;
+                }
                 position: relative;
                 clear: unset;
-                cursor: pointer;
+                & when (@RestoreAds = Default) {
+                    cursor: pointer;
+                }
                 @media (max-width: 1358px) {
                     display: none;
                 }
@@ -6985,34 +6997,38 @@
             }
         }
         
-        & when (@RestoreAds = 1) {
+        & when not (@RestoreAds = None) {
             .abp, .profile-ads-container {
                 display: none;
             }
             [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content, [data-internal-page-name="Messages"] .content {
-                overflow: auto
-            }
-            [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content, [data-internal-page-name="Messages"] .content {
+                overflow: auto;
                 &:after {
                     content: "";
                     display: block;
-                    font-size: 12px;
-                    line-height: 1.25;
-                    color: #757575;
-                    text-align: center;
-                    background-color: transparent;
+                    & when (@RestoreAds = Default) {
+                        font-size: 12px;
+                        line-height: 1.25;
+                        color: #757575;
+                        text-align: center;
+                        background-color: transparent;
+                    }
                     margin: 0 auto;
                     float: left;
                     margin-left: 24px;
                     width: 160px;
                     min-height: 600px;
-                    background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
-                    background-size: 160px 600px;
-                    background-repeat: no-repeat;
-                    aspect-ratio: auto 160 / 600;
+                    & when (@RestoreAds = Default) {
+                        background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                        background-size: 160px 600px;
+                        background-repeat: no-repeat;
+                        aspect-ratio: auto 160 / 600;
+                    }
                     position: relative;
                     clear: unset;
-                    cursor: pointer;
+                    & when (@RestoreAds = Default) {
+                        cursor: pointer;
+                    }
                     @media (max-width: 1174px) {
                         display: none;
                     }
@@ -7022,23 +7038,29 @@
                 &:before {
                     content: "";
                     display: block;
-                    font-size: 12px;
-                    line-height: 1.25;
-                    color: #757575;
-                    text-align: center;
-                    background-color: transparent;
+                    & when (@RestoreAds = Default) {
+                        font-size: 12px;
+                        line-height: 1.25;
+                        color: #757575;
+                        text-align: center;
+                        background-color: transparent;
+                    }
                     margin: 0 auto;
                     position: relative;
                     z-index: 0;
                     height: 90px;
                     width: 728px;
                     min-height: 110px;
-                    background-image: url(https://images.rbxcdn.com/bb3b528306366a8b1a5a6ca40ead504a.png);
-                    background-size: 728px 90px;
-                    background-repeat: no-repeat;
-                    aspect-ratio: auto 728 / 90;
+                    & when (@RestoreAds = Default) {
+                        background-image: url(https://images.rbxcdn.com/bb3b528306366a8b1a5a6ca40ead504a.png);
+                        background-size: 728px 90px;
+                        background-repeat: no-repeat;
+                        aspect-ratio: auto 728 / 90;
+                    }
                     clear: unset;
-                    cursor: pointer;
+                    & when (@RestoreAds = Default) {
+                        cursor: pointer;
+                    }
                     @media (max-width: 728px) {
                         display: none;
                     }
@@ -7051,12 +7073,16 @@
                     max-width: 655px;
                     height: 270px;
                     display: block;
-                    background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
-                    background-size: 300px 270px;
-                    background-position: center;
-                    background-repeat: space;
+                    & when (@RestoreAds = Default) {
+                        background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                        background-size: 300px 270px;
+                        background-position: center;
+                        background-repeat: space;
+                    }
                     margin: auto;
-                    cursor: pointer;
+                    & when (@RestoreAds = Default) {
+                        cursor: pointer;
+                    }
                     @media (max-width: 991px) {
                         display: none;
                     }
@@ -7064,6 +7090,11 @@
                         width: 350px;
                         height: 547px;
                     }
+                }
+            }
+            @media (max-width: 1346px) {
+                [data-internal-page-name="GroupDetails"] .content:after {
+                    display: none;
                 }
             }
             #games-carousel-page when (@RestoreGameAds = 1) {
@@ -7076,11 +7107,13 @@
                     height: 100%;
                     max-height: 525px;
                     display: none;
-                    background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
-                    background-size: 300px 250px;
-                    background-position: 15px 0;
-                    background-repeat: space;
-                    cursor: pointer;
+                    & when (@RestoreAds = Default) {
+                        background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                        background-size: 300px 250px;
+                        background-position: 15px 0;
+                        background-repeat: space;
+                        cursor: pointer;
+                    }
                     @media (min-width: 1024px) {
                         display: inherit;
                     } 
@@ -8185,78 +8218,93 @@
     }
 	
 	/*/=={ Watermark }==/*/
-	.rbx-left-col {
-		&:before {
-			content: '(Default Theme) Testing Purposes Only!';
-			& when (@SourceSansPro = 0) {
-				font-size: 16px;
-				line-height: 16px;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 18px;
-				line-height: 18px;
-			}
-			text-align: center;
-			position: absolute;
-			display: block;
-			bottom: 0;
-			& when (@RestoreSidebarPadding = 0) {
-				width: 165px;
-				padding: 0 0 0 10px
-			}
-			& when (@RestoreSidebarPadding = 1) {
-				width: 100%;
-				padding: 0 10px;
-			}
-			& when (@SourceSansPro = 0) {
-				margin: 24px 0;
-			}
-			& when (@SourceSansPro = 1) {
-				margin: 28px 0;
-			}
-			color: #191919;
-			.light-theme & {
-				content: '(Light Theme) Testing Purposes Only!';
-			}
-			.dark-theme & {
-				content: '(Dark Theme) Testing Purposes Only!';
-				color: #E6E6E6;
-			}
-		}
-		&:after {
-			content: 'Milestone 1.3.17';
-			& when (@SourceSansPro = 0) {
-				font-size: 12px;
-				line-height: 12px;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 14px;
-				line-height: 14px;
-			}
-			text-align: center;
-			position: absolute;
-			display: block;
-			bottom: 0;
-			& when (@RestoreSidebarPadding = 0) {
-				width: 165px;
-				padding: 0 0 0 10px
-			}
-			& when (@RestoreSidebarPadding = 1) {
-				width: 100%;
-				padding: 0 10px;
-			}
-			& when (@SourceSansPro = 0) {
-				margin: 6px 0;
-			}
-			& when (@SourceSansPro = 1) {
-				margin: 7px 0;
-			}
-			color: #b8b8b8;
-			.dark-theme & {
-				color: #474747;
-			}
-		}
-	}
+    .rbx-left-col when not (@WatermarkStyle = None) {
+        &:before {
+            & when (@WatermarkStyle = DEV) {
+                content: "(Legacy Theme) Development Purposes Only";
+            }
+            & when (@WatermarkStyle = Experimental) {
+                content: "(Legacy Theme) Testing Purposes Only";
+            }
+            color: #191919;
+            font-size: 18px;
+            line-height: 18px;
+            text-align: center;
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            & when (@RestoreSidebarPadding = 0) {
+                width: 165px;
+                padding: 0 0 0 10px
+            }
+            & when (@RestoreSidebarPadding = 1) {
+                width: 100%;
+                padding: 0 10px;
+            }
+            margin: 0 0 28px;
+            & when (@SourceSansPro = 0) {
+                .gotham-font &, .builder-font & {
+                    font-size: 16px;
+                    line-height: 16px;
+                    margin: 0 0 24px;
+                }
+            }
+            .light-theme & {
+                & when (@WatermarkStyle = DEV) {
+                    content: "(Light Theme) Development Purposes Only";
+                }
+                & when (@WatermarkStyle = Experimental) {
+                    content: "(Light Theme) Testing Purposes Only";
+                }
+                color: #191919;
+            }
+            .dark-theme & {
+                & when (@WatermarkStyle = DEV) {
+                    content: "(Dark Theme) Development Purposes Only";
+                }
+                & when (@WatermarkStyle = Experimental) {
+                    content: "(Dark Theme) Testing Purposes Only";
+                }
+                color: #e6e6e6;
+            }
+        }
+        &:after {
+            content: "Milestone 1.3.17";
+            color: #b8b8b8;
+            font-size: 14px;
+            line-height: 14px;
+            text-align: center;
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            & when (@RestoreSidebarPadding = 0) {
+                width: 165px;
+                padding: 0 0 0 10px
+            }
+            & when (@RestoreSidebarPadding = 1) {
+                width: 100%;
+                padding: 0 10px;
+            }
+            margin: 0 0 7px;
+            & when (@SourceSansPro = 0) {
+                .gotham-font &, .builder-font & {
+                    font-size: 12px;
+                    line-height: 12px;
+                    margin: 0 0 6px;
+                }
+            }
+            .light-theme & {
+                color: #b8b8b8;
+            }
+            .dark-theme & {
+                color: #474747;
+            }
+        }
+    }
 	
     .item-card-thumb-container .item-expire-time-label {
         background-color: #d86868;
@@ -8387,7 +8435,7 @@
 		font-weight: 300;
 		opacity: 1
 	}
-	.light-theme input::-webkit-input-placeholder,.light-theme textarea::-webkit-input-placeholder {
+	.light-theme input::-webkit-input-placeholder, .light-theme .input-field::-webkit-input-placeholder,.light-theme textarea::-webkit-input-placeholder {
 		color: #b8b8b8;
 		font-weight: 300;
 		opacity: 1
@@ -8397,12 +8445,12 @@
 		font-weight: 300;
 		opacity: 1
 	}
-	.light-theme input::placeholder,.light-theme textarea::placeholder {
+	.light-theme input::placeholder, .light-theme .input-field::placeholder,.light-theme textarea::placeholder {
 		color: #b8b8b8;
 		font-weight: 300;
 		opacity: 1
 	}
-	.dark-theme input::placeholder,.dark-theme textarea::placeholder {
+	.dark-theme input::placeholder, .dark-theme .input-field::placeholder,.dark-theme textarea::placeholder {
 		color: #474747;
 		font-weight: 300;
 		opacity: 1
@@ -9081,6 +9129,7 @@
     }
     
     .light-theme .input-field:focus {
+        background-color: #fff;
 		& when (@LegacyNextStyleGuideButtons = 0) {
             box-shadow: none;
         }
@@ -9915,7 +9964,7 @@
     }
     @media (min-width: 1850px) {
         .content:has(#group-container) {
-            max-width: 1264px;
+            max-width: 1338px
         }
     }
     
@@ -11161,6 +11210,164 @@
 	}
 	/*/ end of changes /*/
 	
+    /*/ Revert Webblox /*/
+    .profile-header {
+        &-main {
+            background-color: #fff;
+            padding: 15px;
+            margin: 0 0 18px;
+            position: relative;
+            display: table;
+            width: 100%;
+        }
+        &-details {
+            width: 82%;
+            width: calc(100% - 128px - 24px);
+            height: 128px;
+            position: relative;
+            float: left;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: unset;
+            padding: 0;
+        }
+        &-names {
+            flex: unset;
+            display: block;
+            [class*="colorSecondary-"] {
+                color: #191919;
+                & when (@SourceSansPro = 0) {
+                    font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+            }
+        }
+        &-social-counts {
+            position: absolute;
+            bottom: 0;
+            width: 40%;
+            display: block;
+            li {
+                float: left;
+                display: block;
+                padding: 0 5px;
+                text-align: center;
+                width: 33%;
+                a {
+                    display: block;
+                    text-decoration: none;
+                    cursor: text;
+                    &:hover {
+                        text-decoration: none;
+                        cursor: text;
+                    }
+                    span[class*="body1-"] {
+                        color: #b8b8b8;
+                        & when (@SourceSansPro = 0) {
+                            font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+                            font-size: 12px;
+                            font-weight: 500;
+                            line-height: 1.4em;
+                        }
+                        & when (@SourceSansPro = 1) {
+                            font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 1.3em;
+                        }
+                        display: flex;
+                        flex-direction: column-reverse;
+                        b {
+                            line-height: 1em;
+                            margin: 0;
+                            padding: 5px 0;
+                            color: #00a2ff;
+                            font-size: 12px;
+                            font-weight: 400;
+                            display: block;
+                            cursor: pointer;
+                            &:focus, &:hover {
+                                text-decoration: underline;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-title-container {
+            display: flex;
+            align-items: center;
+            gap: unset;
+            [class*="h1-"] {
+                color: #191919;
+                & when (@SourceSansPro = 0) {
+                    font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+                    font-size: 32px;
+                    font-weight: 800;
+                    @media (max-width: 767px) {
+                        font-size: 24px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    font-size: 36px;
+                    font-weight: 400;
+                    @media (max-width: 767px) {
+                        font-size: 30px
+                    }
+                }
+                line-height: 1em;
+                display: inline-block;
+                padding: 5px 0;
+                margin: 0 12px 0 0;
+                margin-right: 7px;
+            }
+        }
+        &-buttons {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            display: block;
+            padding: 0;
+            button[class*="web-blox-css"] {
+                display: inline-block;
+                padding: 0;
+                border-radius: 0;
+                transition: none;
+                svg, [class*="Ripple-"] {
+                    display: none;
+                }
+                &:before {
+                    content: "";
+                    background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
+                    background-repeat: no-repeat;
+                    background-position: 0 -616px;
+                    background-size: 200% auto;
+                    width: 28px;
+                    height: 28px;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &:hover {
+                    background-color: transparent;
+                    &:before {
+                        background-position: -28px -616px;
+                    }
+                }
+            }
+        }
+    }
+    
     .game-grid, .game-grid.expand-home-content-disabled, .game-grid.expand-home-content {
         display: block;
     }
@@ -11225,55 +11432,53 @@
         margin-bottom: 12px;
         vertical-align: top;
         white-space: normal;
+        .game-card-link .game-card-name-info {
+            display: unset
+        }
+        .game-card-link .game-card-description-info, .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg, .game-card-info, #id-verification-container, .spinner, .game-card-link .game-card-creator-name {
+            display: none
+        }
+        &:before {
+            content: 'Featured Game';
+            .light-theme & {
+                background-color: #00a2ff;
+                color: #fff;
+            }
+            .dark-theme & {
+                & when (@BrighterDarkThemeColors = 0) {
+                    background-color: #004266;
+                    color: #000;
+                }
+                & when (@BrighterDarkThemeColors = 1) {
+                    background-color: #00a2ff;
+                    color: #fff;
+                }
+            }
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            & when (@CardStyle = Pre-2018) {
+                width: 93%;
+            }
+            & when not (@CardStyle = Pre-2018) {
+                width: 91.5%;
+            }
+            & when (@SourceSansPro = 0) {
+                font-size: 10px;
+                line-height: 2.24em;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 12px;
+                line-height: 1.866em;
+            }
+            font-weight: 500;
+            text-align: center;
+            & when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+        }
     }
-    
-    .featured-grid-item-container .game-card-link .game-card-description-info, .featured-grid-item-container .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg, .featured-grid-item-container .game-card-info, .featured-grid-item-container #id-verification-container, .featured-grid-item-container .spinner, .featured-grid-item-container .game-card-link .game-card-creator-name {
-        display: none
-    }
-    
-    .featured-grid-item-container:before {
-        content: 'Featured Game';
-		.light-theme & {
-			background-color: #00a2ff;
-			color: #fff;
-		}
-        .dark-theme & {
-			& when (@BrighterDarkThemeColors = 0) {
-				background-color: #004266;
-				color: #000;
-			}
-			& when (@BrighterDarkThemeColors = 1) {
-				background-color: #00a2ff;
-				color: #fff;
-			}
-		}
-        position: absolute;
-        bottom: 0;
-        & when (@CardStyle = Pre-2018) {
-			width: 93%;
-		}
-		& when not (@CardStyle = Pre-2018) {
-			width: 91.5%;
-		}
-		& when (@SourceSansPro = 0) {
-			font-size: 10px;
-			line-height: 2.24em;
-		}
-		& when (@SourceSansPro = 1) {
-			font-size: 12px;
-			line-height: 1.866em;
-		}
-        font-weight: 500;
-        text-align: center;
-		& when (@CardStyle = Pre-2018) or (@CardStyle = 2019E) {
-			border-bottom-left-radius: 3px;
-			border-bottom-right-radius: 3px;
-		}
-    }
-    
-	.featured-grid-item-container .game-card-link .game-card-name-info {
-		display: unset
-	}
 	
     @media (max-width: 767px) {
         .game-carousel>.grid-item-container, .game-carousel.expand-home-content .grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container {
@@ -11670,13 +11875,17 @@
         }
     }
 
-    .game-carousel.wide-game-tile-carousel.expand-home-content, .game-carousel.wide-game-tile-carousel.games-page-carousel, .game-carousel.wide-game-tile-carousel.expand-home-content.games-page-carousel, .game-carousel.wide-game-tile-carousel.games-page-carousel.games-page-carousel, .game-grid.home-game-grid.wide-game-tile-game-grid.game-grid.expand-home-content {
+    .home-page-games-list {
+        margin: 0;
+    }
+    
+    .game-carousel.wide-game-tile-carousel.expand-home-content, .game-carousel.wide-game-tile-carousel.games-page-carousel, .game-carousel.wide-game-tile-carousel.expand-home-content.games-page-carousel, .game-carousel.wide-game-tile-carousel.games-page-carousel.games-page-carousel, .game-grid.home-game-grid.wide-game-tile-game-grid.game-grid.expand-home-content, .game-carousel.wide-game-tile-carousel.home-page-carousel {
         padding-top: 12px;
         display: block;
-        .home-container & {
+        .home-container & when (@RemoveUpdates = 1) {
             display: none;
         }
-        .hover-game-tile.event-tile, .hover-game-tile.grid-tile, .hover-game-tile.interest-tile {
+        .hover-game-tile.event-tile, .hover-game-tile.grid-tile, .hover-game-tile.interest-tile, .hover-game-tile.grid-tile.old-hover, .hover-game-tile.event-tile.focused.old-hover {
             & when (@CardStyle = Pre-2018) {
                 width: 161px;
                 height: 223px;
@@ -15041,15 +15250,7 @@
 	
     .dropdown-menu li a, .dropdown-menu li button {
         &, .light-theme &, .dark-theme & {
-            clear: both;
-            display: block;
-            line-height: 1.428571429;
-            padding: 10px 6px;
-            white-space: nowrap;
-            border: none;
             background: transparent;
-            width: 100%;
-            text-align: left;
             &:hover, &:focus, &:active {
                 background: transparent;
             }
