@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.22
+// @version      1.2.23
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -109,6 +109,9 @@ var Settings = {
             CatalogtoAvatarShop: false, /*/ Swaps Catalog to Avatar Shop. /*/
             enableforumlistItem: false, /*/ Enables the last list item for forums. /*/
             ModernFormat: true, /*/ Uses the newer 2021/2022 HTML format /*/
+        },
+        Profiles: {
+            Webblox: false /*/ Toggles the Webblox Profile experiment. /*/
         },
         RestoreHomePage: true, /*/ (Configurable => Pages.home.Format) Brings back the username and user avatar back on the home page. /*/
         RestoreLegacyLogin: true, /*/ Reverts the changes made to make the login feel like the one used in 2019 /*/
@@ -1073,6 +1076,17 @@ async function waitForElm(q) {
         await new Promise(r => requestAnimationFrame(r));
     };
     return document.querySelector(q);
+}
+
+if (Settings.Pages.Profiles.Webblox) {
+    const meta = document.createElement("meta");
+    meta.setAttribute("name", "webblox-enabled");
+    document.appendChild(meta);
+
+} else {
+    waitForElm('meta[name="webblox-enabled"]').then(async (meta) => {
+        meta.parentNode.removeChild(meta);
+    })
 }
 
 if (Settings.Global.RestoreLegacyFavIcon) {
