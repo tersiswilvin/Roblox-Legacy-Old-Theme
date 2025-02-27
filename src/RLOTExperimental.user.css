@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250226.1.3.17
+@version      20250227.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -908,10 +908,6 @@
     
     #message-detail-body a:hover {
         text-decoration: underline;
-    }
-    
-    .light-theme .section-content.remove-panel {
-        background-color: #fff;
     }
     
     .light-theme .people-list, .dark-theme .people-list {
@@ -10607,101 +10603,6 @@
                 display: none;
             }
         }
-        ~ *:has(.game-social-links), ~ * .game-about-tab-container *:has(.game-social-links) {
-            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemoveSL = 1) or (@LegacyNSGOlder = 1) {
-                display: none;
-            }
-            h2 {
-                & when (@SourceSansPro = 1) and (@LegacyNextStyleGuideButtons = 0) {
-                    &, &:hover, &:focus, &:active {
-                        font-size: 24px;
-                        font-weight: 300;
-                        @media (max-width: 767px) {
-                            font-size:21px
-                        }
-                    }
-                }
-                & when (@LegacyNextStyleGuideButtons = 1) {
-                    font-size: 0;
-                    &:after {
-                        content: "Social Media";
-                        & when (@SourceSansPro = 0) {
-                            font-size: 20px;
-                            font-weight: 700;
-                        }
-                        & when (@SourceSansPro = 1) {
-                            font-size: 24px;
-                            font-weight: 300;
-                        }
-                        line-height: 1em;
-                        cursor: text;
-                    }
-                }
-            }
-        }
-        ~ * .game-social-links {
-            background-color: #fff;
-            & when (@BoxShadows = 1) {
-                box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
-            }
-            padding: 15px;
-            position: relative;
-            > .btn-secondary-lg, > .btn-secondary-lg:hover, > .btn-secondary-lg:focus, > .btn-secondary-lg:active {
-                &, .light-theme & {
-                    font-size: inherit;
-                }
-                line-height: inherit;
-                &, .light-theme & {
-                    color: #191919;
-                }
-                background-color: #fff;
-                border: 0.5px solid #b8b8b8;
-                margin: .5em;
-                padding: 1em;
-                border-radius: 6px;
-                .icon-social-media-discord {
-                    background-position: 0 0
-                }
-
-                .icon-social-media-youtube {
-                    background-position: 0 -61px
-                }
-
-                .icon-social-media-twitter {
-                    background-position: 0 -122px
-                }
-
-                .icon-social-media-twitch {
-                    background-position: 0 -183px
-                }
-
-                .icon-social-media-facebook {
-                    background-position: 0 -244px
-                }
-
-                .icon-social-media-github {
-                    background-position: 0 -305px
-                }
-
-                .icon-social-media-roblox {
-                    background-position: 0 -429px
-                }
-                .dark-theme & {
-                    color: #e6e6e6;
-                    background-color: #000;
-                    border: 0.5px solid #474747;
-                }
-                @media (max-width: 991px) {
-                    width: 100%;
-                }
-            }
-            .dark-theme & {
-                background-color: #000;
-                & when (@BoxShadows = 1) {
-                    box-shadow: 0 1px 4px 0 rgba(230, 230, 230, 0.3);
-                }
-            }
-        }
         @media (max-width: 767px) {
             margin: 0 0 12px;
             margin-top: 41px;
@@ -10714,6 +10615,101 @@
                 align-items: flex-start;
                 flex-direction: row;
                 margin-bottom: 12px;
+            }
+        }
+    }
+    .game-about-tab-container :has(.game-social-links) {
+        & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemoveSL = 1) or (@LegacyNSGOlder = 1) {
+            display: none;
+        }
+        > h2 {
+            & when (@SourceSansPro = 1) and (@LegacyNextStyleGuideButtons = 0) {
+                &, &:hover, &:focus, &:active {
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                font-size: 0;
+                &:after {
+                    content: "Social Media";
+                    & when (@SourceSansPro = 0) {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 24px;
+                        font-weight: 300;
+                    }
+                    line-height: 1em;
+                    cursor: text;
+                }
+            }
+        }
+    }
+    .content .game-social-links {
+        background-color: #fff;
+        & when (@BoxShadows = 1) {
+            box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+        }
+        padding: 15px;
+        position: relative;
+        .btn-secondary-lg, .btn-secondary-lg:hover, .btn-secondary-lg:focus, .btn-secondary-lg:active {
+            &, .light-theme & {
+                font-size: inherit;
+            }
+            line-height: inherit;
+            &, .light-theme & {
+                color: #191919;
+            }
+            background-color: #fff;
+            border: 0.5px solid #b8b8b8;
+            margin: .5em;
+            padding: 1em;
+            border-radius: 6px;
+            .icon-social-media-discord {
+                background-position: 0 0
+            }
+
+            .icon-social-media-youtube {
+                background-position: 0 -61px
+            }
+
+            .icon-social-media-twitter {
+                background-position: 0 -122px
+            }
+
+            .icon-social-media-twitch {
+                background-position: 0 -183px
+            }
+
+            .icon-social-media-facebook {
+                background-position: 0 -244px
+            }
+
+            .icon-social-media-github {
+                background-position: 0 -305px
+            }
+
+            .icon-social-media-roblox {
+                background-position: 0 -429px
+            }
+            .dark-theme & {
+                color: #e6e6e6;
+                background-color: #000;
+                border: 0.5px solid #474747;
+            }
+            @media (max-width: 991px) {
+                width: 100%;
+            }
+        }
+        .dark-theme & {
+            background-color: #000;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(230, 230, 230, 0.3);
             }
         }
     }
@@ -15549,13 +15545,13 @@
         .light-theme .owl-carousel .slide-container .text-box {
             box-shadow: 0 0 15px 0 rgb(25 25 25 / 25%);
         }
-        .light-theme .section-content, .light-theme .avatar, .light-theme .avatar-card-container, .light-theme .item-card-container, .light-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .light-theme .grid-item-container .game-card-link, .light-theme .featured-grid-item-container .game-card-link, .light-theme .robux-row, .light-theme .store-card, .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .light-theme .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .setting-section > div:not([class]):not(:has(.section-content)), .light-theme .setting-section > div:not([class]):not(:has(.section-content)) {
+        .light-theme .section-content, .light-theme .avatar, .light-theme .avatar-card-container, .light-theme .item-card-container, .light-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .light-theme .grid-item-container .game-card-link, .light-theme .featured-grid-item-container .game-card-link, .light-theme .robux-row, .light-theme .store-card, .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .light-theme .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .setting-section > div:not([class]):not(:has(.section-content)), .light-theme .setting-section > div:not([class]):not(:has(.section-content)), .profile-header-main, .light-theme .profile-header-main {
             box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
         }
         .dark-theme .owl-carousel .slide-container .text-box {
             box-shadow: 0 0 15px 0 rgb(230 230 230 / 25%);
         }
-        .dark-theme .section-content, .dark-theme .avatar, .dark-theme .avatar-card-container, .dark-theme .item-card-container, .dark-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .dark-theme .grid-item-container .game-card-link, .dark-theme .featured-grid-item-container .game-card-link, .dark-theme .robux-row, .dark-theme .store-card, .dark-theme .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .dark-theme .setting-section > div:not([class]):not(:has(.section-content)) {
+        .dark-theme .section-content, .dark-theme .avatar, .dark-theme .avatar-card-container, .dark-theme .item-card-container, .dark-theme :not(.grid-item-container):not(.featured-grid-item-container).game-card-container:not(.group-card-name-container), .dark-theme .grid-item-container .game-card-link, .dark-theme .featured-grid-item-container .game-card-link, .dark-theme .robux-row, .dark-theme .store-card, .dark-theme .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .dark-theme .setting-section > div:not([class]):not(:has(.section-content)), .dark-theme .profile-header-main {
             box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
         }
         .light-theme .robux-body .robux-row {
