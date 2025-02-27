@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.23
+// @version      1.2.24
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -22,7 +22,7 @@
 
 /*/== Variables ==/*/
 
-var url = window.location.protocol+"//"+window.location.hostname
+var url = window.location.origin
 
 var Events = {
     CustomEvents: {
@@ -99,7 +99,7 @@ var Settings = {
             GreetingExclamationMark: true, /*/ Toggles the exclamation mark (!) for the home greeting. /*/
             GreetingType: "Hello", /*/ {"Dynamic", "Hello", "Welcome", "Welcome back"} /*/
             MembershipType: "OBC", /*/ 2017 => {"BC", "TBC", "OBC"} | 2020 - 2022 => {"Premium"} /*/
-            LegacyColumn: false, /*/ Restores the my feed and blog on the home page, requires RestoreMyFeed to be enabled. /*/
+            LegacyColumn: true, /*/ Restores the my feed and blog on the home page, requires RestoreMyFeed to be enabled. /*/
             ORHCompatible: false, /*/ (2021) Swaps CSS to use aubymori Old Roblox Header for legacy theme compatibility. /*/
         },
         MyFeeds: {
@@ -179,6 +179,10 @@ function homeGreeting() {
 }
 function insertAfter(NewElement, ExistingElement) {
     ExistingElement.parentNode.insertBefore(NewElement, ExistingElement.nextSibling)
+}
+function includespathname(name) {
+    name = name.toLowerCase()
+    return window.location.pathname.includes(name)
 }
 function MembershipTemplate(parentElement) {
     var membershipiconcontainer, membershipicon
@@ -1126,7 +1130,7 @@ if (Settings.Global.RestoreLegacyFavTitle) {
     document.title = titlename
 }
 
-if (Settings.Pages.RestoreLegacyLogin && (window.location.href == url+"/login" || window.location.href == url+"/Login")) {
+if (Settings.Pages.RestoreLegacyLogin && (includespathname("/login"))) {
     waitForElm(".alternative-login-divider-container").then(async (hdrSec) => {
         if (Settings.Global.JSClasses) {
             document.body.classList.add("LoginRevert")
@@ -1673,14 +1677,14 @@ ${(!Settings.Pages.MyFeeds.ModernFormat && `
             listItemTemplate("None", "feed-social", "icon-forum", url+"/forum", "Roblox forums for help", `No matter what you're looking for, if it's Roblox related, there are people talking about it <a href="${ url }/forum">here</a>.`, feedvlist, true)
         }
     }
-    if (Settings.Pages.home.LegacyColumn && window.location.href == url+"/home") {
+    if (Settings.Pages.home.LegacyColumn && includespathname("/home")) {
         const escape = { amp: "&", gt: ">", lt: "<", apos: "'", quot: "\"" }
         const content = data => {
             return data.replace(/<!\[CDATA\[([^]*?)\]\]>/g, "$1").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").replace(/&(?:(amp|gt|lt|apos|quot)|(?:#x([a-fA-F0-9]+))|(?:#([0-9]+)));/g, (_, name, hex, dec) => (name ? escape[name] : hex ? String.fromCodePoint(parseInt(hex, 16)) : String.fromCodePoint(parseInt(dec, 10)))).trim()
         }
         GM_xmlhttpRequest({
             method: "GET",
-            url: "https://api.buttercms.com/v2/pages/long_form_page/?locale=en&preview=0&page=1&page_size=3&fields.page_type.slug=newsroom&order=-displayed_publish_date&auth_token=137ac5a15935fab769262b6167858b427157ee3d",
+            url: "https://api.buttercms.com/v2/pages/long_form_page/?locale=en&preview=0&page=1&page_size=3&fields.page_type.localized_slug=newsroom&fields.unlist_page=false&order=-displayed_publish_date&auth_token=137ac5a15935fab769262b6167858b427157ee3d",
             onload: function(response) {
                 const json = JSON.parse(response.responseText);
                 const posts = []
@@ -1734,18 +1738,18 @@ ${(!Settings.Pages.MyFeeds.ModernFormat && `
             section.setAttribute("data-update-status-url", "/home/updatestatus")
             homeleftcol.appendChild(section)
             MyFeed(section)
-            waitForElm(".home-right-col").then(async (hdrSec) => {
-                container.appendChild(hdrSec)
+            waitForElm(".home-right-col").then(async (rightCol) => {
                 container.appendChild(homeleftcol)
+                container.appendChild(rightCol)
             })
         })
-    } else if (!Settings.Pages.home.LegacyColumn && (window.location.href == url+"/feeds" || window.location.href == url+"/feeds/")) {
+    } else if (!Settings.Pages.home.LegacyColumn && (includespathname("/feeds"))) {
         document.head.appendChild(FeedCSS)
-        waitForElm(".content").then(async (hdrSec) => {
-            waitForElm(".request-error-page-content").then(async (hdrSec) => {
-                document.querySelector(".content").removeChild(hdrSec)
+        waitForElm(".content").then(async (content) => {
+            waitForElm(".request-error-page-content").then(async (content) => {
+                document.querySelector(".content").removeChild(content)
             })
-            MyFeed(hdrSec)
+            MyFeed(content)
         })
     }
 }
@@ -2057,7 +2061,7 @@ if (Settings.Global.LegacyEditDescription.Enabled) {
     })
 }
 
-if (Settings.Pages.RestoreHomePage && window.location.href == url+"/home") {
+if (Settings.Pages.RestoreHomePage && includespathname("/home")) {
     var homeStyle = document.createElement("style")
     homeStyle.innerHTML = StyleSheet()
     document.head.appendChild(homeStyle)
