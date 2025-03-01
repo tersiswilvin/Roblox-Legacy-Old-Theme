@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250227.1.3.17
+@version      20250228.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -7457,7 +7457,7 @@
                     }
                 }
             }
-            h3, .h3, .container-header h2, .container-list h2 {
+            h3, .h3, .container-header h2, .container-list h2, .profile-statistics > h2 {
                 &, &:hover, &:focus, &:active {
                     font-size: 24px;
                     font-weight: 300;
@@ -10650,60 +10650,181 @@
             }
         }
     }
-    .content .game-social-links {
+    .game-social-links {
         background-color: #fff;
         & when (@BoxShadows = 1) {
             box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
         }
         padding: 15px;
         position: relative;
-        .btn-secondary-lg, .btn-secondary-lg:hover, .btn-secondary-lg:focus, .btn-secondary-lg:active {
-            &, .light-theme & {
-                font-size: inherit;
+        display: grid;
+        grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (min-width: 992px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .btn-secondary-lg {
+            font-size: 16px;
+            & when (@SourceSansPro = 0) {
+                line-height: 1.4em;
             }
-            line-height: inherit;
-            &, .light-theme & {
-                color: #191919;
+            & when (@SourceSansPro = 1) {
+                line-height: 1.3em;
             }
+            color: #191919;
             background-color: #fff;
             border: 0.5px solid #b8b8b8;
+            height: 100px;
             margin: .5em;
             padding: 1em;
+            display: block;
+            width: unset;
             border-radius: 6px;
+            &:focus, &:hover {
+                font-size: 16px;
+                color: #191919;
+                background-color: #fff;
+                border-color: #b8b8b8;
+            }
+            &:active {
+                font-size: 16px;
+                background-color: #fff;
+                border-color: #b8b8b8;
+            }
+            &:link {
+                font-size: 16px;
+                color: #191919;
+            }
+            .social-icon {
+                float: left;
+                background-image: url(https://images.rbxcdn.com/c8904f682e059a73d15bd3130cfb486d-SocialLinkIconsV2.svg);
+                width: 60px;
+                height: 60px;
+                background-size: 100% auto;
+                margin: .2em 0 0;
+            }
             .icon-social-media-discord {
                 background-position: 0 0
             }
-
             .icon-social-media-youtube {
                 background-position: 0 -61px
             }
-
             .icon-social-media-twitter {
                 background-position: 0 -122px
             }
-
             .icon-social-media-twitch {
                 background-position: 0 -183px
             }
-
             .icon-social-media-facebook {
                 background-position: 0 -244px
             }
-
             .icon-social-media-github {
                 background-position: 0 -305px
             }
-
             .icon-social-media-roblox {
                 background-position: 0 -429px
             }
+            div {
+                padding-left: 4.5em;
+                position: relative;
+                margin-left: .5em;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .light-theme & {
+                font-size: 16px;
+                color: #191919;
+                background-color: #fff;
+                border: 0.5px solid #b8b8b8;
+                &:focus, &:hover {
+                    font-size: 16px;
+                    color: #191919;
+                    background-color: #fff;
+                    border-color: #b8b8b8;
+                }
+                &:active {
+                    font-size: 16px;
+                    background-color: #fff;
+                    color: #191919;
+                }
+                &:link {
+                    font-size: 16px;
+                    color: #191919;
+                }
+                @media (max-width: 767px) {
+                    & when (@SourceSansPro = 0) {
+                        line-height: 1.4em;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        line-height: 1.3em;
+                    }
+                    margin: .5em;
+                    padding: 1em;
+                    border-radius: 6px;
+                    &:active, &:focus, &:hover {
+                        padding: 1em;
+                        border-radius: 6px;
+                    }
+                }
+            }
             .dark-theme & {
+                font-size: 16px;
                 color: #e6e6e6;
                 background-color: #000;
                 border: 0.5px solid #474747;
+                &:focus, &:hover {
+                    font-size: 16px;
+                    color: #e6e6e6;
+                    background-color: #000;
+                    border-color: #474747;
+                }
+                &:active {
+                    font-size: 16px;
+                    background-color: #000;
+                    color: #e6e6e6;
+                }
+                &:link {
+                    font-size: 16px;
+                    color: #e6e6e6;
+                }
+                @media (max-width: 767px) {
+                    & when (@SourceSansPro = 0) {
+                        line-height: 1.4em;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        line-height: 1.3em;
+                    }
+                    margin: .5em;
+                    padding: 1em;
+                    border-radius: 6px;
+                    &:active, &:focus, &:hover {
+                        padding: 1em;
+                        border-radius: 6px;
+                    }
+                }
             }
-            @media (max-width: 991px) {
-                width: 100%;
+            @media (max-width: 767px) {
+                & when (@SourceSansPro = 0) {
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    line-height: 1.3em;
+                }
+                margin: .5em;
+                padding: 1em;
+                border-radius: 6px;
+                &:active, &:focus, &:hover {
+                    padding: 1em;
+                    border-radius: 6px;
+                }
+            }
+        }
+        .light-theme & {
+            background-color: #fff;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
             }
         }
         .dark-theme & {
@@ -11479,6 +11600,120 @@
                     &:before {
                         background-position: -28px -616px;
                     }
+                }
+            }
+        }
+    }
+    .profile-statistics .MuiPaper-rounded {
+        background-color: #fff;
+        color: #191919;
+        padding: 15px;
+        position: relative;
+        transition: none;
+        border-radius: 0;
+        margin: 0 0 18px;
+        .btr-profile & {
+            display: contents !important;
+        }
+        .light-theme & {
+            background-color: #fff;
+            color: #191919;
+        }
+        .dark-theme & {
+            background-color: #000;
+            color: #e6e6e6;
+        }
+    }
+    .profile-stats {
+        display: table;
+        width: 100%;
+        padding: 0;
+        .profile-stat {
+            width: 50%;
+            float: left;
+            text-align: center;
+            display: list-item;
+            @media (max-width: 767px) {
+                width: 100%;
+                margin: 0 0 12px 0;
+            }
+            > span {
+                display: block;
+                font-weight: 500
+            }
+            [class*="body1-Typography-colorSecondary"] {
+                & when (@SourceSansPro = 0) {
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                line-height: 1.5em;
+                color: #b8b8b8;
+                .light-theme & {
+                    color: #b8b8b8;
+                }
+                .dark-theme & {
+                    color: #474747;
+                }
+                @media (max-width: 991px) {
+                    margin: 12px 6px;
+                }
+                @media (max-width: 767px) {
+                    & when (@SourceSansPro = 0) {
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                    display: inline-block;
+                    float: left;
+                    margin: 0;
+                    text-align: left;
+                    width: 45%;
+                }
+            }
+            [class*="Typography-body1-Typography-root"] {
+                & when (@SourceSansPro = 0) {
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                line-height: 1.5em;
+                color: #191919;
+                .light-theme & {
+                    color: #191919;
+                }
+                .dark-theme & {
+                    color: #e6e6e6;
+                }
+                @media (max-width: 767px) {
+                    & when (@SourceSansPro = 0) {
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                    width: 45%;
+                    display: inline-block;
+                    text-align: left;
+                    margin: 0;
+
                 }
             }
         }
@@ -18124,6 +18359,15 @@
         .btr-redesign #horizontal-tabs:has(>li:nth-child(4)):has(#btr-games), .btr-redesign #horizontal-tabs:has(>li:nth-child(5)):has(#btr-games), .btr-redesign #horizontal-tabs:has(>li:nth-child(6)):has(#btr-games), .btr-redesign #horizontal-tabs:has(>li:nth-child(7)):has(#btr-games) {
             --btr-num-tabs: 4;
         }
+    }
+    
+    .btr-profile .profile-statistics > h2 {
+         display: none !important;
+    }
+    .btr-profile .profile-stats {
+        border-top: 1px solid #E3E3E3;
+        border-bottom: 1px solid #E3E3E3;
+        margin-top: 10px;
     }
     
     /*/ Roblox+ /*/
