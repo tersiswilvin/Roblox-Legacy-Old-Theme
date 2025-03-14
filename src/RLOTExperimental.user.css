@@ -11803,10 +11803,10 @@
         }
         ul {
             padding: 0;
+            &:has(:nth-child(5)) li:first-child when (@RemoveUpdates = 1) {
+                display: none;
+            }
             li {
-                &:first-child when (@RemoveUpdates = 1) {
-                    display: none;
-                }
                 color: #191919;
                 & when (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
