@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250313.1.3.17
+@version      20250315.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5213,6 +5213,29 @@
         background-color: transparent;
     }
     
+    .search-landing-container {
+        -webkit-box-shadow: 0 1px 4px 0 rgba(25, 25, 25, .3);
+        box-shadow: 0 1px 4px 0 rgba(25, 25, 25, .3);
+        border-radius: 3px;
+        .light-theme & {
+            background-color: #e3e3e3;
+            -webkit-box-shadow: 0 1px 4px 0 rgba(25, 25, 25, .3);
+            box-shadow: 0 1px 4px 0 rgba(25, 25, 25, .3);
+        }
+        .dark-theme & {
+            background-color: #1c1c1c;
+            -webkit-box-shadow: 0 1px 4px 0 rgba(25, 25, 25, .3);
+            box-shadow: 0 1px 4px 0 rgba(25, 25, 25, .3);
+        }
+        .horizontal-scroller {
+            width: 100%;
+            overflow: hidden;
+            .spacer {
+                display: none;
+            }
+        }
+    }
+    
 	& when (@AvatarGogoSpinner = 1) {
 		@-webkit-keyframes gogoloader {
 			0% {
@@ -5409,7 +5432,7 @@
 	}
     
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel, .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel, .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container {
             display: none !important;
         }
         & when (@RemoveExtras = 1) {
@@ -5897,7 +5920,7 @@
             font-size: 16px;
             line-height: 1.3em;
         }
-        .profile-join-game.btn-growth-md:after {
+        .profile-join-game.btn-growth-md:after, .btn-join-game .text-label:after, .profile-header-buttons [class*="Primary"] [class*=textContainer]:after {
             content: ' Game';
         }
         
@@ -11334,7 +11357,7 @@
 	/*/ end of changes /*/
     
     /*/ Revert Webblox /*/
-    .profile-header {
+    #content .profile-header {
         &-main {
             background-color: #fff;
             padding: 15px;
@@ -11373,13 +11396,13 @@
                 & when (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                     font-size: 12px;
-                    font-weight: 400;
+                    font-weight: 400 !important;
                     line-height: 1.4em;
                 }
                 & when (@SourceSansPro = 1) {
                     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
                     font-size: 16px;
-                    font-weight: 300;
+                    font-weight: 300 !important;
                     line-height: 1.3em;
                 }
                 .light-theme & {
@@ -11442,8 +11465,14 @@
                             margin: 0;
                             padding: 5px 0;
                             color: #00a2ff;
-                            font-size: 12px;
-                            font-weight: 400;
+                            & when (@SourceSansPro = 0) {
+                                font-size: 12px;
+                                font-weight: 400;
+                            }
+                            & when (@SourceSansPro = 1) {
+                                font-size: 24px;
+                                font-weight: 300;
+                            }
                             display: block;
                             cursor: pointer;
                             &:focus, &:hover {
@@ -11519,8 +11548,20 @@
                 padding: 9px;
                 line-height: 100%;
                 min-height: unset;
+                min-width: unset;
+                transition: none;
+                & when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
+                    transition: all,0.2s,ease-in-out;
+                }
                 &:focus, &:hover {
-                    box-shadow: none;
+                    & when not (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
+                        box-shadow: none;
+                    }
+                    & when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
+                        -webkit-transition: box-shadow 200ms ease-in-out;
+                        -o-transition: box-shadow 200ms ease-in-out;
+                        transition: box-shadow 200ms ease-in-out;
+                    }
                 }
                 [class*="Ripple-"] {
                     display: none;
@@ -11531,6 +11572,7 @@
                     padding: 0;
                     float: left;
                     width: 50%;
+                    background: transparent;
                     border: none;
                     border-right: 1px solid #B8B8B8;
                     border-radius: 0;
@@ -11571,6 +11613,9 @@
                         }
                     }
                 }
+            }
+            [class*="Primary"] when (@SourceSansPro = 0) {
+                margin-bottom: 2px;
             }
             button[class*="IconButton-"] {
                 display: inline-block;
@@ -11759,6 +11804,9 @@
         ul {
             padding: 0;
             li {
+                &:first-child when (@RemoveUpdates = 1) {
+                    display: none;
+                }
                 color: #191919;
                 & when (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
@@ -11782,6 +11830,9 @@
                 [class*="Ripple-"] {
                     display: none;
                 }
+                &.Mui-focusVisible {
+                    background-color: transparent;
+                }
                 .light-theme & {
                     color: #191919;
                     &:hover {
@@ -11801,6 +11852,23 @@
             }
         }
     }
+    .profile-header-social-count-label {
+        & when (@SourceSansPro = 0) {
+            font-weight: 500;
+        }
+        & when (@SourceSansPro = 1) {
+            font-weight: 400;
+        }
+    }
+    .profile-header-dropdown-label {
+        & when (@SourceSansPro = 0) {
+            font-weight: 400;
+        }
+        & when (@SourceSansPro = 1) {
+            font-weight: 300;
+        }
+    }
+    /*/ end of changes /*/
     
     .game-grid, .game-grid.expand-home-content-disabled, .game-grid.expand-home-content {
         display: block;
@@ -14205,7 +14273,7 @@
 			border-radius: 5px;
 		}
 	}
-	.btn-cta-md, .btn-growth-md, .btn-primary-md, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .not-approved-page-content .action-buttons .btn-primary-md, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button {
+	.btn-cta-md, .btn-growth-md, .btn-primary-md, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .not-approved-page-content .action-buttons .btn-primary-md, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button, .profile-header-buttons [class*="Primary"] {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -14334,7 +14402,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-cta-lg, .btn-cta-md, .btn-cta-sm, .btn-cta-xs, .btn-growth-lg, .btn-growth-md, .not-approved-page-content .action-buttons .btn-primary-md, .btn-growth-sm, .btn-growth-xs, .btn-primary-lg, .btn-primary-md, .btn-primary-sm, .btn-primary-xs, .btn-common-play-game-lg, .btn-branded-robux-white-lg, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button {
+	.btn-cta-lg, .btn-cta-md, .btn-cta-sm, .btn-cta-xs, .btn-growth-lg, .btn-growth-md, .not-approved-page-content .action-buttons .btn-primary-md, .btn-growth-sm, .btn-growth-xs, .btn-primary-lg, .btn-primary-md, .btn-primary-sm, .btn-primary-xs, .btn-common-play-game-lg, .btn-branded-robux-white-lg, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button, .profile-header-buttons [class*="Primary"] {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #3fc679;
 			& when (@BoxShadows = 1) {
@@ -15105,7 +15173,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-generic-edit-lg, .btn-generic-edit-md, .btn-generic-edit-sm, .btn-generic-edit-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .btn-generic-locked-sm,a.btn-generic-locked-sm,button.btn-generic-locked-sm, .btn-generic-unlocked-sm,a.btn-generic-unlocked-sm,button.btn-generic-unlocked-sm, .avatar-card-btns .ignore-friend, .btn-generic-back-sm, a.btn-generic-back-sm, button.btn-generic-back-sm, .btn-generic-next-sm, a.btn-generic-next-sm, button.btn-generic-next-sm, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee {
+	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-generic-edit-lg, .btn-generic-edit-md, .btn-generic-edit-sm, .btn-generic-edit-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .btn-generic-locked-sm,a.btn-generic-locked-sm,button.btn-generic-locked-sm, .btn-generic-unlocked-sm,a.btn-generic-unlocked-sm,button.btn-generic-unlocked-sm, .avatar-card-btns .ignore-friend, .btn-generic-back-sm, a.btn-generic-back-sm, button.btn-generic-back-sm, .btn-generic-next-sm, a.btn-generic-next-sm, button.btn-generic-next-sm, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee, [class*="-buttonMedium"] {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #fff;
 			& when (@BoxShadows = 1) {
@@ -15699,7 +15767,7 @@
 				border-radius: 3px;
 			}
 		}
-		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md {
+		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"] {
 			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
 				padding: 7px;
 				font-size: 16px;
@@ -15759,7 +15827,7 @@
     
 	& when (@SourceSansPro = 0) {
 		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
-			& .btn-growth-md, & a.btn-growth-md {
+			& .btn-growth-md, & a.btn-growth-md, .profile-header-buttons [class*="Primary"] {
 				&, &:active, &:hover, &:link {
 					font-size: 16px;
 				}
@@ -15768,7 +15836,7 @@
 	}
 	& when (@SourceSansPro = 1) {
 		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
-			& .btn-growth-md, & a.btn-growth-md {
+			& .btn-growth-md, & a.btn-growth-md, .profile-header-buttons [class*="Primary"] {
 				&, &:active, &:hover, &:link {
 					font-size: 18px;
 				}
