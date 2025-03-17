@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250315.1.3.17
+@version      20250317.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -1091,9 +1091,14 @@
             }
         }
     }
+    [data-rosealfe-homefriendsrows] .react-friends-carousel-container .friends-carousel-list-container, [data-rosealfe-homefriendsrows] .react-friends-carousel-container .friends-carousel-list-container-not-full {
+        display: block !important;
+        > div {
+            width: 11.11111111%;
+        }
+    }
     .content .friends-carousel-tile {
         & when (@RemoveUpdates = 1) {
-            position: relative;
             width: 90px;
             margin: 3px auto;
         }
@@ -1148,6 +1153,12 @@
             .dark-theme & {
                 color: #474747;
             }
+        }
+        > div > div[style*="position"] {
+            left: 50% !important;
+            top: 100% !important;
+            margin-top: -33px;
+            transform: translate(-50%);
         }
     }
     .content .friends-carousel-display-name, html .btr-friends-list .friends-carousel-tile .friends-carousel-display-name {
@@ -6970,22 +6981,30 @@
         }
         [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
             &:before when not (@RestoreAds = None) {
-                content: "";
+                content: "Advertisement";
                 display: block;
                 & when (@RestoreAds = Default) {
+                    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
                     font-size: 12px;
                     line-height: 1.25;
-                    color: #757575;
-                    text-align: center;
+                    text-transform: uppercase;
+                    color: #191919;
+                    text-align: left;
                     background-color: transparent;
                 }
                 margin: 0 auto;
                 float: left;
                 margin-right: 24px;
                 width: 160px;
+                height: 615px;
                 min-height: 600px;
                 & when (@RestoreAds = Default) {
-                    background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                    & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+                        background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+                    }
+                    & when (@LogoStyle = 201701) {
+                        background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                    }
                     background-size: 160px 600px;
                     background-repeat: no-repeat;
                     aspect-ratio: auto 160 / 600;
@@ -6994,6 +7013,8 @@
                 clear: unset;
                 & when (@RestoreAds = Default) {
                     cursor: pointer;
+                    display: flex;
+                    flex-direction: column-reverse;
                 }
                 @media (max-width: 1358px) {
                     display: none;
@@ -7029,22 +7050,30 @@
             [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content, [data-internal-page-name="Messages"] .content {
                 overflow: auto;
                 &:after {
-                    content: "";
+                    content: "Advertisement";
                     display: block;
                     & when (@RestoreAds = Default) {
+                        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
                         font-size: 12px;
                         line-height: 1.25;
-                        color: #757575;
-                        text-align: center;
+                        text-transform: uppercase;
+                        color: #191919;
+                        text-align: left;
                         background-color: transparent;
                     }
                     margin: 0 auto;
                     float: left;
                     margin-left: 24px;
                     width: 160px;
+                    height: 615px;
                     min-height: 600px;
                     & when (@RestoreAds = Default) {
-                        background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                        & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+                            background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+                        }
+                        & when (@LogoStyle = 201701) {
+                            background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+                        }
                         background-size: 160px 600px;
                         background-repeat: no-repeat;
                         aspect-ratio: auto 160 / 600;
@@ -7053,6 +7082,8 @@
                     clear: unset;
                     & when (@RestoreAds = Default) {
                         cursor: pointer;
+                        display: flex;
+                        flex-direction: column-reverse;
                     }
                     @media (max-width: 1174px) {
                         display: none;
@@ -7061,23 +7092,30 @@
             }
             [data-internal-page-name="Avatar"] .content, [data-internal-page-name="Catalog"] .content, [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="Messages"] .content, [data-internal-page-name="Profile"] .content {
                 &:before {
-                    content: "";
+                    content: "Advertisement";
                     display: block;
                     & when (@RestoreAds = Default) {
+                        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
                         font-size: 12px;
-                        line-height: 1.25;
-                        color: #757575;
-                        text-align: center;
+                        line-height: 1.5;
+                        text-transform: uppercase;
+                        color: #191919;
+                        text-align: left;
                         background-color: transparent;
                     }
                     margin: 0 auto;
                     position: relative;
                     z-index: 0;
-                    height: 90px;
+                    height: 110px;
                     width: 728px;
                     min-height: 110px;
                     & when (@RestoreAds = Default) {
-                        background-image: url(https://images.rbxcdn.com/bb3b528306366a8b1a5a6ca40ead504a.png);
+                        & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+                            background-image: url(https://images.rbxcdn.com/ab60e8d4d6a69816eec62a561416850f.jpg);
+                        }
+                        & when (@LogoStyle = 201701) {
+                            background-image: url(https://images.rbxcdn.com/bb3b528306366a8b1a5a6ca40ead504a.png);
+                        }
                         background-size: 728px 90px;
                         background-repeat: no-repeat;
                         aspect-ratio: auto 728 / 90;
@@ -7085,6 +7123,8 @@
                     clear: unset;
                     & when (@RestoreAds = Default) {
                         cursor: pointer;
+                        display: flex;
+                        flex-direction: column-reverse;
                     }
                     @media (max-width: 728px) {
                         display: none;
@@ -7099,7 +7139,12 @@
                     height: 270px;
                     display: block;
                     & when (@RestoreAds = Default) {
-                        background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                        & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+                            background-image: url(https://images.rbxcdn.com/3361ecd3b9294a517ddf1f304819baac.jpg);
+                        }
+                        & when (@LogoStyle = 201701) {
+                            background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                        }
                         background-size: 300px 270px;
                         background-position: center;
                         background-repeat: space;
@@ -7133,7 +7178,12 @@
                     max-height: 525px;
                     display: none;
                     & when (@RestoreAds = Default) {
-                        background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                        & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+                            background-image: url(https://images.rbxcdn.com/3361ecd3b9294a517ddf1f304819baac.jpg);
+                        }
+                        & when (@LogoStyle = 201701) {
+                            background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+                        }
                         background-size: 300px 250px;
                         background-position: 15px 0;
                         background-repeat: space;
@@ -7343,26 +7393,25 @@
         }
     }
     
+    @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 300;
+        src: local("Source Sans Pro Light"),local("SourceSansPro-Light"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-300.woff2") format("woff2"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-300.woff") format("woff"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-300.svg#SourceSansPro") format("svg");
+    }
+    @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 400;
+        src: local("Source Sans Pro"),local("SourceSansPro-Regular"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-regular.woff2") format("woff2"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-regular.woff") format("woff"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-regular.svg#SourceSansPro") format("svg");
+    }
+    @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        src: local("Source Sans Pro Semibold"),local("SourceSansPro-Semibold"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.woff2") format("woff2"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.woff") format("woff"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.svg#SourceSansPro") format("svg");
+    }
     & when (@SourceSansPro = 1) {
-		@font-face {
-			font-family: 'Source Sans Pro';
-			font-style: normal;
-			font-weight: 300;
-			src: local("Source Sans Pro Light"),local("SourceSansPro-Light"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-300.woff2") format("woff2"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-300.woff") format("woff"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-300.svg#SourceSansPro") format("svg");
-		}
-		@font-face {
-			font-family: 'Source Sans Pro';
-			font-style: normal;
-			font-weight: 400;
-			src: local("Source Sans Pro"),local("SourceSansPro-Regular"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-regular.woff2") format("woff2"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-regular.woff") format("woff"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-regular.svg#SourceSansPro") format("svg");
-		}
-		@font-face {
-			font-family: 'Source Sans Pro';
-			font-style: normal;
-			font-weight: 600;
-			src: local("Source Sans Pro Semibold"),local("SourceSansPro-Semibold"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.woff2") format("woff2"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.woff") format("woff"),url("//static.rbxcdn.com/fonts/source-sans-pro-v9-latin-600.svg#SourceSansPro") format("svg");
-		}
-		
         .gotham-font, .builder-font {
             &, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, .text, body, button, html, input, pre, select, textarea, 	&.chat-container .btn-control-xs, .chat-container .btn-control-xs, &.chat-container .chat-search-input, .chat-container .chat-search-input, .chat-main .btn-control-md, .create-chat-container .select-friends-btns .select-friends-cancel, .create-chat-container .select-friends-btns .select-friends-save, .details-btns-fixed button, .details-btns button, .details-container .details-input, .details-header-container .details-input, .dialog-container .dialog-input, .game-item-container .game-btn, .group-dialog .group-name-editor .group-name-input, .group-dialog .group-name-editor .group-name-save, .group-dialog .play-together-game-editor .group-name-input, .group-dialog .play-together-game-editor .group-name-save, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details .text-name span {
                 font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
@@ -10029,11 +10078,18 @@
         padding: 12px;
     }
     
+    .profile-header .header-caption .header-title {
+        cursor: text;
+        .premium-badge-right-aligned {
+            cursor: auto;;
+        }
+    }
     .header-title .tooltip-container {
         display: none;
     }
     .profile-name-button {
         padding: 0;
+        pointer-events: none
     }
     
     .game-stat p {
@@ -18938,6 +18994,9 @@
         .dark-theme & {
             background-color: #000;
         }
+    }
+    .transparent-background-menu .vertical-menu-section .with-search-bar .input-group-btn {
+        display: table-cell;
     }
     
 	/*/== Themes ==/*/
