@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.24
+// @version      1.2.25
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -1205,7 +1205,10 @@ button:hover .icon-nav-forum, a:hover .icon-nav-forum {
         if (Settings.Global.JSClasses) {
             document.body.classList.add("UNRenamedEnabled")
         }
-        document.getElementById("upgrade-now-button").innerHTML = document.getElementById("upgrade-now-button").innerHTML.replace(/Get Premium/g, "Upgrade Now");
+        var upgradenowbtn = document.getElementById("upgrade-now-button");
+        if (upgradenowbtn.innerText.includes("Premium")) {
+            upgradenowbtn.innerText = "Upgrade Now";
+        }
     }
     if (Settings.Global.RestoreEvents) {
         if (Settings.Global.JSClasses) {
@@ -1684,7 +1687,7 @@ ${(!Settings.Pages.MyFeeds.ModernFormat && `
         }
         GM_xmlhttpRequest({
             method: "GET",
-            url: "https://api.buttercms.com/v2/pages/long_form_page/?locale=en&preview=0&page=1&page_size=3&fields.page_type.localized_slug=newsroom&fields.unlist_page=false&order=-displayed_publish_date&auth_token=137ac5a15935fab769262b6167858b427157ee3d",
+            url: "https://api.buttercms.com/v2/pages/long_form_page/?locale=en&preview=0&page=1&page_size=3&slug=newsroom&fields.unlist_page=false&order=-displayed_publish_date&auth_token=137ac5a15935fab769262b6167858b427157ee3d",
             onload: function(response) {
                 const json = JSON.parse(response.responseText);
                 const posts = []
