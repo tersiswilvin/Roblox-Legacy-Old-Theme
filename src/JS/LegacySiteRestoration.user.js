@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy Site Restoration
 // @namespace    userstyles.world/user/tersiswilvin
-// @version      1.2.25
+// @version      1.2.26
 // @description  Restores Legacy Site elements back on Roblox.
 // @author       TersisWilvin
 // @license      CC-BY-SA-4.0
@@ -1776,7 +1776,7 @@ if (Settings.Global.LegacyEditDescription.Enabled) {
         const editSelection = document.getElementById("CancelInfoSettings").parentNode.parentNode.parentNode;
         editSelection.parentNode.removeChild(editSelection);
     })
-    waitForElm(".setting-section:not(#rbx-account-info-header) .remove-panel #account-field-username").then(async (Elm) => {
+    waitForElm(".setting-section:not(#rbx-account-info-header) #account-field-username").then(async (Elm) => {
         saveSettingsStyle = document.createElement("style");
         saveSettingsStyle.innerHTML = `
 .save-settings-container {
