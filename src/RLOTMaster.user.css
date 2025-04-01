@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20241229.1.3.17
+@version      20250401.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -13,7 +13,7 @@
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
 @var          select   SiteCurrency                "Currency Brand Style"               ["Robux*","Tickets"]
-@var          select   CustomTheme                 "Custom Site Theme"                  ["None*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
+@var          select   CustomTheme                 "Custom Site Theme"                  ["None","April_Fools*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
 @var          checkbox fiveColumn                  "Five column Avatar Editor"          1
 @var          checkbox Fix19MICT                   "Fixed 2019M Item Card Transitions"  0
@@ -18258,12 +18258,26 @@
             }
         }
         .rbx-left-col {
+            display: flex;
+            flex-direction: column-reverse;
             &:before, &:after {
                 bottom: unset;
                 top: 0;
             }
+            &:before {
+                margin: 24px 0 0;
+                .gotham-font &, .builder-font & {
+                    margin: 20px 0 0;
+                }
+            }
+            &:after {
+                margin: 6px 0 0;
+                .gotham-font &, .builder-font & {
+                    margin: 5px 0 0;
+                }
+            }
             top: 0;
-            &.nav-show {
+            &.nav-show, .btr-no-hamburger & {
                 display: flex;
                 flex-direction: column-reverse;
             }
@@ -18349,7 +18363,7 @@
                 bottom: -60px
             }
         }
-        .rbx-the-hunt-container {
+        .rbx-the-hunt-container, .rbx-platform-event-container {
             display: flex;
             flex-direction: column-reverse;
         }
