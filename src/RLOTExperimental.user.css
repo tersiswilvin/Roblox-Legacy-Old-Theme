@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250401.1.3.17
+@version      20250403.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -13,7 +13,7 @@
 @var          checkbox BoxShadows                  "Box Shadows"                        0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
 @var          select   SiteCurrency                "Currency Brand Style"               ["Robux*","Tickets"]
-@var          select   CustomTheme                 "Custom Site Theme"                  ["None","April_Fools*","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_OBC"]
+@var          select   CustomTheme                 "Custom Site Theme"                  ["None*","April_Fools","BloxTober","BTR_Night","BTR_Red","BTR_Simblk","BTR_Sky","L_Red","RPlus_Easter","RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
 @var          checkbox fiveColumn                  "Five column Avatar Editor"          1
 @var          checkbox Fix19MICT                   "Fixed 2019M Item Card Transitions"  0
@@ -8357,7 +8357,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250401.1.3.17";
+            content: "Milestone 20250403.1.3.17";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
