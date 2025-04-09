@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250403.1.3.17
+@version      20250409.1.3.17
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -3926,7 +3926,12 @@
     .profile-header .header-caption .header-details .details-info {
         position: absolute;
         bottom: 0;
-        width: 40%;
+        & when (@LegacyNextStyleGuideButtons = 0) {
+            width: 40%;
+        }
+        & when (@LegacyNextStyleGuideButtons = 1) {
+            width: 36%;
+        }
         display: block
     }
     .profile-header .header-caption .header-details .details-info li {
@@ -7028,6 +7033,12 @@
                     display: flex;
                     flex-direction: column-reverse;
                 }
+                .light-theme& {
+                    color: #191919;
+                }
+                .dark-theme& {
+                    color: #e6e6e6;
+                }
                 @media (max-width: 1358px) {
                     display: none;
                 }
@@ -7097,6 +7108,12 @@
                         display: flex;
                         flex-direction: column-reverse;
                     }
+                    .light-theme& {
+                        color: #191919;
+                    }
+                    .dark-theme& {
+                        color: #e6e6e6;
+                    }
                     @media (max-width: 1174px) {
                         display: none;
                     }
@@ -7137,6 +7154,12 @@
                         cursor: pointer;
                         display: flex;
                         flex-direction: column-reverse;
+                    }
+                    .light-theme& {
+                        color: #191919;
+                    }
+                    .dark-theme& {
+                        color: #e6e6e6;
                     }
                     @media (max-width: 728px) {
                         display: none;
@@ -8357,7 +8380,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250403.1.3.17";
+            content: "Milestone 20250409.1.3.17";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -9722,7 +9745,7 @@
         }
     }
     & when (@PlayButtonStyle = 2018M) or (@PlayButtonStyle = 2018L) {
-        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg {
+        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg, .gotham-font #game-details-play-button-container .btn-economy-robux-white-lg, .gotham-font #game-details-play-button-container a.btn-economy-robux-white-lg, .builder-font #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font #game-details-play-button-container a.btn-economy-robux-white-lg {
             padding: 15px 15px;
         }
         #game-details-play-button-container .random-server-button .icon-common-play {
@@ -9740,15 +9763,15 @@
             font-size: 21px;
             line-height: 100%;
         }
-        .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
+        .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .game-main-content #game-details-play-button-container .btn-economy-robux-white-lg {
             width: 88%;
         }
     }
     & when (@PlayButtonStyle = 2019E) {
-        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg {
+        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg, .gotham-font #game-details-play-button-container .btn-economy-robux-white-lg, .gotham-font #game-details-play-button-container a.btn-economy-robux-white-lg, .builder-font #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font #game-details-play-button-container a.btn-economy-robux-white-lg {
             padding: 12px 12px;
         }
-        .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
+        .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .game-main-content #game-details-play-button-container .btn-economy-robux-white-lg {
             width: 88%;
         }
         #game-details-play-button-container .btn-common-play-game-lg:not(.random-server-button) .icon-common-play {
@@ -9756,10 +9779,10 @@
         }
     }
     & when (@PlayButtonStyle = 2019M) {
-        .gotham-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .builder-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
+        .gotham-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .builder-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .gotham-font .game-main-content #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font .game-main-content #game-details-play-button-container .btn-economy-robux-white-lg {
             width: 100%;
         }
-        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg {
+        .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg, .gotham-font #game-details-play-button-container .btn-economy-robux-white-lg, .gotham-font #game-details-play-button-container a.btn-economy-robux-white-lg, .builder-font #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font #game-details-play-button-container a.btn-economy-robux-white-lg {
             padding: 4px 16px;
         }
         .gotham-font .game-main-content .game-calls-to-action #game-details-play-button-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container, .builder-font .game-main-content .game-calls-to-action #game-details-play-button-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container #game-details-play-button-container {
@@ -9771,7 +9794,7 @@
         }
     }
     
-    #game-details-play-button-container .btn-common-play-game-action-needed-lg, #game-details-play-button-container .btn-common-play-game-lg, #game-details-play-button-container .btn-common-play-game-unplayable-lg {
+    #game-details-play-button-container .btn-common-play-game-action-needed-lg, #game-details-play-button-container .btn-common-play-game-lg, #game-details-play-button-container .btn-common-play-game-unplayable-lg, #game-details-play-button-container .btn-common-play-game-action-needed-lg, #game-details-play-button-container .btn-common-play-game-lg, #game-details-play-button-container .btn-common-play-game-unplayable-lg, #game-details-play-button-container .btn-economy-robux-white-lg {
         min-height: unset;
     }
     
@@ -9809,7 +9832,7 @@
             .gotham-font .game-main-content .game-calls-to-action .game-buttons-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container {
                 margin: 0;
             }
-            .game-main-content #game-details-play-button-container .btn-common-play-game-lg {
+            .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .game-main-content #game-details-play-button-container .btn-economy-robux-white-lg {
                 width: 60%;
             }
         }
@@ -11484,7 +11507,12 @@
         &-social-counts {
             position: absolute;
             bottom: 0;
-            width: 40%;
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                width: 40%;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                width: 36%;
+            }
             display: block;
             @media (max-width: 767px) {
                 width: 100%;
@@ -12536,156 +12564,181 @@
     }
     
     /*/ Revert Server Playerlist /*/
-    
-    .dark-theme .stack .card-list .card-item {
-        background-color: #000;
-    }
-    
-    .light-theme .stack .server-player-count-gauge {
-        background-color: #e3e3e3;
-        border-color: #b8b8b8;
-    }
-    .dark-theme .stack .server-player-count-gauge {
-        background-color: #1c1c1c;
-        border-color: #474747;
-    }
-    
-    .light-theme .stack .server-player-count-gauge .gauge-inner-bar {
-        background-color: #b8b8b8;
-        border-color: #b8b8b8;
-    }
-    .dark-theme .stack .server-player-count-gauge .gauge-inner-bar {
-        background-color: #474747;
-        border-color: #474747;
-    }
-    
-    .stack .card-list .col-md-3 {
-        width: 100%
-    }
-    
-    .stack .card-list .card-item, .stack .card-list .rbx-private-game-server-item .card-item {
-        margin: 0 0 6px;
-        padding: 12px;
-        position: relative;
-        border-radius: 0;
-        flex-basis: auto;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-        min-height: auto;
-        & when (@BoxShadows = 1) {
-            box-shadow: 0 1px 3px rgb(150 150 150 / 74%);
-        }
-    }
-    .dark-theme .stack .card-list .card-item, .dark-theme .stack .card-list .rbx-private-game-server-item .card-item {
-        & when (@BoxShadows = 1) {
-            box-shadow: 0 1px 3px rgb(105 105 105 / 74%);
-        }
-    }
-    
-    .stack .server-player-count-gauge {
-        display: none;
-    }
-    
-    .stack .card-list .card-item .game-server-details, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details {
-        width: 20%;
-        border-right: 1px solid #b8b8b8;
-        padding-right: 12px;
-        float: left;
-    }
-	.stack .card-list .card-item .section-header {
-		overflow: visible;
-	}
-    .dark-theme .stack .card-list .card-item .game-server-details {
-        border-color: #474747;
-    }
-    .light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details, .dark-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details {
-		border-right: none;
-		padding-right: 0;
-        margin: 0;
-    }
-	.light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div:not(.link-menu):not(:nth-child(1)), .light-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div + span {
-        border-right: 1px solid #b8b8b8;
-        padding-right: 12px;
-    }
-	.dark-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div:not(.link-menu):not(:nth-child(1)), .dark-theme .stack .card-list .rbx-private-game-server-item .card-item .game-server-details div + span {
-        border-right: 1px solid #474747;
-        padding-right: 12px;
-    }
-    .stack .card-list .card-item .player-thumbnails-container {
-        padding: 0 0 0 5px;
-        width: 78%;
-        float: left;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        column-gap: 0;
-        row-gap: 0;
-        max-width: none;
-    }
-    .stack .card-list .rbx-private-game-server-item .card-item .player-thumbnails-container {
-		max-width: none;
-		align-self: center;
-	}
-	
-    .stack .card-list {
-        display: block;
-        flex-wrap: wrap;
-        row-gap: 0;
-        column-gap: 0;
-        margin-bottom: 0;
-    }
-    
-    .stack .card-list .card-item .text-info.rbx-game-status, .stack .card-list .card-item .friends-in-server-label, .stack .card-list .card-item .rbx-private-owner, .stack .card-list .card-item.rbx-private-game-server-item .game-server-details .text-info.rbx-game-status, .stack .card-list .rbx-private-game-server-item .card-item .game-server-details .text-info.rbx-game-status {
-        margin: 0;
-    }
-    
-    .stack .card-list .card-item button.rbx-private-server-renew {
-        margin: 12px auto 0;
-    }
-    
-    .stack .card-list .avatar-headshot-md {
-        width: 48px;
-        height: 48px;
-        display: inline-block;
-        margin: 0 6px 6px 0;
-    }
-    
-    .light-theme .stack .card-list .player-thumbnails-container .player-avatar.hidden-players-placeholder {
-        background-color: #e3e3e3
-    }
-    .dark-theme .stack .card-list .player-thumbnails-container .player-avatar.hidden-players-placeholder {
-        background-color: #1c1c1c;
-    }
-    
-    @media (max-width: 991px) {
-        .stack .container-header, .stack .card-list {
-            padding: 0;
-        }
-        .stack .card-list .card-item .game-server-details {
+    .stack {
+        .card-list {
             display: block;
-            flex-direction: unset;
-            align-items: normal;
-            margin-right: 0px;
-            min-width: 0;
+            flex-wrap: wrap;
+            row-gap: 0;
+            column-gap: 0;
+            margin-bottom: 0;
+            .card-item {
+                .game-server-details {
+                    width: 20%;
+                    border-right: 1px solid #b8b8b8;
+                    padding-right: 12px;
+                    margin: 0;
+                    float: left;
+                    .light-theme & {
+                        border-color: #b8b8b8;
+                    }
+                    .dark-theme & {
+                        border-color: #474747;
+                    }
+                    @media (max-width: 991px) {
+                        border-right: none;
+                    }
+                }
+            }
+            .rbx-private-game-server-item .card-item {
+                .game-server-details {
+                    border-right: none;
+                    padding-right: 0;
+                    margin: 0;
+                    .light-theme &, .dark-theme & {
+                        border-right: none;
+                        padding-right: 0;
+                        margin: 0;
+                    }
+                    > *:not(.link-menu):not(:nth-child(1)) {
+                        border-right: 1px solid #b8b8b8;
+                        padding-right: 12px;
+                        @media (max-width: 991px) {
+                            border-right: none;
+                            padding-right: none;
+                        }
+                    }
+                }
+                .player-thumbnails-container {
+                    max-width: none;
+                    align-self: center;
+                }
+            }
+            .card-item, .rbx-private-game-server-item .card-item {
+                margin: 0 0 6px;
+                padding: 12px;
+                position: relative;
+                border-radius: 0;
+                flex-basis: auto;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                min-height: auto;
+                & when (@BoxShadows = 1) {
+                    box-shadow: 0 1px 3px rgb(150 150 150 / 74%);
+                }
+                .light-theme & {
+                    background-color: #fff;
+                    & when (@BoxShadows = 1) {
+                        box-shadow: 0 1px 3px rgb(150 150 150 / 74%);
+                    }
+                }
+                .dark-theme & {
+                    background-color: #000;
+                    & when (@BoxShadows = 1) {
+                        box-shadow: 0 1px 3px rgb(105 105 105 / 74%);
+                    }
+                }
+                .section-header {
+                    overflow: visible;
+                }
+                .game-server-details {
+                    width: 20%;
+                    margin: 0;
+                    float: left;
+                    @media (max-width: 991px) {
+                        display: block;
+                        flex-direction: unset;
+                        align-items: normal;
+                        margin-right: 0px;
+                        padding-right: 0;
+                        float: none;
+                        width: 100%;
+                        min-width: 0;
+                        .text-info.rbx-game-status {
+                            margin: 0;
+                        }
+                    }
+                }
+                .player-thumbnails-container {
+                    padding: 0 0 0 5px;
+                    width: 78%;
+                    float: left;
+                    display: block;
+                    max-width: none;
+                    .player-avatar.hidden-players-placeholder {
+                        background-color: #e3e3e3;
+                        .light-theme & {
+                            background-color: #e3e3e3;
+                        }
+                        .dark-theme & {
+                            background-color: #1c1c1c;
+                        }
+                    }
+                    @media (max-width: 991px) {
+                        margin-top: 12px;
+                    }
+                }
+                .text-info.rbx-game-status, .friends-in-server-label, .rbx-private-owner, .game-server-details .text-info.rbx-game-status {
+                    margin: 0;
+                }
+                @media (max-width: 991px) {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+            }
+            .card-item.card-item-public-server {
+                min-height: unset;
+            }
+            .avatar-headshot-md {
+                width: 48px;
+                height: 48px;
+                display: inline-block;
+                margin: 0 6px 6px 0;
+            }
+            @media (max-width: 991px) {
+                padding: 0;
+            }
         }
-        .stack .card-list .card-item .game-server-details .text-info.rbx-game-status {
-            margin: 0;
-        }
-        .light-theme .stack .card-list .card-item .game-server-details, .dark-theme .stack .card-list .card-item .game-server-details {
-            border-right: none;
-        }
-            .stack .card-list .card-item .game-server-details, .stack .card-list .card-item .player-thumbnails-container {
-            float: none;
+        .col-md-3 {
             width: 100%;
-            min-width: 0;
         }
-        .stack .card-list .card-item {
-            display: flex;
-            flex-direction: column-reverse;
+        .server-player-count-gauge {
+            & when (@RemoveUpdates = 1) {
+                display: none;
+            }
+            background-color: #e3e3e3;
+            border-color: #b8b8b8;
+            .light-theme & {
+                background-color: #e3e3e3;
+                border-color: #b8b8b8;
+            }
+            .dark-theme & {
+                background-color: #1c1c1c;
+                border-color: #474747;
+            }
+            .gauge-inner-bar {
+                background-color: #b8b8b8;
+                border-color: #e3e3e3;
+                .light-theme & {
+                    background-color: #b8b8b8;
+                    border-color: #e3e3e3;
+                }
+                .dark-theme & {
+                    background-color: #474747;
+                    border-color: #1c1c1c;
+                }
+            }
         }
-        .stack .card-list .card-item .player-thumbnails-container {
-            margin-top: 12px;
+        button.rbx-private-server-renew {
+            margin: 12px auto 0;
+        }
+        .server-id-text when (@RemoveUpdates = 1) {
+            display: none;
+        }
+        @media (max-width: 991px) {
+            .container-header {
+                padding: 0;
+            }
         }
     }
     
@@ -16983,6 +17036,18 @@
 			background-position: 0 -80px;
 			filter: brightness(3);
 		}
+    }
+    
+    .btn-economy-robux-white-lg {
+        &, a&, button& {
+            &.disabled, &[disabled], & {
+                &:hover, & {
+                    span[class^=icon-] {
+                        background-position: 0 -252px;
+                    }
+                }
+            }
+        }
     }
     
     .light-theme .icon-clanpoint, .light-theme .icon-default-branded, .light-theme .icon-favorite, .light-theme .icon-favorite.favorited, .light-theme .icon-follow-game, .light-theme .icon-follow-game-gray, .light-theme .icon-follow-game.disabled, .light-theme .icon-follow-game.followed, .light-theme .icon-leaderboard, .light-theme .icon-playerpoint, .light-theme .icon-robux, .light-theme .icon-robux-28x28, .light-theme .icon-robux-burst-banner, .light-theme .icon-robux-gold, .light-theme .icon-robux-gray, .light-theme .icon-robux-white, .dark-theme .icon-clanpoint, .dark-theme .icon-default-branded, .dark-theme .icon-favorite, .dark-theme .icon-favorite.favorited, .dark-theme .icon-follow-game, .dark-theme .icon-follow-game-gray, .dark-theme .icon-follow-game.disabled, .dark-theme .icon-follow-game.followed, .dark-theme .icon-leaderboard, .dark-theme .icon-playerpoint, .dark-theme .icon-robux, .dark-theme .icon-robux-28x28, .dark-theme .icon-robux-burst-banner, .dark-theme .icon-robux-gold, .dark-theme .icon-robux-gray, .dark-theme .icon-robux-white {
