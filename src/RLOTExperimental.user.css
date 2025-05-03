@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250502.1.3.18
+@version      20250503.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -8393,7 +8393,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250502.1.3.18";
+            content: "Milestone 20250503.1.3.18";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -16729,8 +16729,6 @@
                         }
                     }
                     .dialog-message {
-                        max-width: 90%;
-                        max-width: calc(100% - 24px);
                         & when (@LegacyNSGBoxShadows = 1) {
                             -webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
                             box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
@@ -16755,7 +16753,8 @@
                             font-weight: 400;
                         }
                         &-body {
-                            max-width: 100%;
+                            max-width: 90%;
+                            max-width: calc(100% - 24px);
                         }
                     }
                     &:not(.message-inbound) .dialog-message {
@@ -16930,8 +16929,119 @@
                     }
                 }
             }
-            .group-dialog .dialog-message-container.message-inbound .dialog-message-author {
-                margin: 0 12px
+            .group-dialog .dialog-message-container.message-inbound .link-card-container {
+                margin-left: 0;
+            }
+            .group-dialog .dialog-message-container.message-inbound .dialog-message {
+                margin-left: 0;
+                &-author {
+                    color: #B8B8B8;
+                    margin-bottom: 6px;
+                    width: 100%;
+                    .text-muted {
+                        color: #B8B8B8;
+                        .light-theme .dialogs & {
+                            color: #B8B8B8;
+                        }
+                        .dark-theme .dialogs & {
+                            color: #474747;
+                        }
+                    }
+                    .light-theme .dialogs & {
+                        color: #B8B8B8;
+                    }
+                    .dark-theme .dialogs & {
+                        color: #474747;
+                    }
+                }
+                &-avatar-link {
+                    margin: 0 12px;
+                    display: block;
+                }
+                &-body {
+                    background-color: #fff;
+                    -webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
+                    box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
+                    color: #191919;
+                    border-radius: 3px;
+                    padding: 6px;
+                    word-wrap: break-word;
+                    line-height: 1.2em;
+                    .light-theme & when (@LegacyNSGBoxShadows = 1) {
+                        -webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
+                        box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
+                    }
+                    .dark-theme & when (@LegacyNSGBoxShadows = 1) {
+                        -webkit-box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
+                        box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
+                    }
+                    max-width: 75%;
+                    max-width: calc(100% - 28px - 12px * 4);
+                    position: relative;
+                    &:before {
+                        border-color: transparent #fff transparent transparent;
+                        border-style: solid;
+                        border-width: 6px;
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        left: auto;
+                        right: 100%;
+                        position: absolute;
+                        top: 10px;
+                        .light-theme .dialogs & {
+                            border-color: transparent #fff transparent transparent;
+                        }
+                        .dark-theme .dialogs & {
+                            border-color: transparent #000 transparent transparent;
+                        }
+                    }
+                    .dialog-message {
+                        background-color: transparent;
+                        .light-theme .dialogs &, .dark-theme .dialogs & {
+                            background-color: transparent;
+                            padding: 0;
+                            margin: 0;
+                            & when (@LegacyNSGBoxShadows = 1) {
+                                -webkit-box-shadow: none;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .group-dialog .dialog-message-container.message-inbound .dialog-message-body:has(.link-card-container) {
+                padding: 6px 8px;
+                margin: 0 0 2px;
+                .link-card-container {
+                    background-color: transparent;
+                    width: 100%;
+                    max-width: 100%;
+                    .light-theme .dialogs &, .dark-theme .dialogs & {
+                        background-color: transparent;
+                        padding: 0;
+                        margin: 0;
+                        & when (@LegacyNSGBoxShadows = 1) {
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                        }
+                    }
+                }
+                .link-card-top-container {
+                    padding-left: 0;
+                }
+                .link-card-details {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                .link-card-btn {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+            .dialog-container .dialog-message-container .link-card-msg-wrap {
+                margin: 0;
             }
             .chat-disconnect {
                 text-align: center;
