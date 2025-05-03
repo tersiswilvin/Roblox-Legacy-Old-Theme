@@ -16960,8 +16960,10 @@
                 }
                 &-body {
                     background-color: #fff;
-                    -webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
-                    box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
+                    & when (@LegacyNSGBoxShadows = 1) {
+                        -webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
+                        box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
+                    }
                     color: #191919;
                     border-radius: 3px;
                     padding: 6px;
