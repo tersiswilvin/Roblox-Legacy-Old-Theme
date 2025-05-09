@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250505.1.3.18
+@version      20250509-00.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -505,6 +505,7 @@
     }
     
     .app-icon-size-96 {
+        background-size: 95px 95px;
         width: 95px;
         height: 95px;
     }
@@ -8360,6 +8361,7 @@
     }
 	
 	/*/=={ Watermark }==/*/
+    @doubleLineEnabled: false;
     .rbx-left-col when not (@WatermarkStyle = None) {
         &:before {
             content: "(Legacy Theme) Testing Purposes Only";
@@ -8380,12 +8382,22 @@
                 width: 100%;
                 padding: 0 10px;
             }
-            margin: 0 0 24px;
+            & when (@doubleLineEnabled = false) {
+                margin: 0 0 24px;
+            }
+            & when (@doubleLineEnabled = true) {
+                margin: 0 0 36px;
+            }
             & when (@SourceSansPro = 0) {
                 .gotham-font &, .builder-font & {
                     font-size: 16px;
                     line-height: 16px;
-                    margin: 0 0 20px;
+                    & when (@doubleLineEnabled = false) {
+                        margin: 0 0 20px;
+                    }
+                    & when (@doubleLineEnabled = true) {
+                        margin: 0 0 30px;
+                    }
                 }
             }
             .light-theme & {
@@ -8398,11 +8410,12 @@
             }
         }
         &:after {
-            content: "Milestone 20250505.1.3.18";
+            content: "Milestone 20250509.1.3.18 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
             text-align: center;
+            white-space: pre;
             position: absolute;
             display: block;
             bottom: 0;
@@ -11664,6 +11677,32 @@
                 padding: 0 5px;
                 text-align: center;
                 width: 33%;
+                &[style="float: left;display: flex;align-items: center;flex-direction: row-reverse;padding-right: 15px;"] {
+                    float: left !important;
+                    display: block !important;
+                    align-items: normal !important;
+                    flex-direction: revert !important;
+                    padding: 0 5px !important;
+                    .font-header-2{
+                        line-height: 1em;
+                        padding: 5px 0 !important;
+                        color: #00a2ff;
+                        & when (@SourceSansPro = 0) {
+                            font-size: 12px;
+                            font-weight: 400;
+                        }
+                        & when (@SourceSansPro = 1) {
+                            font-size: 24px;
+                            font-weight: 300;
+                        }
+                        display: block;
+                        cursor: pointer;
+                        &:focus, &:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
                 a {
                     display: block;
                     text-decoration: none;
@@ -11715,6 +11754,23 @@
                             }
                         }
                     }
+                }
+            }
+            &:has(li:nth-child(4)) li {
+                width: 25%;
+                @media (max-width: 990px) and (min-width: 768px) {
+                    width: 33%
+                }
+            }
+            &:has(li:nth-child(5)) li {
+                width: 20%
+            }
+            &:has(li:nth-child(6)) li:nth-child(1n+6) {
+                display: none !important
+            }
+            @media (max-width: 990px) and (min-width: 768px) {
+                &:has(li:nth-child(4)) li:nth-child(1n+4) {
+                    display: none !important;
                 }
             }
         }
@@ -19378,6 +19434,11 @@
     }
     .transparent-background-menu .vertical-menu-section .with-search-bar .input-group-btn {
         display: table-cell;
+    }
+    [data-rosealfe-pendingrobuxnav] #nav-robux-amount
+    {
+        display: inline-block;
+        align-items: unset;
     }
     
 	/*/== Themes ==/*/
