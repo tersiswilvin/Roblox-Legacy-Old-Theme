@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250509-00.1.3.18
+@version      20250510-00.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2400,30 +2400,6 @@
     
     #nav-giftcards {
         display: none
-    }
-    .rbx-left-col li #nav-shop .font-header-2 {
-        font-size: 0;
-        width: 121px;
-        text-align: left;
-    }
-    .rbx-left-col li #nav-shop .font-header-2:after {
-        content: "Shop";
-        font-size: 16px;
-		& when (@SourceSansPro = 0) {
-			font-weight: 500;
-		}
-		& when (@SourceSansPro = 1) {
-			font-weight: 400;
-		}
-		line-height: 1.42857;
-    }
-    @media (max-width: 767px) {
-        #nav-premium .font-header-2.dynamic-ellipsis-item:after {
-            font-size: 12px !important
-        }
-        .rbx-left-col li #nav-shop .font-header-2:after {
-            font-size: 12px;
-        }
     }
     
     .light-theme .profile-accoutrements-container .profile-accoutrements-page-container .profile-accoutrements-page, .dark-theme .profile-accoutrements-container .profile-accoutrements-page-container .profile-accoutrements-page
@@ -5711,14 +5687,14 @@
         .game-home-page-container .game-error .error-text {
             font-size: 0;
             margin-top: 0;
-        }
-        .game-home-page-container .game-error .error-text:before {
-            content: 'Games failed to load';
-            font-size: 16px;
-			font-weight: inherit;
-            line-height: 1.5em;
-            margin-top: 12px;
-            display: block;
+            &:before {
+                content: 'Games failed to load';
+                font-size: 16px;
+                font-weight: inherit;
+                line-height: 1.5em;
+                margin-top: 12px;
+                display: block;
+            }
         }
 		
 		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-heads"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/my-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/other-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/my-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/other-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span {
@@ -5829,20 +5805,20 @@
 			cursor: text;
 		}
 		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/private-servers"]) ~ .tab-content .breadcrumb-container li:first-child span {
-			font-size: 0
-		}
-		.rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/private-servers"]) ~ .tab-content .breadcrumb-container li:first-child span:after {
-			content: 'VIP Servers';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-			cursor: text;
+			font-size: 0;
+            &:after {
+                content: 'VIP Servers';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                cursor: text;
+            }
 		}
 		.rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/my-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
 			content: 'My VIP Servers';
@@ -5897,12 +5873,12 @@
         }
         .game-stats-container.follow-button-enabled .game-stat-width-voice {
             width: 12.5%;
+            &:nth-child(4) {
+                display: none;
+            }
             @media (max-width: 767px) {
                 width: 100%;
             }
-        }
-        .game-stats-container.follow-button-enabled .game-stat-width-voice:nth-child(4) {
-            display: none;
         }
         .transaction-type-dropdown, .transaction-date-dropdown {
             float: none;
@@ -5912,12 +5888,12 @@
         }
         .group-details .container-header h2[ng-bind="'Heading.Games' | translate"] {
             font-size: 0;
-        }
-        .group-details .container-header h2[ng-bind="'Heading.Games' | translate"]:after {
-            content: 'Games';
-            font-size: 20px;
-            line-height: 1em;
-			cursor: text;
+            &:after {
+                content: 'Games';
+                font-size: 20px;
+                line-height: 1em;
+                cursor: text;
+            }
         }
     
         #btr-games .rbx-tab-heading span {
@@ -5946,7 +5922,7 @@
         }
         .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-games-off ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-shop ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-profile ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-library ~ .navbar-list-option-suffix {
             font-size: 0;
-            height: 20.8px
+            line-height: 0;
         }
         .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-games-off ~ .navbar-list-option-suffix:after {
             content: 'in Games';
@@ -6034,10 +6010,10 @@
         }
         .follow-button .icon-notifications-bell {
             background-image: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
-                background-position: 0 -252px;
-        }
-        .follow-button .icon-notifications-bell.followed {
-            background-position: -28px -252px
+            background-position: 0 -252px;
+            &.followed {
+                background-position: -28px -252px
+            }
         }
         @media (hover: hover) {
             .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .follow-button :not(.disabled):hover {
@@ -6092,7 +6068,8 @@
         }
     
         .profile-container .profile-game h3 {
-            &, &:hover, &:focus, &:active {
+            font-size: 0px;
+            &:hover, &:focus, &:active {
                 font-size: 0px;
             }
             &:after {
@@ -6107,57 +6084,57 @@
         }
         body:not(.btr-profile) .profile-container .profile-game #games-switcher .list-item:nth-child(1) .text-label:nth-child(1) {
             font-size: 0;
-        }
-        body:not(.btr-profile) .profile-container .profile-game #games-switcher .list-item:nth-child(1) .text-label:nth-child(1):after {
-            font-size: 16px;
-            content: "Playing";
-            line-height: 1.4em;
-            cursor: text;
+            &:after {
+                font-size: 16px;
+                content: "Playing";
+                line-height: 1.4em;
+                cursor: text;
+            }
         }
         .chat-main-empty .chat-disconnect #find-game {
             font-size: 0;
-        }
-        .chat-main-empty .chat-disconnect #find-game:after {
-            content: "Visit Games";
-            font-size: 16px;
-            line-height: 100%;
+            &:after {
+                content: "Visit Games";
+                font-size: 16px;
+                line-height: 100%;
+            }
         }
         .home-container a[href*="/sortName/v2/Continue"]:not([class*="btn"]):not([class*="css-"]):after, .home-container a[href*="/sortName/v2/Continue"]:not([class*="btn"]) [class*="-textOverride"]:after {
             content: ' Playing';
         }
         #build-page .divider-right a.tab-item:nth-child(1), #build-page .divider-right .groups-dropdown-container ~ a.tab-item:nth-child(2) {
             font-size: 0;
-        }
-        #build-page .divider-right a.tab-item:nth-child(1):after, #build-page .divider-right .groups-dropdown-container ~ a.tab-item:nth-child(2):after {
-            content: 'Games';
-            font-size: 16px;
-            line-height: 1.428;
+            &:after {
+                content: 'Games';
+                font-size: 16px;
+                line-height: 1.428;
+            }
         }
         .content-area .create-new-button {
-            font-size: 0
-        }
-        .content-area .create-new-button:after {
-            content: 'Create New Game';
-            font-size: 20px;
-            line-height: 1.3em;
+            font-size: 0;
+            &:after {
+                content: 'Create New Game';
+                font-size: 20px;
+                line-height: 1.3em;
+            }
         }
         #build-page table:nth-child(3) td div h2 {
-            font-size: 0
-        }
-        #build-page table:nth-child(3) td div h2:after {
-            content: 'Games';
-            font-size: 30px;
-            line-height: 1em;
-            cursor: text;
+            font-size: 0;
+            &:after {
+                content: 'Games';
+                font-size: 30px;
+                line-height: 1em;
+                cursor: text;
+            }
         }
         #DevelopTabs.tab-container #LibraryTabLink {
             font-size: 0px;
-        }
-        #DevelopTabs.tab-container #LibraryTabLink:after {
-            content: 'Library';
-            font-weight: bold;
-            font-size: 15px;
-            line-height: 1.428;
+            &:after {
+                content: 'Library';
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 1.428;
+            }
         }
         
         .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/charts"] {
@@ -6201,12 +6178,12 @@
 		
         .game-creator {
             display: block;
-        }
-        .game-creator .text-name {
-            padding-left: 0;
-            width: unset;
-            max-width: unset;
-            position: unset;
+            .text-name {
+                padding-left: 0;
+                width: unset;
+                max-width: unset;
+                position: unset;
+            }
         }
 		.chat-friend-list .chat-friend-container .chat-friend-info .dynamic-overflow-container {
 			display: block;
@@ -6230,72 +6207,53 @@
 			float: left;
 			width: 100%;
 		}
-		.avatar-editor-header .catalog-header div:nth-child(n+1), .container-header .header-content .get-more-text {
-			font-size: 0
+		.avatar-editor-header .catalog-header div:nth-child(n+1) {
+			font-size: 0;
+            &:after {
+                content: 'Explore the catalog to find more clothes!';
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                cursor: text;
+                @media (max-width: 543px) {
+                    font-size: 12px;
+                    & when (@SourceSansPro = 0) {
+                        font-weight: 400;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-weight: 300;
+                    }
+                }
+            }
 		}
-		.avatar-editor-header .catalog-header div:nth-child(n+1):after {
-			content: 'Explore the catalog to find more clothes!';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-            cursor: text;
-		}
-		.container-header .header-content .get-more-text {
-			white-space: normal;
-		}
-		.container-header .header-content .get-more-text:after {
-			content: 'Explore the catalog to find more Accessories!';
-			& when (@SourceSansPro = 0) {
-				font-size: 12px;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 14px;
-			}
-			font-weight: 400;
-			line-height: 1.4em;
-			float: right;
-			display: block;
-			width: 175px;
-			text-align: right;
-			white-space: break-spaces;
-			cursor: text;
-		}
-        @media (max-width: 543px) {
-			.avatar-editor-header .catalog-header div:nth-child(n+1):after {
-				font-size: 12px;
-				& when (@SourceSansPro = 0) {
-					font-weight: 400;
-				}
-				& when (@SourceSansPro = 1) {
-					font-weight: 300;
-				}
-			}
-        }
         .catalog-container .search-bars h1 a {
             font-size: 0px;
             padding: 0;
             margin: 0;
+            &:after {
+                content: 'Catalog';
+                & when (@SourceSansPro = 0) {
+                    font-size: 32px;
+                    font-weight: 800;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 36px;
+                    font-weight: 400;
+                }
+                line-height: 1em;
+                @media (max-width: 767px) {
+                    font-size: 24px;
+                }
+            }
         }
         .catalog-container .search-bars .heading {
             height: 36px;
-        }
-        .catalog-container .search-bars h1 a:after {
-            content: 'Catalog';
-			& when (@SourceSansPro = 0) {
-				font-size: 32px;
-				font-weight: 800;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 36px;
-				font-weight: 400;
-			}
-            line-height: 1em;
         }
     
         @media (min-width: 992px) {
@@ -6303,18 +6261,11 @@
                 width: 100%;
             }
         }
-        @media (max-width: 767px) {
-            .catalog-container .search-bars h1 a:after {
-                font-size: 24px;
-            }
-        }
 		
         .user-transactions-container .dropdown-container {
             z-index: 1;
             position: relative;
-        }
-        @media (min-width: 543px) {
-            .user-transactions-container .dropdown-container {
+            @media (min-width: 543px) {
                 float: right;
             }
         }
@@ -6422,23 +6373,24 @@
 			cursor: text;
 		}
 		.app-bumper-container .app-motto-container .xsmall {
-			&, &:hover, &:focus, &:active {
+            font-size: 0;
+			&:hover, &:focus, &:active {
 				font-size: 0;
 			}
-		}
-		.app-bumper-container .app-motto-container .xsmall:after {
-			content: 'Millions of games by people like you';
-			& when (@SourceSansPro = 0) {
-				font-size: 10px;
-				font-weight: 500;
-				line-height: 1.4em
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 12px;
-				font-weight: 400;
-				line-height: 1.3em
-			}
-			cursor: text;
+            &:after {
+                content: 'Millions of games by people like you';
+                & when (@SourceSansPro = 0) {
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 1.4em
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 1.3em
+                }
+                cursor: text;
+            }
 		}
 		.create-server-banner .rbx-private-server-create .rbx-private-server-create-disabled-text, #private-server-tooltip .tooltip-inner {
 			&, &:hover, &:focus, &:active {
@@ -6793,26 +6745,26 @@
                 }
             }
             .login-container .alternative-login-divider-container {
-                text-align: center
-            }
-            .login-container .alternative-login-divider-container:after {
-                content: "login with your";
-                & when (@SourceSansPro = 0) {
-                    font-size: 10px;
-                    font-weight: 500;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 12px;
-                    font-weight: 400;
-                }
-                background: #fff;
-                padding: 12px;
-                position: relative;
-                top: -13px;
                 text-align: center;
-                cursor: text;
-                @media (max-width: 767px) {
-                    top: -11px;
+                &:after {
+                    content: "login with your";
+                    & when (@SourceSansPro = 0) {
+                        font-size: 10px;
+                        font-weight: 500;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                    background: #fff;
+                    padding: 12px;
+                    position: relative;
+                    top: -13px;
+                    text-align: center;
+                    cursor: text;
+                    @media (max-width: 767px) {
+                        top: -11px;
+                    }
                 }
             }
             &.dark-theme .login-container .alternative-login-divider-container:after {
@@ -6837,7 +6789,9 @@
         
         .safsup-link {
             padding: 10px;
-            &, .light-theme & {
+            background-color: #fff;
+            border-bottom: 1px solid #e3e3e3;
+            .light-theme & {
                 background-color: #fff;
                 border-bottom: 1px solid #e3e3e3;
             }
@@ -6981,9 +6935,9 @@
             float: right;
             width: auto;
             max-width: 190px;
-        }
-        .item-details-section .item-purchase-btns-container.shopping-cart-buy-button .btn-container .btn-growth-lg, .item-details-section .item-purchase-btns-container.shopping-cart-buy-button .btn-container .btn-primary-lg, .item-details-section .item-purchase-btns-container.shopping-cart-buy-button .btn-container .btn-secondary-lg {
-            width: 180px;
+            .btn-container .btn-growth-lg, .btn-container .btn-primary-lg, .btn-container .btn-secondary-lg {
+                width: 180px;
+            }
         }
         .item-details-section .item-info-row-container .row-content.price-info {
             flex-direction: unset;
@@ -7031,11 +6985,16 @@
         }
         [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
             &:before when not (@RestoreAds = None) {
-                content: "Advertisement";
-                display: block;
+                & when (@RestoreAds = Filler) {
+                    content: "\000a0";
+                }
                 & when (@RestoreAds = Default) {
+                    content: "Advertisement";
+                    display: flex;
+                    flex-direction: column-reverse;
                     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
                     font-size: 12px;
+                    font-weight: 400;
                     line-height: 1.25;
                     text-transform: uppercase;
                     color: #191919;
@@ -7063,8 +7022,6 @@
                 clear: unset;
                 & when (@RestoreAds = Default) {
                     cursor: pointer;
-                    display: flex;
-                    flex-direction: column-reverse;
                 }
                 .light-theme& {
                     color: #191919;
@@ -7106,11 +7063,16 @@
             [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content, [data-internal-page-name="Messages"] .content, [data-internal-page-name="CatalogItem"] #content, [data-internal-page-name="BundleDetail"] #content {
                 overflow: auto;
                 &:after {
-                    content: "Advertisement";
-                    display: block;
+                    & when (@RestoreAds = Filler) {
+                        content: "\000a0";
+                    }
                     & when (@RestoreAds = Default) {
+                        content: "Advertisement";
+                        display: flex;
+                        flex-direction: column-reverse;
                         font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
                         font-size: 12px;
+                        font-weight: 400;
                         line-height: 1.25;
                         text-transform: uppercase;
                         color: #191919;
@@ -7138,8 +7100,6 @@
                     clear: unset;
                     & when (@RestoreAds = Default) {
                         cursor: pointer;
-                        display: flex;
-                        flex-direction: column-reverse;
                     }
                     .light-theme& {
                         color: #191919;
@@ -7154,11 +7114,16 @@
             }
             [data-internal-page-name="Avatar"] #content, [data-internal-page-name="Catalog"] #content, [data-internal-page-name="GameDetail"] .content, [data-internal-page-name="Messages"] #content, [data-internal-page-name="Profile"] #content, [data-internal-page-name="CatalogItem"] #content, [data-internal-page-name="BundleDetail"] #content {
                 &:before {
-                    content: "Advertisement";
-                    display: block;
+                    & when (@RestoreAds = Filler) {
+                        content: "\000a0";
+                    }
                     & when (@RestoreAds = Default) {
+                        content: "Advertisement";
+                        display: flex;
+                        flex-direction: column-reverse;
                         font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
                         font-size: 12px;
+                        font-weight: 400;
                         line-height: 1.5;
                         text-transform: uppercase;
                         color: #191919;
@@ -7185,8 +7150,6 @@
                     clear: unset;
                     & when (@RestoreAds = Default) {
                         cursor: pointer;
-                        display: flex;
-                        flex-direction: column-reverse;
                     }
                     .light-theme& {
                         color: #191919;
@@ -7270,6 +7233,24 @@
         .group-details .group-tab-4-buttons, .group-details .group-tab-5-buttons {
             width: 33.33%;
             width: 33.33333%;
+        }
+        
+        .rbx-left-col li #nav-shop .font-header-2 {
+            font-size: 0;
+            &:after {
+                content: "Shop";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+                line-height: 1.42857;
+                @media (max-width: 767px) {
+                    font-size: 12px;
+                }
+            }
         }
     }
     
@@ -8410,7 +8391,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250509.1.3.18 \A ";
+            content: "Milestone 20250510.1.3.18 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -16104,7 +16085,7 @@
 			}
 		}
 	}
-	
+    
     /* Toggle */
     
     .light-theme .btn-toggle {
@@ -17575,6 +17556,223 @@
 		filter: grayscale(100) brightness(0.5);
 	}
     
+    /*/ Communities to Groups /*/
+    & when (@RemoveUpdates = 1) {
+        #nav-group .font-header-2 {
+            font-size: 0;
+            &:after {
+                content: "Groups";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+                line-height: 1.428571429;
+                @media (max-width: 767px) {
+                    font-size:12px;
+                    & when (@SourceSansPro = 0) {
+                        font-weight: 500;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .group-details-container .see-all-container-header h1 {
+            font-size: 0;
+            &:after {
+                content: "Groups";
+                & when (@SourceSansPro = 0) {
+                    font-size: 32px;
+                    font-weight: 800;
+                    @media (max-width: 767px) {
+                        font-size:24px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 36px;
+                    font-weight: 400;
+                    @media (max-width: 767px) {
+                        font-size:30px
+                    }
+                }
+                line-height: 1em;
+                cursor: text;
+            }
+        }
+        .groups-list .create-group-button {
+            font-size: 0;
+            &:hover, &:focus, &:active {
+                font-size: 0;
+            }
+            &:after {
+                content: "Create Group";
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 100%;
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                    line-height: 100%;
+                }
+            }
+        }
+        #send-group-shout-btn, .group-details .group-shout .group-form .group-form-button {
+            font-size: 0;
+            &:hover, &:focus, &:active {
+                font-size: 0;
+            }
+            &:after {
+                content: "Group Shout";
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 100%;
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                    line-height: 100%;
+                }
+            }
+        }
+        [ng-href*="/search/communities"] {
+            font-size: 0;
+            .gotham-font.light-theme &, .builder-font.light-theme &, .gotham-fontdaark-theme &, .builder-font.dark-theme & {
+                &:active, &:hover, &:link, &:visited {
+                    font-size: 0;
+                }
+            }
+            &:before {
+                content: "More Groups";
+                & when (@SourceSansPro = 0) {
+                    font-size: 16px;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 14px;
+                }
+                font-weight: 500;
+                line-height: 100%;
+            }
+        }
+        #group-search-web-app .container-header.see-all-container-header {
+            h1 {
+                font-size: 0;
+                &:after {
+                    content: "Search All Groups";
+                    & when (@SourceSansPro = 0) {
+                        font-size: 20px;
+                        font-weight: 700;
+                        @media (max-width: 767px) {
+                            font-size:16px
+                        }
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                    line-height: 1em;
+                    cursor: text;
+                }
+            }
+            [href*="/my/communities"] {
+                font-size: 0;
+                .gotham-font.light-theme &, .builder-font.light-theme &, .gotham-fontdaark-theme &, .builder-font.dark-theme & {
+                    &:active, &:hover, &:link, &:visited {
+                        font-size: 0;
+                    }
+                }
+                &:before {
+                    content: "My Groups";
+                    & when (@SourceSansPro = 0) {
+                        font-size: 16px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 14px;
+                    }
+                    font-weight: 500;
+                    line-height: 100%;
+                }
+            }
+        }
+        [ng-bind*="'Description.JoinGroup'"] {
+            font-size: 0;
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+            }
+            &:after {
+                content: "Join a group to connect with people like you! Groups exist for all types of communities - fan clubs, help groups, hobbies, corporations, and more. Groups have their own walls and shared places.";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 1.5em;
+            }
+        }
+        .friends-groups h2 {
+            font-size: 0;
+            &:after {
+                content: "Friends' Groups";
+                & when (@SourceSansPro = 0) {
+                    font-size: 20px;
+                    font-weight: 700;
+                    @media (max-width: 767px) {
+                        font-size:16px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
+                line-height: 1em;
+            }
+        }
+        #group-join-button {
+            font-size: 0;
+            &:hover, &:focus, &:active {
+                font-size: 0;
+            }
+            &:after {
+                content: "Join Group";
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 100%;
+                @media (max-width: 767px) {
+                    font-size: 16px;
+                    line-height: 100%;
+                }
+            }
+        }
+        
+        [groups-showcase] .container-header h2 {
+            font-size: 0;
+            &:after {
+                content: "Groups";
+                & when (@SourceSansPro = 0) {
+                    font-size: 20px;
+                    font-weight: 700;
+                    @media (max-width: 767px) {
+                        font-size:16px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
+                line-height: 1em;
+                cursor: text;
+            }
+        }
+    }
+    
     /*/Login/*/
     
     .login-container .fb-button .fb-icon {
@@ -18390,6 +18588,9 @@
                     font-weight: 400;
                 }
                 line-height: 1.42857;
+                @media (max-width: 767px) {
+                    font-size: 12px
+                }
             }
 		}
 		.btr-settings-content[data-name="navigation"] checkbox label[for="btr-settings-input-17"] {
@@ -19439,6 +19640,50 @@
     {
         display: inline-block;
         align-items: unset;
+    }
+    #nav-favorites {
+        &:hover {
+            color: #F6B702;
+            .icon-favorite {
+                background-color: #F6B702;
+                background-position: 0 -84px;
+            }
+            .light-theme & {
+                color: #F6B702;
+                .icon-favorite {
+                    background-color: #F6B702;
+                    background-position: 0 -84px;
+                    filter: none;
+                }
+            }
+            .dark-theme & {
+                color: #F6B702;
+                .icon-favorite {
+                    background-color: #F6B702;
+                    background-position: 0 -84px;
+                    filter: none;
+                }
+            }
+        }
+        .icon-favorite {
+            background: none;
+            background-color: #191919;
+            -webkit-mask: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
+            mask: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
+            -webkit-mask-size: auto auto;
+            mask-size: auto auto;
+            -webkit-mask-position: 0 -84px;
+            mask-position: 0 -84px;
+            .light-theme & {
+                background: none;
+                background-color: #191919;
+            }
+            .dark-theme & {
+                background: none;
+                background-color: #e6e6e6;
+            }
+            
+        }
     }
     
 	/*/== Themes ==/*/
