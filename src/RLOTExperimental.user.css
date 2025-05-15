@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250510-02.1.3.18
+@version      20250515-00.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5260,6 +5260,47 @@
         }
     }
     
+    .configure-group .creator-hub-migration-banner {
+        background-color: #b8b8b8;
+        border: 0;
+        border-radius: 0;
+        color: #757575;
+        padding: 15px;
+        & when (@RemoveUpdates = 1) {
+            display: none;
+        }
+        .migration-banner-key-icon, .migration-banner-group-icon {
+            filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
+        }
+        .migration-banner-content {
+            .migration-banner-header {
+                padding: 5px 0;
+                & when (@SourceSansPro = 0) {
+                    font-size: 16px;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 18px;
+                }
+            }
+            .migration-banner-description {
+                & when (@SourceSansPro = 0) {
+                    font-size: 12px;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 14px;
+                }
+                color: #757575;
+                .text-link {
+                    color: #00a2ff;
+                    text-decoration: none;
+                    &:hover, &:focus {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    
 	& when (@AvatarGogoSpinner = 1) {
 		@-webkit-keyframes gogoloader {
 			0% {
@@ -5456,7 +5497,7 @@
 	}
     
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .game-sort-carousel-wrapper:has(.home-sort-header-container):not(:has([class*="icon-push-right-16x16"])), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel, .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7) {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .game-sort-carousel-wrapper:has(.home-sort-header-container):not(:has([class*="icon-push-right-16x16"])), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel, .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7), #group-announcements-upsell-container, .dismissable-announcement-upsell-banner, .menu-option-content[href*="#!/guilded"] {
             display: none !important;
         }
         & when (@RemoveExtras = 1) {
@@ -8342,7 +8383,7 @@
     }
 	
 	/*/=={ Watermark }==/*/
-    @doubleLineEnabled: true;
+    @doubleLineEnabled: false;
     .rbx-left-col when not (@WatermarkStyle = None) {
         &:before {
             content: "(Legacy Theme) Testing Purposes Only";
@@ -8391,7 +8432,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250510.1.3.18 \A Patch 2";
+            content: "Milestone 20250515.1.3.18 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -14582,7 +14623,7 @@
 			border-radius: 5px;
 		}
 	}
-	.btn-cta-md, .btn-growth-md, .btn-primary-md, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .not-approved-page-content .action-buttons .btn-primary-md, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button, .profile-header-buttons [class*="Primary"] {
+	.btn-cta-md, .btn-growth-md, .btn-primary-md, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .not-approved-page-content .action-buttons .btn-primary-md, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -14711,7 +14752,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-cta-lg, .btn-cta-md, .btn-cta-sm, .btn-cta-xs, .btn-growth-lg, .btn-growth-md, .not-approved-page-content .action-buttons .btn-primary-md, .btn-growth-sm, .btn-growth-xs, .btn-primary-lg, .btn-primary-md, .btn-primary-sm, .btn-primary-xs, .btn-common-play-game-lg, .btn-branded-robux-white-lg, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button, .profile-header-buttons [class*="Primary"] {
+	.btn-cta-lg, .btn-cta-md, .btn-cta-sm, .btn-cta-xs, .btn-growth-lg, .btn-growth-md, .not-approved-page-content .action-buttons .btn-primary-md, .btn-growth-sm, .btn-growth-xs, .btn-primary-lg, .btn-primary-md, .btn-primary-sm, .btn-primary-xs, .btn-common-play-game-lg, .btn-branded-robux-white-lg, .request-error-page-content .action-buttons .btn-primary-md, #download-the-app-container .primary-link, .filters-container .filter-items-container .filters-modal-container .action-buttons-container .apply-button, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #3fc679;
 			& when (@BoxShadows = 1) {
@@ -16044,7 +16085,7 @@
 			font-size: 16px
 		}
 	}
-	.rbx-upgrade-now .btn-secondary-md, .btn-primary-md, .btn-secondary-sm {
+	.rbx-upgrade-now .btn-secondary-md, .btn-primary-md, .btn-secondary-sm, .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button {
 		.light-theme &:visited, .light-theme &:link, .dark-theme &:visited, .dark-theme &:link {
 			color: #fff
 		}
@@ -16076,7 +16117,7 @@
 				border-radius: 3px;
 			}
 		}
-		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"] {
+		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button {
 			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
 				padding: 7px;
 				font-size: 16px;
@@ -17608,6 +17649,18 @@
             &:hover, &:focus, &:active {
                 font-size: 0;
             }
+            @media (max-width: 767px) {
+                font-size: 0;
+                &:hover, &:focus, &:active {
+                    font-size: 0;
+                }
+                .light-theme &, .dark-theme & {
+                    font-size: 0;
+                    &:hover, &:focus, &:active {
+                        font-size: 0;
+                    }
+                }
+            }
             &:after {
                 content: "Create Group";
                 font-size: 18px;
@@ -17738,6 +17791,15 @@
         }
         .friends-groups h2 {
             font-size: 0;
+            &:hover, &:focus, &:active {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:hover, &:focus, &:active {
+                    font-size: 0;
+                }
+            }
             &:after {
                 content: "Friends' Groups";
                 & when (@SourceSansPro = 0) {
@@ -17797,6 +17859,135 @@
                 cursor: text;
             }
         }
+        
+        /* Store */
+        .group-store [ng-bind*="'Description.ClothingRevenue'"] {
+            font-size: 0;
+            &:after {
+                content: "Groups have the ability to create and sell official shirts, pants, and t-shirts! All revenue goes to group funds.";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 1.5em;
+            }
+        }
+        .group-store [href*="/develop/groups/"] {
+            font-size: 0;
+            line-height: 0;
+            &:after {
+                content: "Create or manage group items.";
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.5em;
+            }
+
+        }
+        .section-content-off[ng-bind*="'Label.NoStoreItems'"] {
+            font-size: 0;
+            &:after {
+                content: "No items are for sale in this group.";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                cursor: text;
+            }
+        }
+
+        /* Allies */
+        .section-content-off[ng-bind*="'Message.GetGroupRelationshipsError' | translate"] {
+            font-size: 0;
+            &:after {
+                content: "Unable to load group affiliates.";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                cursor: text;
+            }
+        }
+        .section-content-off[ng-bind*="'Label.NoAllies'"], .section-content-off[ng-bind*="$ctrl.noAffiliatesMessage | translate"] {
+            font-size: 0;
+            &:after {
+                content: "This group does not have any allies.";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                cursor: text;
+            }
+        }
+
+        /* Popover */
+        #configure-group a {
+            font-size: 0;
+            &:after {
+                content: "Configure Group";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 1.42857;
+            }
+        }
+        #leave-group button {
+            font-size: 0;
+            &:after {
+                content: "Leave Group";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 1.42857;
+            }
+        }
+
+        /* Dashboard */
+        [ng-bind*="'Action.BackToGroup'"] {
+            font-size: 0;
+            .gotham-font.light-theme &, .builder-font.light-theme &, .gotham-fontdaark-theme &, .builder-font.dark-theme & {
+                &:active, &:hover, &:link, &:visited {
+                    font-size: 0;
+                }
+            }
+            &:before {
+                content: "Back to Group";
+                & when (@SourceSansPro = 0) {
+                    font-size: 16px;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 14px;
+                }
+                font-weight: 500;
+                line-height: 100%;
+            }
+        }
+        /* TODO */
     }
     
     /*/Login/*/
