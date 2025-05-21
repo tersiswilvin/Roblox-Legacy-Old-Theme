@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250521-01.1.3.18
+@version      20250521-02.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -8441,7 +8441,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250521.1.3.18 \A Patch 1";
+            content: "Milestone 20250521.1.3.18 \A Patch 2";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -17778,6 +17778,15 @@
                     font-size: 0;
                 }
             }
+            .touch & {
+                font-size: 0;
+                .gotham-font &, .gotham-font.light-theme &, .gotham-font.dark-theme &, .builder-font &, .builder-font.light-theme &, .builder-font.dark-theme & {
+                    font-size: 0;
+                    &:active, &:hover, &:link, &:visited {
+                        font-size: 0;
+                    }
+                }
+            }
             &:before {
                 content: "More Groups";
                 & when (@SourceSansPro = 0) {
@@ -18103,6 +18112,15 @@
                 font-size: 0;
                 &:active, &:hover, &:link, &:visited {
                     font-size: 0;
+                }
+            }
+            .touch & {
+                font-size: 0;
+                .gotham-font &, .gotham-font.light-theme &, .gotham-font.dark-theme &, .builder-font &, .builder-font.light-theme &, .builder-font.dark-theme & {
+                    font-size: 0;
+                    &:active, &:hover, &:link, &:visited {
+                        font-size: 0;
+                    }
                 }
             }
             &:before {
