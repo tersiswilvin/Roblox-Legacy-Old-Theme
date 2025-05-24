@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250523-01.1.3.18
+@version      20250524-00.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5957,11 +5957,33 @@
         .transaction-type-dropdown #type-selection-label, .transaction-date-dropdown #date-selection-label, .transaction-num-items-dropdown #num-items-selection-label {
             display: none;
         }
-        .group-details .container-header h2[ng-bind="'Heading.Games' | translate"] {
+        [ng-bind*="'Heading.Games'"] {
             font-size: 0;
+            &:active, &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .gotham-font .container-header &, .builder-font &, .builder-font .container-header & {
+                font-size: 0;
+                &:active, &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
             &:after {
                 content: 'Games';
-                font-size: 20px;
+                & when (@SourceSansPro = 0) {
+                    font-size: 20px;
+                    font-weight: 700;
+                    @media (max-width: 767px) {
+                        font-size: 16px;
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
                 line-height: 1em;
                 cursor: text;
             }
@@ -6247,15 +6269,6 @@
             }
         }
 		
-        .game-creator {
-            display: block;
-            .text-name {
-                padding-left: 0;
-                width: unset;
-                max-width: unset;
-                position: unset;
-            }
-        }
 		.chat-friend-list .chat-friend-container .chat-friend-info .dynamic-overflow-container {
 			display: block;
 			& when (@SourceSansPro = 0) {
@@ -7345,6 +7358,10 @@
                     font-size: 12px;
                 }
             }
+        }
+        
+        .group-details .group-header .group-caption .group-name {
+            overflow: unset;
         }
     }
     
@@ -8439,7 +8456,7 @@
     }
 	
 	/*/=={ Watermark }==/*/
-    @doubleLineEnabled: true;
+    @doubleLineEnabled: false;
     .rbx-left-col when not (@WatermarkStyle = None) {
         &:before {
             content: "(Legacy Theme) Testing Purposes Only";
@@ -8488,7 +8505,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250523.1.3.18 \A Patch 1";
+            content: "Milestone 20250524.1.3.18 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -18042,6 +18059,62 @@
                 content: "Unable to load previous group names.";
                 font-size: 12px;
                 font-weight: 500;
+                cursor: text;
+            }
+        }
+        [ng-bind*="'Heading.PreviousGroupNames'"] {
+            font-size: 0;
+            line-height: 0;
+            &:active, &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                line-height: 0;
+                &:active, &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
+            &:after {
+                content: "Previous Group Names";
+                & when (@SourceSansPro = 0) {
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 1.4rem;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 1.3rem;
+                }
+                cursor: text;
+            }
+        }
+        [ng-bind*="'Label.GroupClosed'"] {
+            font-size: 0;
+            line-height: 0;
+            &:active, &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                line-height: 0;
+                &:active, &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
+            &:after {
+                content: "Group Closed";
+                & when (@SourceSansPro = 0) {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 1.4rem;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 1.3rem;
+                }
                 cursor: text;
             }
         }
