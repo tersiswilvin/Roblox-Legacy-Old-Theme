@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250528-02.1.3.18
+@version      20250528-03.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -8527,7 +8527,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250528.1.3.18 \A Patch 2";
+            content: "Milestone 20250528.1.3.18 \A PreRelease 1 | Patch 3";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -19276,6 +19276,35 @@
                             &:before, .foundation-web-button-content.isLoading, .foundation-web-loading-spinner-wrapper {
                                 display: none;
                             }
+                            &:has(.foundation-web-loading-spinner-wrapper) {
+                                background-color: transparent;
+                                border: none;
+                                & when (@BoxShadows = 1) {
+                                    &:focus, &:hover {
+                                        box-shadow: none;
+                                    }
+                                }
+                                border-radius: 0;
+                                padding: 0;
+                                min-width: 100%;
+                                display: block;
+                                margin: 0;
+                                padding-bottom: 20px;
+                                &:focus, &:hover {
+                                    cursor: default;
+                                }
+                                &:after {
+                                    content: "";
+                                    background-image: url(https://images.rbxcdn.com/4bed93c91f909002b1f17f05c0ce13d1.gif);
+                                    font-size: 0;
+                                    color: transparent;
+                                    vertical-align: middle;
+                                    background-size: 100%;
+                                    width: 82px;
+                                    height: 24px;
+                                    margin: 6px auto;
+                                }
+                            }
                             &:after {
                                 & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) or (@LegacyNextStyleGuideButtons = 1) and (@LogoStyle = 201701) {
                                     content: "Download and Install ROBLOX";
@@ -19290,28 +19319,6 @@
                                 @media (max-width: 767px) {
                                     font-size: 16px;
                                     line-height: 100%;
-                                }
-                            }
-                            &:has(.foundation-web-loading-spinner-wrapper) {
-                                background-color: transparent;
-                                border: none;
-                                border-radius: 0;
-                                padding: 0;
-                                min-width: 100%;
-                                display: block;
-                                margin: 0;
-                                padding-bottom: 20px;
-                                &:focus, &:hover {
-                                    cursor: default;
-                                }
-                                &:after {
-                                    content: "";
-                                    background-image: url(https://images.rbxcdn.com/4bed93c91f909002b1f17f05c0ce13d1.gif);
-                                    vertical-align: middle;
-                                    background-size: 100%;
-                                    width: 82px;
-                                    height: 24px;
-                                    margin: 6px auto;
                                 }
                             }
                         }
