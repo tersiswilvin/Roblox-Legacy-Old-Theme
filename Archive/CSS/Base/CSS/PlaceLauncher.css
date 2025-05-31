@@ -1,0 +1,53 @@
+/* Legacy CSS file - Please do not copy */
+.blueAndWhite {
+  border: 2px solid #6e99c9;
+  background-color: #ffffff;
+  color: #000000; }
+
+.blueAndWhite .titleBar {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 2px 2px 2px 2px;
+  margin-bottom: 5px;
+  font-size: 13px; }
+
+.PlaceLauncherStatus {
+  color: #333;
+  display: none;
+  font-size: 16px;
+  font-weight: bolder;
+  line-height: 19px; }
+
+.PlaceLauncherStatusBackBuffer {
+  position: relative;
+  display: none; }
+
+.CancelPlaceLauncherButton {
+  background-color: White;
+  border: none;
+  color: Blue;
+  cursor: pointer;
+  font-size: 12px; }
+
+.CancelPlaceLauncherButton:Hover, .CancelPlaceLauncherButton:Active {
+  background-color: White;
+  border: none;
+  color: Blue;
+  cursor: pointer;
+  text-decoration: underline; }
+
+.PlaceLauncherModal {
+  border: none;
+  color: Black;
+  height: 125px;
+  margin: 1.5em;
+  padding: 10px;
+  text-align: center;
+  width: 360px; }
+
+.mac-install-steps {
+  text-align: left;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 12px; }
