@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250530-00.1.3.18
+@version      20250530-01.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -8479,7 +8479,7 @@
     }
 	
 	/*/=={ Watermark }==/*/
-    @doubleLineEnabled: true;
+    @doubleLineEnabled: false;
     .rbx-left-col when not (@WatermarkStyle = None) {
         &:before {
             content: "(Legacy Theme) Testing Purposes Only";
@@ -8528,7 +8528,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250530.1.3.18 \A PreRelease 3";
+            content: "Milestone 20250530.1.3.19 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
