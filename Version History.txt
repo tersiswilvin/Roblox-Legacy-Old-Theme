@@ -1,5 +1,64 @@
 == Version History ==
 
+(Release 1.3.18 | 05/30/2025)
+Added "Capital Brand Text in Modals" option.
+Added "Social Links Version" option.
+Added "Remove nondesignated icons" option.
+Added None, Default, & Filler to "Restore Ads".
+Added support for new Games Modal.
+Added support for the new homepage experiment.
+Added support for RoSeal's pending robux navigation option.
+Added support for roseal favorites.
+Added support for the group migration banner.
+Advertisements now affect catalog items.
+Advertisements now sync with Site Brand Style.
+Fixed button borders showing on dropdown menus.
+Fixed favorites count being removed on the games page.
+Fixed Featured Games Label positioning.
+Fixed footer links being off-centered for lower resolution devices.
+Fixed forums styling.
+Fixed Game Card Expansion on hover.
+Fixed Games text in Group Details page.
+Fixed home horizontal cards cutting off on touch devices.
+Fixed home people list dropdowns being off centered.
+Fixed Max Players showing up on wrong labels.
+Fixed modal content box shadows.
+Fixed nav tabs sizing for groups.
+Fixed paid access play button & icon.
+Fixed privacy coloring not affecting other languages.
+Fixed profile header titles being clickable.
+Fixed roseal settings search bar.
+Fixed search aligning to the left of the screen.
+Fixed Source Sans Pro inaccuracies on Games Details & Groups pages.
+Fixed Today's Picks, Daily Picks, & Recommended For You not showing when "Revert 2019L+ changes" is disabled.
+Group size rules default back if "Revert 2019L+ changes" is disabled.
+Improved Legacy Next Styleguide Older Chat Group dialogs.
+Redid a bit of old css to utilize the preprocessor.
+Redid New Server Playerlist css + reverted recent min-height change.
+Redid social links CSS.
+Removed new "Add Friends" on home people list.
+Removed public developer products.
+Removed new Posts on profiles.
+Removed new search landing container (Toggleable via "Revert 2019L+ changes").
+Removed Top Community Posts.
+Renamed Community (Communities) back to Group (Groups).
+Reverted group name overflow.
+Reverted new branding logo.
+Reverted Webblox Profiles.
+Sidebar username font size fixed for Source Sans Pro.
+
+(Release 1.3.17 | 04/22/2025)
+Disabled Easter Theme
+
+(Release 1.3.17 | 04/19/2025)
+Enabled Easter Theme (Happy Easter).
+
+(Release 1.3.17 | 04/03/2025)
+Removed April Fools theme.
+
+(Release 1.3.17 | 04/01/2025)
+Enabled April Fools theme.
+
 (Release 1.3.17 | 12/29/2024)
 Added "Fixed 2019M Item Card Transitions" option.
 Added "Restore Ads" and Restore Ads "Games Page" options.
@@ -70,6 +129,18 @@ Reverted react catalog background.
 Reverted recent catalog update.
 Reverted recent Footer update.
 Reverted recent roblox overflow change for content.
+
+(Release 1.3.16 | 10/01/2024)
+Reverted BloxTober theme back to Default.
+
+(Release 1.3.16 | 10/26/2024)
+Enabled Halloween Theme (Happy Halloween!)
+
+(Release 1.3.16 | 09/26/2024)
+Updated links to the new repository link.
+
+(Release 1.3.16 | 08/11/2024)
+Updated links to the new repository link.
 
 (Release 1.3.16 | 07/20/2024)
 Added cookie banner support.
