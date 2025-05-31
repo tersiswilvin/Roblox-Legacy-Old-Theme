@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name         Roblox Legacy Old Theme
-@version      20250530-00.1.3.18
+@name         Roblox Legacy Old Theme (Experimental)
+@version      20250530-01.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
 @homepageURL  https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme
 @supportURL   https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues
-@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Release/src/RLOTMaster.user.css
+@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
 @var          select   BadgeStyle                  "Badge Style"                        ["201509", "201511", "201612", "201902*"]
@@ -45,6 +45,7 @@
 @var          checkbox SourceSansPro               "Source Sans Pro Font"               0
 @var          checkbox TransitionalAnimations      "Transition animations"              1
 @var          checkbox RedLogoStyle                "Use 2017 Red icon logo"             0
+@var          select   WatermarkStyle              "Watermark Branch"                   ["None", "Experimental*"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -8474,6 +8475,92 @@
             height: 46.14px;
             image-rendering: optimizequality;
             image-rendering: -webkit-optimize-contrast;
+        }
+    }
+	
+	/*/=={ Watermark }==/*/
+    @doubleLineEnabled: false;
+    .rbx-left-col when not (@WatermarkStyle = None) {
+        &:before {
+            content: "(Legacy Theme) Testing Purposes Only";
+            color: #191919;
+            font-size: 18px;
+            line-height: 18px;
+            text-align: center;
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            & when (@RestoreSidebarPadding = 0) {
+                width: 165px;
+                padding: 0 0 0 10px
+            }
+            & when (@RestoreSidebarPadding = 1) {
+                width: 100%;
+                padding: 0 10px;
+            }
+            & when (@doubleLineEnabled = false) {
+                margin: 0 0 24px;
+            }
+            & when (@doubleLineEnabled = true) {
+                margin: 0 0 36px;
+            }
+            & when (@SourceSansPro = 0) {
+                .gotham-font &, .builder-font & {
+                    font-size: 16px;
+                    line-height: 16px;
+                    & when (@doubleLineEnabled = false) {
+                        margin: 0 0 20px;
+                    }
+                    & when (@doubleLineEnabled = true) {
+                        margin: 0 0 30px;
+                    }
+                }
+            }
+            .light-theme & {
+                content: "(Light Theme) Testing Purposes Only";
+                color: #191919;
+            }
+            .dark-theme & {
+                content: "(Dark Theme) Testing Purposes Only";
+                color: #e6e6e6;
+            }
+        }
+        &:after {
+            content: "Milestone 20250530.1.3.19 \A ";
+            color: #b8b8b8;
+            font-size: 12px;
+            line-height: 12px;
+            text-align: center;
+            white-space: pre;
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            & when (@RestoreSidebarPadding = 0) {
+                width: 165px;
+                padding: 0 0 0 10px
+            }
+            & when (@RestoreSidebarPadding = 1) {
+                width: 100%;
+                padding: 0 10px;
+            }
+            margin: 0 0 6px;
+            & when (@SourceSansPro = 0) {
+                .gotham-font &, .builder-font & {
+                    font-size: 10px;
+                    line-height: 10px;
+                    margin: 0 0 5px;
+                }
+            }
+            .light-theme & {
+                color: #b8b8b8;
+            }
+            .dark-theme & {
+                color: #474747;
+            }
         }
     }
 	

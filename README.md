@@ -24,14 +24,14 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - Tickets
   - Custom Site Theme
     - None ( Default )
-    - April_Fools ( Hidden )
-    - BloxTober ( Hidden )
+    - April_Fools
+    - BloxTober
     - BTR_Night
     - BTR_Red
     - BTR_Simblk
     - BTR_Sky
     - L_Red
-    - RPlus_Easter ( Hidden )
+    - RPlus_Easter
     - RPlus_OBC
   - Force light theme on signup
   - Five column Avatar Editor ( Default )
@@ -60,6 +60,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2018L
     - 2019E
   - Legacy Next StyleGuide
+    -  ↳ Capital Brand Text in Modals
     -  ↳ Chat Shadows ( Default )
     -  ↳ Older
     -  ↳ Older Chat
@@ -73,6 +74,9 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
     - 2020+
   - Restore Ads
+    - None
+    - Default ( Default )
+    - Filler
     -  ↳ Games Page
   - Restore legacy sidebar padding
   - Revert 2019L+ changes ( Default )
@@ -92,6 +96,13 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2016
     - 2017
     - 2018 ( Default )
+  - Social Links Version
+    - V1
+    - V2
+    - V3
+    - V3_5
+    - V4
+    -  ↳ Remove nondesigna­ted icons
   - Source Sans Pro Font
   - Transition animations ( Default )
   - Use 2017 Red icon logo
