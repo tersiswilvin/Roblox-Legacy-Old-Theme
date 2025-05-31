@@ -60,6 +60,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2018L
     - 2019E
   - Legacy Next StyleGuide
+    -  ↳ Capital Brand Text in Modals
     -  ↳ Chat Shadows ( Default )
     -  ↳ Older
     -  ↳ Older Chat

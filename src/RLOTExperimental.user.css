@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250529-00.1.3.18
+@version      20250530-00.1.3.18
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -22,6 +22,7 @@
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"     0
 @var          select   LegacyFooterText            "Legacy Footer Text"                 ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"             0
+@var          checkbox LegacyNSGCBL                " ↳ Capital Brand Text in Modals"    0
 @var          checkbox LegacyNSGBoxShadows         " ↳ Chat Shadows"                    1
 @var          checkbox LegacyNSGOlder              " ↳ Older"                           0
 @var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                      0
@@ -8527,7 +8528,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250528.1.3.18 \A PreRelease 2";
+            content: "Milestone 20250530.1.3.18 \A PreRelease 3";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -19235,10 +19236,10 @@
                             padding-bottom: 0;
                         }
                         [class*="-message"] span:after {
-                            & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) or (@LegacyNextStyleGuideButtons = 1) and (@LogoStyle = 201701) {
+                            & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGCBL = 1) {
                                 content: "ROBLOX is now loading. Get ready to play!"
                             }
-                            & when (@LegacyNextStyleGuideButtons = 0) and (@LogoStyle = 201701) {
+                            & when (@LegacyNSGCBL = 0) or (@LegacyNextStyleGuideButtons = 0) and (@LegacyNSGCBL = 1) {
                                 content: "Roblox is now loading. Get ready to play!"
                             }
                         }
@@ -19306,10 +19307,10 @@
                                 }
                             }
                             &:after {
-                                & when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) or (@LegacyNextStyleGuideButtons = 1) and (@LogoStyle = 201701) {
+                                & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGCBL = 1) {
                                     content: "Download and Install ROBLOX";
                                 }
-                                & when (@LegacyNextStyleGuideButtons = 0) and (@LogoStyle = 201701) {
+                                & when (@LegacyNSGCBL = 0) or (@LegacyNextStyleGuideButtons = 0) and (@LegacyNSGCBL = 1) {
                                     content: "Download and Install Roblox";
                                 }
                                 font-size: 18px;
