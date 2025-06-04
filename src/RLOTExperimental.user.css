@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250602-00.1.3.19
+@version      20250604-00.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -4956,11 +4956,17 @@
     
     /*End*/
 	
-    .light-theme .related-asset-container {
+    .related-asset-container {
+        background-color: #191919;
         background-color: rgba(25,25,25,0.75);
-    }
-    .dark-theme .related-asset-container {
-        background-color: rgba(230, 230, 230, .75);
+        .light-theme & {
+            background-color: #191919;
+            background-color: rgba(25,25,25,0.75);
+        }
+        .dark-theme & {
+            background-color: #e6e6e6;
+            background-color: rgba(230, 230, 230, .75);
+        }
     }
     
     .light-theme .preview-text.small.font-caption-body {
@@ -5304,16 +5310,30 @@
     }
     
     .configure-group .creator-hub-migration-banner {
+        color: #757575;
         background-color: #b8b8b8;
         border: 0;
         border-radius: 0;
-        color: #757575;
         padding: 15px;
         & when (@RemoveUpdates = 1) {
             display: none;
         }
+        .light-theme & {
+            color: #757575;
+            background-color: #b8b8b8;
+        }
+        .dark-theme & {
+            color: #8A8A8A;
+            background-color: #474747;
+        }
         .migration-banner-key-icon, .migration-banner-group-icon {
             filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
+            .light-theme & {
+                filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
+            }
+            .dark-theme & {
+                filter: brightness(0) saturate(100%) invert(61%) sepia(0%) saturate(0%) hue-rotate(151deg) brightness(90%) contrast(85%);
+            }
         }
         .migration-banner-content {
             .migration-banner-header {
@@ -5330,9 +5350,15 @@
                     font-size: 12px;
                 }
                 & when (@SourceSansPro = 1) {
-                    font-size: 14px;
+                    font-size: 16px;
                 }
                 color: #757575;
+                .light-theme & {
+                    color: #757575;
+                }
+                .dark-theme & {
+                    color: #8A8A8A;
+                }
                 .text-link {
                     color: #00a2ff;
                     text-decoration: none;
@@ -5341,6 +5367,88 @@
                     }
                 }
             }
+        }
+    }
+    .group-wall-notice-container ~ [group-comments] {
+        margin-top: 10px;
+    }
+    .group-wall-deprecation-notice {
+        color: #757575;
+        background-color: #b8b8b8;
+        padding: 15px;
+        border-radius: 0;
+        margin-bottom: 0;
+        & &-icon {
+            filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
+            .light-theme & {
+                filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
+            }
+            .dark-theme & {
+                filter: brightness(0) saturate(100%) invert(61%) sepia(0%) saturate(0%) hue-rotate(151deg) brightness(90%) contrast(85%);
+            }
+        }
+        & &-cta-container {
+            & when (@SourceSansPro = 0) {
+                display: grid;
+                gap: 5px;
+            }
+            & when (@SourceSansPro = 1) {
+                column-gap: 5px;
+            }
+        }
+        & &-content {
+            padding-bottom: 0;
+        }
+        & &-title {
+            & when (@RemoveUpdates = 0) {
+                & when (@SourceSansPro = 0) {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 18px;
+                }
+            }
+            & when (@RemoveUpdates = 1) {
+                font-size: 0;
+                line-height: 0;
+                &:focus, &:hover {
+                    font-size: 0;
+                }
+                .gotham-font &, .builder-font & {
+                    font-size: 0;
+                    &:focus, &:hover {
+                        font-size: 0;
+                    }
+                }
+                &:after {
+                    content: "Group wall is being deprecated"; /*/ lNilb-EaTOU 🥀 /*/
+                    & when (@SourceSansPro = 0) {
+                        font-size: 16px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 18px;
+                    }
+                    line-height: 1em;
+                    cursor: text;
+                }
+            }
+        }
+        & &-description {
+            & when (@SourceSansPro = 0) {
+                font-size: 12px;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 16px;
+            }
+        }
+        .light-theme & {
+            color: #757575;
+            background-color: #b8b8b8
+        }
+        .dark-theme & {
+            color: #8A8A8A;
+            background-color: #474747
         }
     }
     
@@ -5981,6 +6089,28 @@
                     font-size: 0;
                 }
             }
+            #btr-games & {
+                font-size: 0;
+                line-height: 0;
+                &:after {
+                    content: 'Games';
+                    & when (@SourceSansPro = 0) {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 16px;
+                        @media (max-width: 767px) {
+                            font-size: 12px;
+                            font-weight: 500;
+                        }
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                    line-height: 1rem;
+                    cursor: inherit
+                }
+            }
             &:after {
                 content: 'Games';
                 & when (@SourceSansPro = 0) {
@@ -6002,30 +6132,6 @@
             }
         }
     
-        #btr-games .rbx-tab-heading span {
-            font-size: 0;
-            height: 16px;
-        }
-        #btr-games .rbx-tab-heading span:after {
-            content: 'Games';
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 16px;
-        }
-        @media (max-width: 767px) {
-            #btr-games .rbx-tab-heading span:after {
-                font-size: 12px;
-                font-weight: 500;
-            }
-        }
-        @media (max-width: 542px) {
-            #btr-games .rbx-tab-heading span {
-                height: 12px
-            }
-            #btr-games .rbx-tab-heading span:after {
-                line-height: 12px;
-            }
-        }
         .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-games-off ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-shop ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-profile ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-library ~ .navbar-list-option-suffix {
             font-size: 0;
             line-height: 0;
@@ -6113,13 +6219,6 @@
         }
         .game-follow-button-container .tooltip-container:has(.followed) ~ [role="tooltip"] .tooltip-inner:after {
             content: 'Unfollow Game';
-        }
-        .follow-button .icon-notifications-bell {
-            background-image: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
-            background-position: 0 -252px;
-            &.followed {
-                background-position: -28px -252px
-            }
         }
         @media (hover: hover) {
             .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .follow-button :not(.disabled):hover {
@@ -7330,27 +7429,48 @@
         .rbx-tabs-horizontal .nav-tabs when (@RemoveUpdates = 1) {
             &:has(#forums), &:has(#events) {
                 .group-tab-2-buttons {
-                    width: 100%
+                    width: 100%;
+                    .btr-redesign & {
+                        width: calc(100% / var(--btr-num-tabs, 3));
+                    }
                 }
                 .group-tab-3-buttons {
-                    width: 50%
+                    width: 50%;
+                    .btr-redesign & {
+                        width: calc(100% / var(--btr-num-tabs, 3));
+                    }
                 }
                 .group-tab-4-buttons {
-                    width: 33.33%
+                    width: 33.33%;
+                    .btr-redesign & {
+                        width: calc(100% / var(--btr-num-tabs, 3));
+                    }
                 }
                 .group-tab-5-buttons {
-                    width: 25%
+                    width: 25%;
+                    .btr-redesign & {
+                        width: calc(100% / var(--btr-num-tabs, 3));
+                    }
                 }
             }
             &:has(#forums):has(#events) {
                 .group-tab-3-buttons {
-                    width: 100%
+                    width: 100%;
+                    .btr-redesign & {
+                        width: calc(100% / var(--btr-num-tabs, 3));
+                    }
                 }
                 .group-tab-4-buttons {
-                    width: 50%
+                    width: 50%;
+                    .btr-redesign & {
+                        width: calc(100% / var(--btr-num-tabs, 3));
+                    }
                 }
                 .group-tab-5-buttons {
-                    width: 33.33%
+                    width: 33.33%;
+                    .btr-redesign & {
+                        width: calc(100% / var(--btr-num-tabs, 3));
+                    }
                 }
             }
         }
@@ -8540,7 +8660,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250602.1.3.19 \A ";
+            content: "Milestone 20250604.1.3.19 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -9130,13 +9250,55 @@
         color: #E6E6E6;
     }
     
-    .light-theme .icon-common-notification-bell {
+    .icon-notifications-bell when (@RemoveUpdates = 1) {
+        background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
+        background-position: 0 -448px;
+        display: inline-block;
+        .follow-button & {
+            background-image: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
+            background-position: 0 -252px;
+            .light-theme &, .dark-theme & {
+                background-image: url(https://images.rbxcdn.com/757f696cbfd2d8fcde61d219cead6a2c-branded_04182018.svg);
+                background-position: 0 -252px;
+            }
+            &.followed {
+                background-position: -28px -252px;
+                .light-theme &, .dark-theme & {
+                    background-position: -28px -252px;
+                }
+            }
+        }
+        .light-theme & {
+            background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
+            background-position: 0 -448px;
+            display: inline-block;
+            &:hover, a:hover &, button:hover & {
+                background-position: -28px -448px;
+            }
+        }
+        .dark-theme & {
+            background-image: url(https://images.rbxcdn.com/53374db5b6c1b349a20d0471ea032868-navigation_dark.svg);
+            background-position: 0 -448px;
+            display: inline-block;
+            &:hover, a:hover &, button:hover & {
+                background-position: -28px -448px;
+            }
+        }
+        &:hover, a:hover &, button:hover & {
+            background-position: -28px -448px;
+        }
+    }
+    .icon-common-notification-bell {
         background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
         display: inline-block;
-    }
-    .dark-theme .icon-common-notification-bell {
-        background-image: url(https://images.rbxcdn.com/53374db5b6c1b349a20d0471ea032868-navigation_dark.svg);
-        display: inline-block;
+        .light-theme & {
+            background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
+            display: inline-block;
+        }
+        .dark-theme & {
+            background-image: url(https://images.rbxcdn.com/53374db5b6c1b349a20d0471ea032868-navigation_dark.svg);
+            display: inline-block;
+        }
     }
     .rbx-header .rbx-navbar-icon-group .notification-margins {
         margin-right: 0;
@@ -9146,16 +9308,31 @@
         background-position: 0 -448px;
     }
     
-    .light-theme .asset-thumb-container
-    {
+    .asset-thumb-container {
         border-radius: 0;
         background-color: transparent;
         border: 1px solid #B8B8B8;
-    }
-    .dark-theme .asset-thumb-container {
-        background-color: transparent;
-        border: 1px solid #474747;
-        border-radius: 0;
+        .item-thumbnail-container & {
+            background-color: transparent;
+            .light-theme &
+            {
+                background-color: transparent;
+            }
+            .dark-theme & {
+                border: 1px solid #474747;
+            }
+        }
+        .light-theme &
+        {
+            border-radius: 0;
+            background-color: transparent;
+            border: 1px solid #B8B8B8;
+        }
+        .dark-theme & {
+            background-color: transparent;
+            border: 1px solid #474747;
+            border-radius: 0;
+        }
     }
     
     .light-theme .file-upload-content {
@@ -10026,8 +10203,17 @@
     .light-theme .icon-nav-settings:hover, .light-theme a:hover .icon-nav-settings, .light-theme button:hover .icon-nav-settings, .dark-theme .icon-nav-settings:hover, .dark-theme a:hover .icon-nav-settings, .dark-theme button:hover .icon-nav-settings {
         background-position: -28px -84px;
     }
-    .light-theme .icon-nav-notification-stream:hover, .light-theme a:hover .icon-nav-notification-stream, .light-theme button:hover .icon-nav-notification-stream, .light-theme .icon-common-notification-bell:hover, .light-theme a:hover .icon-common-notification-bell, .light-theme button:hover .icon-common-notification-bell, .dark-theme .icon-nav-notification-stream:hover, .dark-theme a:hover .icon-nav-notification-stream, .dark-theme button:hover .icon-nav-notification-stream, .dark-theme .icon-common-notification-bell:hover, .dark-theme a:hover .icon-common-notification-bell, .dark-theme button:hover .icon-common-notification-bell {
-        background-position: -28px -448px;
+    .icon-nav-notification-stream, .icon-common-notification-bell {
+        background-position: 0 -448px;
+        &:hover, a:hover &, button:hover & {
+            background-position: -28px -448px;
+        }
+        .light-theme &, .dark-theme & {
+            background-position: 0 -448px;
+            &:hover, a:hover &, button:hover & {
+                background-position: -28px -448px;
+            }
+        }
     }
     
     .search-container .input-group .input-field.group-search-field {
@@ -10613,10 +10799,6 @@
     }
     .mobile-creator-name:hover {
         text-decoration: underline;
-    }
-    
-    .icon-common-notification-bell {
-        background-position:  0 -448px
     }
     
     div.text-overflow.item-card-creator.recommended-creator {
@@ -14165,14 +14347,41 @@
     }
     
     /*/== Theme Group Forums ==/*/
-    
     .group-forums-early-access-notice {
         background-color: #b8b8b8;
         color: #757575;
         padding: 15px;
         border-radius: 0;
-        &-icon {
-            display: none;
+        & &-icon {
+            filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
+            .light-theme & {
+                filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
+            }
+            .dark-theme & {
+                filter: brightness(0) saturate(100%) invert(61%) sepia(0%) saturate(0%) hue-rotate(151deg) brightness(90%) contrast(85%);
+            }
+        }
+        & &-title {
+            & when (@SourceSansPro = 0) {
+                font-size: 16px;
+                .builder-font &, .builder-font & {
+                    font-size: 16px;
+                }
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 18px;
+                .builder-font &, .builder-font & {
+                    font-size: 18px;
+                }
+            }
+        }
+        & &-description {
+            & when (@SourceSansPro = 0) {
+                font-size: 12px;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 16px;
+            }
         }
         .light-theme & {
             background-color: #b8b8b8;
@@ -14185,7 +14394,27 @@
     }
     .group-forums-category-pill {
         background-color: #fff;
-        color: #191919;
+        color: #757575;
+        & when (@SourceSansPro = 0) {
+            font-size: 12px;
+            font-weight: 400;
+        }
+        & when (@SourceSansPro = 1) {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        &:active {
+            background-color: #f2f2f2;
+            color: #757575;
+            .light-theme & {
+                background-color: #f2f2f2;
+                color: #757575;
+            }
+            .dark-theme & {
+                background-color: #0d0d0d;
+                color: #8A8A8A;
+            }
+        }
         &:hover {
             background-color: #fff;
             color: #757575;
@@ -14194,8 +14423,8 @@
                 color: #757575;
             }
             .dark-theme & {
-                background-color: #0d0d0d;
-                color: #e6e6e6;
+                background-color: #000;
+                color: #8A8A8A;
             }
         }
         .light-theme & {
@@ -14204,20 +14433,48 @@
         }
         .dark-theme & {
             background-color: #000;
-            color: #e6e6e6;
+            color: #8A8A8A;
         }
         &.active {
             background-color: #00a2ff;
             color: #fff;
-            &:hover {
-                background-color: #00a2ff;
+            & when (@SourceSansPro = 0) {
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-weight: 400;
+            }
+            &:active {
+                background-color: #0074BD;
                 color: #fff;
                 .light-theme & {
-                    background-color: #00a2ff;
+                    background-color: #0074BD;
                     color: #fff;
                 }
                 .dark-theme & {
-                    background-color: #e6e6e6;
+                    & when (@BrighterDarkThemeColors = 0) {
+                        background-color: #001623;
+                    }
+                    & when (@BrighterDarkThemeColors = 1) {
+                        background-color: #0074BD;
+                    }
+                    color: #000;
+                }
+            }
+            &:focus, &:hover {
+                background-color: #32b5ff;
+                color: #fff;
+                .light-theme & {
+                    background-color: #32b5ff;
+                    color: #fff;
+                }
+                .dark-theme & {
+                    & when (@BrighterDarkThemeColors = 0) {
+                        background-color: #144966;
+                    }
+                    & when (@BrighterDarkThemeColors = 1) {
+                        background-color: #32b5ff;
+                    }
                     color: #000;
                 }
             }
@@ -14226,13 +14483,35 @@
                 color: #fff;
             }
             .dark-theme & {
-                background-color: #e6e6e6;
+                & when (@BrighterDarkThemeColors = 0) {
+                    background-color: #004266;
+                }
+                & when (@BrighterDarkThemeColors = 1) {
+                    background-color: #00a2ff;
+                }
                 color: #000;
             }
         }
     }
-    .group-forums-categories-list-container, .group-forums-categories-header {
+    .group-forums-categories-list-container {
         padding: 15px 0;
+    }
+    .group-forums-categories-header {
+        padding: 15px 0;
+        & &-category-name {
+            & when (@SourceSansPro = 0) {
+                font-size: 24px;
+                .builder-font &, .builder-font & {
+                    font-size: 24px;
+                }
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 28px;
+                .builder-font &, .builder-font & {
+                    font-size: 28px;
+                }
+            }
+        }
     }
     .group-forums-create-post-btn {
         height: unset;
@@ -14355,24 +14634,27 @@
     }
     .group-forums-comment {
         padding: 0 15px;
-        &-reactions-reaction {
-            background-color: transparent;
-            color: #191919;
-            &:hover {
-                background-color: #f2f2f2;
-                .light-theme & {
-                    background-color: #f2f2f2;
-                }
-                .dark-theme & {
-                    background-color: #0d0d0d;
-                }
-            }
-            .light-theme & {
+        &-reactions {
+            &-reaction, &-add-new, &-overflow {
                 background-color: transparent;
                 color: #191919;
-            }
-            .dark-theme & {
-                color: #e6e6e6;
+                &:hover {
+                    background-color: #f2f2f2;
+                    .light-theme & {
+                        background-color: #f2f2f2;
+                    }
+                    .dark-theme & {
+                        background-color: #0d0d0d;
+                    }
+                }
+                .light-theme & {
+                    background-color: transparent;
+                    color: #191919;
+                }
+                .dark-theme & {
+                    background-color: transparent;
+                    color: #e6e6e6;
+                }
             }
         }
         &-variant-reply {
@@ -18365,9 +18647,45 @@
             }
         }
         
-        /* Store */
-        .group-store [ng-bind*="'Description.ClothingRevenue'"] {
+        /* Games (BTRoblox) */
+        [ng-bind*="'Label.NoGames'"] {
             font-size: 0;
+            &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
+            &:after {
+                content: "No games are associated with this group.";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                cursor: text;
+            }
+        }
+        
+        /* Store */
+        [ng-bind*="'Description.ClothingRevenue'"] {
+            font-size: 0;
+            &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
             &:after {
                 content: "Groups have the ability to create and sell official shirts, pants, and t-shirts! All revenue goes to group funds.";
                 font-size: 16px;
@@ -18392,8 +18710,17 @@
             }
 
         }
-        .section-content-off[ng-bind*="'Label.NoStoreItems'"] {
+        [ng-bind*="'Label.NoStoreItems'"] {
             font-size: 0;
+            &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
             &:after {
                 content: "No items are for sale in this group.";
                 font-size: 16px;
@@ -19598,8 +19925,170 @@
         }
     }
     
-    /*/Login/*/
+    /*/ Stylize Group Announcements /*/
+    .group-announcements-notifications-icon {
+        background-color: transparent;
+        border: none;
+        .touch & {
+            background-color: transparent;
+            border-color: transparent;
+            &:active, &:focus, &:hover {
+                background-color: transparent;
+                border-color: transparent;
+            }
+            .light-theme &, .dark-theme & {
+                background-color: transparent;
+                &:active, &:focus, &:hover {
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+        }
+        .icon-notifications-bell {
+            background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
+            background-position: 0 -448px;
+            filter: invert(100%);
+            .light-theme & {
+                background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
+                background-position: 0 -448px;
+                filter: invert(100%);
+                &:hover, a:hover &, button:hover & {
+                    background-position: -28px -448px;
+                }
+            }
+            .dark-theme & {
+                background-image: url(https://images.rbxcdn.com/53374db5b6c1b349a20d0471ea032868-navigation_dark.svg);
+                background-position: 0 -448px;
+                filter: none;
+                &:hover, a:hover &, button:hover & {
+                    background-position: -28px -448px;
+                }
+            }
+            &:hover, a:hover &, button:hover & {
+                background-position: -28px -448px;
+            }
+        }
+        .light-theme &, .dark-theme & {
+            background-color: transparent;
+            border-color: transparent;
+            &:active, &:focus, &:hover {
+                background-color: transparent;
+                border-color: transparent;
+            }
+        }
+        &:active, &:focus, &:hover {
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+    .group-notifications-upsell-banner {
+        border-radius: 3px;
+        border-color: #b8b8b8;
+        background-color: #f2f2f2;
+        .icon-common-notification-bell:hover {
+            background-position: 0 -448px;
+        }
+        & &-icon {
+            filter: invert(100%);
+            .light-theme & {
+                filter: invert(100%);
+            }
+            .dark-theme & {
+                filter: none;
+            }
+        }
+        & &-close {
+            background-color: transparent;
+            border: none;
+            opacity: 1;
+            .touch & {
+                background-color: transparent;
+                border-color: transparent;
+                &:active, &:focus, &:hover {
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+                .light-theme &, .dark-theme & {
+                    background-color: transparent;
+                    border-color: transparent;
+                    &:active, &:focus, &:hover {
+                        background-color: transparent;
+                        border-color: transparent;
+                    }
+                }
+            }
+            .light-theme &, .dark-theme & {
+                background-color: transparent;
+                border-color: transparent;
+                &:active, &:focus, &:hover {
+                    background-color: transparent;
+                    border-color: transparent;
+                }
+            }
+            &:active, &:focus, &:hover {
+                background-color: transparent;
+                border-color: transparent;
+                .icon-close {
+                    background-position: -28px -588px
+                }
+            }
+        }
+        .light-theme & {
+            border-radius: 3px;
+            border-color: #b8b8b8;
+            background-color: #f2f2f2;
+        }
+        .dark-theme & {
+            border-radius: 3px;
+            border-color: #474747;
+            background-color: #0d0d0d;
+        }
+    }
+    .group-announcements-view-all-button a {
+        margin: auto;
+    }
+    .light-theme .linkable-button-content-container-icon, .dark-theme .linkable-button-content-container-icon {
+        filter: none
+    }
+    .community-link-display-link {
+        border: none;
+        border-radius: 0;
+    }
+    .reaction-button {
+        &.interactable {
+            background-color: #f2f2f2;
+            color: #757575;
+            &:active {
+                transform: none;
+            }
+            .light-theme & {
+                background-color: #f2f2f2;
+            }
+            .dark-theme & {
+                background-color: #0d0d0d;
+            }
+        }
+        &.interacted {
+            background-color: #191919;
+            &:active {
+                transform: none;
+            }
+            .light-theme & {
+                background-color: #191919;
+            }
+            .dark-theme & {
+                background-color: #e6e6e6;
+            }
+        }
+        .light-theme & {
+            background-color: #fff;
+        }
+        .dark-theme & {
+            background-color: #000;
+        }
+    }
     
+    /*/Login/*/
     .login-container .fb-button .fb-icon {
         background-image: url(https://static.rbxcdn.com/images/Shared/facebook.svg);
         background-repeat: no-repeat;
@@ -20946,12 +21435,24 @@
 	}
 	
     & when (@RemoveUpdates = 1) {
-        .btr-redesign #horizontal-tabs:has(>li:nth-child(2)) { --btr-num-tabs: 1; }
-        .btr-redesign #horizontal-tabs:has(>li:nth-child(2)):has(#btr-games) { --btr-num-tabs: 2; }
-        .btr-redesign #horizontal-tabs:has(>li:nth-child(3)) { --btr-num-tabs: 2; }
-        .btr-redesign #horizontal-tabs:has(>li:nth-child(3)):has(#btr-games) { --btr-num-tabs: 3; }
-        .btr-redesign #horizontal-tabs:has(>li:nth-child(4)), .btr-redesign #horizontal-tabs:has(>li:nth-child(5)), .btr-redesign #horizontal-tabs:has(>li:nth-child(6)), .btr-redesign #horizontal-tabs:has(>li:nth-child(7)) { --btr-num-tabs: 3; }
-        .btr-redesign #horizontal-tabs:has(>li:nth-child(4)):has(#btr-games), .btr-redesign #horizontal-tabs:has(>li:nth-child(5)):has(#btr-games), .btr-redesign #horizontal-tabs:has(>li:nth-child(6)):has(#btr-games), .btr-redesign #horizontal-tabs:has(>li:nth-child(7)):has(#btr-games) { --btr-num-tabs: 4; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(2)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(2)):has(#events) { --btr-num-tabs: 1; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(2)):has(#forums):has(#events) { --btr-num-tabs: 0; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(3)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(3)):has(#events) { --btr-num-tabs: 2; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(3)):has(#forums):has(#events) { --btr-num-tabs: 1; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(4)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(4)):has(#events) { --btr-num-tabs: 3; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(4)):has(#forums):has(#events) { --btr-num-tabs: 2; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(5)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(5)):has(#events) { --btr-num-tabs: 4; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(5)):has(#forums):has(#events) { --btr-num-tabs: 3; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(6)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(6)):has(#events) { --btr-num-tabs: 5; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(6)):has(#forums):has(#events) { --btr-num-tabs: 4; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(7)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(7)):has(#events) { --btr-num-tabs: 6; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(7)):has(#forums):has(#events) { --btr-num-tabs: 5; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(8)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(8)):has(#events) { --btr-num-tabs: 7; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(8)):has(#forums):has(#events) { --btr-num-tabs: 6; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(9)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(9)):has(#events) { --btr-num-tabs: 8; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(9)):has(#forums):has(#events) { --btr-num-tabs: 7; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(10)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(10)):has(#events) { --btr-num-tabs: 9; }
+        .btr-redesign #horizontal-tabs:has(>li:nth-child(10)):has(#forums):has(#events) { --btr-num-tabs: 8; }
     }
     
     .btr-profile .profile-statistics > h2 {
