@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250604-00.1.3.19
+@version      20250606-00.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -1097,7 +1097,7 @@
             }
         }
     }
-    html .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div {
+    html .content .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div {
         & when (@LegacyNextStyleGuideButtons = 0) or (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 0) {
             height: 311px;
             max-height: 311px;
@@ -1106,11 +1106,11 @@
             height: 270px;
             max-height: 270px;
         }
-        & when (@RemoveUpdates = 1) {
-            > div:nth-child(n+10) {
+        > div when (@RemoveUpdates = 1) {
+            &:nth-child(n+10) {
                 display: block;
             }
-            > div:nth-child(n+19) {
+            &:nth-child(n+19) {
                 display: none;
             }
             &.friends-carousel-tile {
@@ -8660,7 +8660,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250604.1.3.19 \A ";
+            content: "Milestone 20250606.1.3.19 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
