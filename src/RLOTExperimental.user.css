@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250606-01.1.3.19
+@version      20250609-00.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -922,7 +922,7 @@
     }
     
     & when (@SourceSansPro = 1) {
-        .refresh-link-icon, .refresh-link-icon:active, .refresh-link-icon:focus, .refresh-link-icon:hover, .touch .refresh-link-icon, .touch .refresh-link-icon:active, .touch .refresh-link-icon:focus, .touch .refresh-link-icon:hover, .see-all-link-icon, .see-all-link-icon:active, .see-all-link-icon:focus, .see-all-link-icon:hover, .touch .see-all-link-icon, .touch .see-all-link-icon:active, .touch .see-all-link-icon:focus, .touch .see-all-link-icon:hover, .see-all-link, .see-all-link:active, .see-all-link:focus, .see-all-link:hover, .touch .see-all-link, .touch .see-all-link:active, .touch .see-all-link:focus, .touch .see-all-link:hover, .home-container .sdui-icon.icon-push-right-16x16:focus, .home-container .sdui-icon.icon-push-right-16x16:hover {
+        .refresh-link-icon, .refresh-link-icon:active, .refresh-link-icon:focus, .refresh-link-icon:hover, .touch .refresh-link-icon, .touch .refresh-link-icon:active, .touch .refresh-link-icon:focus, .touch .refresh-link-icon:hover, .see-all-link-icon, .see-all-link-icon:active, .see-all-link-icon:focus, .see-all-link-icon:hover, .touch .see-all-link-icon, .touch .see-all-link-icon:active, .touch .see-all-link-icon:focus, .touch .see-all-link-icon:hover, .see-all-link, .see-all-link:active, .see-all-link:focus, .see-all-link:hover, .touch .see-all-link, .touch .see-all-link:active, .touch .see-all-link:focus, .touch .see-all-link:hover, .home-container .sdui-icon.icon-push-right-16x16:focus, .home-container .sdui-icon.icon-push-right-16x16:hover, .groups-list-new .text-label-medium:focus, .groups-list-new .text-label-medium:hover {
             border: 1px solid transparent;
         }
     }
@@ -1336,7 +1336,13 @@
             }
         }
         .font-bold, .font-header-2, .h5, .h6, .text-footer-nav, .text-label, .text-lead, .text-name, .text-subject, .text-warning, h5, h6, strong {
-            &, &:active, &:hover, &:link, &:visited {
+            font-size: 16px;
+            font-weight: 500;
+            @media (max-width: 767px) {
+                font-size:12px;
+                font-weight: 500
+            }
+            &:active, &:hover, &:link, &:visited {
                 font-size: 16px;
                 font-weight: 500;
                 @media (max-width: 767px) {
@@ -1357,13 +1363,20 @@
             font-weight: 400
         }
         .font-caption-header, .small.font-caption-header, .small.text-error, .small.text-pastname, .small.text-report, .text-error, .text-pastname, .text-report {
-            &, &:active, &:focus, &:hover, &:link, &:visited {
+            font-size: 12px;
+            font-weight: 500;
+            &:active, &:focus, &:hover, &:link, &:visited {
                 font-size: 12px;
-                font-weight: 500
+                font-weight: 500;
             }
         }
         .font-footer, .text-footer, .xsmall, .xxsmall {
-            &, &:active, &:focus, &:hover, &:link, &:visited {
+            font-size: 10px;
+            font-weight: 500;
+            @media (max-width: 767px) {
+                font-size:8px
+            }
+            &:active, &:focus, &:hover, &:link, &:visited {
                 font-size: 10px;
                 font-weight: 500;
                 @media (max-width: 767px) {
@@ -1372,17 +1385,14 @@
             }
         }
         .tooltip .tooltip-inner {
-            & when (@SourceSansPro = 0) {
-                max-width: 220px;
-            }
-            & when (@SourceSansPro = 1) {
-                max-width: 200px;
-            }
+            max-width: 220px;
         }
         .font-caption-body, .tooltip .tooltip-inner {
-            &, &:active, &:focus, &:hover, &:link, &:visited {
+            font-size: 12px;
+            font-weight: 400;
+            &:active, &:focus, &:hover, &:link, &:visited {
                 font-size: 12px;
-                font-weight: 400
+                font-weight: 400;
             }
         }
         .input-field,.line-height {
@@ -1393,7 +1403,7 @@
             padding: 0;
             margin: 2px 0 0
         }
-        .builder-font.chat-container .btn-control-xs,.chat-container .btn-control-xs,.builder-font.chat-container .chat-search-input,.chat-container .chat-search-input,.chat-main .btn-control-md,.create-chat-container .select-friends-btns .select-friends-cancel,.create-chat-container .select-friends-btns .select-friends-save,.details-btns-fixed button,.details-btns button,.details-container .details-input,.details-header-container .details-input,.dialog-container .dialog-input,.game-item-container .game-btn,.group-dialog .group-name-editor .group-name-input,.group-dialog .group-name-editor .group-name-save,.group-dialog .play-together-game-editor .group-name-input,.group-dialog .play-together-game-editor .group-name-save {
+        &.chat-container .btn-control-xs,.chat-container .btn-control-xs,&.chat-container .chat-search-input,.chat-container .chat-search-input,.chat-main .btn-control-md,.create-chat-container .select-friends-btns .select-friends-cancel,.create-chat-container .select-friends-btns .select-friends-save,.details-btns-fixed button,.details-btns button,.details-container .details-input,.details-header-container .details-input,.dialog-container .dialog-input,.game-item-container .game-btn,.group-dialog .group-name-editor .group-name-input,.group-dialog .group-name-editor .group-name-save,.group-dialog .play-together-game-editor .group-name-input,.group-dialog .play-together-game-editor .group-name-save {
             font-family: HCo Gotham SSm
         }
         &.chat-container .chat-friend-message.font-bold,.chat-container .chat-friend-message.font-bold,&.chat-container .chat-friend-message.font-bold:active,.chat-container .chat-friend-message.font-bold:active,&.chat-container .chat-friend-message.font-bold:focus,.chat-container .chat-friend-message.font-bold:focus,&.chat-container .chat-friend-message.font-bold:hover,.chat-container .chat-friend-message.font-bold:hover,&.chat-container .chat-friend-message.font-bold:link,.chat-container .chat-friend-message.font-bold:link,&.chat-container .chat-friend-message.font-bold:visited,.chat-container .chat-friend-message.font-bold:visited,&.chat-container .font-bold,.chat-container .font-bold,&.chat-container .font-bold:active,.chat-container .font-bold:active,&.chat-container .font-bold:link,.chat-container .font-bold:link,&.chat-container .font-bold:visited,.chat-container .font-bold:visited {
@@ -5452,6 +5462,19 @@
         }
     }
     
+    #game-age-recommendation-container {
+        margin: 0;
+    }
+    .age-rating-details {
+        border-radius: 0;
+        padding: 15px 0;
+        margin: 0;
+        .light-theme &, .dark-theme & {
+            padding: 0;
+            padding-bottom: 12px;
+        }
+    }
+    
 	& when (@AvatarGogoSpinner = 1) {
 		@-webkit-keyframes gogoloader {
 			0% {
@@ -7710,7 +7733,11 @@
                 font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
             }
             div {
-                &, &:hover, &:focus, &:active {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.3em;
+                &:hover, &:focus, &:active {
+                    font-size: 16px;
                     font-weight: 300;
                     line-height: 1.3em;
                 }
@@ -7720,44 +7747,56 @@
                 font-weight: 400;
             }
             .text-footer-nav {
-                &, &:active, &:hover, &:link {
+                font-size: 20px;
+                font-weight: 300;
+                &:active, &:hover, &:link {
                     font-size: 20px;
                     font-weight: 300;
                 }
             }
             .font-caption-body, .item-card-creator, .font-caption-header, .font-header-1 {
-                &, &:active, &:focus, &:hover, &:link, &:visited {
+                font-size: 16px;
+                font-weight: 300;
+                &:active, &:focus, &:hover, &:link, &:visited {
                     font-size: 16px;
                     font-weight: 300;
                 }
             }
             .text-lead {
-                &, &:active, &:hover, &:link, &:visited {
+                font-size: 18px;
+                font-weight: 400;
+                &:active, &:hover, &:link, &:visited {
                     font-size: 18px;
                     font-weight: 400;
                 }
             }
             .font-bold, strong {
-                &, &:hover, &:link, &:visited, &:active {
+                font-weight: 600;
+                &:hover, &:link, &:visited, &:active {
                     font-weight: 600;
                 }
             }
             .game-name-title {
+                line-height: 22px;
                 &:hover, &:focus, &:active {
                     line-height: 22px;
                 }
             }
             .small, .small-oneline, .text-pastname {
-                &, &:hover, &:focus, &:link, &:visited, &:active {
+                font-size: 14px;
+                font-weight: 400;
+                &:hover, &:focus, &:link, &:visited, &:active {
                     font-size: 14px;
                     font-weight: 400;
                 }
             }
             .chat-search-input {
-                &, &:hover, &:focus, &:active {
+                font-size: 14px;
+                font-weight: 400;
+                &:hover, &:focus, &:active {
                     font-size: 14px;
                 }
-                &, &::placeholder {
+                &::placeholder {
                     font-weight: 400;
                 }
             }
@@ -7768,29 +7807,36 @@
                 font-size: 14px;
             }
             .xsmall, &, .item-card-label, .game-card-experimental, .game-card-name-secondary, .sg-color-cell, .text-footer, .dialog-message span {
-                &, &:active, &:focus, &:hover {
+                font-size: 12px;
+                font-weight: 400;
+                &:active, &:focus, &:hover {
                     font-size: 12px;
                     font-weight: 400;
                 }
             }
             .text-date-hint, .text-date-hint {
-                &, &:active, &:focus, &:hover, &:visited, &:link {
+                font-size: 10px;
+                font-weight: 400;
+                &:active, &:focus, &:hover, &:visited, &:link {
                     font-size: 10px;
                     font-weight: 400;
                 }
             }
             .font-title, .text-name, .text-label {
-                &, &:active, &:focus, &:hover, &:visited, &:link {
+                font-weight: 400;
+                &:active, &:focus, &:hover, &:visited, &:link {
                     font-weight: 400;
                 }
             }
             .font-header-2 {
-                &, &:active, &:focus, &:hover, &:visited, &:link {
+                font-weight: 400;
+                &:active, &:focus, &:hover, &:visited, &:link {
                     font-weight: 400;
                 }
             }
             .text-description, p, .font-body, .toggle-target .field-content, .font-body, #navbar-search-input {
-                &, &:active, &:focus, &:hover, &:visited, &:link {
+                font-weight: 300;
+                &:active, &:focus, &:hover, &:visited, &:link {
                     font-weight: 300;
                 }
             }
@@ -7810,8 +7856,16 @@
                 top: 10px;
                 right: 12px;
             }
+            .tooltip .tooltip-inner {
+                max-width: 200px;
+            }
             h1, .h1, .font-title {
-                &, &:hover, &:focus, &:active {
+                font-size: 36px;
+                font-weight: 400;
+                @media (max-width: 767px) {
+                    font-size:30px
+                }
+                &:hover, &:focus, &:active {
                     font-size: 36px;
                     font-weight: 400;
                     @media (max-width: 767px) {
@@ -7820,7 +7874,12 @@
                 }
             }
             h2, .h2, .game-main-content .game-calls-to-action h1 {
-                &, &:hover, &:focus, &:active {
+                font-size: 30px;
+                font-weight: 400;
+                @media (max-width: 767px) {
+                    font-size:24px
+                }
+                &:hover, &:focus, &:active {
                     font-size: 30px;
                     font-weight: 400;
                     @media (max-width: 767px) {
@@ -7829,7 +7888,12 @@
                 }
             }
             h3, .h3, .container-header h2, .container-list h2, .profile-statistics > h2 {
-                &, &:hover, &:focus, &:active {
+                font-size: 24px;
+                font-weight: 300;
+                @media (max-width: 767px) {
+                    font-size:21px
+                }
+                &:hover, &:focus, &:active {
                     font-size: 24px;
                     font-weight: 300;
                     @media (max-width: 767px) {
@@ -7838,7 +7902,12 @@
                 }
             }
             h4, .h4 {
-                &, &:hover, &:focus, &:active {
+                font-size: 21px;
+                font-weight: 400;
+                @media (max-width: 767px) {
+                    font-size:18px
+                }
+                &:hover, &:focus, &:active {
                     font-size: 21px;
                     font-weight: 400;
                     @media (max-width: 767px) {
@@ -7847,7 +7916,12 @@
                 }
             }
             h5, .h5 {
-                &, &:hover, &:focus, &:active {
+                font-size: 18px;
+                font-weight: 400;
+                @media (max-width: 767px) {
+                    font-size:16px
+                }
+                &:hover, &:focus, &:active {
                     font-size: 18px;
                     font-weight: 400;
                     @media (max-width: 767px) {
@@ -7869,22 +7943,26 @@
             font-size: 16px;
         }
 		.app-bumper-container .app-motto-container .motto-primary {
-			&, &:hover, &:focus, &:active {
+            font-weight: 600;
+			&:hover, &:focus, &:active {
 				font-weight: 600;
 			}
 		}
 		.item-card-container .item-card-name, .game-card-container .game-card-name {
-			&, &:hover, &:focus, &:active {
+            font-weight: 500;
+			&:hover, &:focus, &:active {
 				font-weight: 500;
 			}
 		}
 		.chat-friend-list .chat-friend-info .chat-friend-name {
-			&, &:hover, &:focus, &:active {
+            font-size: 14px;
+			&:hover, &:focus, &:active {
 				font-size: 14px;
 			}
 		}
 		.chat-friend-list .chat-friend-info span {
-			&, &:hover, &:focus, &:active {
+            font-size: 12px;
+			&:hover, &:focus, &:active {
 				font-size: 12px;
 			}
 		}
@@ -7900,8 +7978,11 @@
         .light-theme .redirection-banner, .dark-theme .redirection-banner {
             font-size: 20px;
         }
-		.game-card-link .friend-activity-label, .game-card-link .native-ad-label {
-			&, &:hover, &:focus, &:active {
+        .game-card-link .friend-activity-label, .game-card-link .native-ad-label {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.866em;
+			&:hover, &:focus, &:active {
 				font-size: 12px;
 				font-weight: 400;
 				line-height: 1.866em;
@@ -8611,7 +8692,7 @@
     }
 	
 	/*/=={ Watermark }==/*/
-    @doubleLineEnabled: true;
+    @doubleLineEnabled: false;
     .rbx-left-col when not (@WatermarkStyle = None) {
         &:before {
             content: "(Legacy Theme) Testing Purposes Only";
@@ -8660,7 +8741,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250606.1.3.19 \A Patch 1";
+            content: "Milestone 20250609.1.3.19 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -10507,13 +10588,38 @@
             max-height: unset !important;
         }
     }
+    .group-details-container-desktop-and-tablet {
+        min-width: unset;
+        max-width: 100%;
+        @media (min-width: 768px) {
+            max-width: 1146px;
+            @media (max-width: 1338px) {
+                &:not(.no-list) .group-details {
+                    & when (@RemoveUpdates = 0) {
+                        width: 75%;
+                    }
+                    & when (@RemoveUpdates = 1) {
+                        width: calc(100% - 170px);
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
 	@media (min-width: 768px) {
         & when (@RemoveUpdates = 1) {
-            .groups-list .menu-vertical-container .menu-vertical {
-                width: 100%;
-            }
-            .groups-list.col-sm-3, .groups-list .col-xs-12.col-sm-3 {
-                width: 160px;
+            .groups-list {
+                .menu-vertical-container {
+                    .menu-vertical {
+                        width: 100%;
+                    }
+                }
+                &.col-sm-3, .col-xs-12.col-sm-3 {
+                    width: 160px;
+                }
+                .menu-vertical-container {
+                    padding: 0;
+                }
             }
             #groups-type-switch, .groups-type-switch {
                 width: 160px;
@@ -10533,21 +10639,9 @@
                     }
                 }
             }
-            .groups-list .menu-vertical-container {
-                padding: 0;
-            }
             .group-details {
                 width: 100%;
                 float: right;
-                &-container-desktop-and-tablet {
-                    max-width: 1146px;
-                }
-                @media (max-width: 1338px) {
-                    &-container-desktop-and-tablet:not(.no-list) & {
-                        width: calc(100% - 170px);
-                        margin-left: 10px;
-                    }
-                }
             }
         }
         .light-theme .catalog-container .sticky .search-bars, .dark-theme .catalog-container .sticky .search-bars {
@@ -13420,12 +13514,12 @@
                     display: block;
                     max-width: none;
                     .player-avatar.hidden-players-placeholder {
-                        background-color: #e3e3e3;
+                        background-color: #d1d1d1;
                         .light-theme & {
-                            background-color: #e3e3e3;
+                            background-color: #d1d1d1;
                         }
                         .dark-theme & {
-                            background-color: #1c1c1c;
+                            background-color: #2e2e2e;
                         }
                     }
                     @media (max-width: 991px) {
@@ -15628,7 +15722,7 @@
 			border-radius: 5px;
 		}
 	}
-	.btn-secondary-md, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend {
+	.btn-secondary-md, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .btn-control-md.groups-list-create-button {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -15714,7 +15808,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-secondary-xs, .home-container .sdui-icon.icon-push-right-16x16 {
+	.btn-secondary-xs, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -15757,7 +15851,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16 {
+	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #32b5ff;
 			& when (@BoxShadows = 1) {
@@ -16791,7 +16885,7 @@
 				border-radius: 3px;
 			}
 		}
-		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button {
+		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .btn-control-md.groups-list-create-button {
 			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
 				padding: 7px;
 				font-size: 16px;
@@ -17001,7 +17095,7 @@
     & when (@SourceSansPro = 0) {
         .gotham-font, .builder-font {
             &.light-theme, &.dark-theme {
-                .refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16 {
+                .refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
                     &, &-icon {
                         &, &:active, &:hover, &:link, &:visited {
                             & when (@BoxShadows = 1) {
@@ -17019,7 +17113,7 @@
     & when (@SourceSansPro = 1) {
         .gotham-font, .builder-font {
             &.light-theme, &.dark-theme {
-                .refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16 {
+                .refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
                     &, &-icon {
                         &, &:active, &:hover, &:link, &:visited {
                             color: #fff;
@@ -17964,7 +18058,7 @@
         }
     }
     
-    .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .refresh-link-icon, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .refresh-link-icon, .home-container .sdui-icon.icon-push-right-16x16 {
+    .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .refresh-link-icon, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .refresh-link-icon, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
         padding: 4px;
         & when (@SourceSansPro = 0) {
             min-width: min-content;
@@ -18023,12 +18117,12 @@
     
 	& when (@SourceSansPro = 0) {
 		.light-theme, .dark-theme {
-			&.gotham-font .btn-to-link, &.gotham-font .btn-to-link:active, &.gotham-font .btn-to-link:focus, &.gotham-font .btn-to-link:hover, &.gotham-font .refresh-link, &.gotham-font .refresh-link-icon, &.gotham-font .refresh-link-icon:active, &.gotham-font .refresh-link-icon:focus, &.gotham-font .refresh-link-icon:hover, &.gotham-font .refresh-link:active, &.gotham-font .refresh-link:focus, &.gotham-font .refresh-link:hover, &.gotham-font .see-all-link, &.gotham-font .see-all-link-icon, &.gotham-font .see-all-link-icon:active, &.gotham-font .see-all-link-icon:focus, &.gotham-font .see-all-link-icon:hover, &.gotham-font .see-all-link:active, &.gotham-font .see-all-link:focus, &.gotham-font .see-all-link:hover, &.gotham-font .touch .btn-to-link, &.gotham-font .touch .btn-to-link:active, &.gotham-font .touch .btn-to-link:focus, &.gotham-font .touch .btn-to-link:hover, &.gotham-font .touch .refresh-link, &.gotham-font .touch .refresh-link-icon, &.gotham-font .touch .refresh-link-icon:active, &.gotham-font .touch .refresh-link-icon:focus, &.gotham-font .touch .refresh-link-icon:hover, &.gotham-font .touch .refresh-link:active, &.gotham-font .touch .refresh-link:focus, &.gotham-font .touch .refresh-link:hover, &.gotham-font .touch .see-all-link, &.gotham-font .touch .see-all-link-icon, &.gotham-font .touch .see-all-link-icon:active, &.gotham-font .touch .see-all-link-icon:focus, &.gotham-font .touch .see-all-link-icon:hover, &.gotham-font .touch .see-all-link:active, &.gotham-font .touch .see-all-link:focus, &.gotham-font .touch .see-all-link:hover, &.builder-font .btn-to-link, &.builder-font .btn-to-link:active, &.builder-font .btn-to-link:focus, &.builder-font .btn-to-link:hover, &.builder-font .refresh-link, &.builder-font .refresh-link-icon, &.builder-font .refresh-link-icon:active, &.builder-font .refresh-link-icon:focus, &.builder-font .refresh-link-icon:hover, &.builder-font .refresh-link:active, &.builder-font .refresh-link:focus, &.builder-font .refresh-link:hover, &.builder-font .see-all-link, &.builder-font .see-all-link-icon, &.builder-font .see-all-link-icon:active, &.builder-font .see-all-link-icon:focus, &.builder-font .see-all-link-icon:hover, &.builder-font .see-all-link:active, &.builder-font .see-all-link:focus, &.builder-font .see-all-link:hover, &.builder-font .touch .btn-to-link, &.builder-font .touch .btn-to-link:active, &.builder-font .touch .btn-to-link:focus, &.builder-font .touch .btn-to-link:hover, &.builder-font .touch .refresh-link, &.builder-font .touch .refresh-link-icon, &.builder-font .touch .refresh-link-icon:active, &.builder-font .touch .refresh-link-icon:focus, &.builder-font .touch .refresh-link-icon:hover, &.builder-font .touch .refresh-link:active, &.builder-font .touch .refresh-link:focus, &.builder-font .touch .refresh-link:hover, &.builder-font .touch .see-all-link, &.builder-font .touch .see-all-link-icon, &.builder-font .touch .see-all-link-icon:active, &.builder-font .touch .see-all-link-icon:focus, &.builder-font .touch .see-all-link-icon:hover, &.builder-font .touch .see-all-link:active, &.builder-font .touch .see-all-link:focus, &.builder-font .touch .see-all-link:hover, .home-container .sdui-icon.icon-push-right-16x16, .home-container .sdui-icon.icon-push-right-16x16:active, .home-container .sdui-icon.icon-push-right-16x16:focus, .home-container .sdui-icon.icon-push-right-16x16:hover {
+			&.gotham-font .btn-to-link, &.gotham-font .btn-to-link:active, &.gotham-font .btn-to-link:focus, &.gotham-font .btn-to-link:hover, &.gotham-font .refresh-link, &.gotham-font .refresh-link-icon, &.gotham-font .refresh-link-icon:active, &.gotham-font .refresh-link-icon:focus, &.gotham-font .refresh-link-icon:hover, &.gotham-font .refresh-link:active, &.gotham-font .refresh-link:focus, &.gotham-font .refresh-link:hover, &.gotham-font .see-all-link, &.gotham-font .see-all-link-icon, &.gotham-font .see-all-link-icon:active, &.gotham-font .see-all-link-icon:focus, &.gotham-font .see-all-link-icon:hover, &.gotham-font .see-all-link:active, &.gotham-font .see-all-link:focus, &.gotham-font .see-all-link:hover, &.gotham-font .touch .btn-to-link, &.gotham-font .touch .btn-to-link:active, &.gotham-font .touch .btn-to-link:focus, &.gotham-font .touch .btn-to-link:hover, &.gotham-font .touch .refresh-link, &.gotham-font .touch .refresh-link-icon, &.gotham-font .touch .refresh-link-icon:active, &.gotham-font .touch .refresh-link-icon:focus, &.gotham-font .touch .refresh-link-icon:hover, &.gotham-font .touch .refresh-link:active, &.gotham-font .touch .refresh-link:focus, &.gotham-font .touch .refresh-link:hover, &.gotham-font .touch .see-all-link, &.gotham-font .touch .see-all-link-icon, &.gotham-font .touch .see-all-link-icon:active, &.gotham-font .touch .see-all-link-icon:focus, &.gotham-font .touch .see-all-link-icon:hover, &.gotham-font .touch .see-all-link:active, &.gotham-font .touch .see-all-link:focus, &.gotham-font .touch .see-all-link:hover, &.builder-font .btn-to-link, &.builder-font .btn-to-link:active, &.builder-font .btn-to-link:focus, &.builder-font .btn-to-link:hover, &.builder-font .refresh-link, &.builder-font .refresh-link-icon, &.builder-font .refresh-link-icon:active, &.builder-font .refresh-link-icon:focus, &.builder-font .refresh-link-icon:hover, &.builder-font .refresh-link:active, &.builder-font .refresh-link:focus, &.builder-font .refresh-link:hover, &.builder-font .see-all-link, &.builder-font .see-all-link-icon, &.builder-font .see-all-link-icon:active, &.builder-font .see-all-link-icon:focus, &.builder-font .see-all-link-icon:hover, &.builder-font .see-all-link:active, &.builder-font .see-all-link:focus, &.builder-font .see-all-link:hover, &.builder-font .touch .btn-to-link, &.builder-font .touch .btn-to-link:active, &.builder-font .touch .btn-to-link:focus, &.builder-font .touch .btn-to-link:hover, &.builder-font .touch .refresh-link, &.builder-font .touch .refresh-link-icon, &.builder-font .touch .refresh-link-icon:active, &.builder-font .touch .refresh-link-icon:focus, &.builder-font .touch .refresh-link-icon:hover, &.builder-font .touch .refresh-link:active, &.builder-font .touch .refresh-link:focus, &.builder-font .touch .refresh-link:hover, &.builder-font .touch .see-all-link, &.builder-font .touch .see-all-link-icon, &.builder-font .touch .see-all-link-icon:active, &.builder-font .touch .see-all-link-icon:focus, &.builder-font .touch .see-all-link-icon:hover, &.builder-font .touch .see-all-link:active, &.builder-font .touch .see-all-link:focus, &.builder-font .touch .see-all-link:hover, .home-container .sdui-icon.icon-push-right-16x16, .home-container .sdui-icon.icon-push-right-16x16:active, .home-container .sdui-icon.icon-push-right-16x16:focus, .home-container .sdui-icon.icon-push-right-16x16:hover, .groups-list-new .text-label-medium, .groups-list-new .text-label-medium:active, .groups-list-new .text-label-medium:focus, .groups-list-new .text-label-medium:hover {
 				background-color: transparent;
 				border: 0;
 			}
 		}
-		.gotham-font .btn-to-link, .gotham-font .refresh-link, .gotham-font .refresh-link-icon, .gotham-font .see-all-link, .gotham-font .see-all-link-icon, .gotham-font .touch .btn-to-link, .gotham-font .touch .refresh-link, .gotham-font .touch .refresh-link-icon, .gotham-font .touch .see-all-link, .gotham-font .touch .see-all-link-icon, .builder-font .btn-to-link, .builder-font .refresh-link, .builder-font .refresh-link-icon, .builder-font .see-all-link, .builder-font .see-all-link-icon, .builder-font .touch .btn-to-link, .builder-font .touch .refresh-link, .builder-font .touch .refresh-link-icon, .builder-font .touch .see-all-link, .builder-font .touch .see-all-link-icon, .home-container .sdui-icon.icon-push-right-16x16 {
+		.gotham-font .btn-to-link, .gotham-font .refresh-link, .gotham-font .refresh-link-icon, .gotham-font .see-all-link, .gotham-font .see-all-link-icon, .gotham-font .touch .btn-to-link, .gotham-font .touch .refresh-link, .gotham-font .touch .refresh-link-icon, .gotham-font .touch .see-all-link, .gotham-font .touch .see-all-link-icon, .builder-font .btn-to-link, .builder-font .refresh-link, .builder-font .refresh-link-icon, .builder-font .see-all-link, .builder-font .see-all-link-icon, .builder-font .touch .btn-to-link, .builder-font .touch .refresh-link, .builder-font .touch .refresh-link-icon, .builder-font .touch .see-all-link, .builder-font .touch .see-all-link-icon, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
 			&, &:hover, &:focus, &:active, &:link, &:visited {
 				font-size: 16px;
 			}
@@ -18296,8 +18390,17 @@
                 }
             }
         }
-        .group-details-container .see-all-container-header h1 {
+        .group-details-container .see-all-container-header h1, .groups-list-sidebar .group-react-groups-list .groups-list-new .groups-list-heading {
             font-size: 0;
+            &:hover, &:focus, &:active {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:hover, &:focus, &:active {
+                    font-size: 0;
+                }
+            }
             &:after {
                 content: "Groups";
                 & when (@SourceSansPro = 0) {
@@ -18318,10 +18421,28 @@
                 cursor: text;
             }
         }
-        .groups-list .create-group-button {
+        .groups-list .create-group-button, .groups-list-new .groups-list-create-button {
             font-size: 0;
             &:hover, &:focus, &:active {
                 font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:hover, &:focus, &:active {
+                    font-size: 0;
+                }
+            }
+            &.btn-control-md {
+                font-size: 0;
+                &:hover, &:focus, &:active {
+                    font-size: 0;
+                }
+                .gotham-font &, .builder-font & {
+                    font-size: 0;
+                    &:hover, &:focus, &:active {
+                        font-size: 0;
+                    }
+                }
             }
             @media (max-width: 767px) {
                 font-size: 0;
@@ -18364,6 +18485,9 @@
         }
         [ng-href*="/search/communities"] {
             font-size: 0;
+            &:active, &:hover, &:link, &:visited {
+                font-size: 0;
+            }
             .gotham-font.light-theme &, .builder-font.light-theme &, .gotham-font.dark-theme &, .builder-font.dark-theme & {
                 font-size: 0;
                 &:active, &:hover, &:link, &:visited {
@@ -18646,6 +18770,145 @@
                 cursor: text;
             }
         }
+        [ng-bind*="'Label.CreateGroup'"] {
+            font-size: 0;
+            &:active, &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:active, &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
+            &:after {
+                content: "Create Group";
+                & when (@SourceSansPro = 0) {
+                    font-size: 32px;
+                    font-weight: 800;
+                    @media (max-width: 767px) {
+                        font-size:24px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 36px;
+                    font-weight: 400;
+                    @media (max-width: 767px) {
+                        font-size:30px
+                    }
+                }
+                line-height: 1em;
+                cursor: text;
+            }
+        }
+        
+        /* Leave Group Modal */
+        [ng-bind*="'Heading.LeaveGroup'"] {
+            font-size: 0;
+            &:active, &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:active, &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
+            &:after {
+                content: "Leave Group";
+                & when (@SourceSansPro = 0) {
+                    font-size: 20px;
+                    font-weight: 700;
+                    @media (max-width: 767px) {
+                        font-size:16px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 21px;
+                    font-weight: 400;
+                    @media (max-width: 767px) {
+                        font-size:18px
+                    }
+                }
+                line-height: 1em;
+                cursor: text;
+            }
+        }
+        [ng-bind*="'Description.LeaveGroupWarning'"] {
+            font-size: 0;
+            &:active, &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:active, &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
+            @media (max-width: 767px) {
+                .modal-dialog .modal-content & {
+                    font-size: 0;
+                    &:active, &:focus, &:hover {
+                        font-size: 0;
+                    }
+                    .gotham-font &, .builder-font & {
+                        font-size: 0;
+                        &:active, &:focus, &:hover {
+                            font-size: 0;
+                        }
+                    }
+                }
+            }
+            &:after {
+                content: "Are you sure you want to leave this group?";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                    &:active, &:focus, &:hover, &:visited, &:link {
+                        font-weight: 300;
+                    }
+                }
+                line-height: 1.5em;
+                cursor: text;
+                @media (max-width: 767px) {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
+        }
+        
+        /* Popover */
+        #configure-group a {
+            font-size: 0;
+            &:after {
+                content: "Configure Group";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 1.42857;
+            }
+        }
+        #leave-group button {
+            font-size: 0;
+            &:after {
+                content: "Leave Group";
+                font-size: 16px;
+                & when (@SourceSansPro = 0) {
+                    font-weight: 400;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 300;
+                }
+                line-height: 1.42857;
+            }
+        }
         
         /* Games (BTRoblox) */
         [ng-bind*="'Label.NoGames'"] {
@@ -18773,36 +19036,6 @@
                     line-height: 1.3em;
                 }
                 cursor: text;
-            }
-        }
-
-        /* Popover */
-        #configure-group a {
-            font-size: 0;
-            &:after {
-                content: "Configure Group";
-                font-size: 16px;
-                & when (@SourceSansPro = 0) {
-                    font-weight: 400;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 1.42857;
-            }
-        }
-        #leave-group button {
-            font-size: 0;
-            &:after {
-                content: "Leave Group";
-                font-size: 16px;
-                & when (@SourceSansPro = 0) {
-                    font-weight: 400;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 1.42857;
             }
         }
 
@@ -19607,6 +19840,312 @@
             }
         }
     }
+    
+    /*/ Revert React Group List /*/
+    .wrap:has(.groups-list-sidebar) .content {
+        margin: auto;
+        max-width: 1338px;
+        .group-details-container-desktop-and-tablet {
+            max-width: 100%;
+            width: 100%;
+            position: relative;
+            .group-details {
+                float: left;
+                margin: 0;
+                & when (@SourceSansPro = 0) {
+                    margin-top: 48px;
+                }
+                & when (@SourceSansPro = 1) {
+                    margin-top: 52px;
+                }
+                & when (@RemoveUpdates = 0) {
+                    @media (min-width: 768px) {
+                        width: 75%;
+                    }
+                }
+                @media (max-width: 767px) {
+                    margin-top: 0;
+                }
+                @media (min-width: 768px) {
+                    float: right;
+                }
+            }
+            @media (min-width: 768px) {
+                max-width: 1146px;
+                @media (max-width: 1338px) {
+                    &:not(.no-list) .group-details {
+                        & when (@RemoveUpdates = 0) {
+                            width: 75%;
+                        }
+                        & when (@RemoveUpdates = 1) {
+                            width: calc(100% - 170px);
+                        }
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        @media (min-width: 991px) {
+            margin-left: auto;
+            padding-left: 0;
+            padding-right: 0;
+
+        }
+        @media (max-width: 1338px) {
+            max-width: 1154px;
+        }
+        @media (max-width: 1154px) {
+            max-width: 970px;
+        }
+        @media (min-width: 1688px) {
+            margin-left: auto;
+        }
+    }
+    .groups-list {
+        &-new {
+            display: block;
+            .flex {
+                flex-wrap: wrap;
+                margin: 0 0 6px;
+            }
+        }
+        &-sidebar {
+            background-color: transparent;
+            border: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: unset;
+            height: unset;
+            padding: 0;
+            @media (max-width: 991px) {
+                display: block;
+            }
+            @media (max-width: 767px) {
+                display: none;
+            }
+            .group-react-groups-list .groups-list-new {
+                display: block;
+                .groups-list-items-container {
+                    overflow-y: auto;
+                    scrollbar-gutter: unset;
+                    margin-right: 0;
+                    padding-right: 0;
+                    margin-bottom: 10px;
+                    width: 100%;
+                    & when (@RemoveUpdates = 0) {
+                        margin-top: 10px;
+                        @media (min-width: 768px) {
+                            width: 25%;
+                            padding-right: 16px;
+                        }
+                    }
+                    & when (@RemoveUpdates = 1) {
+                        @media (min-width: 768px) {
+                            width: 160px;
+                        }
+                    }
+                    .text-caption-large {
+                        display: none
+                    }
+                    .group-list-item-info {
+                        max-width: 100%;
+                        min-width: 0;
+                        padding-left: 5px;
+                        .text-truncate-split, .text-truncate-end {
+                            line-height: 100%;
+                        }
+                        .text-title-medium {
+                            & when (@SourceSansPro = 0) {
+                                font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                                font-size: 12px;
+                                font-weight: 500;
+                                line-height: 1.4em;
+                            }
+                            & when (@SourceSansPro = 1) {
+                                font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                                font-size: 16px;
+                                font-weight: 300;
+                                line-height: 1.3em;
+                            }
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            display: block;
+                        }
+                    }
+                }
+                .groups-list-heading {
+                    & when (@SourceSansPro = 0) {
+                        font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                        font-size: 32px;
+                        font-weight: 800;
+                        @media (max-width: 767px) {
+                            font-size:24px
+                        }
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                        font-size: 36px;
+                        font-weight: 400;
+                        @media (max-width: 767px) {
+                            font-size:30px
+                        }
+                    }
+                    line-height: 1em;
+                }
+                .text-label-medium {
+                    & when (@SourceSansPro = 0) {
+                        font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                    }
+                    font-size: 0;
+                    text-align: center;
+                    &:active, &:hover, &:link, &:visited {
+                        font-size: 0;
+                    }
+                    .gotham-font.light-theme &, .builder-font.light-theme &, .gotham-font.dark-theme &, .builder-font.dark-theme & {
+                        font-size: 0;
+                        &:active, &:hover, &:link, &:visited {
+                            font-size: 0;
+                        }
+                    }
+                    .touch & {
+                        font-size: 0;
+                        .gotham-font &, .gotham-font.light-theme &, .gotham-font.dark-theme &, .builder-font &, .builder-font.light-theme &, .builder-font.dark-theme & {
+                            font-size: 0;
+                            &:active, &:hover, &:link, &:visited {
+                                font-size: 0;
+                            }
+                        }
+                    }
+                    &:after {
+                        content: "More Groups";
+                        & when (@SourceSansPro = 0) {
+                            font-size: 16px;
+                        }
+                        & when (@SourceSansPro = 1) {
+                            font-size: 14px;
+                        }
+                        font-weight: 500;
+                        line-height: 100%;
+                    }
+                    &:hover:after when (@SourceSansPro = 0) {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &-search {
+            margin-top: 10px;
+            margin-bottom: 0;
+            width: 100%;
+            & when (@RemoveUpdates = 0) {
+                @media (min-width: 768px) {
+                    width: 25%;
+                    padding-right: 16px;
+                }
+            }
+            & when (@RemoveUpdates = 1) {
+                @media (min-width: 768px) {
+                    width: 160px;
+                }
+            }
+            & when (@RemoveUpdates = 1) {
+                display: none;
+            }
+        }
+        &-buttons-bottom {
+            padding-top: 0;
+            border: 0;
+            width: 100%;
+            & when (@RemoveUpdates = 0) {
+                @media (min-width: 768px) {
+                    width: 25%;
+                    padding-right: 16px;
+                }
+            }
+            & when (@RemoveUpdates = 1) {
+                @media (min-width: 768px) {
+                    width: 160px;
+                }
+            }
+        }
+    }
+    .groups-list-item {
+        background-color: #fff;
+        color: #191919;
+        padding: 10px 12px;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        border-radius: 0;
+        margin-bottom: 0;
+        width: 100%;
+        &:hover {
+            background-color: #f2f2f2;
+            color: #191919;
+        }
+        &.active, &:hover {
+            box-shadow: inset 4px 0 0 0 #00a2ff;
+        }
+        & &-thumbnail {
+            width: 32px;
+            height: 32px;
+            border-radius: 0;
+            margin: 0;
+        }
+        & when (@RemoveUpdates = 0) {
+            &:has(.groups-list-item-pill) {
+                border-bottom: 1px solid #b8b8b8;
+                .light-theme & {
+                    border-color: #b8b8b8;
+                }
+                .dark-theme & {
+                    border-color: #474747;
+                }
+            }
+        }
+        .groups-list-item-pill when (@RemoveUpdates = 1) {
+            display: none;
+        }
+        .light-theme & {
+            background-color: #fff;
+            color: #191919;
+            &:hover {
+                background-color: #f2f2f2;
+                color: #191919;
+            }
+            &.active, &:hover {
+                box-shadow: inset 4px 0 0 0 #00a2ff;
+            }
+        }
+        .dark-theme & {
+            background-color: #000;
+            color: #e6e6e6;
+            &:hover {
+                background-color: #0d0d0d;
+                color: #e6e6e6;
+            }
+            &.active, &:hover {
+                box-shadow: inset 4px 0 0 0 #00a2ff;
+            }
+        }
+    }
+    .groups-list-create-button {
+        width: 100%;
+        display: block;
+        float: left;
+        .linkable-button-content-container {
+            display: block;
+        }
+    }
+
+    /*/ Revert Group Redesign /*/
+    /*/==// TODO //==/*/
     
     /*/ Revert new Games Modal /*/
     .MuiDialog-root, .MuiModal-root {
