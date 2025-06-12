@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250609-00.1.3.19
+@version      20250612-00.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -614,36 +614,340 @@
         border-radius: 0;
     }
     
-    .people-info-card-container .interaction-item .icon-chat-gray, .people-info-card-container .interaction-item .icon-viewdetails {
-        width: 28px;
-        height: 28px;
-        margin: 6px;
-        background-repeat: no-repeat;
-        background-size: 200% auto;
+    .people-info-card-container {
+        max-width: 320px;
+        min-width: auto;
+        &.card-with-game {
+            width: 320px;
+            max-width: 100%;
+        }
+        .place-container {
+            height: 114px;
+            padding: 12px;
+            .place-icon,.place-info-container {
+                float: left;
+            }
+            .place-icon {
+                width: 90px;
+                height: 90px;
+                border-radius: 3px;
+            }
+            .place-info-container {
+                margin-left: 12px;
+                width: 194px;
+                .place-title {
+                    display: inline-block;
+                }
+                .place-info {
+                    min-height: 58px;
+                    padding: 0 12px 0 0;
+                }
+                .place-btn-container {
+                    text-align: right;
+                }
+            }
+            &:after,&:before {
+                content: " ";
+                display: table;
+            }
+            &:after {
+                clear: both;
+            }
+            .place-title {
+                overflow: hidden;
+                position: relative;
+                line-height: 1.4em;
+                max-height: 2.8em;
+            }
+        }
+        .interaction-container {
+            height: 84px;
+            box-shadow: none;
+        }
+        .interaction-item {
+            padding: 0;
+             .icon,.label {
+                 float: left;
+            }
+            .icon {
+                margin: 11px 14px;
+                width: 20px;
+                height: 20px;
+                background-size: 40px auto;
+                &-chat-gray {
+                    background-position: 0 -1320px;
+                    &:hover {
+                        background-position: -20px -1320px;
+                    }
+                }
+                &-viewdetails {
+                    background-position: 0 -1340px;
+                    &:hover {
+                        background-position: -20px -1340px;
+                    }
+                }
+            }
+            .label {
+                width: 90%;
+                width: calc(100% - 48px);
+                padding: 11px 12px 12px 0;
+                line-height: 1.1em;
+            }
+            &:last-child .label {
+                border-bottom: none;
+            }
+            &:hover {
+                .icon-chat-gray {
+                    background-position: -20px -1320px;
+                    &:hover {
+                        background-position: -40px -1320px
+                    }
+                }
+                .icon-viewdetails {
+                    background-position: -20px -1340px;
+                    &:hover {
+                        background-position: -40px -1340px
+                    }
+                }
+            }
+            &:after,&:before {
+                content: " ";
+                display: table
+            }
+            &:after {
+                clear: both
+            }
+        }
+        .popover.bottom& {
+            margin-top: 6px;
+            &.popover.bottom-left>.arrow {
+                margin-left: 32px
+            }
+            &.popover.bottom-right>.arrow {
+                margin-right: 32px
+            }
+            &.bottom>.arrow {
+                border-bottom-color: rgba(25,25,25,.12)
+            }
+        }
     }
-    .people-info-card-container .interaction-item .icon-chat-gray, .people-info-card-container .interaction-item:hover .icon-chat-gray {
-        background-position: 0 -1848px;
-    }
-    .people-info-card-container .interaction-item:hover .icon-chat-gray:hover {
-        background-position: -28px -1848px;
-    }
-    .people-info-card-container .interaction-item:hover .icon-viewdetails, .people-info-card-container .interaction-item .icon-viewdetails {
-        background-position: 0 -1876px;
-    }
-    .people-info-card-container .interaction-item:hover .icon-viewdetails:hover {
-        background-position: -28px -1876px;
-    }
-    .people-info-card-container .interaction-item .label {
-        width: calc(100% - 40px);
-    }
-    .people-info-card-container .interaction-container {
-        height: 81px;
-    }
-    .popover-content .ng-scope .dropdown-menu.interaction-container .interaction-item:nth-child(1) .text-overflow.border-bottom.label.ng-binding {
-        height: 41px;
-    }
-    .popover-content .ng-scope .dropdown-menu.interaction-container .interaction-item:nth-child(2) .label.ng-binding {
-        height: 40px;
+    
+    & when (@RemoveUpdates = 1) {
+        .friend-tile-dropdown {
+            text-align: left;
+            white-space: normal;
+            z-index: 1060;
+            background-clip: padding-box;
+            border: 0;
+            border-radius: 4px;
+            max-width: 320px;
+            padding: 0;
+            box-shadow: 0 1px 4px rgba(25, 25, 25, .3);
+            position: relative;
+            ul, ol {
+                height: 84px;
+                box-shadow: none;
+                border-radius: 4px;
+                overflow: hidden;
+                li {
+                    white-space: nowrap;
+                    .icon {
+                        margin: 11px 14px;
+                        width: 20px;
+                        height: 20px;
+                        background-size: 40px auto;
+                        &-chat-gray {
+                            background-position: 0 -1320px;
+                            &:hover {
+                                background-position: -20px -1320px;
+                            }
+                        }
+                        &-viewdetails {
+                            background-position: 0 -1340px;
+                            &:hover {
+                                background-position: -20px -1340px;
+                            }
+                        }
+                    }
+                    &:hover {
+                        background-color: #f2f2f2;
+                        box-shadow: inset 4px 0 0 0 #00a2ff;
+                        color: #191919;
+                        .icon-chat-gray {
+                            background-position: -20px -1320px;
+                            &:hover {
+                                background-position: -40px -1320px
+                            }
+                        }
+                        .icon-viewdetails {
+                            background-position: -20px -1340px;
+                            &:hover {
+                                background-position: -40px -1340px
+                            }
+                        }
+                        .light-theme & {
+                            background-color: #f2f2f2;
+                            box-shadow: inset 4px 0 0 0 #00a2ff;
+                            color: #191919;
+                        }
+                        .dark-theme & {
+                            background-color: #0d0d0d;
+                            box-shadow: inset 4px 0 0 0 #00a2ff;
+                            color: #e6e6e6;
+                        }
+                    }
+                }
+            }
+            &:before {
+                content: " ";
+                border-style: solid;
+                border-color: transparent;
+                width: 0;
+                height: 0;
+                display: block;
+                position: absolute;
+                border-width: 7px;
+                z-index: 1060;
+                border-top-width: 0;
+                border-bottom-color: rgba(25, 25, 25, 0.12);
+                margin-left: -7px;
+                top: -7px;
+                left: 50%;
+                .light-theme & {
+                    border-bottom-color: rgba(25, 25, 25, 0.12);;
+                }
+                .dark-theme & {
+                    border-bottom-color: rgba(230, 230, 230, 0.12);;
+                }
+            }
+            &:after {
+                content: " ";
+                border-style: solid;
+                border-color: transparent;
+                width: 0;
+                height: 0;
+                display: block;
+                position: absolute;
+                border-width: 7px;
+                z-index: 1061;
+                border-top-width: 0;
+                border-bottom-color: #fff;
+                margin-left: -7px;
+                top: -6px;
+                left: 50%;
+                .light-theme & {
+                    border-bottom-color: #fff;
+                }
+                .dark-theme & {
+                    border-bottom-color: #000;
+                }
+            }
+            .light-theme & {
+                background-color: #fff;
+                box-shadow: 0 1px 4px rgba(25, 25, 25, .3);
+                border-radius: 4px;
+            }
+            .dark-theme & {
+                background-color: #000;
+                box-shadow: 0 1px 4px rgba(230, 230, 230, .3);
+                border-radius: 4px;
+            }
+        }
+        .in-game-friend-card {
+            height: 114px;
+            padding: 12px;
+            display: block;
+            border-bottom: 1px solid #e3e3e3;
+            .light-theme & {
+                border-color: #e3e3e3;
+            }
+            .dark-theme & {
+                border-color: #1c1c1c;
+            }
+        }
+        .in-game-friend-card > .friend-tile-non-styled-button, .friend-presence-info {
+            float: left
+        }
+        .friend-tile-game-card {
+            width: 90px;
+            height: 90px;
+            border-radius: 3px;
+            margin-right: 0;
+            html .btr-friends-list .friends-carousel-tile .friend-tile-dropdown & {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        .friend-presence-info {
+            margin-left: 12px;
+            width: 194px;
+            display: block;
+            > .friend-tile-non-styled-button {
+                font-size: 16px;
+                font-weight: 500;
+                @media (max-width: 767px) {
+                    font-size:12px;
+                    font-weight: 500
+                }
+                overflow: hidden;
+                position: relative;
+                line-height: 1.4em;
+                max-height: 2.8em;
+                min-height: 58px;
+                padding: 0 12px 0 0;
+                display: inline-block;
+                max-width: 100%;
+            }
+        }
+        .friend-tile-dropdown-button {
+            color: #191919;
+            padding: 0;
+            padding-right: 12px;
+            border: 0;
+            line-height: 1.1em;
+            display: flex;
+            align-items: center;
+            &:after {
+                content: "w";
+                color: transparent;
+                width: 90%;
+                width: calc(100% - 48px);
+                padding: 11px 12px 12px 0;
+                line-height: 1.1em;
+                position: absolute;
+                right: 0;
+                border-bottom: 1px solid #e3e3e3;
+                .light-theme & {
+                    border-color: #e3e3e3;
+                }
+                .dark-theme & {
+                    border-color: #1c1c1c;
+                }
+            }
+            &:hover {
+                background-color: transparent;
+            }
+            .light-theme & {
+                color: #191919;
+                padding: 0;
+                padding-right: 12px;
+                border: 0;
+                line-height: 1.1em;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+            .dark-theme & {
+                color: #e6e6e6;
+                padding: 0;
+                padding-right: 12px;
+                border: 0;
+                line-height: 1.1em;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
     }
     
     .rbx-header .rbx-navbar-icon-group>li>button .nav-setting-highlight {
@@ -1107,6 +1411,7 @@
             max-height: 270px;
         }
         > div when (@RemoveUpdates = 1) {
+            width: 11.11111111%;
             &:nth-child(n+10) {
                 display: block;
             }
@@ -1121,6 +1426,24 @@
                 ~ div:nth-child(n+20) {
                     display: none;
                 }
+            }
+        }
+    }
+    html .btr-profile .content .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div > div {
+        width: 20%;
+        &:nth-child(n+10) {
+            display: block;
+        }
+        &:nth-child(n+11) {
+            display: none;
+        }
+        &.friends-carousel-tile {
+            display: none;
+            ~ div:nth-child(n+11) {
+                display: block;
+            }
+            ~ div:nth-child(n+12) {
+                display: none;
             }
         }
     }
@@ -1187,11 +1510,18 @@
                 color: #474747;
             }
         }
-        > div > div[style*="position"] {
+        > div > div[style*="position"] when (@RemoveUpdates = 1) {
+            position: relative !important;
             left: 50% !important;
             top: 100% !important;
-            margin-top: -33px;
+            width: min-content !important;
+            max-width: 320px;
+            min-width: auto;
             transform: translate(-50%);
+            padding-top: 6px;
+        }
+        > div > div:has(.in-game-friend-card) {
+            width: 320px !important;
         }
     }
     .content .friends-carousel-display-name, html .btr-friends-list .friends-carousel-tile .friends-carousel-display-name {
@@ -1213,15 +1543,17 @@
         & when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
             height: 120px;
         }
-        &:nth-child(n+10) when (@RemoveUpdates = 1) {
+        .expand-max-width &:nth-child(n+10) when (@RemoveUpdates = 1) {
             display: none
         }
-        html .btr-home-friends.btr-friends-secondRow & when (@RemoveUpdates = 1) {
-            &:nth-child(n+10) {
-                display: block;
-            }
-            &:nth-child(n+19) {
-                display: none;
+        & when (@RemoveUpdates = 1) {
+            html .btr-home-secondRow &, html .btr-friends-secondRow &, html .btr-home-friends.btr-home-secondRow &, html .btr-home-friends.btr-friends-secondRow & {
+                &:nth-child(n+10) {
+                    display: block;
+                }
+                &:nth-child(n+19) {
+                    display: none;
+                }
             }
         }
         .place-name when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGRemovePN = 1) {
@@ -1323,7 +1655,9 @@
             }
         }
         .ad-identification-text, .font-small, .small, .small-oneline, .text-date-hint, .text-secondary, .text-tooltips {
-            &, &:active, &:focus, &:hover, &:link, &:visited {
+            font-size: 12px;
+            font-weight: 400;
+            &:active, &:focus, &:hover, &:link, &:visited {
                 font-size: 12px;
                 font-weight: 400
             }
@@ -5881,23 +6215,45 @@
         }
         .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"]:before {
             content: 'My Games';
-            font-size: 12px;
-            font-weight: 500;
+            & when (@SourceSansPro = 0) {
+				font-size: 12px;
+				font-weight: 500;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 16px;
+				font-weight: 300;
+			}
         }
         .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"]:before {
             content: 'Other Games';
-            font-size: 12px;
-            font-weight: 500;
+            & when (@SourceSansPro = 0) {
+				font-size: 12px;
+				font-weight: 500;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 16px;
+				font-weight: 300;
+			}
         }
         .dropdown-menu li[href="#!/places/my-experiences"]:before {
             content: 'My Games';
             font-size: 16px;
-            font-weight: 400;
+            & when (@SourceSansPro = 0) {
+				font-weight: 400;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
         }
         .dropdown-menu li[href="#!/places/other-experiences"]:before {
             content: 'Other Games';
             font-size: 16px;
-            font-weight: 400;
+            & when (@SourceSansPro = 0) {
+				font-weight: 400;
+			}
+			& when (@SourceSansPro = 1) {
+				font-weight: 300;
+			}
         }
         .game-home-page-container .game-error .error-text {
             font-size: 0;
@@ -7782,6 +8138,10 @@
                     line-height: 22px;
                 }
             }
+            .container-header .header-content .get-more-text {
+                font-size: 14px;
+                font-weight: 400;
+            }
             .small, .small-oneline, .text-pastname {
                 font-size: 14px;
                 font-weight: 400;
@@ -7814,11 +8174,11 @@
                     font-weight: 400;
                 }
             }
-            .text-date-hint, .text-date-hint {
-                font-size: 10px;
+            .text-date-hint {
+                font-size: 12px;
                 font-weight: 400;
                 &:active, &:focus, &:hover, &:visited, &:link {
-                    font-size: 10px;
+                    font-size: 12px;
                     font-weight: 400;
                 }
             }
@@ -7839,6 +8199,9 @@
                 &:active, &:focus, &:hover, &:visited, &:link {
                     font-weight: 300;
                 }
+            }
+            .message-actions .messageCheckbox {
+                line-height: 30px;
             }
             .game-name-title {
                 line-height: 22px;
@@ -8741,7 +9104,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250609.1.3.19 \A ";
+            content: "Milestone 20250612.1.3.19 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -11854,10 +12217,6 @@
 		background-color: #0d0d0d;
 		color: #e6e6e6;
 	}
-	
-    .people-info-card-container .interaction-container {
-        box-shadow: none;
-    }
 	
     #StudioWidget {
         height: 92px;
@@ -15722,7 +16081,7 @@
 			border-radius: 5px;
 		}
 	}
-	.btn-secondary-md, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .btn-control-md.groups-list-create-button {
+	.btn-secondary-md, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -15808,7 +16167,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-secondary-xs, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
+	.btn-secondary-xs, .home-container .sdui-icon.icon-push-right-16x16 {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -15851,7 +16210,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium {
+	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #32b5ff;
 			& when (@BoxShadows = 1) {
@@ -20145,7 +20504,151 @@
     }
 
     /*/ Revert Group Redesign /*/
-    /*/==// TODO //==/*/
+    /* Profile Header */
+    .group-profile-header {
+        gap: 0;
+        background-color: #fff;
+        padding: 15px;
+        margin: 0 0 18px;
+        .light-theme & {
+            background-color: #fff;
+        }
+        .dark-theme & {
+            background-color: #000;
+        }
+        .group-profile-header-info {
+            margin-bottom: 0;
+            align-items: flex-end;
+        }
+        .profile-header-details-avatar {
+            border-radius: 0
+        }
+        .profile-header-details-container {
+            align-items: flex-start;
+        }
+        .contextual-menu-actions-btn {
+            background-color: transparent;
+            border-radius: 0;
+            min-height: unset;
+            min-width: unset;
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            display: inline-block;
+            span {
+                vertical-align: middle;
+                background-image: url(https://images.rbxcdn.com/b4f6e3c252c9cbea.svg);
+                background-repeat: no-repeat;
+                background-size: 200%;
+                background-position: 0 -616px;
+                width: 28px;
+                height: 28px;
+                display: inline-block;
+            }
+            &:hover {
+                background-color: transparent;
+                box-shadow: none;
+                span {
+                    background-position: -28px -616px;
+                }
+            }
+            svg {
+                display: none;
+            }
+            @media (max-width: 767px) {
+                &-mobile {
+                    display: none;
+                }
+            }
+        }
+        .description-container {
+            display: none;
+        }
+    }
+    /* Rbx tabs */
+    .group-details .rbx-tabs-horizontal .group-foundation-tabs {
+        background-color: #fff;
+        .rbx-tab {
+            color: #191919;
+            .rbx-tab-heading {
+                background-color: transparent;
+                padding: 12px 2%;
+                box-shadow: none;
+                &:hover {
+                    box-shadow: inset 0 -4px 0 0 #00a2ff;
+                }
+                .text-lead {
+                    color: #191919;
+                    .light-theme & {
+                        color: #191919;
+                    }
+                    .dark-theme & {
+                        color: #e6e6e6;
+                    }
+                }
+                .light-theme & {
+                    background-color: transparent;
+                    &:hover {
+                        box-shadow: inset 0 -4px 0 0 #00a2ff;
+                    }
+                }
+                .dark-theme & {
+                    background-color: transparent;
+                    &:hover {
+                        box-shadow: inset 0 -4px 0 0 #00a2ff;
+                    }
+                }
+            }
+        }
+        .light-theme & {
+            background-color: #fff;
+        }
+        .dark-theme & {
+            background-color: #000;
+        }
+    }
+    /* Others */
+    .group-section-content, .group-details .group-members-list, .group-details .group-wall {
+        background-color: #fff;
+        padding: 15px;
+        position: relative;
+        margin: 0 0 18px;
+        border-radius: 0;
+        .light-theme & {
+            background-color: #fff;
+        }
+        .dark-theme & {
+            background-color: #000;
+        }
+    }
+    .group-details .group-shout .shout-container .group-shout {
+        margin-left: 12px;
+        .group-shout-body {
+            margin-top: 6px;
+        }
+        .group-shout-info {
+            margin-top: 12px;
+            float: left;
+            width: 100%;
+        }
+    }
+    .group-details .group-wall .comment {
+        position: relative;
+        border-top: 1px solid #e3e3e3;
+        border-radius: 0;
+        background-color: transparent;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 0;
+        .list-body, .list-header {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+    }
+    .group-details .group-wall .group-comments-container {
+        display: block;
+        margin-bottom: 0;
+    }
     
     /*/ Revert new Games Modal /*/
     .MuiDialog-root, .MuiModal-root {
@@ -21537,7 +22040,7 @@
         }
     }
     
-    #people-list-container .people-list-container {
+    .home-container.expand-max-width #people-list-container .people-list-container {
 		float: left;
         overflow: visible;
     }
@@ -22498,8 +23001,11 @@
             background-color: #000;
         }
     }
-    .transparent-background-menu .vertical-menu-section .with-search-bar .input-group-btn {
-        display: table-cell;
+    .transparent-background-menu .vertical-menu-section .with-search-bar {
+        margin-bottom: 6px;
+        .input-group-btn {
+            display: table-cell;
+        }
     }
     [data-rosealfe-pendingrobuxnav] #nav-robux-amount
     {
