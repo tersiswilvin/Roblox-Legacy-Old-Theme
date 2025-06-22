@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250612-00.1.3.19
+@version      20250622-00.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,43 +9,44 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          select   BadgeStyle                  "Badge Style"                        ["201509", "201511", "201612", "201902*"]
-@var          checkbox BoxShadows                  "Box Shadows"                        0
-@var          checkbox BrighterDarkThemeColors     "Brighter Dark theme Colors"         1
-@var          select   SiteCurrency                "Currency Brand Style"               ["Robux*", "Tickets"]
-@var          select   CustomTheme                 "Custom Site Theme"                  ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
-@var          checkbox forcesignuplighttheme       "Force light theme on signup"        0
-@var          checkbox fiveColumn                  "Five column Avatar Editor"          1
-@var          checkbox Fix19MICT                   "Fixed 2019M Item Card Transitions"  0
-@var          select   greetingTxt                 "Greeting Text Style"                ["None*", "Hello", "HelloExclamation", "Exclamation"]
-@var          select   CardStyle                   "Item Card Style"                    ["Pre-2018", "2019E", "2019M*", "2019L"]
-@var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"     0
-@var          select   LegacyFooterText            "Legacy Footer Text"                 ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
-@var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"             0
-@var          checkbox LegacyNSGCBL                " ↳ Capital Brand Text in Modals"    0
-@var          checkbox LegacyNSGBoxShadows         " ↳ Chat Shadows"                    1
-@var          checkbox LegacyNSGOlder              " ↳ Older"                           0
-@var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                      0
-@var          checkbox LegacyNSGRemovePN           " ↳ Remove Place Name"               0
-@var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"             0
-@var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"             0
-@var          checkbox SponsorSizing               "Original Sponsor Size"              1
-@var          select   PlayButtonStyle             "Play Button Style"                  ["2018M", "2018L", "2019E", "2019M*", "2020+"]
-@var          select   RestoreAds                  "Restore Ads"                        ["None", "Default*", "Filler"]
-@var          checkbox RestoreGameAds              " ↳ Games Page"                      0
-@var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"     0
-@var          checkbox RemoveUpdates               "Revert 2019L+ changes"              1
-@var          checkbox RemoveExtras                " ↳ Extras"                          0
-@var          checkbox PremiumToBC                 "Premium To BC (BTRoblox)"           0
-@var          select   LogoStyle                   "Site Brand Style"                   ["201408", "201412", "201511", "201701*"]
-@var          select   SignUpStyle                 "Signup Theme"                       ["2017", "2018*", "2019L", "2020+"]
-@var          select   StyleGuideStyle             "Styleguide Page Theme"              ["2016", "2017", "2018*"]
-@var          select   SocialLinks                 "Social Links Version"               ["V1", "V2*", "V3", "V3_1", "V3_2", "V4", "V4_1"]
-@var          checkbox RemoveSocialIcons           " ↳ Remove nondesignated icons"      1
-@var          checkbox SourceSansPro               "Source Sans Pro Font"               0
-@var          checkbox TransitionalAnimations      "Transition animations"              1
-@var          checkbox RedLogoStyle                "Use 2017 Red icon logo"             0
-@var          select   WatermarkStyle              "Watermark Branch"                   ["None", "Experimental*"]
+@var          select   BadgeStyle                  "Badge Style"                                     ["201509", "201511", "201612", "201902*"]
+@var          checkbox BoxShadows                  "Box Shadows"                                     0
+@var          checkbox BrighterDarkThemeColors     "Brighter Dark Theme colors"                      1
+@var          select   SiteCurrency                "Currency Brand Style"                            ["Robux*", "Tickets"]
+@var          select   CustomTheme                 "Custom Site Theme"                               ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
+@var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                     0
+@var          checkbox fiveColumn                  "Five column Avatar Editor"                       1
+@var          checkbox Fix19MICT                   "Fixed 2019M Item Card Transitions"               0
+@var          select   greetingTxt                 "Greeting Text Style"                             ["None*", "Hello", "HelloExclamation", "Exclamation"]
+@var          select   CardStyle                   "Item Card Style"                                 ["Pre-2018", "2019E", "2019M*", "2019L"]
+@var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                  0
+@var          select   LegacyFooterText            "Legacy Footer Text"                              ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
+@var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"                          0
+@var          checkbox LegacyNSGCBL                " ↳ Capital Brand Text in Modals"                 0
+@var          checkbox LegacyNSGBoxShadows         " ↳ Chat Shadows"                                 1
+@var          checkbox LegacyNSGBoxLeaderboards    " ↳ Leaderboards tab"                             0
+@var          checkbox LegacyNSGOlder              " ↳ Older"                                        0
+@var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                                   0
+@var          checkbox LegacyNSGRemovePN           " ↳ Remove Place Name"                            0
+@var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"                          0
+@var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"                          0
+@var          checkbox OriginalSponsorSizing       "Original Sponsor Size"                           1
+@var          select   PlayButtonStyle             "Play Button Style"                               ["2018M", "2018L", "2019E", "2019M*", "2020+"]
+@var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
+@var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
+@var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
+@var          checkbox RemoveUpdates               "Revert 2019L+ updates"                           1
+@var          checkbox RemoveExtras                " ↳ Extras"                                       1
+@var          checkbox PremiumToBC                 "Premium To BC (BTRoblox)"                        0
+@var          select   LogoStyle                   "Site Brand Style"                                ["201408", "201412", "201511", "201701*"]
+@var          select   SignUpStyle                 "Signup Theme"                                    ["2017", "2018*", "2019L", "2020+"]
+@var          select   StyleGuideStyle             "Styleguide Page Theme"                           ["2016", "2017", "2018*"]
+@var          select   SocialLinks                 "Social Links Version"                            ["V1", "V2*", "V3", "V3_1", "V3_2", "V4", "V4_1"]
+@var          checkbox RemoveSocialIcons           " ↳ Remove nondesignated icons"                   1
+@var          checkbox SourceSansPro               "Source Sans Pro Font"                            0
+@var          checkbox TransitionalAnimations      "Transition animations"                           1
+@var          checkbox RedLogoStyle                "Use 2017 Red Branding (Messages / Bootstrapper)" 0
+@var          select   WatermarkStyle              "Watermark Branch"                                ["None", "Experimental*"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -438,6 +439,9 @@
         margin: 0;
         width: 100%;
         padding: 0;
+        .btr-embed & {
+            padding-top: 16px;
+        }
     }
     [data-internal-page-name="CatalogItem"] #content .content, [data-internal-page-name="BundleDetail"] #content .content {
         max-width: 970px;
@@ -868,6 +872,11 @@
         .in-game-friend-card > .friend-tile-non-styled-button, .friend-presence-info {
             float: left
         }
+        .in-game-friend-card > .friend-tile-non-styled-button {
+            width: 90px;
+            height: 90px;
+            border-radius: 3px;
+        }
         .friend-tile-game-card {
             width: 90px;
             height: 90px;
@@ -881,7 +890,7 @@
         .friend-presence-info {
             margin-left: 12px;
             width: 194px;
-            display: block;
+            height: 100%;
             > .friend-tile-non-styled-button {
                 font-size: 16px;
                 font-weight: 500;
@@ -893,10 +902,12 @@
                 position: relative;
                 line-height: 1.4em;
                 max-height: 2.8em;
-                min-height: 58px;
                 padding: 0 12px 0 0;
                 display: inline-block;
                 max-width: 100%;
+            }
+            > [class*="btn-"] {
+                margin-top: auto;
             }
         }
         .friend-tile-dropdown-button {
@@ -1492,10 +1503,26 @@
             & when (@SourceSansPro = 0) {
                 font-size: 10px;
                 font-weight: 500;
+                &:active, &:focus, &:hover {
+                    font-size: 10px;
+                    font-weight: 500;
+                }
+                .gotham-font &, .builder-font & {
+                    font-size: 10px;
+                    font-weight: 500;
+                }
             }
             & when (@SourceSansPro = 1) {
                 font-size: 12px;
                 font-weight: 400;
+                &:active, &:focus, &:hover {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+                .gotham-font &, .builder-font & {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
             }
             overflow: hidden;
             text-overflow: ellipsis;
@@ -1520,7 +1547,7 @@
             transform: translate(-50%);
             padding-top: 6px;
         }
-        > div > div:has(.in-game-friend-card) {
+        > div > div:has(.in-game-friend-card), > div > div[style*="width: 315px"] {
             width: 320px !important;
         }
     }
@@ -2370,8 +2397,91 @@
     .rbx-header {
         background-color: #0074bd;
         height: 90px;
+        .navbar-brand {
+            padding: 5px 0;
+            margin: 0;
+        }
+        .rbx-navbar-header {
+            max-width: 76px;
+            width: auto;
+            margin: 0 12px;
+            padding: 0;
+            float: left;
+            @media (min-width: 1688px) {
+                max-width: 120px;
+            }
+        }
+        .navbar-search {
+            box-sizing: border-box;
+            margin-top: 6px;
+            position: relative;
+            @media (max-width: 543px) {
+                float: none;
+                left: 5px;
+                padding: 0 12px;
+                margin: 0;
+                margin-top: 6px;
+                position: absolute;
+                top: 42px;
+                width: 100%;
+                z-index: 10000;
+            }
+        }
+        .rbx-nav-collapse {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            float: left;
+            position: relative;
+            margin: 0;
+            margin-right: 12px;
+            padding: 5px 5px 0 0;
+        }
+        .rbx-navbar {
+            li {
+                & when (@RemoveUpdates = 1) {
+                    width: 25%;
+                }
+                float: left;
+                .nav-menu-title {
+                    width: auto;
+                    &:focus, &:hover {
+                        background-color: #191919;
+                        background-color: rgba(25,25,25,.1);
+                        border-radius: 5px;
+                        .light-theme & {
+                            background-color: #191919;
+                            background-color: rgba(25,25,25,.1);
+                            border-radius: 5px;
+                        }
+                        .dark-theme & {
+                            background-color: #e6e6e6;
+                            background-color: rgba(230,230,230,.1);
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        @media (min-width: 992px) {
+            height: 40px;
+            & when (@RemoveUpdates = 1) {
+                .col-md-5 {
+                    width: 33.33333%;
+                }
+                .col-md-2 {
+                    width: 25%;
+                }
+            }
+        }
+        @media (min-width: 1200px) {
+            .col-lg-4 when (@RemoveUpdates = 1) {
+                width: 25%;
+            }
+        }
     }
-    
+
     .navbar-brand {
         float: left;
         padding: 15px;
@@ -2379,70 +2489,18 @@
         line-height: 20px;
         height: 50px;
     }
-    .rbx-header .navbar-brand {
-        padding: 5px 0;
-        margin: 0;
-    }
-    .rbx-header .rbx-navbar-header {
-        max-width: 76px;
-        width: auto;
-        margin: 0 12px;
-        padding: 0;
-        float: left;
-    }
-    
-    .rbx-header .navbar-search {
-        box-sizing: border-box;
-        margin-top: 6px;
-        position: relative;
-    }
     
     .rbx-left-col {
         top: 90px;
-    }
-    
-    .rbx-header .rbx-nav-collapse {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        float: left;
-        position: relative;
-        margin: 0;
-        margin-right: 12px;
-        padding: 5px 5px 0 0;
-    }
-    
-    @media (max-width: 543px) {
-        .rbx-header .navbar-search {
-            float: none;
-            left: 5px;
-            padding: 0 12px;
-            margin: 0;
-            margin-top: 6px;
-            position: absolute;
-            top: 42px;
-            width: 100%;
-            z-index: 10000;
-        }
-        .rbx-left-col {
-            top: 90px;
-        }
-    }
-    @media (min-width: 992px) {
-        .rbx-header {
-            height: 40px;
-        }
-        .rbx-left-col {
+        @media (min-width: 992px) {
             top: 40px;
         }
-        & when (@RemoveUpdates = 1) {
-            .col-md-5 {
-                width: 33.33333%;
-            }
-            .col-md-2 {
-                width: 25%;
-            }
+        @media (max-width: 991px) {
+            height: 89%;
+            height: calc(100% - 90px);
+        }
+        @media (max-width: 543px) {
+            top: 90px;
         }
     }
     @media (max-width: 767px) {
@@ -2452,17 +2510,8 @@
         }
     }
     @media (max-width: 991px) {
-        .rbx-left-col {
-            height: 89%;
-            height: calc(100% - 90px);
-        }
         .container-main {
             margin-top: 90px;
-        }
-    }
-    @media (min-width: 1688px) {
-        .rbx-header .rbx-navbar-header {
-            max-width: 120px;
         }
     }
     @media (min-width: 1200px) {
@@ -2473,18 +2522,6 @@
             padding: 0;
             float: left;
         }
-        & when (@RemoveUpdates = 1) {
-            .col-lg-4 {
-                width: 25%;
-            }
-        }
-    }
-    
-    .rbx-header .rbx-navbar li {
-		& when (@RemoveUpdates = 1) {
-			width: 25%;
-		}
-        float: left;
     }
     
     .light-theme .app-bumper-container .app-icon {
@@ -2791,23 +2828,23 @@
     
     .light-theme .nav>li>a:focus, .light-theme .nav>li>a:hover {
         text-decoration: none;
-        background-color: #eee !important;
+        background-color: #eee;
     }
     .light-theme .nav-tabs>li.active>a:focus {
-        background-color: #fff !important;
+        background-color: #fff;
     }
     .light-theme .nav>li.disabled>a {
-        color: #777 !important;
+        color: #777;
     }
     
     .dark-theme .nav>li>a:focus, .dark-theme .nav>li>a:hover {
-        background-color: #111 !important;
+        background-color: #111;
     }
     .dark-theme .nav-tabs>li.active>a:focus {
-        background-color: #000 !important;
+        background-color: #000;
     }
     .dark-theme .nav>li.disabled>a {
-        color: #888 !important;
+        color: #888;
     }
     
     .light-theme .pager .first .pager-btn, .light-theme .pager .first a, .light-theme .pager .last .pager-btn, .light-theme .pager .last a, .light-theme .pager .pager-next .pager-btn, .light-theme .pager .pager-next a, .light-theme .pager .pager-prev .pager-btn, .light-theme .pager .pager-prev a, .light-theme .btn-generic-left-sm, .light-theme .btn-generic-right-sm, .light-theme .btn-generic-left-sm.active, .light-theme .btn-generic-left-sm:active, .light-theme .btn-generic-right-sm.active, .light-theme .btn-generic-right-sm:active, .light-theme .btn-generic-left-sm:focus, .light-theme .btn-generic-right-sm:focus, .light-theme .btn-generic-last-page-sm, .light-theme .btn-generic-last-page-sm:focus, .light-theme .btn-generic-last-page-sm.active, .light-theme .btn-generic-last-page-sm:active, .light-theme .btn-generic-first-page-sm, .light-theme .btn-generic-first-page-sm:focus, .light-theme .btn-generic-first-page-sm.active, .light-theme .btn-generic-first-page-sm:active
@@ -3182,22 +3219,6 @@
         height: 28px;
     }
     
-    .rbx-header .rbx-navbar li .nav-menu-title {
-        width: auto;
-    }
-    .light-theme .rbx-header .rbx-navbar li .nav-menu-title:focus, .light-theme .rbx-header .rbx-navbar li .nav-menu-title:hover
-    {
-        background-color: #191919;
-        background-color: rgba(25,25,25,.1) !important;
-        border-radius: 5px;
-    }
-    .dark-theme .rbx-header .rbx-navbar li .nav-menu-title:focus, .dark-theme .rbx-header .rbx-navbar li .nav-menu-title:hover
-    {
-        background-color: #e6e6e6;
-        background-color: rgba(230,230,230,.1) !important;
-        border-radius: 5px;
-    }
-    
     .light-theme .large-game-tile .game-card-info .info-label, .dark-theme .large-game-tile .game-card-info .info-label {
         color: hsla(0,0%,100%,.7);
     }
@@ -3265,12 +3286,12 @@
     }
     
     .light-theme .dropdown-menu li:focus, .light-theme .dropdown-menu li:hover, .light-theme .dropdown-menu li:hover {
-        background-color: #f2f2f2 !important;
+        background-color: #f2f2f2;
         box-shadow: inset 4px 0 0 0 #00a2ff;
         color: #191919;
     }
     .dark-theme .dropdown-menu li:focus, .dark-theme .dropdown-menu li:hover, .dark-theme .dropdown-menu li:hover {
-        background-color: #0D0D0D !important;
+        background-color: #0D0D0D;
         box-shadow: inset 4px 0px 0px 0px #00a2ff;
         color: #E6E6E6;
     }
@@ -5713,7 +5734,7 @@
             }
         }
     }
-    .group-wall-notice-container ~ [group-comments] {
+    .group-wall-notice-container ~ [group-comments] when (@RemoveUpdates = 0) {
         margin-top: 10px;
     }
     .group-wall-deprecation-notice {
@@ -5722,6 +5743,12 @@
         padding: 15px;
         border-radius: 0;
         margin-bottom: 0;
+        & when (@RemoveUpdates = 1) {
+            display: none;
+            group-wall:has(&):not(:has([group-comments])) {
+                display: none;
+            }
+        }
         & &-icon {
             filter: brightness(0) saturate(100%) invert(42%) sepia(67%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(85%);
             .light-theme & {
@@ -5732,50 +5759,34 @@
             }
         }
         & &-cta-container {
-            & when (@SourceSansPro = 0) {
-                display: grid;
-                gap: 5px;
-            }
-            & when (@SourceSansPro = 1) {
-                column-gap: 5px;
-            }
+            column-gap: 5px;
         }
         & &-content {
+            flex-basis: unset;
             padding-bottom: 0;
         }
         & &-title {
-            & when (@RemoveUpdates = 0) {
+            font-size: 0;
+            line-height: 0;
+            &:focus, &:hover {
+                font-size: 0;
+            }
+            .gotham-font &, .builder-font & {
+                font-size: 0;
+                &:focus, &:hover {
+                    font-size: 0;
+                }
+            }
+            &:after {
+                content: "Group wall is being deprecated"; /*/ lNilb-EaTOU 🥀 /*/
                 & when (@SourceSansPro = 0) {
                     font-size: 16px;
-                    font-weight: 400;
                 }
                 & when (@SourceSansPro = 1) {
                     font-size: 18px;
                 }
-            }
-            & when (@RemoveUpdates = 1) {
-                font-size: 0;
-                line-height: 0;
-                &:focus, &:hover {
-                    font-size: 0;
-                }
-                .gotham-font &, .builder-font & {
-                    font-size: 0;
-                    &:focus, &:hover {
-                        font-size: 0;
-                    }
-                }
-                &:after {
-                    content: "Group wall is being deprecated"; /*/ lNilb-EaTOU 🥀 /*/
-                    & when (@SourceSansPro = 0) {
-                        font-size: 16px;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 18px;
-                    }
-                    line-height: 1em;
-                    cursor: text;
-                }
+                line-height: 1em;
+                cursor: text;
             }
         }
         & &-description {
@@ -6005,7 +6016,7 @@
 	}
     
     & when (@RemoveUpdates = 1) {
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .game-sort-carousel-wrapper:has(.home-sort-header-container):not(:has([class*="icon-push-right-16x16"])), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel, .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7), #group-announcements-upsell-container, .dismissable-announcement-upsell-banner, .menu-option-content[href*="#!/guilded"], .group-forums-updates, [ng-if*="dialogLayout.shouldShowOsaContextCard"], [osa-context-card], .osa-context-card-container {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container .game-carousel.wide-game-tile-carousel, .home-container [data-testid="home-page-game-grid"], .home-container .game-sort-header-container:has(.sort-subtitle-container), .home-container .game-sort-carousel-wrapper:has(.sort-subtitle-container), .home-container .game-sort-header-container:has(.info-tooltip-container), .home-container .game-sort-carousel-wrapper:has(.info-tooltip-container), .game-sort-carousel-wrapper:has(.home-sort-header-container):not(:has([class*="icon-push-right-16x16"])), .home-container .game-sort-header-container:has(.info-tooltip-container) + .game-carousel, .home-container .game-sort-carousel-wrapper:has(.game-sort-header-container), .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7), #group-announcements-upsell-container, .dismissable-announcement-upsell-banner, .menu-option-content[href*="#!/guilded"], .group-forums-updates, [ng-if*="dialogLayout.shouldShowOsaContextCard"], [osa-context-card], .osa-context-card-container {
             display: none !important;
         }
         & when (@RemoveExtras = 1) {
@@ -6541,6 +6552,10 @@
         
         .game-stat {
             display: unset;
+			p {
+				margin-bottom: 0;
+			}
+			&s-container:after, &-container li:first-child p:first-child {}
             &-container:has(:nth-child(10)) &:nth-last-child(-n+1) {
                 display: none;
             }
@@ -6589,7 +6604,7 @@
             }
         }
         .game-follow-button-container div[role="tooltip"] .tooltip-inner, .container-header div[role="tooltip"] .tooltip-inner {
-            font-size: 0 !important;
+            font-size: 0;
         }
         .game-follow-button-container .tooltip-container ~ [role="tooltip"] .tooltip-inner:after {
             content: 'Follow Game';
@@ -7875,6 +7890,52 @@
         .group-details .group-header .group-caption .group-name {
             overflow: unset;
         }
+		
+		.social-networks-container {
+			background-color: #fff;
+			padding: 15px;
+			position: relative;
+			margin: 0 0 18px;
+			~ .setting-section {
+				display: none;
+			}
+		}
+		[for="twitter"] {
+			font-size: 0;
+			&:active, &:focus, &:hover {
+				font-size: 0;
+			}
+			.gotham-font &, .builder-font & {
+				font-size: 0;
+				&:active, &:focus, &:hover {
+					font-size: 0;
+				}
+			}
+			&:after {
+				content: "Twitter";
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 500;
+					@media (max-width: 767px) {
+						font-size:12px;
+						font-weight: 500
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					@media (max-width: 767px) {
+						font-size:14px;
+						font-weight: 300
+					}
+				}
+				cursor: text;
+			}
+		}
+		
+		.stack.badge-container.game-badges-list .container-header h2:before, .badge-container.game-badges-list .container-header h2:before, .badge-container .container-header h2:before, .game-badges-list .container-header h2:before {
+			content: "Game ";
+			cursor: text;
+		}
     }
     
     [data-internal-page-name="Games"] .content {
@@ -8160,7 +8221,7 @@
                     font-weight: 400;
                 }
             }
-            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label {
+            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not (@PlayButtonStyle = 2018M) {
                 font-size: 14px;
             }
             .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label when (@RemoveUpdates = 0) {
@@ -8902,7 +8963,7 @@
     }
     
     .dark-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover {
-        background: #0D0D0D !important;
+        background: #0D0D0D;
         box-shadow: inset 0 -4px 0 0 #00a2ff
     }
     
@@ -9045,7 +9106,7 @@
 		border-color: #00A2FF;
 	}
 	
-    & when (@SponsorSizing = 1) {
+    & when (@OriginalSponsorSizing = 1) {
         .rbx-nav-sponsor img, .rbx-the-hunt-container .rbx-the-hunt-thumbnail, .rbx-platform-event-container .rbx-platform-event-thumbnail {
             width: 155px;
             height: 46.14px;
@@ -9058,7 +9119,12 @@
     @doubleLineEnabled: false;
     .rbx-left-col when not (@WatermarkStyle = None) {
         &:before {
-            content: "(Legacy Theme) Testing Purposes Only";
+            & when (@WatermarkStyle = DEV) {
+                content: "(Legacy Theme) Development Purposes Only";
+            }
+            & when (@WatermarkStyle = Experimental) {
+                content: "(Legacy Theme) Testing Purposes Only";
+            }
             color: #191919;
             font-size: 18px;
             line-height: 18px;
@@ -9095,16 +9161,26 @@
                 }
             }
             .light-theme & {
-                content: "(Light Theme) Testing Purposes Only";
+                & when (@WatermarkStyle = DEV) {
+                    content: "(Light Theme) Development Purposes Only";
+                }
+                & when (@WatermarkStyle = Experimental) {
+                    content: "(Light Theme) Testing Purposes Only";
+                }
                 color: #191919;
             }
             .dark-theme & {
-                content: "(Dark Theme) Testing Purposes Only";
+                & when (@WatermarkStyle = DEV) {
+                    content: "(Dark Theme) Development Purposes Only";
+                }
+                & when (@WatermarkStyle = Experimental) {
+                    content: "(Dark Theme) Testing Purposes Only";
+                }
                 color: #e6e6e6;
             }
         }
         &:after {
-            content: "Milestone 20250612.1.3.19 \A ";
+            content: "Milestone 20250622.1.3.19 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -9279,12 +9355,12 @@
 		font-weight: 300;
 		opacity: 1
 	}
-	.light-theme input::placeholder, .light-theme .input-field::placeholder,.light-theme textarea::placeholder {
+	.light-theme input::placeholder, .light-theme .input-field::placeholder, .light-theme .input-group .input-field::placeholder, .light-theme textarea::placeholder {
 		color: #b8b8b8;
 		font-weight: 300;
 		opacity: 1
 	}
-	.dark-theme input::placeholder, .dark-theme .input-field::placeholder,.dark-theme textarea::placeholder {
+	.dark-theme input::placeholder, .dark-theme .input-field::placeholder, .dark-theme .input-group .input-field::placeholder, .dark-theme textarea::placeholder {
 		color: #474747;
 		font-weight: 300;
 		opacity: 1
@@ -9795,7 +9871,7 @@
     }
     
     .rbx-header .rbx-navbar-icon-group li .rbx-menu-item:focus, .rbx-header .rbx-navbar-icon-group li .rbx-menu-item:hover, #navbar-rplus a:hover {
-        background-color: transparent !important;
+        background-color: transparent;
     }
     
     .light-theme .avatar.card-plain {
@@ -10918,10 +10994,6 @@
         pointer-events: none
     }
     
-    .game-stat p {
-        margin-bottom: 0;
-    }
-    
     #main-login-button, #signup-button, #top-signup-button {
         border-radius: 3px;
         color: #fff;
@@ -11319,6 +11391,7 @@
     }
 	.profile-about .section-content.remove-panel:nth-child(2), .profile-about .profile-about .section-content.remove-panel {
 		margin-bottom: 0;
+        padding-bottom: 0;
 	}
     
     .assets-explorer-main-content .item-cards .item-card-container .item-card-name .icon-premium-small {
@@ -13096,7 +13169,7 @@
         }
         ul {
             padding: 0;
-            &:has(:nth-child(5)) li:first-child when (@RemoveUpdates = 1) {
+            [data-internal-page-name="Profile"] &:has(:nth-child(5)) li:first-child when (@RemoveUpdates = 1) {
                 display: none;
             }
             li {
@@ -14147,569 +14220,572 @@
     /*/ Revert Signup /w options /*/
     
     & when not (@SignUpStyle = 2019L) and not (@SignUpStyle = 2020+) {
-    #RollerContainer.rollercoaster-background {
-        background: #6de3ff;
-        background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
-        height: 100vh;
-        min-height: 894px;
-        display: block;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    #InnerRollerContainer {
-        background-image: none;
-    }
-    .full-height-section {
-        height: 100%;
-        min-height: 894px;
-    }
-    
-    #signup-container #signup-header-container {
-        width: 100%;
-        position: relative;
-        top: 0;
-        float: left;
-        height: auto
-    }
-    @media (min-width: 992px) {
+        #RollerContainer.rollercoaster-background, #RollerContainer.rollercoaster-background.default-background {
+            background: #6de3ff;
+            background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+            height: 100vh;
+            min-height: 894px;
+            display: block;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #InnerRollerContainer {
+            background-image: none;
+        }
+        .full-height-section {
+            height: 100%;
+            min-height: 894px;
+        }
+
         #signup-container #signup-header-container {
-            width: 50%;
+            width: 100%;
+            position: relative;
+            top: 0;
+            float: left;
+            height: auto
         }
-    }
-    
-    #signup-container #signup-header-container #signup-header {
-        max-width: 100%;
-    }
-    
-    .lower-logo-container {
-        padding: 0;
-        background-color: transparent;
-        position: relative;
-        top: 190px;
-        min-height: auto;
-        display: block;
-    }
-    
-    .light-theme .rbx-login-form {
-        background-color: rgba(255,255,255,0.95);
-        border-radius: 0;
-        float: left;
-        position: relative;
-        margin: 0;
-    }
-    .dark-theme .rbx-login-form {
-        & when (@forcesignuplighttheme = 0) {
-            background-color: rgba(0,0,0,0.95);
-        }
-        & when (@forcesignuplighttheme = 1) {
-            background-color: rgba(255,255,255,0.95);
-        }
-        border-radius: 0;
-        float: left;
-        position: relative;
-        margin: 0;
-    }
-    
-    #app-stores-container {
-        display: none;
-    }
-    
-    #action-bar-container {
-        background-color: #5e9eb2;
-        background-color: rgba(0,0,0,.35);
-        color: #fff;
-        height: 66px;
-        top: 0;
-        position: fixed;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-    
-    .dark-theme #action-bar-container {
-        & when (@forcesignuplighttheme = 0) {
-            color: #000;
-        }
-        & when (@forcesignuplighttheme = 0) {
-            color: #fff;
-        }
-    }
-    
-    .light-theme .signup-container .form-control, .light-theme .signup-container .birthday-container .birthday-select-group {
-        border-color: #ccc;
-        border-radius: 3px
-    }
-    .dark-theme .signup-container .form-control, .dark-theme .signup-container .birthday-container .birthday-select-group {
-        & when (@forcesignuplighttheme = 0) {
-            border-color: #333;
-        }
-        & when (@forcesignuplighttheme = 1) {
-            border-color: #ccc;
-            background-color: #fff;
-        }
-        border-radius: 3px
-    }
-    
-    .light-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .light-theme .signup-container .fake-input-lg {
-		background-color: #fff;
-		color: #191919;
-		font-size: 16px;
-		height: 38px;
-		background-position-y: 5px;
-    }
-    .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .dark-theme .signup-container .fake-input-lg {
-		& when (@forcesignuplighttheme = 0) {
-			background-color: #000;
-			color: #e6e6e6;
-		}
-		& when (@forcesignuplighttheme = 1) {
-			background-color: #fff;
-			color: #191919;
-		}
-		font-size: 16px;
-		height: 38px;
-		background-position-y: 5px;
-	}
-    
-    .signup-container .gender-button:focus {
-      border: 0 solid transparent !important;
-    }
-    
-    & when (@forcesignuplighttheme = 1) {
-        .dark-theme .signup-container {
-            color: #191919;
-        }
-        .dark-theme .signup-container .rbx-select-group .rbx-select:not(:hover) {
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iIzE5MTkxOSIgZD0iTTE0IDE5Yy0uMyAwLS41LS4xLS43LS4zbC04LThjLS40LS40LS40LTEgMC0xLjRzMS0uNCAxLjQgMGw3LjMgNy4zIDcuMy03LjNjLjQtLjQgMS0uNCAxLjQgMHMuNCAxIDAgMS40bC04IDhjLS4yLjItLjQuMy0uNy4zeiIvPjwvc3ZnPg==);
-        }
-		#react-landing-container ~ .dark-theme .container-footer {
-			background-color: #fff;
-		}
-		#react-landing-container ~ .dark-theme .footer .text-footer-nav, #react-landing-container ~ .dark-theme .footer .text-footer-nav:link, #react-landing-container ~ .dark-theme .footer .text-footer-nav:visited, #react-landing-container ~ .dark-theme .footer .text-footer-nav:active, #react-landing-container ~ .dark-theme .text-footer, #react-landing-container ~ .dark-theme .text-pastname {
-			color: #b8b8b8
-		}
-		#react-landing-container ~ .dark-theme .footer .row .text-footer-nav:focus, #react-landing-container ~ .dark-theme .footer .row .text-footer-nav:hover, #react-landing-container ~ .dark-theme .input-group-btn .input-dropdown-btn {
-			color: #191919
-		}
-		#react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy, #react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy:active, #react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy:link, #react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy:visited {
-			color: #00a2ff;
-		}
-		#react-landing-container ~ .dark-theme .input-group-btn .input-dropdown-btn {
-			background-color: #fff;
-			border-color: #b8b8b8
-		}
-		#react-landing-container ~ .dark-theme .icon-globe, #react-landing-container ~ .dark-theme .icon-down-16x16 {
-			background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
-		}
-		#react-landing-container ~ .dark-theme .dropdown-menu, #react-landing-container ~ .dark-theme .open .dropdown-menu, #react-landing-container ~ .dark-theme .dropdown-menu {
-			background-color: #fff;
-			border-color: #ccc;
-		}
-		#react-landing-container ~ .dark-theme .dropdown-menu li {
-			color: #191919;
-		}
-		#react-landing-container ~ .dark-theme .dropdown-menu li:focus, #react-landing-container ~ .dark-theme .dropdown-menu li:hover {
-			background-color: #F2F2F2 !important;
-			box-shadow: inset 4px 0px 0px 0px #00a2ff;
-			color: #191919;
-		}
-	}
-    
-	.light-theme .signup-or-log-in .font-caption-header {
-		color: #b8b8b8;
-		font-weight: 400;
-		font-size: 16px;
-	}
-    .dark-theme .signup-or-log-in .font-caption-header {
-        & when (@forcesignuplighttheme = 0) {
-            color: #474747;
-        }
-        & when (@forcesignuplighttheme = 1) {
-            color: #b8b8b8;
-        }
-        font-weight: 400;
-        font-size: 16px;
-    }
-    
-    .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select:focus, .dark-theme .signup-container .fake-input-lg:focus {
-        border: 0;
-    }
-    
-    .signup-container .birthday-container .rbx-select-group:first-of-type .rbx-select, .signup-container .birthday-container .rbx-select-group:nth-of-type(2) .rbx-select {
-        border-right: 1px solid #ccc;
-        border-top: 0;
-        border-bottom: 0;
-    
-    }
-    .dark-theme .signup-container .birthday-container .rbx-select-group:first-of-type .rbx-select, .dark-theme .signup-container .birthday-container .rbx-select-group:nth-of-type(2) .rbx-select {
-        & when (@forcesignuplighttheme = 0) {
-            border-color: #333;
-        }
-        & when (@forcesignuplighttheme = 1) {
-            border-color: #ccc;
-        }
-        border-top: 0;
-        border-bottom: 0;
-    
-    }
-    .light-theme .signup-container .rbx-select-group .rbx-select:hover, .dark-theme .signup-container .rbx-select-group .rbx-select:hover {
-        background-color: #00a2ff;
-        color: #fff;
-        cursor: pointer;
-    
-    }
-    .light-theme .signup-container .signup-container .form-control:focus, .dark-theme .signup-container .signup-container .form-control:focus {
-        border-color: #00a2ff;
-    }
-    
-    & when (@SignUpStyle = 2017) {
-        .signup-or-log-in .signup-input-area div .font-caption-header {
-            display: none;
-        }
-        #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-				background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
-			}
-			& when (@LogoStyle = 201511) {
-				background-image: url(http://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png);
-			}
-			& when (@LogoStyle = 201701) {
-				background-image: url(https://images.rbxcdn.com/002d30eaf7df652d7711f8030066ed9a.svg.gzip);;
-			}
-            width: 457px;
-            height: 129.85px;
-            opacity: .99;
-			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-				background-size: auto 110px;
-				background-position: 10px;
-			}
-			& when (@LogoStyle = 201511) {
-				background-size: 457px 110px;
-			}
-            z-index: 100;
-            float: right;
-            margin-right: 40px;
-            padding: 0;
-        }
-        #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-            height: 129.85px;
-			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-				background-size: auto 110px;
-				background-position: 10px;
-			}
-			& when (@LogoStyle = 201511) {
-				background-size: 457px 110px;
-			}
-            padding: 0;
-            width: 457px;
-        }
-        @media (min-width: 1199px) {
-            #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-              height: 129.85px;
+        @media (min-width: 992px) {
+            #signup-container #signup-header-container {
+                width: 50%;
             }
         }
-        .signup-container .birthday-container .birthday-select-group:before {
-            content: 'Birthday';
-            color: #191919;
-            font-size: 18px;
-            line-height: 1.4em;
-            padding: 10px 10px;
-            border-right: 1px solid #ccc;
-            float: left;
-            width: 24%;
+
+        #signup-container #signup-header-container #signup-header {
+            max-width: 100%;
         }
-        .dark-theme .signup-container .birthday-container .birthday-select-group:before {
+
+        .lower-logo-container {
+            padding: 0;
+            background-color: transparent;
+            position: relative;
+            top: 190px;
+            min-height: auto;
+            display: block;
+        }
+
+        .light-theme .rbx-login-form {
+            background-color: rgba(255,255,255,0.95);
+            border-radius: 0;
+            float: left;
+            position: relative;
+            margin: 0;
+        }
+        .dark-theme .rbx-login-form {
+            & when (@forcesignuplighttheme = 0) {
+                background-color: rgba(0,0,0,0.95);
+            }
+            & when (@forcesignuplighttheme = 1) {
+                background-color: rgba(255,255,255,0.95);
+            }
+            border-radius: 0;
+            float: left;
+            position: relative;
+            margin: 0;
+        }
+
+        #app-stores-container {
+            display: none;
+        }
+
+        #action-bar-container {
+            background-color: #5e9eb2;
+            background-color: rgba(0,0,0,.35);
+            color: #fff;
+            height: 66px;
+            top: 0;
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .dark-theme #action-bar-container {
+            & when (@forcesignuplighttheme = 0) {
+                color: #000;
+            }
+            & when (@forcesignuplighttheme = 0) {
+                color: #fff;
+            }
+        }
+
+        .light-theme .signup-container .form-control, .light-theme .signup-container .birthday-container .birthday-select-group {
+            border-color: #ccc;
+            border-radius: 3px
+        }
+        .dark-theme .signup-container .form-control, .dark-theme .signup-container .birthday-container .birthday-select-group {
+            & when (@forcesignuplighttheme = 0) {
+                border-color: #333;
+            }
+            & when (@forcesignuplighttheme = 1) {
+                border-color: #ccc;
+                background-color: #fff;
+            }
+            border-radius: 3px
+        }
+
+        .light-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .light-theme .signup-container .fake-input-lg {
+            background-color: #fff;
+            color: #191919;
+            font-size: 16px;
+            height: 38px;
+            background-position-y: 5px;
+        }
+        .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .dark-theme .signup-container .fake-input-lg {
+            & when (@forcesignuplighttheme = 0) {
+                background-color: #000;
+                color: #e6e6e6;
+            }
+            & when (@forcesignuplighttheme = 1) {
+                background-color: #fff;
+                color: #191919;
+            }
+            font-size: 16px;
+            height: 38px;
+            background-position-y: 5px;
+        }
+
+        .signup-container .gender-button:focus {
+            border: 0 solid transparent !important;
+        }
+
+        & when (@forcesignuplighttheme = 1) {
+            .dark-theme .signup-container {
+                color: #191919;
+            }
+            .dark-theme .signup-container .rbx-select-group .rbx-select:not(:hover) {
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iIzE5MTkxOSIgZD0iTTE0IDE5Yy0uMyAwLS41LS4xLS43LS4zbC04LThjLS40LS40LS40LTEgMC0xLjRzMS0uNCAxLjQgMGw3LjMgNy4zIDcuMy03LjNjLjQtLjQgMS0uNCAxLjQgMHMuNCAxIDAgMS40bC04IDhjLS4yLjItLjQuMy0uNy4zeiIvPjwvc3ZnPg==);
+            }
+            #react-landing-container ~ .dark-theme .container-footer {
+                background-color: #fff;
+            }
+            #react-landing-container ~ .dark-theme .footer .text-footer-nav, #react-landing-container ~ .dark-theme .footer .text-footer-nav:link, #react-landing-container ~ .dark-theme .footer .text-footer-nav:visited, #react-landing-container ~ .dark-theme .footer .text-footer-nav:active, #react-landing-container ~ .dark-theme .text-footer, #react-landing-container ~ .dark-theme .text-pastname {
+                color: #b8b8b8
+            }
+            #react-landing-container ~ .dark-theme .footer .row .text-footer-nav:focus, #react-landing-container ~ .dark-theme .footer .row .text-footer-nav:hover, #react-landing-container ~ .dark-theme .input-group-btn .input-dropdown-btn {
+                color: #191919
+            }
+            #react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy, #react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy:active, #react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy:link, #react-landing-container ~ .dark-theme .footer .text-footer-nav.privacy:visited {
+                color: #00a2ff;
+            }
+            #react-landing-container ~ .dark-theme .input-group-btn .input-dropdown-btn {
+                background-color: #fff;
+                border-color: #b8b8b8
+            }
+            #react-landing-container ~ .dark-theme .icon-globe, #react-landing-container ~ .dark-theme .icon-down-16x16 {
+                background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
+            }
+            #react-landing-container ~ .dark-theme .dropdown-menu, #react-landing-container ~ .dark-theme .open .dropdown-menu, #react-landing-container ~ .dark-theme .dropdown-menu {
+                background-color: #fff;
+                border-color: #ccc;
+            }
+            #react-landing-container ~ .dark-theme .dropdown-menu li {
+                color: #191919;
+            }
+            #react-landing-container ~ .dark-theme .dropdown-menu li:focus, #react-landing-container ~ .dark-theme .dropdown-menu li:hover {
+                background-color: #F2F2F2;
+                box-shadow: inset 4px 0px 0px 0px #00a2ff;
+                color: #191919;
+            }
+            .dark-theme .copyright-container {
+                border-color: #e3e3e3;
+            }
+        }
+
+        .light-theme .signup-or-log-in .font-caption-header {
+            color: #b8b8b8;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        .dark-theme .signup-or-log-in .font-caption-header {
+            & when (@forcesignuplighttheme = 0) {
+                color: #474747;
+            }
+            & when (@forcesignuplighttheme = 1) {
+                color: #b8b8b8;
+            }
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select:focus, .dark-theme .signup-container .fake-input-lg:focus {
+            border: 0;
+        }
+
+        .signup-container .birthday-container .rbx-select-group:first-of-type .rbx-select, .signup-container .birthday-container .rbx-select-group:nth-of-type(2) .rbx-select {
+            border-right: 1px solid #ccc;
+            border-top: 0;
+            border-bottom: 0;
+
+        }
+        .dark-theme .signup-container .birthday-container .rbx-select-group:first-of-type .rbx-select, .dark-theme .signup-container .birthday-container .rbx-select-group:nth-of-type(2) .rbx-select {
+            & when (@forcesignuplighttheme = 0) {
+                border-color: #333;
+            }
+            & when (@forcesignuplighttheme = 1) {
+                border-color: #ccc;
+            }
+            border-top: 0;
+            border-bottom: 0;
+
+        }
+        .light-theme .signup-container .rbx-select-group .rbx-select:hover, .dark-theme .signup-container .rbx-select-group .rbx-select:hover {
+            background-color: #00a2ff;
+            color: #fff;
+            cursor: pointer;
+
+        }
+        .light-theme .signup-container .signup-container .form-control:focus, .dark-theme .signup-container .signup-container .form-control:focus {
+            border-color: #00a2ff;
+        }
+
+        & when (@SignUpStyle = 2017) {
+            .signup-or-log-in .signup-input-area div .font-caption-header {
+                display: none;
+            }
+            #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+                    background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
+                }
+                & when (@LogoStyle = 201511) {
+                    background-image: url(http://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png);
+                }
+                & when (@LogoStyle = 201701) {
+                    background-image: url(https://images.rbxcdn.com/002d30eaf7df652d7711f8030066ed9a.svg.gzip);;
+                }
+                width: 457px;
+                height: 129.85px;
+                opacity: .99;
+                & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+                    background-size: auto 110px;
+                    background-position: 10px;
+                }
+                & when (@LogoStyle = 201511) {
+                    background-size: 457px 110px;
+                }
+                z-index: 100;
+                float: right;
+                margin-right: 40px;
+                padding: 0;
+            }
+            #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                height: 129.85px;
+                & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+                    background-size: auto 110px;
+                    background-position: 10px;
+                }
+                & when (@LogoStyle = 201511) {
+                    background-size: 457px 110px;
+                }
+                padding: 0;
+                width: 457px;
+            }
+            @media (min-width: 1199px) {
+                #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                    height: 129.85px;
+                }
+            }
+            .signup-container .birthday-container .birthday-select-group:before {
+                content: 'Birthday';
+                color: #191919;
+                font-size: 18px;
+                line-height: 1.4em;
+                padding: 10px 10px;
+                border-right: 1px solid #ccc;
+                float: left;
+                width: 24%;
+            }
+            .dark-theme .signup-container .birthday-container .birthday-select-group:before {
+                & when (@forcesignuplighttheme = 0) {
+                    color: #e6e6e6;
+                    border-right: 1px solid #333;
+                }
+                & when (@forcesignuplighttheme = 1) {
+                    color: #191919;
+                    border-right: 1px solid #ccc;
+                }
+            }
+            .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select {
+                height: 44px;
+                background-position-y: 10px;
+            }
+            .signup-container .birthday-container .rbx-select-group.month {
+                width: 33%;
+            }
+            .signup-container .birthday-container .rbx-select-group.day {
+                width: 20%;
+            }
+            .signup-container .birthday-container .rbx-select-group.year {
+                width: 23%;
+            }
+            .signup-container .birthday-container .birthday-select-group {
+                height: 46px;
+            }
+            @media (max-width: 767px) {
+                .signup-container .birthday-container .birthday-select-group:before {
+                    display: none;
+                }
+                .signup-container .birthday-container .rbx-select-group.month {
+                    width: 40%;
+                }
+                .signup-container .birthday-container .rbx-select-group.day {
+                    width: 30%;
+                }
+                .signup-container .birthday-container .rbx-select-group.year {
+                    width: 30%;
+                }
+            }
+        }
+        & when (@SignUpStyle = 2018) {
+            .signup-or-log-in .signup-input-area div:nth-child(n+3) .font-caption-header {
+                display: none;
+            }
+            #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+                    background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
+                }
+                & when (@LogoStyle = 201511) {
+                    background-image: url(http://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png);
+                }
+                & when (@LogoStyle = 201701) {
+                    background-image: url(https://images.rbxcdn.com/617d28507aa4cb7aa9ac8a6a37b6f5d6-icon_logo_tagline_white_09272017.svg);
+                }
+                width: 457px;
+                height: 130px;
+                & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+                    background-size: auto 110px;
+                    background-position: 10px;
+                }
+                & when (@LogoStyle = 201511) {
+                    background-size: 457px 110px;
+                }
+                & when (@LogoStyle = 201701) {
+                    background-size: auto 130px;
+                }
+                opacity: .99;
+                z-index: 100;
+                float: right;
+                margin: 0;
+                margin-right: 40px;
+                padding: 0;
+            }
+            #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                height: 130px;
+                & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+                    background-size: auto 110px;
+                    background-position: 10px;
+                }
+                & when (@LogoStyle = 201511) {
+                    background-size: 457px 110px;
+                }
+                & when (@LogoStyle = 201701) {
+                    background-size: auto 130px;
+                }
+                padding: 0;
+                width: 457px;
+            }
+            @media (min-width: 1199px) {
+                #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                    height: 130px;
+                }
+            }
+        }
+
+        .light-theme .signup-container .has-success .form-control, .light-theme .signup-container .has-success .rbx-select-group .rbx-select, .dark-theme .signup-container .has-success .form-control, .dark-theme .signup-container .has-success .rbx-select-group .rbx-select {
+            border-color: #3c763d;
+            & when (@LegacyNextStyleGuideButtons = 1) and (@BoxShadows = 1) {
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+            }
+        }
+
+        .light-theme .signup-container .has-error .form-control, .dark-theme .signup-container .has-error .form-control {
+            & when (@LegacyNextStyleGuideButtons = 0) {
+                border-color: #a94442;
+            }
+            & when (@LegacyNextStyleGuideButtons = 1) {
+                border-color: #843534;
+                & when (@BoxShadows = 1) {
+                    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #ce8483;
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #ce8483;
+                }
+            }
+        }
+
+        .icon-password-show {
+            display: none;
+        }
+
+        .light-theme .signup-container .input-field::placeholder {
+            color: #b8b8b8;
+            font-weight: 400;
+            opacity: 1;
+        }
+        .dark-theme .signup-container .input-field::placeholder {
+            & when (@forcesignuplighttheme = 0) {
+                color: #474747;
+            }
+            & when (@forcesignuplighttheme = 1) {
+                color: #b8b8b8;
+            }
+            font-weight: 400;
+            opacity: 1;
+        }
+
+        .light-theme .container-footer a, .light-theme .container-footer a:hover {
+            color: #191919;
+        }
+        #react-landing-container ~ .dark-theme .container-footer a, #react-landing-container ~ .dark-theme .container-footer a:hover {
             & when (@forcesignuplighttheme = 0) {
                 color: #e6e6e6;
-                border-right: 1px solid #333;
             }
             & when (@forcesignuplighttheme = 1) {
                 color: #191919;
-                border-right: 1px solid #ccc;
             }
         }
-        .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select {
-            height: 44px;
-            background-position-y: 10px;
+
+        .signup-container .gender-button, .signup-or-log-in #FemaleButton {
+            width: 32px;
+            height: 32px;
+            border-radius: 15px;
+            border: 1px solid #b8b8b8;
+            background-color: #fff;
+            display: inline-block;
+            margin-top: 0;
+            margin-right: 10%;
+            margin-left: 10%;
+            cursor: pointer;
+            outline: none;
+            line-height: 100%;
+            padding: 0
         }
-        .signup-container .birthday-container .rbx-select-group.month {
-            width: 33%;
+
+        .signup-container .gender-button:focus {
+            border: 1px solid #b8b8b8 !important;
         }
-        .signup-container .birthday-container .rbx-select-group.day {
-            width: 20%;
+        .dark-theme .signup-container .gender-button, .dark-theme .signup-or-log-in #FemaleButton {
+            & when (@forcesignuplighttheme = 0) {
+                background-color: #000;
+                border-color: #474747;
+            }
+            & when (@forcesignuplighttheme = 1) {
+                background-color: #fff;
+                border-color: #b8b8b8;
+            }
         }
-        .signup-container .birthday-container .rbx-select-group.year {
-            width: 23%;
+
+        .light-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select {
+            font-size: 18px;
         }
-        .signup-container .birthday-container .birthday-select-group {
-            height: 46px;
+
+        .signup-or-log-in .signup-container .form-group .input-field {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .signup-or-log-in .signup-container .signup-input-area .gender-container .fake-input-lg:before {
+            content: 'Gender';
+            font-size: 18px;
+            color: #555;
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 5px;
+            font-weight: 300;
+            position: relative;
+            width: 75px;
+            top: -9px;
+        }
+        .dark-theme .signup-or-log-in .signup-container .signup-input-area .gender-container .fake-input-lg:before {
+            & when (@forcesignuplighttheme = 0) {
+                color: #aaa;
+            }
+            & when (@forcesignuplighttheme = 1) {
+                color: #555;
+            }
+        }
+
+        .signup-or-log-in .gender-icon {
+            margin: 3px 9px;
+            height: 26px;
+            max-height: 26px;
+        }
+        .signup-or-log-in #FemaleButton {
+            float: none;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .signup-or-log-in #MaleButton {
+            float: none;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .signup-or-log-in .gender-female.gender-selected {
+            background-position: -24px 0;
+        }
+        .signup-or-log-in .gender-male.gender-selected {
+            background-position: -22px 0;
+        }
+
+        .signup-or-log-in .signup-container .signup-input-area .gender-container .fake-input-lg {
+            padding: 5px 12px !important;
+        }
+        .signup-or-log-in .gender-female {
+            background-image: url(https://static.rbxcdn.com/images/Landing/RollerCoaster/gender-female_12072017.png);
+            background-repeat: no-repeat;
+            background-position: 6.75px 0;
+            width: 28px;
+            max-width: 28px;
+            margin-left: 0;
+        }
+        .signup-or-log-in .gender-male {
+            background-image: url(https://static.rbxcdn.com/images/Landing/RollerCoaster/gender-male_12072017.png);
+            background-repeat: no-repeat;
+            background-position: 8px 0;
+            width: 28px;
+            max-width: 28px;
+            margin-left: 0;
+        }
+
+        @media (max-width: 1199px) {
+            .lower-logo-container {
+                top: 120px;
+            }
+        }
+        @media (max-width: 991px) {
+            #signup-container {
+                padding-top: 0;
+            }
+            #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                float: none;
+                margin: auto;
+            }
+            #signup-container #signup-header-container {
+                float: none;
+                text-align: center;
+            }
+            .light-theme .rbx-login-form, .dark-theme .rbx-login-form {
+                float: none;
+                display: block;
+                margin: 0 auto;
+                max-width: 370px;
+            }
+            .lower-logo-container {
+                top: 100px;
+            }
         }
         @media (max-width: 767px) {
-            .signup-container .birthday-container .birthday-select-group:before {
-                display: none;
-            }
-            .signup-container .birthday-container .rbx-select-group.month {
-                width: 40%;
-            }
-            .signup-container .birthday-container .rbx-select-group.day {
-                width: 30%;
-            }
-            .signup-container .birthday-container .rbx-select-group.year {
-                width: 30%;
+            #RollerContainer.rollercoaster-background {
+                min-height: 960px;
             }
         }
-    }
-    & when (@SignUpStyle = 2018) {
-        .signup-or-log-in .signup-input-area div:nth-child(n+3) .font-caption-header {
-            display: none;
-        }
-        #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-				background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
-			}
-			& when (@LogoStyle = 201511) {
-				background-image: url(http://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png);
-			}
-			& when (@LogoStyle = 201701) {
-				background-image: url(https://images.rbxcdn.com/617d28507aa4cb7aa9ac8a6a37b6f5d6-icon_logo_tagline_white_09272017.svg);
-			}
-            width: 457px;
-            height: 130px;
-			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-				background-size: auto 110px;
-				background-position: 10px;
-			}
-			& when (@LogoStyle = 201511) {
-				background-size: 457px 110px;
-			}
-			& when (@LogoStyle = 201701) {
-				background-size: auto 130px;
-			}
-            opacity: .99;
-            z-index: 100;
-            float: right;
-            margin: 0;
-            margin-right: 40px;
-            padding: 0;
-        }
-        #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-            height: 130px;
-            & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-				background-size: auto 110px;
-				background-position: 10px;
-			}
-			& when (@LogoStyle = 201511) {
-				background-size: 457px 110px;
-			}
-			& when (@LogoStyle = 201701) {
-				background-size: auto 130px;
-			}
-            padding: 0;
-            width: 457px;
-        }
-        @media (min-width: 1199px) {
-            #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-              height: 130px;
+        @media (max-width: 543px) {
+            #RollerContainer .icon-logo, #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
+                width: 332px;
+                height: 94px;
+                background-size: auto 94px;
             }
         }
-    }
-    
-    .light-theme .signup-container .has-success .form-control, .light-theme .signup-container .has-success .rbx-select-group .rbx-select, .dark-theme .signup-container .has-success .form-control, .dark-theme .signup-container .has-success .rbx-select-group .rbx-select {
-        border-color: #3c763d;
-        & when (@LegacyNextStyleGuideButtons = 1) and (@BoxShadows = 1) {
-            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-            box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-        }
-    }
-    
-    .light-theme .signup-container .has-error .form-control, .dark-theme .signup-container .has-error .form-control {
-        & when (@LegacyNextStyleGuideButtons = 0) {
-            border-color: #a94442;
-        }
-        & when (@LegacyNextStyleGuideButtons = 1) {
-            border-color: #843534;
-            & when (@BoxShadows = 1) {
-                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #ce8483;
-                box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #ce8483;
-            }
-        }
-    }
-    
-    .icon-password-show {
-        display: none;
-    }
-    
-    .light-theme .signup-container .input-field::placeholder {
-        color: #b8b8b8;
-        font-weight: 400;
-        opacity: 1;
-    }
-    .dark-theme .signup-container .input-field::placeholder {
-        & when (@forcesignuplighttheme = 0) {
-            color: #474747;
-        }
-        & when (@forcesignuplighttheme = 1) {
-            color: #b8b8b8;
-        }
-        font-weight: 400;
-        opacity: 1;
-    }
-    
-    .light-theme .container-footer a, .light-theme .container-footer a:hover {
-        color: #191919;
-    }
-    #react-landing-container ~ .dark-theme .container-footer a, #react-landing-container ~ .dark-theme .container-footer a:hover {
-        & when (@forcesignuplighttheme = 0) {
-            color: #e6e6e6;
-        }
-        & when (@forcesignuplighttheme = 1) {
-            color: #191919;
-        }
-    }
-    
-    .signup-container .gender-button, .signup-or-log-in #FemaleButton {
-        width: 32px;
-        height: 32px;
-        border-radius: 15px;
-        border: 1px solid #b8b8b8;
-        background-color: #fff;
-        display: inline-block;
-        margin-top: 0;
-        margin-right: 10%;
-        margin-left: 10%;
-        cursor: pointer;
-        outline: none;
-        line-height: 100%;
-        padding: 0
-    }
-    
-    .signup-container .gender-button:focus {
-        border: 1px solid #b8b8b8 !important;
-    }
-    .dark-theme .signup-container .gender-button, .dark-theme .signup-or-log-in #FemaleButton {
-        & when (@forcesignuplighttheme = 0) {
-            background-color: #000;
-            border-color: #474747 !important;
-        }
-        & when (@forcesignuplighttheme = 1) {
-            background-color: #fff;
-            border-color: #b8b8b8 !important;
-        }
-    }
-    
-    .light-theme .signup-container .birthday-container .rbx-select-group .rbx-select, .dark-theme .signup-container .birthday-container .rbx-select-group .rbx-select {
-        font-size: 18px;
-    }
-    
-    .signup-or-log-in .signup-container .form-group .input-field {
-        font-size: 20px;
-        font-weight: 400;
-    }
-    
-    .signup-or-log-in .signup-container .signup-input-area .gender-container .fake-input-lg:before {
-        content: 'Gender';
-        font-size: 18px;
-        color: #555;
-        display: inline-block;
-        max-width: 100%;
-        margin-bottom: 5px;
-        font-weight: 300;
-        position: relative;
-        width: 75px;
-        top: -9px;
-    }
-    .dark-theme .signup-or-log-in .signup-container .signup-input-area .gender-container .fake-input-lg:before {
-        & when (@forcesignuplighttheme = 0) {
-            color: #aaa;
-        }
-        & when (@forcesignuplighttheme = 1) {
-            color: #555;
-        }
-    }
-    
-    .signup-or-log-in .gender-icon {
-        margin: 3px 9px;
-        height: 26px;
-        max-height: 26px;
-    }
-    .signup-or-log-in #FemaleButton {
-        float: none;
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-    }
-    .signup-or-log-in #MaleButton {
-        float: none;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-    .signup-or-log-in .gender-female.gender-selected {
-        background-position: -24px 0;
-    }
-    .signup-or-log-in .gender-male.gender-selected {
-        background-position: -22px 0;
-    }
-    
-    .signup-or-log-in .signup-container .signup-input-area .gender-container .fake-input-lg {
-        padding: 5px 12px !important;
-    }
-    .signup-or-log-in .gender-female {
-        background-image: url(https://static.rbxcdn.com/images/Landing/RollerCoaster/gender-female_12072017.png);
-        background-repeat: no-repeat;
-        background-position: 6.75px 0;
-        width: 28px;
-        max-width: 28px;
-        margin-left: 0;
-    }
-    .signup-or-log-in .gender-male {
-        background-image: url(https://static.rbxcdn.com/images/Landing/RollerCoaster/gender-male_12072017.png);
-        background-repeat: no-repeat;
-        background-position: 8px 0;
-        width: 28px;
-        max-width: 28px;
-        margin-left: 0;
-    }
-    
-    @media (max-width: 1199px) {
-        .lower-logo-container {
-            top: 120px;
-        }
-    }
-    @media (max-width: 991px) {
-        #signup-container {
-            padding-top: 0;
-        }
-        #RollerContainer .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-            float: none;
-            margin: auto;
-        }
-        #signup-container #signup-header-container {
-            float: none;
-            text-align: center;
-        }
-        .light-theme .rbx-login-form, .dark-theme .rbx-login-form {
-            float: none;
-            display: block;
-            margin: 0 auto;
-            max-width: 370px;
-        }
-        .lower-logo-container {
-            top: 100px;
-        }
-    }
-    @media (max-width: 767px) {
-        #RollerContainer.rollercoaster-background {
-            min-height: 960px;
-        }
-    }
-    @media (max-width: 543px) {
-        #RollerContainer .icon-logo, #signup-container #signup-header-container .icon-logo, #signup-container #signup-header-container .header-icon-logo {
-            width: 332px;
-            height: 94px;
-            background-size: auto 94px;
-        }
-    }
     }
     & when (@SignUpStyle = 2019L) {
         .light-theme .rbx-login-form {
@@ -14744,17 +14820,17 @@
     }
     & when (@SignUpStyle = 2019L) or (@SignUpStyle = 2020+) {
         #signup-container .icon-logo {
-			& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-				background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
-				background-size: auto 55px;
-				background-position: center;
-			}
-			& when (@LogoStyle = 201511) {
-				background-image: url(http://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png);
-			}
-			& when (@LogoStyle = 201701) {
-				background-image: url(https://images.rbxcdn.com/899500f61badca57cd9c3d6bffdbc383-letterform.png);
-			}
+            & when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+                background-image: url(http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png);
+                background-size: auto 55px;
+                background-position: center;
+            }
+            & when (@LogoStyle = 201511) {
+                background-image: url(http://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png);
+            }
+            & when (@LogoStyle = 201701) {
+                background-image: url(https://images.rbxcdn.com/899500f61badca57cd9c3d6bffdbc383-letterform.png);
+            }
             background-repeat: no-repeat;
             padding: 0
         }
@@ -16081,7 +16157,7 @@
 			border-radius: 5px;
 		}
 	}
-	.btn-secondary-md, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md {
+	.btn-secondary-md, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md, .group-profile-header .actions-btn-container .actions-btn {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -16210,7 +16286,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md {
+	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md, .group-profile-header .actions-btn-container .actions-btn {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #32b5ff;
 			& when (@BoxShadows = 1) {
@@ -17210,7 +17286,7 @@
 			font-size: 16px
 		}
 	}
-	.rbx-upgrade-now .btn-secondary-md, .btn-primary-md, .btn-secondary-sm, .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button {
+	.rbx-upgrade-now .btn-secondary-md, .btn-primary-md, .btn-secondary-sm, .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .group-profile-header .actions-btn-container .actions-btn {
 		.light-theme &:visited, .light-theme &:link, .dark-theme &:visited, .dark-theme &:link {
 			color: #fff
 		}
@@ -17244,7 +17320,7 @@
 				border-radius: 3px;
 			}
 		}
-		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .btn-control-md.groups-list-create-button {
+		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .btn-control-md.groups-list-create-button, .group-profile-header .actions-btn-container .actions-btn {
 			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
 				padding: 7px;
 				font-size: 16px;
@@ -17556,7 +17632,7 @@
             }
         }
         
-        .rbx-tabs-horizontal .game-stat-footer:not(:has(.game-copylocked-footnote)):before {
+        .rbx-tabs-horizontal .game-description-footer:not(:has(.text-pastname)):before {
             content: "This game is copylocked";
             & when (@SourceSansPro = 0) {
                 font-size: 12px;
@@ -18415,6 +18491,61 @@
                 }
             }
         }
+		
+		.page-content .rbx-tabs-horizontal when (@LegacyNSGBoxLeaderboards = 1) {
+			&:before, &:after {
+				content: " ";
+				display: table;
+			}
+			&:after {
+				clear: both;
+			}
+			.nav-tabs {
+				float: left;
+				&:after {
+					content: "Leaderboards";
+					& when (@SourceSansPro = 0) {
+						font-size: 16px;
+						font-weight: 500;
+						@media (max-width: 767px) {
+							font-size:12px;
+							font-weight: 500
+						}
+					}
+					& when (@SourceSansPro = 1) {
+						font-size: 18px;
+						font-weight: 400;
+					}
+					background-color: #fff;
+					padding: 12px 2%;
+					width: 25%;
+					line-height: 16px;
+					margin-bottom: -1px;
+					float: left;
+					clear: unset;
+					display: block;
+					.light-theme & {
+						background-color: #fff;
+						color: #191919;
+					}
+					.dark-theme & {
+						background-color: #000;
+						color: #e6e6e6
+					}
+				}
+			}
+			.rbx-tab {
+				width: 25%;
+				&:last-child {
+					float: right;
+				}
+			}
+			.rbx-tab-content {
+				float: left;
+				margin-top: 0;
+				width: 100%;
+			}
+		}
     }
     
     .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .refresh-link-icon, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .refresh-link-icon, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
@@ -18446,6 +18577,132 @@
             font-weight: 300;
             @media (max-width: 767px) {
                 font-size:21px
+            }
+        }
+        line-height: 1em;
+        &:active, &:focus, &:hover {
+            & when (@SourceSansPro = 0) {
+                font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                @media (max-width: 767px) {
+                    font-size:16px
+                }
+            }
+            & when (@SourceSansPro = 1) {
+                font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                font-size: 24px;
+                font-weight: 300;
+                @media (max-width: 767px) {
+                    font-size:21px
+                }
+            }
+            line-height: 1em;
+        }
+        .gotham-font &, .builder-font & {
+            & when (@SourceSansPro = 0) {
+                font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                @media (max-width: 767px) {
+                    font-size:16px
+                }
+            }
+            & when (@SourceSansPro = 1) {
+                font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                font-size: 24px;
+                font-weight: 300;
+                @media (max-width: 767px) {
+                    font-size:21px
+                }
+            }
+            line-height: 1em;
+            &:active, &:focus, &:hover {
+                & when (@SourceSansPro = 0) {
+                    font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                    font-size: 20px;
+                    font-weight: 700;
+                    @media (max-width: 767px) {
+                        font-size:16px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
+                line-height: 1em;
+            }
+        }
+        &:nth-child(n+2), &:nth-child(n+2) [class*="-textIconRow"] {
+            & when (@SourceSansPro = 0) {
+                font-size: 16px;
+                font-weight: 400;
+            }
+            & when (@SourceSansPro = 1) {
+                font-size: 16px;
+                font-weight: 300;
+            }
+            line-height: 1em;
+            &:active, &:focus, &:hover {
+                & when (@SourceSansPro = 0) {
+                    font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                    font-size: 20px;
+                    font-weight: 700;
+                    @media (max-width: 767px) {
+                        font-size:16px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
+                line-height: 1em;
+            }
+            .gotham-font &, .builder-font & {
+                & when (@SourceSansPro = 0) {
+                    font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                    font-size: 20px;
+                    font-weight: 700;
+                    @media (max-width: 767px) {
+                        font-size:16px
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                    font-size: 24px;
+                    font-weight: 300;
+                    @media (max-width: 767px) {
+                        font-size:21px
+                    }
+                }
+                line-height: 1em;
+                &:active, &:focus, &:hover {
+                    & when (@SourceSansPro = 0) {
+                        font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                        font-size: 20px;
+                        font-weight: 700;
+                        @media (max-width: 767px) {
+                            font-size:16px
+                        }
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                        font-size: 24px;
+                        font-weight: 300;
+                        @media (max-width: 767px) {
+                            font-size:21px
+                        }
+                    }
+                    line-height: 1em;
+                }
             }
         }
     }
@@ -20506,26 +20763,243 @@
     /*/ Revert Group Redesign /*/
     /* Profile Header */
     .group-profile-header {
-        gap: 0;
         background-color: #fff;
+        & when (@BoxShadows = 1) {
+            box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+        }
         padding: 15px;
         margin: 0 0 18px;
+        position: relative;
+		display: block;
         .light-theme & {
             background-color: #fff;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+            }
         }
         .dark-theme & {
             background-color: #000;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(230, 230, 230, 0.3);
+            }
         }
         .group-profile-header-info {
             margin-bottom: 0;
-            align-items: flex-end;
+			display: block;
+			@media (max-width: 767px) {
+				.profile-header-details-avatar {
+					width: 100%;
+					height: 100%;
+				}
+				.profile-header-details-avatar-container {
+					width: 128px;
+					height: 128px;
+				}
+			}
+			@media (max-width: 543px) {
+				.profile-header-details-avatar-container {
+					float: none;
+					width: 100px;
+					height: 100px;
+					margin: 6px auto;
+				}
+			}
         }
         .profile-header-details-avatar {
-            border-radius: 0
-        }
+			width: 100%;
+			height: 100%;
+            border-radius: 0;
+			&-container {
+				float: left;
+				margin-right: 12px;
+				width: 128px;
+				height: 128px;
+			}
+		}
         .profile-header-details-container {
-            align-items: flex-start;
+			display: block;
+			&:after, &:before {
+				content: " ";
+				display: table;
+			}
+			&:after {
+				clear: both;
+			}
         }
+		.profile-header-details-names-container {
+			width: 82%;
+			width: calc(100% - 156px);
+			position: relative;
+			float: left;
+			height: 128px;
+			display: block;
+			.profile-header-details-community-name {
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+					font-size: 32px;
+					font-weight: 800;
+					@media (max-width: 767px) {
+						font-size:24px
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+					font-size: 36px;
+					font-weight: 400;
+					@media (max-width: 767px) {
+						font-size:30px
+					}
+				}
+				line-height: 1em;
+				margin: 0;
+				padding: 5px 0;
+				display: inline-block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				max-width: 100%;
+			}
+			.profile-header-details-owner-name {
+				display: block;
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+					font-weight: 500;
+					line-height: 1.4em;
+					@media (max-width: 767px) {
+						font-size:12px;
+						font-weight: 500
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+					font-weight: 300;
+					line-height: 1.3em;
+					@media (max-width: 767px) {
+						font-size:14px;
+						font-weight: 300
+					}
+				}
+				color: #b8b8b8;
+				[class*="-Link-root"] {
+					color: #00a2ff;
+					&:active, &:hover, &:link, &:visited {
+						color: #00a2ff;
+					}
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+						font-weight: 500;
+						line-height: 1.4em;
+						@media (max-width: 767px) {
+							font-size:12px;
+							font-weight: 500
+						}
+					}
+					& when (@SourceSansPro = 1) {
+						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+						font-weight: 300;
+						line-height: 1.3em;
+						@media (max-width: 767px) {
+							font-size:14px;
+							font-weight: 300
+						}
+					}
+					&:focus, &:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			@media (max-width: 543px) {
+				margin: 0;
+				width: 100%;
+				height: auto;
+			}
+		}
+		.actions-container {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 1;
+			display: flex;
+			flex-direction: column-reverse;
+			.actions-btn {
+				& when (@RemoveUpdates = 1) {
+					font-size: 0;
+					&:active, &:focus, &:hover {
+						font-size: 0;
+					}
+					.gotham-font &, .builder-font & {
+						font-size: 0;
+						&:active, &:focus, &:hover {
+							font-size: 0;
+						}
+					}
+				}
+				& when (@BoxShadows = 0) {
+					transition: none;
+				}
+				& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
+					transition: all,0.2s,ease-in-out;
+				}
+				& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
+					-webkit-transition: box-shadow 200ms ease-in-out;
+					-o-transition: box-shadow 200ms ease-in-out;
+					transition: box-shadow 200ms ease-in-out;
+				}
+				font-weight: 500;
+				padding: 9px;
+				margin-bottom: 6px;
+				min-height: unset;
+				&:after when (@RemoveUpdates = 1) {
+					content: "Join Group";
+					font-size: 18px;
+					font-weight: 500;
+					line-height: 100%;
+					@media (max-width: 767px) {
+						font-size: 16px;
+						line-height: 100%;
+					}
+				}
+				&:focus, &:hover {
+					& when (@BoxShadows = 0) {
+						box-shadow: none;
+					}
+					& when (@BoxShadows = 1) {
+						box-shadow: 0 1px 3px rgba(150,150,150,0.74);
+					}
+				}
+				&:active {
+					& when (@BoxShadows = 0) {
+						box-shadow: none;
+					}
+					& when (@BoxShadows = 1) {
+						box-shadow: none;
+					}
+				}
+				[class*="Ripple-"] {
+					display: none;
+				}
+			}
+			&.actions-mobile {
+				display: none;
+				@media (max-width: 767px) {
+					display: block;
+					position: relative;
+					.actions-btn-container {
+						bottom: 0;
+						right: 0;
+					}
+				}
+			}
+		}
+		.actions-btn-container {
+			min-width: unset;
+			bottom: 15px;
+			right: 31px;
+			position: relative;
+		}
         .contextual-menu-actions-btn {
             background-color: transparent;
             border-radius: 0;
@@ -20535,7 +21009,7 @@
             top: 6px;
             right: 6px;
             display: inline-block;
-            span {
+            [class*="-textContainer"] {
                 vertical-align: middle;
                 background-image: url(https://images.rbxcdn.com/b4f6e3c252c9cbea.svg);
                 background-repeat: no-repeat;
@@ -20545,10 +21019,13 @@
                 height: 28px;
                 display: inline-block;
             }
-            &:hover {
+            .MuiTouchRipple-root {
+                display: none;
+            }
+            &:active, &:hover {
                 background-color: transparent;
                 box-shadow: none;
-                span {
+                [class*="-textContainer"] {
                     background-position: -28px -616px;
                 }
             }
@@ -20563,6 +21040,96 @@
         }
         .description-container {
             display: none;
+        }
+        .group-details & .profile-insights-container {
+            width: 82%;
+            width: calc(100% - 156px);
+            position: absolute;
+            left: 154px;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            text-align: center;
+            .profile-insight-pill {
+                background-color: transparent;
+                border-radius: 0;
+                font-size: 0;
+                position: relative;
+                float: left;
+                display: inline-block;
+                padding: 0 12px;
+                &:before {
+                    content: "";
+                    color: #b8b8b8;
+                    & when (@SourceSansPro = 0) {
+						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 1.4em;
+						@media (max-width: 767px) {
+							font-size:12px;
+							font-weight: 500
+						}
+                    }
+					& when (@SourceSansPro = 1) {
+						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+						font-size: 16px;
+						font-weight: 300;
+						line-height: 1.3em;
+						@media (max-width: 767px) {
+							font-size:14px;
+							font-weight: 300
+						}
+					}
+                    cursor: text;
+                    display: block;
+                }
+                &:nth-child(1):before {
+                    content: "Members";
+                }
+                &:nth-child(2):before {
+                    content: "Rank";
+                }
+                &:after {
+                    content: attr(title);
+                    & when (@SourceSansPro = 0) {
+						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+					& when (@SourceSansPro = 1) {
+						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+						font-size: 24px;
+						font-weight: 300;
+						@media (max-width: 767px) {
+							font-size:21px
+						}
+                    }
+                    line-height: 1em;
+                    margin: 0;
+                    padding: 5px 0;
+					 cursor: text;
+                    display: block;
+                }
+				@media (max-width: 543px) {
+					width: 100%;
+					.logged-in & {
+						width: 50%;
+					}
+				}
+            }
+			@media (max-width: 543px) {
+				margin: 0;
+				display: inline-block;
+				position: relative;
+				width: 100%;
+				height: auto;
+				left: 0;
+				bottom: 0;
+				padding: 5px 0;
+			}
         }
     }
     /* Rbx tabs */
@@ -20608,30 +21175,128 @@
         }
     }
     /* Others */
+	.group-section-content, .group-section-content-transparent {
+		margin: 0 0 18px;
+	}
     .group-section-content, .group-details .group-members-list, .group-details .group-wall {
         background-color: #fff;
+        & when (@BoxShadows = 1) {
+            box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+        }
         padding: 15px;
         position: relative;
-        margin: 0 0 18px;
         border-radius: 0;
         .light-theme & {
             background-color: #fff;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(25, 25, 25, 0.3);
+            }
         }
         .dark-theme & {
             background-color: #000;
+            & when (@BoxShadows = 1) {
+                box-shadow: 0 1px 4px 0 rgba(230, 230, 230, 0.3);
+            }
         }
     }
-    .group-details .group-shout .shout-container .group-shout {
-        margin-left: 12px;
-        .group-shout-body {
-            margin-top: 6px;
-        }
-        .group-shout-info {
-            margin-top: 12px;
-            float: left;
-            width: 100%;
-        }
-    }
+	.group-details .group-shout .shout-container {
+		.group-shout-content {
+			display: block;
+			&:after, &:before {
+				content: " ";
+				display: table;
+			}
+			&:after {
+				clear: both;
+			}
+		}
+		.avatar-headshot {
+			float: left;
+			display: block;
+			position: absolute;
+			pointer-events: none;
+		}
+		.group-shout {
+			float: left;
+			padding-left: 60px;
+			margin: 0;
+			.group-shout-name {
+				display: block;
+				align-items: unset;
+				max-width: unset;
+				.text-label-medium {
+					& when (@SourceSansPro = 0) {
+						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+						font-size: 16px;
+						font-weight: 500;
+						@media (max-width: 767px) {
+							font-size:12px;
+							font-weight: 500
+						}
+					}
+					& when (@SourceSansPro = 1) {
+						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+						font-size: 16px;
+						font-weight: 300;
+						@media (max-width: 767px) {
+							font-size: 14px;
+							font-weight: 400;
+						}
+					}
+					color: #00a2ff;
+					&:focus, &:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			.group-shout-body {
+				margin-top: 6px;
+				word-break: break-word;
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				color: #191919;
+				.light-theme & {
+					color: #191919;
+				}
+				.dark-theme & {
+					color: #e6e6e6;
+				}
+			}
+			.group-shout-info {
+				margin-top: 12px;
+				float: left;
+				width: 100%;
+				.text-caption-medium {
+					& when (@SourceSansPro = 0) {
+						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+						line-height: 1.3em;
+					}
+					font-size: 12px;
+					font-weight: 400;
+					color: #b8b8b8;
+					.light-theme & {
+						color: #b8b8b8;
+					}
+					.dark-theme & {
+						color: #474747;
+					}
+				}
+			}
+		}
+	}
     .group-details .group-wall .comment {
         position: relative;
         border-top: 1px solid #e3e3e3;
@@ -20644,11 +21309,103 @@
             margin-top: 12px;
             margin-bottom: 12px;
         }
+		.list-body {
+			.list-content {
+				margin: 0;
+				margin-top: 6px;
+				float: left;
+				overflow-wrap: break-word;
+				width: 100%;
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				color: #191919;
+				.light-theme & {
+					color: #191919;
+				}
+				.dark-theme & {
+					color: #e6e6e6;
+				}
+			}
+			.text-caption-medium {
+				margin-top: 12px;
+				float: left;
+				width: 100%;
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+					line-height: 1.3em;
+				}
+				font-size: 12px;
+				font-weight: 400;
+				color: #b8b8b8;
+				.light-theme & {
+					color: #b8b8b8;
+				}
+				.dark-theme & {
+					color: #474747;
+				}
+			}
+		}
+		.light-theme & {
+			border-color: #e3e3e3;
+		}
+		.dark-theme & {
+			border-color: #1c1c1c;
+		}
     }
     .group-details .group-wall .group-comments-container {
         display: block;
         margin-bottom: 0;
+		.text-label-medium {
+			& when (@SourceSansPro = 0) {
+				font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+				font-size: 16px;
+				font-weight: 500;
+				@media (max-width: 767px) {
+					font-size:12px;
+					font-weight: 500
+				}
+			}
+			& when (@SourceSansPro = 1) {
+				font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+				font-size: 16px;
+				font-weight: 300;
+				@media (max-width: 767px) {
+					font-size: 14px;
+					font-weight: 400;
+				}
+			}
+			color: #00a2ff;
+			&:focus, &:hover {
+				text-decoration: underline;
+			}
+		}
     }
+    .group-details .group-store .item-card {
+        margin-bottom: 0;
+        .item-card-container {
+            width: 126px;
+            height: 100%;
+        }
+    }
+	.group-details .group-members-list .member:first-child .avatar-container {
+		margin-left: auto;
+	}
+	.group-details .group-members-list .member .avatar-container .avatar-card-image img {
+		background-color: transparent;
+	}
     
     /*/ Revert new Games Modal /*/
     .MuiDialog-root, .MuiModal-root {
@@ -22145,7 +22902,6 @@
         z-index: -1;
         user-select: none;
         -moz-user-select: none;
-        transition: .2s opacity .1s, 0s z-index .25s;
     }
     .dark-theme .btr-thumb-btn-container .btr-thumb-popup {
         color: #000;
@@ -23463,7 +24219,7 @@
 		}
 		
 		.light-theme .rbx-header .rbx-navbar li .nav-menu-title:focus, .light-theme .rbx-header .rbx-navbar li .nav-menu-title:hover {
-			background-color: rgba(230, 230, 230, 0.2) !important;
+			background-color: rgba(230, 230, 230, 0.2);
 		}
 		
 		.light-theme .rbx-left-col, .light-theme .side-nav-container {
@@ -23512,10 +24268,10 @@
 		}
 		
 		.light-theme .rbx-tabs-horizontal .rbx-tab .rbx-tab-heading:hover {
-			background-color: var(--btr-theme-item-hover) !important;
+			background-color: var(--btr-theme-item-hover);
 		}
 		.light-theme .nav > li > a:focus, .light-theme .nav > li > a:hover, .light-theme .nav-tabs > li.active > a:focus {
-			background-color: var(--btr-theme-item-hover-hover) !important;
+			background-color: var(--btr-theme-item-hover-hover);
 		}
 		
 		html .light-theme .input-group-btn .input-dropdown-btn, .light-theme .input-group-addon:first-child, .light-theme .input-group-btn:first-child > .btn, .light-theme .input-group-btn:first-child > .btn-group > .btn, .light-theme .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .light-theme .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .light-theme .input-group .form-control:first-child, .light-theme .input-group .input-field {
@@ -23585,7 +24341,7 @@
 		}
 		
 		html .light-theme .dropdown-menu li:hover, .light-theme .menu-vertical .menu-option:hover, html .light-theme .dropdown-menu li:focus, html .dropdown-menu li.active, html .light-theme .rbx-header .rbx-navbar-search .rbx-navbar-search-option.selected {
-			background-color: var(--btr-theme-item-hover) !important;
+			background-color: var(--btr-theme-item-hover);
 		}
 		
 		.light-theme .messages .messageDivider {
@@ -25130,15 +25886,15 @@
 
         .light-theme .rbx-header .rbx-navbar li .nav-menu-title:hover,
         .light-theme .rbx-header .rbx-navbar li .nav-menu-title:focus {
-            background-color: rgba(255, 255, 255, 0.4) !important;
+            background-color: rgba(255, 255, 255, 0.4);
         }
         .dark-theme .rbx-header .rbx-navbar li .nav-menu-title:hover,
         .dark-theme .rbx-header .rbx-navbar li .nav-menu-title:focus {
             & when (@BrighterDarkThemeColors = 0) {
-                background-color: rgba(255, 255, 255, 0.2) !important;
+                background-color: rgba(255, 255, 255, 0.2);
             }
             & when (@BrighterDarkThemeColors = 1) {
-                background-color: rgba(255, 255, 255, 0.4) !important;
+                background-color: rgba(255, 255, 255, 0.4);
             }
         }
 
@@ -25408,7 +26164,7 @@
 
         .light-theme .rbx-header .rbx-navbar li .nav-menu-title:hover,
         .light-theme .rbx-header .rbx-navbar li .nav-menu-title:focus {
-            background-color: rgba(25, 25, 25, 0.75) !important;
+            background-color: rgba(25, 25, 25, 0.75);
         }
 
         /* Chat */
@@ -25895,10 +26651,10 @@
         .rbx-header .rbx-navbar li .nav-menu-title {
             &:focus, &:hover {
                 .light-theme & {
-                    background-color: rgba(25, 25, 25, 0.15) !important;
+                    background-color: rgba(25, 25, 25, 0.15);
                 }
                 .dark-theme & {
-                    background-color: rgba(230, 230, 230, 0.15) !important;
+                    background-color: rgba(230, 230, 230, 0.15);
                 }
             }
         }
