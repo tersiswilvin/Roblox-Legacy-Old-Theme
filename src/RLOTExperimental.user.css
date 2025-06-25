@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250622-01.1.3.19
+@version      20250625-00.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -31,7 +31,8 @@
 @var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"                          0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"                          0
 @var          checkbox OriginalSponsorSizing       "Original Sponsor Size"                           1
-@var          select   PlayButtonStyle             "Play Button Style"                               ["2018M", "2018L", "2019E", "2019M*", "2020+"]
+@var          select   PlayButtonStyle             "Play Button Style"                               ["2017EM", "2018E", "2018L", "2019E", "2019M*", "2020+"]
+@var          select   SocialMediaExperiment       " ↳ Social media experiment type"                 ["None*", "share_icon", "social_media"]
 @var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
@@ -6555,7 +6556,6 @@
 			p {
 				margin-bottom: 0;
 			}
-			&s-container:after, &-container li:first-child p:first-child {}
             &-container:has(:nth-child(10)) &:nth-last-child(-n+1) {
                 display: none;
             }
@@ -8221,7 +8221,7 @@
                     font-weight: 400;
                 }
             }
-            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not (@PlayButtonStyle = 2018M) {
+            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not ((@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018M)) {
                 font-size: 14px;
             }
             .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label when (@RemoveUpdates = 0) {
@@ -9116,7 +9116,7 @@
     }
 	
 	/*/=={ Watermark }==/*/
-    @doubleLineEnabled: true;
+    @doubleLineEnabled: false;
     .rbx-left-col when not (@WatermarkStyle = None) {
         &:before {
             & when (@WatermarkStyle = DEV) {
@@ -9180,7 +9180,7 @@
             }
         }
         &:after {
-            content: "Milestone 20250622.1.3.19 \A Patch 1";
+            content: "Milestone 20250625.1.3.19 \A ";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -10530,10 +10530,14 @@
         color: #e6e6e6;
     }
     
-    & when (@PlayButtonStyle = 2018M) {
+    & when (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018E) {
         .game-main-content .game-calls-to-action .game-buttons-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container {
             padding: 0 12px 0 24px;
             position: absolute;
+			@media (max-width: 991px) {
+				position: relative;
+				padding: 0;
+			}
         }
     
         .game-main-content.follow-button-enabled .favorite-follow-vote-share .voting-panel .users-vote .vote-details .vote-container {
@@ -10555,9 +10559,15 @@
             float: left;
         }
         .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label {
-            padding: 4px 0 0 6px;
             color: #F6B702;
-            font-size: 16px;
+			& when (@SourceSansPro = 0) {
+				font-size: 12px;
+				padding: 10px 0 0px 6px;
+			}
+			& when (@SourceSansPro = 1) {
+				font-size: 16px;
+				padding: 4px 0 0 6px;
+			}
             font-weight: 400;
             padding-left: 3px;
             display: table-cell;
@@ -10572,37 +10582,75 @@
         .game-main-content.follow-button-enabled .favorite-follow-vote-share .voting-panel {
             width: 54%;
             bottom: 0;
+			@media (max-width: 767px) {
+				width: 45%;
+			}
         }
         @media (min-width: 991px) {
             .game-favorite-button-container {
-                position: relative;
-                bottom: 39px;
+				& when (@PlayButtonStyle = 2017EM) {
+					position: absolute;
+					bottom: 46px;
+				}
+				& when (@PlayButtonStyle = 2018E) {
+                	position: relative;
+					bottom: 39px;
+				}
                 width: 30%;
             }
             .game-main-content.follow-button-enabled .favorite-follow-vote-share .voting-panel {
-                bottom: 39px;
                 width: 60%;
                 float: right;
-            }
-            .game-main-content.follow-button-enabled .favorite-follow-vote-share {
-                height: 36px;
+				& when (@PlayButtonStyle = 2017EM) {
+					position: absolute;
+					bottom: 46px;
+					right: 12px;
+				}
+				& when (@PlayButtonStyle = 2018E) {
+                	position: relative;
+					bottom: 39px;
+				}
             }
             .game-main-content.follow-button-enabled .favorite-follow-vote-share {
                 padding-top: 0;
-            }
-        }
-        @media (max-width: 991px) {
-            .game-main-content .game-calls-to-action .game-buttons-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container {
-                position: relative;
-                padding: 0;
+				height: 36px;
+				position: unset;
             }
         }
         .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container {
-            width: 40%;
-            overflow: visible
+            width: 30%;
+            overflow: visible;
+			max-width: unset;
+			@media (max-width: 543px) {
+				width: 25%;
+				padding-left: 0;
+			}
         }
+		.game-main-content.follow-button-enabled .favorite-follow-vote-share .social-media-share {
+			float: unset;
+			position: unset;
+			@media (min-width: 991px) {
+				& when (@PlayButtonStyle = 2017EM) {
+					float: right;
+					width: 16%;
+					height: 39px;
+				}
+				& when (@PlayButtonStyle = 2018E) {
+					float: none;
+					width: 100%;
+					height: unset;
+				}
+			}
+			@media (max-width: 991px) {
+				float: right;
+				width: 16%;
+			}
+			@media (max-width: 543px) {
+				width: 25%;
+			}
+		}
     }
-    & when (@PlayButtonStyle = 2018M) or (@PlayButtonStyle = 2018L) {
+    & when (@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018E) or (@PlayButtonStyle = 2018L) {
         .gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg, .gotham-font #game-details-play-button-container .btn-economy-robux-white-lg, .gotham-font #game-details-play-button-container a.btn-economy-robux-white-lg, .builder-font #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font #game-details-play-button-container a.btn-economy-robux-white-lg {
             padding: 15px 15px;
         }
@@ -10673,7 +10721,7 @@
             display: block;
         }
         @media (min-width: 991px) {
-            & when not (@PlayButtonStyle = 2018M) {
+            & when not ((@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018E)) {
                 .game-main-content.follow-button-enabled #game-details-play-button-container {
                     padding-bottom: 20px;
                 }
@@ -10701,6 +10749,60 @@
             }
         }
     }
+    
+	.social-media-share:not(:has(.social-button-icon-img)) when not (@SocialMediaExperiment = None) {
+		&:after {
+			content: "";
+			& when (@SocialMediaExperiment = share_icon) {
+				background-image: url(https://images.rbxcdn.com/ca05cd0d068c3015d64a07cbed74f0dd-social_06282017.svg);
+				background-position: 0 -224px;
+				background-repeat: no-repeat;
+				background-size: auto auto;
+				width: 28px;
+				height: 28px;
+				vertical-align: middle;
+				margin: auto;
+				display: block;
+				& when (@PlayButtonStyle = 2017EM) {
+					margin-top: 11px;
+					margin-right: 0;
+				}
+				& when (@PlayButtonStyle = 2018E) {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					margin-right: 9px;
+				}
+				@media (max-width: 991px) {
+					position: relative;
+					margin-right: auto;
+				}
+			}
+			& when (@SocialMediaExperiment = social_media) {
+				background-image: url(https://images.rbxcdn.com/4799659a1367d6c6e235b5986cb9b6b9.png), url(https://images.rbxcdn.com/d75e7a07fd4db793d79060cc5976cb29.png), url(https://images.rbxcdn.com/ee4b20b19bbaac5eb7c5e2c46a750c5c.png);
+				background-position: 3px 0, 30px 0, 57px 0;
+				background-repeat: no-repeat;
+				background-size: 24px;
+				height: 28px;
+				width: 81px;
+				& when (@PlayButtonStyle = 2017EM) {
+					float: right;
+					@media (min-width: 991px) {
+						margin: 15px 0 0 0;
+					}
+				}
+				& when not (@PlayButtonStyle = 2017EM) {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+			}
+			cursor: pointer;
+		}
+		&:hover:after when (@SocialMediaExperiment = share_icon) {
+			background-position: -28px -224px
+		}
+	}
     
     .light-theme .btn-common-play-game-lg .icon-robux-white, .dark-theme .btn-common-play-game-lg .icon-robux-white {
 		& when (@SiteCurrency = Robux) {
@@ -18492,7 +18594,7 @@
             }
         }
 		
-		.page-content .rbx-tabs-horizontal when (@LegacyNSGBoxLeaderboards = 1) {
+		#game-detail-page .rbx-tabs-horizontal when (@LegacyNSGBoxLeaderboards = 1) {
 			&:before, &:after {
 				content: " ";
 				display: table;
