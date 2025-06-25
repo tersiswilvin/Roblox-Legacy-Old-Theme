@@ -68,10 +68,12 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Remove Social Links
   - My Avatar Gogo Spinner
   - Play Button Style
-    - 2018M
+    - 2017EM
+    - 2018E
     - 2018L
     - 2019E
     - 2020+
+    -  ↳ Remove nondesigna­ted icons
   - Restore Ads
     - None
     - Default ( Default )
@@ -79,7 +81,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Games Page
   - Restore legacy sidebar padding
   - Revert 2019L+ updates ( Default )
-    -  ↳ Extras
+    -  ↳ Extras ( Default )
   - Premium To BC (BTRoblox)
   - Site Brand Style
     - 201408
@@ -97,7 +99,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2018 ( Default )
   - Social Links Version
     - V1
-    - V2
+    - V2 ( Default )
     - V3
     - V3_1
     - V3_2
@@ -107,6 +109,10 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Source Sans Pro Font
   - Transition animations ( Default )
   - Use 2017 Red Branding (Messages / Bootstrapper)
+  - Watermark Branch (Experimental Only)
+    - None
+    - DEV ( Hidden )
+    - Testers ( Default )
 - Extension Support
   - Btroblox
   - Roblox+
