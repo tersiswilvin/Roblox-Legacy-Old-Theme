@@ -16,14 +16,14 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201509
     - 201511
     - 201612
-    - 201902 ` Default `
+    - 201902  `Default`
   - Box Shadows
-  - Brighter Dark Theme colors ` Default `
+  - Brighter Dark Theme colors  `Default`
   - Currency Brand Style
-    - Robux ` Default `
+    - Robux  `Default`
     - Tickets
   - Custom Site Theme
-    - None ` Default `
+    - None  `Default`
     - April_Fools
     - BloxTober
     - BTR_Night
@@ -34,21 +34,21 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - RPlus_Easter
     - RPlus_OBC
   - Force Light Theme on signup
-  - Five column Avatar Editor ` Default `
+  - Five column Avatar Editor  `Default`
   - Fixed 2019M Item Card Transitions
   - Greeting Text Style
-    - None ` Default `
+    - None  `Default`
     - Hello
     - HelloExclamation
     - Exclamation
   - Item Card Style
     - Pre-2018
     - 2019E
-    - 2019M ` Default `
+    - 2019M  `Default`
     - 2019L
   - Legacy Game Headers (BTRoblox)
   - Legacy Footer Text
-    - None ` Default `
+    - None  `Default`
     - BrandSync
     - 2014E
     - 2015E
@@ -61,7 +61,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
   - Legacy Next StyleGuide
     -  ↳ Capital Brand Text in Modals
-    -  ↳ Chat Shadows ` Default `
+    -  ↳ Chat Shadows  `Default`
     -  ↳ Older
     -  ↳ Older Chat
     -  ↳ Remove Place Name
@@ -76,30 +76,30 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Social media experiment type
   - Restore Ads
     - None
-    - Default ` Default `
+    - Default  `Default`
     - Filler
     -  ↳ Games Page
   - Restore legacy sidebar padding
-  - Revert 2019L+ updates ` Default `
-    -  ↳ Extras ` Default `
+  - Revert 2019L+ updates  `Default`
+    -  ↳ Extras  `Default`
   - Premium To BC (BTRoblox)
   - Site Brand Style
     - 201408
     - 201412
     - 201511
-    - 201701 ` Default `
+    - 201701  `Default`
   - Signup Theme
     - 2017
-    - 2018 ` Default `
+    - 2018  `Default`
     - 2019L
     - 2020+
   - Styleguide Page Theme
     - 2016
     - 2017
-    - 2018 ` Default `
+    - 2018  `Default`
   - Social Links Version
     - V1
-    - V2 ` Default `
+    - V2  `Default`
     - V3
     - V3_1
     - V3_2
@@ -107,12 +107,12 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - V4_1
     -  ↳ Remove nondesigna­ted icons
   - Source Sans Pro Font
-  - Transition animations ` Default `
+  - Transition animations  `Default`
   - Use 2017 Red Branding (Messages / Bootstrapper)
-  - Watermark Branch `Experimental Only`
+  - Watermark Branch (Experimental Only)
     - None
-    - DEV ` Hidden `
-    - Testers ` Default `
+    - DEV  `Hidden`
+    - Testers  `Default`
 - Extension Support
   - Btroblox
   - Roblox+
