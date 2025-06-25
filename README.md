@@ -73,7 +73,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2018L
     - 2019E
     - 2020+
-    -  ↳ Remove nondesigna­ted icons
+    -  ↳ Social media experiment type
   - Restore Ads
     - None
     - Default ( Default )
