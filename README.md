@@ -19,6 +19,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201902 `Default`
   - Box Shadows
   - Brighter Dark Theme colors `Default`
+  - Crop Wide Gamecard Thumbnails `Default`
   - Currency Brand Style
     - Robux `Default`
     - Tickets
