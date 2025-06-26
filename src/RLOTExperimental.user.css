@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250625-01.1.3.19
+@version      20250626-00.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -12,6 +12,7 @@
 @var          select   BadgeStyle                  "Badge Style"                                     ["201509", "201511", "201612", "201902*"]
 @var          checkbox BoxShadows                  "Box Shadows"                                     0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark Theme colors"                      1
+@var          checkbox CroppedWideThumbs           "Crop Wide Gamecard Thumbnails"                   1
 @var          select   SiteCurrency                "Currency Brand Style"                            ["Robux*", "Tickets"]
 @var          select   CustomTheme                 "Custom Site Theme"                               ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                     0
@@ -9168,7 +9169,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250625-01.1.3.19";
+			content: "Milestone 20250626-00.1.3.19";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -9383,11 +9384,14 @@
 		white-space: nowrap;
 	}
 
-	.light-theme .dialog-container {
-		box-shadow: 0 1px 4px rgb(25 25 25 / 75%);
-	}
-	.dark-theme .dialog-container {
-		box-shadow: 0 1px 4px rgb(230 230 230 / 75%);
+	.dialog-container {
+		overflow: unset;
+		.light-theme & {
+			box-shadow: 0 1px 4px rgb(25 25 25 / 75%);
+		}
+		.dark-theme & {
+			box-shadow: 0 1px 4px rgb(230 230 230 / 75%);
+		}
 	}
 	.light-theme .chat-main {
 		box-shadow: 0 1px 3px hsl(0deg 0% 59% / 74%);
@@ -13809,8 +13813,17 @@
 				.featured-game-icon-container:before when (@CardStyle = 2019L) {
 					opacity: 1;
 				}
-				.featured-game-container .info-metadata-container .wide-game-tile-metadata .hover-metadata {
-					display: none;
+				.featured-game-container {
+					background-color: #fff;
+					.light-theme & {
+						background-color: #fff;
+					}
+					.dark-theme & {
+						background-color: #000;
+					}
+					.info-metadata-container .wide-game-tile-metadata .hover-metadata {
+						display: none;
+					}
 				}
 			}
 			.light-theme &.focused.old-hover {
@@ -13821,6 +13834,12 @@
 				background-color: transparent;
 				color: #e6e6e6;
 			}
+		}
+		&:hover when (@CardStyle = 2019M) {
+			-webkit-transition: transform .15s;
+			-o-transition: transform .15s;
+			transition: transform .15s;
+			transform: scale(1.08);
 		}
 		@media (max-width: 543px) {
 			margin: 0;
@@ -13881,7 +13900,7 @@
 						height: 90px;
 						width: 90px;
 					}
-					img {
+					img when (@CroppedWideThumbs = 1) {
 						object-fit: cover
 					}
 				}
@@ -18739,57 +18758,33 @@
 			line-height: 1em;
 			&:active, &:focus, &:hover {
 				& when (@SourceSansPro = 0) {
-					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
-					font-size: 20px;
-					font-weight: 700;
-					@media (max-width: 767px) {
-						font-size:16px
-					}
+					font-size: 16px;
+					font-weight: 400;
 				}
 				& when (@SourceSansPro = 1) {
-					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
-					font-size: 24px;
+					font-size: 16px;
 					font-weight: 300;
-					@media (max-width: 767px) {
-						font-size:21px
-					}
 				}
 				line-height: 1em;
 			}
 			.gotham-font &, .builder-font & {
 				& when (@SourceSansPro = 0) {
-					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
-					font-size: 20px;
-					font-weight: 700;
-					@media (max-width: 767px) {
-						font-size:16px
-					}
+					font-size: 16px;
+					font-weight: 400;
 				}
 				& when (@SourceSansPro = 1) {
-					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
-					font-size: 24px;
+					font-size: 16px;
 					font-weight: 300;
-					@media (max-width: 767px) {
-						font-size:21px
-					}
 				}
 				line-height: 1em;
 				&:active, &:focus, &:hover {
 					& when (@SourceSansPro = 0) {
-						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
-						font-size: 20px;
-						font-weight: 700;
-						@media (max-width: 767px) {
-							font-size:16px
-						}
+						font-size: 16px;
+						font-weight: 400;
 					}
 					& when (@SourceSansPro = 1) {
-						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
-						font-size: 24px;
+						font-size: 16px;
 						font-weight: 300;
-						@media (max-width: 767px) {
-							font-size:21px
-						}
 					}
 					line-height: 1em;
 				}
