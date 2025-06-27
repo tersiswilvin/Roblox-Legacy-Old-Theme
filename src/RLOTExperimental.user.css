@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250626-00.1.3.19
+@version      20250626-01.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -32,7 +32,7 @@
 @var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"                          0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"                          0
 @var          checkbox OriginalSponsorSizing       "Original Sponsor Size"                           1
-@var          select   PlayButtonStyle             "Play Button Style"                               ["2017EM", "2018E", "2018L", "2019E", "2019M*", "2020+"]
+@var          select   PlayButtonStyle             "Play Button Style"                               ["2017EM", "2017M", "2017L", "2018L", "2019E", "2019M*", "2020+"]
 @var          select   SocialMediaExperiment       " ↳ Social media experiment type"                 ["None*", "share_icon", "social_media"]
 @var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
@@ -6260,7 +6260,7 @@
 				font-weight: 300;
 			}
 		}
-		.game-home-page-container .game-error .error-text {
+		.game-error .error-text {
 			font-size: 0;
 			margin-top: 0;
 			&:before {
@@ -8219,7 +8219,7 @@
 					font-weight: 400;
 				}
 			}
-			.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not ((@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018M)) {
+			.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not ((@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L)) {
 				font-size: 14px;
 			}
 			.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label when (@RemoveUpdates = 0) {
@@ -9169,7 +9169,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250626-00.1.3.19";
+			content: "Milestone 20250626-01.1.3.19";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -10522,7 +10522,7 @@
 		color: #e6e6e6;
 	}
 
-	& when (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018E) {
+	& when (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
 		.game-main-content .game-calls-to-action .game-buttons-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container {
 			padding: 0 12px 0 24px;
 			position: absolute;
@@ -10537,7 +10537,7 @@
 					position: absolute;
 					bottom: 46px;
 				}
-				& when (@PlayButtonStyle = 2018E) {
+				& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
 					position: relative;
 					bottom: 39px;
 				}
@@ -10545,10 +10545,23 @@
 			}
 		}
 		.game-main-content.follow-button-enabled .favorite-follow-vote-share {
+			margin: 12px 0 0;
+			padding-top: 0;
+			position: unset;
 			@media (min-width: 991px) {
 				padding-top: 0;
-				height: 36px;
+				& when (@PlayButtonStyle = 2017L) {
+					height: 36px;
+				}
+				margin: 0;
 				position: unset;
+			}
+			&:before,&:after {
+				content: " ";
+				display: table;
+			}
+			&:after {
+				clear: both;
 			}
 			.game-follow-button-container {
 				display: none;
@@ -10564,7 +10577,7 @@
 					& when (@PlayButtonStyle = 2017EM) {
 						width: 50%;
 					}
-					& when (@PlayButtonStyle = 2018E) {
+					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
 						width: 60%;
 					}
 					float: right;
@@ -10573,7 +10586,7 @@
 						bottom: 46px;
 						right: 12px;
 					}
-					& when (@PlayButtonStyle = 2018E) {
+					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
 						position: relative;
 						bottom: 39px;
 					}
@@ -10627,7 +10640,7 @@
 						width: 16%;
 						height: 39px;
 					}
-					& when (@PlayButtonStyle = 2018E) {
+					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
 						float: none;
 						width: 100%;
 						height: unset;
@@ -10643,7 +10656,7 @@
 			}
 		}
 	}
-	& when (@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018E) or (@PlayButtonStyle = 2018L) {
+	& when (@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) or (@PlayButtonStyle = 2018L) {
 		.gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg, .gotham-font #game-details-play-button-container .btn-economy-robux-white-lg, .gotham-font #game-details-play-button-container a.btn-economy-robux-white-lg, .builder-font #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font #game-details-play-button-container a.btn-economy-robux-white-lg {
 			padding: 15px 15px;
 		}
@@ -10716,7 +10729,7 @@
 			@media (min-width: 991px) {
 				padding-top: 20px;
 				padding-bottom: 64px;
-				.game-main-content.follow-button-enabled #game-details-play-button-container when not ((@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2018E)) {
+				.game-main-content.follow-button-enabled #game-details-play-button-container when not ((@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L)) {
 					padding-bottom: 20px;
 				}
 			}
@@ -10742,60 +10755,70 @@
 		}
 	}
 
-	.social-media-share:not(:has(.social-button-icon-img)) when not (@SocialMediaExperiment = None) {
-		&:after {
-			content: "";
-			& when (@SocialMediaExperiment = share_icon) {
-				background-image: url(https://images.rbxcdn.com/ca05cd0d068c3015d64a07cbed74f0dd-social_06282017.svg);
-				background-position: 0 -224px;
-				background-repeat: no-repeat;
-				background-size: auto auto;
-				width: 28px;
-				height: 28px;
-				vertical-align: middle;
-				margin: auto;
-				display: block;
-				& when (@PlayButtonStyle = 2017EM) {
-					margin-top: 11px;
-					margin-right: 0;
-				}
-				& when (@PlayButtonStyle = 2018E) {
-					position: absolute;
-					bottom: 0;
-					right: 0;
-					margin-right: 9px;
-				}
-				@media (max-width: 991px) {
-					position: relative;
-					margin-right: auto;
-				}
-			}
-			& when (@SocialMediaExperiment = social_media) {
-				background-image: url(https://images.rbxcdn.com/4799659a1367d6c6e235b5986cb9b6b9.png), url(https://images.rbxcdn.com/d75e7a07fd4db793d79060cc5976cb29.png), url(https://images.rbxcdn.com/ee4b20b19bbaac5eb7c5e2c46a750c5c.png);
-				background-position: 3px 0, 30px 0, 57px 0;
-				background-repeat: no-repeat;
-				background-size: 24px;
-				height: 28px;
-				width: 81px;
-				& when (@PlayButtonStyle = 2017EM) {
-					float: right;
-					@media (min-width: 991px) {
-						margin: 15px 0 0 0;
+	.social-media-share {
+		& when (@PlayButtonStyle = 2017M) {
+			display: block;
+		}
+		&:not(:has(.social-button-icon-img)) when not (@SocialMediaExperiment = None) {
+			&:after {
+				content: "";
+				& when (@SocialMediaExperiment = share_icon) {
+					background-image: url(https://images.rbxcdn.com/ca05cd0d068c3015d64a07cbed74f0dd-social_06282017.svg);
+					background-position: 0 -224px;
+					background-repeat: no-repeat;
+					background-size: auto auto;
+					width: 28px;
+					height: 28px;
+					vertical-align: middle;
+					margin: auto;
+					display: block;
+					& when (@PlayButtonStyle = 2017EM) {
+						margin-top: 11px;
+						margin-right: 0;
+					}
+					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						margin-right: 9px;
+						@media (max-width: 991px) {
+							position: relative;
+							margin-right: auto;
+						}
 					}
 				}
-				& when not (@PlayButtonStyle = 2017EM) {
-					position: absolute;
-					bottom: 0;
-					right: 0;
+				& when (@SocialMediaExperiment = social_media) {
+					background-image: url(https://images.rbxcdn.com/4799659a1367d6c6e235b5986cb9b6b9.png), url(https://images.rbxcdn.com/d75e7a07fd4db793d79060cc5976cb29.png), url(https://images.rbxcdn.com/ee4b20b19bbaac5eb7c5e2c46a750c5c.png);
+					background-position: 3px 0, 30px 0, 57px 0;
+					background-repeat: no-repeat;
+					background-size: 24px;
+					height: 28px;
+					width: 81px;
+					& when (@PlayButtonStyle = 2017EM) {
+						float: right;
+						@media (min-width: 991px) {
+							margin: 15px 0 0 0;
+						}
+					}
+					& when not ((@PlayButtonStyle = 2017EM)) {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						& when (@PlayButtonStyle = 2017M) {
+							margin-right: 9px;
+							@media (max-width: 991px) {
+								margin-right: 0;
+							}
+						}
+					}
 				}
+				cursor: pointer;
 			}
-			cursor: pointer;
-		}
-		&:hover:after when (@SocialMediaExperiment = share_icon) {
-			background-position: -28px -224px
+			&:hover:after when (@SocialMediaExperiment = share_icon) {
+				background-position: -28px -224px
+			}
 		}
 	}
-
 	.light-theme .btn-common-play-game-lg .icon-robux-white, .dark-theme .btn-common-play-game-lg .icon-robux-white {
 		& when (@SiteCurrency = Robux) {
 			background-position: 0 -252px;
@@ -20543,71 +20566,97 @@
 	}
 
 	/*/ Revert React Group List /*/
-	.wrap:has(.groups-list-sidebar) .content {
-		margin: auto;
-		max-width: 1338px;
-		.group-details-container-desktop-and-tablet {
-			max-width: 100%;
-			width: 100%;
-			position: relative;
-			.group-details {
-				float: left;
-				margin: 0;
-				& when (@SourceSansPro = 0) {
-					margin-top: 48px;
-				}
-				& when (@SourceSansPro = 1) {
-					margin-top: 52px;
-				}
-				& when (@RemoveUpdates = 0) {
-					@media (min-width: 768px) {
-						width: 75%;
-					}
-				}
-				@media (max-width: 767px) {
-					margin-top: 0;
-				}
-				@media (min-width: 768px) {
-					float: right;
-				}
+	.wrap:has(.groups-list-sidebar) {
+		@media (min-width: 1688px) {
+			&:not(:has(.groups-list-sidebar-no-nav)) .content {
+				margin-left: auto;
 			}
-			@media (min-width: 768px) {
-				max-width: 1146px;
-				@media (max-width: 1338px) {
-					&:not(.no-list) .group-details {
-						& when (@RemoveUpdates = 0) {
+		}
+		.content {
+			margin: auto;
+			max-width: 1338px;
+			.group-details-container-desktop-and-tablet {
+				max-width: 100%;
+				width: 100%;
+				position: relative;
+				.group-details {
+					float: left;
+					margin: 0;
+					& when (@SourceSansPro = 0) {
+						margin-top: 48px;
+					}
+					& when (@SourceSansPro = 1) {
+						margin-top: 52px;
+					}
+					& when (@RemoveUpdates = 0) {
+						@media (min-width: 768px) {
 							width: 75%;
 						}
-						& when (@RemoveUpdates = 1) {
-							width: calc(100% - 170px);
+					}
+					@media (max-width: 767px) {
+						margin-top: 0;
+					}
+					@media (min-width: 768px) {
+						float: right;
+					}
+				}
+				@media (min-width: 768px) {
+					max-width: 1146px;
+					@media (max-width: 1338px) {
+						&:not(.no-list) .group-details {
+							& when (@RemoveUpdates = 0) {
+								width: 75%;
+							}
+							& when (@RemoveUpdates = 1) {
+								width: calc(100% - 170px);
+							}
+							margin-left: 10px;
 						}
-						margin-left: 10px;
 					}
 				}
 			}
-		}
-		@media (min-width: 991px) {
-			margin-left: auto;
-			padding-left: 0;
-			padding-right: 0;
+			@media (min-width: 991px) {
+				margin-left: auto;
+				padding-left: 0;
+				padding-right: 0;
 
+			}
+			@media (max-width: 1338px) {
+				max-width: 1154px;
+			}
+			@media (max-width: 1154px) {
+				max-width: 970px;
+			}
+			@media (min-width: 1688px) {
+				margin-left: auto;
+			}
 		}
-		@media (max-width: 1338px) {
-			max-width: 1154px;
-		}
-		@media (max-width: 1154px) {
-			max-width: 970px;
-		}
-		@media (min-width: 1688px) {
-			margin-left: auto;
+		.container-footer {
+			background-color: #fff !important; /* Roblox frontend devs you buffoons, why are you using !important here 💀 */
+			.light-theme & {
+				background-color: #fff !important;
+			}
+			.dark-theme & {
+				background-color: #000 !important;
+			}
+			@media (min-width: 991px) {
+				width: 100%;
+				left: unset;
+			}
+			@media (min-width: 1688px) {
+				left: unset
+			}
 		}
 	}
 	.groups-list {
 		&-new {
 			display: block;
-			.flex {
+			> .flex {
 				flex-wrap: wrap;
 				margin: 0 0 6px;
+			}
+			.padding-bottom-small {
+				padding: 0;
 			}
 		}
 		&-sidebar {
@@ -20625,6 +20674,13 @@
 			}
 			@media (max-width: 767px) {
 				display: none;
+			}
+			&:not(.groups-list-sidebar-no-nav) {
+				top: 0;
+				height: unset;
+				@media (min-width: 1688px) {
+					left: 0;
+				}
 			}
 			.group-react-groups-list .groups-list-new {
 				display: block;
@@ -20656,6 +20712,9 @@
 						padding-left: 5px;
 						.text-truncate-split, .text-truncate-end {
 							line-height: 100%;
+						}
+						.text-body-medium when (@RemoveUpdates = 1) {
+							display: none;
 						}
 						.text-title-medium {
 							& when (@SourceSansPro = 0) {
@@ -20796,6 +20855,7 @@
 		& &-thumbnail {
 			width: 32px;
 			height: 32px;
+			border: none;
 			border-radius: 0;
 			margin: 0;
 		}
@@ -21205,6 +21265,10 @@
 					}
 				}
 			}
+			button.profile-insight-pill {
+				border: none;
+				cursor: auto;
+			}
 			@media (max-width: 543px) {
 				margin: 0;
 				display: inline-block;
@@ -21491,7 +21555,7 @@
 	.group-details .group-members-list .member .avatar-container .avatar-card-image img, .group-details .group-store .item-card .item-card-container .item-card-thumb-container .thumbnail-2d-container, .group-details .group-wall .comment .avatar-card-image img {
 		background-color: transparent;
 	}
-
+	
 	/*/ Revert new Games Modal /*/
 	.MuiDialog-root, .MuiModal-root {
 		z-index: 1042;

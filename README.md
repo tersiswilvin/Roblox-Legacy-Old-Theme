@@ -70,7 +70,8 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - My Avatar Gogo Spinner
   - Play Button Style
     - 2017EM
-    - 2018E
+    - 2017M
+    - 2017L
     - 2018L
     - 2019E
     - 2020+
