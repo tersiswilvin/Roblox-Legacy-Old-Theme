@@ -48,7 +48,7 @@
 @var          checkbox SourceSansPro               "Source Sans Pro Font"                            0
 @var          checkbox TransitionalAnimations      "Transition animations"                           1
 @var          checkbox RedLogoStyle                "Use 2017 Red Branding (Messages / Bootstrapper)" 0
-@var          select   WatermarkStyle              "Watermark Branch"                                ["None", "Developers*"]
+@var          select   WatermarkStyle              "Watermark Branch"                                ["None", "Testers*"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
