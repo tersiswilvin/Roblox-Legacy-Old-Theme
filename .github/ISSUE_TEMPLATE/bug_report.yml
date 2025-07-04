@@ -18,7 +18,7 @@ body:
       label: Does the problem exist in Experimental?
       description: Please make sure the issue isn't in Experimental Branch before continuing.
       options:
-        - label: I've verified that the problem persists in the Experimental Branch.
+        - label: Please make sure the issue isn't in Experimental Branch (failure to do so will result in your issue being closed without further notice).
           required: true
   - type: input
     id: browser
