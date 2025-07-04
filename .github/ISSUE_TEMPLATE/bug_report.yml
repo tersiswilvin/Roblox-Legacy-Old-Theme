@@ -16,9 +16,9 @@ body:
   - type: checkboxes
     attributes:
       label: Does the problem exist in Experimental?
-      description: Please make sure the issue isn't in Experimental Branch before continuing.
+      description: Please make sure the issue isn't in Experimental Branch (failure to do so will result in your issue being closed without further notice).
       options:
-        - label: Please make sure the issue isn't in Experimental Branch (failure to do so will result in your issue being closed without further notice).
+        - label: I've verified that the problem persists in the Experimental Branch.
           required: true
   - type: input
     id: browser
