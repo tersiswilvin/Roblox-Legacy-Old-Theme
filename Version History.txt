@@ -49,7 +49,7 @@ Removed the osa context card in the chat dialogs.
 Renamed "Force light theme on signup" to "Force Light Theme on signup"
 Renamed "Revert 2019L+ changes" to "Revert 2019L+ updates".
 Renamed "Use 2017 Red icon logo" to "Use 2017 Red Branding (Messages / Bootstrapper)".
-Renamed Play button Button Style 2018M to 2017M + added 2016ML, 2017EM, 2017L.
+Renamed Play button Button Style 2018M to 2017M + added 2016ML, 2017EM, and 2017L.
 Reverted dialog containers overflow.
 Reverted community mention for leave group modal & create group title.
 Reverted community mention in search.
