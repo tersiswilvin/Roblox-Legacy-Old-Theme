@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250706-00.1.3.19
+@version      20250706-01.1.3.19
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -6606,6 +6606,15 @@
 			&-container:has(:nth-child(10)) &:nth-last-child(-n+1) {
 				display: none;
 			}
+			& when (@RemoveUpdates = 1) {
+				&-container:has(:nth-child(9)) &:last-child .text-lead, &-container:has(:nth-child(10)) &:nth-last-child(2) .text-lead {
+					color: #00a2ff;
+					&:focus, &:hover {
+						cursor: pointer;
+						text-decoration: underline;
+					}
+				}
+			}
 			&s-container li:first-child p:first-child, &-container li:first-child p:first-child {
 				font-size: 0;
 				&:after {
@@ -9225,7 +9234,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250706-00.1.3.19";
+			content: "Milestone 20250706-01.1.3.19";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -10577,7 +10586,10 @@
 		background-color: #0D0D0D;
 		color: #e6e6e6;
 	}
-
+	
+	& when (@PlayButtonStyle = 2016ML) {
+		/*/ TODO /*/
+	}
 	& when (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
 		.game-main-content .game-calls-to-action .game-buttons-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container {
 			padding: 0 12px 0 24px;
@@ -22210,51 +22222,51 @@
 		height: 24px;
 		padding: 2px;
 		display: inline-block;
-	}
-	.MuiButtonBase-root {
-		display: inline-block;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		color: #757575;
-		text-align: center;
-		float: left;
-		vertical-align: middle;
-		cursor: pointer;
-		border-radius: 20px;
-		min-width: 36px;
-		height: 20px;
-		padding: 0;
-		padding-left: 2px;
-		padding-right: 2px;
-		font-size: 14px;
-		font-weight: 400;
-		line-height: 20px;
-		text-decoration: none;
-		border: none;
-		&:hover {
+		.MuiButtonBase-root {
+			display: inline-block;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			color: #757575;
+			text-align: center;
+			float: left;
+			vertical-align: middle;
+			cursor: pointer;
+			border-radius: 20px;
+			min-width: 36px;
+			height: 20px;
+			padding: 0;
+			padding-left: 2px;
+			padding-right: 2px;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
 			text-decoration: none;
-			background-color: transparent;
-		}
-		.MuiTouchRipple-root {
-			display: none;
-		}
-		&:not(:last-of-type), .MuiToggleButtonGroup-root &:not(:last-of-type) {
-			border-top-right-radius: 20px;
-			border-bottom-right-radius: 20px;
-		}
-		&:not(:first-of-type), .MuiToggleButtonGroup-root &:not(:first-of-type) {
-			margin: 0;
-			border-left: none;
-			border-top-left-radius: 20px;
-			border-bottom-left-radius: 20px;
-		}
-		&.Mui-selected {
-			color: #fff;
-			background-color: #00a2ff;
+			border: none;
 			&:hover {
+				text-decoration: none;
+				background-color: transparent;
+			}
+			.MuiTouchRipple-root {
+				display: none;
+			}
+			&:not(:last-of-type), .MuiToggleButtonGroup-root &:not(:last-of-type) {
+				border-top-right-radius: 20px;
+				border-bottom-right-radius: 20px;
+			}
+			&:not(:first-of-type), .MuiToggleButtonGroup-root &:not(:first-of-type) {
+				margin: 0;
+				border-left: none;
+				border-top-left-radius: 20px;
+				border-bottom-left-radius: 20px;
+			}
+			&.Mui-selected {
+				color: #fff;
 				background-color: #00a2ff;
+				&:hover {
+					background-color: #00a2ff;
+				}
 			}
 		}
 	}
