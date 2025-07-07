@@ -5,8 +5,10 @@ Added "Crop Wide Gamecard Thumbnails" option.
 Added "Leaderb­oards tab" option.
 Added "Social media experiment type" option.
 Added Game before Badges (Toggleable via Revert 2019L+ updates).
+Added Premium To BC "Tiers" option.
 Added support for group wall deprecation notice.
 Added support for new People List popovers.
+Added support for the new Avatar Editor React Migration experiment.
 Added V3_1, V3_2, & V4_1 & removed V3_5 for "Social Links Version" option.
 Age recommendation & age rating details are consistent now.
 Changed it so Source Sans Pro affects height for Pre-2018 and 2019E card styles.
@@ -34,9 +36,12 @@ Fixed text date hint & get more text being very small for source sans pro.
 Fixed vertical menu font sizes & weights for source sans pro.
 Fixed wide game cards background color changing on focus.
 Fixed wide game cards transitions.
+Forums locked icon is now consistent with other banner icon colors.
 Group announcements are now styled if Revert 2019L+ updates is disabled.
-Group events are not styled and removed by default (Toggleable via "Revert 2019L+ updates").
+Group events are now styled and removed by default (Toggleable via "Revert 2019L+ updates").
+Group wall now uses CSS from 2019.
 Profile about section content is now more accurate.
+React footer privacy reverts itself if "Remove 2019L+ updates" is disabled.
 Redid a bit of forum css to be consistent.
 Redid a portion of the Play Button Style CSS section.
 Redid btroblox tabs css & fixed tabbing spaces with btroblox.
@@ -47,6 +52,7 @@ Removed a lot of unnecessary !important use.
 Removed duplicate CSS section.
 Removed the osa context card in the chat dialogs.
 Renamed "Force light theme on signup" to "Force Light Theme on signup"
+Renamed "Premium To BC (BTRoblox)" to "Premium To BC".
 Renamed "Revert 2019L+ changes" to "Revert 2019L+ updates".
 Renamed "Use 2017 Red icon logo" to "Use 2017 Red Branding (Messages / Bootstrapper)".
 Renamed Play button Button Style 2018M to 2017M + added 2016ML, 2017EM, and 2017L.
@@ -56,6 +62,7 @@ Reverted community mention in search.
 Reverted new React group list.
 Reverted React Group Redesign.
 Reverted X mention to Twitter in settings.
+Styled genres to look like a hyperlink (Toggleable via "Revert 2019L+ updates").
 
 (Release 1.3.18 | 05/30/2025)
 Added "Capital Brand Text in Modals" option.
