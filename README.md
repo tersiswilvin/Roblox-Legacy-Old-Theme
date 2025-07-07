@@ -47,7 +47,11 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
     - 2019M `Default`
     - 2019L
-  - Legacy Game Headers (BTRoblox)
+  - Legacy Game Headers
+    -  ↳ Tier
+      - BC `Default`
+      - TBC
+      - OBC
   - Legacy Footer Text
     - None `Default`
     - BrandSync
