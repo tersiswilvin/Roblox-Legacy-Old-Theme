@@ -19,15 +19,15 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201509
     - 201511
     - 201701
-    - 201903 `Default`
+    - 201903 <b>`Default`</b>
   - Box Shadows
-  - Brighter Dark Theme colors `Default`
-  - Crop Wide Gamecard Thumbnails `Default`
+  - Brighter Dark Theme colors <b>`Default`</b>
+  - Crop Wide Gamecard Thumbnails <b>`Default`</b>
   - Currency Brand Style
-    - Robux `Default`
+    - Robux <b>`Default`</b>
     - Tickets
   - Custom Site Theme
-    - None `Default`
+    - None <b>`Default`</b>
     - April_Fools
     - BloxTober
     - BTR_Night
@@ -38,17 +38,17 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - RPlus_Easter
     - RPlus_OBC
   - Force Light Theme on signup
-  - Five column Avatar Editor `Default`
+  - Five column Avatar Editor <b>`Default`</b>
   - Fixed 2019M Item Card Transitions
   - Greeting Text Style
-    - None `Default`
+    - None <b>`Default`
     - Hello
     - HelloExclamation
     - Exclamation
   - Item Card Style
     - Pre-2018
     - 2019E
-    - 2019M `Default`
+    - 2019M <b>`Default`</b>
     - 2019L
   - Legacy Game Headers
     -  ↳ Tier
@@ -56,7 +56,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
       - TBC
       - OBC
   - Legacy Footer Text
-    - None `Default`
+    - None <b>`Default`</b>
     - BrandSync
     - 2014E
     - 2015E
@@ -69,7 +69,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
   - Legacy Next StyleGuide
     -  ↳ Capital Brand Text in Modals
-    -  ↳ Chat Shadows `Default`
+    -  ↳ Chat Shadows <b>`Default`</b>
     -  ↳ Older
     -  ↳ Older Chat
     -  ↳ Remove Place Name
@@ -82,38 +82,38 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201712
     - 201812
     - 201901
-    - 201906 `Default`
+    - 201906 <b>`Default`</b>
     - 2020+
     -  ↳ Social media experiment type
-      - None `Default`
+      - None <b>`Default`</b>
       - share_icon
       - social_media
   - Restore Ads
     - None
-    - Default `Default`
+    - Default <b>`Default`
     - Filler
     -  ↳ Games Page
   - Restore legacy sidebar padding
-  - Revert 2019L+ updates `Default`
-    -  ↳ Extras `Default`
+  - Revert 2019L+ updates <b>`Default`</b>
+    -  ↳ Extras <b>`Default`</b>
   - Premium To BC (BTRoblox)
   - Site Brand Style
     - 201408
     - 201412
     - 201511
-    - 201701 `Default`
+    - 201701 <b>`Default`</b>
   - Signup Theme
     - 2017
-    - 2018 `Default`
+    - 2018 <b>`Default`</b>
     - 2019L
     - 2020+
   - Styleguide Page Theme
     - 2016
     - 2017
-    - 2018 `Default`
+    - 2018 <b>`Default`</b>
   - Social Links Version
     - V1
-    - V2 `Default`
+    - V2 <b>`Default`</b>
     - V3
     - V3_1
     - V3_2
@@ -121,12 +121,12 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - V4_1
     -  ↳ Remove nondesigna­ted icons
   - Source Sans Pro Font
-  - Transition animations `Default`
+  - Transition animations <b>`Default`</b>
   - Use 2017 Red Branding (Messages / Bootstrapper)
   - Watermark Branch <b>`Experimental only`</b>
     - None
     - Developers <i>`Hidden`</i>
-    - Testers `Default`
+    - Testers <b>`Default`</b>
 - Extension Support
   - Btroblox
   - Roblox+
