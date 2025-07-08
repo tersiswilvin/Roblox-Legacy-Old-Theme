@@ -83,7 +83,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
     - 2020+
     -  ↳ Social media experiment type
-      - None
+      - None `Default`
       - share_icon
       - social_media
   - Restore Ads
@@ -123,7 +123,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Use 2017 Red Branding (Messages / Bootstrapper)
   - Watermark Branch (Experimental Only)
     - None
-    - Developers `Hidden`
+    - Developers <i>`Hidden`</i>
     - Testers `Default`
 - Extension Support
   - Btroblox
