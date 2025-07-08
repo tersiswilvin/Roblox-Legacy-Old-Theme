@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250707-00.1.4
+@version      20250708-00.1.4
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2128,6 +2128,9 @@
 	.dialog-container .dialog-message-container .dialog-message span.message-piece when (@SourceSansPro = 1) {
 		font-size: 14px;
 		font-weight: 400;
+	}
+	.dialog-container .chat-dialog-alert {
+		display: none
 	}
 
 	.items-list .item-card .item-card-menu {
@@ -9577,7 +9580,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250707-00.1.4";
+			content: "Milestone 20250708-00.1.4";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -12782,31 +12785,59 @@
 		}
 	}
 
-	.light-theme .input-group-btn .input-dropdown-btn {
+	.input-group-btn .input-dropdown-btn {
+		background-color: #fff;
+		color: #191919;
 		border: 1px solid #b8b8b8;
 		border-radius: 3px;
-	}
-	.dark-theme .input-group-btn .input-dropdown-btn {
-		border: 1px solid #474747;
-		border-radius: 3px;
-	}
-
-	.light-theme .input-group-btn .input-dropdown-btn:focus, .light-theme .input-group-btn .input-dropdown-btn:hover {
-		border: 1px solid #b8b8b8;
-		color: #fff;
-		background-color: #00a2ff;
-		border-color: #00a2ff;
-	}
-	.dark-theme .input-group-btn .input-dropdown-btn:focus, .dark-theme .input-group-btn .input-dropdown-btn:hover {
-		border: 1px solid #474747;
-		color: #fff;
-		& when (@BrighterDarkThemeColors = 0) {
-			background-color: #004266;
-			border-color: #004266;
-		}
-		& when (@BrighterDarkThemeColors = 1) {
+		&:focus, &:hover {
+			color: #fff;
 			background-color: #00a2ff;
 			border-color: #00a2ff;
+		}
+		&.disabled, &.disabled.active, &.disabled:active, &.disabled:focus, &.disabled:hover, &[disabled], &[disabled].active, &[disabled]:active, &[disabled]:focus, &[disabled]:hover {
+			color: #b8b8b8;
+			opacity: .5;
+			background-color: #fff;
+			border-color: #b8b8b8;
+		}
+		.light-theme & {
+			background-color: #fff;
+			border-color: #b8b8b8;
+			border-radius: 3px;
+			&:focus, &:hover {
+				color: #fff;
+				background-color: #00a2ff;
+				border-color: #00a2ff;
+			}
+			&.disabled, &.disabled.active, &.disabled:active, &.disabled:focus, &.disabled:hover, &[disabled], &[disabled].active, &[disabled]:active, &[disabled]:focus, &[disabled]:hover {
+				color: #b8b8b8;
+				opacity: .5;
+				background-color: #fff;
+				border-color: #b8b8b8;
+			}
+		}
+		.dark-theme & {
+			background-color: #000;
+			border-color: #474747;
+			border-radius: 3px;
+			&:focus, &:hover {
+				color: #fff;
+				& when (@BrighterDarkThemeColors = 0) {
+					background-color: #004266;
+					border-color: #004266;
+				}
+				& when (@BrighterDarkThemeColors = 1) {
+					background-color: #00a2ff;
+					border-color: #00a2ff;
+				}
+			}
+			&.disabled, &.disabled.active, &.disabled:active, &.disabled:focus, &.disabled:hover, &[disabled], &[disabled].active, &[disabled]:active, &[disabled]:focus, &[disabled]:hover {
+				color: #474747;
+				opacity: .5;
+				background-color: #000;
+				border-color: #474747;
+			}
 		}
 	}
 
