@@ -36,6 +36,7 @@ Fixed social links having a blue background when touch was enabled.
 Fixed Social Networks not looking like a section content.
 Fixed source sans pro font issue for people list place names.
 Fixed text date hint & get more text being very small for source sans pro.
+Fixed touch related inputs defaulting back to new colors.
 Fixed vertical menu font sizes & weights for source sans pro.
 Fixed wide game cards background color changing on focus.
 Fixed wide game cards transitions.
@@ -52,6 +53,7 @@ Redid related asset container, asset thumb container, and notification bell css.
 Redid the tooltip & social links CSS.
 Reformatted the theme spacing.
 Removed a lot of unnecessary !important use.
+Removed dialog alerts.
 Removed duplicate CSS section.
 Removed the osa context card in the chat dialogs.
 Renamed "Force light theme on signup" to "Force Light Theme on signup"
