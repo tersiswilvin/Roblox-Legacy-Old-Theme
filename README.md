@@ -2,7 +2,7 @@
 **[Roblox Legacy Old Theme](https://userstyles.world/style/5399/)** is a theme for [stylus](https://add0n.com/stylus.html) (see [Installation](#Installation) for installation details) that brings back the 2019 theme primarily from June - September 2019 with customizable options for the end user.
 
 <p align="center">
-    <img src="Thumbnails/Outputs/RLOT.png" alt="Roblox Legacy Old Theme Preview" title="Roblox Legacy Theme Preview">
+    <img src="Thumbnails/Outputs/RLOT.png" alt="Roblox Legacy Old Theme image" title="Roblox Legacy Theme Preview">
 </p>
 
 ## Community
@@ -13,17 +13,21 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 ## Features
 - Highly Customizable :
   - Badge Style
+    - 201309
+    - 201410
+    - 201501
     - 201509
     - 201511
-    - 201612
-    - 201902 ( Default )
+    - 201701
+    - 201903 <b>`Default`</b>
   - Box Shadows
-  - Brighter Dark Theme Colors ( Default )
+  - Brighter Dark Theme colors <b>`Default`</b>
+  - Crop Wide Gamecard Thumbnails <b>`Default`</b>
   - Currency Brand Style
-    - Robux ( Default )
+    - Robux <b>`Default`</b>
     - Tickets
   - Custom Site Theme
-    - None ( Default )
+    - None <b>`Default`</b>
     - April_Fools
     - BloxTober
     - BTR_Night
@@ -33,22 +37,26 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - L_Red
     - RPlus_Easter
     - RPlus_OBC
-  - Force light theme on signup
-  - Five column Avatar Editor ( Default )
+  - Force Light Theme on signup
+  - Five column Avatar Editor <b>`Default`</b>
   - Fixed 2019M Item Card Transitions
   - Greeting Text Style
-    - None ( Default )
+    - None <b>`Default`</b>
     - Hello
     - HelloExclamation
     - Exclamation
   - Item Card Style
     - Pre-2018
     - 2019E
-    - 2019M ( Default )
+    - 2019M <b>`Default`</b>
     - 2019L
-  - Legacy Game Headers (BTRoblox)
+  - Legacy Game Headers
+    -  ↳ Tier
+      - BC `Default`
+      - TBC
+      - OBC
   - Legacy Footer Text
-    - None ( Default )
+    - None <b>`Default`</b>
     - BrandSync
     - 2014E
     - 2015E
@@ -61,51 +69,64 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
   - Legacy Next StyleGuide
     -  ↳ Capital Brand Text in Modals
-    -  ↳ Chat Shadows ( Default )
+    -  ↳ Chat Shadows <b>`Default`</b>
     -  ↳ Older
     -  ↳ Older Chat
     -  ↳ Remove Place Name
     -  ↳ Remove Social Links
   - My Avatar Gogo Spinner
-  - Original Sponsor Size ( Default )
   - Play Button Style
-    - 2018M
-    - 2018L
-    - 2019E
+    - 201610
+    - 201704
+    - 201706
+    - 201712
+    - 201812
+    - 201901
+    - 201906 <b>`Default`</b>
     - 2020+
+    -  ↳ Social media experiment type
+      - None <b>`Default`</b>
+      - share_icon
+      - social_media
   - Restore Ads
     - None
-    - Default ( Default )
+    - Default <b>`Default`</b>
     - Filler
     -  ↳ Games Page
   - Restore legacy sidebar padding
-  - Revert 2019L+ changes ( Default )
-    -  ↳ Extras
+  - Revert 2019L+ updates <b>`Default`</b>
+    -  ↳ Extras <b>`Default`</b>
   - Premium To BC (BTRoblox)
   - Site Brand Style
     - 201408
     - 201412
     - 201511
-    - 201701 ( Default )
+    - 201701 <b>`Default`</b>
   - Signup Theme
     - 2017
-    - 2018 ( Default )
+    - 2018 <b>`Default`</b>
     - 2019L
     - 2020+
   - Styleguide Page Theme
     - 2016
     - 2017
-    - 2018 ( Default )
+    - 2018 <b>`Default`</b>
   - Social Links Version
     - V1
-    - V2
+    - V2 <b>`Default`</b>
     - V3
-    - V3_5
+    - V3_1
+    - V3_2
     - V4
+    - V4_1
     -  ↳ Remove nondesigna­ted icons
   - Source Sans Pro Font
-  - Transition animations ( Default )
-  - Use 2017 Red icon logo
+  - Transition animations <b>`Default`</b>
+  - Use 2017 Red Branding (Messages / Bootstrapper)
+  - Watermark Branch <b>`Experimental only`</b>
+    - None
+    - Developers <i>`Hidden`</i>
+    - Testers <b>`Default`</b>
 - Extension Support
   - Btroblox
   - Roblox+
@@ -118,7 +139,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 
 ## Installation
 
-If you don't have stylus already installed, you can get it here for your browser :
+Don't have stylus already installed? You can get it here for your browser :
 - [Chromium Based Browsers](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 - [FireFox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
@@ -129,11 +150,11 @@ If you don't have stylus already installed, you can get it here for your browser
 
 For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Release/src/JS/LegacySiteRestoration.user.js) which requires [tampermonkey](https://www.tampermonkey.net/index.php#download) to use, if your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102).
 
-For upcoming updates and features you can try out the [experimental](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](#Issues).
+For upcoming updates and features you can try out the [experimental](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose).
 
 ## Issues
 
-Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose) or on the themes userstyles.world [page](https://userstyles.world/style/5399/), please include what build and or channel you're on, the browser you're were using when the problem occured, the page you were on when it happened, and any other explanations/steps that could further help recreate the problem.
+Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose) or on the themes userstyles.world [page](https://userstyles.world/style/5399/) as well as any explanations/steps and a screenshot/video that could further help recreate the problem.
 
 ## Credits
 

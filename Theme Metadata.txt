@@ -2,10 +2,10 @@
 
 Name : Roblox Legacy Old Theme
 
-Version : 1.3
-Patch Version : 18
-Version Release Date : 08/02/2023
-Patch Release Date : 05/30/2024
+Version : 1.4
+Patch Version : 00
+Version Release Date : 07/08/2025
+Mini Update Release Date : --/--/2025
 
 Author URL : userstyles.world/user/tersiswilvin
 
@@ -107,124 +107,4 @@ Links Used {
         }
     }
     Loading : https://images.rbxcdn.com/4bed93c91f909002b1f17f05c0ce13d1-loading.gif
-}
-
-== Default Settings ==
-
-Variables (@var) {
-    BadgeStyle {
-        Type : select
-        Description : "Badge Style"
-        Value : 201509, 201511, 201612, 201902 (Default)
-    }
-    BoxShadows {
-        Type : checkbox
-        Description : "Box Shadows"
-        Value : 0
-    }
-    BrighterDarkThemeColors {
-        Type : checkbox
-        Description : "Brighter Dark theme Colors"
-        Value : 0
-    }
-    SiteCurrency {
-        Type : select
-        Description : "Currency Brand Style"
-        Value : Robux (Default), Tickets
-    }
-    forcesignuplighttheme {
-        Type : checkbox
-        Description : "Force light theme on signup"
-        Value : 0
-    }
-    fiveColumn {
-        Type : checkbox
-        Description : "Five column Avatar Editor."
-        Value : 1
-    }
-    greetingTxt {
-        Type : checkbox
-        Description : "Greeting Text Style"
-        Value : None (Default), Hello, HelloExclamation, Exclamation
-    }
-    CardStyle {
-        Type : select
-        Description : "Item Card Style"
-        Value : Pre-2018, 2019E, 2019M (Default), 2019L
-    }
-    CustomTheme {
-        Type : select
-        Description : "Custom Site Theme"
-        Value : None (Default), BTR_Night, BTR_Red, BTR_Simblk, BTR_Sky, L_Red, RPlus_Easter (Hidden), RPlus_OBC
-    }
-    LegacyBTRGameHeaders {
-        Type : checkbox
-        Description : "Legacy Game Headers (BTRoblox)"
-        Value : 0
-    }
-    LegacyFooterText {
-        Type : select
-        Description : "Legacy Footer Text"
-        Value : None (Default), BrandSync, 2014E, 2015E, 2016E, 2016L, 2017E, 2017M, 2018E, 2018L, 2019E
-    }
-    LegacyNextStyleGuideButtons {
-        Type : checkbox
-        Description : "Legacy Next Styleguide"
-        Value : 0
-    }
-    SponsorSizing {
-        Type : checkbox
-        Description : "Original Sponsor Size"
-        Value : 1
-    }
-    PlayButtonStyle {
-        Type : select
-        Description : "Play Button Style"
-        Value : 2018M, 2018L, 2019E, 2019M (Default), 2020+
-    }
-    RestoreSidebarPadding {
-        Type : checkbox
-        Description : "Restore legacy sidebar padding"
-        Value : 0
-    }
-    RemoveUpdates {
-        Type : checkbox
-        Description : "Revert 2019L+ changes"
-        Value : 1
-    }
-    PremiumToBC {
-        Type : checkbox
-        Description : "Premium To BC (BTRoblox)"
-        Value : 0
-    }
-    LogoStyle {
-        Type : select
-        Description : "Site Brand Style"
-        Value : 201408, 201412, 201511, 201701 (Default)
-    }
-    SignUpStyle {
-        Type : select
-        Description : "Signup Theme"
-        Value : 2017, 2018 (Default), 2019L, 2020+
-    }
-    StyleGuideStyle {
-        Type : select
-        Description : "Styleguide Page Theme"
-        Value : 2016, 2017, 2018 (Default)
-    }
-    SourceSansPro {
-        Type : checkbox
-        Description : "Source San Pro Font"
-        Value : 0
-    }
-    TransitionalAnimations {
-        Type : checkbox
-        Description : "Transition animations"
-        Value : 1
-    }
-    RedLogoStyle {
-        Type : checkbox
-        Description : "Use 2017 Red icon logo"
-        Value : 0
-    }
 }

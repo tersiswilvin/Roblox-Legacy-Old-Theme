@@ -1,5 +1,74 @@
 == Version History ==
 
+(Release 1.4 | 07/08/2025)
+Added "Crop Wide Gamecard Thumbnails" option.
+Added "Leaderb­oards tab" option.
+Added "Legacy Home Titles" option.
+Added "Social media experiment type" option.
+Added Badge Style "201309", "201410", "201501" + renamed "201611" to "201701", and "201902" to "201903".
+Added Game before Badges (Toggleable via Revert 2019L+ updates).
+Added Play Button Style "201610", "201704", "201706", and "201712".
+Added Premium To BC "Tiers" option.
+Added support for group wall deprecation notice.
+Added support for new People List popovers.
+Added support for the new Avatar Editor React Migration experiment.
+Added V3_1, V3_2, & V4_1 & removed V3_5 for "Social Links Version" option.
+Age recommendation & age rating details are consistent now.
+Badge Style now carries over to the main badges page.
+Changed it so Source Sans Pro affects height for Pre-2018 and 2019E card styles.
+Cleaned up Source Sans Pro CSS.
+Expanded RoSeal support.
+Fixed "Legacy Next Styleguide" removing :after via display none in chat header title.
+Fixed "This game is copylocked" not showing for "Legacy Next Styleguide".
+Fixed a line height issue for message checkboxes for source sans pro.
+Fixed account country label color being wrong.
+Fixed btroblox embed padding.
+Fixed btroblox try with avatar popup.
+Fixed creator hub migration banner not supporting dark theme.
+Fixed game cards info padding.
+Fixed Game error replacement only affecting homepage.
+Fixed login container being skinny and centered.
+Fixed no games message still displaying experiences & communities for btroblox.
+Fixed rollercoaster background not showing up on signup page.
+Fixed settings social network container using light colors in dark mode.
+Fixed second row not showing all 18 friends if btroblox is enabled.
+Fixed social links having a box shadow when the option was enabled.
+Fixed social links having a blue background when touch was enabled.
+Fixed Social Networks not looking like a section content.
+Fixed source sans pro font issue for people list place names.
+Fixed text date hint & get more text being very small for source sans pro.
+Fixed touch related inputs defaulting back to new colors.
+Fixed vertical menu font sizes & weights for source sans pro.
+Fixed wide game cards background color changing on focus.
+Fixed wide game cards transitions.
+Forums locked icon is now consistent with other banner icon colors.
+Group announcements are now styled if Revert 2019L+ updates is disabled.
+Group events are now styled and removed by default (Toggleable via "Revert 2019L+ updates").
+Group wall now uses CSS from 2019.
+Profile about section content is now more accurate.
+React footer privacy reverts itself if "Remove 2019L+ updates" is disabled.
+Redid a bit of forum css to be consistent.
+Redid a portion of the Play Button Style CSS section.
+Redid btroblox tabs css & fixed tabbing spaces with btroblox.
+Redid related asset container, asset thumb container, and notification bell css.
+Redid the tooltip & social links CSS.
+Reformatted the theme spacing.
+Removed a lot of unnecessary !important use.
+Removed dialog alerts.
+Removed duplicate CSS section.
+Removed the osa context card in the chat dialogs.
+Renamed "Force light theme on signup" to "Force Light Theme on signup"
+Renamed "Premium To BC (BTRoblox)" to "Premium To BC".
+Renamed "Revert 2019L+ changes" to "Revert 2019L+ updates".
+Renamed "Use 2017 Red icon logo" to "Use 2017 Red Branding (Messages / Bootstrapper)".
+Reverted dialog containers overflow.
+Reverted community mention for leave group modal & create group title.
+Reverted community mention in search.
+Reverted new React group list.
+Reverted React Group Redesign.
+Reverted X mention to Twitter in settings.
+Styled genres to look like a hyperlink (Toggleable via "Revert 2019L+ updates").
+
 (Release 1.3.18 | 05/30/2025)
 Added "Capital Brand Text in Modals" option.
 Added "Social Links Version" option.
