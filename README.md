@@ -76,11 +76,13 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Remove Social Links
   - My Avatar Gogo Spinner
   - Play Button Style
-    - 2017EM
-    - 2017M
-    - 2017L
-    - 2018L
-    - 2019E
+    - 201610
+    - 201704
+    - 201706
+    - 201712
+    - 201812
+    - 201901
+    - 201906 `Default`
     - 2020+
     -  ↳ Social media experiment type
       - None `Default`
@@ -121,7 +123,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Source Sans Pro Font
   - Transition animations `Default`
   - Use 2017 Red Branding (Messages / Bootstrapper)
-  - Watermark Branch (Experimental Only)
+  - Watermark Branch `Experimental <b>Only</b>`
     - None
     - Developers <i>`Hidden`</i>
     - Testers `Default`
