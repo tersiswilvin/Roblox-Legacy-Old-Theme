@@ -4,7 +4,7 @@ Name : Roblox Legacy Old Theme
 
 Version : 1.4
 Patch Version : 00
-Version Release Date : --/--/2025
+Version Release Date : 07/08/2025
 Mini Update Release Date : --/--/2025
 
 Author URL : userstyles.world/user/tersiswilvin
