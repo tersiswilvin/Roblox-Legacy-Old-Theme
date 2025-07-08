@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250708-00.1.4
+@version      20250708-01.1.4
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -33,7 +33,7 @@
 @var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"                          0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"                          0
 @var          checkbox OriginalSponsorSizing       "Original Sponsor Size"                           1
-@var          select   PlayButtonStyle             "Play Button Style"                               ["2017EM", "2017M", "2017L", "2018L", "2019E", "2019M*", "2020+"]
+@var          select   PlayButtonStyle             "Play Button Style"                               ["201610", "201704", "201706", "201712", "201812", "201901", "201906*", "2020+"]
 @var          select   SocialMediaExperiment       " ↳ Social media experiment type"                 ["None*", "share_icon", "social_media"]
 @var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
@@ -8342,7 +8342,7 @@
 					font-weight: 400;
 				}
 			}
-			.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not ((@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L)) {
+			.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not ((@PlayButtonStyle = 201704) or (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712)) {
 				font-size: 14px;
 			}
 			.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label when (@RemoveUpdates = 0) {
@@ -9580,7 +9580,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250708-00.1.4";
+			content: "Milestone 20250708-01.1.4";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -10933,10 +10933,26 @@
 		color: #e6e6e6;
 	}
 	
-	& when (@PlayButtonStyle = 2016ML) {
-		/*/ TODO /*/
+	.game-main-content .game-calls-to-action when (@PlayButtonStyle = 201610) {
+		.game-buttons-container {
+			margin: 0;
+			bottom: unset;
+		}
+		.game-title-container {
+			height: 172px;
+			@media (max-width: 991px) {
+				height: auto;
+			}
+		}
+		@media (min-width: 991px) {
+			position: relative;
+			display: block;
+			flex-direction: column;
+			justify-content: space-between;
+			height: auto;
+		}
 	}
-	& when (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
+	& when (@PlayButtonStyle = 201610) or (@PlayButtonStyle = 201704) or (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712) {
 		.game-main-content .game-calls-to-action .game-buttons-container, .gotham-font .game-main-content .game-calls-to-action .game-buttons-container, .builder-font .game-main-content .game-calls-to-action .game-buttons-container {
 			padding: 0 12px 0 24px;
 			position: absolute;
@@ -10947,11 +10963,15 @@
 		}
 		@media (min-width: 991px) {
 			.game-favorite-button-container {
-				& when (@PlayButtonStyle = 2017EM) {
+				& when (@PlayButtonStyle = 201610) {
+					width: 30%;
+					position: unset;
+				}
+				& when (@PlayButtonStyle = 201704) {
 					position: absolute;
 					bottom: 46px;
 				}
-				& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
+				& when (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712) {
 					position: relative;
 					bottom: 39px;
 				}
@@ -10964,10 +10984,15 @@
 			position: unset;
 			@media (min-width: 991px) {
 				padding-top: 0;
-				& when (@PlayButtonStyle = 2017L) {
+				& when (@PlayButtonStyle = 201712) {
 					height: 36px;
 				}
-				margin: 0;
+				& when not (@PlayButtonStyle = 201610) {
+					margin: 0;
+				}
+				& when (@PlayButtonStyle = 201610) {
+					margin: 12px 0 0;
+				}
 				position: unset;
 			}
 			&:before,&:after {
@@ -10982,25 +11007,38 @@
 			}
 			.voting-panel {
 				width: 54%;
-				bottom: 0;
+				& when (@PlayButtonStyle = 201610) {
+					bottom: unset;
+					right: unset;
+					position: relative;
+					float: left;
+				}
+				& when not (@PlayButtonStyle = 201610) {
+					bottom: 0;
+				}
 				@media (max-width: 767px) {
 					width: 45%;
 				}
 				@media (min-width: 991px) {
-					width: 60%;
-					& when (@PlayButtonStyle = 2017EM) {
+					& when (@PlayButtonStyle = 201610) {
+						width: 54%;
+						float: left;
+					}
+					& when (@PlayButtonStyle = 201704) {
 						width: 50%;
 					}
-					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
+					& when (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712) {
 						width: 60%;
 					}
-					float: right;
-					& when (@PlayButtonStyle = 2017EM) {
+					& when not (@PlayButtonStyle = 201610) {
+						float: right;
+					}
+					& when (@PlayButtonStyle = 201704) {
 						position: absolute;
 						bottom: 46px;
 						right: 12px;
 					}
-					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
+					& when (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712) {
 						position: relative;
 						bottom: 39px;
 					}
@@ -11022,7 +11060,12 @@
 			}
 			.game-favorite-button-container {
 				width: 30%;
-				overflow: visible;
+				& when (@PlayButtonStyle = 201610) {
+					overflow: hidden;
+				}
+				& when not (@PlayButtonStyle = 201610) {
+					overflow: visible;
+				}
 				max-width: unset;
 				@media (max-width: 543px) {
 					width: 25%;
@@ -11049,12 +11092,12 @@
 				float: unset;
 				position: unset;
 				@media (min-width: 991px) {
-					& when (@PlayButtonStyle = 2017EM) {
+					& when (@PlayButtonStyle = 201610) or (@PlayButtonStyle = 201704) {
 						float: right;
 						width: 16%;
 						height: 39px;
 					}
-					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
+					& when (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712) {
 						float: none;
 						width: 100%;
 						height: unset;
@@ -11070,7 +11113,7 @@
 			}
 		}
 	}
-	& when (@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) or (@PlayButtonStyle = 2018L) {
+	& when (@PlayButtonStyle = 201610) or (@PlayButtonStyle = 201704) or (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712) or (@PlayButtonStyle = 201812) {
 		.gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg, .gotham-font #game-details-play-button-container .btn-economy-robux-white-lg, .gotham-font #game-details-play-button-container a.btn-economy-robux-white-lg, .builder-font #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font #game-details-play-button-container a.btn-economy-robux-white-lg {
 			padding: 15px 15px;
 		}
@@ -11093,7 +11136,7 @@
 			width: 88%;
 		}
 	}
-	& when (@PlayButtonStyle = 2019E) {
+	& when (@PlayButtonStyle = 201901) {
 		.gotham-font #game-details-play-button-container .btn-common-play-game-lg, .gotham-font #game-details-play-button-container a.btn-common-play-game-lg, .builder-font #game-details-play-button-container .btn-common-play-game-lg, .builder-font #game-details-play-button-container a.btn-common-play-game-lg, .gotham-font #game-details-play-button-container .btn-economy-robux-white-lg, .gotham-font #game-details-play-button-container a.btn-economy-robux-white-lg, .builder-font #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font #game-details-play-button-container a.btn-economy-robux-white-lg {
 			padding: 12px 12px;
 		}
@@ -11104,7 +11147,7 @@
 			background-image: url(https://static.rbxcdn.com/images/Shared/common_dark_12032018.svg);
 		}
 	}
-	& when (@PlayButtonStyle = 2019M) {
+	& when (@PlayButtonStyle = 201906) {
 		.gotham-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .builder-font .game-main-content #game-details-play-button-container .btn-common-play-game-lg, .gotham-font .game-main-content #game-details-play-button-container .btn-economy-robux-white-lg, .builder-font .game-main-content #game-details-play-button-container .btn-economy-robux-white-lg {
 			width: 100%;
 		}
@@ -11124,13 +11167,16 @@
 		min-height: unset;
 	}
 
-	& when not (@PlayButtonStyle = 2019M) or not (@PlayButtonStyle = 2020+) {
+	& when not (@PlayButtonStyle = 201906) or not (@PlayButtonStyle = 2020+) {
 		.game-main-content #game-details-play-button-container {
 			text-align: center;
 		}
 	}
 	& when not (@PlayButtonStyle = 2020+) {
 		#game-details-play-button-container {
+			& when (@PlayButtonStyle = 201610) {
+				padding: 36px 12px;
+			}
 			border-top: 1px solid #e3e3e3;
 			border-bottom: 1px solid #e3e3e3;
 			display: block;
@@ -11140,11 +11186,13 @@
 			.dark-theme & {
 				border-color: #1c1c1c;
 			}
-			@media (min-width: 991px) {
-				padding-top: 20px;
-				padding-bottom: 64px;
-				.game-main-content.follow-button-enabled #game-details-play-button-container when not ((@PlayButtonStyle = 2016ML) or (@PlayButtonStyle = 2017EM) or (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L)) {
-					padding-bottom: 20px;
+			& when not (@PlayButtonStyle = 201610) {
+				@media (min-width: 991px) {
+					padding-top: 20px;
+					padding-bottom: 64px;
+					.game-main-content.follow-button-enabled & when not ((@PlayButtonStyle = 201610) or (@PlayButtonStyle = 201704) or (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712)) {
+						padding-bottom: 20px;
+					}
 				}
 			}
 			@media (max-width: 991px) {
@@ -11170,7 +11218,7 @@
 	}
 
 	.social-media-share {
-		& when (@PlayButtonStyle = 2017M) {
+		& when (@PlayButtonStyle = 201706) {
 			display: block;
 		}
 		&:not(:has(.social-button-icon-img)) when not (@SocialMediaExperiment = None) {
@@ -11186,11 +11234,11 @@
 					vertical-align: middle;
 					margin: auto;
 					display: block;
-					& when (@PlayButtonStyle = 2017EM) {
+					& when (@PlayButtonStyle = 201704) {
 						margin-top: 11px;
 						margin-right: 0;
 					}
-					& when (@PlayButtonStyle = 2017M) or (@PlayButtonStyle = 2017L) {
+					& when (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712) {
 						position: absolute;
 						bottom: 0;
 						right: 0;
@@ -11208,17 +11256,17 @@
 					background-size: 24px;
 					height: 28px;
 					width: 81px;
-					& when (@PlayButtonStyle = 2017EM) {
+					& when (@PlayButtonStyle = 201704) {
 						float: right;
 						@media (min-width: 991px) {
 							margin: 15px 0 0 0;
 						}
 					}
-					& when not ((@PlayButtonStyle = 2017EM)) {
+					& when not ((@PlayButtonStyle = 201704)) {
 						position: absolute;
 						bottom: 0;
 						right: 0;
-						& when (@PlayButtonStyle = 2017M) {
+						& when (@PlayButtonStyle = 201706) {
 							margin-right: 9px;
 							@media (max-width: 991px) {
 								margin-right: 0;
