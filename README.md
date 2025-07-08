@@ -41,7 +41,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Five column Avatar Editor <b>`Default`</b>
   - Fixed 2019M Item Card Transitions
   - Greeting Text Style
-    - None <b>`Default`
+    - None <b>`Default`</b>
     - Hello
     - HelloExclamation
     - Exclamation
@@ -90,7 +90,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
       - social_media
   - Restore Ads
     - None
-    - Default <b>`Default`
+    - Default <b>`Default`</b>
     - Filler
     -  ↳ Games Page
   - Restore legacy sidebar padding
