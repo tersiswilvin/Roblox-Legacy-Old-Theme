@@ -13,10 +13,13 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 ## Features
 - Highly Customizable :
   - Badge Style
+    - 201309
+    - 201410
+    - 201501
     - 201509
     - 201511
-    - 201612
-    - 201902 `Default`
+    - 201701
+    - 201903 `Default`
   - Box Shadows
   - Brighter Dark Theme colors `Default`
   - Crop Wide Gamecard Thumbnails `Default`
@@ -80,6 +83,9 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
     - 2020+
     -  ↳ Social media experiment type
+      - None
+      - share_icon
+      - social_media
   - Restore Ads
     - None
     - Default `Default`
