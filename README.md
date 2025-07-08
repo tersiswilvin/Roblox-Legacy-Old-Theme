@@ -123,7 +123,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Source Sans Pro Font
   - Transition animations `Default`
   - Use 2017 Red Branding (Messages / Bootstrapper)
-  - Watermark Branch `Experimental **Only**`
+  - Watermark Branch <b>`Experimental only`</b>
     - None
     - Developers <i>`Hidden`</i>
     - Testers `Default`
