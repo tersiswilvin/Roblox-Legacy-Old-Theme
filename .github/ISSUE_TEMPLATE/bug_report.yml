@@ -25,14 +25,14 @@ body:
     attributes:
       label: Browser
       description: What browser were you using?
-      placeholder: (Example: Google Chrome, Edge, Firefox, Opera)
+      placeholder: (Example => Google Chrome, Edge, Firefox, Opera)
     validations:
       required: true
   - type: input
     id: page-url
     attributes:
       label: Page URL
-      placeholder: (Example: https://www.roblox.com/home)
+      placeholder: (Example => https://www.roblox.com/home)
     validations:
       required: false
   - type: dropdown
