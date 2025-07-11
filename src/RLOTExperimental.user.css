@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250708-01.1.4
+@version      20250710-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9580,7 +9580,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250708-01.1.4";
+			content: "Milestone 20250710-00.1.4.1";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -22555,7 +22555,7 @@
 		}
 	}
 
-	/*/ Revert Avatar Editor React /*/
+	/*/ Revert React Avatar Editor /*/
 	/* Sliders */
 	.MuiSlider-root {
 		border-radius: 0;
@@ -22578,11 +22578,9 @@
 	.MuiSlider-rail {
 		width: 100%;
 		height: 6px;
-		/*
 		& when (@BoxShadows = 1) {
 			box-shadow: 0 1px 4px 0 rgba(25,25,25,0.3);
 		}
-		*/
 		background: #e3e3e3;
 		border-radius: 6px;
 		border: 0 solid #000;
@@ -22590,6 +22588,18 @@
 		opacity: 1;
 		&.Mui-disabled, .Mui-disabled & {
 			cursor: not-allowed
+		}
+		.light-theme & {
+			& when (@BoxShadows = 1) {
+				box-shadow: 0 1px 4px 0 rgba(25,25,25,0.3);
+			}
+			background: #e3e3e3;
+		}
+		.dark-theme & {
+			& when (@BoxShadows = 1) {
+				box-shadow: 0 1px 4px 0 rgba(230,230,230,0.3);
+			}
+			background: #1c1c1c;
 		}
 	}
 	.MuiSlider-track {
@@ -22599,7 +22609,13 @@
 		border-radius: 6px;
 		&.Mui-disabled, .Mui-disabled & {
 			background: #b8b8b8;
-			cursor: not-allowed
+			cursor: not-allowed;
+			.light-theme & {
+				background-color: #e3e3e3;
+			}
+			.dark-theme & {
+				background-color: #474747;
+			}
 		}
 	}
 	.MuiSlider-thumb {
@@ -22689,7 +22705,25 @@
 				&:hover {
 					background-color: #00a2ff;
 				}
+				.light-theme & {
+					color: #fff;
+				}
+				.dark-theme & {
+					color: #fff
+				}
 			}
+			.light-theme & {
+				color: #757575;
+			}
+			.dark-theme & {
+				color: #8A8A8A
+			}
+		}
+		.light-theme & {
+			background-color: #fff;
+		}
+		.dark-theme & {
+			background-color: #000;
 		}
 	}
 	
