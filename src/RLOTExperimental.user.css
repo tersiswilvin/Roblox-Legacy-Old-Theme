@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250714-00.1.4.1
+@version      20250714-01.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -444,20 +444,14 @@
 		float: left;
 		width: 100%;
 	}
-
-	.games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window {
+	
+	.games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window, .touch .horizontal-scroller .horizontal-scroll-window {
 		overflow: hidden;
-	}
-	.touch .horizontal-scroller .horizontal-scroll-window {
-		overflow: auto;
-	}
-	@media (max-width: 543px) {
-		.games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window {
+		@media (max-width: 543px) {
 			overflow: visible;
 		}
-		.touch .horizontal-scroller .horizontal-scroll-window {
-			overflow: auto;
-		}
+	}
+	@media (max-width: 543px) {
 		.games-list-container .horizontal-scroller .horizontal-scroll-window .game-tile-list, .touch .horizontal-scroll-window .game-tile-list {
 			overflow: hidden;
 		}
@@ -5857,6 +5851,12 @@
 		border-radius: 0;
 		padding: 15px 0;
 		margin: 0;
+		&.section-content when (@BoxShadows = 1) {
+			box-shadow: none;
+			.light-theme &, .dark-theme & {
+				box-shadow: none;
+			}
+		}
 		.light-theme &, .dark-theme & {
 			padding: 0;
 			padding-bottom: 12px;
@@ -9618,7 +9618,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250714-00.1.4.1";
+			content: "Milestone 20250714-01.1.4.1";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
