@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250715-00.1.4.1
+@version      20250716-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9618,7 +9618,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250715-00.1.4.1";
+			content: "Milestone 20250716-00.1.4.1";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -21140,7 +21140,7 @@
 	/*/ Revert React Group List /*/
 	.wrap:has(.groups-list-sidebar) {
 		@media (min-width: 1688px) {
-			&:not(:has(.groups-list-sidebar-no-nav)) .content {
+			&:not(:has(.groups-list-sidebar-no-nav)) .content, &.has-groups-list-sidebar .container-main:not(.in-app) .content {
 				margin-left: auto;
 			}
 		}
@@ -21247,7 +21247,7 @@
 			@media (max-width: 767px) {
 				display: none;
 			}
-			&:not(.groups-list-sidebar-no-nav) {
+			&:not(.groups-list-sidebar-no-nav), .wrap.has-groups-list-sidebar .container-main:not(.in-app) & {
 				top: 0;
 				height: unset;
 				@media (min-width: 1688px) {
@@ -22799,7 +22799,7 @@
 		border-radius: 6px;
 		border: 0 solid #000;
 		left: -12px;
-		padding-right: 24px;
+		padding: 0 12px;
 		cursor: pointer;
 		opacity: 1;
 		&.Mui-disabled, .Mui-disabled & {
@@ -22824,7 +22824,7 @@
 		border: 0;
 		border-radius: 6px;
 		left: -12px !important;
-		padding-right: 24px;
+		padding: 0 12px;
 		&.Mui-disabled, .Mui-disabled & {
 			background: #b8b8b8;
 			cursor: not-allowed;
