@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250714-01.1.4.1
+@version      20250715-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9618,7 +9618,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250714-01.1.4.1";
+			content: "Milestone 20250715-00.1.4.1";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -22196,6 +22196,135 @@
 			z-index: 1041;
 			transition: none !important;
 		}
+		.MuiFormControl-root {
+			margin: 0;
+			display: block;
+			.MuiInputBase-formControl {
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+					font-size: 16px;
+					font-weight: 400;
+					&:active, &:focus, &:hover, &:link, &:visited {
+						font-size: 16px;
+						font-weight: 400;
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+					font-size: 16px;
+					font-weight: 300;
+					&:active, &:focus, &:hover, &:link, &:visited {
+						font-size: 16px;
+						font-weight: 300;
+					}
+				}
+				margin-bottom: 24px;
+				display: block;
+				width: 100%;
+				border-radius: 0;
+				.MuiOutlinedInput-notchedOutline {
+					display: none;
+				}
+				input {
+					-webkit-appearance: none;
+					height: 38px;
+					padding: 5px 12px;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 100%;
+					background-color: #fff;
+					background-image: none;
+					border: 1px solid #b8b8b8;
+					border-radius: 3px;
+					width: 100%;
+					display: block;
+					box-sizing: border-box;
+					&:focus {
+						background-color: #fff;
+						box-shadow: none;
+						border-color: #00a2ff;
+					}
+				}
+			}
+		}
+		&:has([class*="-DialogContent-dividers"]) {
+			z-index: 1040;
+			.MuiModal-backdrop:not(.MuiBackdrop-invisible) {
+				opacity: .5 !important;
+				z-index: 1040;
+			}
+			.MuiDialog-container {
+				z-index: 1050;
+				[class*="-Dialog-paper"] {
+					background-color: #fff;
+					border: 1px solid #999;
+					border: 1px solid rgba(0, 0, 0, 0.2);
+					width: 540px;
+					height: auto;
+					> [class*="-root"] {
+						&:before, &:after {
+							display: none;
+						}
+						& when (@SourceSansPro = 0) {
+							font-weight: 500;
+							line-height: 1.4em
+						}
+						& when (@SourceSansPro = 1) {
+							font-weight: 300;
+							line-height: 1.3em
+						}
+						text-align: left;
+						border: none;
+						border-bottom: 1px solid #e3e3e3;
+						padding: 17px 12px;
+						.light-theme & {
+							border-color: #e3e3e3;
+						}
+						.dark-theme & {
+							border-color: #1c1c1c;
+						}
+					}
+					h1.MuiTypography-root, h1, h2.MuiTypography-root, h2, h3.MuiTypography-root, h3, h4.MuiTypography-root, h4, h5.MuiTypography-root, h5, h6.MuiTypography-root, h6 {
+						line-height: 1em;
+					}
+					.MuiDialogContent-root {
+						border: none;
+						text-align: left;
+						padding: 12px;
+						margin: 0;
+						p {
+							& when (@SourceSansPro = 0) {
+								font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+								font-size: 12px;
+								font-weight: 500;
+								&:active, &:focus, &:hover, &:link, &:visited {
+									font-size: 12px;
+									font-weight: 500;
+								}
+							}
+							& when (@SourceSansPro = 1) {
+								font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+								font-size: 16px;
+								font-weight: 300;
+								&:active, &:focus, &:hover, &:link, &:visited {
+									font-size: 16px;
+									font-weight: 300;
+								}
+							}
+							line-height: 1.5em;
+						}
+						&:not(:has(.MuiFormControl-root)) .MuiDialogContentText-root {
+							margin-bottom: 12px;
+						}
+					}
+					.MuiDialogActions-root {
+						text-align: center;
+						border: none;
+						padding: 0 12px 12px;
+					}
+				}
+			}
+		}
 		.MuiDialog-container {
 			display: block;
 			width: 100%;
@@ -22636,6 +22765,9 @@
 	}
 
 	/*/ Revert React Avatar Editor /*/
+	.item-cards-stackable .item-card-thumb-container .thumbnail-2d-container {
+		border-radius: 0;
+	}
 	/* Sliders */
 	.MuiSlider-root {
 		border-radius: 0;
