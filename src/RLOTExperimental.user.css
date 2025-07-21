@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250716-00.1.4.1
+@version      20250721-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -1392,6 +1392,20 @@
 				~ div:nth-child(n+11) {
 					display: none;
 				}
+				.friends-carousel-display-name {
+					font-size: 0;
+					&:after {
+						content: "Add Friends";
+						& when (@SourceSansPro = 0) {
+							font-size: 12px;
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-size: 16px;
+							font-weight: 300;
+						}
+					}
+				}
 			}
 			@media (max-width: 991px) {
 				white-space: normal;
@@ -1430,7 +1444,7 @@
 			}
 		}
 	}
-	html .btr-profile .content .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div > div {
+	html .btr-profile .content .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div > div when (@RemoveUpdates = 1) {
 		width: 20%;
 		&:nth-child(n+10) {
 			display: block;
@@ -1482,7 +1496,12 @@
 				font-size: 16px;
 				font-weight: 300;
 			}
-			display: block;
+			& when (@RemoveUpdates = 0) {
+				justify-content: center;
+			}
+			& when (@RemoveUpdates = 1) {
+				display: block;
+			}
 		}
 		&-sublabel {
 			display: block;
@@ -6090,14 +6109,14 @@
 	}
 
 	& when (@RemoveUpdates = 1) {
-		.content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(3), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(5), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container.expand-max-width .game-home-page-container > div > div:has(.wide-game-tile-list), .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7), #group-announcements-upsell-container, .dismissable-announcement-upsell-banner, .menu-option-content[href*="#!/guilded"], .group-forums-updates, [ng-if*="dialogLayout.shouldShowOsaContextCard"], [osa-context-card], .osa-context-card-container, [group-events], .menu-vertical .menu-option:has([href="#!/contentModeration"]) {
+		.content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(3), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(5), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container.expand-max-width .game-home-page-container > div > div:has(.wide-game-tile-list), .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7), #group-announcements-upsell-container, .dismissable-announcement-upsell-banner, .menu-option-content[href*="#!/guilded"], .group-forums-updates, [ng-if*="dialogLayout.shouldShowOsaContextCard"], [osa-context-card], .osa-context-card-container, [group-events], .menu-vertical .menu-option:has([href="#!/contentModeration"]), #age-group-id, .passkey-manage-button {
 			display: none !important;
 		}
 		& when (@RemoveExtras = 1) {
-			.theme-update-container {
+			.theme-update-container, .passkey-manage-region {
 				display: none !important;
 			}
-			[href*="/users/1/profile"], :has([data-profileuserid="1"]) .profile-name, :has([data-profileuserid="1"]) .profile-display-name {
+			[href*="/users/1/profile"], :has([data-profileuserid="1"]) .header-names, :has([data-profileuserid="1"]) .profile-header-names {
 				text-transform: uppercase
 			}
 		}
@@ -7300,15 +7319,16 @@
 			.container-header {
 				display: none
 			}
-			.remove-panel:not(.section-content):not(:has(.section-content)) {
-				&, .light-theme &, .dark-theme & {
+			.remove-panel:not(.section-content):not(:has(.section-content)), > div:not([class]):not(:has(.section-content)) {
+				padding: 0 15px 15px;
+				.light-theme &, .dark-theme & {
 					padding: 0 15px 15px;
 				}
 			}
 		}
 		.section:has(.passkey-upsell-banner) #rbx-account-info-header, #settings-container:has(.passkey-upsell-banner) #rbx-account-info-header, .section:has(.passkey-manage-region) #rbx-account-info-header, #settings-container:has(.passkey-manage-region) #rbx-account-info-header {
 			padding: 5px 0 0;
-			.remove-panel:not(.section-content):not(:has(.section-content)) {
+			.remove-panel:not(.section-content):not(:has(.section-content)), > div:not([class]):not(:has(.section-content)) {
 				padding: 15px 15px 10px 15px;
 				@media (max-width: 543px) {
 					padding: 15px 15px 6px 15px;
@@ -8001,7 +8021,31 @@
 				}
 				line-height: 1.42857;
 				@media (max-width: 767px) {
-					font-size: 12px;
+					font-size:12px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+				}
+				&:active, &:hover, &:link, &:visited {
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+					@media (max-width: 767px) {
+						font-size:12px;
+						& when (@SourceSansPro = 0) {
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-weight: 400;
+						}
+					}
 				}
 			}
 		}
@@ -9563,7 +9607,6 @@
 	}
 
 	/*/=={ Watermark }==/*/
-	@doubleLineEnabled: false;
 	@WatermarkEnabled: true;
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
@@ -9618,7 +9661,7 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250716-00.1.4.1";
+			content: "Milestone 20250721-00.1.4.1";
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -13569,6 +13612,9 @@
 					border-right: 1px solid #B8B8B8;
 					border-radius: 0;
 					text-align: center;
+					&[disabled] {
+						opacity: 1;
+					}
 					.light-theme & {
 						border-color: #B8B8B8;
 					}
@@ -13580,6 +13626,7 @@
 					}
 					&:before {
 						content: "";
+						background-image: url(https://static.rbxcdn.com/images/Shared/profile_06282017.svg);
 						background-repeat: no-repeat;
 						background-size: 44px auto;
 						width: 44px;
@@ -13604,6 +13651,128 @@
 							color: #474747;
 						}
 					}
+				}
+			}
+			#friend-button [class*="textContainer"] {
+				font-size: 0;
+				line-height: 100%;
+				display: inline-block;
+				&:after {
+					content: "Add Friend";
+					font-size: 18px;
+					display: block;
+					@media (max-width: 767px) {
+						& when (@SourceSansPro = 0) {
+							font-size: 12px;
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-size: 16px;
+							font-weight: 400;
+						}
+						line-height: 18px
+					}
+				}
+				@media (max-width: 767px) {
+					display: block;
+				}
+			}
+			#friend-button[disabled] [class*="textContainer"] {
+				font-size: 0;
+				line-height: 100%;
+				display: inline-block;
+				&:after {
+					content: "Pending";
+					font-size: 18px;
+					display: block;
+					@media (max-width: 767px) {
+						& when (@SourceSansPro = 0) {
+							font-size: 12px;
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-size: 16px;
+							font-weight: 400;
+						}
+						line-height: 18px
+					}
+				}
+				@media (max-width: 767px) {
+					display: block;
+				}
+			}
+			#friend-button[data-friends-url] [class*="textContainer"] {
+				font-size: 0;
+				line-height: 100%;
+				display: inline-block;
+				&:after {
+					content: "Accept";
+					font-size: 18px;
+					display: block;
+					@media (max-width: 767px) {
+						& when (@SourceSansPro = 0) {
+							font-size: 12px;
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-size: 16px;
+							font-weight: 400;
+						}
+						line-height: 18px
+					}
+				}
+				@media (max-width: 767px) {
+					display: block;
+				}
+			}
+			#unfriend-button [class*="textContainer"] {
+				font-size: 0;
+				line-height: 100%;
+				display: inline-block;
+				&:after {
+					content: "Unfriend";
+					font-size: 18px;
+					display: block;
+					@media (max-width: 767px) {
+						& when (@SourceSansPro = 0) {
+							font-size: 12px;
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-size: 16px;
+							font-weight: 400;
+						}
+						line-height: 18px
+					}
+				}
+				@media (max-width: 767px) {
+					display: block;
+				}
+			}
+			#chat-button:before {
+				background-position: 0 -308px;
+			}
+			#join-game-button:before {
+				background-position: 0 -176px;
+			}
+			@media (max-width: 767px) {
+				#friend-button:before {
+					background-position: 0 0;
+				}
+				#friend-button[disabled]:before {
+					background-position: 0 -88px;
+				}
+				#friend-button[data-friends-url]:before {
+					background-position: 0 -396px;
+				}
+				#unfriend-button:before {
+					background-position: 0 -44px;
+				}
+				#chat-button:before {
+					background-position: 0 -308px;
+				}
+				#join-game-button:before {
+					background-position: 0 -176px;
 				}
 			}
 			[class*="Primary"] when (@SourceSansPro = 0) {
@@ -17472,7 +17641,7 @@
 		}
 	}
 	/*/ Disabled /*/
-	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-buy-lg, .btn-buy-md, .btn-buy-sm, .btn-buy-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .btn-control-lg.disabled, .avatar-card-btns .ignore-friend, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee {
+	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-buy-lg, .btn-buy-md, .btn-buy-sm, .btn-buy-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .btn-control-lg.disabled, .avatar-card-btns .ignore-friend, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee, [class*="-buttonMedium"] {
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
 			& when (@LegacyNextStyleGuideButtons = 0) {
 				opacity: .5;
@@ -21136,7 +21305,202 @@
 			}
 		}
 	}
+	
+	/*/ Connections to Friends /*/
+	& when (@RemoveUpdates = 1) {
+		/* Navigation */
+		.rbx-left-col li #nav-friends .font-header-2 {
+			font-size: 0;
+			&:after {
+				content: "Friends";
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 400;
+				}
+				line-height: 1.42857;
+				@media (max-width: 767px) {
+					font-size:12px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+				}
+				&:active, &:hover, &:link, &:visited {
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+					@media (max-width: 767px) {
+						font-size:12px;
+						& when (@SourceSansPro = 0) {
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+		/* Global */
+		.chat-main .chat-search {
+			> span:not([class]) {
+				&:after {
+					content: "Search for friends";
+					color: #b8b8b8;
+					& when (@SourceSansPro = 0) {
+						font-size: 12px;
+						font-weight: 300;
+					}
+					& when (@SourceSansPro = 1) {
+						font-size: 14px;
+						font-weight: 300;
+					}
+					line-height: 1.3rem;
+					display: block;
+					width: 100%;
+					height: 31px;
+					padding: 6px 12px 6px 34px;
+					position: absolute;
+					top: 0;
+					z-index: -1;
+				}
+				&:has(input.ng-not-empty):after {
+					visibility: hidden
+				}
+			}
+			&-input::placeholder {
+				font-size: 0;
+			}
+		}
+		.details-members-container .add-friends-option .add-friends-label {
+			font-size: 0;
+			&:after {
+				content: "Add Friends";
+				& when (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 14px;
+					font-weight: 400;
+				}
+			}
+		}
 
+		.content .people-list-header h2 {
+			font-size: 0;
+			line-height: 0;
+			&:hover, &:focus, &:link, &:visited, &:active {
+				font-size: 0;
+			}
+			&:before {
+				content: "Friends";
+				& when (@SourceSansPro = 0) {
+					font-size: 20px;
+					font-weight: 700;
+					@media (max-width: 767px) {
+						font-size:16px
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 24px;
+					font-weight: 300;
+					@media (max-width: 767px) {
+						font-size:21px
+					}
+				}
+				line-height: 1em;
+				cursor: text;
+			}
+			.friends-count {
+				& when (@SourceSansPro = 0) {
+					font-size: 20px;
+					font-weight: 700;
+					@media (max-width: 767px) {
+						font-size:16px
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 24px;
+					font-weight: 300;
+					@media (max-width: 767px) {
+						font-size:21px
+					}
+				}
+			}
+		}
+
+		/* == Pages ==  */
+		/* Profiles */
+		[href*="/friends#!/friends"] .profile-header-social-count-label {
+			font-size: 0;
+			line-height: 0;
+			&:before {
+				content: "Friends";
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+					font-size: 12px;
+					font-weight: 500;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 1.3em;
+				}
+			}
+		}
+		/* Friends */
+		#friends .text-lead {
+			font-size: 0;
+			line-height: 0;
+			&:after {
+				content: "Friends";
+				& when (@SourceSansPro = 0) {
+					font-size: 16px;
+					font-weight: 500;
+					@media (max-width: 767px) {
+						font-size:12px;
+						font-weight: 500
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 18px;
+					font-weight: 400;
+					&:active, &:hover, &:link, &:visited {
+						font-size: 18px;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+		body:has(#friends .active) #friendsTooltip .tooltip-inner, body:has(#requests .active) #friendsTooltip .tooltip-inner {
+			font-size: 0;
+			&:after {
+				content: "Friends are established when two Roblox users mutually agree to friendship.";
+				& when (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+				line-height: 1.3em;
+			}
+		}
+	}
+	
 	/*/ Revert React Group List /*/
 	.wrap:has(.groups-list-sidebar) {
 		@media (min-width: 1688px) {
