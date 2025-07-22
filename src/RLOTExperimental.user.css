@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250721-01.1.4.1
+@version      20250722-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -40,7 +40,7 @@
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
 @var          checkbox RemoveUpdates               "Revert 2019L+ updates"                           1
 @var          checkbox RemoveExtras                " ↳ Extras"                                       1
-@var          checkbox connectionsexperiment       " ↳ Rename Connections to Friends"                0
+@var          checkbox connectionsexperiment       " ↳ Rename Connections to Friends"                1
 @var          checkbox PremiumToBC                 "Premium To BC"                                   0
 @var          select   PTBCTiers                   " ↳ Tier"                                         ["BC*", "TBC", "OBC"]
 @var          select   LogoStyle                   "Site Brand Style"                                ["201408", "201412", "201511", "201701*"]
@@ -3939,11 +3939,11 @@
 		height: 32px;
 	}
 	.dialog-container .dialog-input-container {
-		height: 33px !important;
+		height: 33px;
 		min-height: 32px;
 		.dialog-input {
 			min-height: 32px;
-			height: 32px !important;
+			height: 32px;
 		}
 	}
 
@@ -5632,7 +5632,10 @@
 	}
 
 	.dialog-container .dialog-body {
-		height: 296px !important;
+		height: 296px;
+		&[style*="height: 294px"] {
+			height: 296px !important;
+		}
 		.light-theme .dialogs & {
 			background-color: #F5F5F5
 		}
@@ -9609,6 +9612,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
+	@Version: "20250722-00.1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -9662,7 +9666,12 @@
 			}
 		}
 		&:after {
-			content: "Milestone 20250721-01.1.4.1";
+			& when (@WatermarkStyle = Developers) {
+				content: "Build @{Version}";
+			}
+			& when not (@WatermarkStyle = Developers) {
+				content: "Milestone @{Version}";
+			}
 			color: #b8b8b8;
 			font-size: 12px;
 			line-height: 12px;
@@ -20319,7 +20328,7 @@
 				line-height: 1.42857;
 			}
 		}
-		#leave-group button, .MuiMenu-list:has(:nth-child(4)):not(:has(:not(:nth-child(5)))) .contextual-menu-actions-menu-item:nth-child(2), .MuiMenu-list:has(:nth-child(5)) .contextual-menu-actions-menu-item:nth-child(3) {
+		#leave-group button, .MuiMenu-list:has(:nth-child(4)):not(:has(:nth-child(5))) .contextual-menu-actions-menu-item:nth-child(2), .MuiMenu-list:has(:nth-child(5)) .contextual-menu-actions-menu-item:nth-child(3) {
 			font-size: 0;
 			&:after {
 				content: "Leave Group";
