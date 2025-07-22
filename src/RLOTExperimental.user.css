@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250722-00.1.4.1
+@version      20250722-01.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -25,12 +25,14 @@
 @var          select   LegacyFooterText            "Legacy Footer Text"                              ["None*", "BrandSync", "201401", "201501", "201601", "201607", "201609", "201701", "201706", "201801", "201811", "201901"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"                          0
 @var          checkbox LegacyNSGCBL                " ↳ Capital Brand Text in Modals"                 0
+@var          checkbox LegacyNSGPartyIcon          " ↳ Chat Party icon"                              0
 @var          checkbox LegacyNSGBoxShadows         " ↳ Chat Shadows"                                 1
 @var          checkbox LegacyNSGBoxLeaderboards    " ↳ Leaderboards tab"                             0
 @var          checkbox LegacyNSGOlder              " ↳ Older"                                        0
 @var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                                   0
-@var          checkbox LegacyNSGRemovePN           " ↳ Remove Place Name"                            0
+@var          checkbox LegacyNSGRemovePN           " ↳ Remove Place name"                            0
 @var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"                          0
+@var          checkbox LegacyNSGRenameChat         " ↳ Rename Chat to Chat & Party"                  0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"                          0
 @var          checkbox OriginalSponsorSizing       "Original Sponsor Size"                           1
 @var          select   PlayButtonStyle             "Play Button Style"                               ["201610", "201704", "201706", "201712", "201812", "201901", "201906*", "2020+"]
@@ -38,7 +40,7 @@
 @var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
-@var          checkbox RemoveUpdates               "Revert 2019L+ updates"                           1
+@var          checkbox RemoveUpdates               "Revert 201909+ updates"                           1
 @var          checkbox RemoveExtras                " ↳ Extras"                                       1
 @var          checkbox connectionsexperiment       " ↳ Rename Connections to Friends"                1
 @var          checkbox PremiumToBC                 "Premium To BC"                                   0
@@ -9612,7 +9614,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250722-00.1.4.1";
+	@Version: "20250722-01.1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -18492,7 +18494,7 @@
 			text-align: left
 		}
 
-		#chat-main .chat-header-title:after {
+		#chat-main .chat-header-title:after when (@LegacyNSGRenameChat = 1) {
 			content: " & Party";
 			.btr-small-chat-button.collapsed & {
 				content: "";
@@ -18509,7 +18511,7 @@
 			}
 		}
 
-		.dialog-container .dialog-main .chat-windows-header .chat-header-action:not(:has(.dialog-header-active-game)):after {
+		.dialog-container .dialog-main .chat-windows-header .chat-header-action:not(:has(.dialog-header-active-game)):after when (@LegacyNSGPartyIcon = 1) {
 			content: "";
 			background-image: url(https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg);
 			background-repeat: no-repeat;
