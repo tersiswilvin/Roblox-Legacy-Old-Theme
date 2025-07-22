@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250722-01.1.4.1
+@version      20250722-02.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -5638,6 +5638,15 @@
 		&[style*="height: 294px"] {
 			height: 296px !important;
 		}
+		&[style*="height: 278px"] {
+			height: 280px !important;
+		}
+		&[style*="height: 262px"] {
+			height: 264px !important;
+		}
+		&[style*="height: 254px"] {
+			height: 256px !important;
+		}
 		.light-theme .dialogs & {
 			background-color: #F5F5F5
 		}
@@ -9614,7 +9623,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250722-01.1.4.1";
+	@Version: "20250722-02.1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -9671,7 +9680,7 @@
 			& when (@WatermarkStyle = Developers) {
 				content: "Build @{Version}";
 			}
-			& when not (@WatermarkStyle = Developers) {
+			& when (@WatermarkStyle = Testers) {
 				content: "Milestone @{Version}";
 			}
 			color: #b8b8b8;
@@ -18811,7 +18820,19 @@
 				}
 				.dialog-body {
 					background-color: #E3E3E3;
-					height: 256px !important;
+					height: 256px;
+					&[style*="height: 294px"] {
+						height: 256px !important;
+					}
+					&[style*="height: 278px"] {
+						height: 240px !important;
+					}
+					&[style*="height: 262px"] {
+						height: 224px !important;
+					}
+					&[style*="height: 254px"] {
+						height: 218px !important;
+					}
 					.light-theme &, .light-theme .dialogs & {
 						background-color: #E3E3E3;
 					}
@@ -19052,7 +19073,7 @@
 						}
 						border: 0 none;
 						width: 100%;
-						height: 32px !important;
+						height: 32px;
 						max-height: 64px;
 						padding: 6px 6px 0 12px;
 					}
