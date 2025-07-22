@@ -50,31 +50,32 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019E
     - 2019M <b>`Default`</b>
     - 2019L
-  - Legacy Game Headers
-    -  ↳ Tier
-      - BC `Default`
-      - TBC
-      - OBC
+  - Legacy Game Headers (BTRoblox)
   - Legacy Footer Text
     - None <b>`Default`</b>
     - BrandSync
-    - 2014E
-    - 2015E
-    - 2016E
-    - 2016L
-    - 2017E
-    - 2017M
-    - 2018E
-    - 2018L
-    - 2019E
+    - 201401
+    - 201501
+    - 201601
+    - 201607
+    - 201601
+    - 201701
+    - 201706
+    - 201801
+    - 201811
+    - 201901
   - Legacy Next StyleGuide
     -  ↳ Capital Brand Text in Modals
+    -  ↳ Chat Party icon
     -  ↳ Chat Shadows <b>`Default`</b>
+    -  ↳ Leaderboards tab
     -  ↳ Older
     -  ↳ Older Chat
-    -  ↳ Remove Place Name
+    -  ↳ Remove Place name
     -  ↳ Remove Social Links
+    -  ↳ Rename Chat to Chat & Party
   - My Avatar Gogo Spinner
+  - Original Sponsor Size
   - Play Button Style
     - 201610
     - 201704
@@ -94,9 +95,14 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - Filler
     -  ↳ Games Page
   - Restore legacy sidebar padding
-  - Revert 2019L+ updates <b>`Default`</b>
+  - Revert 201909+ updates <b>`Default`</b>
     -  ↳ Extras <b>`Default`</b>
-  - Premium To BC (BTRoblox)
+    -  ↳ Rename Connections to Friends `Default`
+  - Premium To BC
+    -  ↳ Tier
+      - BC <b>`Default`</b>
+      - TBC
+      - OBC
   - Site Brand Style
     - 201408
     - 201412
