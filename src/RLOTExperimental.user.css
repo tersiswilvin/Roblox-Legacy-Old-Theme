@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250722-02.1.4.1
+@version      20250727-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -556,6 +556,10 @@
 		.light-theme .icon-logo-notification, .dark-theme .icon-logo-notification {
 			background-size: 48px 48px;
 		}
+	}
+	.studio-icon-windows {
+		/* TODO: Make this sync with brand logo option when we find the other studio versions */
+		background-image: url(https://images.rbxcdn.com/33a10b486241d85e46df442eb2134371.svg);
 	}
 	.light-theme .rbx-header .navbar-search .input-addon-btn .icon-common-search-sm {
 		background: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
@@ -6741,7 +6745,7 @@
 			}
 		}
 		.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container:has(.icon-notifications-bell) .icon-label {
-			font-size: 0
+			font-size: 0;
 		}
 		.follow-button:has(.icon-notifications-bell) .icon-label:after {
 			content: "";
@@ -7012,22 +7016,71 @@
 			}
 		}
 
-		#rbx-private-servers .container-header h2, .light-theme .rbx-private-server-create .rbx-private-server-create-button, .dark-theme .rbx-private-server-create .rbx-private-server-create-button, #rbx-private-servers .section-content-off {
-			&, &:hover, &:focus, &:active {
+		.rbx-private-server-create .rbx-private-server-create-button {
+			font-size: 0;
+			&:hover, &:focus, &:active {
 				font-size: 0
 			}
+			.light-theme &, .dark-theme & {
+				font-size: 0;
+				&:hover, &:focus, &:active {
+					font-size: 0
+				}
+			}
+			&:after {
+				content: 'Create VIP Server';
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 100%;
+			}
 		}
-		#rbx-private-servers .container-header h2:after {
-			content: 'VIP Servers';
-			font-size: 20px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 700;
+		#rbx-private-servers .section-content-off:not(.empty-game-instances-container) {
+			font-size: 0;
+			&:before {
+				content: 'This game does not support ';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+				}
+				line-height: 1.4em;
+				cursor: text;
 			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
+			.text-link:after {
+				content: 'VIP Servers';
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 1.4em;
 			}
-			line-height: 1em;
-			cursor: text;
+			&:after {
+				content: '.';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+				}
+				line-height: 1.4em;
+				cursor: text;
+			}
+		}
+		#rbx-private-servers .container-header h2 {
+			font-size: 0;
+			&:after {
+				content: 'VIP Servers';
+				font-size: 20px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 700;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+				}
+				line-height: 1em;
+				cursor: text;
+			}
 		}
 
 		.create-server-banner .play-with-others-text {
@@ -7077,43 +7130,7 @@
 				cursor: text;
 			}
 		}
-
-		.rbx-private-server-create .rbx-private-server-create-button:after {
-			content: 'Create VIP Server';
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 100%;
-		}
-		#rbx-private-servers .section-content-off:not(.empty-game-instances-container):before {
-			content: 'This game does not support ';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-			}
-			line-height: 1.4em;
-			cursor: text;
-		}
-		#rbx-private-servers .section-content-off:not(.empty-game-instances-container) .text-link:after {
-			content: 'VIP Servers';
-			font-size: 16px;
-			font-weight: 500;
-			line-height: 1.4em;
-		}
-		#rbx-private-servers .section-content-off:not(.empty-game-instances-container):after {
-			content: '.';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-			}
-			line-height: 1.4em;
-			cursor: text;
-		}
+		
 		.app-bumper-container .app-motto-container .xsmall {
 			font-size: 0;
 			&:hover, &:focus, &:active {
@@ -7135,7 +7152,8 @@
 			}
 		}
 		.create-server-banner .rbx-private-server-create .rbx-private-server-create-disabled-text, #private-server-tooltip .tooltip-inner {
-			&, &:hover, &:focus, &:active {
+			font-size: 0;
+			&:hover, &:focus, &:active {
 				font-size: 0
 			}
 		}
@@ -7163,146 +7181,164 @@
 				line-height: 1.3em;
 			}
 		}
-
-		#purchase-private-server-modal .modal-title, #purchase-private-server-modal .private-server-main-text {
-			font-size: 0
-		}
-		#purchase-private-server-modal .private-server-game-name {
+		
+		#purchase-private-server-modal .modal-title {
 			font-size: 0;
-			margin-top: 0;
-			display: inline-block;
-			height: 19px;
-		}
-		#purchase-private-server-modal .modal-title:before {
-			content: 'Create VIP Server';
-			& when (@SourceSansPro = 0) {
-				font-size: 20px;
-				font-weight: 700;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 21px;
-				font-weight: 400;
-			}
-			line-height: 1.42857;
-			cursor: text;
-		}
-		#purchase-private-server-modal .private-server-main-text:before {
-			content: 'Create a VIP Server for ';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-			cursor: text;
-		}
-		#purchase-private-server-modal .private-server-main-text:after {
-			content: '?';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-			cursor: text;
-		}
-		#purchase-private-server-modal .private-server-main-text * {
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-		}
-		#purchase-private-server-modal .private-server-game-name:before {
-			content: 'Game Name';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 500;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 400;
-				line-height: 1.3em;
-			}
-			cursor: text
-		}
-
-		.private-server-container .container-header.see-all-container-header h1, .private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"], .gotham-font .private-server-container .container-header.see-all-container-header .see-all-link-icon, .builder-font .private-server-container .container-header.see-all-container-header .see-all-link-icon {
-			&, &:hover, &:active, &:focus, &:visited {
-				font-size: 0;
-			}
-		}
-		.private-server-container .container-header.see-all-container-header h1:after {
-			content: 'Configure VIP Server';
-			& when (@SourceSansPro = 0) {
-				font-size: 32px;
-				font-weight: 800;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 36px;
-				font-weight: 400;
-			}
-			line-height: 1em;
-			cursor: text;
-		}
-		.private-server-container .container-header.see-all-container-header .see-all-link-icon:before {
-			content: 'Back to VIP Servers';
-			& when (@SourceSansPro = 0) {
-				font-size: 16px;
-				font-weight: 500;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 14px;
-				font-weight: 500;
-			}
-			line-height: 100%;
-		}
-
-		.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"]:after {
-			content: 'Game';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 500;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 400;
-			}
-			line-height: 1.4em;
-			cursor: text;
-		}
-
-		@media (max-width: 767px) {
-			.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"]:after {
-				font-size: 12px;
-				font-weight: 500;
-			}
-			#purchase-private-server-modal .private-server-game-name:before {
-				font-size: 12px;
-				font-weight: 400;
-			}
-			.private-server-container .container-header.see-all-container-header h1:after {
+			&:before {
+				content: 'Create VIP Server';
 				& when (@SourceSansPro = 0) {
-					font-size: 24px;
+					font-size: 20px;
+					font-weight: 700;
 				}
 				& when (@SourceSansPro = 1) {
-					font-size: 30px;
+					font-size: 21px;
+					font-weight: 400;
+				}
+				line-height: 1.42857;
+				cursor: text;
+			}
+		}
+		#purchase-private-server-modal .private-server-main-text {
+			font-size: 0;
+			&:before {
+				content: 'Create a VIP Server for ';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				cursor: text;
+				@media (max-width: 543px) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+			* {
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				@media (max-width: 543px) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+			&:after {
+				content: '?';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				cursor: text;
+				@media (max-width: 543px) {
+					font-size: 12px;
+					font-weight: 400;
 				}
 			}
 		}
-		@media (max-width: 543px) {
-			#purchase-private-server-modal .private-server-main-text:before, #purchase-private-server-modal .private-server-main-text:after, #purchase-private-server-modal .private-server-main-text * {
-				font-size: 12px;
-				font-weight: 400;
+		
+		#purchase-private-server-modal .private-server-game-name {
+			font-size: 0;
+			line-height: 0;
+			&:before {
+				content: 'Game Name';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 500;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 400;
+					line-height: 1.3em;
+				}
+				cursor: text;
+				@media (max-width: 767px) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+		}
+		
+		.private-server-container .container-header.see-all-container-header h1 {
+			font-size: 0;
+			&:after {
+				content: 'Configure VIP Server';
+				& when (@SourceSansPro = 0) {
+					font-size: 32px;
+					font-weight: 800;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 36px;
+					font-weight: 400;
+				}
+				line-height: 1em;
+				cursor: text;
+				@media (max-width: 767px) {
+					& when (@SourceSansPro = 0) {
+						font-size: 24px;
+					}
+					& when (@SourceSansPro = 1) {
+						font-size: 30px;
+					}
+				}
+			}
+		}
+		.private-server-container .container-header.see-all-container-header .see-all-link-icon {
+			font-size: 0;
+			&:active, &:focus, &:hover, &:visited {
+				font-size: 0;
+			}
+			.gotham-font &, .builder-font & {
+				font-size: 0;
+				&:active, &:focus, &:hover, &:visited {
+					font-size: 0;
+				}
+			}
+			&:before {
+				content: 'Back to VIP Servers';
+				& when (@SourceSansPro = 0) {
+					font-size: 16px;
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 14px;
+					font-weight: 500;
+				}
+				line-height: 100%;
+			}
+		}
+
+		.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"] {
+			font-size: 0;
+			&:after {
+				content: 'Game';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 400;
+				}
+				line-height: 1.4em;
+				cursor: text;
+				@media (max-width: 767px) {
+					font-size: 12px;
+					font-weight: 500;
+				}
 			}
 		}
 
@@ -9623,7 +9659,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250722-02.1.4.1";
+	@Version: "20250727-00.1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -21532,6 +21568,44 @@
 				line-height: 1.3em;
 			}
 		}
+		/* Game Details */
+		#rbx-friends-running-games .server-list-container-header h2 {
+			font-size: 0;
+			&:after {
+				content: "Servers My Friends Are In";
+				& when (@SourceSansPro = 0) {
+					font-size: 20px;
+					font-weight: 700;
+					@media (max-width: 767px) {
+						font-size:16px
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 24px;
+					font-weight: 300;
+					@media (max-width: 767px) {
+						font-size:21px
+					}
+				}
+				line-height: 1em;
+				display: contents;
+			}
+		}
+		#rbx-friends-running-games .friends-in-server-label {
+			font-size: 0;
+			&:before {
+				content: "Friends in this server: ";
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+			}
+		}
 	}
 	
 	/*/ Revert React Group List /*/
@@ -22846,18 +22920,22 @@
 									padding-left: 0;
 									&:after {
 										content: "";
-										background-image: url(https://images.rbxcdn.com/bcf5d84d4469c075e6296bfbc4deabb1);
-										background-size: 180px 40px;
+										& when (@LogoStyle = 201408) or (@LogoStyle = 201412) and (LogoStyle = 201511) {
+											background-image: url(https://images.rbxcdn.com/8b0052e4ff81d8e14f19faff2a22fcf7.png);
+										}
+										& when (@LogoStyle = 201701) {
+											background-image: url(https://images.rbxcdn.com/236c40e74d06db9a43dddb9f02dd6eee.png);
+										}
+										background-size: 230px 180px;
 										background-repeat: no-repeat;
 										width: 100%;
-										height: 40px;
+										height: 180px;
 										display: block;
-										margin-top: 46px
 									}
 								}
 								&:nth-child(2):after {
 									content: "";
-									background-image: url(https://images.rbxcdn.com/51328932dedb5d8d61107272cc1a27db.png);
+									background-image: url(https://images.rbxcdn.com/4a3f96d30df0f7879abde4ed837446c6.png);
 									background-size: 230px 180px;
 									background-repeat: no-repeat;
 									width: 100%;
@@ -22866,8 +22944,14 @@
 								}
 								&:nth-child(3):after {
 									content: "";
-									background-image: url(https://images.rbxcdn.com/bbdb38de8bb89ecc07730b41666a26a4);
-									background-size: 180px 115px;
+									& when (@LogoStyle = 201408) or (@LogoStyle = 201412) and (LogoStyle = 201511) {
+										background-image: url(https://images.rbxcdn.com/6e23e4971ee146e719fb1abcb1d67d59.png);
+										background-size: 230px 180px;
+									}
+									& when (@LogoStyle = 201701) {
+										background-image: url(https://images.rbxcdn.com/25bca1222274f7f21fb86f6bdda806c9.png);
+									}
+									background-size: 230px 180px;
 									background-repeat: no-repeat;
 									width: 100%;
 									height: 180px;
