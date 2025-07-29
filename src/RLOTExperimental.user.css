@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250727-00.1.4.1
+@version      20250729-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -18,6 +18,7 @@
 @var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                     0
 @var          checkbox fiveColumn                  "Five column Avatar Editor"                       1
 @var          checkbox Fix19MICT                   "Fixed 2019M Item Card Transitions"               0
+@var          checkbox GothamFontFixes             "Gotham Font Fixes"                               0
 @var          select   greetingTxt                 "Greeting Text Style"                             ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                                 ["Pre-2018", "2019E", "2019M*", "2019L"]
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                  0
@@ -468,21 +469,6 @@
 		top: -10px;
 	}
 
-	body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button {
-		font-size: 0
-	}
-	body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button:after {
-		& when (@SourceSansPro = 0) {
-			font-size: 16px;
-		}
-		& when (@SourceSansPro = 1) {
-			font-size: 18px;
-		}
-		line-height: 100%;
-		content: 'Upgrade Now';
-		color: inherit
-	}
-
 	.light-theme .rbx-header .text-header, .light-theme .rbx-header .text-header:active, .light-theme .rbx-header .text-header:focus, .light-theme .rbx-header .text-header:hover, .light-theme .rbx-header .text-header:link, .light-theme .rbx-header .text-header:visited, .light-theme .btn-secondary-md:link, .light-theme .btn-secondary-xs:visited, .dark-theme .rbx-header .text-header, .dark-theme .rbx-header .text-header:active, .dark-theme .rbx-header .text-header:focus, .dark-theme .rbx-header .text-header:hover, .dark-theme .rbx-header .text-header:link, .dark-theme .rbx-header .text-header:visited, .dark-theme .btn-secondary-md:link, .dark-theme .btn-secondary-xs:visited, .light-theme .btn-secondary-md:visited, .btn-secondary-sm:visited {
 		color: #fff;
 	}
@@ -752,6 +738,12 @@
 				overflow: hidden;
 				li {
 					white-space: nowrap;
+					[class^=icon] {
+						margin: 11px 14px;
+						width: 20px;
+						height: 20px;
+						background-size: 40px auto;
+					}
 					.icon {
 						margin: 11px 14px;
 						width: 20px;
@@ -925,6 +917,9 @@
 				position: absolute;
 				right: 0;
 				border-bottom: 1px solid #e3e3e3;
+				li:last-child & {
+					display: none
+				}
 				.light-theme & {
 					border-color: #e3e3e3;
 				}
@@ -1826,6 +1821,34 @@
 		}
 	}
 
+	.avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-label, .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-status-link {
+		& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+			font-size: 14px;
+			font-weight: 400;
+			& when (@SourceSansPro = 0) {
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				line-height: 1.3em;
+			}
+		}
+		& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+	
+	.container-header .header-content .get-more-text {
+		& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+			font-size: 14px;
+			font-weight: 400;
+		}
+		& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+	
 	.input-group-btn .input-dropdown-btn:focus .light-theme .icon-down, .input-group-btn .input-dropdown-btn:hover .light-theme .icon-down, .light-theme .icon-checkmark-16x16, .light-theme .icon-close-16x16, .light-theme .icon-close-gray-16x16, .light-theme .icon-default-generic-16x16, .light-theme .icon-down-16x16, .light-theme .icon-edit-16x16, .light-theme .icon-left-16x16, .light-theme .icon-moreinfo-16x16, .light-theme .icon-red-timer-16x16, .light-theme .icon-right-16x16, .light-theme .icon-settings-16x16, .light-theme .icon-up-16x16, .light-theme .input-group-btn .input-dropdown-btn:focus .icon-down, .light-theme .input-group-btn .input-dropdown-btn:hover .icon-down, .light-theme .open .input-dropdown-btn .icon-down, .light-theme .rbx-select-group:hover .icon-down, .open .input-dropdown-btn .light-theme .icon-down, .rbx-select-group:hover .light-theme .icon-down {
 		background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
 		background-repeat: no-repeat;
@@ -8156,6 +8179,21 @@
 			content: "Game ";
 			cursor: text;
 		}
+		
+		body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button {
+			font-size: 0;
+			&:after {
+				& when (@SourceSansPro = 0) {
+					font-size: 16px;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 18px;
+				}
+				line-height: 100%;
+				content: 'Upgrade Now';
+				color: inherit
+			}
+		}
 	}
 
 	[data-internal-page-name="Games"] .content {
@@ -8418,10 +8456,6 @@
 				&:hover, &:focus, &:active {
 					line-height: 22px;
 				}
-			}
-			.container-header .header-content .get-more-text {
-				font-size: 14px;
-				font-weight: 400;
 			}
 			.small, .small-oneline, .text-pastname {
 				font-size: 14px;
@@ -9659,7 +9693,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250727-00.1.4.1";
+	@Version: "20250729-00.1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -13710,100 +13744,102 @@
 					}
 				}
 			}
-			#friend-button [class*="textContainer"] {
-				font-size: 0;
-				line-height: 100%;
-				display: inline-block;
-				&:after {
-					content: "Add Friend";
-					font-size: 18px;
-					display: block;
+			& when (@RemoveUpdates = 1) and (@connectionsexperiment = 1) {
+				#friend-button [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Add Friend";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
+						}
+					}
 					@media (max-width: 767px) {
-						& when (@SourceSansPro = 0) {
-							font-size: 12px;
-							font-weight: 500;
-						}
-						& when (@SourceSansPro = 1) {
-							font-size: 16px;
-							font-weight: 400;
-						}
-						line-height: 18px
+						display: block;
 					}
 				}
-				@media (max-width: 767px) {
-					display: block;
-				}
-			}
-			#friend-button[disabled] [class*="textContainer"] {
-				font-size: 0;
-				line-height: 100%;
-				display: inline-block;
-				&:after {
-					content: "Pending";
-					font-size: 18px;
-					display: block;
+				#friend-button[disabled] [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Pending";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
+						}
+					}
 					@media (max-width: 767px) {
-						& when (@SourceSansPro = 0) {
-							font-size: 12px;
-							font-weight: 500;
-						}
-						& when (@SourceSansPro = 1) {
-							font-size: 16px;
-							font-weight: 400;
-						}
-						line-height: 18px
+						display: block;
 					}
 				}
-				@media (max-width: 767px) {
-					display: block;
-				}
-			}
-			#friend-button[data-friends-url] [class*="textContainer"] {
-				font-size: 0;
-				line-height: 100%;
-				display: inline-block;
-				&:after {
-					content: "Accept";
-					font-size: 18px;
-					display: block;
+				#friend-button[data-friends-url] [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Accept";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
+						}
+					}
 					@media (max-width: 767px) {
-						& when (@SourceSansPro = 0) {
-							font-size: 12px;
-							font-weight: 500;
-						}
-						& when (@SourceSansPro = 1) {
-							font-size: 16px;
-							font-weight: 400;
-						}
-						line-height: 18px
+						display: block;
 					}
 				}
-				@media (max-width: 767px) {
-					display: block;
-				}
-			}
-			#unfriend-button [class*="textContainer"] {
-				font-size: 0;
-				line-height: 100%;
-				display: inline-block;
-				&:after {
-					content: "Unfriend";
-					font-size: 18px;
-					display: block;
-					@media (max-width: 767px) {
-						& when (@SourceSansPro = 0) {
-							font-size: 12px;
-							font-weight: 500;
+				#unfriend-button [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Unfriend";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
 						}
-						& when (@SourceSansPro = 1) {
-							font-size: 16px;
-							font-weight: 400;
-						}
-						line-height: 18px
 					}
-				}
-				@media (max-width: 767px) {
-					display: block;
+					@media (max-width: 767px) {
+						display: block;
+					}
 				}
 			}
 			#chat-button:before {
@@ -16685,8 +16721,11 @@
 			background-color: #02b757;
 			border: 1px solid #02b757;
 			color: #fff;
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -16706,8 +16745,11 @@
 				border: 1px solid #02b757;
 				color: #fff;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -16725,8 +16767,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16749,8 +16794,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16771,6 +16819,12 @@
 			&, &:hover, &:focus, &:active, &:link, &:visited {
 				font-size: 16px;
 			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
+			}
 			border-radius: 3px;
 		}
 		.dark-theme & {
@@ -16795,6 +16849,12 @@
 			&, &:hover, &:focus, &:active, &:link, &:visited {
 				font-size: 16px;
 			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
+			}
 			border-radius: 3px;
 		}
 	}
@@ -16811,8 +16871,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16837,6 +16900,12 @@
 			}
 			&, &:hover, &:focus, &:active, &:link, &:visited { 
 				font-size: 14px;
+			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17009,8 +17078,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17039,8 +17111,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17058,8 +17133,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17082,8 +17160,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17101,8 +17182,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17125,8 +17209,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17144,8 +17231,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17168,8 +17258,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17338,8 +17431,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17356,8 +17452,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17374,8 +17473,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17390,8 +17492,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17409,8 +17514,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17426,8 +17534,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17444,8 +17555,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17460,8 +17574,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17479,8 +17596,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17496,8 +17616,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17514,8 +17637,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17530,8 +17656,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17552,6 +17681,12 @@
 			&, &:hover, &:focus, &:active, &:link, &:visited { 
 				font-size: 14px;
 			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
+			}
 			border-radius: 3px;
 		}
 		.dark-theme & {
@@ -17566,8 +17701,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17593,8 +17731,11 @@
 				transition: box-shadow 200ms ease-in-out;
 			}
 			border: 1px solid #b8b8b8;
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17606,8 +17747,11 @@
 				transition: box-shadow 200ms ease-in-out;
 			}
 			border: 1px solid #474747;
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17877,8 +18021,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17901,8 +18048,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17920,8 +18070,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17944,8 +18097,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17963,8 +18119,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17987,8 +18146,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -18006,8 +18168,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -18030,8 +18195,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -18169,9 +18337,12 @@
 		}
 	}
 	/*/== Fixes ==/*/
-	.gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn, .builder-font .game-item-container .game-btn, .builder-font .game-list-container .game-btn {
-		&, &:hover, &:focus, &:active {
-			font-size: 16px
+	& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+		.gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn, .builder-font .game-item-container .game-btn, .builder-font .game-list-container .game-btn {
+			font-size: 16px;
+			&:hover, &:focus, &:active {
+				font-size: 16px;
+			}
 		}
 	}
 	.rbx-upgrade-now .btn-secondary-md, .btn-primary-md, .btn-secondary-sm, .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .group-profile-header .actions-btn-container .actions-btn {
@@ -18189,7 +18360,13 @@
 	}
 
 	.dropdown-menu li a, .dropdown-menu li button {
-		&, .light-theme &, .dark-theme & {
+		background: transparent;
+		border-color: transparent;
+		&:hover, &:focus, &:active {
+			background: transparent;
+			border-color: transparent;
+		}
+		.light-theme &, .dark-theme & {
 			background: transparent;
 			border-color: transparent;
 			&:hover, &:focus, &:active {
@@ -18199,21 +18376,23 @@
 		}
 	}
 
-	@media (max-width: 767px) {
-		.btn-primary-lg, .btn-cta-lg, .btn-growth-lg, .btn-secondary-lg, .btn-control-lg, .btn-alert-lg, .btn-buy-lg {
-			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
-				padding: 9px;
-				font-size: 18px;
-				line-height: 100%;
-				border-radius: 3px;
+	& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+		@media (max-width: 767px) {
+			.btn-primary-lg, .btn-cta-lg, .btn-growth-lg, .btn-secondary-lg, .btn-control-lg, .btn-alert-lg, .btn-buy-lg {
+				.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
+					padding: 9px;
+					font-size: 18px;
+					line-height: 100%;
+					border-radius: 3px;
+				}
 			}
-		}
-		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .btn-control-md.groups-list-create-button, .group-profile-header .actions-btn-container .actions-btn {
-			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
-				padding: 7px;
-				font-size: 16px;
-				line-height: 100%;
-				border-radius: 3px;
+			.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .btn-control-md.groups-list-create-button, .group-profile-header .actions-btn-container .actions-btn {
+				.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
+					padding: 7px;
+					font-size: 16px;
+					line-height: 100%;
+					border-radius: 3px;
+				}
 			}
 		}
 	}
@@ -18266,7 +18445,7 @@
 		width: 90px;
 	}
 
-	& when (@SourceSansPro = 0) {
+	& when (@GothamFontFixes = 0) and (@SourceSansPro = 0) {
 		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
 			& .btn-growth-md, & a.btn-growth-md, .profile-header-buttons [class*="Primary"] {
 				&, &:active, &:hover, &:link {
@@ -18275,7 +18454,7 @@
 			}
 		}
 	}
-	& when (@SourceSansPro = 1) {
+	& when (@GothamFontFixes = 0) and (@SourceSansPro = 1) {
 		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
 			& .btn-growth-md, & a.btn-growth-md, .profile-header-buttons [class*="Primary"] {
 				&, &:active, &:hover, &:link {
@@ -20072,6 +20251,22 @@
 				}
 			}
 		}
+		/* This will cause issues if the success text is anything other than the user joining the group 💀 */
+		#group-container .alert-success [ng-bind="$ctrl.params.bannerText"] {
+			font-size: 0;
+			&:after {
+				content: "Requested to join group, your request is pending.";
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+			}
+		}
 		[ng-bind*="'Description.JoinGroup'"] {
 			font-size: 0;
 			.gotham-font &, .builder-font & {
@@ -21604,6 +21799,51 @@
 					font-weight: 300;
 					line-height: 1.3em;
 				}
+			}
+		}
+		/* Player Search */
+		[ng-bind-html*="'Label.YouAreConnections'"] {
+			font-size: 0;
+			&:after {
+				content: "You are friends";
+				& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+					font-size: 14px;
+					font-weight: 400;
+					& when (@SourceSansPro = 0) {
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						line-height: 1.3em;
+					}
+				}
+				& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+		}
+		[ng-if*="layout.friendship.NoFriendship"] {
+			font-size: 0;
+			line-height: 0;
+			&:active, &:focus, &:hover {
+				font-size: 0;
+				line-height: 0;
+			}
+			.gotham-font &, .builder-font & {
+				font-size: 0;
+				&:active, &:focus, &:hover {
+					font-size: 0;
+				}
+			}
+			&:after {
+				content: "Add Friend";
+				& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+					font-size: 18px;
+				}
+				& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+					font-size: 16px;
+				}
+				line-height: 100%
 			}
 		}
 	}
