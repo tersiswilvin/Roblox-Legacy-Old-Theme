@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250729-00.1.4.1
+@version      20250729-01.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9693,7 +9693,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250729-00.1.4.1";
+	@Version: "20250729-01.1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -21783,6 +21783,7 @@
 					}
 				}
 				line-height: 1em;
+				cursor: text;
 				display: contents;
 			}
 		}
@@ -21797,6 +21798,15 @@
 				}
 				& when (@SourceSansPro = 1) {
 					font-weight: 300;
+					line-height: 1.3em;
+				}
+				cursor: text;
+			}
+			.text-name {
+				& when (@SourceSansPro = 0) {
+					line-height: 1.4em
+				}
+				& when (@SourceSansPro = 1) {
 					line-height: 1.3em;
 				}
 			}
