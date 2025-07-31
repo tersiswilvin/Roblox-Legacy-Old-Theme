@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250729-01.1.4.1
+@version      20250730-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -41,7 +41,7 @@
 @var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
-@var          checkbox RemoveUpdates               "Revert 201909+ updates"                           1
+@var          checkbox RemoveUpdates               "Revert 201909+ updates"                          1
 @var          checkbox RemoveExtras                " ↳ Extras"                                       1
 @var          checkbox connectionsexperiment       " ↳ Rename Connections to Friends"                1
 @var          checkbox PremiumToBC                 "Premium To BC"                                   0
@@ -9693,7 +9693,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250729-01.1.4.1";
+	@Version: "20250730-00.1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -13877,7 +13877,7 @@
 				border-radius: 0;
 				transition: none;
 				position: absolute;
-				top: 6px;
+				top: 0;
 				right: 6px;
 				@media (max-width: 767px) {
 					top: 124px;
@@ -13908,6 +13908,90 @@
 				}
 			}
 		}
+	}
+	.profile-tabs {
+		background-color: #fff;
+		text-align: center;
+		width: 100%;
+		display: block;
+		&:after,&:before {
+			content: " ";
+			display: table
+		}
+		&:after {
+			clear: both
+		}
+		li {
+			color: #191919;
+			padding: 0;
+			position: relative;
+			display: block;
+			float: left;
+			margin-bottom: -1px;
+			.profile-platform-container & {
+				width: 50%;
+			}
+		}
+	}
+	.profile-platform-container .profile-tab {
+		& when (@SourceSansPro = 0) {
+			font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+			font-size: 16px;
+			font-weight: 500;
+			@media (max-width: 767px) {
+				font-size:12px;
+				font-weight: 500
+			}
+		}
+		& when (@SourceSansPro = 1) {
+			font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+		}
+		color: #191919;
+		letter-spacing: unset;
+		background-color: #fff;
+		box-shadow: none;
+		-webkit-transition: all, .2s, ease-in-out;
+		-o-transition: all,.2s,ease-in-out;
+		transition: all, .2s, ease-in-out;
+		padding: 12px 2%;
+		border: 0;
+		border-radius: 0;
+		line-height: 100%;
+		display: block;
+		cursor: default;
+		&:focus {
+			background-color: #eee;
+		}
+		&:hover {
+			color: #191919;
+			background-color: #f2f2f2;
+		}
+		&:active, &:focus, &:hover {
+			box-shadow: inset 0 -4px 0 0 #00a2ff;
+		}
+		&:focus, &:hover {
+			cursor: pointer;
+		}
+		&.active {
+			color: #191919;
+			box-shadow: inset 0 -4px 0 0 #00a2ff;
+			&:focus {
+				background-color: #fff;
+			}
+			&:hover {
+				color: #191919;
+				background-color: #f2f2f2;
+				box-shadow: inset 0 -4px 0 0 #00a2ff;
+			}
+			&:focus, &:hover {
+				cursor: default;
+			}
+		}
+	}
+	.profile-tab-content {
+		margin: 6px 0;
 	}
 	.profile-statistics .MuiPaper-rounded {
 		background-color: #fff;
@@ -22444,7 +22528,7 @@
 			min-height: unset;
 			min-width: unset;
 			position: absolute;
-			top: 6px;
+			top: 0;
 			right: 6px;
 			display: inline-block;
 			[class*="-textContainer"] {
@@ -22587,6 +22671,20 @@
 					box-shadow: inset 0 -4px 0 0 #00a2ff;
 				}
 				.text-lead {
+					& when (@SourceSansPro = 0) {
+						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+						font-size: 16px;
+						font-weight: 500;
+						@media (max-width: 767px) {
+							font-size:12px;
+							font-weight: 500
+						}
+					}
+					& when (@SourceSansPro = 1) {
+						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+						font-size: 18px;
+						font-weight: 400;
+					}
 					color: #191919;
 					.light-theme & {
 						color: #191919;
@@ -23072,7 +23170,7 @@
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
-				&:has(.foundation-web-loading-spinner-wrapper) {
+				&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 					height: 277px;
 				}
 				&.MuiDialog-paperWidthFalse {
@@ -23342,7 +23440,7 @@
 							}
 						}
 					}
-					&:has(.foundation-web-loading-spinner-wrapper) {
+					&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 						[class*="-sizeSmall"] {
 							display: none;
 						}
@@ -23370,7 +23468,7 @@
 						margin: 6px 0 0;
 						padding: 0 12px 12px;
 						display: block;
-						&:has(.foundation-web-loading-spinner-wrapper) {
+						&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 							margin: 0;
 						}
 						button {
@@ -23388,10 +23486,10 @@
 								padding: 7px;
 								border-radius: 3px;
 							}
-							&:before, .foundation-web-button-content.isLoading, .foundation-web-loading-spinner-wrapper {
+							&:before, .foundation-web-button-content.isLoading, .foundation-web-loading-spinner-wrapper, .foundation-web-loading-spinner {
 								display: none;
 							}
-							&:has(.foundation-web-loading-spinner-wrapper) {
+							&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 								background-color: transparent;
 								border: none;
 								& when (@BoxShadows = 1) {
@@ -23461,7 +23559,7 @@
 							font-weight: 500;
 						}
 					}
-					&:has(.foundation-web-loading-spinner-wrapper):after {
+					&:has(.foundation-web-loading-spinner-wrapper):after, &:has(.foundation-web-loading-spinner):after {
 						display: none;
 					}
 					.light-theme & {
