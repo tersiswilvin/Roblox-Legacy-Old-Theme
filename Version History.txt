@@ -21,6 +21,7 @@ Fixed bootstrapper loading message.
 Fixed box shadows not showing on React Avatar Editor.
 Fixed chat dialog input height not adjusting when typing in the field.
 Fixed Continue Playing disappearing with the recent homepage update.
+Fixed group container misaligning to the bottom at high DPI.
 Fixed group tabs using builder font.
 Fixed inaccuracies with icon more positioning.
 Fixed people list popover icons.
