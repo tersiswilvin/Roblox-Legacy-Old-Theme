@@ -40,6 +40,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Force Light Theme on signup
   - Five column Avatar Editor <b>`Default`</b>
   - Fixed 2019M Item Card Transitions
+  - Gotham Font Fixes
   - Greeting Text Style
     - None <b>`Default`</b>
     - Hello
@@ -51,6 +52,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 2019M <b>`Default`</b>
     - 2019L
   - Legacy Game Headers (BTRoblox)
+  - Legacy Home Titles
   - Legacy Footer Text
     - None <b>`Default`</b>
     - BrandSync
