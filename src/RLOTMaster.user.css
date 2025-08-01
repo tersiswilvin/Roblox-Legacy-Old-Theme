@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme
-@version      20250708-00.1.4
+@version      20250801-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -18,19 +18,22 @@
 @var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                     0
 @var          checkbox fiveColumn                  "Five column Avatar Editor"                       1
 @var          checkbox Fix19MICT                   "Fixed 2019M Item Card Transitions"               0
+@var          checkbox GothamFontFixes             "Gotham Font Fixes"                               0
 @var          select   greetingTxt                 "Greeting Text Style"                             ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                                 ["Pre-2018", "2019E", "2019M*", "2019L"]
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                  0
 @var          checkbox LegacyHomeTitles            "Legacy Home Titles"                              0
-@var          select   LegacyFooterText            "Legacy Footer Text"                              ["None*","BrandSync","2014E","2015E","2016E","2016L","2017E","2017M","2018E","2018L","2019E"]
+@var          select   LegacyFooterText            "Legacy Footer Text"                              ["None*", "BrandSync", "201401", "201501", "201601", "201607", "201609", "201701", "201706", "201801", "201811", "201901"]
 @var          checkbox LegacyNextStyleGuideButtons "Legacy Next Styleguide"                          0
 @var          checkbox LegacyNSGCBL                " ↳ Capital Brand Text in Modals"                 0
+@var          checkbox LegacyNSGPartyIcon          " ↳ Chat Party icon"                              0
 @var          checkbox LegacyNSGBoxShadows         " ↳ Chat Shadows"                                 1
 @var          checkbox LegacyNSGBoxLeaderboards    " ↳ Leaderboards tab"                             0
 @var          checkbox LegacyNSGOlder              " ↳ Older"                                        0
 @var          checkbox LegacyNSGOlderChat          " ↳ Older Chat"                                   0
-@var          checkbox LegacyNSGRemovePN           " ↳ Remove Place Name"                            0
+@var          checkbox LegacyNSGRemovePN           " ↳ Remove Place name"                            0
 @var          checkbox LegacyNSGRemoveSL           " ↳ Remove Social Links"                          0
+@var          checkbox LegacyNSGRenameChat         " ↳ Rename Chat to Chat & Party"                  0
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"                          0
 @var          checkbox OriginalSponsorSizing       "Original Sponsor Size"                           1
 @var          select   PlayButtonStyle             "Play Button Style"                               ["201610", "201704", "201706", "201712", "201812", "201901", "201906*", "2020+"]
@@ -38,8 +41,9 @@
 @var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
-@var          checkbox RemoveUpdates               "Revert 2019L+ updates"                           1
+@var          checkbox RemoveUpdates               "Revert 201909+ updates"                          1
 @var          checkbox RemoveExtras                " ↳ Extras"                                       1
+@var          checkbox connectionsexperiment       " ↳ Rename Connections to Friends"                1
 @var          checkbox PremiumToBC                 "Premium To BC"                                   0
 @var          select   PTBCTiers                   " ↳ Tier"                                         ["BC*", "TBC", "OBC"]
 @var          select   LogoStyle                   "Site Brand Style"                                ["201408", "201412", "201511", "201701*"]
@@ -443,20 +447,14 @@
 		float: left;
 		width: 100%;
 	}
-
-	.games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window {
+	
+	.games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window, .touch .horizontal-scroller .horizontal-scroll-window {
 		overflow: hidden;
-	}
-	.touch .horizontal-scroller .horizontal-scroll-window {
-		overflow: auto;
-	}
-	@media (max-width: 543px) {
-		.games-list-container .horizontal-scroller .horizontal-scroll-window, .touch .horizontal-scroll-window {
+		@media (max-width: 543px) {
 			overflow: visible;
 		}
-		.touch .horizontal-scroller .horizontal-scroll-window {
-			overflow: auto;
-		}
+	}
+	@media (max-width: 543px) {
 		.games-list-container .horizontal-scroller .horizontal-scroll-window .game-tile-list, .touch .horizontal-scroll-window .game-tile-list {
 			overflow: hidden;
 		}
@@ -468,21 +466,6 @@
 	.touch .horizontal-scroller
 	{
 		top: -10px;
-	}
-
-	body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button {
-		font-size: 0
-	}
-	body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button:after {
-		& when (@SourceSansPro = 0) {
-			font-size: 16px;
-		}
-		& when (@SourceSansPro = 1) {
-			font-size: 18px;
-		}
-		line-height: 100%;
-		content: 'Upgrade Now';
-		color: inherit
 	}
 
 	.light-theme .rbx-header .text-header, .light-theme .rbx-header .text-header:active, .light-theme .rbx-header .text-header:focus, .light-theme .rbx-header .text-header:hover, .light-theme .rbx-header .text-header:link, .light-theme .rbx-header .text-header:visited, .light-theme .btn-secondary-md:link, .light-theme .btn-secondary-xs:visited, .dark-theme .rbx-header .text-header, .dark-theme .rbx-header .text-header:active, .dark-theme .rbx-header .text-header:focus, .dark-theme .rbx-header .text-header:hover, .dark-theme .rbx-header .text-header:link, .dark-theme .rbx-header .text-header:visited, .dark-theme .btn-secondary-md:link, .dark-theme .btn-secondary-xs:visited, .light-theme .btn-secondary-md:visited, .btn-secondary-sm:visited {
@@ -558,6 +541,10 @@
 		.light-theme .icon-logo-notification, .dark-theme .icon-logo-notification {
 			background-size: 48px 48px;
 		}
+	}
+	.studio-icon-windows {
+		/* TODO: Make this sync with brand logo option when we find the other studio versions */
+		background-image: url(https://images.rbxcdn.com/33a10b486241d85e46df442eb2134371.svg);
 	}
 	.light-theme .rbx-header .navbar-search .input-addon-btn .icon-common-search-sm {
 		background: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
@@ -750,6 +737,12 @@
 				overflow: hidden;
 				li {
 					white-space: nowrap;
+					[class^=icon] {
+						margin: 11px 14px;
+						width: 20px;
+						height: 20px;
+						background-size: 40px auto;
+					}
 					.icon {
 						margin: 11px 14px;
 						width: 20px;
@@ -923,6 +916,9 @@
 				position: absolute;
 				right: 0;
 				border-bottom: 1px solid #e3e3e3;
+				li:last-child & {
+					display: none
+				}
 				.light-theme & {
 					border-color: #e3e3e3;
 				}
@@ -1397,6 +1393,20 @@
 				~ div:nth-child(n+11) {
 					display: none;
 				}
+				.friends-carousel-display-name when (@connectionsexperiment = 1) {
+					font-size: 0;
+					&:after {
+						content: "Add Friends";
+						& when (@SourceSansPro = 0) {
+							font-size: 12px;
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-size: 16px;
+							font-weight: 300;
+						}
+					}
+				}
 			}
 			@media (max-width: 991px) {
 				white-space: normal;
@@ -1435,7 +1445,7 @@
 			}
 		}
 	}
-	html .btr-profile .content .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div > div {
+	html .btr-profile .content .btr-friends-list.btr-friends-secondRow .friends-carousel-container > div > div when (@RemoveUpdates = 1) {
 		width: 20%;
 		&:nth-child(n+10) {
 			display: block;
@@ -1487,7 +1497,12 @@
 				font-size: 16px;
 				font-weight: 300;
 			}
-			display: block;
+			& when (@RemoveUpdates = 0) {
+				justify-content: center;
+			}
+			& when (@RemoveUpdates = 1) {
+				display: block;
+			}
 		}
 		&-sublabel {
 			display: block;
@@ -1805,6 +1820,34 @@
 		}
 	}
 
+	.avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-label, .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-status-link {
+		& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+			font-size: 14px;
+			font-weight: 400;
+			& when (@SourceSansPro = 0) {
+				line-height: 1.4em;
+			}
+			& when (@SourceSansPro = 1) {
+				line-height: 1.3em;
+			}
+		}
+		& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+	
+	.container-header .header-content .get-more-text {
+		& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+			font-size: 14px;
+			font-weight: 400;
+		}
+		& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+	
 	.input-group-btn .input-dropdown-btn:focus .light-theme .icon-down, .input-group-btn .input-dropdown-btn:hover .light-theme .icon-down, .light-theme .icon-checkmark-16x16, .light-theme .icon-close-16x16, .light-theme .icon-close-gray-16x16, .light-theme .icon-default-generic-16x16, .light-theme .icon-down-16x16, .light-theme .icon-edit-16x16, .light-theme .icon-left-16x16, .light-theme .icon-moreinfo-16x16, .light-theme .icon-red-timer-16x16, .light-theme .icon-right-16x16, .light-theme .icon-settings-16x16, .light-theme .icon-up-16x16, .light-theme .input-group-btn .input-dropdown-btn:focus .icon-down, .light-theme .input-group-btn .input-dropdown-btn:hover .icon-down, .light-theme .open .input-dropdown-btn .icon-down, .light-theme .rbx-select-group:hover .icon-down, .open .input-dropdown-btn .light-theme .icon-down, .rbx-select-group:hover .light-theme .icon-down {
 		background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
 		background-repeat: no-repeat;
@@ -3924,11 +3967,11 @@
 		height: 32px;
 	}
 	.dialog-container .dialog-input-container {
-		height: 33px !important;
+		height: 33px;
 		min-height: 32px;
 		.dialog-input {
 			min-height: 32px;
-			height: 32px !important;
+			height: 32px;
 		}
 	}
 
@@ -5617,7 +5660,19 @@
 	}
 
 	.dialog-container .dialog-body {
-		height: 296px !important;
+		height: 296px;
+		&[style*="height: 294px"] {
+			height: 296px !important;
+		}
+		&[style*="height: 278px"] {
+			height: 280px !important;
+		}
+		&[style*="height: 262px"] {
+			height: 264px !important;
+		}
+		&[style*="height: 254px"] {
+			height: 256px !important;
+		}
 		.light-theme .dialogs & {
 			background-color: #F5F5F5
 		}
@@ -5856,6 +5911,12 @@
 		border-radius: 0;
 		padding: 15px 0;
 		margin: 0;
+		&.section-content when (@BoxShadows = 1) {
+			box-shadow: none;
+			.light-theme &, .dark-theme & {
+				box-shadow: none;
+			}
+		}
 		.light-theme &, .dark-theme & {
 			padding: 0;
 			padding-bottom: 12px;
@@ -5870,6 +5931,10 @@
 		.dark-theme & {
 			color: #474747;
 		}
+	}
+	
+	.menu-vertical .menu-option-content {
+		align-items: center;
 	}
 	
 	.login-base-container {
@@ -6085,14 +6150,14 @@
 	}
 
 	& when (@RemoveUpdates = 1) {
-		.content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(3), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(5), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container.expand-max-width .game-home-page-container > div > div:has(.wide-game-tile-list), .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container, .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7), #group-announcements-upsell-container, .dismissable-announcement-upsell-banner, .menu-option-content[href*="#!/guilded"], .group-forums-updates, [ng-if*="dialogLayout.shouldShowOsaContextCard"], [osa-context-card], .osa-context-card-container, [group-events] {
+		.content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], [data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .guilded-container, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, #settings-popover-menu li:has(a[href*="/crossdevicelogin/ConfirmCode"]), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(3), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(5), .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .setting-section:has(.icon-voice-mic-unmuted-hover), .setting-section:has(.icon-default-camera), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, .dropdown-menu li:has(.account-switch-menu-item), .passkey-upsell-banner, #game-community-link-container, .form-control:has(#id-verification), .collapsible-user-input:has(#id-verification), [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, .virtual-event-game-details-container, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, [group-announcements], .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, #events, .footer-link:has(.footer-postfixIcon), .filters-container, .shopping-cart-btn-container, .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .message-dep-header, .game-stat:has([data-testid*="voice"]), .game-stat:has([data-testid*="camera"]), #forums, .home-page-upsell-card-banner-container, .home-container.expand-max-width .game-home-page-container > div > div:has(.wide-game-tile-list), .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container:not(:has([class*="-carouselContainer"])), .search-overlay, .search-landing-root, .sort-subtitle-container, #profile-posts, .profile-posts, #game-store-container, #rbx-developer-products, .scroller-new, .home-page-games-list .home-page-carousel .game-card:nth-child(n+7), #group-announcements-upsell-container, .dismissable-announcement-upsell-banner, .menu-option-content[href*="#!/guilded"], .group-forums-updates, [ng-if*="dialogLayout.shouldShowOsaContextCard"], [osa-context-card], .osa-context-card-container, [group-events], .menu-vertical .menu-option:has([href="#!/contentModeration"]), #age-group-id, .passkey-manage-button {
 			display: none !important;
 		}
 		& when (@RemoveExtras = 1) {
-			.theme-update-container {
+			.theme-update-container, .passkey-manage-region {
 				display: none !important;
 			}
-			[href*="/users/1/profile"], :has([data-profileuserid="1"]) .profile-name, :has([data-profileuserid="1"]) .profile-display-name {
+			[href*="/users/1/profile"], :has([data-profileuserid="1"]) .header-names, :has([data-profileuserid="1"]) .profile-header-names {
 				text-transform: uppercase
 			}
 		}
@@ -6702,7 +6767,7 @@
 			}
 		}
 		.game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container:has(.icon-notifications-bell) .icon-label {
-			font-size: 0
+			font-size: 0;
 		}
 		.follow-button:has(.icon-notifications-bell) .icon-label:after {
 			content: "";
@@ -6973,22 +7038,71 @@
 			}
 		}
 
-		#rbx-private-servers .container-header h2, .light-theme .rbx-private-server-create .rbx-private-server-create-button, .dark-theme .rbx-private-server-create .rbx-private-server-create-button, #rbx-private-servers .section-content-off {
-			&, &:hover, &:focus, &:active {
+		.rbx-private-server-create .rbx-private-server-create-button {
+			font-size: 0;
+			&:hover, &:focus, &:active {
 				font-size: 0
 			}
+			.light-theme &, .dark-theme & {
+				font-size: 0;
+				&:hover, &:focus, &:active {
+					font-size: 0
+				}
+			}
+			&:after {
+				content: 'Create VIP Server';
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 100%;
+			}
 		}
-		#rbx-private-servers .container-header h2:after {
-			content: 'VIP Servers';
-			font-size: 20px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 700;
+		#rbx-private-servers .section-content-off:not(.empty-game-instances-container) {
+			font-size: 0;
+			&:before {
+				content: 'This game does not support ';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+				}
+				line-height: 1.4em;
+				cursor: text;
 			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
+			.text-link:after {
+				content: 'VIP Servers';
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 1.4em;
 			}
-			line-height: 1em;
-			cursor: text;
+			&:after {
+				content: '.';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+				}
+				line-height: 1.4em;
+				cursor: text;
+			}
+		}
+		#rbx-private-servers .container-header h2 {
+			font-size: 0;
+			&:after {
+				content: 'VIP Servers';
+				font-size: 20px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 700;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+				}
+				line-height: 1em;
+				cursor: text;
+			}
 		}
 
 		.create-server-banner .play-with-others-text {
@@ -7038,43 +7152,7 @@
 				cursor: text;
 			}
 		}
-
-		.rbx-private-server-create .rbx-private-server-create-button:after {
-			content: 'Create VIP Server';
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 100%;
-		}
-		#rbx-private-servers .section-content-off:not(.empty-game-instances-container):before {
-			content: 'This game does not support ';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-			}
-			line-height: 1.4em;
-			cursor: text;
-		}
-		#rbx-private-servers .section-content-off:not(.empty-game-instances-container) .text-link:after {
-			content: 'VIP Servers';
-			font-size: 16px;
-			font-weight: 500;
-			line-height: 1.4em;
-		}
-		#rbx-private-servers .section-content-off:not(.empty-game-instances-container):after {
-			content: '.';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-			}
-			line-height: 1.4em;
-			cursor: text;
-		}
+		
 		.app-bumper-container .app-motto-container .xsmall {
 			font-size: 0;
 			&:hover, &:focus, &:active {
@@ -7096,7 +7174,8 @@
 			}
 		}
 		.create-server-banner .rbx-private-server-create .rbx-private-server-create-disabled-text, #private-server-tooltip .tooltip-inner {
-			&, &:hover, &:focus, &:active {
+			font-size: 0;
+			&:hover, &:focus, &:active {
 				font-size: 0
 			}
 		}
@@ -7124,146 +7203,164 @@
 				line-height: 1.3em;
 			}
 		}
-
-		#purchase-private-server-modal .modal-title, #purchase-private-server-modal .private-server-main-text {
-			font-size: 0
-		}
-		#purchase-private-server-modal .private-server-game-name {
+		
+		#purchase-private-server-modal .modal-title {
 			font-size: 0;
-			margin-top: 0;
-			display: inline-block;
-			height: 19px;
-		}
-		#purchase-private-server-modal .modal-title:before {
-			content: 'Create VIP Server';
-			& when (@SourceSansPro = 0) {
-				font-size: 20px;
-				font-weight: 700;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 21px;
-				font-weight: 400;
-			}
-			line-height: 1.42857;
-			cursor: text;
-		}
-		#purchase-private-server-modal .private-server-main-text:before {
-			content: 'Create a VIP Server for ';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-			cursor: text;
-		}
-		#purchase-private-server-modal .private-server-main-text:after {
-			content: '?';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-			cursor: text;
-		}
-		#purchase-private-server-modal .private-server-main-text * {
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 300;
-				line-height: 1.3em;
-			}
-		}
-		#purchase-private-server-modal .private-server-game-name:before {
-			content: 'Game Name';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 500;
-				line-height: 1.4em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 400;
-				line-height: 1.3em;
-			}
-			cursor: text
-		}
-
-		.private-server-container .container-header.see-all-container-header h1, .private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"], .gotham-font .private-server-container .container-header.see-all-container-header .see-all-link-icon, .builder-font .private-server-container .container-header.see-all-container-header .see-all-link-icon {
-			&, &:hover, &:active, &:focus, &:visited {
-				font-size: 0;
-			}
-		}
-		.private-server-container .container-header.see-all-container-header h1:after {
-			content: 'Configure VIP Server';
-			& when (@SourceSansPro = 0) {
-				font-size: 32px;
-				font-weight: 800;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 36px;
-				font-weight: 400;
-			}
-			line-height: 1em;
-			cursor: text;
-		}
-		.private-server-container .container-header.see-all-container-header .see-all-link-icon:before {
-			content: 'Back to VIP Servers';
-			& when (@SourceSansPro = 0) {
-				font-size: 16px;
-				font-weight: 500;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 14px;
-				font-weight: 500;
-			}
-			line-height: 100%;
-		}
-
-		.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"]:after {
-			content: 'Game';
-			font-size: 16px;
-			& when (@SourceSansPro = 0) {
-				font-weight: 500;
-			}
-			& when (@SourceSansPro = 1) {
-				font-weight: 400;
-			}
-			line-height: 1.4em;
-			cursor: text;
-		}
-
-		@media (max-width: 767px) {
-			.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"]:after {
-				font-size: 12px;
-				font-weight: 500;
-			}
-			#purchase-private-server-modal .private-server-game-name:before {
-				font-size: 12px;
-				font-weight: 400;
-			}
-			.private-server-container .container-header.see-all-container-header h1:after {
+			&:before {
+				content: 'Create VIP Server';
 				& when (@SourceSansPro = 0) {
-					font-size: 24px;
+					font-size: 20px;
+					font-weight: 700;
 				}
 				& when (@SourceSansPro = 1) {
-					font-size: 30px;
+					font-size: 21px;
+					font-weight: 400;
+				}
+				line-height: 1.42857;
+				cursor: text;
+			}
+		}
+		#purchase-private-server-modal .private-server-main-text {
+			font-size: 0;
+			&:before {
+				content: 'Create a VIP Server for ';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				cursor: text;
+				@media (max-width: 543px) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+			* {
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				@media (max-width: 543px) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+			&:after {
+				content: '?';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				cursor: text;
+				@media (max-width: 543px) {
+					font-size: 12px;
+					font-weight: 400;
 				}
 			}
 		}
-		@media (max-width: 543px) {
-			#purchase-private-server-modal .private-server-main-text:before, #purchase-private-server-modal .private-server-main-text:after, #purchase-private-server-modal .private-server-main-text * {
-				font-size: 12px;
-				font-weight: 400;
+		
+		#purchase-private-server-modal .private-server-game-name {
+			font-size: 0;
+			line-height: 0;
+			&:before {
+				content: 'Game Name';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 500;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 400;
+					line-height: 1.3em;
+				}
+				cursor: text;
+				@media (max-width: 767px) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+		}
+		
+		.private-server-container .container-header.see-all-container-header h1 {
+			font-size: 0;
+			&:after {
+				content: 'Configure VIP Server';
+				& when (@SourceSansPro = 0) {
+					font-size: 32px;
+					font-weight: 800;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 36px;
+					font-weight: 400;
+				}
+				line-height: 1em;
+				cursor: text;
+				@media (max-width: 767px) {
+					& when (@SourceSansPro = 0) {
+						font-size: 24px;
+					}
+					& when (@SourceSansPro = 1) {
+						font-size: 30px;
+					}
+				}
+			}
+		}
+		.private-server-container .container-header.see-all-container-header .see-all-link-icon {
+			font-size: 0;
+			&:active, &:focus, &:hover, &:visited {
+				font-size: 0;
+			}
+			.gotham-font &, .builder-font & {
+				font-size: 0;
+				&:active, &:focus, &:hover, &:visited {
+					font-size: 0;
+				}
+			}
+			&:before {
+				content: 'Back to VIP Servers';
+				& when (@SourceSansPro = 0) {
+					font-size: 16px;
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 14px;
+					font-weight: 500;
+				}
+				line-height: 100%;
+			}
+		}
+
+		.private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"] {
+			font-size: 0;
+			&:after {
+				content: 'Game';
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 400;
+				}
+				line-height: 1.4em;
+				cursor: text;
+				@media (max-width: 767px) {
+					font-size: 12px;
+					font-weight: 500;
+				}
 			}
 		}
 
@@ -7295,15 +7392,16 @@
 			.container-header {
 				display: none
 			}
-			.remove-panel:not(.section-content):not(:has(.section-content)) {
-				&, .light-theme &, .dark-theme & {
+			.remove-panel:not(.section-content):not(:has(.section-content)), > div:not([class]):not(:has(.section-content)) {
+				padding: 0 15px 15px;
+				.light-theme &, .dark-theme & {
 					padding: 0 15px 15px;
 				}
 			}
 		}
 		.section:has(.passkey-upsell-banner) #rbx-account-info-header, #settings-container:has(.passkey-upsell-banner) #rbx-account-info-header, .section:has(.passkey-manage-region) #rbx-account-info-header, #settings-container:has(.passkey-manage-region) #rbx-account-info-header {
 			padding: 5px 0 0;
-			.remove-panel:not(.section-content):not(:has(.section-content)) {
+			.remove-panel:not(.section-content):not(:has(.section-content)), > div:not([class]):not(:has(.section-content)) {
 				padding: 15px 15px 10px 15px;
 				@media (max-width: 543px) {
 					padding: 15px 15px 6px 15px;
@@ -7996,7 +8094,31 @@
 				}
 				line-height: 1.42857;
 				@media (max-width: 767px) {
-					font-size: 12px;
+					font-size:12px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+				}
+				&:active, &:hover, &:link, &:visited {
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+					@media (max-width: 767px) {
+						font-size:12px;
+						& when (@SourceSansPro = 0) {
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-weight: 400;
+						}
+					}
 				}
 			}
 		}
@@ -8055,6 +8177,21 @@
 		.stack.badge-container.game-badges-list .container-header h2:before, .badge-container.game-badges-list .container-header h2:before, .badge-container .container-header h2:before, .game-badges-list .container-header h2:before {
 			content: "Game ";
 			cursor: text;
+		}
+		
+		body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button {
+			font-size: 0;
+			&:after {
+				& when (@SourceSansPro = 0) {
+					font-size: 16px;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 18px;
+				}
+				line-height: 100%;
+				content: 'Upgrade Now';
+				color: inherit
+			}
 		}
 	}
 
@@ -8318,10 +8455,6 @@
 				&:hover, &:focus, &:active {
 					line-height: 22px;
 				}
-			}
-			.container-header .header-content .get-more-text {
-				font-size: 14px;
-				font-weight: 400;
 			}
 			.small, .small-oneline, .text-pastname {
 				font-size: 14px;
@@ -8971,12 +9104,25 @@
 			.footer .footer-links {
 				margin: 0;
 			}
-			& when (@LogoStyle = 201511) or (@LogoStyle = 201701) {
-				.copyright-container .col-md-3 {
+			.copyright-container .col-md-3 {
+				& when (@LegacyFooterText = 201401) or (@LegacyFooterText = 201501) or (@LegacyFooterText = BrandSync) and ((@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511)) {
+					background-image: url("data:image/png;base64,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");
+					width: 133px;
+					height: 45px;
+					float: left;
+					margin: 0 5px;
+				}
+				.language-selector-wrapper {
 					display: none;
 				}
-				.footer .col-md-9 {
-					width: 100;
+			}
+			.footer .col-md-9 {
+				& when (@LegacyFooterText = 201401) or (@LegacyFooterText = 201501) or (@LegacyFooterText = BrandSync) and ((@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511)) {
+					float: left;
+					width: 755px;
+				}
+				& when not ((@LegacyFooterText = 201401) or (@LegacyFooterText = 201501) or (@LegacyFooterText = BrandSync) and ((@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511))) {
+					width: 100%;
 					@media (min-width: 992px) {
 						width: 100%;
 					}
@@ -8986,74 +9132,95 @@
 				}
 			}
 			.copyright-container .footer-note {
-				& when (@LogoStyle = 201701) {
+				& when (@LegacyFooterText = 201401) or (@LegacyFooterText = 201501) or (@LegacyFooterText = BrandSync) and ((@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511)) {
+					width: 100%;
+					margin: 0 0 10px 5px;
+				}
+				& when (@LegacyFooterText = 201601) {
+					width: 78%;
+					text-align: left;
+					margin: 12px auto 32px;
+				}
+				& when (@LegacyFooterText = 201607) or (@LegacyFooterText = 201609) or (@LegacyFooterText = 201701) or (@LegacyFooterText = 201706) or (@LegacyFooterText = 201801) or (@LegacyFooterText = 201811) or (@LegacyFooterText = 201901) or (@LegacyFooterText = BrandSync) and (@LogoStyle = 201701) {
 					margin: 12px auto;
 					text-align: center;
+					width: 78%;
 				}
-				& when (@LogoStyle = 201511) {
-					text-align: left;
-					margin: 12px auto 32px
-				}
-				width: 78%;
 				cursor: text;
 			}
 		}
-		.footer .text-footer, .footer .text-footer:active, .footer .text-footer:focus, .footer .text-footer:hover {
+		.footer .text-footer {
 			font-size: 0;
-		}
-		.footer .footer-note:after {
-			& when (@LegacyFooterText = BrandSync) {
-				& when (@LogoStyle = 201701) and (@LegacyNextStyleGuideButtons = 0) {
-					content: '©2019 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.';
+			&:active, &:focus, &:hover {
+				font-size: 0;
+			}
+			&:before {
+				& when (@LegacyFooterText = BrandSync) {
+					& when (@LogoStyle = 201701) and (@LegacyNextStyleGuideButtons = 0) {
+						content: '©2019 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.';
+					}
+					& when (@LogoStyle = 201701) and (@LegacyNextStyleGuideButtons = 1) {
+						content: '©2017 ROBLOX Corporation';
+					}
+					& when (@LogoStyle = 201511) {
+						content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2015. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.';
+					}
+					& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
+						content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2014. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.';
+					}
 				}
-				& when (@LogoStyle = 201701) and (@LegacyNextStyleGuideButtons = 1) {
-					content: '©2017 ROBLOX Corporation';
+				& when (@LegacyFooterText = 201401) {
+					content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2014. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.'
 				}
-				& when (@LogoStyle = 201511) {
-					content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2015. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.';
+				& when (@LegacyFooterText = 201501) {
+					content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2015. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.'
 				}
-				& when (@LogoStyle = 201408) or (@LogoStyle = 201412) {
-					content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2014. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.';
+				& when (@LegacyFooterText = 201601) {
+					content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2016. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.'
+				}
+				& when (@LegacyFooterText = 201607) or (@LegacyFooterText = 201609) {
+					content: '©2016 ROBLOX Corporation'
+				}
+				& when (@LegacyFooterText = 201701) {
+					content: '©2017 ROBLOX Corporation'
+				}
+				& when (@LegacyFooterText = 201706) {
+					content: '©2017 Roblox Corporation. Roblox, the Roblox logo, Robux, Bloxy, and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
+				}
+				& when (@LegacyFooterText = 201801) {
+					content: '©2018 Roblox Corporation. Roblox, the Roblox logo, Robux, Bloxy, and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
+				}
+				& when (@LegacyFooterText = 201811) {
+					content: '©2018 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
+				}
+				& when (@LegacyFooterText = 201901) {
+					content: '©2019 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
+				}
+				& when (@SourceSansPro = 0) {
+					font-size: 10px;
+					font-weight: 500;
+					line-height: 1.5em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 12px;
+					font-weight: 400;
+					line-height: 1.5em;
+				}
+				cursor: text;
+			}
+			&:after when (@LegacyFooterText = 201607) {
+				content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAAAoCAYAAAAfWs+KAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAADc2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMTQgNzkuMTUxNDgxLCAyMDEzLzAzLzEzLTEyOjA5OjE1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjZmZmFjYmViLTE2ZGEtNDBhZC1iYTdhLTU1YWI5Njg2ZmNiNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkY1N0VFQTYyMTMxMUUzQUMyRkQzNThBMzAzMkRCNyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1N0IwOEU3ODYyMTMxMUUzQUMyRkQzNThBMzAzMkRCNyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5ZGE5OGQzNC1lNWFmLTQ1ZGUtODE4Yi02ZjY5NWJjNDFiNGIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NmZmYWNiZWItMTZk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);
+				width: 110px;
+				height: 40px;
+				display: block;
+				position: relative;
+				& when (@LegacyNextStyleGuideButtons = 0) {
+					margin-top: 12px;
+				}
+				& when (@LegacyNextStyleGuideButtons = 1) {
+					margin: 12px auto 0;
 				}
 			}
-			& when (@LegacyFooterText = 2014E) {
-				content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2014. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.'
-			}
-			& when (@LegacyFooterText = 2015E) {
-				content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2015. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.'
-			}
-			& when (@LegacyFooterText = 2016E) {
-				content: 'ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2016. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.'
-			}
-			& when (@LegacyFooterText = 2016L) {
-				content: '©2016 ROBLOX Corporation'
-			}
-			& when (@LegacyFooterText = 2017E) {
-				content: '©2017 ROBLOX Corporation'
-			}
-			& when (@LegacyFooterText = 2017M) {
-				content: '©2017 Roblox Corporation. Roblox, the Roblox logo, Robux, Bloxy, and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
-			}
-			& when (@LegacyFooterText = 2018E) {
-				content: '©2018 Roblox Corporation. Roblox, the Roblox logo, Robux, Bloxy, and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
-			}
-			& when (@LegacyFooterText = 2018L) {
-				content: '©2018 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
-			}
-			& when (@LegacyFooterText = 2019E) {
-				content: '©2019 Roblox Corporation. Roblox, the Roblox logo and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.'
-			}
-			& when (@SourceSansPro = 0) {
-				font-size: 10px;
-				font-weight: 500;
-				line-height: 1.5em;
-			}
-			& when (@SourceSansPro = 1) {
-				font-size: 12px;
-				font-weight: 400;
-				line-height: 1.5em;
-			}
-			cursor: text;
 		}
 	}
 
@@ -11424,8 +11591,9 @@
 			padding-top: 5px;
 		}
 	}
-	@media (min-width: 1850px) {
-		.content:has(#group-container) {
+	.content:has(#group-container) {
+		max-width: 1338px;
+		@media (min-width: 1850px) {
 			max-width: 1338px
 		}
 	}
@@ -11675,7 +11843,7 @@
 		background-color: #3fc679 !important;
 	}
 
-	.section-content.remove-panel .form-group .btn-generic-edit-sm, .profile-container .profile-about .btn-generic-edit-sm, .field-content.field-content-with-edit-button .btn-generic-edit-sm, #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .settings-text-field-container .account-change-settings-button {
+	.section-content.remove-panel .form-group .btn-generic-edit-sm, .profile-container .profile-about .btn-generic-edit-sm, .profile-tab-content  .profile-about .btn-generic-edit-sm, .field-content.field-content-with-edit-button .btn-generic-edit-sm, #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .settings-text-field-container .account-change-settings-button {
 		&, .light-theme &, .dark-theme & {
 			&, &:hover, &:active, &:focus {
 				& when (@BoxShadows = 1) {
@@ -11709,7 +11877,7 @@
 		border-color: transparent;
 	}
 
-	.section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit, .settings-text-field-container .account-change-settings-button .icon-edit {
+	.section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .profile-tab-content  .profile-about .btn-generic-edit-sm .icon-edit, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit, .settings-text-field-container .account-change-settings-button .icon-edit {
 		.light-theme & {
 			background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
 		}
@@ -11718,6 +11886,9 @@
 			background-position: 0 -84px;
 			width: 28px;
 			height: 28px;
+		}
+		&:hover {
+			background-position: -28px -84px;
 		}
 	}
 	.profile-header-more .profile-dropdown .input-dropdown-btn .icon-down-16x16 {
@@ -11734,10 +11905,6 @@
 
 	.light-theme .icon-default-games-16x16, .light-theme .icon-dislike-gray-16x16, .light-theme .icon-like-gray-16x16, .dark-theme .icon-default-games-16x16, .dark-theme .icon-dislike-gray-16x16, .dark-theme .icon-like-gray-16x16 {
 		background-image: url(https://images.rbxcdn.com/153fd3209692232cd8087cad74a669b0-games.svg);
-	}
-
-	.section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit:hover, .profile-container .profile-about .btn-generic-edit-sm .icon-edit:hover, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit:hover {
-		background-position: -28px -84px;
 	}
 
 	.light-theme .icon-default-animation, .light-theme .icon-animation-run, .light-theme .icon-animation-walk, .light-theme .icon-animation-fall, .light-theme .icon-animation-jump, .light-theme .icon-animation-swim, .light-theme .icon-animation-climb, .light-theme .icon-animation-idle {
@@ -13438,6 +13605,9 @@
 					border-right: 1px solid #B8B8B8;
 					border-radius: 0;
 					text-align: center;
+					&[disabled] {
+						opacity: 1;
+					}
 					.light-theme & {
 						border-color: #B8B8B8;
 					}
@@ -13449,6 +13619,7 @@
 					}
 					&:before {
 						content: "";
+						background-image: url(https://static.rbxcdn.com/images/Shared/profile_06282017.svg);
 						background-repeat: no-repeat;
 						background-size: 44px auto;
 						width: 44px;
@@ -13475,6 +13646,130 @@
 					}
 				}
 			}
+			& when (@RemoveUpdates = 1) and (@connectionsexperiment = 1) {
+				#friend-button [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Add Friend";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
+						}
+					}
+					@media (max-width: 767px) {
+						display: block;
+					}
+				}
+				#friend-button[disabled] [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Pending";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
+						}
+					}
+					@media (max-width: 767px) {
+						display: block;
+					}
+				}
+				#friend-button[data-friends-url] [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Accept";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
+						}
+					}
+					@media (max-width: 767px) {
+						display: block;
+					}
+				}
+				#unfriend-button [class*="textContainer"] {
+					font-size: 0;
+					line-height: 100%;
+					display: inline-block;
+					&:after {
+						content: "Unfriend";
+						font-size: 18px;
+						display: block;
+						@media (max-width: 767px) {
+							& when (@SourceSansPro = 0) {
+								font-size: 12px;
+								font-weight: 500;
+							}
+							& when (@SourceSansPro = 1) {
+								font-size: 16px;
+								font-weight: 400;
+							}
+							line-height: 18px
+						}
+					}
+					@media (max-width: 767px) {
+						display: block;
+					}
+				}
+			}
+			#chat-button:before {
+				background-position: 0 -308px;
+			}
+			#join-game-button:before {
+				background-position: 0 -176px;
+			}
+			@media (max-width: 767px) {
+				#friend-button:before {
+					background-position: 0 0;
+				}
+				#friend-button[disabled]:before {
+					background-position: 0 -88px;
+				}
+				#friend-button[data-friends-url]:before {
+					background-position: 0 -396px;
+				}
+				#unfriend-button:before {
+					background-position: 0 -44px;
+				}
+				#chat-button:before {
+					background-position: 0 -308px;
+				}
+				#join-game-button:before {
+					background-position: 0 -176px;
+				}
+			}
 			[class*="Primary"] when (@SourceSansPro = 0) {
 				margin-bottom: 2px;
 			}
@@ -13484,7 +13779,7 @@
 				border-radius: 0;
 				transition: none;
 				position: absolute;
-				top: 6px;
+				top: 0;
 				right: 6px;
 				@media (max-width: 767px) {
 					top: 124px;
@@ -13515,6 +13810,90 @@
 				}
 			}
 		}
+	}
+	.profile-tabs {
+		background-color: #fff;
+		text-align: center;
+		width: 100%;
+		display: block;
+		&:after,&:before {
+			content: " ";
+			display: table
+		}
+		&:after {
+			clear: both
+		}
+		li {
+			color: #191919;
+			padding: 0;
+			position: relative;
+			display: block;
+			float: left;
+			margin-bottom: -1px;
+			.profile-platform-container & {
+				width: 50%;
+			}
+		}
+	}
+	.profile-platform-container .profile-tab {
+		& when (@SourceSansPro = 0) {
+			font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+			font-size: 16px;
+			font-weight: 500;
+			@media (max-width: 767px) {
+				font-size:12px;
+				font-weight: 500
+			}
+		}
+		& when (@SourceSansPro = 1) {
+			font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+		}
+		color: #191919;
+		letter-spacing: unset;
+		background-color: #fff;
+		box-shadow: none;
+		-webkit-transition: all, .2s, ease-in-out;
+		-o-transition: all,.2s,ease-in-out;
+		transition: all, .2s, ease-in-out;
+		padding: 12px 2%;
+		border: 0;
+		border-radius: 0;
+		line-height: 100%;
+		display: block;
+		cursor: default;
+		&:focus {
+			background-color: #eee;
+		}
+		&:hover {
+			color: #191919;
+			background-color: #f2f2f2;
+		}
+		&:active, &:focus, &:hover {
+			box-shadow: inset 0 -4px 0 0 #00a2ff;
+		}
+		&:focus, &:hover {
+			cursor: pointer;
+		}
+		&.active {
+			color: #191919;
+			box-shadow: inset 0 -4px 0 0 #00a2ff;
+			&:focus {
+				background-color: #fff;
+			}
+			&:hover {
+				color: #191919;
+				background-color: #f2f2f2;
+				box-shadow: inset 0 -4px 0 0 #00a2ff;
+			}
+			&:focus, &:hover {
+				cursor: default;
+			}
+		}
+	}
+	.profile-tab-content {
+		margin: 6px 0;
 	}
 	.profile-statistics .MuiPaper-rounded {
 		background-color: #fff;
@@ -16328,8 +16707,11 @@
 			background-color: #02b757;
 			border: 1px solid #02b757;
 			color: #fff;
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -16349,8 +16731,11 @@
 				border: 1px solid #02b757;
 				color: #fff;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -16368,8 +16753,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16392,8 +16780,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16414,6 +16805,12 @@
 			&, &:hover, &:focus, &:active, &:link, &:visited {
 				font-size: 16px;
 			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
+			}
 			border-radius: 3px;
 		}
 		.dark-theme & {
@@ -16438,6 +16835,12 @@
 			&, &:hover, &:focus, &:active, &:link, &:visited {
 				font-size: 16px;
 			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
+			}
 			border-radius: 3px;
 		}
 	}
@@ -16454,8 +16857,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16480,6 +16886,12 @@
 			}
 			&, &:hover, &:focus, &:active, &:link, &:visited { 
 				font-size: 14px;
+			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16652,8 +17064,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -16682,8 +17097,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -16701,8 +17119,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16725,8 +17146,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16744,8 +17168,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16768,8 +17195,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16787,8 +17217,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16811,8 +17244,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -16981,8 +17417,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -16999,8 +17438,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17017,8 +17459,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17033,8 +17478,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17052,8 +17500,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17069,8 +17520,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17087,8 +17541,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17103,8 +17560,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17122,8 +17582,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17139,8 +17602,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17157,8 +17623,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17173,8 +17642,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17195,6 +17667,12 @@
 			&, &:hover, &:focus, &:active, &:link, &:visited { 
 				font-size: 14px;
 			}
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
+			}
 			border-radius: 3px;
 		}
 		.dark-theme & {
@@ -17209,8 +17687,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17236,8 +17717,11 @@
 				transition: box-shadow 200ms ease-in-out;
 			}
 			border: 1px solid #b8b8b8;
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17249,8 +17733,11 @@
 				transition: box-shadow 200ms ease-in-out;
 			}
 			border: 1px solid #474747;
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17341,7 +17828,7 @@
 		}
 	}
 	/*/ Disabled /*/
-	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-buy-lg, .btn-buy-md, .btn-buy-sm, .btn-buy-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .btn-control-lg.disabled, .avatar-card-btns .ignore-friend, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee {
+	.btn-control-lg, .btn-control-md, .btn-control-sm, .btn-control-xs, .btn-buy-lg, .btn-buy-md, .btn-buy-sm, .btn-buy-xs, .profile-header .header-caption .header-details .details-actions .btn-primary-md, .profile-header .header-caption .header-details .details-actions .btn-alert-md, .dark-theme .btn-control-lg.disabled, .avatar-card-btns .ignore-friend, .profile-avatar-left .enable-three-dee, .avatar-thumbnail .toggle-three-dee, [class*="-buttonMedium"] {
 		.light-theme &.disabled, .light-theme &.disabled.active, .light-theme &.disabled:active, .light-theme &.disabled:focus, .light-theme &.disabled:hover, .light-theme &[disabled], .light-theme &[disabled].active, .light-theme &[disabled]:active, .light-theme &[disabled]:focus, .light-theme &[disabled]:hover {
 			& when (@LegacyNextStyleGuideButtons = 0) {
 				opacity: .5;
@@ -17520,8 +18007,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17544,8 +18034,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 21px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 21px;
+				}
 			}
 			border-radius: 5px;
 		}
@@ -17563,8 +18056,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17587,8 +18083,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 18px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 18px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17606,8 +18105,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17630,8 +18132,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited {
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 16px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 16px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17649,8 +18154,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17673,8 +18181,11 @@
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 0) {
 				transition: all,0.2s,ease-in-out;
 			}
-			&, &:hover, &:focus, &:active, &:link, &:visited { 
+			& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
 				font-size: 14px;
+				&:hover, &:focus, &:active, &:link, &:visited {
+					font-size: 14px;
+				}
 			}
 			border-radius: 3px;
 		}
@@ -17812,9 +18323,12 @@
 		}
 	}
 	/*/== Fixes ==/*/
-	.gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn, .builder-font .game-item-container .game-btn, .builder-font .game-list-container .game-btn {
-		&, &:hover, &:focus, &:active {
-			font-size: 16px
+	& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+		.gotham-font .game-item-container .game-btn, .gotham-font .game-list-container .game-btn, .builder-font .game-item-container .game-btn, .builder-font .game-list-container .game-btn {
+			font-size: 16px;
+			&:hover, &:focus, &:active {
+				font-size: 16px;
+			}
 		}
 	}
 	.rbx-upgrade-now .btn-secondary-md, .btn-primary-md, .btn-secondary-sm, .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .group-profile-header .actions-btn-container .actions-btn {
@@ -17832,7 +18346,13 @@
 	}
 
 	.dropdown-menu li a, .dropdown-menu li button {
-		&, .light-theme &, .dark-theme & {
+		background: transparent;
+		border-color: transparent;
+		&:hover, &:focus, &:active {
+			background: transparent;
+			border-color: transparent;
+		}
+		.light-theme &, .dark-theme & {
 			background: transparent;
 			border-color: transparent;
 			&:hover, &:focus, &:active {
@@ -17842,21 +18362,23 @@
 		}
 	}
 
-	@media (max-width: 767px) {
-		.btn-primary-lg, .btn-cta-lg, .btn-growth-lg, .btn-secondary-lg, .btn-control-lg, .btn-alert-lg, .btn-buy-lg {
-			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
-				padding: 9px;
-				font-size: 18px;
-				line-height: 100%;
-				border-radius: 3px;
+	& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+		@media (max-width: 767px) {
+			.btn-primary-lg, .btn-cta-lg, .btn-growth-lg, .btn-secondary-lg, .btn-control-lg, .btn-alert-lg, .btn-buy-lg {
+				.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
+					padding: 9px;
+					font-size: 18px;
+					line-height: 100%;
+					border-radius: 3px;
+				}
 			}
-		}
-		.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .btn-control-md.groups-list-create-button, .group-profile-header .actions-btn-container .actions-btn {
-			.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
-				padding: 7px;
-				font-size: 16px;
-				line-height: 100%;
-				border-radius: 3px;
+			.btn-primary-md, .btn-cta-md, .btn-growth-md, .btn-secondary-md, .btn-control-md, .btn-alert-md, .btn-buy-md, .profile-header-buttons [class*="Primary"], .configure-group .creator-hub-migration-banner .migration-banner-content .migration-banner-button, .btn-control-md.groups-list-create-button, .group-profile-header .actions-btn-container .actions-btn {
+				.light-theme &, .light-theme &:hover, .light-theme &:focus, .light-theme &:active, .light-theme &:visited, .dark-theme &, .dark-theme &:hover, .dark-theme &:focus, .dark-theme &:active, .dark-theme &:visited {
+					padding: 7px;
+					font-size: 16px;
+					line-height: 100%;
+					border-radius: 3px;
+				}
 			}
 		}
 	}
@@ -17909,7 +18431,7 @@
 		width: 90px;
 	}
 
-	& when (@SourceSansPro = 0) {
+	& when (@GothamFontFixes = 0) and (@SourceSansPro = 0) {
 		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
 			& .btn-growth-md, & a.btn-growth-md, .profile-header-buttons [class*="Primary"] {
 				&, &:active, &:hover, &:link {
@@ -17918,7 +18440,7 @@
 			}
 		}
 	}
-	& when (@SourceSansPro = 1) {
+	& when (@GothamFontFixes = 0) and (@SourceSansPro = 1) {
 		.light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
 			& .btn-growth-md, & a.btn-growth-md, .profile-header-buttons [class*="Primary"] {
 				&, &:active, &:hover, &:link {
@@ -18182,7 +18704,7 @@
 			text-align: left
 		}
 
-		#chat-main .chat-header-title:after {
+		#chat-main .chat-header-title:after when (@LegacyNSGRenameChat = 1) {
 			content: " & Party";
 			.btr-small-chat-button.collapsed & {
 				content: "";
@@ -18199,7 +18721,7 @@
 			}
 		}
 
-		.dialog-container .dialog-main .chat-windows-header .chat-header-action:not(:has(.dialog-header-active-game)):after {
+		.dialog-container .dialog-main .chat-windows-header .chat-header-action:not(:has(.dialog-header-active-game)):after when (@LegacyNSGPartyIcon = 1) {
 			content: "";
 			background-image: url(https://images.rbxcdn.com/f4d8925211682759829e2662560c7639-chat_02142018.svg);
 			background-repeat: no-repeat;
@@ -18499,7 +19021,19 @@
 				}
 				.dialog-body {
 					background-color: #E3E3E3;
-					height: 256px !important;
+					height: 256px;
+					&[style*="height: 294px"] {
+						height: 256px !important;
+					}
+					&[style*="height: 278px"] {
+						height: 240px !important;
+					}
+					&[style*="height: 262px"] {
+						height: 224px !important;
+					}
+					&[style*="height: 254px"] {
+						height: 218px !important;
+					}
 					.light-theme &, .light-theme .dialogs & {
 						background-color: #E3E3E3;
 					}
@@ -18740,7 +19274,7 @@
 						}
 						border: 0 none;
 						width: 100%;
-						height: 32px !important;
+						height: 32px;
 						max-height: 64px;
 						padding: 6px 6px 0 12px;
 					}
@@ -19703,6 +20237,22 @@
 				}
 			}
 		}
+		/* This will cause issues if the success text is anything other than the user joining the group 💀 */
+		#group-container .alert-success [ng-bind="$ctrl.params.bannerText"] {
+			font-size: 0;
+			&:after {
+				content: "Requested to join group, your request is pending.";
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+			}
+		}
 		[ng-bind*="'Description.JoinGroup'"] {
 			font-size: 0;
 			.gotham-font &, .builder-font & {
@@ -20004,7 +20554,7 @@
 		}
 
 		/* Popover */
-		#configure-group a {
+		#configure-group a, .MuiMenu-list:has(:nth-child(5)) .contextual-menu-actions-menu-item:first-child {
 			font-size: 0;
 			&:after {
 				content: "Configure Group";
@@ -20018,7 +20568,7 @@
 				line-height: 1.42857;
 			}
 		}
-		#leave-group button {
+		#leave-group button, .MuiMenu-list:has(:nth-child(4)):not(:has(:nth-child(5))) .contextual-menu-actions-menu-item:nth-child(2), .MuiMenu-list:has(:nth-child(5)) .contextual-menu-actions-menu-item:nth-child(3) {
 			font-size: 0;
 			&:after {
 				content: "Leave Group";
@@ -20451,6 +21001,48 @@
 						line-height: 16px;
 					}
 				}
+			}
+		}
+		[ng-bind*="'Message.NotEnoughFundsNameChange'"] {
+			font-size: 0;
+			line-height: 0;
+			&:active, &:focus, &:hover {
+				font-size: 0;
+			}
+			.gotham-font &, .builder-font & {
+				font-size: 0;
+				line-height: 0;
+				&:active, &:focus, &:hover {
+					font-size: 0;
+				}
+			}
+			&:after {
+				content: "You do not have enough funds to change your groups name.";
+				& when (@SourceSansPro = 0) {
+					font-size: 10px;
+					line-height: 1.4em;
+					font-weight: 500;
+					@media (max-width: 767px) {
+						font-size:8px
+					}
+					&:active, &:focus, &:hover, &:link, &:visited {
+						font-size: 10px;
+						font-weight: 500;
+						@media (max-width: 767px) {
+							font-size:8px
+						}
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 12px;
+					line-height: 1.3em;
+					font-weight: 400;
+					&:active, &:focus, &:hover {
+						font-size: 12px;
+						font-weight: 400;
+					}
+				}
+				cursor: text;
 			}
 		}
 		/* Dashboard | Settings */
@@ -20963,11 +21555,299 @@
 			}
 		}
 	}
+	
+	/*/ Connections to Friends /*/
+	& when (@RemoveUpdates = 1) and (@connectionsexperiment = 1) {
+		/* Navigation */
+		.rbx-left-col li #nav-friends .font-header-2 {
+			font-size: 0;
+			&:after {
+				content: "Friends";
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 500;
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 400;
+				}
+				line-height: 1.42857;
+				@media (max-width: 767px) {
+					font-size:12px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+				}
+				&:active, &:hover, &:link, &:visited {
+					font-size: 16px;
+					& when (@SourceSansPro = 0) {
+						font-weight: 500;
+					}
+					& when (@SourceSansPro = 1) {
+						font-weight: 400;
+					}
+					@media (max-width: 767px) {
+						font-size:12px;
+						& when (@SourceSansPro = 0) {
+							font-weight: 500;
+						}
+						& when (@SourceSansPro = 1) {
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+		/* Global */
+		.chat-main .chat-search {
+			> span:not([class]) {
+				&:after {
+					content: "Search for friends";
+					color: #b8b8b8;
+					& when (@SourceSansPro = 0) {
+						font-size: 12px;
+						font-weight: 300;
+					}
+					& when (@SourceSansPro = 1) {
+						font-size: 14px;
+						font-weight: 300;
+					}
+					line-height: 1.3rem;
+					display: block;
+					width: 100%;
+					height: 31px;
+					padding: 6px 12px 6px 34px;
+					position: absolute;
+					top: 0;
+					z-index: -1;
+				}
+				&:has(input.ng-not-empty):after {
+					visibility: hidden
+				}
+			}
+			&-input::placeholder {
+				font-size: 0;
+			}
+		}
+		.details-members-container .add-friends-option .add-friends-label {
+			font-size: 0;
+			&:after {
+				content: "Add Friends";
+				& when (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 14px;
+					font-weight: 400;
+				}
+			}
+		}
 
+		.content .people-list-header h2 {
+			font-size: 0;
+			line-height: 0;
+			&:hover, &:focus, &:link, &:visited, &:active {
+				font-size: 0;
+			}
+			&:before {
+				content: "Friends";
+				& when (@SourceSansPro = 0) {
+					font-size: 20px;
+					font-weight: 700;
+					@media (max-width: 767px) {
+						font-size:16px
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 24px;
+					font-weight: 300;
+					@media (max-width: 767px) {
+						font-size:21px
+					}
+				}
+				line-height: 1em;
+				cursor: text;
+			}
+			.friends-count {
+				& when (@SourceSansPro = 0) {
+					font-size: 20px;
+					font-weight: 700;
+					@media (max-width: 767px) {
+						font-size:16px
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 24px;
+					font-weight: 300;
+					@media (max-width: 767px) {
+						font-size:21px
+					}
+				}
+			}
+		}
+
+		/* == Pages ==  */
+		/* Profiles */
+		[href*="/friends#!/friends"] .profile-header-social-count-label {
+			font-size: 0;
+			line-height: 0;
+			&:before {
+				content: "Friends";
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+					font-size: 12px;
+					font-weight: 500;
+					line-height: 1.4em;
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 1.3em;
+				}
+			}
+		}
+		/* Friends */
+		#friends .text-lead {
+			font-size: 0;
+			line-height: 0;
+			&:after {
+				content: "Friends";
+				& when (@SourceSansPro = 0) {
+					font-size: 16px;
+					font-weight: 500;
+					@media (max-width: 767px) {
+						font-size:12px;
+						font-weight: 500
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 18px;
+					font-weight: 400;
+					&:active, &:hover, &:link, &:visited {
+						font-size: 18px;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+		body:has(#friends .active) #friendsTooltip .tooltip-inner, body:has(#requests .active) #friendsTooltip .tooltip-inner {
+			font-size: 0;
+			&:after {
+				content: "Friends are established when two Roblox users mutually agree to friendship.";
+				& when (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+				line-height: 1.3em;
+			}
+		}
+		/* Game Details */
+		#rbx-friends-running-games .server-list-container-header h2 {
+			font-size: 0;
+			&:after {
+				content: "Servers My Friends Are In";
+				& when (@SourceSansPro = 0) {
+					font-size: 20px;
+					font-weight: 700;
+					@media (max-width: 767px) {
+						font-size:16px
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 24px;
+					font-weight: 300;
+					@media (max-width: 767px) {
+						font-size:21px
+					}
+				}
+				line-height: 1em;
+				cursor: text;
+				display: contents;
+			}
+		}
+		#rbx-friends-running-games .friends-in-server-label {
+			font-size: 0;
+			&:before {
+				content: "Friends in this server: ";
+				font-size: 16px;
+				& when (@SourceSansPro = 0) {
+					font-weight: 400;
+					line-height: 1.4em
+				}
+				& when (@SourceSansPro = 1) {
+					font-weight: 300;
+					line-height: 1.3em;
+				}
+				cursor: text;
+			}
+			.text-name {
+				& when (@SourceSansPro = 0) {
+					line-height: 1.4em
+				}
+				& when (@SourceSansPro = 1) {
+					line-height: 1.3em;
+				}
+			}
+		}
+		/* Player Search */
+		[ng-bind-html*="'Label.YouAreConnections'"] {
+			font-size: 0;
+			&:after {
+				content: "You are friends";
+				& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+					font-size: 14px;
+					font-weight: 400;
+					& when (@SourceSansPro = 0) {
+						line-height: 1.4em;
+					}
+					& when (@SourceSansPro = 1) {
+						line-height: 1.3em;
+					}
+				}
+				& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+					font-size: 12px;
+					font-weight: 400;
+				}
+			}
+		}
+		[ng-if*="layout.friendship.NoFriendship"] {
+			font-size: 0;
+			line-height: 0;
+			&:active, &:focus, &:hover {
+				font-size: 0;
+				line-height: 0;
+			}
+			.gotham-font &, .builder-font & {
+				font-size: 0;
+				&:active, &:focus, &:hover {
+					font-size: 0;
+				}
+			}
+			&:after {
+				content: "Add Friend";
+				& when (@GothamFontFixes = 0) or (@SourceSansPro = 1) {
+					font-size: 18px;
+				}
+				& when (@GothamFontFixes = 1) and (@SourceSansPro = 0) {
+					font-size: 16px;
+				}
+				line-height: 100%
+			}
+		}
+	}
+	
 	/*/ Revert React Group List /*/
 	.wrap:has(.groups-list-sidebar) {
 		@media (min-width: 1688px) {
-			&:not(:has(.groups-list-sidebar-no-nav)) .content {
+			&:not(:has(.groups-list-sidebar-no-nav)) .content, &.has-groups-list-sidebar .container-main:not(.in-app) .content {
 				margin-left: auto;
 			}
 		}
@@ -21074,7 +21954,7 @@
 			@media (max-width: 767px) {
 				display: none;
 			}
-			&:not(.groups-list-sidebar-no-nav) {
+			&:not(.groups-list-sidebar-no-nav), .wrap.has-groups-list-sidebar .container-main:not(.in-app) & {
 				top: 0;
 				height: unset;
 				@media (min-width: 1688px) {
@@ -21550,7 +22430,7 @@
 			min-height: unset;
 			min-width: unset;
 			position: absolute;
-			top: 6px;
+			top: 0;
 			right: 6px;
 			display: inline-block;
 			[class*="-textContainer"] {
@@ -21693,6 +22573,20 @@
 					box-shadow: inset 0 -4px 0 0 #00a2ff;
 				}
 				.text-lead {
+					& when (@SourceSansPro = 0) {
+						font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+						font-size: 16px;
+						font-weight: 500;
+						@media (max-width: 767px) {
+							font-size:12px;
+							font-weight: 500
+						}
+					}
+					& when (@SourceSansPro = 1) {
+						font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+						font-size: 18px;
+						font-weight: 400;
+					}
 					color: #191919;
 					.light-theme & {
 						color: #191919;
@@ -22023,6 +22917,135 @@
 			z-index: 1041;
 			transition: none !important;
 		}
+		.MuiFormControl-root {
+			margin: 0;
+			display: block;
+			.MuiInputBase-formControl {
+				& when (@SourceSansPro = 0) {
+					font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+					font-size: 16px;
+					font-weight: 400;
+					&:active, &:focus, &:hover, &:link, &:visited {
+						font-size: 16px;
+						font-weight: 400;
+					}
+				}
+				& when (@SourceSansPro = 1) {
+					font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+					font-size: 16px;
+					font-weight: 300;
+					&:active, &:focus, &:hover, &:link, &:visited {
+						font-size: 16px;
+						font-weight: 300;
+					}
+				}
+				margin-bottom: 24px;
+				display: block;
+				width: 100%;
+				border-radius: 0;
+				.MuiOutlinedInput-notchedOutline {
+					display: none;
+				}
+				input {
+					-webkit-appearance: none;
+					height: 38px;
+					padding: 5px 12px;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 100%;
+					background-color: #fff;
+					background-image: none;
+					border: 1px solid #b8b8b8;
+					border-radius: 3px;
+					width: 100%;
+					display: block;
+					box-sizing: border-box;
+					&:focus {
+						background-color: #fff;
+						box-shadow: none;
+						border-color: #00a2ff;
+					}
+				}
+			}
+		}
+		&:has([class*="-DialogContent-dividers"]) {
+			z-index: 1040;
+			.MuiModal-backdrop:not(.MuiBackdrop-invisible) {
+				opacity: .5 !important;
+				z-index: 1040;
+			}
+			.MuiDialog-container {
+				z-index: 1050;
+				[class*="-Dialog-paper"] {
+					background-color: #fff;
+					border: 1px solid #999;
+					border: 1px solid rgba(0, 0, 0, 0.2);
+					width: 540px;
+					height: auto;
+					> [class*="-root"] {
+						&:before, &:after {
+							display: none;
+						}
+						& when (@SourceSansPro = 0) {
+							font-weight: 500;
+							line-height: 1.4em
+						}
+						& when (@SourceSansPro = 1) {
+							font-weight: 300;
+							line-height: 1.3em
+						}
+						text-align: left;
+						border: none;
+						border-bottom: 1px solid #e3e3e3;
+						padding: 17px 12px;
+						.light-theme & {
+							border-color: #e3e3e3;
+						}
+						.dark-theme & {
+							border-color: #1c1c1c;
+						}
+					}
+					h1.MuiTypography-root, h1, h2.MuiTypography-root, h2, h3.MuiTypography-root, h3, h4.MuiTypography-root, h4, h5.MuiTypography-root, h5, h6.MuiTypography-root, h6 {
+						line-height: 1em;
+					}
+					.MuiDialogContent-root {
+						border: none;
+						text-align: left;
+						padding: 12px;
+						margin: 0;
+						p {
+							& when (@SourceSansPro = 0) {
+								font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+								font-size: 12px;
+								font-weight: 500;
+								&:active, &:focus, &:hover, &:link, &:visited {
+									font-size: 12px;
+									font-weight: 500;
+								}
+							}
+							& when (@SourceSansPro = 1) {
+								font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+								font-size: 16px;
+								font-weight: 300;
+								&:active, &:focus, &:hover, &:link, &:visited {
+									font-size: 16px;
+									font-weight: 300;
+								}
+							}
+							line-height: 1.5em;
+						}
+						&:not(:has(.MuiFormControl-root)) .MuiDialogContentText-root {
+							margin-bottom: 12px;
+						}
+					}
+					.MuiDialogActions-root {
+						text-align: center;
+						border: none;
+						padding: 0 12px 12px;
+					}
+				}
+			}
+		}
 		.MuiDialog-container {
 			display: block;
 			width: 100%;
@@ -22049,7 +23072,7 @@
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
-				&:has(.foundation-web-loading-spinner-wrapper) {
+				&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 					height: 277px;
 				}
 				&.MuiDialog-paperWidthFalse {
@@ -22147,18 +23170,22 @@
 									padding-left: 0;
 									&:after {
 										content: "";
-										background-image: url(https://images.rbxcdn.com/bcf5d84d4469c075e6296bfbc4deabb1);
-										background-size: 180px 40px;
+										& when (@LogoStyle = 201408) or (@LogoStyle = 201412) and (LogoStyle = 201511) {
+											background-image: url(https://images.rbxcdn.com/8b0052e4ff81d8e14f19faff2a22fcf7.png);
+										}
+										& when (@LogoStyle = 201701) {
+											background-image: url(https://images.rbxcdn.com/236c40e74d06db9a43dddb9f02dd6eee.png);
+										}
+										background-size: 230px 180px;
 										background-repeat: no-repeat;
 										width: 100%;
-										height: 40px;
+										height: 180px;
 										display: block;
-										margin-top: 46px
 									}
 								}
 								&:nth-child(2):after {
 									content: "";
-									background-image: url(https://images.rbxcdn.com/51328932dedb5d8d61107272cc1a27db.png);
+									background-image: url(https://images.rbxcdn.com/4a3f96d30df0f7879abde4ed837446c6.png);
 									background-size: 230px 180px;
 									background-repeat: no-repeat;
 									width: 100%;
@@ -22167,8 +23194,14 @@
 								}
 								&:nth-child(3):after {
 									content: "";
-									background-image: url(https://images.rbxcdn.com/bbdb38de8bb89ecc07730b41666a26a4);
-									background-size: 180px 115px;
+									& when (@LogoStyle = 201408) or (@LogoStyle = 201412) and (LogoStyle = 201511) {
+										background-image: url(https://images.rbxcdn.com/6e23e4971ee146e719fb1abcb1d67d59.png);
+										background-size: 230px 180px;
+									}
+									& when (@LogoStyle = 201701) {
+										background-image: url(https://images.rbxcdn.com/25bca1222274f7f21fb86f6bdda806c9.png);
+									}
+									background-size: 230px 180px;
 									background-repeat: no-repeat;
 									width: 100%;
 									height: 180px;
@@ -22309,7 +23342,7 @@
 							}
 						}
 					}
-					&:has(.foundation-web-loading-spinner-wrapper) {
+					&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 						[class*="-sizeSmall"] {
 							display: none;
 						}
@@ -22337,7 +23370,7 @@
 						margin: 6px 0 0;
 						padding: 0 12px 12px;
 						display: block;
-						&:has(.foundation-web-loading-spinner-wrapper) {
+						&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 							margin: 0;
 						}
 						button {
@@ -22355,10 +23388,10 @@
 								padding: 7px;
 								border-radius: 3px;
 							}
-							&:before, .foundation-web-button-content.isLoading, .foundation-web-loading-spinner-wrapper {
+							&:before, .foundation-web-button-content.isLoading, .foundation-web-loading-spinner-wrapper, .foundation-web-loading-spinner {
 								display: none;
 							}
-							&:has(.foundation-web-loading-spinner-wrapper) {
+							&:has(.foundation-web-loading-spinner-wrapper), &:has(.foundation-web-loading-spinner) {
 								background-color: transparent;
 								border: none;
 								& when (@BoxShadows = 1) {
@@ -22428,7 +23461,7 @@
 							font-weight: 500;
 						}
 					}
-					&:has(.foundation-web-loading-spinner-wrapper):after {
+					&:has(.foundation-web-loading-spinner-wrapper):after, &:has(.foundation-web-loading-spinner):after {
 						display: none;
 					}
 					.light-theme & {
@@ -22462,12 +23495,17 @@
 		}
 	}
 
-	/*/ Revert Avatar Editor React /*/
+	/*/ Revert React Avatar Editor /*/
+	.item-cards-stackable .item-card-thumb-container .thumbnail-2d-container {
+		border-radius: 0;
+	}
 	/* Sliders */
 	.MuiSlider-root {
 		border-radius: 0;
 		-webkit-appearance: none;
-		width: 100%;
+		width: 95%;
+		width: calc(100% - 24px);
+		left: 12px;
 		height: 40px;
 		margin-top: -6px;
 		background: none;
@@ -22485,18 +23523,30 @@
 	.MuiSlider-rail {
 		width: 100%;
 		height: 6px;
-		/*
 		& when (@BoxShadows = 1) {
 			box-shadow: 0 1px 4px 0 rgba(25,25,25,0.3);
 		}
-		*/
 		background: #e3e3e3;
 		border-radius: 6px;
 		border: 0 solid #000;
+		left: -12px;
+		padding: 0 12px;
 		cursor: pointer;
 		opacity: 1;
 		&.Mui-disabled, .Mui-disabled & {
 			cursor: not-allowed
+		}
+		.light-theme & {
+			& when (@BoxShadows = 1) {
+				box-shadow: 0 1px 4px 0 rgba(25,25,25,0.3);
+			}
+			background: #e3e3e3;
+		}
+		.dark-theme & {
+			& when (@BoxShadows = 1) {
+				box-shadow: 0 1px 4px 0 rgba(230,230,230,0.3);
+			}
+			background: #1c1c1c;
 		}
 	}
 	.MuiSlider-track {
@@ -22504,9 +23554,17 @@
 		height: 6px;
 		border: 0;
 		border-radius: 6px;
+		left: -12px !important;
+		padding: 0 12px;
 		&.Mui-disabled, .Mui-disabled & {
 			background: #b8b8b8;
-			cursor: not-allowed
+			cursor: not-allowed;
+			.light-theme & {
+				background-color: #b8b8b8;
+			}
+			.dark-theme & {
+				background-color: #474747;
+			}
 		}
 	}
 	.MuiSlider-thumb {
@@ -22596,7 +23654,25 @@
 				&:hover {
 					background-color: #00a2ff;
 				}
+				.light-theme & {
+					color: #fff;
+				}
+				.dark-theme & {
+					color: #fff
+				}
 			}
+			.light-theme & {
+				color: #757575;
+			}
+			.dark-theme & {
+				color: #8A8A8A
+			}
+		}
+		.light-theme & {
+			background-color: #fff;
+		}
+		.dark-theme & {
+			background-color: #000;
 		}
 	}
 	
