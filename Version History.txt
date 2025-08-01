@@ -1,5 +1,52 @@
 == Version History ==
 
+(Release 1.4.1 | 08/01/2025)
+Added "Gotham Font Fixes" option.
+Added "Rename Connections to Friends" option.
+Added dark theme support for React Avatar Editor.
+Added Legacy Footer Text "Added 201607".
+Added Legacy Next Styleguide "Chat Party icon" option.
+Added Legacy Next Styleguide "Rename Chat to Chat & Party" option.
+Fixed misaligned username text in games details.
+Added missing cursor text for 2 friends mentions.
+Added missing seals icons to "Legacy Footer Text".
+Added react profiles icons for header buttons on lower resolutions devices.
+Converted "Legacy Footer Text" options to new date format.
+Fixed (Removed) box shadow affecting age rating.
+Fixed "Configure Community" & "Leave Community" still mentioning community.
+Fixed "Leave Community" not being shown for non-owned groups.
+Fixed a recent roblox change that breaks new groups sidebar.
+Fixed an overflow issue on touch devices for horizontal scroll window.
+Fixed bootstrapper loading message.
+Fixed box shadows not showing on React Avatar Editor.
+Fixed chat dialog input height not adjusting when typing in the field.
+Fixed Continue Playing disappearing with the recent homepage update.
+Fixed group container misaligning to the bottom at high DPI.
+Fixed group tabs using builder font.
+Fixed inaccuracies with icon more positioning.
+Fixed people list popover icons.
+Fixed profile edit description icon.
+Fixed profile friend button showing friends when option was disabled.
+Fixed roblox studio logo using the modern logo.
+Improved "Legacy Footer Text" CSS a bit.
+Improved React Avatar Editor support.
+Install modal images now fully syncs with the brand logo.
+Minor fixes for react people list.
+React Avatar Editor sliders are no longer off centered.
+Redid a small portion of CSS to utilize the preprocessor and nesting.
+Removed age group in settings (Toggle via "Revert 201909+ updates").
+Removed Content Moderation tab (Toggleable via "Revert 201909+ updates").
+Removed passkey in settings (Toggle via "Revert 201909+ updates").
+Renamed "Connections" back to Friends.
+Renamed "Remove Place Name" to "Remove Place name".
+Renamed "Revert 2019L+ updates" to "Revert 201909+ updates".
+Replaced community mention if you don't have enough robux for a new group name.
+Reverted community mention when requesting to join a group.
+Reverted connections mentions in Player Search.
+Reverted multiple connections mentions in game details page.
+Reverted new profile tabs design.
+Upgrade Now button reverts back if Revert 201909+ changes is disabled.
+
 (Release 1.4 | 07/08/2025)
 Added "Crop Wide Gamecard Thumbnails" option.
 Added "Leaderb­oards tab" option.
