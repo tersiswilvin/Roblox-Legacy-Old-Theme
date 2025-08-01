@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250731-00.1.4.1
+@version      20250801-00.1.4.1
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9693,7 +9693,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250731-00.1.4.1";
+	@Version: "1.4.1";
 	.rbx-left-col when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		&:before {
 			& when (@WatermarkStyle = Developers) {
@@ -11941,7 +11941,7 @@
 		background-color: #3fc679 !important;
 	}
 
-	.section-content.remove-panel .form-group .btn-generic-edit-sm, .profile-container .profile-about .btn-generic-edit-sm, .field-content.field-content-with-edit-button .btn-generic-edit-sm, #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .settings-text-field-container .account-change-settings-button {
+	.section-content.remove-panel .form-group .btn-generic-edit-sm, .profile-container .profile-about .btn-generic-edit-sm, .profile-tab-content  .profile-about .btn-generic-edit-sm, .field-content.field-content-with-edit-button .btn-generic-edit-sm, #desktop-app-banner .banner-container .banner-close-container .btn-generic-close-md, .settings-text-field-container .account-change-settings-button {
 		&, .light-theme &, .dark-theme & {
 			&, &:hover, &:active, &:focus {
 				& when (@BoxShadows = 1) {
@@ -11975,7 +11975,7 @@
 		border-color: transparent;
 	}
 
-	.section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit, .settings-text-field-container .account-change-settings-button .icon-edit {
+	.section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit, .profile-container .profile-about .btn-generic-edit-sm .icon-edit, .profile-tab-content  .profile-about .btn-generic-edit-sm .icon-edit, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit, .settings-text-field-container .account-change-settings-button .icon-edit {
 		.light-theme & {
 			background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
 		}
@@ -11984,6 +11984,9 @@
 			background-position: 0 -84px;
 			width: 28px;
 			height: 28px;
+		}
+		&:hover {
+			background-position: -28px -84px;
 		}
 	}
 	.profile-header-more .profile-dropdown .input-dropdown-btn .icon-down-16x16 {
@@ -12000,10 +12003,6 @@
 
 	.light-theme .icon-default-games-16x16, .light-theme .icon-dislike-gray-16x16, .light-theme .icon-like-gray-16x16, .dark-theme .icon-default-games-16x16, .dark-theme .icon-dislike-gray-16x16, .dark-theme .icon-like-gray-16x16 {
 		background-image: url(https://images.rbxcdn.com/153fd3209692232cd8087cad74a669b0-games.svg);
-	}
-
-	.section-content.remove-panel .form-group .btn-generic-edit-sm .icon-edit:hover, .profile-container .profile-about .btn-generic-edit-sm .icon-edit:hover, .field-content.field-content-with-edit-button .btn-generic-edit-sm .icon-edit:hover {
-		background-position: -28px -84px;
 	}
 
 	.light-theme .icon-default-animation, .light-theme .icon-animation-run, .light-theme .icon-animation-walk, .light-theme .icon-animation-fall, .light-theme .icon-animation-jump, .light-theme .icon-animation-swim, .light-theme .icon-animation-climb, .light-theme .icon-animation-idle {
