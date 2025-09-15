@@ -73,6 +73,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Leaderboards tab
     -  ↳ Older
     -  ↳ Older Chat
+    -  ↳ Remove people list popovers
     -  ↳ Remove Place name
     -  ↳ Remove Social Links
     -  ↳ Rename Chat to Chat & Party
@@ -98,13 +99,23 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Games Page
   - Restore legacy sidebar padding
   - Revert 201909+ updates <b>`Default`</b>
-    -  ↳ Extras <b>`Default`</b>
+    -  ↳ Remove Edit Descriptio­n Icon
+    -  ↳ Remove Passkey <b>`Default`</b>
+    -  ↳ Remove Theme <b>`Default`</b>
     -  ↳ Rename Connections to Friends `Default`
+    -  ↳ Upperca­se Roblox User Text
   - Premium To BC
     -  ↳ Tier
       - BC <b>`Default`</b>
       - TBC
       - OBC
+  - Restore Home Header
+    -  ↳ Avatar Url
+    -  ↳ Members­hip
+    -  ↳ Year
+      - 2015
+      - 2017 <b>`Default`</b>
+    -  ↳ Usernam­e
   - Site Brand Style
     - 201408
     - 201412
@@ -129,6 +140,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - V4_1
     -  ↳ Remove nondesigna­ted icons
   - Source Sans Pro Font
+    -  ↳ Google Version
   - Transition animations <b>`Default`</b>
   - Use 2017 Red Branding (Messages / Bootstrapper)
   - Watermark Branch <b>`Experimental only`</b>
@@ -136,11 +148,12 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - Developers <i>`Hidden`</i>
     - Testers <b>`Default`</b>
 - Extension Support
-  - Btroblox
+  - BTRoblox
+  - DashBlox
   - Roblox+
-  - Ropro
-  - Roseal
-  - Rogold
+  - RoPro
+  - RoSeal
+  - RoGold
 - Supports both Light and Dark themes.
 - Supports low resolution devices and high PPI/DPI ([Pixels Per Inch](https://en.wikipedia.org/wiki/Pixel_density)/[Dots Per Inch](https://en.wikipedia.org/wiki/Dots_per_inch)) monitors.
 - Supports touchscreen devices.
@@ -156,13 +169,13 @@ Don't have stylus already installed? You can get it here for your browser :
 
 ### Extras
 
-For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Release/src/JS/LegacySiteRestoration.user.js) which requires [tampermonkey](https://www.tampermonkey.net/index.php#download) to use, if your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102).
+For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Release/src/JS/LegacySiteRestoration.user.js) which requires [Tampermonkey](https://www.tampermonkey.net/index.php#download) (recommended) or [Violentmonkey](https://violentmonkey.github.io/get-it/) to use. If your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102) or violentmonkey's script [installation page](https://violentmonkey.github.io/guide/creating-a-userscript/).
 
 For upcoming updates and features you can try out the [experimental](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose).
 
 ## Issues
 
-Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose) or on the themes userstyles.world [page](https://userstyles.world/style/5399/) as well as any explanations/steps and a screenshot/video that could further help recreate the problem.
+Please report any issues you find in [Issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose) or on the themes userstyles.world [page](https://userstyles.world/style/5399/) and follow the steps provided, if none are present please provide an explanations/steps and a screenshot/video that could further help recreate the problem.
 
 ## Credits
 
