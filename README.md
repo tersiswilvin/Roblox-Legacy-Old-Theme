@@ -78,7 +78,6 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Remove Social Links
     -  ↳ Rename Chat to Chat & Party
   - My Avatar Gogo Spinner
-  - Original Sponsor Size
   - Play Button Style
     - 201610
     - 201704
@@ -92,6 +91,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
       - None <b>`Default`</b>
       - share_icon
       - social_media
+  - Pre-2020 Event Thumbnail Aspect Ratio
   - Restore Ads
     - None
     - Default <b>`Default`</b>
