@@ -91,7 +91,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
       - None <b>`Default`</b>
       - share_icon
       - social_media
-  - Pre-2020 Event Thumbnail Aspect Ratio
+  - Pre-2020 Event Thumbnail Aspect Ratio <b>`Default`</b>
   - Restore Ads
     - None
     - Default <b>`Default`</b>
