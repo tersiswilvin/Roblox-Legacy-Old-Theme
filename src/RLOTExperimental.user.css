@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250923-00.1.5
+@version      20250923-01.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9,7 +9,6 @@
 @updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
-@var          checkbox 2019EventIconSizing         "2019 Event Icon Size"                            1
 @var          select   BadgeStyle                  "Badge Style"                                     ["201309", "201410", "201501", "201509", "201511", "201701", "201903*"]
 @var          checkbox BoxShadows                  "Box Shadows"                                     0
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark Theme colors"                      1
@@ -39,6 +38,7 @@
 @var          checkbox AvatarGogoSpinner           "My Avatar Gogo Spinner"                          0
 @var          select   PlayButtonStyle             "Play Button Style"                               ["201610", "201704", "201706", "201712", "201812", "201901", "201906*", "2020+"]
 @var          select   SocialMediaExperiment       " ↳ Social media experiment type"                 ["None*", "share_icon", "social_media"]
+@var          checkbox Pre2020EventAspectRatio     "Pre-2020 Event Thumbnail Aspect Ratio"           1
 @var          select   RestoreAds                  "Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
@@ -9092,7 +9092,7 @@
 		border-color: #00A2FF;
 	}
 
-	& when (@2019EventIconSizing = 1) {
+	& when (@Pre2020EventAspectRatio = 1) {
 		.rbx-nav-sponsor img, .rbx-the-hunt-container .rbx-the-hunt-thumbnail, .rbx-platform-event-container .rbx-platform-event-thumbnail {
 			width: 155px;
 			height: 46.14px;
@@ -9103,7 +9103,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250923-00.1.5";
+	@Version: "20250923-01.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
