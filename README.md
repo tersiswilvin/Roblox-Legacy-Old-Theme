@@ -99,6 +99,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ↳ Games Page
   - Restore legacy sidebar padding
   - Revert 201909+ updates <b>`Default`</b>
+    -  ↳ HCo Gotham SSm <b>`Default`</b>
     -  ↳ Remove Edit Descriptio­n Icon
     -  ↳ Remove Passkey <b>`Default`</b>
     -  ↳ Remove Theme <b>`Default`</b>
