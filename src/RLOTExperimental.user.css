@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20250923-01.1.5
+@version      20250924-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -43,7 +43,7 @@
 @var          checkbox RestoreGameAds              " ↳ Games Page"                                   0
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
 @var          checkbox RemoveUpdates               "Revert 201909+ updates"                          1
-@var          checkbox GothamSSm                   " ↳ Gotham SSm"                                   1
+@var          checkbox HCoGothamSSm                " ↳ HCo Gotham SSm"                               1
 @var          checkbox RemoveEditDescIcon          " ↳ Remove Edit Description Icon"                 0
 @var          checkbox RemovePasskey               " ↳ Remove Passkey"                               1
 @var          checkbox RemoveProfileStore          " ↳ Remove Profile Store"                         1
@@ -5255,7 +5255,7 @@
 	}
 
 	body.rogold:not(.rg-no-old-font) * {
-		& when (@RemoveUpdates) and (@GothamSSm = 1) {
+		& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 			font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
 		}
 		& when (@SourceSansPro = 1) {
@@ -5264,7 +5264,7 @@
 	}
 	
 	& when (@RemoveUpdates = 1) {
-		& when (@GothamSSm = 1) {
+		& when (@HCoGothamSSm = 1) {
 			@font-face {
 				font-family: HCo Gotham SSm;
 				src: url(https://css.rbxcdn.com/38e00f7de6f417aa3a458560a15e2b8a-GothamSSm-Light.woff2) format("woff2"),url(https://css.rbxcdn.com/5c779fadf28d7893108d5b896e092e0d-GothamSSm-Light.woff) format("woff");
@@ -7914,9 +7914,15 @@
 				}
 			}
 			.font-header-2 {
-				font-weight: 400;
+				font-weight: 300;
 				&:active, &:focus, &:hover, &:visited, &:link {
-					font-weight: 400;
+					font-weight: 300;
+				}
+			}
+			.rbx-left-col .rbx-scrollbar a, .rbx-left-col .rbx-scrollbar a:hover, .rbx-left-col .rbx-scrollbar a:focus {
+				font-weight: 400;
+				span {
+					font-weight: 400
 				}
 			}
 			.text-description, p, .font-body, .toggle-target .field-content, .font-body, #navbar-search-input {
@@ -7975,7 +7981,7 @@
 					}
 				}
 			}
-			h3, .h3, .container-header h2, .container-list h2, .profile-statistics > h2 {
+			h3, .h3, .container-header h2, .container-list h2, .profile-statistics > h2, .inline-flex h2 {
 				font-size: 24px;
 				font-weight: 300;
 				@media (max-width: 767px) {
@@ -8024,6 +8030,12 @@
 			}
 			.voting-panel span {
 				font-size: 14px;
+			}
+			.game-card-container .game-card-name {
+				font-weight: 300;
+				&:hover, &:focus, &:active {
+					font-weight: 300;
+				}
 			}
 		}
 
@@ -9103,7 +9115,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20250923-01.1.5";
+	@Version: "20250924-00.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
@@ -12650,8 +12662,17 @@
 	.game-card-info .info-label {
 		display: inline-block;
 		font-size: 14px;
-		font-weight: 500;
+		& when (@SourceSansPro = 0) {
+			font-weight: 500;
+		}
+		& when (@SourceSansPro = 1) {
+			font-weight: 300;
+		}
 		line-height: 18px;
+		@media (max-width: 543px) {
+			font-size: 10px;
+			line-height: 12px;
+		}
 	}
 	.game-tile .game-card-container .game-card-info .vote-percentage-label {
 		padding: 0 12px 0 0;
@@ -12674,10 +12695,6 @@
 	}
 
 	@media (max-width: 543px) {
-		.game-card-info .info-label {
-			font-size: 10px;
-			line-height: 12px;
-		}
 		.gotham-font .game-cards .game-card .game-card-info .playing-counts-label, .gotham-font .game-cards .game-card .game-card-info .vote-percentage-label, .builder-font .game-cards .game-card .game-card-info .playing-counts-label, .builder-font .game-cards .game-card .game-card-info .vote-percentage-label {
 			padding: 0;
 		}
@@ -18227,7 +18244,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-secondary-xs, .home-container .sdui-icon.icon-push-right-16x16 {
+	.btn-secondary-xs, .home-container .sdui-icon.icon-push-right-16x16, .profile-collections .icon-chevron-heavy-right {
 		.light-theme & {
 			& when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
 				-webkit-transition: box-shadow 200ms ease-in-out;
@@ -18276,7 +18293,7 @@
 			border-radius: 3px;
 		}
 	}
-	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md, .group-profile-header .actions-btn-container .actions-btn {
+	.btn-secondary-lg, .btn-secondary-md, .btn-secondary-sm, .btn-secondary-xs, .details-btns-fixed .btn-secondary-sm, .rbx-upgrade-now .btn-secondary-md, .avatar-card-btns .accept-friend, .home-container .sdui-icon.icon-push-right-16x16, .profile-collections .icon-chevron-heavy-right, .btn-control-md.groups-list-create-button, .groups-list-new .text-label-medium, .group-details .group-shout .group-form .btn-control-md, .group-profile-header .actions-btn-container .actions-btn {
 		.light-theme &:focus, .light-theme &:hover {
 			background-color: #32b5ff;
 			& when (@BoxShadows = 1) {
@@ -19606,7 +19623,7 @@
 	& when (@SourceSansPro = 0) {
 		.gotham-font, .builder-font {
 			&.light-theme, &.dark-theme {
-				.refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
+				.refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16, .profile-collections .icon-chevron-heavy-right, .groups-list-new .text-label-medium {
 					&, &-icon {
 						&, &:active, &:hover, &:link, &:visited {
 							& when (@BoxShadows = 1) {
@@ -19624,7 +19641,7 @@
 	& when (@SourceSansPro = 1) {
 		.gotham-font, .builder-font {
 			&.light-theme, &.dark-theme {
-				.refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
+				.refresh-link, .see-all-link, .touch .refresh-link, .touch .see-all-link, .home-container .sdui-icon.icon-push-right-16x16, .profile-collections .icon-chevron-heavy-right, .groups-list-new .text-label-medium {
 					&, &-icon {
 						&, &:active, &:hover, &:link, &:visited {
 							color: #fff;
@@ -20636,7 +20653,7 @@
 		}
 	}
 
-	.gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .refresh-link-icon, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .refresh-link-icon, .home-container .sdui-icon.icon-push-right-16x16, .groups-list-new .text-label-medium {
+	.gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .refresh-link-icon, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .refresh-link-icon, .home-container .sdui-icon.icon-push-right-16x16, .profile-collections .icon-chevron-heavy-right, .groups-list-new .text-label-medium {
 		padding: 4px;
 		& when (@SourceSansPro = 0) {
 			min-width: min-content;
@@ -20792,6 +20809,154 @@
 		}
 		&:hover:after when (@SourceSansPro = 0) {
 			text-decoration: underline;
+		}
+	}
+	.profile-collections {
+		.profile-carousel {
+			padding: 0;
+			@media (max-width: 991px) {
+				padding: 0
+			}
+		}
+		[class*="-collectionCarouselContainer"] {
+			display: block;
+			.inline-flex {
+				&:before, &:after {
+					content: " ";
+					display: table
+				}
+				display: block;
+				margin: 3px 0 6px;
+				&:after {
+					clear: both
+				}
+				@media (max-width: 991px) {
+					padding: 0 15px;
+				}
+			}
+			h2 {
+				line-height: 1em;
+				letter-spacing: unset;
+				padding: 5px 0;
+				float: left;
+				margin: 0;
+				padding-top: 0;
+			}
+		}
+		[class*="-carouselContainer"] {
+			background-color: #fff;
+			padding: 15px;
+			position: relative;
+			margin: 0 0 18px;
+			> [class*="-carousel"] {
+				&:before, &:after {
+					content: " ";
+					display: table;
+				}
+				max-height: 170px;
+				overflow: hidden;
+				display: block;
+				&:after {
+					clear: both;
+				}
+				@media (max-width: 767px) {
+					max-height: 115px;
+				}
+				[class*="-carouselItem"] {
+					text-align: center;
+					width: 16.6667%;
+					padding: 5px 0;
+					float: left;
+					margin-bottom: 6px;
+					height: unset;
+					.item-card-container {
+						background-color: transparent;
+					}
+					.item-card-link {
+						display: block;
+						> .item-card-link {
+							position: relative;
+							.item-card-thumb-container {
+								background-color: transparent;
+								border: none;
+								.thumbnail-2d-container {
+									background-color: transparent !important;
+									aspect-ratio: unset;
+									img {
+										border-radius: 0;
+										background-color: transparent;
+										border: 1px solid #B8B8B8;
+										width: 140px;
+										height: 140px;
+									}
+								}
+								.restriction-icon {
+									text-align: left;
+									line-height: 1em;
+									position: absolute;
+									bottom: 0;
+									left: 8px;
+								}
+							}
+						}
+						.item-card-caption {
+							padding: 0;
+							.item-card-name {
+								font-size: 16px;
+								& when (@SourceSansPro = 0) {
+									font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+									font-weight: 500;
+								}
+								& when (@SourceSansPro = 1) {
+									font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+									font-weight: 300;
+								}
+								letter-spacing: unset;
+								height: unset;
+								padding: 0;
+								text-align: left;
+								white-space: nowrap;
+								width: 140px;
+								margin: auto;
+								line-height: 22px;
+								display: block;
+								overflow-x: hidden;
+								&:hover {
+									color: #00a2ff;
+								}
+								@media (max-width: 767px) {
+									font-size:12px;
+									font-weight: 500
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.icon-chevron-heavy-right {
+			background-image: none;
+			background-size: unset;
+			background-position: unset;
+			height: unset;
+			width: unset;
+			float: right;
+			&:after {
+				content: "Inventory";
+				& when (@SourceSansPro = 0) {
+					font-size: 16px;
+				}
+				& when (@SourceSansPro = 1) {
+					font-size: 14px;
+				}
+				font-weight: 500;
+				line-height: 100%;
+				text-align: center;
+				display: block
+			}
+			&:hover:after when (@SourceSansPro = 0) {
+				text-decoration: underline;
+			}
 		}
 	}
 
