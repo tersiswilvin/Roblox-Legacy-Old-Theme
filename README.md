@@ -67,16 +67,16 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201811
     - 201901
   - Legacy Next StyleGuide
-    -  ↳ Capital Brand Text in Modals
-    -  ↳ Chat Party icon
-    -  ↳ Chat Shadows <b>`Default`</b>
-    -  ↳ Leaderboards tab
-    -  ↳ Older
-    -  ↳ Older Chat
-    -  ↳ Remove people list popovers
-    -  ↳ Remove Place name
-    -  ↳ Remove Social Links
-    -  ↳ Rename Chat to Chat & Party
+    -  ├ Capital Brand Text in Modals
+    -  ├ Chat Party icon
+    -  ├ Chat Shadows <b>`Default`</b>
+    -  ├ Leaderboards tab
+    -  ├ Older
+    -  ├ Older Chat
+    -  ├ Remove people list popovers
+    -  ├ Remove Place name
+    -  ├ Remove Social Links
+    -  ├ Rename Chat to Chat & Party
   - My Avatar Gogo Spinner
   - Play Button Style
     - 201610
@@ -87,7 +87,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - 201901
     - 201906 <b>`Default`</b>
     - 2020+
-    -  ↳ Social media experiment type
+    -  └ Social media experiment type
       - None <b>`Default`</b>
       - share_icon
       - social_media
@@ -96,27 +96,27 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - None
     - Default <b>`Default`</b>
     - Filler
-    -  ↳ Games Page
+    -  └ Games Page
   - Restore legacy sidebar padding
   - Revert 201909+ updates <b>`Default`</b>
-    -  ↳ HCo Gotham SSm <b>`Default`</b>
-    -  ↳ Remove Edit Descriptio­n Icon
-    -  ↳ Remove Passkey <b>`Default`</b>
-    -  ↳ Remove Theme <b>`Default`</b>
-    -  ↳ Rename Connections to Friends `Default`
-    -  ↳ Upperca­se Roblox User Text
+    -  ├ HCo Gotham SSm <b>`Default`</b>
+    -  ├ Remove Edit Descriptio­n Icon
+    -  ├ Remove Passkey <b>`Default`</b>
+    -  ├ Remove Theme <b>`Default`</b>
+    -  ├ Rename Connections to Friends `Default`
+    -  └ Upperca­se Roblox User Text
   - Premium To BC
-    -  ↳ Tier
+    -  └ Tier
       - BC <b>`Default`</b>
       - TBC
       - OBC
   - Restore Home Header
-    -  ↳ Avatar Url
-    -  ↳ Members­hip
-    -  ↳ Year
+    -  ├ Avatar Url
+    -  ├ Members­hip
+    -  ├ Year
       - 2015
       - 2017 <b>`Default`</b>
-    -  ↳ Usernam­e
+    -  └ Usernam­e
   - Site Brand Style
     - 201408
     - 201412
@@ -139,9 +139,9 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - V3_2
     - V4
     - V4_1
-    -  ↳ Remove nondesigna­ted icons
+    -  └ Remove nondesigna­ted icons
   - Source Sans Pro Font
-    -  ↳ Google Version
+    -  └ Google Version
   - Transition animations <b>`Default`</b>
   - Use 2017 Red Branding (Messages / Bootstrapper)
   - Watermark Branch <b>`Experimental only`</b>
