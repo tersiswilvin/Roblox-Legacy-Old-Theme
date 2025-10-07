@@ -76,7 +76,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Remove people list popovers
     -  ├ Remove Place name
     -  ├ Remove Social Links
-    -  ├ Rename Chat to Chat & Party
+    -  └ Rename Chat to Chat & Party
   - My Avatar Gogo Spinner
   - Play Button Style
     - 201610
