@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20251015-00.1.5
+@version      20251015-01.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -9520,7 +9520,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20251015-00.1.5";
+	@Version: "20251015-01.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
@@ -14030,6 +14030,14 @@
 			& when (@SourceSansPro = 1) {
 				font-weight: 300;
 			}
+		}
+		
+		/*/ Temp solution until the new redesign is fully supported, an fyi this method WONT last long. /*/
+		#default-legacy-header {
+			display: block !important
+		}
+		#treatment-redesigned-header {
+			display: none !important
 		}
 	}
 	/*/ end of changes /*/
