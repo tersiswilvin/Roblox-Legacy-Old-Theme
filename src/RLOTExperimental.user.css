@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20251015-01.1.5
+@version      20251015-02.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -6438,7 +6438,7 @@
 				line-height: 100%;
 			}
 		}
-		.home-container a[href*="/sortName/v2/Continue"]:not([class*="btn"]):not([class*="css-"]), .home-container a[href*="/sortName/v2/Continue"]:not([class*="btn"]) [class*="-textOverride"] {
+		.home-container a[href*="/v2/Continue"]:not([class*="btn"]):not([class*="css-"]), .home-container a[href*="/v2/Continue"]:not([class*="btn"]) [class*="-textOverride"] {
 			& when (@LegacyHomeTitles = 1) {
 				font-size: 0;
 			}
@@ -6468,7 +6468,7 @@
 			}
 		}
 		& when (@LegacyHomeTitles = 1) {
-			.home-container a[href*="/sortName/v2/Favorites"]:not([class*="btn"]):not([class*="css-"]):before, .home-container a[href*="/sortName/v2/Favorites"]:not([class*="btn"]) [class*="-textOverride"]:before {
+			.home-container a[href*="/v2/Favorites"]:not([class*="btn"]):not([class*="css-"]):before, .home-container a[href*="/v2/Favorites"]:not([class*="btn"]) [class*="-textOverride"]:before {
 				content: 'My ';
 			}
 		}
@@ -9520,7 +9520,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20251015-01.1.5";
+	@Version: "20251015-02.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
