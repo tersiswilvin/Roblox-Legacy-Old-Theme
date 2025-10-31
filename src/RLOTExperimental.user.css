@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20251015-02.1.5
+@version      20251031-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -15,7 +15,7 @@
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark Theme colors"                      1
 @var          checkbox CroppedWideThumbs           "Crop Wide Gamecard Thumbnails"                   1
 @var          select   SiteCurrency                "Currency Brand Style"                            ["Robux*", "Tickets"]
-@var          select   CustomTheme                 "Custom Site Theme"                               ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
+@var          select   CustomTheme                 "Custom Site Theme"                               ["None", "April_Fools", "BloxTober*", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                     0
 @var          checkbox fiveColumn                  "Five column Avatar Editor"                       1
 @var          checkbox Fix1903ICT                  "Fixed 201903 Item Card Transitions"              0
@@ -71,6 +71,7 @@
 @var          checkbox RemoveVoiceChat             " ├ Remove Voice Chat"                            1
 @var          checkbox RenameCommunities           " ├ Rename Communities to Groups"                 1
 @var          checkbox RenameConnections           " ├ Rename Connections to Friends"                1
+@var          checkbox RenameUpgradeNowBtn         " ├ Rename Get Premium/Premium to Upgrade Now"    1
 @var          checkbox RenameHelpandSafety         " ├ Rename Help & Safety to Help"                 1
 @var          checkbox RenameStore                 " ├ Rename Official Store to Shop"                1
 @var          checkbox RenameX                     " ├ Rename X to Twitter"                          1
@@ -470,6 +471,11 @@
 
 	.content {
 		padding-top: 12px;
+		.no-gutter-ads.logged-in & when (@RevertExpandedhomepage = 1) {
+			@media (min-width: 1688px) {
+				margin-left: auto;
+			}
+		}
 	}
 
 	.container-main.in-app .page-content, .container-main.content-no-ads .page-content {
@@ -5447,6 +5453,7 @@
 	.age-verification-upsell-banner {
 		background-color: #f2f2f2;
 		border: 1px solid #b8b8b8;
+		border-radius: 3px;
 		& when (@RemoveUpdates = 1) and (@RemoveAgeVerification = 1) {
 			display: none
 		}
@@ -6512,7 +6519,7 @@
 			&:after {
 				content: 'Games';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 500;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6531,7 +6538,7 @@
 			&:after {
 				content: 'Catalog';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 500;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6573,7 +6580,7 @@
 			&:after {
 				content: 'Explore the catalog to find more clothes!';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 					line-height: 1.4em;
 				}
@@ -6584,7 +6591,7 @@
 				cursor: text;
 				@media (max-width: 543px) {
 					font-size: 12px;
-					& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+					& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 						font-weight: 400;
 					}
 					& when (@SourceSansPro = 1) {
@@ -6654,7 +6661,7 @@
 			&:before {
 				content: 'This game does not support ';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6672,7 +6679,7 @@
 			&:after {
 				content: '.';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6687,7 +6694,7 @@
 			&:after {
 				content: 'VIP Servers';
 				font-size: 20px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 700;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6703,7 +6710,7 @@
 			&:before {
 				content: 'Play this game with friends and other people you invite.';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6721,7 +6728,7 @@
 			span:before {
 				content: 'See all your VIP servers in the ';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6734,7 +6741,7 @@
 			span:after {
 				content: ' tab.';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 				}
 				& when (@SourceSansPro = 1) {
@@ -6789,7 +6796,7 @@
 			content: 'VIP servers let you play this game privately with friends, your clan, or people you invite!';
 			font-size: 12px;
 			font-weight: 400;
-			& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+			& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 				line-height: 1.4em;
 			}
 			& when (@SourceSansPro = 1) {
@@ -6801,7 +6808,7 @@
 			font-size: 0;
 			&:before {
 				content: 'Create VIP Server';
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-size: 20px;
 					font-weight: 700;
 				}
@@ -6818,7 +6825,7 @@
 			&:before {
 				content: 'Create a VIP Server for ';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 					line-height: 1.4em;
 				}
@@ -6834,7 +6841,7 @@
 			}
 			* {
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 					line-height: 1.4em;
 				}
@@ -6850,7 +6857,7 @@
 			&:after {
 				content: '?';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 400;
 					line-height: 1.4em;
 				}
@@ -6872,7 +6879,7 @@
 			&:before {
 				content: 'Game Name';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 500;
 					line-height: 1.4em;
 				}
@@ -6942,7 +6949,7 @@
 			&:after {
 				content: 'Game';
 				font-size: 16px;
-				& when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+				& when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
 					font-weight: 500;
 				}
 				& when (@SourceSansPro = 1) {
@@ -7396,62 +7403,108 @@
 				}
 			}
 		}
-		[data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
-			&:before when not (@RestoreAds = None) and (@RevertExpandedhomepage = 1) {
-				& when (@RestoreAds = Filler) {
-					content: "\000a0";
-				}
-				& when (@RestoreAds = Default) {
-					content: "Advertisement";
-					display: flex;
-					flex-direction: column-reverse;
-					font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-					font-size: 12px;
-					font-weight: 400;
-					line-height: 1.25;
-					text-transform: uppercase;
-					color: #191919;
-					text-align: left;
-					background-color: transparent;
-				}
-				margin: 0 auto;
-				float: left;
-				margin-right: 24px;
-				width: 160px;
-				height: 615px;
-				min-height: 600px;
-				& when (@RestoreAds = Default) {
-					& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
-						background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+		[data-internal-page-name="Home"] .content {
+			& when not (@RestoreAds = None) and (@RevertExpandedhomepage = 1) {
+				&:before {
+					& when (@RestoreAds = Filler) {
+						content: "\000a0";
 					}
-					& when (@LogoStyle = 201701) {
-						background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+					& when (@RestoreAds = Default) {
+						content: "Advertisement";
+						display: flex;
+						flex-direction: column-reverse;
+						font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+						font-size: 12px;
+						font-weight: 400;
+						line-height: 1.25;
+						text-transform: uppercase;
+						color: #191919;
+						text-align: left;
+						background-color: transparent;
 					}
-					background-size: 160px 600px;
-					background-repeat: no-repeat;
-					aspect-ratio: auto 160 / 600;
+					margin: 0 auto;
+					float: left;
+					margin-right: 24px;
+					width: 160px;
+					height: 615px;
+					min-height: 600px;
+					& when (@RestoreAds = Default) {
+						& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+							background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+						}
+						& when (@LogoStyle = 201701) {
+							background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+						}
+						background-size: 160px 600px;
+						background-repeat: no-repeat;
+						aspect-ratio: auto 160 / 600;
+					}
+					position: relative;
+					clear: unset;
+					& when (@RestoreAds = Default) {
+						cursor: pointer;
+					}
+					.light-theme& {
+						color: #191919;
+					}
+					.dark-theme& {
+						color: #e6e6e6;
+					}
+					@media (max-width: 1358px) {
+						display: none;
+					}
+					@media (max-width: 1174px) {
+						display: none;
+					}
 				}
-				position: relative;
-				clear: unset;
-				& when (@RestoreAds = Default) {
-					cursor: pointer;
-				}
-				.light-theme& {
-					color: #191919;
-				}
-				.dark-theme& {
-					color: #e6e6e6;
-				}
-				@media (max-width: 1358px) {
-					display: none;
-				}
-				@media (max-width: 1174px) {
-					display: none;
-				}
-			}
-			& when (@RevertExpandedhomepage = 1) {
-				@media (min-width: 1688px) {
-					margin-left: auto;
+				&:after {
+					& when (@RestoreAds = Filler) {
+						content: "\000a0";
+					}
+					& when (@RestoreAds = Default) {
+						content: "Advertisement";
+						display: flex;
+						flex-direction: column-reverse;
+						font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+						font-size: 12px;
+						font-weight: 400;
+						line-height: 1.25;
+						text-transform: uppercase;
+						color: #191919;
+						text-align: left;
+						background-color: transparent;
+					}
+					margin: 0 auto;
+					float: left;
+					margin-left: 24px;
+					width: 160px;
+					height: 615px;
+					min-height: 600px;
+					& when (@RestoreAds = Default) {
+						& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+							background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+						}
+						& when (@LogoStyle = 201701) {
+							background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+						}
+						background-size: 160px 600px;
+						background-repeat: no-repeat;
+						aspect-ratio: auto 160 / 600;
+					}
+					position: relative;
+					clear: unset;
+					& when (@RestoreAds = Default) {
+						cursor: pointer;
+					}
+					.light-theme& {
+						color: #191919;
+					}
+					.dark-theme& {
+						color: #e6e6e6;
+					}
+					@media (max-width: 1174px) {
+						display: none;
+					}
 				}
 			}
 		}
@@ -7477,11 +7530,11 @@
 			}
 		}
 
-		& when not (@RestoreAds = None) and (@RevertExpandedhomepage = 1) {
+		& when not (@RestoreAds = None) {
 			.abp, .profile-ads-container {
 				display: none;
 			}
-			[data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Home"] .no-gutter-ads.logged-in .content, [data-internal-page-name="Messages"] .content, [data-internal-page-name="CatalogItem"] #content, [data-internal-page-name="BundleDetail"] #content {
+			[data-internal-page-name="GameDetail"] .content, [data-internal-page-name="GroupDetails"] .content, [data-internal-page-name="Messages"] .content, [data-internal-page-name="CatalogItem"] #content, [data-internal-page-name="BundleDetail"] #content {
 				overflow: auto;
 				&:after {
 					& when (@RestoreAds = Filler) {
@@ -7619,34 +7672,36 @@
 					display: none;
 				}
 			}
-			#games-carousel-page when (@RestoreGameAds = 1) {
-				&:after {
-					content: "";
-					position: absolute;
-					top: 56px;
-					right: 0;
-					width: 330px;
-					height: 100%;
-					max-height: 525px;
-					display: none;
-					& when (@RestoreAds = Default) {
-						& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
-							background-image: url(https://images.rbxcdn.com/3361ecd3b9294a517ddf1f304819baac.jpg);
+			& when (@RestoreGameAds = 1) {
+				#games-carousel-page, #game-carousel-web-app {
+					&:after {
+						content: "";
+						position: absolute;
+						top: 56px;
+						right: 0;
+						width: 330px;
+						height: 100%;
+						max-height: 525px;
+						display: none;
+						& when (@RestoreAds = Default) {
+							& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+								background-image: url(https://images.rbxcdn.com/3361ecd3b9294a517ddf1f304819baac.jpg);
+							}
+							& when (@LogoStyle = 201701) {
+								background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
+							}
+							background-size: 300px 250px;
+							background-position: 15px 0;
+							background-repeat: space;
+							cursor: pointer;
 						}
-						& when (@LogoStyle = 201701) {
-							background-image: url(https://images.rbxcdn.com/b0ccc543789611e0d28fa371a7a73d89.png);
-						}
-						background-size: 300px 250px;
-						background-position: 15px 0;
-						background-repeat: space;
-						cursor: pointer;
+						@media (min-width: 1024px) {
+							display: inherit;
+						} 
 					}
 					@media (min-width: 1024px) {
-						display: inherit;
-					} 
-				}
-				@media (min-width: 1024px) {
-					margin-right: 345px;
+						margin-right: 345px;
+					}
 				}
 			}
 		}
@@ -7824,7 +7879,7 @@
 			cursor: text;
 		}
 		
-		body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button {
+		body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) #upgrade-now-button when (@RenameUpgradeNowBtn = 1) {
 			font-size: 0;
 			&:after {
 				& when (@SourceSansPro = 0) {
@@ -7840,7 +7895,7 @@
 		}
 	}
 
-	[data-internal-page-name="Games"] .content {
+	[data-internal-page-name="Games"] .content, [data-internal-page-name="GameCarousel"] .content {
 		max-width: none;
 		padding-left: 0;
 		padding-right: 0;
@@ -9520,7 +9575,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20251015-02.1.5";
+	@Version: "20251031-00.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
@@ -14039,6 +14094,18 @@
 		#treatment-redesigned-header {
 			display: none !important
 		}
+		
+		.profile-platform-container:has(.profile-tabs + .profile-tab-content:not(.hidden)) ~ .profile-container:has(.profile-statistics) {
+			visibility: unset;
+			opacity: 1;
+			pointer-events: unset;
+			position: unset;
+			left: unset;
+			overflow: unset;
+			.rbx-tabs-horizontal > ul, .tab-pane > div:not(.profile-statistics) {
+				display: none
+			}
+		}
 	}
 	/*/ end of changes /*/
 
@@ -15295,13 +15362,13 @@
 		height: 360px;
 		.dialog-body {
 			height: 296px;
-			&[style*="height: 294px"], &[style*="height: 288px"] {
+			&[style*="height: 294px"], &[style*="height: 292px"], &[style*="height: 288px"], &[style*="height: 286px"] {
 				height: 296px !important;
 			}
-			&[style*="height: 278px"], &[style*="height: 272px"] {
+			&[style*="height: 278px"], &[style*="height: 272px"], &[style*="height: 270px"] {
 				height: 280px !important;
 			}
-			&[style*="height: 262px"], &[style*="height: 246px"] {
+			&[style*="height: 262px"], &[style*="height: 256px"], &[style*="height: 246px"] {
 				height: 264px !important;
 			}
 			&[style*="height: 254px"] {
@@ -16133,13 +16200,13 @@
 		overflow: auto;
 		position: relative;
 		width: 100%;
-		&[style*="height: 294px"] {
+		&[style*="height: 294px"], &[style*="height: 292px"], &[style*="height: 288px"], &[style*="height: 286px"] {
 			height: 296px !important;
 		}
-		&[style*="height: 278px"] {
+		&[style*="height: 278px"], &[style*="height: 272px"], &[style*="height: 270px"] {
 			height: 280px !important;
 		}
-		&[style*="height: 262px"] {
+		&[style*="height: 262px"], &[style*="height: 256px"], &[style*="height: 246px"] {
 			height: 264px !important;
 		}
 		&[style*="height: 254px"] {
@@ -20488,13 +20555,13 @@
 				.dialog-body {
 					background-color: #E3E3E3;
 					height: 256px;
-					&[style*="height: 294px"], &[style*="height: 288px"] {
+					&[style*="height: 294px"], &[style*="height: 292px"], &[style*="height: 288px"], &[style*="height: 286px"] {
 						height: 256px !important;
 					}
-					&[style*="height: 278px"], &[style*="height: 272px"] {
+					&[style*="height: 278px"], &[style*="height: 272px"], &[style*="height: 270px"] {
 						height: 240px !important;
 					}
-					&[style*="height: 262px"], &[style*="height: 246px"] {
+					&[style*="height: 262px"], &[style*="height: 256px"], &[style*="height: 246px"] {
 						height: 224px !important;
 					}
 					&[style*="height: 254px"] {
@@ -20833,11 +20900,16 @@
 				padding: 6px 8px;
 				margin: 0 0 2px;
 				.link-card-container {
+					&:before {
+						border: none;
+					}
 					background-color: transparent;
+					border: none;
 					width: 100%;
 					max-width: 100%;
 					.light-theme .dialogs &, .dark-theme .dialogs & {
 						background-color: transparent;
+						border: none;
 						padding: 0;
 						margin: 0;
 						& when (@LegacyNSGBoxShadows = 1) {
@@ -23482,9 +23554,28 @@
 			display: block;
 			&:before {
 				content: "";
-				background-color: transparent;
+				& when (@BoxShadows = 0) {
+					background-color: #d1d1d1;
+					& when not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+						background-color: #d1d1d1;
+					}
+					& when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1) {
+						background-color: transparent;
+					}
+				}
+				& when (@BoxShadows = 1) {
+					background-color: #fff;
+				}
 				background-image: url(@HHAvatarUrl);
 				background-size: 100%;
+				& when (@BoxShadows = 1) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+					& when (@TransitionalAnimations = 1) {
+						-webkit-transition: box-shadow 200ms ease;
+						-o-transition: box-shadow 200ms ease;
+						transition: box-shadow 200ms ease;
+					}
+					box-shadow: 0 1px 6px 0 rgb(25 25 25 / 75%);
+				}
 				border: 0;
 				& when (@HHYear = 2015) {
 					margin-left: 12px;
@@ -23499,7 +23590,7 @@
 				margin-right: 24px;
 				position: relative;
 				vertical-align: bottom;
-				& when (@HHYear = 2017) {
+				& when (@HHYear = 2017) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
 					border-radius: 50%;
 				}
 				cursor: pointer;
@@ -23511,6 +23602,38 @@
 				@media (max-width: 767px) {
 					display:none;
 				}
+				.light-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+					background-color: #fff;
+					box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
+				}
+				.dark-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+					background-color: #000;
+					box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
+				}
+			}
+			&:hover:before when (@BoxShadows = 1) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+				& when (@TransitionalAnimations = 1) {
+					-webkit-transition: box-shadow 200ms ease;
+					-o-transition: box-shadow 200ms ease;
+					transition: box-shadow 200ms ease;
+					.light-theme & {
+						& when (@TransitionalAnimations = 1) {
+							-webkit-transition: box-shadow 200ms ease;
+							-o-transition: box-shadow 200ms ease;
+							transition: box-shadow 200ms ease;
+						}
+						box-shadow: 0 1px 6px 0 rgb(25 25 25 / 75%);
+					}
+					.dark-theme & {
+						& when (@TransitionalAnimations = 1) {
+							-webkit-transition: box-shadow 200ms ease;
+							-o-transition: box-shadow 200ms ease;
+							transition: box-shadow 200ms ease;
+						}
+						box-shadow: 0 1px 6px 0 rgb(230 230 230 / 75%);
+					}
+				}
+				box-shadow: 0 1px 6px 0 rgb(25 25 25 / 75%);
 			}
 			&:after when (@HHMembership = 1) {
 				& when (@PremiumToBC = 0) {
@@ -23569,30 +23692,21 @@
 						content: "@{HHUsername}!";
 					}
 					& when (@SourceSansPro = 0) {
-						& when not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
-							font-size: 32px;
-							font-weight: 800;
-							@media (max-width: 767px) {
-								font-size:24px
-							}
-						}
-						& when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1) {
-							font-size: 44px;
-							font-weight: 800;
-							@media (max-width: 767px) {
-								font-size:20px
-							}
+						font-size: 32px;
+						font-weight: 800;
+						@media (max-width: 767px) {
+							font-size:24px
 						}
 					}
 					& when (@SourceSansPro = 1) {
-						& when not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+						& when not ((@HHYear = 2015) and (@SSPGVersion = V5)) {
 							font-size: 36px;
 							font-weight: 400;
 							@media (max-width: 767px) {
 								font-size:30px
 							}
 						}
-						& when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1) {
+						& when (@HHYear = 2015) and (@SSPGVersion = V5) {
 							font-size: 48px;
 							font-weight: 300;
 							@media (max-width: 767px) {
@@ -23602,20 +23716,20 @@
 					}
 					line-height: 1em;
 					padding: 5px 0;
-					& when (@HHYear = 2015) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+					& when (@HHYear = 2015) and not ((@SourceSansPro = 1) and (@SSPGVersion = V5)) {
 						margin: 50px 0 12px;
 					}
-					& when (@HHYear = 2015) and (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1) or (@HHYear = 2017) {
+					& when (@HHYear = 2015) and (@SourceSansPro = 1) and (@SSPGVersion = V5) or (@HHYear = 2017) {
 						margin: 36px 0 12px;
 					}
 					& when (@HHMembership = 0) {
-						& when (@HHYear = 2015) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+						& when (@HHYear = 2015) and not ((@SourceSansPro = 1) and (@SSPGVersion = V5)) {
 							margin-top: 74px;
 							@media (max-width: 991px) {
 								margin-top: 50px;
 							}
 						}
-						& when (@HHYear = 2015) and (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1) or (@HHYear = 2017) {
+						& when (@HHYear = 2015) and (@SourceSansPro = 1) and (@SSPGVersion = V5) or (@HHYear = 2017) {
 							margin-top: 60px;
 							@media (max-width: 991px) {
 								margin-top: 36px;
@@ -23627,10 +23741,10 @@
 					@media(max-width: 991px) {
 						margin: 12px 0 6px;
 						& when (@HHMembership = 0) {
-							& when (@HHYear = 2015) and not ((@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1)) {
+							& when (@HHYear = 2015) and not ((@SourceSansPro = 1) and (@SSPGVersion = V5)) {
 								margin-top: 50px;
 							}
-							& when (@HHYear = 2015) and (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1) or (@HHYear = 2017) {
+							& when (@HHYear = 2015) and (@SourceSansPro = 1) and (@SSPGVersion = V5) or (@HHYear = 2017) {
 								margin-top: 36px;
 							}
 						}
@@ -23639,7 +23753,7 @@
 						& when (@HHYear = 2015) {
 							max-width: auto;
 							max-width: calc(100% - 52px - 12px);
-							& when (@LegacyNextStyleGuideButtons = 1) and (@LegacyNSGOlder = 1) {
+							& when (@SSPGVersion = V5) {
 								& when (@SourceSansPro = 0) {
 									font-size: 20px;
 								}
@@ -29081,11 +29195,11 @@
 
 		/* Extras */
 
-		body[data-internal-page-name="Games"].btr-no-hamburger .container-main {
+		body[data-internal-page-name="Games"].btr-no-hamburger .container-main, body[data-internal-page-name="GameCarousel"].btr-no-hamburger .container-main {
 			margin-left: 175px;
 		}
 
-		html body[data-internal-page-name="Games"] .container-main > .content {
+		html body[data-internal-page-name="Games"] .container-main > .content, html body[data-internal-page-name="GameCarousel"] .container-main > .content {
 			margin: 40px !important;
 		}
 
@@ -29121,11 +29235,11 @@
 			border-radius: 2px;
 			z-index: -1;
 		}
-		body[data-internal-page-name="Games"].btr-no-hamburger .container-main {
+		body[data-internal-page-name="Games"].btr-no-hamburger .container-main, body[data-internal-page-name="GameCarousel"].btr-no-hamburger .container-main {
 			margin-left: 175px;
 		}
 
-		html body[data-internal-page-name="Games"] .container-main > .content {
+		html body[data-internal-page-name="Games"] .container-main > .content, html body[data-internal-page-name="GameCarousel"] .container-main > .content {
 			margin: 40px !important;
 		}
 	}
