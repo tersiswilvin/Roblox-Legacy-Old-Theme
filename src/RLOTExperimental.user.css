@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20251101-01.1.5
+@version      20251105-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -7398,107 +7398,109 @@
 				}
 			}
 		}
-		[data-internal-page-name="Home"] .no-gutter-ads.logged-in .content when not (@RestoreAds = None) and (@RevertExpandedhomepage = 1) {
-			overflow: auto;
-			&:before {
-				& when (@RestoreAds = Filler) {
-					content: "\000a0";
-				}
-				& when (@RestoreAds = Default) {
-					content: "Advertisement";
-					display: flex;
-					flex-direction: column-reverse;
-					font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-					font-size: 12px;
-					font-weight: 400;
-					line-height: 1.25;
-					text-transform: uppercase;
-					color: #191919;
-					text-align: left;
-					background-color: transparent;
-				}
-				margin: 0 auto;
-				float: left;
-				margin-right: 24px;
-				width: 160px;
-				height: 615px;
-				min-height: 600px;
-				& when (@RestoreAds = Default) {
-					& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
-						background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+		[data-internal-page-name="Home"] .no-gutter-ads.logged-in .content {
+			& when not (@RestoreAds = None) and (@RevertExpandedhomepage = 1) {
+				overflow: auto;
+				&:before {
+					& when (@RestoreAds = Filler) {
+						content: "\000a0";
 					}
-					& when (@LogoStyle = 201701) {
-						background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+					& when (@RestoreAds = Default) {
+						content: "Advertisement";
+						display: flex;
+						flex-direction: column-reverse;
+						font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+						font-size: 12px;
+						font-weight: 400;
+						line-height: 1.25;
+						text-transform: uppercase;
+						color: #191919;
+						text-align: left;
+						background-color: transparent;
 					}
-					background-size: 160px 600px;
-					background-repeat: no-repeat;
-					aspect-ratio: auto 160 / 600;
-				}
-				position: relative;
-				clear: unset;
-				& when (@RestoreAds = Default) {
-					cursor: pointer;
-				}
-				.light-theme& {
-					color: #191919;
-				}
-				.dark-theme& {
-					color: #e6e6e6;
-				}
-				@media (max-width: 1358px) {
-					display: none;
-				}
-				@media (max-width: 1174px) {
-					display: none;
-				}
-			}
-			&:after {
-				& when (@RestoreAds = Filler) {
-					content: "\000a0";
-				}
-				& when (@RestoreAds = Default) {
-					content: "Advertisement";
-					display: flex;
-					flex-direction: column-reverse;
-					font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-					font-size: 12px;
-					font-weight: 400;
-					line-height: 1.25;
-					text-transform: uppercase;
-					color: #191919;
-					text-align: left;
-					background-color: transparent;
-				}
-				margin: 0 auto;
-				float: left;
-				margin-left: 24px;
-				width: 160px;
-				height: 615px;
-				min-height: 600px;
-				& when (@RestoreAds = Default) {
-					& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
-						background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+					margin: 0 auto;
+					float: left;
+					margin-right: 24px;
+					width: 160px;
+					height: 615px;
+					min-height: 600px;
+					& when (@RestoreAds = Default) {
+						& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+							background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+						}
+						& when (@LogoStyle = 201701) {
+							background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+						}
+						background-size: 160px 600px;
+						background-repeat: no-repeat;
+						aspect-ratio: auto 160 / 600;
 					}
-					& when (@LogoStyle = 201701) {
-						background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+					position: relative;
+					clear: unset;
+					& when (@RestoreAds = Default) {
+						cursor: pointer;
 					}
-					background-size: 160px 600px;
-					background-repeat: no-repeat;
-					aspect-ratio: auto 160 / 600;
+					.light-theme& {
+						color: #191919;
+					}
+					.dark-theme& {
+						color: #e6e6e6;
+					}
+					@media (max-width: 1358px) {
+						display: none;
+					}
+					@media (max-width: 1174px) {
+						display: none;
+					}
 				}
-				position: relative;
-				clear: unset;
-				& when (@RestoreAds = Default) {
-					cursor: pointer;
-				}
-				.light-theme& {
-					color: #191919;
-				}
-				.dark-theme& {
-					color: #e6e6e6;
-				}
-				@media (max-width: 1174px) {
-					display: none;
+				&:after {
+					& when (@RestoreAds = Filler) {
+						content: "\000a0";
+					}
+					& when (@RestoreAds = Default) {
+						content: "Advertisement";
+						display: flex;
+						flex-direction: column-reverse;
+						font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+						font-size: 12px;
+						font-weight: 400;
+						line-height: 1.25;
+						text-transform: uppercase;
+						color: #191919;
+						text-align: left;
+						background-color: transparent;
+					}
+					margin: 0 auto;
+					float: left;
+					margin-left: 24px;
+					width: 160px;
+					height: 615px;
+					min-height: 600px;
+					& when (@RestoreAds = Default) {
+						& when (@LogoStyle = 201408) or (@LogoStyle = 201412) or (@LogoStyle = 201511) {
+							background-image: url(https://images.rbxcdn.com/f6873fd4b192df10f0cb0f41f6a344e7.jpg);
+						}
+						& when (@LogoStyle = 201701) {
+							background-image: url(https://images.rbxcdn.com/e1f0ccbb998d94f80f20b0134a013def.png);
+						}
+						background-size: 160px 600px;
+						background-repeat: no-repeat;
+						aspect-ratio: auto 160 / 600;
+					}
+					position: relative;
+					clear: unset;
+					& when (@RestoreAds = Default) {
+						cursor: pointer;
+					}
+					.light-theme& {
+						color: #191919;
+					}
+					.dark-theme& {
+						color: #e6e6e6;
+					}
+					@media (max-width: 1174px) {
+						display: none;
+					}
 				}
 			}
 			@media (min-width: 1688px) {
@@ -9572,7 +9574,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20251031-00.1.5";
+	@Version: "20251105-00.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
@@ -27910,11 +27912,20 @@
 	}
 	.transparent-background-menu .menu-option, .transparent-background-menu .menu-option-content {
 		background-color: #fff !important;
+		&:hover {
+			background-color: #f2f2f2 !important;
+		}
 		.light-theme & {
 			background-color: #fff !important;
+			&:hover {
+				background-color: #f2f2f2 !important;
+			}
 		}
 		.dark-theme & {
 			background-color: #000 !important;
+			&:hover {
+				background-color: #0d0d0d !important;
+			}
 		}
 	}
 	
