@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20260418-00.1.5
+@version      20260418-01.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -29,6 +29,8 @@
 @var          checkbox LNSGPartyIcon               " ├ Chat Party icon"                              0
 @var          checkbox LNSGBoxShadows              " ├ Chat Shadows"                                 1
 @var          checkbox LNSGBoxLeaderboards         " ├ Leaderboards tab"                             0
+@var          checkbox LNSGLeftLoginHeader         " ├ Left Align Login Header"                      0
+@var          checkbox LNSGLoginErrorSpacing       " ├ Login Password Error Spacing"                 0
 @var          checkbox LNSGOlder                   " ├ Older"                                        0
 @var          checkbox LNSGOlderChat               " ├ Older Chat"                                   0
 @var          checkbox LNSGRemoveplp               " ├ Remove people list popovers"                  0
@@ -3578,7 +3580,7 @@
 		.rbx-tab.six-tab, .rbx-tab.seven-tab {
 			width: 20%;
 		}
-		.right-wrapper-placeholder-six-column, .right-wrapper-six-column, .tab-horizontal-submenu.six-column, .right-wrapper-placeholder-seven-column, .right-wrapper-seven-column {
+		.right-wrapper-placeholder-six-column, .right-wrapper-six-column, .tab-horizontal-submenu.six-column, .right-wrapper-placeholder-seven-column, .right-wrapper-seven-column, .tab-horizontal-submenu.seven-column {
 			width: 680px;
 		}
         .content.six-column, .content.seven-column {
@@ -5268,12 +5270,15 @@
 			width: 100%;
 		}
 	}
-	[data-internal-page-name="Login"] .container-main {
-		min-height: 60%;
-		min-height: calc(100% - 183px);
-		margin: 40px auto 0;
-		padding-bottom: 40px;
-	}
+    [data-internal-page-name="Login"] .container-main {
+        min-height: 60%;
+        min-height: calc(100% - 183px);
+        margin: 40px auto 0;
+        padding-bottom: 40px;
+        @media (max-width: 991px) {
+            margin-top: 90px;
+        }
+    }
 	
 	& when (@AvatarGogoSpinner = 1) {
 		@-webkit-keyframes gogoloader {
@@ -7201,6 +7206,21 @@
 				left: 0;
 			}
 		}
+        .login-container .background-image {
+            min-height: unset;
+            display: block;
+        }
+        .background-image .login-content-wrapper {
+            display: block;
+        }
+        .login-container .login-header {
+            margin-bottom: 18px;
+        }
+        .login-container .forgot-credentials-link {
+            font-size: 16px;
+            font-weight: 300;
+            margin: 12px 0;
+        }
 
 		& when (@RenameHelpandSafety = 1) {
 			#settings-popover-menu li:has(a[href*="/help-safety"]) a, #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(4) button {
@@ -8405,6 +8425,9 @@
 					font-weight: 300;
 				}
 			}
+            .text-link,.vlist .list-item .list-body .list-content a,.vlist .list-item .list-body .list-content & a {
+                font-weight: 300
+            }
 			.rbx-left-col .rbx-scrollbar a, .rbx-left-col .rbx-scrollbar a:hover, .rbx-left-col .rbx-scrollbar a:focus {
 				font-weight: 400;
 				span {
@@ -8453,7 +8476,7 @@
 					}
 				}
 			}
-			h2, .h2, .game-main-content .game-calls-to-action h1 {
+			h2, .h2, .game-main-content .game-calls-to-action h1, .login-container .login-header  {
 				font-size: 30px;
 				font-weight: 400;
 				@media (max-width: 767px) {
@@ -9609,7 +9632,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20260418-00.1.5";
+	@Version: "20260418-01.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
@@ -16773,6 +16796,12 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
+        #RollerContainer.rollercoaster-background.marketing-background-1 {
+            background-image: none;
+            &-localized-id, &-localized-de, &-localized-jp, &-localized-us {
+                background-image: none;
+            }
+        }
 		#InnerRollerContainer {
 			background-image: none;
 		}
@@ -16827,7 +16856,7 @@
 			margin: 0;
 		}
 
-		#app-stores-container {
+		#app-stores-container, .lower-logo-container .padding-top-xxlarge {
 			display: none;
 		}
 
@@ -20402,9 +20431,14 @@
 			cursor: text;
 		}
 
-		#login-base .login-header {
+		#login-base .login-header when (@LNSGLeftLoginHeader = 1) {
 			text-align: left
 		}
+        & when (@LNSGLoginErrorSpacing = 1) {
+            .login-base-container .password-form-group, .login-revamp-container .password-form-group {
+                margin-bottom: 12px;
+            }
+        }
 
 		#chat-main .chat-header-title:after when (@LNSGRenameChat = 1) {
 			content: " & Party";
