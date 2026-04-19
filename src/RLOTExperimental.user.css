@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20251204-00.1.5
+@version      20260418-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2261,6 +2261,19 @@
 			@media (min-width: 1688px) {
 				max-width: 120px;
 			}
+            @media (min-width: 1141px) {
+                .left-nav-new-width & {
+                    width: auto;
+                    max-width: 76px;
+                    margin: 0 12px;
+                    padding: 0px;
+                }
+            }
+            @media (min-width: 1688px) {
+                .left-nav-new-width & {
+                    max-width: 120px;
+                }
+            }
 		}
 		.navbar-search {
 			box-sizing: border-box;
@@ -2510,11 +2523,11 @@
 
 	.rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username {
 		margin-right: 0;
-		&:after {
+		head:has([data-isunder13]) ~ body &:after {
 			content: ": "
 		}
 	}
-	.xsmall.age-bracket-label-age.text-secondary, .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username, .rbx-header .rbx-navbar-icon-group .age-bracket-label .dynamic-overflow-container  {
+	.xsmall.age-bracket-label-age.text-secondary, .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username  {
 		color: inherit;
 		display: inline;
 		& when (@SourceSansPro = 1) {
@@ -2522,6 +2535,20 @@
 			font-weight: 400;
 		}
 	}
+    .rbx-header .rbx-navbar-icon-group .age-bracket-label .dynamic-overflow-container {
+        color: inherit;
+		display: inline;
+        & when (@SourceSansPro = 1) {
+			font-size: 12px;
+			font-weight: 400;
+		}
+        head:has([data-isunder13="true"]) ~ body &:after {
+			content: "<13"
+		}
+        head:has([data-isunder13="false"]) ~ body &:after {
+			content: "13+"
+		}
+    }
 
 	.age-bracket-label.text-header .text-link.dynamic-overflow-container:hover, .age-bracket-label.text-header .text-link.dynamic-overflow-container:focus {
 		text-decoration: none;
@@ -3539,33 +3566,31 @@
 		}
 	}
 	& when (@fiveColumn = 1) {
-		.right-panel.six-column {
+		.right-panel.six-column, .right-panel.seven-column {
 			width: 670px;
 		}
-		.rbx-tab.six-tab:nth-child(5), #avatar-react-container .rbx-tab.six-tab:nth-child(4) {
+		.rbx-tab.six-tab:nth-child(5), .rbx-tab.seven-tab:nth-child(5), #avatar-react-container .rbx-tab.six-tab:nth-child(4), #avatar-react-container .rbx-tab.seven-tab:nth-child(4), #avatar-react-container .rbx-tab.seven-tab:nth-child(6) {
 			display: none;
 		}
-		#avatar-react-container .rbx-tab.six-tab:nth-child(5) {
+		#avatar-react-container .rbx-tab.six-tab:nth-child(5), #avatar-react-container .rbx-tab.seven-tab:nth-child(5) {
 			display: block;
 		}
-		.rbx-tab.six-tab {
+		.rbx-tab.six-tab, .rbx-tab.seven-tab {
 			width: 20%;
 		}
-		.right-wrapper-placeholder-six-column, .right-wrapper-six-column, .tab-horizontal-submenu.six-column {
+		.right-wrapper-placeholder-six-column, .right-wrapper-six-column, .tab-horizontal-submenu.six-column, .right-wrapper-placeholder-seven-column, .right-wrapper-seven-column {
 			width: 680px;
 		}
-		.content.six-column {
-			width: 970px;
-		}
-		.ropro-changes .content.six-column {
-			width: 1002px;
-		}
-		@media (max-width: 1154px) {
-			.ropro-changes .content.six-column {
-				max-width: 1002px;
-			}
-		}
-		.items-list.avatar-item-list .item-card.six-column {
+        .content.six-column, .content.seven-column {
+            width: 970px;
+            .ropro-changes & {
+                width: 1002px;
+                @media (max-width: 1154px) {
+                    max-width: 1002px;
+                }
+            }
+        }
+		.items-list.avatar-item-list .item-card.six-column, .items-list.avatar-item-list .item-card.seven-column {
 			width: 20%;
 			& when not ((@LegacyNextStyleGuide = 1) and (@LNSGSmallerCaptions = 1)) {
 				height: 188px;
@@ -8556,19 +8581,22 @@
 			}
 		}
 	}
-	& when (@RestoreSidebarPadding = 0) {
-		.rbx-left-col ul {
-			padding: 5px 0 0 10px;
-		}
-	}
-	& when (@RestoreSidebarPadding = 1) {
-		.rbx-left-col ul {
-			padding: 5px 10px 0;
-		}
-		.rbx-left-col .rbx-scrollbar .left-col-list {
-			width: 100%;
-		}
-	}
+    & when (@RestoreSidebarPadding = 0) {
+        .rbx-left-col ul {
+            padding: 5px 0 0 10px;
+        }
+        .rbx-left-col .rbx-scrollbar .left-col-list {
+            width: 165px;
+        }
+    }
+    & when (@RestoreSidebarPadding = 1) {
+        .rbx-left-col ul {
+            padding: 5px 10px 0;
+        }
+        .rbx-left-col .rbx-scrollbar .left-col-list {
+            width: 100%;
+        }
+    }
 
 	/*/ TODO : Fix the original avatar editor options CSS /*/
 
@@ -9477,11 +9505,16 @@
 		background-size: 40px;
 	}
 
-	.container-main.full-screen .content {
-		max-width: 970px;
-		padding-top: 12px;
-		margin: 0 auto;
-	}
+    .container-main {
+        &.full-screen .content {
+            max-width: 970px;
+            padding-top: 12px;
+            margin: 0 auto;
+        }
+        .no-gutter-ads.left-nav-new-width main& {
+            --margin-left: auto;
+        }
+    }
 	.verification-modal .modal-dialog .modal-content {
 		border-radius: 5px;
 	}
@@ -9576,7 +9609,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20251204-00.1.5";
+	@Version: "20260418-00.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
@@ -9683,6 +9716,109 @@
 			}
 		}
 	}
+    .left-nav [class="width-[288px]"] when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
+        min-height: 100%;
+        position: relative;
+        &:before {
+            & when (@WatermarkStyle = Developers) {
+                content: "(Legacy Theme) Development Purposes Only";
+            }
+            & when (@WatermarkStyle = Testers) {
+                content: "(Legacy Theme) Testing Purposes Only";
+            }
+            color: #191919;
+            font-size: 18px;
+            line-height: 18px;
+            text-align: center;
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            & when (@RestoreSidebarPadding = 0) {
+                width: 165px;
+                padding: 0 0 0 10px
+            }
+            & when (@RestoreSidebarPadding = 1) {
+                width: 100%;
+                padding: 0 10px;
+            }
+            margin: 0 0 24px;
+            & when (@SourceSansPro = 0) {
+                .gotham-font &, .builder-font & {
+                    font-size: 16px;
+                    line-height: 16px;
+                    margin: 0 0 20px;
+                }
+            }
+            .light-theme & {
+                & when (@WatermarkStyle = Developers) {
+                    content: "(Light Theme) Development Purposes Only";
+                }
+                & when (@WatermarkStyle = Testers) {
+                    content: "(Light Theme) Testing Purposes Only";
+                }
+                color: #191919;
+            }
+            .dark-theme & {
+                & when (@WatermarkStyle = Developers) {
+                    content: "(Dark Theme) Development Purposes Only";
+                }
+                & when (@WatermarkStyle = Testers) {
+                    content: "(Dark Theme) Testing Purposes Only";
+                }
+                color: #e6e6e6;
+            }
+        }
+        .left-col-list {
+            padding-bottom: 78px;
+            & when (@SourceSansPro = 0) {
+                .gotham-font &, .builder-font & {
+                    padding-bottom: 68px;
+                }
+            }
+        }
+        &:after {
+            & when (@WatermarkStyle = Developers) {
+                content: "Build @{Version}";
+            }
+            & when (@WatermarkStyle = Testers) {
+                content: "Milestone @{Version}";
+            }
+            color: #b8b8b8;
+            font-size: 12px;
+            line-height: 12px;
+            text-align: center;
+            white-space: pre;
+            position: absolute;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            & when (@RestoreSidebarPadding = 0) {
+                width: 165px;
+                padding: 0 0 0 10px
+            }
+            & when (@RestoreSidebarPadding = 1) {
+                width: 100%;
+                padding: 0 10px;
+            }
+            margin: 0 0 6px;
+            & when (@SourceSansPro = 0) {
+                .gotham-font &, .builder-font & {
+                    font-size: 10px;
+                    line-height: 10px;
+                    margin: 0 0 5px;
+                }
+            }
+            .light-theme & {
+                color: #b8b8b8;
+            }
+            .dark-theme & {
+                color: #474747;
+            }
+        }
+    }
 
 	.item-card-thumb-container .item-expire-time-label {
 		background-color: #d86868;
@@ -13114,7 +13250,7 @@
 		}
 	}
 
-	.game-card-container thumbnail-2d .game-card-thumb, .game-card-thumb-container .game-card-thumb, .game-card-container thumbnail-2d, .game-card-thumb-container {
+	.game-card-container thumbnail-2d .game-card-thumb, .game-card-thumb-container .game-card-thumb, .game-card-container thumbnail-2d, .game-card-thumb-container, .game-card-link .game-tile-thumb {
 		border-radius: 0;
 	}
 
