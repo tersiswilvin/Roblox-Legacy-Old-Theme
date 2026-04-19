@@ -1,5 +1,5 @@
 # Roblox Legacy Old Theme
-**[Roblox Legacy Old Theme](https://userstyles.world/style/5399/)** is a theme for [stylus](https://add0n.com/stylus.html) (see [Installation](#Installation) for installation details) that brings back the 2019 theme primarily from June - September 2019 with customizable options for the end user.
+**[Roblox Legacy Old Theme](https://userstyles.world/style/5399/)** is a theme for [stylus](https://add0n.com/stylus.html) (see [Installation](#Installation) for installation details) that brings back the 2019 "legacy" theme primarily from June - September 2019 with customizable options for the end user.
 
 <p align="center">
     <img src="Thumbnails/Outputs/RLOT.png" alt="Roblox Legacy Old Theme image" title="Roblox Legacy Theme Preview">
@@ -12,6 +12,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 
 ## Features
 - Highly Customizable :
+  - Avatar Editor pre-1.5 border width
   - Badge Style
     - 201309
     - 201410
@@ -39,18 +40,17 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     - RPlus_OBC
   - Force Light Theme on signup
   - Five column Avatar Editor <b>`Default`</b>
-  - Fixed 2019M Item Card Transitions
-  - Gotham Font Fixes
+  - Fixed 201903 Item Card Transition­s
   - Greeting Text Style
     - None <b>`Default`</b>
     - Hello
     - HelloExclamation
     - Exclamation
   - Item Card Style
-    - Pre-2018
-    - 2019E
-    - 2019M <b>`Default`</b>
-    - 2019L
+    - Pre-201812
+    - 201812
+    - 201903 <b>`Default`</b>
+    - 201908
   - Legacy Game Headers (BTRoblox)
   - Legacy Home Titles
   - Legacy Footer Text
@@ -71,12 +71,16 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Chat Party icon
     -  ├ Chat Shadows <b>`Default`</b>
     -  ├ Leaderboards tab
+    -  ├ Left Align Login Header
+    -  ├ Login Password Error Spacing
     -  ├ Older
     -  ├ Older Chat
     -  ├ Remove people list popovers
     -  ├ Remove Place name
     -  ├ Remove Social Links
-    -  └ Rename Chat to Chat & Party
+    -  ├ Rename Chat to Chat & Party
+    -  ├ Rename Social Links to Social Media
+    -  └ Smaller item card captions
   - My Avatar Gogo Spinner
   - Play Button Style
     - 201610
@@ -92,31 +96,64 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
       - share_icon
       - social_media
   - Pre-2020 Event Thumbnail Aspect Ratio <b>`Default`</b>
-  - Restore Ads
-    - None
-    - Default <b>`Default`</b>
-    - Filler
-    -  └ Games Page
   - Restore legacy sidebar padding
   - Revert 201909+ updates <b>`Default`</b>
-    -  ├ HCo Gotham SSm <b>`Default`</b>
+    -  ├ Linkabl­e Genres <b>`Default`</b>
+    -  ├ Login Methods Sectioned
+    -  ├ Remove Account Switcher <b>`Default`</b>
+    -  ├ Remove Age Group <b>`Default`</b>
+    -  ├ Remove Age Verificati­on <b>`Default`</b>
+    -  ├ Remove Camera <b>`Default`</b>
     -  ├ Remove Edit Descriptio­n Icon
+    -  ├ Remove Game Events <b>`Default`</b>
+    -  ├ Remove Group Announceme­nts <b>`Default`</b>
+    -  ├ Remove Group Content Moderation <b>`Default`</b>
+    -  ├ Remove Group Events <b>`Default`</b>
+    -  ├ Remove Group Forums <b>`Default`</b>
+    -  ├ Remove Group Guilded <b>`Default`</b>
+    -  ├ Remove Osa Context Card <b>`Default`</b>
     -  ├ Remove Passkey <b>`Default`</b>
+    -  ├ Remove Passkey Manage Button <b>`Default`</b>
+    -  ├ Remove Player Feedback Banner <b>`Default`</b>
+    -  ├ Remove Profile Posts <b>`Default`</b>
+    -  ├ Remove Profile Store <b>`Default`</b>
+    -  ├ Remove Quick Sign In <b>`Default`</b>
+    -  ├ Remove Sub Genres <b>`Default`</b>
     -  ├ Remove Theme <b>`Default`</b>
-    -  ├ Rename Connections to Friends `Default`
+    -  ├ Remove Verified Badge <b>`Default`</b>
+    -  ├ Remove Voice Chat <b>`Default`</b>
+    -  ├ Rename Communitie­s to Groups <b>`Default`</b>
+    -  ├ Rename Connection­s to Friends <b>`Default`</b>
+    -  ├ Rename Get Premium/­Premium to Upgrade Now <b>`Default`</b>
+    -  ├ Rename Help & Safety to Help <b>`Default`</b>
+    -  ├ Rename Official Store to Shop <b>`Default`</b>
+    -  ├ Rename X to Twitter <b>`Default`</b>
+    -  ├ Restore Ads <b>`Default`</b>
+      - None
+      - Default
+      - Filler
+      - └ Games Page
+    -  ├ Restore HCo Gotham SSm
+    -  ├ Restore Home Header
+      -  ├ Avatar Url
+      -  ├ Members­hip
+      -  ├ Year
+        - 2015
+        - 2017 <b>`Default`</b>
+      -  └ Usernam­e
+    -  ├ Revert Expanded home page
+    -  ├ Revert Game Modals
+    -  ├ Revert Login
+    -  ├ Revert React Avatar Editor
+    -  ├ Revert React People list
+    -  ├ Revert Server Playerlist­s
+    -  ├ Revert Webblox
     -  └ Upperca­se Roblox User Text
   - Premium To BC
     -  └ Tier
       - BC <b>`Default`</b>
       - TBC
       - OBC
-  - Restore Home Header
-    -  ├ Avatar Url
-    -  ├ Members­hip
-    -  ├ Year
-      - 2015
-      - 2017 <b>`Default`</b>
-    -  └ Usernam­e
   - Site Brand Style
     - 201408
     - 201412
