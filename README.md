@@ -98,7 +98,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Pre-2020 Event Thumbnail Aspect Ratio <b>`Default`</b>
   - Restore legacy sidebar padding
   - Revert 201909+ updates <b>`Default`</b>
-    -  ├ Linkabl­e Genres <b>`Default`</b>
+    -  ├ Linkabl­e Genres <b>`Default`</b>
     -  ├ Login Methods Sectioned
     -  ├ Remove Account Switcher <b>`Default`</b>
     -  ├ Remove Age Group <b>`Default`</b>
@@ -130,10 +130,10 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Rename X to Twitter <b>`Default`</b>
     -  ├ Restore Ads <b>`Default`</b>
       - None
-      - Default
+      - Default <b>`Default`</b>
       - Filler
       - └ Games Page
-    -  ├ Restore HCo Gotham SSm
+    -  ├ Restore HCo Gotham SSm <b>`Default`</b>
     -  ├ Restore Home Header
       -  ├ Avatar Url
       -  ├ Members­hip
@@ -141,14 +141,14 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
         - 2015
         - 2017 <b>`Default`</b>
       -  └ Usernam­e
-    -  ├ Revert Expanded home page
-    -  ├ Revert Game Modals
-    -  ├ Revert Login
-    -  ├ Revert React Avatar Editor
-    -  ├ Revert React People list
-    -  ├ Revert Server Playerlist­s
-    -  ├ Revert Webblox
-    -  └ Upperca­se Roblox User Text
+    -  ├ Revert Expanded home page <b>`Default`</b>
+    -  ├ Revert Game Modals <b>`Default`</b>
+    -  ├ Revert Login <b>`Default`</b>
+    -  ├ Revert React Avatar Editor <b>`Default`</b>
+    -  ├ Revert React People list <b>`Default`</b>
+    -  ├ Revert Server Playerlist­s <b>`Default`</b>
+    -  ├ Revert Webblox <b>`Default`</b>
+    -  └ Upperca­se Roblox User Text <b>`Default`</b>
   - Premium To BC
     -  └ Tier
       - BC <b>`Default`</b>
