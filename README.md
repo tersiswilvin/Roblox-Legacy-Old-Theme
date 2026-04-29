@@ -108,6 +108,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Remove Game Events <b>`Default`</b>
     -  ├ Remove Group Announceme­nts <b>`Default`</b>
     -  ├ Remove Group Content Moderation <b>`Default`</b>
+    -  ├ Remove Group Cover <b>`Default`</b>
     -  ├ Remove Group Events <b>`Default`</b>
     -  ├ Remove Group Forums <b>`Default`</b>
     -  ├ Remove Group Guilded <b>`Default`</b>
@@ -149,6 +150,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Revert Expanded home page <b>`Default`</b>
     -  ├ Revert Game Modals <b>`Default`</b>
     -  ├ Revert Login <b>`Default`</b>
+    -  ├ Revert New Sidebar <b>`Default`</b>
     -  ├ Revert React Avatar Editor <b>`Default`</b>
     -  ├ Revert React People list <b>`Default`</b>
     -  ├ Revert Server Playerlist­s <b>`Default`</b>
