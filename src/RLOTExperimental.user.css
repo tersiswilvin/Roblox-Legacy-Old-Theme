@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20260418-01.1.5
+@version      20260428-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -27,12 +27,12 @@
 @var          checkbox LegacyNextStyleGuide        "Legacy Next Styleguide"                          0
 @var          checkbox LNSGCBL                     " ├ Capital Brand Text in Modals"                 0
 @var          checkbox LNSGPartyIcon               " ├ Chat Party icon"                              0
-@var          checkbox LNSGBoxShadows              " ├ Chat Shadows"                                 1
 @var          checkbox LNSGBoxLeaderboards         " ├ Leaderboards tab"                             0
 @var          checkbox LNSGLeftLoginHeader         " ├ Left Align Login Header"                      0
 @var          checkbox LNSGLoginErrorSpacing       " ├ Login Password Error Spacing"                 0
 @var          checkbox LNSGOlder                   " ├ Older"                                        0
 @var          checkbox LNSGOlderChat               " ├ Older Chat"                                   0
+@var          checkbox LNSGOlderChatDialogShadows  " ├ Older Chat Dialog Shadows"                    1
 @var          checkbox LNSGRemoveplp               " ├ Remove people list popovers"                  0
 @var          checkbox LNSGRemovePN                " ├ Remove Place name"                            0
 @var          checkbox LNSGRemoveSL                " ├ Remove Social Links"                          0
@@ -45,12 +45,12 @@
 @var          checkbox Pre2020EventAspectRatio     "Pre-2020 Event Thumbnail Aspect Ratio"           1
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                  0
 @var          checkbox RemoveUpdates               "Revert 201909+ updates"                          1
-@var          checkbox LinkableGenres              " ├ Linkable Genres"                              1
 @var          checkbox LoginMethodsSectioned       " ├ Login Methods Sectioned"                      0
 @var          checkbox RemoveAccountSwitcher       " ├ Remove Account Switcher"                      1
 @var          checkbox RemoveAgeGroup              " ├ Remove Age Group"                             1
 @var          checkbox RemoveAgeVerification       " ├ Remove Age Verification"                      1
 @var          checkbox RemoveCamera                " ├ Remove Camera"                                1
+@var          checkbox RemoveChipFiltersContainer  " ├ Remove Chip Filters Container"                1
 @var          checkbox RemoveEditDescIcon          " ├ Remove Edit Description Icon"                 0
 @var          checkbox RemoveGameEvents            " ├ Remove Game Events"                           1
 @var          checkbox RemoveGroupAnnouncements    " ├ Remove Group Announcements"                   1
@@ -65,6 +65,8 @@
 @var          checkbox RemoveProfilePosts          " ├ Remove Profile Posts"                         1
 @var          checkbox RemoveProfileStore          " ├ Remove Profile Store"                         1
 @var          checkbox RemoveQuickSignIn           " ├ Remove Quick Sign In"                         1
+@var          checkbox RemoveSidebarAvatar         " ├ Remove Sidebar Avatar"                        1
+@var          checkbox RemoveSidebarGiftcards      " ├ Remove Sidebar Giftcards"                     1
 @var          checkbox RemoveSubGenres             " ├ Remove Sub Genres"                            1
 @var          checkbox RemoveTheme                 " ├ Remove Theme"                                 1
 @var          checkbox RemoveVerifiedBadge         " ├ Remove Verified Badge"                        1
@@ -74,9 +76,11 @@
 @var          checkbox RenameUpgradeNowBtn         " ├ Rename Get Premium/Premium to Upgrade Now"    1
 @var          checkbox RenameHelpandSafety         " ├ Rename Help & Safety to Help"                 1
 @var          checkbox RenameStore                 " ├ Rename Official Store to Shop"                1
+@var          checkbox RenameGiftcards             " ├ Rename Buy Gift Cards to Gift Cards"          1
 @var          checkbox RenameX                     " ├ Rename X to Twitter"                          1
 @var          select   RestoreAds                  " ├ Restore Ads"                                  ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              "    └ Games Page"                                0
+@var          checkbox RestoreAgeIndicators        " ├ Restore Age Indicators"                       1
 @var          checkbox HCoGothamSSm                " ├ Restore HCo Gotham SSm"                       1
 @var          checkbox HCoGothamSSmFixes           "    └ Fixes"                                     0
 @var          checkbox HomeHeader                  " ├ Restore Home Header"                          0
@@ -84,6 +88,7 @@
 @var          checkbox HHMembership                "    ├ Membership"                                0
 @var          select   HHYear                      "    ├ Year"                                      ["2015", "2017*"]
 @var          text     HHUsername                  "    └ Username"                                  "''"
+@var          checkbox RestoreTbUserBehavior       " ├ Restore Topbar Username cursor behavior"      1
 @var          checkbox RevertExpandedhomepage      " ├ Revert Expanded home page"                    1
 @var          checkbox RevertGameModals            " ├ Revert Game Modals"                           1
 @var          checkbox RevertLogin                 " ├ Revert Login"                                 1
@@ -523,6 +528,10 @@
 	.light-theme .icon-default-navigation, .light-theme .icon-nav-blog, .light-theme .icon-nav-charactercustomizer, .light-theme .icon-nav-friends, .light-theme .icon-nav-group, .light-theme .icon-nav-home, .light-theme .icon-nav-inventory, .light-theme .icon-nav-menu, .light-theme .icon-nav-message, .light-theme .icon-nav-my-feed, .light-theme .icon-nav-notification-stream, .light-theme .icon-nav-profile, .light-theme .icon-nav-robux, .light-theme .icon-nav-search, .light-theme .icon-nav-search-white, .light-theme .icon-nav-settings, .light-theme .icon-nav-shop, .light-theme .icon-nav-trade {
 		background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
 	}
+    @light-nav: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpzZXJpZj0iaHR0cDovL3d3dy5zZXJpZi5jb20vIiB3aWR0aD0iNTZweCIgaGVpZ2h0PSI1NjBweCIgdmVyc2lvbj0iMS4xIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEuNTsiPjxnIGlkPSJ3YWxsZXQtb24iPjxwYXRoIGQ9Ik0zMiw1NTVsMCwtMTRjMCwtMC41NTIgMC40NDgsLTEgMSwtMWwxNSwwYzAuNTUyLDAgMSwwLjQ0OCAxLDFsMCwybDIsMGMwLjU1MiwwIDEsMC40NDggMSwxbDAsMTFjMCwwLjU1MiAtMC40NDgsMSAtMSwxbC0xOCwwYy0wLjU1MiwwIC0xLC0wLjQ0OCAtMSwtMVptMTYsLTdjMCwtMC41NTIgLTAuNDQ4LC0xIC0xLC0xYy0wLjU1MiwtMCAtMSwwLjQ0OCAtMSwxbDAsM2MwLDAuNTUyIDAuNDQ4LDEgMSwxYzAuNTUyLC0wIDEsLTAuNDQ4IDEsLTFsMCwtM1oiIHN0eWxlPSJmaWxsOiNmZmY7Ii8+PC9nPjxyZWN0IGlkPSJBcnRib2FyZDEiIHg9IjAiIHk9IjAiIHdpZHRoPSI1NiIgaGVpZ2h0PSI1NjAiIHN0eWxlPSJmaWxsOm5vbmU7Ii8+PGcgaWQ9IndhbGxldCI+PHBhdGggZD0iTTIwLDU0OGwwLDNjMCwwLjU1MiAtMC40NDgsMSAtMSwxYy0wLjU1MiwtMCAtMSwtMC40NDggLTEsLTFsMCwtM2MwLC0wLjU1MiAwLjQ0OCwtMSAxLC0xYzAuNTUyLC0wIDEsMC40NDggMSwxWiIgc3R5bGU9ImZpbGw6I2ZmZjsiLz48cGF0aCBkPSJNOCw1NDRsMTUsLTBsMCwxMWwtMTgsMGwwLC0xNGwxNSwwbDAsMyIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I2ZmZjtzdHJva2Utd2lkdGg6MnB4OyIvPjwvZz48ZyBpZD0iZ2lmdF9jYXJkLW9uIj48cmVjdCB4PSIzMyIgeT0iNTA3IiB3aWR0aD0iMTgiIGhlaWdodD0iMjIiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMGEyZmY7c3Ryb2tlLXdpZHRoOjJweDsiLz48cGF0aCBkPSJNNDYuNSw1MTIuNWMwLDAuODI4IC0wLjY3MiwxLjUgLTEuNSwxLjVsLTYsMGMtMC44MjgsMCAtMS41LC0wLjY3MiAtMS41LC0xLjVjMCwtMC44MjggMC42NzIsLTEuNSAxLjUsLTEuNWw2LDBjMC44MjgsMCAxLjUsMC42NzIgMS41LDEuNVoiIHN0eWxlPSJmaWxsOiMwMGEyZmY7Ii8+PHBhdGggZD0iTTQzLjUsNTExYzAsMC44MjggLTAuNjcyLDEuNSAtMS41LDEuNWMtMC44MjgsMCAtMS41LC0wLjY3MiAtMS41LC0xLjVjMCwtMC44MjggMC42NzIsLTEuNSAxLjUsLTEuNWMwLjgyOCwwIDEuNSwwLjY3MiAxLjUsMS41WiIgc3R5bGU9ImZpbGw6IzAwYTJmZjsiLz48cGF0aCBkPSJNNDcuNSw1MjNjMCwwLjU1MiAtMC40NDgsMSAtMSwxbC05LDBjLTAuNTUyLDAgLTEsLTAuNDQ4IC0xLC0xYzAsLTAuNTUyIDAuNDQ4LC0xIDEsLTFsOSwwYzAuNTUyLDAgMSwwLjQ0OCAxLDFaIiBzdHlsZT0iZmlsbDojMDBhMmZmOyIvPjwvZz48ZyBpZD0iZ2lmdF9jYXJkIj48cmVjdCB4PSI1IiB5PSI1MDciIHdpZHRoPSIxOCIgaGVpZ2h0PSIyMiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzE5MTkxOTtzdHJva2Utd2lkdGg6MnB4OyIvPjxwYXRoIGQ9Ik0xOC41LDUxMi41YzAsMC44MjggLTAuNjcyLDEuNSAtMS41LDEuNWwtNiwwYy0wLjgyOCwwIC0xLjUsLTAuNjcyIC0xLjUsLTEuNWMwLC0wLjgyOCAwLjY3MiwtMS41IDEuNSwtMS41bDYsMGMwLjgyOCwwIDEuNSwwLjY3MiAxLjUsMS41WiIgc3R5bGU9ImZpbGw6IzE5MTkxOTsiLz48cGF0aCBkPSJNMTUuNSw1MTFjLTAsMC44MjggLTAuNjcyLDEuNSAtMS41LDEuNWMtMC44MjgsMCAtMS41LC0wLjY3MiAtMS41LC0xLjVjMCwtMC44MjggMC42NzIsLTEuNSAxLjUsLTEuNWMwLjgyOCwwIDEuNSwwLjY3MiAxLjUsMS41WiIgc3R5bGU9ImZpbGw6IzE5MTkxOTsiLz48cGF0aCBkPSJNMTkuNSw1MjNjMCwwLjU1MiAtMC40NDgsMSAtMSwxbC05LDBjLTAuNTUyLDAgLTEsLTAuNDQ4IC0xLC0xYy0wLC0wLjU1MiAwLjQ0OCwtMSAxLC0xbDksMGMwLjU1MiwwIDEsMC40NDggMSwxWiIgc3R5bGU9ImZpbGw6IzE5MTkxOTsiLz48L2c+PC9zdmc+");
+    .light-theme .icon-nav-giftcards {
+        background-image: @light-nav;
+    }
 	.light-theme .input-group .input-field {
 		background-color: #fff;
 		color: #191919;
@@ -2461,16 +2470,18 @@
 	.light-theme .slide-switcher.games, .dark-theme .slide-switcher.games {
 		background-color: #118237;
 	}
-	.rbx-left-col li .text-nav .avatar-headshot-xs {
-		display: none;
-	}
-	.rbx-left-col li .text-nav .avatar-headshot-xs ~ .font-header-2 {
-		& when (@SourceSansPro = 1) {
-			font-size: 18px;
-			font-weight: 400;
-		}
-		margin: 0;
-	}
+    & when (@RemoveUpdates = 1) and (@RemoveSidebarAvatar = 1) {
+        .rbx-left-col li .text-nav .avatar-headshot-xs {
+            display: none;
+            & ~ .font-header-2 {
+                & when (@SourceSansPro = 1) {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                margin: 0;
+            }
+        }
+    }
 
 	.rbx-header.light-theme .text-header, .rbx-header.light-theme .text-header:active, .rbx-header.light-theme .text-header:focus, .rbx-header.light-theme .text-header:hover, .rbx-header.light-theme .text-header:link, .rbx-header.light-theme .text-header:visited
 	{
@@ -2521,11 +2532,14 @@
 			font-size: 12px;
 			font-weight: 400;
 		}
+        & when (@RestoreTbUserBehavior = 1) {
+            cursor: text;
+        }
 	}
 
 	.rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username {
 		margin-right: 0;
-		head:has([data-isunder13]) ~ body &:after {
+		head:has([data-isunder13]) ~ body &:after when (@RemoveUpdates = 1) and (@RestoreAgeIndicators = 1) {
 			content: ": "
 		}
 	}
@@ -2544,10 +2558,13 @@
 			font-size: 12px;
 			font-weight: 400;
 		}
-        head:has([data-isunder13="true"]) ~ body &:after {
+        & when (@RestoreTbUserBehavior = 1) {
+            pointer-events: none;
+        }
+        head:has([data-isunder13="true"]) ~ body &:after when (@RemoveUpdates = 1) and (@RestoreAgeIndicators = 1) {
 			content: "<13"
 		}
-        head:has([data-isunder13="false"]) ~ body &:after {
+        head:has([data-isunder13="false"]) ~ body &:after when (@RemoveUpdates = 1) and (@RestoreAgeIndicators = 1) {
 			content: "13+"
 		}
     }
@@ -2664,7 +2681,48 @@
 		float: right
 	}
 
-	#nav-giftcards {
+    .rbx-left-col li #nav-giftcards .font-header-2 when (@RenameGiftcards = 1) {
+        font-size: 0;
+        &:after {
+            content: "Gift Cards";
+            font-size: 16px;
+            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                font-weight: 500;
+            }
+            & when (@SourceSansPro = 1) {
+                font-weight: 400;
+            }
+            line-height: 1.42857;
+            @media (max-width: 767px) {
+                font-size:12px;
+                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+            }
+            &:active, &:hover, &:link, &:visited {
+                font-size: 16px;
+                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+                @media (max-width: 767px) {
+                    font-size:12px;
+                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        font-weight: 500;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+	#nav-giftcards when (@RemoveUpdates = 1) and (@RemoveSidebarGiftcards = 1) {
 		display: none
 	}
 
@@ -3636,7 +3694,7 @@
 		color: #f68802;
 	}
 
-	.light-theme #nav-message:hover, .light-theme #nav-friends:hover, .light-theme #nav-money:hover, .light-theme #nav-trade:hover, .light-theme #nav-group:hover, .light-theme #nav-my-feed:hover, .light-theme #nav-forum:hover, .light-theme #nav-blog:hover, .light-theme #nav-shop:hover, .light-theme #nav-premium:hover, .light-theme #nav-Transactions:hover, .light-theme #nav-Redeem:hover, .dark-theme #nav-message:hover, .dark-theme #nav-friends:hover, .dark-theme #nav-money:hover, .dark-theme #nav-trade:hover, .dark-theme #nav-group:hover, .dark-theme #nav-my-feed:hover, .dark-theme #nav-forum:hover, .dark-theme #nav-blog:hover, .dark-theme #nav-shop:hover, .dark-theme #nav-premium:hover, .dark-theme #nav-Transactions:hover, .dark-theme #nav-Redeem:hover
+	.light-theme #nav-message:hover, .light-theme #nav-friends:hover, .light-theme #nav-money:hover, .light-theme #nav-trade:hover, .light-theme #nav-group:hover, .light-theme #nav-my-feed:hover, .light-theme #nav-forum:hover, .light-theme #nav-blog:hover, .light-theme #nav-shop:hover, .light-theme #nav-giftcards:hover, .light-theme #nav-premium:hover, .light-theme #nav-Transactions:hover, .light-theme #nav-Redeem:hover, .dark-theme #nav-message:hover, .dark-theme #nav-friends:hover, .dark-theme #nav-money:hover, .dark-theme #nav-trade:hover, .dark-theme #nav-group:hover, .dark-theme #nav-my-feed:hover, .dark-theme #nav-forum:hover, .dark-theme #nav-blog:hover, .dark-theme #nav-shop:hover, .dark-theme #nav-giftcards:hover, .dark-theme #nav-premium:hover, .dark-theme #nav-Transactions:hover, .dark-theme #nav-Redeem:hover
 	{
 		color: #00a2ff;
 	}
@@ -5769,9 +5827,11 @@
 				display: none
 			}
 		}
-		.theme-update-container when (@RemoveTheme = 1) {
-			display: none;
-		}
+        & when (@RemoveTheme = 1) {
+            #browser-preferences, .theme-update-container {
+                display: none;
+            }
+        }
 		& when (@RemoveVerifiedBadge = 1) {
 			[data-rblx-verified-badge-icon], img[alt="Verified Badge Icon"], .verified-badge-icon-group-name-in-group-list-container-rendered, .verified-badge-icon-group-name-in-group-list-rendered, [title="Verified Badge"], [alt="Verified Badge"], .rbx-header .rbx-navbar-icon-group .age-bracket-label .dynamic-overflow-container section:has(span[data-rblx-verified-badge-icon]) {
 				display: none;
@@ -5782,6 +5842,9 @@
 				display: none;
 			}
 		}
+        .content .chip-filters-container when (@RemoveChipFiltersContainer = 1) {
+            display: none;
+        }
 		& when (@UppercaseRoblox = 1) {
 			[href*="/users/1/profile"], :has([data-profileuserid="1"]) .header-names, :has([data-profileuserid="1"]) .profile-header-names {
 				text-transform: uppercase;
@@ -6323,15 +6386,6 @@
 			}
 			&-container:has(:nth-child(10)) &:nth-last-child(-n+1) when (@RemoveUpdates = 1) and (@RemoveSubGenres = 1) {
 				display: none;
-			}
-			& when (@RemoveUpdates = 1) and (@LinkableGenres = 1) {
-				&-container:has(:nth-child(9)) &:last-child .text-lead, &-container:has(:nth-child(10)) &:nth-last-child(2) .text-lead {
-					color: #00a2ff;
-					&:focus, &:hover {
-						cursor: pointer;
-						text-decoration: underline;
-					}
-				}
 			}
 			&s-container li:first-child p:first-child, &-container li:first-child p:first-child {
 				font-size: 0;
@@ -6991,7 +7045,12 @@
 			}
 		}
 
-		body:not(.RestoreEvents):not(.EventsEnabled) .rbx-left-col .rbx-scrollbar .left-col-list:after {
+        .left-nav ul:after {
+            padding: 0 0 0 10px;
+            line-height: 1.42857;
+            width: 165px;
+        }
+		body:not(.RestoreEvents):not(.EventsEnabled) .rbx-left-col .rbx-scrollbar .left-col-list:after, .left-nav ul:after {
 			content: 'Events';
 			font-size: 16px;
 			& when (@SourceSansPro = 0) {
@@ -7873,21 +7932,6 @@
 			overflow: unset;
 		}
 
-		.social-networks-container {
-			background-color: #fff;
-			padding: 15px;
-			position: relative;
-			margin: 0 0 18px;
-			.light-theme & {
-				background-color: #fff;
-			}
-			.dark-theme & {
-				background-color: #000;
-			}
-			~ .setting-section {
-				display: none;
-			}
-		}
 		[for="twitter"] when (@RenameX = 1) {
 			font-size: 0;
 			&:active, &:focus, &:hover {
@@ -7946,6 +7990,9 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+    [data-internal-page-name="GameCarousel"] .no-gutter-ads.logged-in.left-nav-new-width .content {
+        margin-left: 175px;
+    }
 
 	.items-list .item-card .item-card-caption .item-card-name-link when not ((@LegacyNextStyleGuide = 1) and (@LNSGSmallerCaptions = 1)) {
 		display: inline-block;
@@ -9391,6 +9438,10 @@
 		background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
 		filter: invert(100%)
 	}
+    .dark-theme .icon-nav-giftcards {
+        background-image: @light-nav;
+        filter: invert(100%);
+    }
 	.dark-theme .icon-nav-menu, .dark-theme .icon-nav-notification-stream {
 		background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
 	}
@@ -9528,15 +9579,10 @@
 		background-size: 40px;
 	}
 
-    .container-main {
-        &.full-screen .content {
-            max-width: 970px;
-            padding-top: 12px;
-            margin: 0 auto;
-        }
-        .no-gutter-ads.left-nav-new-width main& {
-            --margin-left: auto;
-        }
+    .container-main.full-screen .content {
+        max-width: 970px;
+        padding-top: 12px;
+        margin: 0 auto;
     }
 	.verification-modal .modal-dialog .modal-content {
 		border-radius: 5px;
@@ -9632,7 +9678,7 @@
 
 	/*/=={ Watermark }==/*/
 	@WatermarkEnabled: true;
-	@Version: "20260418-01.1.5";
+	@Version: "20260428-00.1.5";
 	.simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
 		bottom: 43.4px !important;
 		.simplebar-content {
@@ -10298,15 +10344,15 @@
 				}
 			}
 		}
-		.light-theme .dropdown-menu:has(.wallet-hidden):has(li a[href*="roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
+		&.light-theme .dropdown-menu:has(.wallet-hidden):has(li a[href*="roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
 			& when not (@CustomTheme = BTR_Night) {
-				background: #f2f2f2
+				background: #f2f2f2 !important
 			}
 			& when (@CustomTheme = BTR_Night) {
 				background-color: var(--btr-theme-item-hover);
 			}
 		}
-		.dark-theme .dropdown-menu:has(.wallet-hidden):has(li a[href*="roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
+		&.dark-theme .dropdown-menu:has(.wallet-hidden):has(li a[href*="roblox.com/transactions"]:hover) .wallet-hidden .dropdown-wallet {
 			background: #0d0d0d;
 		}
 		.rbx-header .rbx-navbar-icon-group>li .dropdown-menu .wallet-hidden, .rbx-header .rbx-navbar-right-nav>li .dropdown-menu .wallet-hidden {
@@ -14683,6 +14729,9 @@
 	}
 
 	/*/ Revert New Game Cards /*/
+    .game-grid.home-game-grid.dynamic-layout-sizing, .game-grid.game-details-page-events-grid, .game-grid.search-game-grid.dynamic-layout-sizing {
+        display: block;
+    }
 	.hover-game-tile, .game-grid.home-game-grid.wide-game-tile-game-grid.game-grid.expand-home-content .hover-game-tile {
 		.featured-game-container .info-container, &.focused .featured-game-container .info-container {
 			width: 100%
@@ -20816,7 +20865,7 @@
 						}
 					}
 					.dialog-message {
-						& when (@LNSGBoxShadows = 1) {
+						& when (@LNSGOlderChatDialogShadows = 1) {
 							-webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 							box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 						}
@@ -20827,11 +20876,11 @@
 						float: right;
 						word-wrap: break-word;
 						line-height: 1.2em;
-						.light-theme & when (@LNSGBoxShadows = 1) {
+						.light-theme & when (@LNSGOlderChatDialogShadows = 1) {
 							-webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 							box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 						}
-						.dark-theme & when (@LNSGBoxShadows = 1) {
+						.dark-theme & when (@LNSGOlderChatDialogShadows = 1) {
 							-webkit-box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
 							box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
 						}
@@ -20955,18 +21004,18 @@
 					.link-card-container {
 						max-width: 90%;
 						max-width: calc(100% - 24px);
-						& when (@LNSGBoxShadows = 1) {
+						& when (@LNSGOlderChatDialogShadows = 1) {
 							-webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 							box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 						}
 						border-radius: 3px;
 						margin: 0 12px;
 						line-height: 1.2em;
-						.light-theme & when (@LNSGBoxShadows = 1) {
+						.light-theme & when (@LNSGOlderChatDialogShadows = 1) {
 							-webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 							box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 						}
-						.dark-theme & when (@LNSGBoxShadows = 1) {
+						.dark-theme & when (@LNSGOlderChatDialogShadows = 1) {
 							-webkit-box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
 							box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
 						}
@@ -21047,7 +21096,7 @@
 				}
 				&-body {
 					background-color: #fff;
-					& when (@LNSGBoxShadows = 1) {
+					& when (@LNSGOlderChatDialogShadows = 1) {
 						-webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 						box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 					}
@@ -21056,11 +21105,11 @@
 					padding: 6px;
 					word-wrap: break-word;
 					line-height: 1.2em;
-					.light-theme & when (@LNSGBoxShadows = 1) {
+					.light-theme & when (@LNSGOlderChatDialogShadows = 1) {
 						-webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 						box-shadow: 0 1px 4px rgba(25, 25, 25, 0.3);
 					}
-					.dark-theme & when (@LNSGBoxShadows = 1) {
+					.dark-theme & when (@LNSGOlderChatDialogShadows = 1) {
 						-webkit-box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
 						box-shadow: 0 1px 4px rgba(230, 230, 230, 0.3);
 					}
@@ -21091,7 +21140,7 @@
 							background-color: transparent;
 							padding: 0;
 							margin: 0;
-							& when (@LNSGBoxShadows = 1) {
+							& when (@LNSGOlderChatDialogShadows = 1) {
 								-webkit-box-shadow: none;
 								box-shadow: none;
 							}
@@ -21115,7 +21164,7 @@
 						border: none;
 						padding: 0;
 						margin: 0;
-						& when (@LNSGBoxShadows = 1) {
+						& when (@LNSGOlderChatDialogShadows = 1) {
 							-webkit-box-shadow: none;
 							box-shadow: none;
 						}
@@ -23769,7 +23818,7 @@
 				& when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
 					background-color: #fff;
 				}
-				background-image: url(@HHAvatarUrl);
+                background-image: url(@HHAvatarUrl);
 				background-size: 100%;
 				& when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
 					& when (@TransitionalAnimations = 1) {
@@ -30872,7 +30921,7 @@
 					}
 				}
 			}
-			#nav-message:hover, #nav-friends:hover, #nav-money:hover, #nav-trade:hover, #nav-group:hover, #nav-my-feed:hover, #nav-forum:hover, #nav-blog:hover, #nav-shop:hover, #nav-premium:hover, #nav-Transactions:hover, #nav-Redeem:hover {
+			#nav-message:hover, #nav-friends:hover, #nav-money:hover, #nav-trade:hover, #nav-group:hover, #nav-my-feed:hover, #nav-forum:hover, #nav-blog:hover, #nav-shop:hover, #nav-giftcards:hover, #nav-premium:hover, #nav-Transactions:hover, #nav-Redeem:hover {
 				color: #FF5D00;
 				div:not(.align-right) span {
 					filter: invert()
