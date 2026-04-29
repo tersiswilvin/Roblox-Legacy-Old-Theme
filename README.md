@@ -69,12 +69,12 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Legacy Next StyleGuide
     -  ├ Capital Brand Text in Modals
     -  ├ Chat Party icon
-    -  ├ Chat Shadows <b>`Default`</b>
     -  ├ Leaderboards tab
     -  ├ Left Align Login Header
     -  ├ Login Password Error Spacing
     -  ├ Older
     -  ├ Older Chat
+    -  ├ Older Chat Dialog Shadows <b>`Default`</b>
     -  ├ Remove people list popovers
     -  ├ Remove Place name
     -  ├ Remove Social Links
@@ -98,12 +98,12 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Pre-2020 Event Thumbnail Aspect Ratio <b>`Default`</b>
   - Restore legacy sidebar padding
   - Revert 201909+ updates <b>`Default`</b>
-    -  ├ Linkabl­e Genres <b>`Default`</b>
     -  ├ Login Methods Sectioned
     -  ├ Remove Account Switcher <b>`Default`</b>
     -  ├ Remove Age Group <b>`Default`</b>
     -  ├ Remove Age Verificati­on <b>`Default`</b>
     -  ├ Remove Camera <b>`Default`</b>
+    -  ├ Remove Chip Filters Container <b>`Default`</b>
     -  ├ Remove Edit Descriptio­n Icon
     -  ├ Remove Game Events <b>`Default`</b>
     -  ├ Remove Group Announceme­nts <b>`Default`</b>
@@ -118,10 +118,13 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Remove Profile Posts <b>`Default`</b>
     -  ├ Remove Profile Store <b>`Default`</b>
     -  ├ Remove Quick Sign In <b>`Default`</b>
+    -  ├ Remove Sidebar Avatar <b>`Default`</b>
+    -  ├ Remove Sidebar Giftcards <b>`Default`</b>
     -  ├ Remove Sub Genres <b>`Default`</b>
     -  ├ Remove Theme <b>`Default`</b>
     -  ├ Remove Verified Badge <b>`Default`</b>
     -  ├ Remove Voice Chat <b>`Default`</b>
+    -  ├ Rename Buy Gift Cards to Gift Cards <b>`Default`</b>
     -  ├ Rename Communitie­s to Groups <b>`Default`</b>
     -  ├ Rename Connection­s to Friends <b>`Default`</b>
     -  ├ Rename Get Premium/­Premium to Upgrade Now <b>`Default`</b>
@@ -133,6 +136,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
       - Default <b>`Default`</b>
       - Filler
       - └ Games Page
+    -  ├ Restore Age Indicators <b>`Default`</b>
     -  ├ Restore HCo Gotham SSm <b>`Default`</b>
     -  ├ Restore Home Header
       -  ├ Avatar Url
@@ -141,6 +145,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
         - 2015
         - 2017 <b>`Default`</b>
       -  └ Usernam­e
+    -  ├ Restore Topbar Username cursor behavior <b>`Default`</b>
     -  ├ Revert Expanded home page <b>`Default`</b>
     -  ├ Revert Game Modals <b>`Default`</b>
     -  ├ Revert Login <b>`Default`</b>
