@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20260429-00.1.5
+@version      20260430-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2954,7 +2954,7 @@
         margin-top: 22px;
     }
 
-    .carousel-control, .carousel-controls {
+    .carousel-control, .carousel-controls, .carousel-controls-container .carousel-controls {
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -2968,7 +2968,6 @@
         top: calc(50% - 24px);
         border: 2px solid #fff;
         border-radius: 50%;
-        display: none;
         height: 48px;
         position: absolute;
         text-align: center;
@@ -2995,7 +2994,6 @@
             z-index: 1000;
             padding: 0;
             transform: none;
-            display: block;
             .icon-carousel-left, .icon-carousel-right {
                 margin: 8px auto;
             }
@@ -3067,7 +3065,6 @@
             top: calc(50% - 24px);
             border: 2px solid #fff;
             border-radius: 50%;
-            display: none;
             height: 48px;
             position: absolute;
             text-align: center;
@@ -3109,6 +3106,25 @@
                 top: calc(25% - 24px);
             }
         }
+    }
+    .icon-chevron-heavy-right, .icon-chevron-heavy-left {
+        background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
+        background-position: 0 -924px;
+        background-repeat: no-repeat;
+        background-size: 200% auto;
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        vertical-align: middle;
+        .light-theme & {
+            background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
+        }
+    }
+    .icon-chevron-heavy-left {
+        background-position: 0 -924px;
+    }
+    .icon-chevron-heavy-right {
+        background-position: 0 -896px
     }
 
     .light-theme .input-group-btn .input-dropdown-btn
@@ -8049,8 +8065,10 @@
         padding-left: 0;
         padding-right: 0;
     }
-    [data-internal-page-name="GameCarousel"] .no-gutter-ads.logged-in.left-nav-new-width .content {
-        margin-left: 175px;
+    @media (min-width: 1688px) {
+        [data-internal-page-name="Games"] .no-gutter-ads.logged-in.left-nav-new-width .content, [data-internal-page-name="GameCarousel"] .no-gutter-ads.logged-in.left-nav-new-width .content {
+            margin-left: 175px;
+        }
     }
 
     .items-list .item-card .item-card-caption .item-card-name-link when not ((@LegacyNextStyleGuide = 1) and (@LNSGSmallerCaptions = 1)) {
@@ -9737,7 +9755,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260429-00.1.5";
+    @Version: "20260430-00.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -14950,13 +14968,13 @@
         }
     }
 
-    .game-carousel.wide-game-tile-carousel.expand-home-content, .game-carousel.wide-game-tile-carousel.games-page-carousel, .game-carousel.wide-game-tile-carousel.expand-home-content.games-page-carousel, .game-carousel.wide-game-tile-carousel.games-page-carousel.games-page-carousel, .game-grid.home-game-grid.wide-game-tile-game-grid.game-grid.expand-home-content, .game-carousel.wide-game-tile-carousel.home-page-carousel {
+    .game-carousel.wide-game-tile-carousel.expand-home-content, .game-carousel.wide-game-tile-carousel.games-page-carousel, .game-carousel.wide-game-tile-carousel.expand-home-content.games-page-carousel, .game-carousel.wide-game-tile-carousel.games-page-carousel.games-page-carousel, .game-grid.home-game-grid.wide-game-tile-game-grid.game-grid.expand-home-content, .game-carousel.wide-game-tile-carousel.home-page-carousel, .game-grid.wide-game-tile-game-grid.search-game-grid.dynamic-layout-sizing.search-game-grid {
         padding-top: 12px;
         display: block;
         .home-container & when (@RemoveUpdates = 1) {
             display: none;
         }
-        .hover-game-tile.event-tile, .hover-game-tile.grid-tile, .hover-game-tile.interest-tile, .hover-game-tile.grid-tile.old-hover, .hover-game-tile.event-tile.focused.old-hover {
+        .hover-game-tile.event-tile, .hover-game-tile.grid-tile, .hover-game-tile.interest-tile, .hover-game-tile.grid-tile.old-hover, .hover-game-tile.event-tile.focused.old-hover, .hover-game-tile.grid-tile.focused.old-hover {
             & when (@CardStyle = Pre-201812) {
                 width: 161px;
                 height: 223px;
