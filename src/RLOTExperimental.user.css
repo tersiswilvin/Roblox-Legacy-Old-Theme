@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20260507-00.1.5
+@version      20260521-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -44,7 +44,7 @@
 @var          select   SocialMediaExperiment       " └ Social media experiment type"                    ["None*", "share_icon", "social_media"]
 @var          checkbox Pre2020EventAspectRatio     "Pre-2020 Event Thumbnail Aspect Ratio"              1
 @var          checkbox RestoreSidebarPadding       "Restore legacy sidebar padding"                     0
-@var          checkbox RemoveUpdates               "Revert 201909+ updates"                             1
+@var          checkbox Revert201909updates         "Revert 201909+ updates"                             1
 @var          checkbox LoginMethodsSectioned       " ├ Login Methods Sectioned"                         0
 @var          checkbox RemoveAccountSwitcher       " ├ Remove Account Switcher"                         1
 @var          checkbox RemoveAgeGroup              " ├ Remove Age Group"                                1
@@ -67,6 +67,7 @@
 @var          checkbox RemoveProfilePosts          " ├ Remove Profile Posts"                            1
 @var          checkbox RemoveProfileStore          " ├ Remove Profile Store"                            1
 @var          checkbox RemoveQuickSignIn           " ├ Remove Quick Sign In"                            1
+@var          checkbox RemoveSettingsAutoTranslate " ├ Remove Settings Automatic Translations"          1
 @var          checkbox RemoveSidebarAvatar         " ├ Remove Sidebar Avatar"                           1
 @var          checkbox RemoveSidebarGiftcards      " ├ Remove Sidebar Giftcards"                        1
 @var          checkbox RemoveSidebarMembership     " ├ Remove Sidebar Membership"                       1
@@ -114,7 +115,7 @@
 @var          select   SSPGVersion                 "    └ Version"                                      ["V5", "V5_1", "V9", "V9_1*"]
 @var          checkbox TransitionalAnimations      "Transition animations"                              1
 @var          checkbox RedLogoStyle                "Use 2017 Red Branding (Messages / Bootstrapper)"    0
-@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Testers*"]
+@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Developers*", "Testers"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -637,7 +638,7 @@
         opacity: 1;
     }
 
-    & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+    & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
         .friend-tile-dropdown {
             text-align: left;
             white-space: normal;
@@ -1195,11 +1196,11 @@
     .content .friends-carousel-container, html .btr-friends-list .friends-carousel-container {
         display: block;
         width: auto;
-        & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             overflow: visible;
         }
         padding: 0;
-        & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             margin-right: -150px;
         }
         .spinner {
@@ -1219,10 +1220,10 @@
                 height: 150px;
                 max-height: 150px;
             }
-            & when (@RemoveUpdates = 0) or (@RevertReactPeopleList = 0) {
+            & when (@Revert201909updates = 0) or (@RevertReactPeopleList = 0) {
                 margin: 0 0 18px;
             }
-            & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+            & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
                 margin: 0 150px 18px 0;
             }
             .light-theme & {
@@ -1245,14 +1246,14 @@
         }
     }
     .content .friends-carousel-list-container, .content .friends-carousel-list-container-not-full, html .btr-friends-list .friends-carousel-container > div {
-        & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             display: block;
             width: auto;
         }
         background-color: #fff;
         padding: 15px;
         margin: 0 0 18px;
-        & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             margin-right: 150px;
             overflow: visible;
         }
@@ -1294,7 +1295,7 @@
                 box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
             }
         }
-        > div when (@RemoveUpdates = 1) {
+        > div when (@Revert201909updates = 1) {
             & when (@RevertReactPeopleList = 1) {
                 width: 11.11111111%;
                 & when (@LegacyNextStyleGuide = 0) or (@LegacyNextStyleGuide = 1) and (@LNSGRemovePN = 0) {
@@ -1364,7 +1365,7 @@
             height: 270px;
             max-height: 270px;
         }
-        > div when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        > div when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             width: 11.11111111%;
             &:nth-child(n+10) {
                 display: block;
@@ -1383,7 +1384,7 @@
             }
         }
     }
-    & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+    & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
         html .btr-profile .content .btr-friends-list .friends-carousel-container > div > div {
             width: 20%;
             &:nth-child(n+5) {
@@ -1428,7 +1429,7 @@
         }
     }
     .content .friends-carousel-tile {
-        & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             width: 90px;
             margin: 3px auto;
         }
@@ -1447,7 +1448,7 @@
             margin: 0;
         }
         &-name {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-size: 12px;
                 font-weight: 500;
             }
@@ -1455,10 +1456,10 @@
                 font-size: 16px;
                 font-weight: 300;
             }
-            & when (@RemoveUpdates = 0) or (@RevertReactPeopleList = 0) {
+            & when (@Revert201909updates = 0) or (@RevertReactPeopleList = 0) {
                 justify-content: center;
             }
-            & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+            & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
                 display: block;
             }
         }
@@ -1468,7 +1469,7 @@
             margin: 0;
         }
         &-experience {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-size: 10px;
                 font-weight: 500;
                 &:active, &:focus, &:hover {
@@ -1509,7 +1510,7 @@
             & when (@LegacyNextStyleGuide = 1) and (@LNSGRemoveplp = 1) {
                 display: none;
             }
-            & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+            & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
                 position: relative !important;
                 left: 50% !important;
                 top: 100% !important;
@@ -1520,7 +1521,7 @@
                 padding-top: 6px;
             }
         }
-        & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             > div > div:has(.in-game-friend-card), > div > div[style*="width: 315px"] {
                 width: 320px !important;
             }
@@ -1530,7 +1531,7 @@
         margin: 3px 0 0;
         display: block;
         text-align: center;
-        & when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             max-width: none;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -1547,10 +1548,10 @@
         & when (@LegacyNextStyleGuide = 1) and (@LNSGRemovePN = 1) {
             height: 120px;
         }
-        .expand-max-width &:nth-child(n+10) when (@RemoveUpdates = 1) and (@RevertReactPeopleList = 1) {
+        .expand-max-width &:nth-child(n+10) when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
             display: none
         }
-        & when (@RemoveUpdates = 1) {
+        & when (@Revert201909updates = 1) {
             html .btr-home-secondRow &, html .btr-friends-secondRow &, html .btr-home-friends.btr-home-secondRow &, html .btr-home-friends.btr-friends-secondRow & {
                 &:nth-child(n+10) {
                     display: block;
@@ -1564,7 +1565,7 @@
             display: none;
         }
     }
-    & when (@RemoveUpdates = 1) {
+    & when (@Revert201909updates = 1) {
         .home-container.expand-max-width .friend-list .hlist, .home-container.expand-max-width .people-list .hlist {
             display: block;
             .friend {
@@ -1625,14 +1626,14 @@
         & when (@HCoGothamSSmFixes = 0) or (@SourceSansPro = 1) {
             font-size: 14px;
             font-weight: 400;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 line-height: 1.4em;
             }
             & when (@SourceSansPro = 1) {
                 line-height: 1.3em;
             }
         }
-        & when (@HCoGothamSSmFixes = 1) and (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@HCoGothamSSmFixes = 1) and (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-size: 12px;
             font-weight: 400;
         }
@@ -1647,7 +1648,7 @@
             font-size: 14px;
             font-weight: 400;
         }
-        & when (@HCoGothamSSmFixes = 1) and (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@HCoGothamSSmFixes = 1) and (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-size: 12px;
             font-weight: 400;
         }
@@ -1842,7 +1843,7 @@
             color: #f2f2f2;
             font-size: 12px;
             padding: 6px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 line-height: 1.4em;
             }
             & when (@SourceSansPro = 1) {
@@ -2250,7 +2251,7 @@
         padding: 1px 6px;
         min-width: unset;
         transform: translate(-4px, -4px);
-        & when (@RemoveUpdates = 1) {
+        & when (@Revert201909updates = 1) {
             display: none;
         }
         .light-theme &, .dark-theme & {
@@ -2265,8 +2266,11 @@
         background-color: #0074bd;
         height: 90px;
         .navbar-brand {
+            -ms-flex-align: unset;
+            align-items: unset;
             padding: 5px 0;
             margin: 0;
+            display: initial
         }
         .rbx-navbar-header {
             max-width: 76px;
@@ -2320,7 +2324,7 @@
         }
         .rbx-navbar {
             li {
-                & when (@RemoveUpdates = 1) {
+                & when (@Revert201909updates = 1) {
                     width: 25%;
                 }
                 float: left;
@@ -2344,13 +2348,18 @@
                 }
             }
         }
+        @media (min-width: 991px) {
+            .left-nav-new-width & .navbar-search when (@Revert201909updates = 1) {
+                width: 25%;
+            }
+        }
         @media (min-width: 992px) {
             height: 40px;
-            & when (@RemoveUpdates = 1) {
+            & when (@Revert201909updates = 1) {
                 .col-md-5 {
                     width: 33.33333%;
                 }
-                .col-md-2 {
+                .col-md-2, .left-nav-new-width .rbx-header .navbar-search {
                     width: 25%;
                 }
             }
@@ -2364,7 +2373,7 @@
             }
         }
         @media (min-width: 1200px) {
-            .col-lg-4 when (@RemoveUpdates = 1) {
+            .col-lg-4 when (@Revert201909updates = 1) {
                 width: 25%;
             }
         }
@@ -2492,7 +2501,7 @@
         background-color: #118237;
     }
     .rbx-left-col li .text-nav .avatar-headshot-xs {
-        & when (@RemoveUpdates = 1) and (@RemoveSidebarAvatar = 1) {
+        & when (@Revert201909updates = 1) and (@RemoveSidebarAvatar = 1) {
             display: none;
         }
         & ~ .font-header-2 {
@@ -2500,7 +2509,7 @@
                 font-size: 18px;
                 font-weight: 400;
             }
-            & when (@RemoveUpdates = 1) and (@RemoveSidebarAvatar = 1) {
+            & when (@Revert201909updates = 1) and (@RemoveSidebarAvatar = 1) {
                 margin: 0;
             }
         }
@@ -2562,7 +2571,7 @@
 
     .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username {
         margin-right: 0;
-        head:has([data-isunder13]) ~ body &:after when (@RemoveUpdates = 1) and (@RestoreAgeIndicators = 1) {
+        head:has([data-isunder13]) ~ body &:after when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) {
             content: ": "
         }
     }
@@ -2584,10 +2593,10 @@
         & when (@RestoreTbUserBehavior = 1) {
             pointer-events: none;
         }
-        head:has([data-isunder13="true"]) ~ body &:after when (@RemoveUpdates = 1) and (@RestoreAgeIndicators = 1) {
+        head:has([data-isunder13="true"]) ~ body &:after when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) {
             content: "<13"
         }
-        head:has([data-isunder13="false"]) ~ body &:after when (@RemoveUpdates = 1) and (@RestoreAgeIndicators = 1) {
+        head:has([data-isunder13="false"]) ~ body &:after when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) {
             content: "13+"
         }
     }
@@ -2710,7 +2719,7 @@
             &:after {
                 content: "Gift Cards";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -2719,7 +2728,7 @@
                 line-height: 1.42857;
                 @media (max-width: 767px) {
                     font-size:12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 500;
                     }
                     & when (@SourceSansPro = 1) {
@@ -2728,7 +2737,7 @@
                 }
                 &:active, &:hover, &:link, &:visited {
                     font-size: 16px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 500;
                     }
                     & when (@SourceSansPro = 1) {
@@ -2736,7 +2745,7 @@
                     }
                     @media (max-width: 767px) {
                         font-size:12px;
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-weight: 500;
                         }
                         & when (@SourceSansPro = 1) {
@@ -2747,7 +2756,7 @@
             }
         }
     }
-    #nav-giftcards when (@RemoveUpdates = 1) and (@RemoveSidebarGiftcards = 1) {
+    #nav-giftcards when (@Revert201909updates = 1) and (@RemoveSidebarGiftcards = 1) {
         display: none
     }
 
@@ -3370,7 +3379,7 @@
         margin-top: 8px;
         width: 100%;
         float: left;
-        & when (@RemoveUpdates = 1) and (@RemovePlayerFeedbackBanner = 1) {
+        & when (@Revert201909updates = 1) and (@RemovePlayerFeedbackBanner = 1) {
             display: none
         }
         .player-feedback-banner-title {
@@ -3472,7 +3481,7 @@
                 }
             }
         }
-        &:not(.privacy)[href*="/info/privacy"] when (@RemoveUpdates = 1) {
+        &:not(.privacy)[href*="/info/privacy"] when (@Revert201909updates = 1) {
             color: #00a2ff;
             &:active, &:link, &:visited {
                 color: #00a2ff
@@ -3926,7 +3935,7 @@
         line-height: 1em;
         margin: 0;
         padding: 5px 0;
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-size: 12px;
             font-weight: 400;
         }
@@ -4006,7 +4015,7 @@
         padding: 0 12px;
     }
     .group-details .group-header .group-caption .group-info .group-stats li .font-header-2 {
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-size: 12px;
             font-weight: 400;
         }
@@ -4024,7 +4033,7 @@
         width: 100%;
     }
     .group-details .group-header .group-caption .group-info .group-stats li .text-label {
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-size: 12px;
             font-weight: 500;
         }
@@ -5196,7 +5205,7 @@
         border: 0;
         border-radius: 0;
         padding: 15px;
-        & when (@RemoveUpdates = 1) {
+        & when (@Revert201909updates = 1) {
             display: none;
         }
         .light-theme & {
@@ -5219,7 +5228,7 @@
         .migration-banner-content {
             .migration-banner-header {
                 padding: 5px 0;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 16px;
                 }
                 & when (@SourceSansPro = 1) {
@@ -5227,7 +5236,7 @@
                 }
             }
             .migration-banner-description {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 12px;
                 }
                 & when (@SourceSansPro = 1) {
@@ -5250,7 +5259,7 @@
             }
         }
     }
-    .group-wall-notice-container ~ [group-comments] when (@RemoveUpdates = 0) {
+    .group-wall-notice-container ~ [group-comments] when (@Revert201909updates = 0) {
         margin-top: 10px;
     }
     .group-wall-deprecation-notice {
@@ -5259,7 +5268,7 @@
         padding: 15px;
         border-radius: 0;
         margin-bottom: 0;
-        & when (@RemoveUpdates = 1) {
+        & when (@Revert201909updates = 1) {
             display: none;
             group-wall:has(&):not(:has([group-comments])) {
                 display: none;
@@ -5306,7 +5315,7 @@
             }
         }
         & &-description {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-size: 12px;
             }
             & when (@SourceSansPro = 1) {
@@ -5578,7 +5587,7 @@
         background-color: #f2f2f2;
         border: 1px solid #b8b8b8;
         border-radius: 3px;
-        & when (@RemoveUpdates = 1) and (@RemoveAgeVerification = 1) {
+        & when (@Revert201909updates = 1) and (@RemoveAgeVerification = 1) {
             display: none
         }
         .age-verification-disclaimer {
@@ -5602,7 +5611,7 @@
     }
 
     body.rogold:not(.rg-no-old-font) * {
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
         }
         & when (@SourceSansPro = 1) {
@@ -5610,7 +5619,7 @@
         }
     }
 
-    & when (@RemoveUpdates = 1) {
+    & when (@Revert201909updates = 1) {
         & when (@HCoGothamSSm = 1) {
             @font-face {
                 font-family: HCo Gotham SSm;
@@ -5872,6 +5881,11 @@
                 display: none
             }
         }
+        & when (@RemoveSettingsAutoTranslate = 1) {
+            #game-translations, #experience-translations {
+                display: none
+            }
+        }
         & when (@RemoveAccountSwitcher = 1) {
             .dropdown-menu li:has(.account-switch-menu-item), #roseal-onboarding-modal .onboarding-mockup .top-navigation-mockup .popover li:nth-child(5) {
                 display: none
@@ -6005,7 +6019,7 @@
         .dropdown-menu li[href="#!/classic-clothing"]:before {
             content: 'Clothing';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6015,7 +6029,7 @@
         .dropdown-menu li[href="#!/classic-heads"]:before {
             content: 'Heads';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6025,7 +6039,7 @@
         .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"]:before {
             content: 'T-shirts';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6035,7 +6049,7 @@
         .dropdown-menu li[href="#!/classic-clothing/classic-shirts"]:before {
             content: 'Shirts';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6045,7 +6059,7 @@
         .dropdown-menu li[href="#!/classic-clothing/classic-pants"]:before {
             content: 'Pants';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6055,7 +6069,7 @@
         .dropdown-menu li[href="#!/game-passes"]:before {
             content: 'Game Passes';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6065,7 +6079,7 @@
         .dropdown-menu li[href="#!/private-servers"]:before {
             content: 'VIP Servers';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6075,7 +6089,7 @@
         .dropdown-menu li[href="#!/private-servers/my-private-servers"]:before {
             content: 'My VIP Servers';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6085,7 +6099,7 @@
         .dropdown-menu li[href="#!/private-servers/other-private-servers"]:before {
             content: 'Other VIP Servers';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6122,7 +6136,7 @@
         .dropdown-menu li[href="#!/places/my-experiences"]:before {
             content: 'My Games';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6132,7 +6146,7 @@
         .dropdown-menu li[href="#!/places/other-experiences"]:before {
             content: 'Other Games';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -6158,7 +6172,7 @@
         .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span:after {
             content: 'Clothing';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6171,7 +6185,7 @@
         .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
             content: 'T-shirts';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6184,7 +6198,7 @@
         .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
             content: 'Shirts';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6197,7 +6211,7 @@
         .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
             content: 'Pants';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6210,7 +6224,7 @@
         .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-heads"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span:after {
             content: 'Heads';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6223,7 +6237,7 @@
         .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/game-passes"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span:before {
             content: 'Game ';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6236,7 +6250,7 @@
         .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/my-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
             content: 'My Games';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6249,7 +6263,7 @@
         .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/other-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
             content: 'Other Games';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6264,7 +6278,7 @@
             &:after {
                 content: 'VIP Servers';
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -6278,7 +6292,7 @@
         .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/my-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
             content: 'My VIP Servers';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6291,7 +6305,7 @@
         .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/other-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
             content: 'Other VIP Servers';
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
                 line-height: 1.4em;
             }
@@ -6434,7 +6448,7 @@
             p {
                 margin-bottom: 0;
             }
-            &-container:has(:nth-child(10)) &:nth-last-child(-n+1) when (@RemoveUpdates = 1) and (@RemoveSubGenres = 1) {
+            &-container:has(:nth-child(10)) &:nth-last-child(-n+1) when (@Revert201909updates = 1) and (@RemoveSubGenres = 1) {
                 display: none;
             }
             &s-container li:first-child p:first-child, &-container li:first-child p:first-child {
@@ -7135,8 +7149,25 @@
                 }
                 .remove-panel:not(.section-content):not(:has(.section-content)), > div:not([class]):not(:has(.section-content)) {
                     padding: 0 15px 15px;
+                    position: relative;
                     .light-theme &, .dark-theme & {
                         padding: 0 15px 15px;
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        background: #fff;
+                        top: -3px;
+                        left: 0;
+                        height: 4px;
+                        width: 100%;
+                        display: block;
+                        .light-theme & {
+                            background-color: #fff;
+                        }
+                        .dark-theme {
+                            background-color: #000;
+                        }
                     }
                 }
             }
@@ -7874,7 +7905,7 @@
             }
         }
 
-        .rbx-tabs-horizontal .nav-tabs when (@RemoveUpdates = 1) {
+        .rbx-tabs-horizontal .nav-tabs when (@Revert201909updates = 1) {
             &:has(#events) when (@RemoveGroupEvents = 1) {
                 .group-tab-2-buttons {
                     width: 100%;
@@ -7955,7 +7986,7 @@
                 &:after {
                     content: "Shop";
                     font-size: 16px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 500;
                     }
                     & when (@SourceSansPro = 1) {
@@ -7964,7 +7995,7 @@
                     line-height: 1.42857;
                     @media (max-width: 767px) {
                         font-size:12px;
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-weight: 500;
                         }
                         & when (@SourceSansPro = 1) {
@@ -7973,7 +8004,7 @@
                     }
                     &:active, &:hover, &:link, &:visited {
                         font-size: 16px;
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-weight: 500;
                         }
                         & when (@SourceSansPro = 1) {
@@ -7981,7 +8012,7 @@
                         }
                         @media (max-width: 767px) {
                             font-size:12px;
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                 font-weight: 500;
                             }
                             & when (@SourceSansPro = 1) {
@@ -8011,7 +8042,7 @@
             &:after {
                 content: "Twitter";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                     @media (max-width: 767px) {
                         font-size:12px;
@@ -8035,7 +8066,7 @@
         }
 
         & when (@RenameUpgradeNowBtn = 1) {
-            & when (@RemoveUpdates = 1) and (@RevertSidebar = 1) {
+            & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
                 body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) .left-nav [href*="/premium/membership"], body:not(.RenamePremiumBtn):not(.UNRenamedEnabled) .left-nav [href*="/plus"][class*=body-medium] {
                     font-size: 0;
                     &:after {
@@ -8111,7 +8142,7 @@
             &:after {
                 content: 'Tickets';
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -8147,10 +8178,10 @@
             }
             margin: 5px 0;
             &:hover {
-                & when (@RemoveUpdates = 0) {
+                & when (@Revert201909updates = 0) {
                     color: #00a2ff;
                 }
-                & when (@RemoveUpdates = 1) {
+                & when (@Revert201909updates = 1) {
                     cursor: text;
                 }
                 .rbx-event-icon {
@@ -8178,11 +8209,11 @@
                 margin: 0;
                 width: 28px;
                 height: 28px;
-                & when (@RemoveUpdates = 1) {
+                & when (@Revert201909updates = 1) {
                     display: none
                 }
                 .light-theme &, .dark-theme & {
-                    filter: none,
+                    filter: none
                 }
             }
         }
@@ -8212,10 +8243,10 @@
             }
             margin: 5px 0;
             &:hover {
-                & when (@RemoveUpdates = 0) {
+                & when (@Revert201909updates = 0) {
                     color: #00a2ff;
                 }
-                & when (@RemoveUpdates = 1) {
+                & when (@Revert201909updates = 1) {
                     cursor: text;
                 }
                 .rbx-event-icon {
@@ -8246,11 +8277,11 @@
                 margin: 0;
                 width: 28px;
                 height: 28px;
-                & when (@RemoveUpdates = 1) {
+                & when (@Revert201909updates = 1) {
                     display: none
                 }
                 .light-theme &, .dark-theme & {
-                    filter: none,
+                    filter: none
                 }
             }
         }
@@ -8529,7 +8560,7 @@
             .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-favorite-button-container .icon-label when not ((@PlayButtonStyle = 201704) or (@PlayButtonStyle = 201706) or (@PlayButtonStyle = 201712)) {
                 font-size: 14px;
             }
-            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label when (@RemoveUpdates = 0) {
+            .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .icon-label when (@Revert201909updates = 0) {
                 font-size: 14px;
             }
             .xsmall, &, .item-card-label, .game-card-experimental, .game-card-name-secondary, .sg-color-cell, .text-footer, .dialog-message span {
@@ -9766,7 +9797,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260507-00.1.5";
+    @Version: "20260521-00.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -10518,7 +10549,7 @@
         color: #E6E6E6;
     }
 
-    .icon-notifications-bell when (@RemoveUpdates = 1) {
+    .icon-notifications-bell when (@Revert201909updates = 1) {
         background-image: url(https://images.rbxcdn.com/f4000b6d03a0df7153556d2514045629-navigation_10022018.svg);
         background-position: 0 -448px;
         display: inline-block;
@@ -11898,7 +11929,7 @@
         font-weight: 500;
     }
 
-    .groups-list .rbx-divider when (@RemoveUpdates = 1) {
+    .groups-list .rbx-divider when (@Revert201909updates = 1) {
         display: none;
     }
     .catalog-container .sticky .search-options-scrollbar-container {
@@ -11924,10 +11955,10 @@
             max-width: 1146px;
             @media (max-width: 1338px) {
                 &:not(.no-list) .group-details {
-                    & when (@RemoveUpdates = 0) {
+                    & when (@Revert201909updates = 0) {
                         width: 75%;
                     }
-                    & when (@RemoveUpdates = 1) {
+                    & when (@Revert201909updates = 1) {
                         width: calc(100% - 170px);
                         margin-left: 10px;
                     }
@@ -11936,7 +11967,7 @@
         }
     }
     @media (min-width: 768px) {
-        & when (@RemoveUpdates = 1) {
+        & when (@Revert201909updates = 1) {
             .groups-list {
                 .menu-vertical-container {
                     .menu-vertical {
@@ -11961,7 +11992,7 @@
                 width: 160px;
                 padding-right: 0;
                 .text-lead {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-size: 12px;
                         &:active, &:focus, &:hover {
                             font-size: 12px;
@@ -12009,12 +12040,12 @@
     .groups-list .menu-dropdown-container .group-cards, .groups-list .menu-vertical-container .group-cards {
         margin-bottom: 10px;
     }
-    & when (@RemoveUpdates = 0) {
+    & when (@Revert201909updates = 0) {
         .groups-list .menu-vertical-container .group-cards:nth-child(4) {
             margin-top: 10px;
         }
     }
-    & when (@RemoveUpdates = 1) {
+    & when (@Revert201909updates = 1) {
         .groups-list .menu-vertical-container .group-cards:nth-child(2) {
             margin: 0
         }
@@ -12758,7 +12789,7 @@
             top: -34px;
             left: 0;
         }
-        & when (@RemoveUpdates = 1) {
+        & when (@Revert201909updates = 1) {
             .game-stat:has(.chat-feature-list) {
                 display: none;
             }
@@ -12838,7 +12869,7 @@
         }
         .btn-secondary-lg {
             font-size: 16px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 line-height: 1.4em;
             }
             & when (@SourceSansPro = 1) {
@@ -13010,7 +13041,7 @@
                     color: #191919;
                 }
                 @media (max-width: 767px) {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         line-height: 1.4em;
                     }
                     & when (@SourceSansPro = 1) {
@@ -13049,7 +13080,7 @@
                     color: #e6e6e6;
                 }
                 @media (max-width: 767px) {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         line-height: 1.4em;
                     }
                     & when (@SourceSansPro = 1) {
@@ -13065,7 +13096,7 @@
                 }
             }
             @media (max-width: 767px) {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     line-height: 1.4em;
                 }
                 & when (@SourceSansPro = 1) {
@@ -13297,7 +13328,7 @@
     }
 
     .horizontal-scroller .scroller, .games-list-container.wide-game-tile-container .scroller {
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) and not (@CardStyle = Pre-201812) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) and not (@CardStyle = Pre-201812) {
             height: 240px;
         }
         & when (@SourceSansPro = 1) {
@@ -13339,7 +13370,7 @@
         .game-card-info .info-label.playing-counts-label:after {
             content: ' Playing';
         }
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             .gotham-font .game-card-info .info-label.playing-counts-label, .builder-font .game-card-info .info-label.playing-counts-label {
                 font-size: 16px;
                 font-weight: 400;
@@ -13448,7 +13479,7 @@
             height: 223px;
         }
         & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 height: 240px;
             }
             & when (@SourceSansPro = 1) {
@@ -13460,7 +13491,7 @@
     .game-card-info .info-label {
         display: inline-block;
         font-size: 14px;
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-weight: 500;
         }
         & when (@SourceSansPro = 1) {
@@ -13632,7 +13663,7 @@
     /*/ end of changes /*/
 
     /*/ Revert Webblox /*/
-    & when (@RemoveUpdates = 1) and (@RevertWebblox = 1) {
+    & when (@Revert201909updates = 1) and (@RevertWebblox = 1) {
         #content .profile-header {
             &-main {
                 background-color: #fff;
@@ -13669,7 +13700,7 @@
                 }
                 [class*="colorSecondary-"] {
                     color: #191919;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         font-size: 12px;
                         font-weight: 400 !important;
@@ -13721,7 +13752,7 @@
                             line-height: 1em;
                             padding: 5px 0 !important;
                             color: #00a2ff;
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                 font-size: 12px;
                                 font-weight: 400;
                             }
@@ -13747,7 +13778,7 @@
                         }
                         span[class*="body1-"] {
                             color: #b8b8b8;
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                 font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                                 font-size: 12px;
                                 font-weight: 500;
@@ -13772,7 +13803,7 @@
                                 margin: 0;
                                 padding: 5px 0;
                                 color: #00a2ff;
-                                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-size: 12px;
                                     font-weight: 400;
                                 }
@@ -13814,7 +13845,7 @@
                 gap: unset;
                 [class*="h1-"] {
                     color: #191919;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         font-size: 32px;
                         font-weight: 800;
@@ -13942,7 +13973,7 @@
                         }
                     }
                 }
-                & when (@RemoveUpdates = 1) and (@RenameConnections = 1) {
+                & when (@Revert201909updates = 1) and (@RenameConnections = 1) {
                     #friend-button [class*="textContainer"] {
                         font-size: 0;
                         line-height: 100%;
@@ -14066,7 +14097,7 @@
                         background-position: 0 -176px;
                     }
                 }
-                [class*="Primary"] when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                [class*="Primary"] when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     margin-bottom: 2px;
                 }
                 button[class*="IconButton-"] {
@@ -14153,7 +14184,7 @@
             }
         }
         .profile-platform-container .profile-tab {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                 font-size: 16px;
                 font-weight: 500;
@@ -14295,7 +14326,7 @@
                     font-weight: 500
                 }
                 [class*="body1-Typography-colorSecondary"] {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
                         font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         font-size: 16px;
@@ -14318,7 +14349,7 @@
                         margin: 12px 6px;
                     }
                     @media (max-width: 767px) {
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-size: 12px;
                             font-weight: 500;
                         }
@@ -14334,7 +14365,7 @@
                     }
                 }
                 [class*="Typography-body1-Typography-root"] {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
                         font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         font-size: 16px;
@@ -14354,7 +14385,7 @@
                         color: #e6e6e6;
                     }
                     @media (max-width: 767px) {
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-size: 12px;
                             font-weight: 500;
                         }
@@ -14405,12 +14436,12 @@
             }
             ul {
                 padding: 0;
-                [data-internal-page-name="Profile"] &:has(:nth-child(5)) li:first-child when (@RemoveUpdates = 1) {
+                [data-internal-page-name="Profile"] &:has(:nth-child(5)) li:first-child when (@Revert201909updates = 1) {
                     display: none;
                 }
                 li {
                     color: #191919;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         font-size: 16px;
                         font-weight: 400;
@@ -14455,7 +14486,7 @@
             }
         }
         .profile-header-social-count-label {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 500;
             }
             & when (@SourceSansPro = 1) {
@@ -14463,7 +14494,7 @@
             }
         }
         .profile-header-dropdown-label {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 400;
             }
             & when (@SourceSansPro = 1) {
@@ -14506,7 +14537,7 @@
             grid-column-gap: normal;
             overflow-x: visible;
             overflow-y: visible;
-            .game-sort-carousel-wrapper & when (@RemoveUpdates = 1) {
+            .game-sort-carousel-wrapper & when (@Revert201909updates = 1) {
                 margin-right: -150px;
             }
             .grid-item-container {
@@ -14514,7 +14545,7 @@
                 width: 150px;
             }
         }
-        &.expand-home-content:has(:nth-child(7)) .grid-item-container:nth-child(n+7) when (@RemoveUpdates = 1) {
+        &.expand-home-content:has(:nth-child(7)) .grid-item-container:nth-child(n+7) when (@Revert201909updates = 1) {
             display: none
         }
     }
@@ -14563,6 +14594,16 @@
         .game-card-link .game-card-description-info, .game-card-link .game-card-name-info .btn-full-width.btn-common-play-game-lg, .game-card-info, #id-verification-container, .spinner, .game-card-link .game-card-creator-name {
             display: none
         }
+        &.wide-featured-tile>a .game-card-thumb-container {
+            border-radius: 0;
+            padding-bottom: 100%;
+            .brief-game-icon {
+                border-radius: 0;
+            }
+            img when (@CroppedWideThumbs = 1) {
+                object-fit: cover
+            }
+        }
         &:before {
             content: 'Featured Game';
             .light-theme & {
@@ -14590,14 +14631,16 @@
             }
             & when (@SourceSansPro = 0) {
                 font-size: 10px;
-                line-height: 2.24em;
+                line-height: 1.4em;
             }
             & when (@SourceSansPro = 1) {
                 font-size: 12px;
-                line-height: 1.866em;
+                line-height: 1.3em;
             }
             font-weight: 500;
             text-align: center;
+            height: 25px;
+            padding: 5px 8px;
             & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
                 border-bottom-left-radius: 3px;
                 border-bottom-right-radius: 3px;
@@ -14949,15 +14992,56 @@
                                     overflow: unset;
                                     text-overflow: unset;
                                     white-space: unset;
-                                    padding: 0;
                                     &.vote-percentage-label {
                                         padding-left: 3px;
                                     }
+                                    &[class*=icon-] {
+                                        padding: 0;
+                                    }
+                                    &.sponsored-ad-label {
+                                        & when (@SourceSansPro = 0) {
+                                            font-size: 10px;
+                                            font-weight: 500;
+                                            line-height: 1.4em;
+                                        }
+                                        & when (@SourceSansPro = 1) {
+                                            font-size: 12px;
+                                            font-weight: 400;
+                                            line-height: 1.3em;
+                                        }
+                                        color: #fff;
+                                        text-align: center;
+                                        display: block;
+                                        &:after {
+                                            content: " Ad"
+                                        }
+                                    }
                                     @media (max-width: 543px) {
-                                        &, &.vote-percentage-label {
+                                        padding: 0;
+                                        &.vote-percentage-label {
                                             padding: 0;
                                         }
                                     }
+                                }
+                                &.sponsored-footer {
+                                    .light-theme & {
+                                        background-color: #00a2ff;
+                                    }
+                                    .dark-theme & {
+                                        & when (@BrighterDarkThemeColors = 0) {
+                                            background-color: #004266;
+                                        }
+                                        & when (@BrighterDarkThemeColors = 1) {
+                                            background-color: #00a2ff;
+                                        }
+                                    }
+                                    bottom: 0px;
+                                    height: 25px;
+                                    position: absolute;
+                                    width: 100%;
+                                    padding: 5px 8px;
+                                    margin: 0;
+                                    display: block;
                                 }
                             }
                         }
@@ -15040,7 +15124,7 @@
     .game-carousel.wide-game-tile-carousel.expand-home-content, .game-carousel.wide-game-tile-carousel.games-page-carousel, .game-carousel.wide-game-tile-carousel.expand-home-content.games-page-carousel, .game-carousel.wide-game-tile-carousel.games-page-carousel.games-page-carousel, .game-grid.home-game-grid.wide-game-tile-game-grid.game-grid.expand-home-content, .game-carousel.wide-game-tile-carousel.home-page-carousel, .game-grid.wide-game-tile-game-grid.search-game-grid.dynamic-layout-sizing.search-game-grid {
         padding-top: 12px;
         display: block;
-        .home-container & when (@RemoveUpdates = 1) {
+        .home-container & when (@Revert201909updates = 1) {
             display: none;
         }
         .hover-game-tile.event-tile, .hover-game-tile.grid-tile, .hover-game-tile.interest-tile, .hover-game-tile.grid-tile.old-hover, .hover-game-tile.event-tile.focused.old-hover, .hover-game-tile.grid-tile.focused.old-hover {
@@ -15124,7 +15208,7 @@
     }
 
     /*/ Revert Server Playerlist /*/
-    .stack when (@RemoveUpdates = 1) and (@RevertServerPlayerlists = 1) {
+    .stack when (@Revert201909updates = 1) and (@RevertServerPlayerlists = 1) {
         .card-list {
             display: block;
             flex-wrap: wrap;
@@ -15252,7 +15336,7 @@
                 }
                 .server-debug-info {
                     color: #b8b8b8;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif
                     }
                     & when (@SourceSansPro = 1) {
@@ -15260,7 +15344,7 @@
                     }
                     grid-area: b;
                     #roseal-running-game-instances-container & {
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif
                         }
                         & when (@SourceSansPro = 1) {
@@ -15296,7 +15380,7 @@
             width: 100%;
         }
         .server-player-count-gauge {
-            & when (@RemoveUpdates = 1) {
+            & when (@Revert201909updates = 1) {
                 display: none;
             }
             background-color: #e3e3e3;
@@ -15325,7 +15409,7 @@
         button.rbx-private-server-renew {
             margin: 12px auto 0;
         }
-        .server-id-text when (@RemoveUpdates = 1) {
+        .server-id-text when (@Revert201909updates = 1) {
             display: none;
         }
         @media (max-width: 991px) {
@@ -15893,7 +15977,7 @@
             float: left;
             line-height: 14px;
             margin: 0 0 2px;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 .gotham-font &, .builder-font & {
                     width: 67%;
                     width: calc(100% - 70px);
@@ -17659,7 +17743,7 @@
             }
         }
         & &-title {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-size: 16px;
                 .builder-font &, .builder-font & {
                     font-size: 16px;
@@ -17673,7 +17757,7 @@
             }
         }
         & &-description {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-size: 12px;
             }
             & when (@SourceSansPro = 1) {
@@ -17692,7 +17776,7 @@
     .group-forums-category-pill {
         background-color: #fff;
         color: #757575;
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-size: 12px;
             font-weight: 400;
         }
@@ -17735,7 +17819,7 @@
         &.active {
             background-color: #00a2ff;
             color: #fff;
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-weight: 500;
             }
             & when (@SourceSansPro = 1) {
@@ -17796,7 +17880,7 @@
     .group-forums-categories-header {
         padding: 15px 0;
         & &-category-name {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-size: 24px;
                 .builder-font &, .builder-font & {
                     font-size: 24px;
@@ -18042,7 +18126,7 @@
             background-color: #f2f2f2;
             color: #191919;
             .group-forums-comment & {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 12px;
                 }
                 & when (@SourceSansPro = 1) {
@@ -20357,7 +20441,7 @@
         width: 90px;
     }
 
-    & when (@HCoGothamSSmFixes = 0) and (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+    & when (@HCoGothamSSmFixes = 0) and (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
         .light-theme.gotham-font, .dark-theme.gotham-font, .light-theme.builder-font, .dark-theme.builder-font {
             & .btn-growth-md, & a.btn-growth-md, .profile-header-buttons [class*="Primary"] {
                 &, &:active, &:hover, &:link {
@@ -21551,7 +21635,7 @@
 
     .gotham-font.light-theme .see-all-link-icon, .gotham-font.light-theme .refresh-link-icon, .gotham-font.dark-theme .see-all-link-icon, .gotham-font.dark-theme .refresh-link-icon, .builder-font.light-theme .see-all-link-icon, .builder-font.light-theme .refresh-link-icon, .builder-font.dark-theme .see-all-link-icon, .builder-font.dark-theme .refresh-link-icon, .home-container .sdui-icon.icon-push-right-16x16, .profile-collections .icon-chevron-heavy-right, .groups-list-new .text-label-medium {
         padding: 4px;
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             min-width: min-content;
         }
         & when (@SourceSansPro = 1) {
@@ -21564,7 +21648,7 @@
 
     .home-container [class*="-textIconRow"] {
         display: unset;
-        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
             font-size: 20px;
             font-weight: 700;
@@ -21582,7 +21666,7 @@
         }
         line-height: 1em;
         &:active, &:focus, &:hover {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                 font-size: 20px;
                 font-weight: 700;
@@ -21601,7 +21685,7 @@
             line-height: 1em;
         }
         .gotham-font &, .builder-font & {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                 font-size: 20px;
                 font-weight: 700;
@@ -21619,7 +21703,7 @@
             }
             line-height: 1em;
             &:active, &:focus, &:hover {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                     font-size: 20px;
                     font-weight: 700;
@@ -21639,7 +21723,7 @@
             }
         }
         &:nth-child(n+2), &:nth-child(n+2) [class*="-textIconRow"] {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-size: 16px;
                 font-weight: 400;
             }
@@ -21649,7 +21733,7 @@
             }
             line-height: 1em;
             &:active, &:focus, &:hover {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 16px;
                     font-weight: 400;
                 }
@@ -21660,7 +21744,7 @@
                 line-height: 1em;
             }
             .gotham-font &, .builder-font & {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 16px;
                     font-weight: 400;
                 }
@@ -21670,7 +21754,7 @@
                 }
                 line-height: 1em;
                 &:active, &:focus, &:hover {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-size: 16px;
                         font-weight: 400;
                     }
@@ -21703,7 +21787,7 @@
             text-align: center;
             display: block
         }
-        &:hover:after when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+        &:hover:after when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             text-decoration: underline;
         }
     }
@@ -21799,7 +21883,7 @@
                             padding: 0;
                             .item-card-name {
                                 font-size: 16px;
-                                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                                     font-weight: 500;
                                 }
@@ -22107,13 +22191,13 @@
     }
 
     /*/ Communities to Groups /*/
-    & when (@RemoveUpdates = 1) and (@RenameCommunities = 1) {
+    & when (@Revert201909updates = 1) and (@RenameCommunities = 1) {
         #nav-group .font-header-2, .left-nav [href*="/communities"] [class*=text-] {
             font-size: 0;
             &:after {
                 content: "Groups";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22122,7 +22206,7 @@
                 line-height: 1.428571429;
                 @media (max-width: 767px) {
                     font-size:12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 500;
                     }
                     & when (@SourceSansPro = 1) {
@@ -22327,7 +22411,7 @@
             &:after {
                 content: "Requested to join group, your request is pending.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -22345,7 +22429,7 @@
             &:after {
                 content: "Join a group to connect with people like you! Groups exist for all types of communities - fan clubs, help groups, hobbies, corporations, and more. Groups have their own walls and shared places.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22619,7 +22703,7 @@
             &:after {
                 content: "Are you sure you want to leave this group?";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22643,7 +22727,7 @@
             &:after {
                 content: "Configure Group";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22657,7 +22741,7 @@
             &:after {
                 content: "Leave Group";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22682,7 +22766,7 @@
             &:after {
                 content: "No games are associated with this group.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -22709,7 +22793,7 @@
             &:after {
                 content: "Groups have the ability to create and sell official shirts, pants, and t-shirts! All revenue goes to group funds.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22744,7 +22828,7 @@
             &:after {
                 content: "No items are for sale in this group.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -22765,7 +22849,7 @@
             &:after {
                 content: "Unable to load group affiliates.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -22784,7 +22868,7 @@
             &:after {
                 content: "This group does not have any allies.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -22817,7 +22901,7 @@
             }
             &:before {
                 content: "Back to Group";
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 16px;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22832,7 +22916,7 @@
             &:after {
                 content: "Could not load group configuration metadata.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -22849,7 +22933,7 @@
             &:after {
                 content: "Group Funds:";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22872,7 +22956,7 @@
             &:before {
                 content: "Select the new group owner";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400
                 }
                 & when (@SourceSansPro = 1) {
@@ -22893,7 +22977,7 @@
                 content: "This is a permanent change and you will lose all of the privileges of group ownership. This includes the ability to keep group items on sale if the new owner does not have Roblox Premium.";
                 font-size: 16px;
                 font-weight: 500;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     line-height: 1.4em;
                 }
                 & when (@SourceSansPro = 1) {
@@ -22919,7 +23003,7 @@
             }
             &:after {
                 content: "Change Group Name";
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 20px;
                     font-weight: 700;
                     @media (max-width: 767px) {
@@ -22947,7 +23031,7 @@
             &:before {
                 content: "Changing a group name will cost ";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400
                 }
                 & when (@SourceSansPro = 1) {
@@ -22964,7 +23048,7 @@
             &:after {
                 content: "100.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400
                 }
                 & when (@SourceSansPro = 1) {
@@ -22991,7 +23075,7 @@
             &:after {
                 content: "New group name";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -23135,7 +23219,7 @@
             &:after {
                 content: "User requests must be accepted to join group";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23146,7 +23230,7 @@
                 cursor: text;
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23165,7 +23249,7 @@
             }
             &:after {
                 content: "Group Profile";
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 20px;
                     font-weight: 700;
                     @media (max-width: 767px) {
@@ -23189,7 +23273,7 @@
             &:after {
                 content: "Group funds publicly visible";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23199,7 +23283,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23214,7 +23298,7 @@
             &:after {
                 content: "Group games are visible on the group home page";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23224,7 +23308,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23241,7 +23325,7 @@
                 content: "Group Amount";
                 font-size: 16px;
                 font-weight: bold;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     line-height: 1.4em;
                 }
                 & when (@SourceSansPro = 1) {
@@ -23256,7 +23340,7 @@
             &:after {
                 content: "Group Revenue Payouts";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23267,7 +23351,7 @@
                 cursor: text;
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23282,7 +23366,7 @@
             &:after {
                 content: "Group Premium Payouts";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23293,7 +23377,7 @@
                 cursor: text;
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23311,7 +23395,7 @@
             &:after {
                 content: "No group members are in this role.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23330,7 +23414,7 @@
             &:after {
                 content: "No users are banned from this group";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23348,7 +23432,7 @@
             &:after {
                 content: "View group wall";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23358,7 +23442,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23373,7 +23457,7 @@
             &:after {
                 content: "Post on group wall";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23383,7 +23467,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23398,7 +23482,7 @@
             &:after {
                 content: "Delete group wall posts";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23408,7 +23492,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23423,7 +23507,7 @@
             &:after {
                 content: "View group shout";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23433,7 +23517,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23448,7 +23532,7 @@
             &:after {
                 content: "Post group shout";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23458,7 +23542,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23474,7 +23558,7 @@
             &:after {
                 content: "Spend group funds";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23484,7 +23568,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23499,7 +23583,7 @@
             &:after {
                 content: "Create and edit group games";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23509,7 +23593,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23524,7 +23608,7 @@
             &:after {
                 content: "View group game analytics";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23534,7 +23618,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23550,7 +23634,7 @@
             &:after {
                 content: "Create group API keys";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23560,7 +23644,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23575,7 +23659,7 @@
             &:after {
                 content: "Administer all group API keys";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23585,7 +23669,7 @@
                 }
                 @media (max-width: 543px) {
                     font-size: 12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 400;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23603,7 +23687,7 @@
             &:after {
                 content: "This group does not have any enemies.";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 400;
                     line-height: 1.4em;
                 }
@@ -23641,14 +23725,14 @@
     }
 
     /*/ Connections to Friends /*/
-    & when (@RemoveUpdates = 1) and (@RenameConnections = 1) {
+    & when (@Revert201909updates = 1) and (@RenameConnections = 1) {
         /* Navigation */
         .rbx-left-col li #nav-friends .font-header-2 {
             font-size: 0;
             &:after {
                 content: "Friends";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -23657,7 +23741,7 @@
                 line-height: 1.42857;
                 @media (max-width: 767px) {
                     font-size:12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 500;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23666,7 +23750,7 @@
                 }
                 &:active, &:hover, &:link, &:visited {
                     font-size: 16px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 500;
                     }
                     & when (@SourceSansPro = 1) {
@@ -23674,7 +23758,7 @@
                     }
                     @media (max-width: 767px) {
                         font-size:12px;
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-weight: 500;
                         }
                         & when (@SourceSansPro = 1) {
@@ -23781,11 +23865,11 @@
             &:before {
                 content: "Friends";
                 & when (@SourceSansPro = 0) {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
                         font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         font-size: 12px;
                     }
-                    & when not ((@RemoveUpdates = 1) and (@HCoGothamSSm = 1)) {
+                    & when not ((@Revert201909updates = 1) and (@HCoGothamSSm = 1)) {
                         font-size: 16px;
                     }
                     font-weight: 500;
@@ -23894,14 +23978,14 @@
                 & when (@HCoGothamSSmFixes = 0) or (@SourceSansPro = 1) {
                     font-size: 14px;
                     font-weight: 400;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         line-height: 1.4em;
                     }
                     & when (@SourceSansPro = 1) {
                         line-height: 1.3em;
                     }
                 }
-                & when (@HCoGothamSSmFixes = 1) and (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@HCoGothamSSmFixes = 1) and (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 12px;
                     font-weight: 400;
                 }
@@ -23925,7 +24009,7 @@
                 & when (@HCoGothamSSmFixes = 0) or (@SourceSansPro = 1) {
                     font-size: 18px;
                 }
-                & when (@HCoGothamSSmFixes = 1) and (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@HCoGothamSSmFixes = 1) and (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 16px;
                 }
                 line-height: 100%
@@ -24211,13 +24295,13 @@
                 .group-details {
                     float: left;
                     margin: 0;
-                    & when (@SourceSansPro = 0) and (@RemoveUpdates = 1) {
+                    & when (@SourceSansPro = 0) and (@Revert201909updates = 1) {
                         margin-top: 48px;
                     }
-                    & when (@SourceSansPro = 1) and (@RemoveUpdates = 1) {
+                    & when (@SourceSansPro = 1) and (@Revert201909updates = 1) {
                         margin-top: 52px;
                     }
-                    & when (@RemoveUpdates = 0) or (@RenameCommunities = 0) {
+                    & when (@Revert201909updates = 0) or (@RenameCommunities = 0) {
                         @media (min-width: 768px) {
                             width: 75%;
                         }
@@ -24233,10 +24317,10 @@
                     max-width: 1146px;
                     @media (max-width: 1338px) {
                         &:not(.no-list) .group-details {
-                            & when (@RemoveUpdates = 0) {
+                            & when (@Revert201909updates = 0) {
                                 width: 75%;
                             }
-                            & when (@RemoveUpdates = 1) {
+                            & when (@Revert201909updates = 1) {
                                 width: calc(100% - 170px);
                             }
                             margin-left: 10px;
@@ -24324,20 +24408,20 @@
                     padding-right: 0;
                     margin-bottom: 10px;
                     width: 100%;
-                    & when (@RemoveUpdates = 0) {
+                    & when (@Revert201909updates = 0) {
                         margin-top: 10px;
                         @media (min-width: 768px) {
                             width: 25%;
                             padding-right: 16px;
                         }
                     }
-                    & when (@RemoveUpdates = 1) and (@RenameCommunities = 0) {
+                    & when (@Revert201909updates = 1) and (@RenameCommunities = 0) {
                         @media (min-width: 768px) {
                             width: 25%;
                             padding-right: 16px;
                         }
                     }
-                    & when (@RemoveUpdates = 1) and (@RenameCommunities = 1) {
+                    & when (@Revert201909updates = 1) and (@RenameCommunities = 1) {
                         @media (min-width: 768px) {
                             width: 160px;
                         }
@@ -24352,11 +24436,11 @@
                         .text-truncate-split, .text-truncate-end {
                             line-height: 100%;
                         }
-                        .text-body-medium when (@RemoveUpdates = 1) {
+                        .text-body-medium when (@Revert201909updates = 1) {
                             display: none;
                         }
                         .text-title-medium {
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                 font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                                 font-size: 12px;
                                 font-weight: 500;
@@ -24376,7 +24460,7 @@
                     }
                 }
                 .groups-list-heading {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         font-size: 32px;
                         font-weight: 800;
@@ -24395,13 +24479,13 @@
                     line-height: 1em;
                 }
                 .text-label-medium {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                     }
                     & when (@SourceSansPro = 1) {
                         font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
                     }
-                    & when (@RemoveUpdates = 1) and (@RenameCommunities = 0) {
+                    & when (@Revert201909updates = 1) and (@RenameCommunities = 0) {
                         content: "More Groups";
                         & when (@SourceSansPro = 0) {
                             font-size: 16px;
@@ -24415,7 +24499,7 @@
                             text-decoration: underline;
                         }
                     }
-                    & when (@RemoveUpdates = 1) and (@RenameCommunities = 1) {
+                    & when (@Revert201909updates = 1) and (@RenameCommunities = 1) {
                         font-size: 0;
                         &:active, &:hover, &:link, &:visited {
                             font-size: 0;
@@ -24440,7 +24524,7 @@
                         }
                     }
                     text-align: center;
-                    &:after when (@RemoveUpdates = 1) and (@RenameCommunities = 1) {
+                    &:after when (@Revert201909updates = 1) and (@RenameCommunities = 1) {
                         content: "More Groups";
                         & when (@SourceSansPro = 0) {
                             font-size: 16px;
@@ -24459,7 +24543,7 @@
                     text-align: center;
                     padding: 10px 12px;
                     width: 160px;
-                    &:after when (@RemoveUpdates = 1) and (@RenameCommunities = 1) {
+                    &:after when (@Revert201909updates = 1) and (@RenameCommunities = 1) {
                         content: "You are not a member of any groups.";
                         & when (@SourceSansPro = 0) {
                             font-size: 16px;
@@ -24496,18 +24580,18 @@
             margin-top: 10px;
             margin-bottom: 0;
             width: 100%;
-            & when (@RemoveUpdates = 0) or (@RenameCommunities = 0) {
+            & when (@Revert201909updates = 0) or (@RenameCommunities = 0) {
                 @media (min-width: 768px) {
                     width: 25%;
                     padding-right: 16px;
                 }
             }
-            & when (@RemoveUpdates = 1) and (@RenameCommunities = 1) {
+            & when (@Revert201909updates = 1) and (@RenameCommunities = 1) {
                 @media (min-width: 768px) {
                     width: 160px;
                 }
             }
-            & when (@RemoveUpdates = 1) {
+            & when (@Revert201909updates = 1) {
                 display: none;
             }
         }
@@ -24515,13 +24599,13 @@
             padding-top: 0;
             border: 0;
             width: 100%;
-            & when (@RemoveUpdates = 0) or (@RenameCommunities = 0) {
+            & when (@Revert201909updates = 0) or (@RenameCommunities = 0) {
                 @media (min-width: 768px) {
                     width: 25%;
                     padding-right: 16px;
                 }
             }
-            & when (@RemoveUpdates = 1) and (@RenameCommunities = 1) {
+            & when (@Revert201909updates = 1) and (@RenameCommunities = 1) {
                 @media (min-width: 768px) {
                     width: 160px;
                 }
@@ -24552,7 +24636,7 @@
             border-radius: 0;
             margin: 0;
         }
-        & when (@RemoveUpdates = 0) {
+        & when (@Revert201909updates = 0) {
             &:has(.groups-list-item-pill) {
                 border-bottom: 1px solid #b8b8b8;
                 .light-theme & {
@@ -24563,7 +24647,7 @@
                 }
             }
         }
-        .groups-list-item-pill when (@RemoveUpdates = 1) {
+        .groups-list-item-pill when (@Revert201909updates = 1) {
             display: none;
         }
         .light-theme & {
@@ -24672,7 +24756,7 @@
             height: 128px;
             display: block;
             .profile-header-details-community-name {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                     font-size: 32px;
                     font-weight: 800;
@@ -24700,7 +24784,7 @@
             .profile-header-details-owner-name {
                 display: block;
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                     font-weight: 500;
                     line-height: 1.4em;
@@ -24725,7 +24809,7 @@
                         color: #00a2ff;
                     }
                     font-size: 16px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         font-weight: 500;
                         line-height: 1.4em;
@@ -24763,7 +24847,7 @@
             display: flex;
             flex-direction: column-reverse;
             .actions-btn {
-                & when (@RemoveUpdates = 1) {
+                & when (@Revert201909updates = 1) {
                     font-size: 0;
                     &:active, &:focus, &:hover {
                         font-size: 0;
@@ -24790,7 +24874,7 @@
                 padding: 9px;
                 margin-bottom: 6px;
                 min-height: unset;
-                &:after when (@RemoveUpdates = 1) {
+                &:after when (@Revert201909updates = 1) {
                     content: "Join Group";
                     font-size: 18px;
                     font-weight: 500;
@@ -24901,7 +24985,7 @@
                     content: "";
                     color: #b8b8b8;
                     & when (@SourceSansPro = 0) {
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
                             font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         }
                         font-size: 12px;
@@ -24927,11 +25011,11 @@
                 }
                 &:nth-child(1) {
                     & when (@SourceSansPro = 0) {
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
                             font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         }
                         font-size: 12px;
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
                             font-weight: 400;
                         }
                         max-width: 82.16px;
@@ -24964,11 +25048,11 @@
                     &:after {
                         content: attr(title);
                         & when (@SourceSansPro = 0) {
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
                                 font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                             }
                             font-size: 12px;
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
                                 font-weight: 400;
                             }
                         }
@@ -25023,7 +25107,7 @@
                     box-shadow: inset 0 -4px 0 0 #00a2ff;
                 }
                 .text-lead {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         font-size: 16px;
                         font-weight: 500;
@@ -25117,7 +25201,7 @@
                 align-items: unset;
                 max-width: unset;
                 .text-label-medium {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         font-size: 16px;
                         font-weight: 500;
@@ -25145,7 +25229,7 @@
                 margin-top: 6px;
                 word-break: break-word;
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                     font-weight: 400;
                     line-height: 1.4em;
@@ -25168,7 +25252,7 @@
                 float: left;
                 width: 100%;
                 .text-caption-medium {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         line-height: 1.4em;
                     }
@@ -25245,7 +25329,7 @@
                 overflow-wrap: break-word;
                 width: 100%;
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                     font-weight: 400;
                     line-height: 1.4em;
@@ -25267,7 +25351,7 @@
                 margin-top: 12px;
                 float: left;
                 width: 100%;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                     line-height: 1.4em;
                 }
@@ -25297,7 +25381,7 @@
         display: block;
         margin-bottom: 0;
         .text-label-medium {
-            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                 font-size: 16px;
                 font-weight: 500;
@@ -25354,7 +25438,7 @@
     }
 
     /*/ Revert new Games Modal /*/
-    & when (@RemoveUpdates = 1) and (@RevertGameModals = 1) {
+    & when (@Revert201909updates = 1) and (@RevertGameModals = 1) {
         .MuiDialog-root, .MuiModal-root {
             z-index: 1042;
             .MuiModal-backdrop:not(.MuiBackdrop-invisible) {
@@ -25372,7 +25456,7 @@
                 margin: 0;
                 display: block;
                 .MuiInputBase-formControl {
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                         font-size: 16px;
                         font-weight: 400;
@@ -25437,7 +25521,7 @@
                             &:before, &:after {
                                 display: none;
                             }
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                 font-weight: 500;
                                 line-height: 1.4em
                             }
@@ -25465,7 +25549,7 @@
                             padding: 12px;
                             margin: 0;
                             p {
-                                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
                                     font-size: 12px;
                                     font-weight: 500;
@@ -25538,7 +25622,7 @@
                             max-width: 100%;
                             display: inline-block;
                             h2 {
-                                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif !important;
                                 }
                                 & when (@SourceSansPro = 1) {
@@ -25700,7 +25784,7 @@
                         width: unset;
                         height: unset;
                         font-size: 16px;
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-weight: 400;
                         }
                         & when (@SourceSansPro = 1) {
@@ -25747,7 +25831,7 @@
                         }
                         [class*="-message"] {
                             font-size: 16px !important;
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                 font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif !important;
                                 font-weight: 400 !important;
                             }
@@ -25778,7 +25862,7 @@
                                 &:after {
                                     content: "You're moments away from getting into the game!";
                                     font-size: 16px;
-                                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                         font-weight: 400;
                                     }
                                     & when (@SourceSansPro = 1) {
@@ -25948,7 +26032,7 @@
     }
 
     /*/ Revert React Avatar Editor /*/
-    & when (@RemoveUpdates = 1) and (@RevertReactAvatarEditor = 1) {
+    & when (@Revert201909updates = 1) and (@RevertReactAvatarEditor = 1) {
         .item-cards-stackable .item-card-thumb-container .thumbnail-2d-container {
             border-radius: 0;
         }
@@ -26174,7 +26258,7 @@
     @PlusIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Cpath d='M13.8555 2.5606C15.1824 1.81313 16.8176 1.81313 18.1445 2.5606L26.8555 7.46782C28.1824 8.21534 28.9999 9.59781 29 11.0928V20.9073C29 22.4024 28.1824 23.7847 26.8555 24.5323L18.1445 29.4395L17.8926 29.5704C16.6996 30.143 15.3004 30.143 14.1074 29.5704L13.8555 29.4395L11.0176 27.8409C10.3887 27.4864 10 26.8196 10 26.0977V12.001C10.0002 10.8967 10.8957 10.0012 12 10.001L20 10.0001C21.1044 10 21.9998 10.8957 22 12.0001V19.0001C22 20.1046 21.1046 21.0001 20 21.0001H16C15.4477 21.0001 15 20.5523 15 20.0001C15.0002 19.4479 15.4478 19.0001 16 19.0001H20V12.0001L12 12.001V26.0987L14.8369 27.6973C15.5545 28.1016 16.4455 28.1016 17.1631 27.6973L25.874 22.7891C26.5863 22.3877 27 21.6636 27 20.9073V11.0928C26.9999 10.3366 26.5863 9.61234 25.874 9.21099L17.1631 4.30278C16.4456 3.89864 15.5544 3.89864 14.8369 4.30278L6.12598 9.21099C5.41372 9.61234 5.00013 10.3366 5 11.0928V20.9073C5 21.6636 5.4137 22.3877 6.12598 22.7891L6.49023 22.9942C6.80495 23.1714 7 23.5051 7 23.8663C6.99984 24.6314 6.17549 25.1128 5.50879 24.7374L5.14453 24.5323C3.81763 23.7847 3 22.4024 3 20.9073V11.0928C3.00012 9.69126 3.71827 8.38846 4.90137 7.61528L5.14453 7.46782L13.8555 2.5606Z' fill='black'/%3E%3C/svg%3E");
     @PremiumIcon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTE0IDE0VjJIMnYxNGEyIDIgMCAwIDEtMi0yVjJhMiAyIDAgMCAxIDItMmgxMmEyIDIgMCAwIDEgMiAydjEyYTIgMiAwIDAgMS0yIDJIOHYtMnptLTItOHY2SDh2LTJoMlY2SDZ2MTBINFY0aDh6IiBmaWxsPSIjMzkzYjNkIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=");
     @BTRoblox-icon_nav: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F%3E%3C!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns%23" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns%23" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" width="56" height="84" viewBox="0 0 56 84" enable-background="new 0 0 56 448" xml:space="preserve" id="svg2" inkscape:version="0.48.5 r10040" sodipodi:docname="nav2.svg"%3E%3Cmetadata id="metadata786"%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=""%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cdefs id="defs784"%3E%3C/defs%3E%3Csodipodi:namedview pagecolor="%23ff00ff" bordercolor="%23666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0.60784314" inkscape:pageshadow="2" inkscape:window-width="1920" inkscape:window-height="1148" id="namedview782" showgrid="true" inkscape:snap-bbox="true" inkscape:snap-bbox-midpoints="true" inkscape:zoom="5.6568542" inkscape:cx="33.932503" inkscape:cy="35.971128" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg2" inkscape:bbox-nodes="false" inkscape:snap-bbox-edge-midpoints="false" borderlayer="false"%3E%3Cinkscape:grid type="xygrid" id="grid3763" empspacing="2" visible="true" enabled="true" snapvisiblegridlinesonly="true" spacingx="14px" spacingy="14px" /%3E%3C/sodipodi:namedview%3E%3Cg id="label" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="BC" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="brand" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="generic" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="negative" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="creation" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="games" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="Social_and_Interaction" transform="translate(0,-364)"%3E%3C/g%3E%3Cg id="g4034" transform="translate(-0.70710678,0.7)"%3E%3Cg transform="translate(0.65049803,-196.7)" id="g201" style="fill:%23ffffff"%3E%3Cpath style="fill:%23ffffff" inkscape:connector-curvature="0" id="path203" d="m 11,238 c -3.3,0 -6,-2.7 -6,-6 0,-3.3 2.7,-6 6,-6 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 z m 0,-10 c -2.2,0 -4,1.8 -4,4 0,2.2 1.8,4 4,4 2.2,0 4,-1.8 4,-4 0,-2.2 -1.8,-4 -4,-4 z" /%3E%3C/g%3E%3Cpath d="m 19.650498,41.9 c -0.4,0 -0.8,-0.2 -0.9,-0.6 -0.2,-0.5 0,-1.1 0.5,-1.3 1.5,-0.6 2.4,-2.1 2.4,-3.7 0,-1.9 -1.3,-3.5 -3.2,-3.9 -0.5,-0.1 -0.9,-0.6 -0.8,-1.2 0.1,-0.5 0.6,-0.9 1.2,-0.8 2.8,0.6 4.8,3 4.8,5.9 0,2.4 -1.4,4.5 -3.6,5.5 -0.1,0.1 -0.3,0.1 -0.4,0.1 z" id="path207" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3Cg transform="translate(0.65049803,-196.7)" id="g209" style="fill:%23ffffff"%3E%3Cpath style="fill:%23ffffff" inkscape:connector-curvature="0" id="path211" d="m 11,250 c -5.2,0 -8.4,-2.1 -8.5,-2.2 -0.3,-0.2 -0.5,-0.6 -0.4,-1 0.2,-1.2 1.1,-5.4 2.3,-6.5 1.2,-1.2 5.1,-1.3 6.7,-1.3 1.6,0 5.5,0.1 6.7,1.3 1.1,1.1 2,5.3 2.3,6.5 0.1,0.4 -0.1,0.8 -0.4,1 -0.3,0.1 -3.5,2.2 -8.7,2.2 z m -6.9,-3.5 c 1.1,0.5 3.5,1.5 6.9,1.5 3.4,0 5.8,-1 6.9,-1.5 -0.5,-2.1 -1.2,-4.3 -1.6,-4.8 -0.4,-0.4 -2.9,-0.7 -5.3,-0.7 -2.4,0 -4.9,0.3 -5.3,0.7 -0.4,0.4 -1.1,2.7 -1.6,4.8 z" /%3E%3C/g%3E%3Cpath d="m 22.650498,52.3 c -0.4,0 -0.8,-0.3 -1,-0.7 -0.2,-0.5 0.1,-1.1 0.7,-1.2 1.1,-0.3 1.8,-1 2.2,-1.3 -0.5,-2.2 -1.2,-4.6 -1.6,-5 -0.6,-0.6 -2.6,-2 -3.4,-2.1 -0.5,-0.1 -0.9,-0.6 -0.9,-1.1 0.1,-0.5 0.5,-1 1.1,-0.9 1.7,0.2 4.3,2.4 4.6,2.7 1.1,1.1 2,5.3 2.3,6.5 0.1,0.3 0,0.6 -0.2,0.8 -0.1,0.1 -1.3,1.7 -3.5,2.4 -0.1,-0.1 -0.2,-0.1 -0.3,-0.1 z" id="path215" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="Navigation_copy" display="none" style="display:none" transform="translate(0,-364)"%3E%3Crect display="inline" width="56" height="28" id="rect398" x="0" y="0" style="fill:none;display:inline" /%3E%3Cg id="blog-on_2_" display="inline" style="display:inline"%3E%3Cg id="g401"%3E%3Cpath d="m 51,416 c -0.1,0 -0.3,0 -0.4,-0.1 L 36.8,410 h -1.6 l -1.8,0.9 c -0.3,0.2 -0.7,0.1 -1,0 -0.3,-0.2 -0.5,-0.5 -0.5,-0.9 v -7 c 0,-0.3 0.2,-0.7 0.5,-0.9 0.3,-0.2 0.7,-0.2 1,0 l 1.8,0.9 h 1.5 l 13.8,-6.9 c 0.3,-0.2 0.7,-0.1 1,0 0.3,0.2 0.5,0.5 0.5,0.9 v 18 c 0,0.3 -0.2,0.6 -0.4,0.8 -0.2,0.1 -0.4,0.2 -0.6,0.2 z m -16,-8 h 2 c 0.1,0 0.3,0 0.4,0.1 l 12.6,5.4 v -14.9 l -12.6,6.3 C 37.3,405 37.1,405 37,405 h -2 c -0.2,0 -0.3,0 -0.4,-0.1 L 34,404.6 v 3.8 l 0.6,-0.3 C 34.7,408 34.8,408 35,408 z" id="path403" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g405"%3E%3Cpath d="m 42,417 c -0.1,0 -0.3,0 -0.4,-0.1 l -6,-3 C 35.3,413.7 35,413.4 35,413 v -3 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 2.4 l 4.6,2.3 1.6,-3.1 c 0.2,-0.5 0.8,-0.7 1.3,-0.4 0.5,0.2 0.7,0.8 0.4,1.3 l -2,4 c -0.2,0.3 -0.5,0.5 -0.9,0.5 z" id="path407" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="blog_1_" display="inline" style="display:inline"%3E%3Cg id="g410"%3E%3Cpath d="m 23,416 c -0.1,0 -0.3,0 -0.4,-0.1 L 8.8,410 H 7.2 l -1.8,0.9 c -0.3,0.2 -0.7,0.1 -1,0 C 4.2,410.7 4,410.3 4,410 v -7 c 0,-0.3 0.2,-0.7 0.5,-0.9 0.3,-0.2 0.7,-0.2 1,0 l 1.8,0.9 h 1.5 l 13.8,-6.9 c 0.3,-0.2 0.7,-0.1 1,0 0.3,0.2 0.5,0.5 0.5,0.9 v 18 c 0,0.3 -0.2,0.6 -0.4,0.8 -0.3,0.1 -0.5,0.2 -0.7,0.2 z M 7,408 h 2 c 0.1,0 0.3,0 0.4,0.1 L 22,413.5 V 398.6 L 9.4,404.9 C 9.3,405 9.2,405 9,405 H 7 c -0.2,0 -0.3,0 -0.4,-0.1 L 6,404.6 v 3.8 l 0.6,-0.3 C 6.7,408 6.8,408 7,408 z" id="path412" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g414"%3E%3Cpath d="m 14,417 c -0.1,0 -0.3,0 -0.4,-0.1 l -6,-3 C 7.2,413.7 7,413.4 7,413 v -3 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 2.4 l 4.6,2.3 1.6,-3.1 c 0.2,-0.5 0.8,-0.7 1.3,-0.4 0.5,0.2 0.7,0.8 0.4,1.3 l -2,4 c -0.2,0.3 -0.5,0.5 -0.9,0.5 z" id="path416" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="forum-on_2_" display="inline" style="display:inline"%3E%3Cg id="g419"%3E%3Cpath d="m 46,388 c -0.1,0 -0.3,0 -0.4,-0.1 C 45.2,387.7 45,387.4 45,387 v -2 h -2 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 3 c 0.6,0 1,0.4 1,1 v 0.9 l 2,-1.6 c 0.2,-0.1 0.4,-0.2 0.6,-0.2 H 52 v -5 h -1 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 2 c 0.6,0 1,0.4 1,1 v 7 c 0,0.6 -0.4,1 -1,1 h -3 l -3.3,2.8 c -0.2,0 -0.5,0.1 -0.7,0.1 z" id="path421" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g423"%3E%3Cpath d="m 39,387 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 33.6,382 H 31 c -0.6,0 -1,-0.4 -1,-1 v -12 c 0,-0.6 0.4,-1 1,-1 h 17 c 0.6,0 1,0.4 1,1 v 12 c 0,0.6 -0.4,1 -1,1 h -8 v 4 c 0,0.4 -0.2,0.8 -0.6,0.9 -0.1,0.1 -0.3,0.1 -0.4,0.1 z m -7,-7 h 2 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 V 381 c 0,-0.6 0.4,-1 1,-1 h 8 V 370 H 32 v 10 z" id="path425" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="forum_1_" display="inline" style="display:inline"%3E%3Cg id="g428"%3E%3Cpath d="m 18,388 c -0.1,0 -0.3,0 -0.4,-0.1 C 17.2,387.7 17,387.4 17,387 v -2 h -2 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 3 c 0.6,0 1,0.4 1,1 v 0.9 l 2,-1.6 c 0.2,-0.1 0.4,-0.2 0.6,-0.2 H 24 v -5 h -1 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 2 c 0.6,0 1,0.4 1,1 v 7 c 0,0.6 -0.4,1 -1,1 h -3 l -3.3,2.8 c -0.2,0 -0.5,0.1 -0.7,0.1 z" id="path430" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g432"%3E%3Cpath d="m 11,387 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 5.6,382 H 3 c -0.6,0 -1,-0.4 -1,-1 v -12 c 0,-0.6 0.4,-1 1,-1 h 17 c 0.6,0 1,0.4 1,1 v 12 c 0,0.6 -0.4,1 -1,1 h -8 v 4 c 0,0.4 -0.2,0.8 -0.6,0.9 -0.1,0.1 -0.3,0.1 -0.4,0.1 z m -7,-7 h 2 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 V 381 c 0,-0.6 0.4,-1 1,-1 h 8 V 370 H 4 v 10 z" id="path434" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="group-on_2_" display="inline" style="display:inline"%3E%3Cg id="g437"%3E%3Cpath d="m 42,350 c -2.8,0 -5,-2.2 -5,-5 0,-2.8 2.2,-5 5,-5 2.8,0 5,2.2 5,5 0,2.8 -2.2,5 -5,5 z m 0,-8 c -1.7,0 -3,1.3 -3,3 0,1.7 1.3,3 3,3 1.7,0 3,-1.3 3,-3 0,-1.7 -1.3,-3 -3,-3 z" id="path439" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g441"%3E%3Cpath d="m 42,361 c -4.2,0 -6.6,-2.2 -6.7,-2.3 -0.2,-0.2 -0.3,-0.5 -0.3,-0.8 0.1,-1.7 0.4,-4.7 1.3,-5.7 0.9,-1 3.9,-1.2 5.7,-1.3 0,0 0.1,0 0.1,0 1.7,0.1 4.7,0.4 5.7,1.3 1,0.9 1.2,3.9 1.3,5.7 0,0.3 -0.1,0.6 -0.3,0.8 -0.2,0.1 -2.6,2.3 -6.8,2.3 z m -5,-3.5 c 0.7,0.5 2.4,1.5 5,1.5 2.6,0 4.3,-1 5,-1.5 -0.1,-1.8 -0.4,-3.5 -0.7,-3.9 -0.3,-0.2 -2.4,-0.6 -4.3,-0.7 -1.9,0.1 -3.9,0.4 -4.3,0.7 -0.2,0.4 -0.5,2.2 -0.7,3.9 z" id="path443" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g445"%3E%3Cg id="g447"%3E%3Cpath d="m 36,351 c -2.2,0 -4,-1.8 -4,-4 0,-1.7 1.1,-3.2 2.7,-3.8 0.5,-0.2 1.1,0.1 1.3,0.6 0.2,0.5 -0.1,1.1 -0.6,1.3 -0.8,0.3 -1.3,1 -1.3,1.9 0,1.1 0.9,2 2,2 0.6,0 1,0.4 1,1 0,0.6 -0.5,1 -1.1,1 z" id="path449" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g451"%3E%3Cpath d="m 33,358 c -0.1,0 -0.1,0 -0.2,0 -1.3,-0.3 -2.3,-1.1 -2.4,-1.2 -0.3,-0.2 -0.4,-0.6 -0.3,-1 0.3,-1.4 0.8,-3.9 1.6,-4.6 0.4,-0.4 3.3,-2 4.2,-2.2 0.5,-0.1 1.1,0.3 1.2,0.8 0.1,0.5 -0.3,1.1 -0.8,1.2 -0.5,0.1 -2.8,1.3 -3.2,1.7 -0.2,0.2 -0.6,1.5 -0.9,2.9 0.3,0.2 0.7,0.4 1.1,0.5 0.5,0.1 0.9,0.6 0.8,1.2 -0.2,0.4 -0.6,0.7 -1.1,0.7 z" id="path453" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g455"%3E%3Cpath d="m 48,351 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 1.1,0 2,-0.9 2,-2 0,-0.8 -0.5,-1.6 -1.3,-1.9 -0.5,-0.2 -0.8,-0.8 -0.6,-1.3 0.2,-0.5 0.8,-0.8 1.3,-0.6 1.6,0.6 2.7,2.1 2.7,3.8 -0.1,2.2 -1.9,4 -4.1,4 z" id="path457" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g459"%3E%3Cpath d="m 51,358 c -0.5,0 -0.9,-0.3 -1,-0.8 -0.1,-0.5 0.2,-1.1 0.8,-1.2 0.4,-0.1 0.8,-0.3 1.1,-0.5 -0.3,-1.4 -0.7,-2.7 -0.9,-3 -0.4,-0.3 -2.6,-1.5 -3.1,-1.6 -0.5,-0.1 -0.9,-0.6 -0.8,-1.2 0.1,-0.5 0.6,-0.9 1.1,-0.8 0.9,0.2 3.8,1.8 4.2,2.2 0.8,0.8 1.3,3.2 1.6,4.6 0.1,0.4 -0.1,0.7 -0.3,1 -0.1,0.1 -1.1,0.9 -2.4,1.2 -0.2,0.1 -0.2,0.1 -0.3,0.1 z" id="path461" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg id="group_1_" display="inline" style="display:inline"%3E%3Cg id="g464"%3E%3Cpath d="m 14,350 c -2.8,0 -5,-2.2 -5,-5 0,-2.8 2.2,-5 5,-5 2.8,0 5,2.2 5,5 0,2.8 -2.2,5 -5,5 z m 0,-8 c -1.7,0 -3,1.3 -3,3 0,1.7 1.3,3 3,3 1.7,0 3,-1.3 3,-3 0,-1.7 -1.3,-3 -3,-3 z" id="path466" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g468"%3E%3Cpath d="M 14,361 C 9.8,361 7.4,358.8 7.3,358.7 7.1,358.5 7,358.2 7,357.9 c 0.1,-1.7 0.4,-4.7 1.3,-5.7 0.9,-1 3.9,-1.2 5.7,-1.3 0,0 0.1,0 0.1,0 1.7,0.1 4.7,0.4 5.7,1.3 1,0.9 1.2,3.9 1.3,5.7 0,0.3 -0.1,0.6 -0.3,0.8 -0.2,0.1 -2.6,2.3 -6.8,2.3 z m -5,-3.5 c 0.7,0.5 2.4,1.5 5,1.5 2.6,0 4.3,-1 5,-1.5 -0.1,-1.8 -0.4,-3.5 -0.7,-3.9 -0.3,-0.2 -2.4,-0.6 -4.3,-0.7 -1.9,0.1 -3.9,0.4 -4.3,0.7 -0.2,0.4 -0.5,2.2 -0.7,3.9 z" id="path470" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g472"%3E%3Cg id="g474"%3E%3Cpath d="m 8,351 c -2.2,0 -4,-1.8 -4,-4 0,-1.7 1.1,-3.2 2.7,-3.8 0.5,-0.2 1.1,0.1 1.3,0.6 0.2,0.5 -0.1,1.1 -0.6,1.3 -0.8,0.3 -1.3,1 -1.3,1.9 0,1.1 0.9,2 2,2 0.6,0 1,0.4 1,1 0,0.6 -0.5,1 -1.1,1 z" id="path476" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g478"%3E%3Cpath d="m 5,358 c -0.1,0 -0.1,0 -0.2,0 -1.3,-0.3 -2.3,-1.1 -2.4,-1.2 -0.3,-0.2 -0.4,-0.6 -0.3,-1 0.3,-1.4 0.8,-3.9 1.6,-4.6 0.4,-0.4 3.3,-2 4.2,-2.2 0.5,-0.1 1.1,0.3 1.2,0.8 0.1,0.5 -0.3,1.1 -0.8,1.2 -0.5,0.1 -2.8,1.3 -3.2,1.7 -0.2,0.2 -0.6,1.5 -0.9,2.9 0.3,0.2 0.7,0.4 1.1,0.5 0.5,0.1 0.9,0.6 0.8,1.2 C 5.9,357.7 5.5,358 5,358 z" id="path480" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g482"%3E%3Cpath d="m 20,351 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 1.1,0 2,-0.9 2,-2 0,-0.8 -0.5,-1.6 -1.3,-1.9 -0.5,-0.2 -0.8,-0.8 -0.6,-1.3 0.2,-0.5 0.8,-0.8 1.3,-0.6 1.6,0.6 2.7,2.1 2.7,3.8 -0.1,2.2 -1.9,4 -4.1,4 z" id="path484" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g486"%3E%3Cpath d="m 23,358 c -0.5,0 -0.9,-0.3 -1,-0.8 -0.1,-0.5 0.2,-1.1 0.8,-1.2 0.4,-0.1 0.8,-0.3 1.1,-0.5 -0.3,-1.4 -0.7,-2.7 -0.9,-3 -0.4,-0.3 -2.6,-1.5 -3.1,-1.6 -0.5,-0.1 -0.9,-0.6 -0.8,-1.2 0.1,-0.5 0.6,-0.9 1.1,-0.8 0.9,0.2 3.8,1.8 4.2,2.2 0.8,0.8 1.3,3.2 1.6,4.6 0.1,0.4 -0.1,0.7 -0.3,1 -0.1,0.1 -1.1,0.9 -2.4,1.2 -0.2,0.1 -0.2,0.1 -0.3,0.1 z" id="path488" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg id="trade-on_2_" display="inline" style="display:inline"%3E%3Cg id="g491"%3E%3Cpath d="m 34,323 c -0.2,0 -0.3,0 -0.4,-0.1 C 33.3,322.7 33,322.4 33,322 v -5 c 0,-0.3 0.1,-0.6 0.4,-0.8 l 4,-3 c 0.2,-0.1 0.4,-0.2 0.6,-0.2 h 5 v -2 c 0,-0.4 0.2,-0.8 0.6,-0.9 0.4,-0.2 0.8,-0.1 1.1,0.2 l 9,8 c 0.3,0.3 0.4,0.7 0.3,1.1 -0.1,0.4 -0.6,0.6 -1,0.6 H 38.3 l -3.7,2.8 c -0.2,0.1 -0.4,0.2 -0.6,0.2 z m 1,-5.5 v 2.5 l 2.4,-1.8 C 37.6,318.1 37.8,318 38,318 H 50.4 L 45,313.2 v 0.8 c 0,0.6 -0.4,1 -1,1 h -5.7 l -3.3,2.5 z" id="path493" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g495"%3E%3Cpath d="m 40,334 c -0.2,0 -0.5,-0.1 -0.7,-0.3 l -9,-8 C 30,325.4 29.9,325 30,324.6 c 0.1,-0.4 0.5,-0.6 0.9,-0.6 h 14.7 l 3.7,-2.8 c 0.3,-0.2 0.7,-0.3 1,-0.1 0.3,0.2 0.6,0.5 0.6,0.9 v 5 c 0,0.3 -0.1,0.6 -0.4,0.8 l -4,3 c -0.2,0.1 -0.4,0.2 -0.6,0.2 h -5 v 2 c 0,0.4 -0.2,0.8 -0.6,0.9 0,0.1 -0.2,0.1 -0.3,0.1 z m -6.4,-8 5.4,4.8 V 330 c 0,-0.6 0.4,-1 1,-1 h 5.7 L 49,326.5 V 324 l -2.4,1.8 C 46.4,325.9 46.2,326 46,326 H 33.6 z" id="path497" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="trade_1_" display="inline" style="display:inline"%3E%3Cg id="g500"%3E%3Cpath d="M 6,323 C 5.8,323 5.7,323 5.6,322.9 5.2,322.7 5,322.4 5,322 v -5 c 0,-0.3 0.1,-0.6 0.4,-0.8 l 4,-3 C 9.6,313.1 9.8,313 10,313 h 5 v -2 c 0,-0.4 0.2,-0.8 0.6,-0.9 0.4,-0.2 0.8,-0.1 1.1,0.2 l 9,8 c 0.3,0.3 0.4,0.7 0.3,1.1 -0.1,0.4 -0.6,0.6 -1,0.6 H 10.3 l -3.7,2.8 C 6.4,322.9 6.2,323 6,323 z m 1,-5.5 v 2.5 l 2.4,-1.8 C 9.6,318.1 9.8,318 10,318 H 22.4 L 17,313.2 v 0.8 c 0,0.6 -0.4,1 -1,1 H 10.3 L 7,317.5 z" id="path502" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g504"%3E%3Cpath d="m 12,334 c -0.2,0 -0.5,-0.1 -0.7,-0.3 l -9,-8 C 2,325.4 1.9,325 2,324.6 2.1,324.2 2.6,324 3,324 h 14.7 l 3.7,-2.8 c 0.3,-0.2 0.7,-0.3 1,-0.1 0.3,0.2 0.6,0.5 0.6,0.9 v 5 c 0,0.3 -0.1,0.6 -0.4,0.8 l -4,3 c -0.2,0.1 -0.4,0.2 -0.6,0.2 h -5 v 2 c 0,0.4 -0.2,0.8 -0.6,0.9 -0.1,0.1 -0.3,0.1 -0.4,0.1 z m -6.4,-8 5.4,4.8 V 330 c 0,-0.6 0.4,-1 1,-1 h 5.7 L 21,326.5 V 324 l -2.4,1.8 C 18.4,325.9 18.2,326 18,326 H 5.6 z" id="path506" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="inventory-on_2_" display="inline" style="display:inline"%3E%3Cg id="g509"%3E%3Cpath d="M 50,306 H 34 c -0.6,0 -1,-0.4 -1,-1 v -14 c 0,-2.8 2.2,-5 5,-5 h 8 c 2.8,0 5,2.2 5,5 v 14 c 0,0.6 -0.4,1 -1,1 z m -15,-2 h 14 v -13 c 0,-1.7 -1.3,-3 -3,-3 h -8 c -1.7,0 -3,1.3 -3,3 v 13 z" id="path511" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g513"%3E%3Cpath d="m 38,299 c -0.6,0 -1,-0.4 -1,-1 v -2 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 2 c 0,0.6 -0.4,1 -1,1 z" id="path515" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g517"%3E%3Cpath d="m 46,299 c -0.6,0 -1,-0.4 -1,-1 v -2 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 2 c 0,0.6 -0.4,1 -1,1 z" id="path519" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g521"%3E%3Cpath d="m 45.5,288 c -0.6,0 -1,-0.4 -1,-1 v -0.5 c 0,-1.4 -1.1,-2.5 -2.5,-2.5 -1.4,0 -2.5,1.1 -2.5,2.5 v 0.5 c 0,0.6 -0.4,1 -1,1 -0.6,0 -1,-0.4 -1,-1 v -0.5 c 0,-2.5 2,-4.5 4.5,-4.5 2.5,0 4.5,2 4.5,4.5 v 0.5 c 0,0.6 -0.4,1 -1,1 z" id="path523" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g525"%3E%3Cpath d="m 44.9,297 h -5.8 c -2.3,0 -4.3,-1.3 -5.4,-3.3 l -0.6,-1.2 1.8,-0.9 0.6,1.2 c 0.7,1.4 2.1,2.2 3.6,2.2 h 5.8 c 1.5,0 2.9,-0.8 3.6,-2.2 l 0.6,-1.2 1.8,0.9 -0.6,1.2 c -1,2 -3.1,3.3 -5.4,3.3 z" id="path527" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="inventory_2_" display="inline" style="display:inline"%3E%3Cg id="g530"%3E%3Cpath d="M 22,306 H 6 c -0.6,0 -1,-0.4 -1,-1 v -14 c 0,-2.8 2.2,-5 5,-5 h 8 c 2.8,0 5,2.2 5,5 v 14 c 0,0.6 -0.4,1 -1,1 z M 7,304 h 14 v -13 c 0,-1.7 -1.3,-3 -3,-3 h -8 c -1.7,0 -3,1.3 -3,3 v 13 z" id="path532" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g534"%3E%3Cpath d="m 10,299 c -0.6,0 -1,-0.4 -1,-1 v -2 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 2 c 0,0.6 -0.4,1 -1,1 z" id="path536" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g538"%3E%3Cpath d="m 18,299 c -0.6,0 -1,-0.4 -1,-1 v -2 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 2 c 0,0.6 -0.4,1 -1,1 z" id="path540" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g542"%3E%3Cpath d="m 17.5,288 c -0.6,0 -1,-0.4 -1,-1 v -0.5 c 0,-1.4 -1.1,-2.5 -2.5,-2.5 -1.4,0 -2.5,1.1 -2.5,2.5 v 0.5 c 0,0.6 -0.4,1 -1,1 -0.6,0 -1,-0.4 -1,-1 v -0.5 c 0,-2.5 2,-4.5 4.5,-4.5 2.5,0 4.5,2 4.5,4.5 v 0.5 c 0,0.6 -0.4,1 -1,1 z" id="path544" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g546"%3E%3Cpath d="m 16.9,297 h -5.8 c -2.3,0 -4.3,-1.3 -5.4,-3.3 l -0.6,-1.2 1.8,-0.9 0.6,1.2 c 0.7,1.4 2.1,2.2 3.6,2.2 h 5.8 c 1.5,0 2.9,-0.8 3.6,-2.2 l 0.6,-1.2 1.8,0.9 -0.6,1.2 c -1,2 -3.1,3.3 -5.4,3.3 z" id="path548" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="charactercustomizer-on_2_" display="inline" style="display:inline"%3E%3Cg id="g551"%3E%3Cpath d="m 42,262 c -2.2,0 -4,-1.8 -4,-4 0,-2.2 1.8,-4 4,-4 2.2,0 4,1.8 4,4 0,2.2 -1.8,4 -4,4 z m 0,-6 c -1.1,0 -2,0.9 -2,2 0,1.1 0.9,2 2,2 1.1,0 2,-0.9 2,-2 0,-1.1 -0.9,-2 -2,-2 z" id="path553" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g555"%3E%3Cpath d="m 48,278 h -3 c -0.4,0 -0.7,-0.2 -0.9,-0.6 l -2.1,-4.2 -2.1,4.2 c -0.2,0.3 -0.5,0.6 -0.9,0.6 h -3 c -0.3,0 -0.6,-0.1 -0.8,-0.4 -0.2,-0.2 -0.3,-0.5 -0.2,-0.8 l 1.8,-8 -3.1,-0.8 c -0.4,-0.1 -0.8,-0.5 -0.8,-1 v -3 c 0,-0.6 0.4,-1 1,-1 h 16 c 0.6,0 1,0.4 1,1 v 3 c 0,0.5 -0.3,0.9 -0.8,1 l -3.1,0.8 1.8,8 c 0.1,0.3 0,0.6 -0.2,0.8 0,0.3 -0.3,0.4 -0.6,0.4 z m -2.4,-2 h 1.1 L 45,268.2 c -0.1,-0.5 0.2,-1.1 0.7,-1.2 l 3.2,-0.8 V 265 H 35 v 1.2 l 3.2,0.8 c 0.5,0.1 0.9,0.7 0.7,1.2 l -1.7,7.8 h 1.1 l 2.7,-5.4 c 0.3,-0.7 1.4,-0.7 1.8,0 l 2.8,5.4 z" id="path557" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="charactercustomizer_1_" display="inline" style="display:inline"%3E%3Cg id="g560"%3E%3Cpath d="m 14,262 c -2.2,0 -4,-1.8 -4,-4 0,-2.2 1.8,-4 4,-4 2.2,0 4,1.8 4,4 0,2.2 -1.8,4 -4,4 z m 0,-6 c -1.1,0 -2,0.9 -2,2 0,1.1 0.9,2 2,2 1.1,0 2,-0.9 2,-2 0,-1.1 -0.9,-2 -2,-2 z" id="path562" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g564"%3E%3Cpath d="m 20,278 h -3 c -0.4,0 -0.7,-0.2 -0.9,-0.6 l -2.1,-4.2 -2.1,4.2 C 11.7,277.7 11.4,278 11,278 H 8 C 7.7,278 7.4,277.9 7.2,277.6 7,277.4 7,277.1 7,276.8 l 1.8,-8 -3,-0.8 C 5.4,267.9 5,267.5 5,267 v -3 c 0,-0.6 0.4,-1 1,-1 h 16 c 0.6,0 1,0.4 1,1 v 3 c 0,0.5 -0.3,0.9 -0.8,1 l -3.1,0.8 1.8,8 c 0.1,0.3 0,0.6 -0.2,0.8 -0.1,0.3 -0.4,0.4 -0.7,0.4 z m -2.4,-2 h 1.1 L 17,268.2 c -0.1,-0.5 0.2,-1.1 0.7,-1.2 l 3.2,-0.8 V 265 H 7 v 1.2 l 3.2,0.8 c 0.5,0.1 0.9,0.7 0.7,1.2 L 9.2,276 h 1.1 l 2.7,-5.4 c 0.3,-0.7 1.4,-0.7 1.8,0 l 2.8,5.4 z" id="path566" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="friends-on_2_" display="inline" style="display:inline"%3E%3Cg id="g569"%3E%3Cpath d="m 39,238 c -3.3,0 -6,-2.7 -6,-6 0,-3.3 2.7,-6 6,-6 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 z m 0,-10 c -2.2,0 -4,1.8 -4,4 0,2.2 1.8,4 4,4 2.2,0 4,-1.8 4,-4 0,-2.2 -1.8,-4 -4,-4 z" id="path571" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g573"%3E%3Cpath d="m 47,238.6 c -0.4,0 -0.8,-0.2 -0.9,-0.6 -0.2,-0.5 0,-1.1 0.5,-1.3 1.5,-0.6 2.4,-2.1 2.4,-3.7 0,-1.9 -1.3,-3.5 -3.2,-3.9 -0.5,-0.1 -0.9,-0.6 -0.8,-1.2 0.1,-0.5 0.6,-0.9 1.2,-0.8 2.8,0.6 4.8,3 4.8,5.9 0,2.4 -1.4,4.5 -3.6,5.5 -0.1,0.1 -0.3,0.1 -0.4,0.1 z" id="path575" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g577"%3E%3Cpath d="m 39,250 c -5.2,0 -8.4,-2.1 -8.5,-2.2 -0.3,-0.2 -0.5,-0.6 -0.4,-1 0.2,-1.2 1.1,-5.4 2.3,-6.5 1.2,-1.2 5.1,-1.3 6.7,-1.3 1.6,0 5.5,0.1 6.7,1.3 1.1,1.1 2,5.3 2.3,6.5 0.1,0.4 -0.1,0.8 -0.4,1 -0.3,0.1 -3.5,2.2 -8.7,2.2 z m -6.9,-3.5 c 1.1,0.5 3.5,1.5 6.9,1.5 3.4,0 5.8,-1 6.9,-1.5 -0.5,-2.1 -1.2,-4.3 -1.6,-4.8 -0.4,-0.4 -2.9,-0.7 -5.3,-0.7 -2.4,0 -4.9,0.3 -5.3,0.7 -0.4,0.4 -1.1,2.7 -1.6,4.8 z" id="path579" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g581"%3E%3Cpath d="m 50,249 c -0.4,0 -0.8,-0.3 -1,-0.7 -0.2,-0.5 0.1,-1.1 0.7,-1.2 1.1,-0.3 1.8,-1 2.2,-1.3 -0.5,-2.2 -1.2,-4.6 -1.6,-5 -0.6,-0.6 -2.6,-2 -3.4,-2.1 -0.5,-0.1 -0.9,-0.6 -0.9,-1.1 0.1,-0.5 0.5,-1 1.1,-0.9 1.7,0.2 4.3,2.4 4.6,2.7 1.1,1.1 2,5.3 2.3,6.5 0.1,0.3 0,0.6 -0.2,0.8 -0.1,0.1 -1.3,1.7 -3.5,2.4 C 50.2,249 50.1,249 50,249 z" id="path583" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="friends_1_" display="inline" style="display:inline"%3E%3Cg id="g586"%3E%3Cpath d="m 11,238 c -3.3,0 -6,-2.7 -6,-6 0,-3.3 2.7,-6 6,-6 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 z m 0,-10 c -2.2,0 -4,1.8 -4,4 0,2.2 1.8,4 4,4 2.2,0 4,-1.8 4,-4 0,-2.2 -1.8,-4 -4,-4 z" id="path588" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g590"%3E%3Cpath d="m 19,238.6 c -0.4,0 -0.8,-0.2 -0.9,-0.6 -0.2,-0.5 0,-1.1 0.5,-1.3 1.5,-0.6 2.4,-2.1 2.4,-3.7 0,-1.9 -1.3,-3.5 -3.2,-3.9 -0.5,-0.1 -0.9,-0.6 -0.8,-1.2 0.1,-0.5 0.6,-0.9 1.2,-0.8 2.8,0.6 4.8,3 4.8,5.9 0,2.4 -1.4,4.5 -3.6,5.5 -0.1,0.1 -0.3,0.1 -0.4,0.1 z" id="path592" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g594"%3E%3Cpath d="m 11,250 c -5.2,0 -8.4,-2.1 -8.5,-2.2 -0.3,-0.2 -0.5,-0.6 -0.4,-1 0.2,-1.2 1.1,-5.4 2.3,-6.5 1.2,-1.2 5.1,-1.3 6.7,-1.3 1.6,0 5.5,0.1 6.7,1.3 1.1,1.1 2,5.3 2.3,6.5 0.1,0.4 -0.1,0.8 -0.4,1 -0.3,0.1 -3.5,2.2 -8.7,2.2 z m -6.9,-3.5 c 1.1,0.5 3.5,1.5 6.9,1.5 3.4,0 5.8,-1 6.9,-1.5 -0.5,-2.1 -1.2,-4.3 -1.6,-4.8 -0.4,-0.4 -2.9,-0.7 -5.3,-0.7 -2.4,0 -4.9,0.3 -5.3,0.7 -0.4,0.4 -1.1,2.7 -1.6,4.8 z" id="path596" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g598"%3E%3Cpath d="m 22,249 c -0.4,0 -0.8,-0.3 -1,-0.7 -0.2,-0.5 0.1,-1.1 0.7,-1.2 1.1,-0.3 1.8,-1 2.2,-1.3 -0.5,-2.2 -1.2,-4.6 -1.6,-5 -0.6,-0.6 -2.6,-2 -3.4,-2.1 -0.5,-0.1 -0.9,-0.6 -0.9,-1.1 0.1,-0.5 0.5,-1 1.1,-0.9 1.7,0.2 4.3,2.4 4.6,2.7 1.1,1.1 2,5.3 2.3,6.5 0.1,0.3 0,0.6 -0.2,0.8 -0.1,0.1 -1.3,1.7 -3.5,2.4 C 22.2,249 22.1,249 22,249 z" id="path600" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="message-on_2_" display="inline" style="display:inline"%3E%3Cg id="g603"%3E%3Cpath d="m 42,221 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 37.6,217 H 31 c -0.6,0 -1,-0.4 -1,-1 v -16 c 0,-0.6 0.4,-1 1,-1 h 22 c 0.6,0 1,0.4 1,1 v 16 c 0,0.6 -0.4,1 -1,1 h -6.6 l -3.7,3.7 c -0.2,0.2 -0.4,0.3 -0.7,0.3 z m -10,-6 h 6 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 3.3,-3.3 c 0.2,-0.2 0.4,-0.3 0.7,-0.3 h 6 V 201 H 32 v 14 z" id="path605" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g607"%3E%3Cpath d="M 48,207 H 36 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 12 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path609" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g611"%3E%3Cpath d="M 48,211 H 36 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 12 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path613" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="message_1_" display="inline" style="display:inline"%3E%3Cg id="g616"%3E%3Cpath d="m 14,221 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 9.6,217 H 3 c -0.6,0 -1,-0.4 -1,-1 v -16 c 0,-0.6 0.4,-1 1,-1 h 22 c 0.6,0 1,0.4 1,1 v 16 c 0,0.6 -0.4,1 -1,1 h -6.6 l -3.7,3.7 C 14.5,220.9 14.3,221 14,221 z M 4,215 h 6 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 3.3,-3.3 c 0.2,-0.2 0.4,-0.3 0.7,-0.3 h 6 V 201 H 4 v 14 z" id="path618" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g620"%3E%3Cpath d="M 20,207 H 8 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 12 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path622" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g624"%3E%3Cpath d="M 20,211 H 8 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 12 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path626" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="profile-on_2_" display="inline" style="display:inline"%3E%3Cg id="g629"%3E%3Cpath d="m 42,182 c -3.3,0 -6,-2.7 -6,-6 0,-3.3 2.7,-6 6,-6 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 z m 0,-10 c -2.2,0 -4,1.8 -4,4 0,2.2 1.8,4 4,4 2.2,0 4,-1.8 4,-4 0,-2.2 -1.8,-4 -4,-4 z" id="path631" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g633"%3E%3Cpath d="m 42,194 c -5.2,0 -8.4,-2.1 -8.5,-2.2 -0.3,-0.2 -0.5,-0.6 -0.4,-1 0.2,-1.2 1.1,-5.4 2.3,-6.5 1.2,-1.2 5.1,-1.3 6.7,-1.3 1.6,0 5.5,0.1 6.7,1.3 1.1,1.1 2,5.3 2.3,6.5 0.1,0.4 -0.1,0.8 -0.4,1 -0.3,0.1 -3.5,2.2 -8.7,2.2 z m -6.9,-3.5 c 1.1,0.5 3.5,1.5 6.9,1.5 3.4,0 5.8,-1 6.9,-1.5 -0.5,-2.1 -1.2,-4.3 -1.6,-4.8 -0.4,-0.4 -2.9,-0.7 -5.3,-0.7 -2.4,0 -4.9,0.3 -5.3,0.7 -0.4,0.4 -1.1,2.7 -1.6,4.8 z" id="path635" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="profile_1_" display="inline" style="display:inline"%3E%3Cg id="g638"%3E%3Cpath d="m 14,182 c -3.3,0 -6,-2.7 -6,-6 0,-3.3 2.7,-6 6,-6 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 z m 0,-10 c -2.2,0 -4,1.8 -4,4 0,2.2 1.8,4 4,4 2.2,0 4,-1.8 4,-4 0,-2.2 -1.8,-4 -4,-4 z" id="path640" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g642"%3E%3Cpath d="m 14,194 c -5.2,0 -8.4,-2.1 -8.5,-2.2 -0.3,-0.2 -0.5,-0.6 -0.4,-1 0.2,-1.2 1.1,-5.4 2.3,-6.5 1.2,-1.2 5.1,-1.3 6.7,-1.3 1.6,0 5.5,0.1 6.7,1.3 1.1,1.1 2,5.3 2.3,6.5 0.1,0.4 -0.1,0.8 -0.4,1 -0.3,0.1 -3.5,2.2 -8.7,2.2 z m -6.9,-3.5 c 1.1,0.5 3.5,1.5 6.9,1.5 3.4,0 5.8,-1 6.9,-1.5 -0.5,-2.1 -1.2,-4.3 -1.6,-4.8 -0.4,-0.4 -2.9,-0.7 -5.3,-0.7 -2.4,0 -4.9,0.3 -5.3,0.7 -0.4,0.4 -1.1,2.7 -1.6,4.8 z" id="path644" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="home-on_2_" display="inline" style="display:inline"%3E%3Cpath d="m 51,165 h -7 c -0.6,0 -1,-0.4 -1,-1 v -6 h -2 v 6 c 0,0.6 -0.4,1 -1,1 h -7 c -0.6,0 -1,-0.4 -1,-1 v -9 h -1 c -0.4,0 -0.8,-0.3 -0.9,-0.6 -0.1,-0.4 0,-0.8 0.3,-1.1 l 11,-10 c 0.4,-0.3 1,-0.3 1.3,0 l 11,10 c 0.3,0.3 0.4,0.7 0.3,1.1 -0.1,0.4 -0.5,0.6 -0.9,0.6 h -1 v 9 c -0.1,0.6 -0.5,1 -1.1,1 z m -6,-2 h 5 v -9 c 0,-0.4 0.2,-0.7 0.5,-0.9 l -8.5,-7.8 -8.5,7.8 c 0.3,0.2 0.5,0.5 0.5,0.9 v 9 h 5 v -6 c 0,-0.6 0.4,-1 1,-1 h 4 c 0.6,0 1,0.4 1,1 v 6 z" id="path647" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="home_2_" display="inline" style="display:inline"%3E%3Cpath d="m 23,165 h -7 c -0.6,0 -1,-0.4 -1,-1 v -6 h -2 v 6 c 0,0.6 -0.4,1 -1,1 H 5 c -0.6,0 -1,-0.4 -1,-1 v -9 H 3 c -0.4,0 -0.8,-0.3 -0.9,-0.6 -0.1,-0.4 0,-0.8 0.3,-1.1 l 11,-10 c 0.4,-0.3 1,-0.3 1.3,0 l 11,10 c 0.3,0.3 0.4,0.7 0.3,1.1 -0.1,0.4 -0.5,0.6 -0.9,0.6 h -1 v 9 c -0.1,0.6 -0.5,1 -1.1,1 z m -6,-2 h 5 v -9 c 0,-0.4 0.2,-0.7 0.5,-0.9 l -8.5,-7.8 -8.5,7.8 c 0.3,0.2 0.5,0.5 0.5,0.9 v 9 h 5 v -6 c 0,-0.6 0.4,-1 1,-1 h 4 c 0.6,0 1,0.4 1,1 v 6 z" id="path650" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="settings-on_2_" display="inline" style="display:inline"%3E%3Cpath d="M 53,96 H 51.8 C 51.5,94.7 51,93.5 50.3,92.5 l 0.9,-0.9 c 0.4,-0.4 0.4,-1 0,-1.4 l -1.4,-1.4 c -0.4,-0.4 -1,-0.4 -1.4,0 l -0.9,0.9 C 46.5,89 45.3,88.5 44,88.2 V 87 c 0,-0.6 -0.4,-1 -1,-1 h -2 c -0.6,0 -1,0.4 -1,1 v 1.2 c -1.3,0.3 -2.5,0.8 -3.5,1.5 l -0.9,-0.9 c -0.4,-0.4 -1,-0.4 -1.4,0 l -1.4,1.4 c -0.4,0.4 -0.4,1 0,1.4 l 0.9,0.9 c -0.7,1 -1.2,2.2 -1.5,3.5 H 31 c -0.6,0 -1,0.4 -1,1 v 2 c 0,0.6 0.4,1 1,1 h 1.2 c 0.3,1.3 0.8,2.5 1.5,3.5 l -0.9,0.9 c -0.4,0.4 -0.4,1 0,1.4 l 1.4,1.4 c 0.4,0.4 1,0.4 1.4,0 l 0.9,-0.9 c 1,0.7 2.2,1.2 3.5,1.5 v 1.2 c 0,0.6 0.4,1 1,1 h 2 c 0.6,0 1,-0.4 1,-1 v -1.2 c 1.3,-0.3 2.5,-0.8 3.5,-1.5 l 0.9,0.9 c 0.4,0.4 1,0.4 1.4,0 l 1.4,-1.4 c 0.4,-0.4 0.4,-1 0,-1.4 l -0.9,-0.9 c 0.7,-1 1.2,-2.2 1.5,-3.5 H 53 c 0.6,0 1,-0.4 1,-1 v -2 c 0,-0.6 -0.4,-1 -1,-1 z m -11,8 c -3.3,0 -6,-2.7 -6,-6 0,-3.3 2.7,-6 6,-6 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 z" id="path653" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="settings_2_" display="inline" style="display:inline"%3E%3Cg id="g656"%3E%3Cpath d="m 16,110 h -4 c -0.6,0 -1,-0.4 -1,-1 v -1.5 c -0.6,-0.2 -1.1,-0.4 -1.6,-0.7 l -0.9,0.9 c -0.4,0.4 -1,0.4 -1.4,0 L 4.2,105 c -0.4,-0.4 -0.4,-1 0,-1.4 l 0.9,-0.9 C 4.8,102.2 4.6,101.6 4.4,101.1 H 3 c -0.6,0 -1,-0.4 -1,-1 v -4 c 0,-0.6 0.4,-1 1,-1 H 4.5 C 4.7,94.5 4.9,94 5.2,93.5 L 4.3,92.6 c -0.4,-0.4 -0.4,-1 0,-1.4 L 7,88.2 C 7.2,88 7.4,87.9 7.7,87.9 l 0,0 c 0.3,0 0.5,0.1 0.7,0.3 l 0.9,0.9 c 0.5,-0.3 1.1,-0.5 1.6,-0.7 V 87 c 0,-0.6 0.4,-1 1,-1 h 4 c 0.6,0 1,0.4 1,1 v 1.5 c 0.6,0.2 1.1,0.4 1.6,0.7 l 0.9,-0.9 c 0.4,-0.4 1,-0.4 1.4,0 l 2.8,2.8 c 0.4,0.4 0.4,1 0,1.4 l -0.9,0.9 c 0.3,0.5 0.5,1.1 0.7,1.6 H 25 c 0.6,0 1,0.4 1,1 v 4 c 0,0.6 -0.4,1 -1,1 h -1.5 c -0.2,0.6 -0.4,1.1 -0.7,1.6 l 0.9,0.9 c 0.4,0.4 0.4,1 0,1.4 l -2.8,2.8 c -0.2,0.2 -0.4,0.3 -0.7,0.3 l 0,0 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -0.9,-0.9 c -0.5,0.3 -1.1,0.5 -1.6,0.7 v 1.5 c 0,0.6 -0.4,1 -1,1 z m -3,-2 h 2 v -1.2 c 0,-0.5 0.3,-0.9 0.8,-1 0.9,-0.2 1.7,-0.5 2.5,-1 0.4,-0.2 0.9,-0.2 1.2,0.1 l 0.8,0.8 1.4,-1.4 -0.8,-0.8 c -0.3,-0.3 -0.4,-0.8 -0.1,-1.2 0.5,-0.8 0.8,-1.6 1,-2.5 0.1,-0.5 0.5,-0.8 1,-0.8 H 24 v -2 h -1.2 c -0.5,0 -0.9,-0.3 -1,-0.8 -0.2,-0.9 -0.5,-1.7 -1,-2.5 -0.2,-0.4 -0.2,-0.9 0.1,-1.2 l 0.8,-0.8 -1.4,-1.4 -0.8,0.8 c -0.3,0.3 -0.8,0.4 -1.2,0.1 -0.8,-0.5 -1.6,-0.8 -2.5,-1 C 15.3,90.1 15,89.7 15,89.2 V 88 h -2 v 1.2 c 0,0.5 -0.3,0.9 -0.8,1 -0.9,0.2 -1.7,0.5 -2.5,1 -0.4,0.2 -0.9,0.2 -1.2,-0.1 l -0.8,-0.8 -1.4,1.4 0.8,0.8 c 0.3,0.3 0.4,0.8 0.1,1.2 -0.5,0.8 -0.8,1.6 -1,2.5 C 6.1,96.7 5.7,97 5.2,97 H 4 v 2 h 1.2 c 0.5,0 0.9,0.3 1,0.8 0.2,0.9 0.5,1.7 1,2.5 0.2,0.4 0.2,0.9 -0.1,1.2 l -0.8,0.8 1.4,1.4 0.8,-0.8 c 0.3,-0.3 0.8,-0.4 1.2,-0.1 0.8,0.5 1.6,0.8 2.5,1 0.5,0.1 0.8,0.5 0.8,1 v 1.2 z" id="path658" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g660"%3E%3Cpath d="m 14,104 c -3.3,0 -6,-2.7 -6,-6 0,-3.3 2.7,-6 6,-6 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 z m 0,-10 c -2.2,0 -4,1.8 -4,4 0,2.2 1.8,4 4,4 2.2,0 4,-1.8 4,-4 0,-2.2 -1.8,-4 -4,-4 z" id="path662" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="tix-on_2_" display="inline" style="display:inline"%3E%3Cpath d="m 51,65 h -2 l -2,-2 v -2 l -3,-3 -14,14 3,3 h 2 l 2,2 v 2 l 3,3 14,-14 -3,-3 z m -6.3,7.7 C 44.5,72.9 44.3,73 44,73 43.7,73 43.5,72.9 43.3,72.7 L 40,69.4 38.7,70.7 C 38.5,70.9 38.3,71 38,71 c -0.3,0 -0.5,-0.1 -0.7,-0.3 -0.4,-0.4 -0.4,-1 0,-1.4 l 4,-4 c 0.4,-0.4 1,-0.4 1.4,0 0.4,0.4 0.4,1 0,1.4 l -1.3,1.3 3.3,3.3 c 0.4,0.4 0.4,1 0,1.4 z" id="path665" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="tix_1_" display="inline" style="display:inline"%3E%3Cg id="g668"%3E%3Cpath d="m 12,82 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -3,-3 C 8.1,78.5 8,78.3 8,78 V 76.4 L 7.6,76 H 6 C 5.7,76 5.5,75.9 5.3,75.7 l -3,-3 c -0.4,-0.4 -0.4,-1 0,-1.4 l 13,-13 c 0.4,-0.4 1,-0.4 1.4,0 l 3,3 c 0.2,0.2 0.3,0.4 0.3,0.7 v 1.6 L 20.4,64 H 22 c 0.3,0 0.5,0.1 0.7,0.3 l 3,3 c 0.4,0.4 0.4,1 0,1.4 l -13,13 C 12.5,81.9 12.3,82 12,82 z m -2,-4.4 2,2 11.6,-11.6 -2,-2 H 20 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -1,-1 C 18.1,64.5 18,64.3 18,64 v -1.6 l -2,-2 -11.6,11.6 2,2 H 8 c 0.3,0 0.5,0.1 0.7,0.3 l 1,1 C 9.9,75.5 10,75.7 10,76 v 1.6 z" id="path670" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g672"%3E%3Cpath d="m 10,71 c -0.3,0 -0.5,-0.1 -0.7,-0.3 -0.4,-0.4 -0.4,-1 0,-1.4 l 4,-4 c 0.4,-0.4 1,-0.4 1.4,0 0.4,0.4 0.4,1 0,1.4 l -4,4 C 10.5,70.9 10.3,71 10,71 z" id="path674" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g676"%3E%3Cpath d="m 16,73 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -4,-4 c -0.4,-0.4 -0.4,-1 0,-1.4 0.4,-0.4 1,-0.4 1.4,0 l 4,4 c 0.4,0.4 0.4,1 0,1.4 C 16.5,72.9 16.3,73 16,73 z" id="path678" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="robux-on_2_" display="inline" style="display:inline"%3E%3Cpath d="m 37,39 v 2 h 2.6 c 0.1,-0.5 0.1,-1.5 0,-2 H 37 z" id="path681" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3Cpath d="m 42,30 c -6.6,0 -12,5.4 -12,12 0,6.6 5.4,12 12,12 6.6,0 12,-5.4 12,-12 0,-6.6 -5.4,-12 -12,-12 z m 5,17 v 1 c 0,0.6 -0.4,1 -1,1 -0.6,0 -1,-0.4 -1,-1 v -1 h -3 c -0.2,0 -0.4,-0.1 -0.6,-0.2 L 37,43.3 V 46 c 0,0.6 -0.4,1 -1,1 -0.6,0 -1,-0.4 -1,-1 v -8 c 0,-0.6 0.4,-1 1,-1 h 4 c 1.1,0 1.7,1.1 1.7,3 0,0.6 -0.1,1.2 -0.2,1.7 C 41.1,42.9 40.3,43 40,43 h -0.1 l 2.5,2 H 47 c 0.3,0 0.5,-0.5 0.5,-1 0,-0.4 -0.1,-1 -0.5,-1 h -2 c -1.4,0 -2.5,-1.3 -2.5,-3 0,-0.7 0.2,-1.4 0.5,-1.9 0.5,-0.7 1.2,-1.1 2,-1.1 v -1 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 1 h 1 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 h -3 c -0.1,0 -0.2,0 -0.3,0.2 -0.1,0.2 -0.2,0.5 -0.2,0.8 0,0.4 0.2,1 0.5,1 h 2 c 1.4,0 2.5,1.3 2.5,3 0,1.7 -1.1,3 -2.5,3 z" id="path683" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="robux_1_" display="inline" style="display:inline"%3E%3Cg id="g686"%3E%3Cpath d="M 14,54 C 7.4,54 2,48.6 2,42 2,35.4 7.4,30 14,30 c 6.6,0 12,5.4 12,12 0,6.6 -5.4,12 -12,12 z M 14,32 C 8.5,32 4,36.5 4,42 4,47.5 8.5,52 14,52 19.5,52 24,47.5 24,42 24,36.5 19.5,32 14,32 z" id="path688" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g690"%3E%3Cg id="g692"%3E%3Cpath d="m 19,47 h -5 c -0.2,0 -0.4,-0.1 -0.6,-0.2 L 9,43.3 V 46 C 9,46.6 8.6,47 8,47 7.4,47 7,46.6 7,46 v -8 c 0,-0.6 0.4,-1 1,-1 h 4 c 1.1,0 1.7,1.1 1.7,3 0,0.6 -0.1,1.2 -0.2,1.7 C 13.1,42.9 12.3,43 12,43 h -0.1 l 2.5,2 H 19 c 0.3,0 0.5,-0.5 0.5,-1 0,-0.4 -0.1,-1 -0.5,-1 h -2 c -1.4,0 -2.5,-1.3 -2.5,-3 0,-0.7 0.2,-1.4 0.5,-1.9 0.5,-0.7 1.2,-1.1 2,-1.1 h 3 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 h -3 c -0.1,0 -0.2,0 -0.3,0.2 -0.1,0.2 -0.2,0.5 -0.2,0.8 0,0.4 0.2,1 0.5,1 h 2 c 1.4,0 2.5,1.3 2.5,3 0,1.7 -1.1,3 -2.5,3 z M 9,41 h 2.6 c 0.1,-0.5 0.1,-1.5 0,-2 H 9 v 2 z" id="path694" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g696"%3E%3Cpath d="m 18,38 c -0.6,0 -1,-0.4 -1,-1 v -1 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 1 c 0,0.6 -0.4,1 -1,1 z" id="path698" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g700"%3E%3Cpath d="m 18,49 c -0.6,0 -1,-0.4 -1,-1 v -1 c 0,-0.6 0.4,-1 1,-1 0.6,0 1,0.4 1,1 v 1 c 0,0.6 -0.4,1 -1,1 z" id="path702" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg id="menu-on_2_" display="inline" style="display:inline"%3E%3Cg id="g705"%3E%3Cpath d="M 50,10 H 34 C 33.4,10 33,9.6 33,9 33,8.4 33.4,8 34,8 h 16 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path707" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g709"%3E%3Cpath d="M 50,15 H 34 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 16 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path711" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g713"%3E%3Cpath d="M 50,20 H 34 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 16 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path715" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="menu_1_" display="inline" style="display:inline"%3E%3Cg id="g718"%3E%3Cpath d="M 22,10 H 6 C 5.4,10 5,9.6 5,9 5,8.4 5.4,8 6,8 h 16 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path720" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g722"%3E%3Cpath d="M 22,15 H 6 C 5.4,15 5,14.6 5,14 5,13.4 5.4,13 6,13 h 16 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path724" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g726"%3E%3Cpath d="M 22,20 H 6 C 5.4,20 5,19.6 5,19 5,18.4 5.4,18 6,18 h 16 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" id="path728" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="search_8_" display="inline" style="display:inline"%3E%3Cg id="g731"%3E%3Cpath d="m 12,133 c -5,0 -9,-4 -9,-9 0,-5 4,-9 9,-9 5,0 9,4 9,9 0,5 -4,9 -9,9 z m 0,-16 c -3.9,0 -7,3.1 -7,7 0,3.9 3.1,7 7,7 3.9,0 7,-3.1 7,-7 0,-3.9 -3.1,-7 -7,-7 z" id="path733" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g735"%3E%3Cpath d="m 24,137 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -6,-6 c -0.4,-0.4 -0.4,-1 0,-1.4 0.4,-0.4 1,-0.4 1.4,0 l 6,6 c 0.4,0.4 0.4,1 0,1.4 -0.2,0.2 -0.4,0.3 -0.7,0.3 z" id="path737" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3Cg id="g739"%3E%3Cpath d="m 16,125 c -0.6,0 -1,-0.4 -1,-1 0,-1.7 -1.3,-3 -3,-3 -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 2.8,0 5,2.2 5,5 0,0.6 -0.4,1 -1,1 z" id="path741" inkscape:connector-curvature="0" style="fill:%23191919" /%3E%3C/g%3E%3C/g%3E%3Cg id="search_7_" display="inline" style="display:inline"%3E%3Cg id="g744"%3E%3Cpath d="m 40,133 c -5,0 -9,-4 -9,-9 0,-5 4,-9 9,-9 5,0 9,4 9,9 0,5 -4,9 -9,9 z m 0,-16 c -3.9,0 -7,3.1 -7,7 0,3.9 3.1,7 7,7 3.9,0 7,-3.1 7,-7 0,-3.9 -3.1,-7 -7,-7 z" id="path746" inkscape:connector-curvature="0" style="fill:%2300a2ff" /%3E%3C/g%3E%3Cg id="g748"%3E%3Cpath d="m 52,137 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -6,-6 c -0.4,-0.4 -0.4,-1 0,-1.4 0.4,-0.4 1,-0.4 1.4,0 l 6,6 c 0.4,0.4 0.4,1 0,1.4 -0.2,0.2 -0.4,0.3 -0.7,0.3 z" id="path750" inkscape:connector-curvature="0" style="fill:%2300a2ff" /%3E%3C/g%3E%3Cg id="g752"%3E%3Cpath d="m 44,125 c -0.6,0 -1,-0.4 -1,-1 0,-1.7 -1.3,-3 -3,-3 -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 2.8,0 5,2.2 5,5 0,0.6 -0.4,1 -1,1 z" id="path754" inkscape:connector-curvature="0" style="fill:%2300a2ff" /%3E%3C/g%3E%3C/g%3E%3Cg id="search_6_" display="inline" style="display:inline"%3E%3Cg id="g757"%3E%3Cpath d="m 12,441 c -5,0 -9,-4 -9,-9 0,-5 4,-9 9,-9 5,0 9,4 9,9 0,5 -4,9 -9,9 z m 0,-16 c -3.9,0 -7,3.1 -7,7 0,3.9 3.1,7 7,7 3.9,0 7,-3.1 7,-7 0,-3.9 -3.1,-7 -7,-7 z" id="path759" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g761"%3E%3Cpath d="m 24,445 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -6,-6 c -0.4,-0.4 -0.4,-1 0,-1.4 0.4,-0.4 1,-0.4 1.4,0 l 6,6 c 0.4,0.4 0.4,1 0,1.4 -0.2,0.2 -0.4,0.3 -0.7,0.3 z" id="path763" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg id="g765"%3E%3Cpath d="m 16,433 c -0.6,0 -1,-0.4 -1,-1 0,-1.7 -1.3,-3 -3,-3 -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 2.8,0 5,2.2 5,5 0,0.6 -0.4,1 -1,1 z" id="path767" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="search_5_" display="inline" style="display:inline"%3E%3Cg id="g770"%3E%3Cpath d="m 40,441 c -5,0 -9,-4 -9,-9 0,-5 4,-9 9,-9 5,0 9,4 9,9 0,5 -4,9 -9,9 z m 0,-16 c -3.9,0 -7,3.1 -7,7 0,3.9 3.1,7 7,7 3.9,0 7,-3.1 7,-7 0,-3.9 -3.1,-7 -7,-7 z" id="path772" inkscape:connector-curvature="0" style="fill:%2300a2ff" /%3E%3C/g%3E%3Cg id="g774"%3E%3Cpath d="m 52,445 c -0.3,0 -0.5,-0.1 -0.7,-0.3 l -6,-6 c -0.4,-0.4 -0.4,-1 0,-1.4 0.4,-0.4 1,-0.4 1.4,0 l 6,6 c 0.4,0.4 0.4,1 0,1.4 -0.2,0.2 -0.4,0.3 -0.7,0.3 z" id="path776" inkscape:connector-curvature="0" style="fill:%2300a2ff" /%3E%3C/g%3E%3Cg id="g778"%3E%3Cpath d="m 44,433 c -0.6,0 -1,-0.4 -1,-1 0,-1.7 -1.3,-3 -3,-3 -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 2.8,0 5,2.2 5,5 0,0.6 -0.4,1 -1,1 z" id="path780" inkscape:connector-curvature="0" style="fill:%2300a2ff" /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg id="g5534"%3E%3Cg transform="translate(-0.05660876,-196)" id="g231" style="fill:%23ffffff"%3E%3Cpath style="fill:%23ffffff" inkscape:connector-curvature="0" id="path233" d="m 14,221 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 9.6,217 H 3 c -0.6,0 -1,-0.4 -1,-1 v -16 c 0,-0.6 0.4,-1 1,-1 h 22 c 0.6,0 1,0.4 1,1 v 16 c 0,0.6 -0.4,1 -1,1 h -6.6 l -3.7,3.7 C 14.5,220.9 14.3,221 14,221 z M 4,215 h 6 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 3.3,-3.3 c 0.2,-0.2 0.4,-0.3 0.7,-0.3 h 6 V 201 H 4 v 14 z" /%3E%3C/g%3E%3Cg transform="translate(-0.05660876,-196)" id="g235" style="fill:%23ffffff"%3E%3Cpath style="fill:%23ffffff" inkscape:connector-curvature="0" id="path237" d="M 20,207 H 8 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 12 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" /%3E%3C/g%3E%3Cg transform="translate(-0.05660876,-196)" id="g239" style="fill:%23ffffff"%3E%3Cpath style="fill:%23ffffff" inkscape:connector-curvature="0" id="path241" d="M 20,211 H 8 c -0.6,0 -1,-0.4 -1,-1 0,-0.6 0.4,-1 1,-1 h 12 c 0.6,0 1,0.4 1,1 0,0.6 -0.4,1 -1,1 z" /%3E%3C/g%3E%3Cg style="fill:%23ffffff" id="g5530" transform="translate(-0.05660876,-196)"%3E%3Cpath d="m 14,221 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 9.6,217 H 3 c -0.6,0 -1,-0.4 -1,-1 v -16 c 0,-0.6 0.4,-1 1,-1 h 22 c 0.6,0 1,0.4 1,1 v 16 c 0,0.6 -0.4,1 -1,1 h -6.6 l -3.7,3.7 C 14.5,220.9 14.3,221 14,221 z M 4,215 h 6 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 3.3,-3.3 c 0.2,-0.2 0.4,-0.3 0.7,-0.3 h 6 V 201 H 4 v 14 z" id="path5532" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3C/g%3E%3Cg id="g5572"%3E%3Cg style="fill:%23ffffff" id="g5546" transform="translate(28,-196)"%3E%3Cpath d="m 14,221 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 9.6,217 H 3 c -0.6,0 -1,-0.4 -1,-1 v -16 c 0,-0.6 0.4,-1 1,-1 h 22 c 0.6,0 1,0.4 1,1 v 16 c 0,0.6 -0.4,1 -1,1 h -6.6 l -3.7,3.7 C 14.5,220.9 14.3,221 14,221 z M 4,215 h 6 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 3.3,-3.3 c 0.2,-0.2 0.4,-0.3 0.7,-0.3 h 6 V 201 H 4 v 14 z" id="path5548" inkscape:connector-curvature="0" style="fill:%23ffffff" /%3E%3C/g%3E%3Cg transform="translate(28,-196)" id="g5558" style="fill:%23ffffff"%3E%3Cpath style="fill:%23ffffff" inkscape:connector-curvature="0" id="path5560" d="m 14,221 c -0.3,0 -0.5,-0.1 -0.7,-0.3 L 9.6,217 H 3 c -0.6,0 -1,-0.4 -1,-1 v -16 c 0,-0.6 0.4,-1 1,-1 h 22 c 0.6,0 1,0.4 1,1 v 16 c 0,0.6 -0.4,1 -1,1 h -6.6 l -3.7,3.7 C 14.5,220.9 14.3,221 14,221 z M 4,215 h 6 c 0.3,0 0.5,0.1 0.7,0.3 l 3.3,3.3 3.3,-3.3 c 0.2,-0.2 0.4,-0.3 0.7,-0.3 h 6 V 201 H 4 v 14 z" /%3E%3C/g%3E%3Cpath inkscape:connector-curvature="0" id="path5562" d="m 40.312152,20.86112 c -0.922417,-0.925944 -1.779065,-1.737631 -1.903664,-1.803749 -0.184738,-0.09803 -0.792363,-0.120213 -3.29284,-0.120213 l -3.066298,0 0,-6.963205 0,-6.9632036 9.941442,0 9.941442,0 0,6.9632036 0,6.963205 -3.014724,0 c -1.895451,0 -3.102406,0.03264 -3.250893,0.08791 -0.129894,0.04835 -1.010434,0.860037 -1.956757,1.803749 l -1.720587,1.715838 -1.677121,-1.683535 z m 7.79693,-5.837224 c 0.278648,-0.03819 0.467401,-0.126569 0.640915,-0.300083 0.211353,-0.211353 0.245946,-0.309751 0.245946,-0.699586 0,-0.382669 -0.03829,-0.496503 -0.244777,-0.727619 l -0.244777,-0.273979 -6.384031,-0.02252 c -7.018999,-0.02476 -6.737841,-0.04406 -7.009456,0.481189 -0.06999,0.135352 -0.127261,0.398384 -0.127261,0.584514 0,0.421172 0.330708,0.826237 0.756253,0.92629 0.345618,0.08126 11.791604,0.110685 12.367188,0.03179 l 0,0 z m 0.233066,-4.060084 c 0.429409,-0.11926 0.653795,-0.457805 0.653795,-0.9864201 0,-0.3437055 -0.04247,-0.4640865 -0.237328,-0.6726805 -0.134316,-0.143786 -0.361903,-0.2767066 -0.524338,-0.3062356 -0.157855,-0.028697 -3.061804,-0.041057 -6.45322,-0.027468 -5.728987,0.022956 -6.181653,0.035201 -6.383989,0.1726987 -0.269413,0.183079 -0.411427,0.4822941 -0.411427,0.8668515 0,0.507807 0.234881,0.814489 0.755046,0.985856 0.259572,0.08552 12.288219,0.0544 12.601461,-0.0326 l 0,0 z" style="fill:%23ffffff;fill-opacity:1;stroke:%23ffffff;stroke-width:0.16778804;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" /%3E%3C/g%3E%3Cpath style="fill:%23ffffff;fill-opacity:1;stroke:none" d="m 38.9375,30 c -3.3,0 -6,2.7 -6,6 0,3.3 2.7,6 6,6 3.3,0 6,-2.7 6,-6 0,-3.3 -2.7,-6 -6,-6 z" id="path5597" inkscape:connector-curvature="0" /%3E%3Cpath style="fill:%23ffffff;fill-opacity:1;stroke:none" d="m 39.03125,43 c -1.6,0 -5.4875,0.1125 -6.6875,1.3125 -1.2,1.1 -2.1125,5.3 -2.3125,6.5 -0.1,0.4 0.10625,0.8 0.40625,1 0.1,0.1 3.3,2.1875 8.5,2.1875 5.2,0 8.41875,-2.0875 8.71875,-2.1875 0.3,-0.2 0.475,-0.6 0.375,-1 -0.3,-1.2 -1.18125,-5.4 -2.28125,-6.5 C 44.55,43.1125 40.63125,43 39.03125,43 z" id="path5599" inkscape:connector-curvature="0" /%3E%3Cg id="g5710" style="fill:%23ffffff;stroke:none" transform="translate(27.943391,-560)"%3E%3C/g%3E%3Cg id="g5714" style="fill:%23ffffff" transform="translate(27.943391,-560)"%3E%3C/g%3E%3Cg id="g5718" style="fill:%23ffffff;stroke:none" transform="translate(27.943391,-560)"%3E%3C/g%3E%3Cg id="g5722" style="fill:%23ffffff" transform="translate(27.943391,-560)"%3E%3C/g%3E%3Cg transform="translate(0,56.0375)" id="g150" style="fill:%23191919;fill-opacity:1"%3E%3Cg id="g152" style="fill:%23191919;fill-opacity:1"%3E%3Cpath d="m 21.938913,7.0827573 c -0.1,0 -0.2,0 -0.4,-0.1 L 14,4.1 6.4831845,6.8501747 c -0.5,0.2 -1.1,0 -1.3,-0.6 -0.2,-0.6 0,-1.1 0.6,-1.3 L 13.7,2 c 0.2,-0.1 0.5,-0.1 0.7,0 l 7.938913,3.0827573 c 0.501998,0.1949307 0.8,0.8 0.6,1.3 -0.2,0.5 -0.6,0.7 -1,0.7 z" id="path154" inkscape:connector-curvature="0" style="fill:%23191919;fill-opacity:1" sodipodi:nodetypes="scccscccsss" /%3E%3C/g%3E%3Cpath d="M 25.4,14.1 24,13.4 V 7 C 24,6.7 23.9,6.5 23.7,6.3 l -1,-1 c -0.4,-0.4 -1,-0.4 -1.4,0 -0.4,0.4 -0.4,1 0,1.4 L 22,7.4 V 14 c 0,0.4 0.2,0.7 0.6,0.9 L 24,15.6 V 16 H 4 V 15.6 L 5.4,14.9 C 5.8,14.7 6,14.4 6,14 V 7.4 L 6.7,6.7 c 0.4,-0.4 0.4,-1 0,-1.4 -0.4,-0.4 -1,-0.4 -1.4,0 l -1,1 C 4.1,6.5 4,6.7 4,7 v 6.4 L 2.6,14.1 C 2.2,14.3 2,14.6 2,15 v 2 c 0,0.6 0.4,1 1,1 h 1.1 c 0.5,4.7 4.5,8 9.9,8 5.4,0 9.4,-3.3 9.9,-8 H 25 c 0.6,0 1,-0.4 1,-1 v -2 c 0,-0.4 -0.2,-0.7 -0.6,-0.9 z M 14,24 C 9.7,24 6.6,21.6 6.1,18 h 15.8 c -0.5,3.6 -3.6,6 -7.9,6 z" id="path156" inkscape:connector-curvature="0" style="fill:%23191919;fill-opacity:1" /%3E%3C/g%3E%3Cpath style="fill:%23ffffff" d="m 46.15625,31.09375 c -0.6,-0.1 -1.11875,0.3125 -1.21875,0.8125 1.358445,1.78096 1.086608,3.10294 1.160311,4.65181 0.06197,1.70983 0.0963,3.47549 -0.09781,4.81694 -0.02648,0.0701 -0.04812,0.14688 -0.0625,0.21875 0,0.13824 0.03894,0.27647 0.09375,0.40625 0.01166,0.0276 0.01745,0.067 0.03125,0.0937 0.03324,0.0808 0.09944,0.12631 0.15625,0.1875 0.878363,0.91648 1.512842,2.07478 1.743988,3.19416 0.739384,2.19248 1.794518,4.2627 1.339959,6.01609 -0.334835,0.1 -0.565197,0.321 -0.365197,0.821 0.2,0.4 0.6,0.6875 1,0.6875 0.1,0 0.371094,-0.03911 0.371094,-0.03911 2.2,-0.7 3.341406,-2.173437 3.441406,-2.273437 0.2,-0.2 0.2875,-0.48125 0.1875,-0.78125 -0.3,-1.2 -1.18125,-5.4 -2.28125,-6.5 -0.198943,-0.19894 -1.430107,-1.23605 -2.71875,-1.96875 1.250887,-1.12042 2,-2.69151 2,-4.4375 0,-2.9 -1.98125,-5.30625 -4.781251,-5.90625 z" id="path4048" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccccccscscscscc" /%3E%3Cg id="g4152"%3E%3Cpath style="fill:%2300a2ff;fill-opacity:1" inkscape:connector-curvature="0" id="path4039" d="m 53.4,70.1375 -1.4,-0.7 v -6.4 c 0,-0.3 -0.1,-0.5 -0.3,-0.7 l -1,-1 c -0.4,-0.4 -1,-0.4 -1.4,0 -0.4,0.4 -0.4,1 0,1.4 l 0.7,0.7 v 6.6 c 0,0.4 0.2,0.7 0.6,0.9 l 1.4,0.7 v 0.4 H 32 v -0.4 l 1.4,-0.7 c 0.4,-0.2 0.6,-0.5 0.6,-0.9 v -6.6 l 0.7,-0.7 c 0.4,-0.4 0.4,-1 0,-1.4 -0.4,-0.4 -1,-0.4 -1.4,0 l -1,1 c -0.2,0.2 -0.3,0.4 -0.3,0.7 v 6.4 l -1.4,0.7 c -0.4,0.2 -0.6,0.5 -0.6,0.9 v 2 c 0,0.6 0.4,1 1,1 h 1.1 c 0.5,4.7 4.5,8 9.9,8 5.4,0 9.4,-3.3 9.9,-8 H 53 c 0.6,0 1,-0.4 1,-1 v -2 c 0,-0.4 -0.2,-0.7 -0.6,-0.9 z m -11.4,9.9 c -4.3,0 -7.4,-2.4 -7.9,-6 h 15.8 c -0.5,3.6 -3.6,6 -7.9,6 z" /%3E%3Cpath sodipodi:nodetypes="scccscccsss" style="fill:%2300a2ff;fill-opacity:1" inkscape:connector-curvature="0" id="path154-1" d="m 49.927756,63.120258 c -0.1,0 -0.2,0 -0.4,-0.1 L 41.988844,60.1375 34.472028,62.887675 c -0.5,0.2 -1.1,0 -1.3,-0.6 -0.2,-0.6 0,-1.1 0.6,-1.3 L 41.688844,58.0375 c 0.2,-0.1 0.5,-0.1 0.7,0 l 7.938912,3.082758 c 0.501998,0.19493 0.8,0.8 0.6,1.3 -0.2,0.5 -0.6,0.7 -1,0.7 z" /%3E%3C/g%3E%3C/svg%3E');
-    & when (@RemoveUpdates = 1) and (@RevertSidebar = 1) {
+    & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
         .no-gutter-ads.logged-in:not(.left-nav-new-width) .content, .no-gutter-ads.left-nav-new-width main.container-main,.wrap.has-groups-list-sidebar.no-gutter-ads.logged-in:not(.left-nav-new-width) .container-main:not(.in-app) .content, .wrap.has-groups-list-sidebar.no-gutter-ads.logged-in.left-nav-new-width .container-main:not(.in-app) .content {
             margin-left: auto
         }
@@ -26306,7 +26390,7 @@
                 width: 175px;
             }
             .text-label-small {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                 }
                 & when (@SourceSansPro = 1) {
@@ -26315,7 +26399,7 @@
                 font-size: 10px;
                 font-weight: 500;
                 letter-spacing: unset;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     line-height: 1.4em;
                 }
                 & when (@SourceSansPro = 1) {
@@ -26323,14 +26407,14 @@
                 }
             }
             .text-title-large {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                 }
                 & when (@SourceSansPro = 1) {
                     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
                 }
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -26340,7 +26424,7 @@
                 letter-spacing: unset;
                 @media (max-width: 767px) {
                     font-size:12px;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-weight: 500;
                     }
                     & when (@SourceSansPro = 1) {
@@ -26437,7 +26521,7 @@
                             margin: 2px;
                             flex-shrink: 0;
                             line-height: 1em;
-                            & when (@RemoveUpdates = 1) and (@RemoveSidebarAvatar = 1) {
+                            & when (@Revert201909updates = 1) and (@RemoveSidebarAvatar = 1) {
                                 display: none;
                             }
                             .thumbnail-2d-container {
@@ -26447,7 +26531,7 @@
                         span {
                             margin: 0;
                             [class*=text-] {
-                                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-size: 16px;
                                     font-weight: 500;
                                     line-height: 1.4em;
@@ -26516,10 +26600,10 @@
                                 color: #02b757
                             }
                         }
-                        [href*="/plus"]:not([class*=body-medium]) when (@RemoveUpdates = 1) and (@RemoveSidebarMembership = 1) {
+                        [href*="/plus"]:not([class*=body-medium]) when (@Revert201909updates = 1) and (@RemoveSidebarMembership = 1) {
                             display: none;
                         }
-                        [href*="/giftcards"] when (@RemoveUpdates = 1) and (@RemoveSidebarGiftcards = 1) {
+                        [href*="/giftcards"] when (@Revert201909updates = 1) and (@RemoveSidebarGiftcards = 1) {
                             display: none;
                         }
                     }
@@ -26538,7 +26622,7 @@
                         }
                     }
                     a[href*="/premium/membership"] {
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         }
                         & when (@SourceSansPro = 1) {
@@ -26566,7 +26650,7 @@
                             margin: 0;
                             display: block;
                         }
-                        span when (@RemoveUpdates = 1) and (@RenameUpgradeNowBtn = 1) {
+                        span when (@Revert201909updates = 1) and (@RenameUpgradeNowBtn = 1) {
                             display: none
                         }
                     }
@@ -26583,7 +26667,7 @@
                                 content: "Builders Club";
                             }
                             font-size: 16px;
-                            & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                 font-weight: 500;
                             }
                             & when (@SourceSansPro = 1) {
@@ -26592,7 +26676,7 @@
                             line-height: 1.428571429;
                             @media (max-width: 767px) {
                                 font-size:12px;
-                                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-weight: 500;
                                 }
                                 & when (@SourceSansPro = 1) {
@@ -26602,7 +26686,7 @@
                         }
                     }
                     a[href*="/plus"][class*=body-medium] {
-                        & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                             font-family: HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
                         }
                         & when (@SourceSansPro = 1) {
@@ -26637,7 +26721,7 @@
                                 display: block;
                             }
                         }
-                        span when (@RemoveUpdates = 1) and (@RenameUpgradeNowBtn = 1) {
+                        span when (@Revert201909updates = 1) and (@RenameUpgradeNowBtn = 1) {
                             display: none
                         }
                     }
@@ -27836,7 +27920,7 @@
             &:after {
                 content: "Builders Club";
                 font-size: 16px;
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
                 }
                 & when (@SourceSansPro = 1) {
@@ -28368,7 +28452,7 @@
         }
     }
 
-    & when (@RemoveUpdates = 1) {
+    & when (@Revert201909updates = 1) {
         .btr-redesign #horizontal-tabs:has(>li:nth-child(2)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(2)):has(#events) { --btr-num-tabs: 1; }
         .btr-redesign #horizontal-tabs:has(>li:nth-child(2)):has(#forums):has(#events) { --btr-num-tabs: 0; }
         .btr-redesign #horizontal-tabs:has(>li:nth-child(3)):has(#forums), .btr-redesign #horizontal-tabs:has(>li:nth-child(3)):has(#events) { --btr-num-tabs: 2; }
@@ -29061,7 +29145,7 @@
                 width: auto !important;
             }
             &-username {
-                & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-size: 10px;
                     font-weight: 500;
                 }
@@ -29072,7 +29156,7 @@
                 display: block;
                 .friends-carousel-user-name {
                     max-width: 100%;
-                    & when (@RemoveUpdates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                         font-size: 10px;
                         font-weight: 500;
                     }
@@ -29116,7 +29200,7 @@
         }
     }
 
-    .roseal-offline-icon when (@RemoveUpdates = 1) {
+    .roseal-offline-icon when (@Revert201909updates = 1) {
         display: none
     }
 
