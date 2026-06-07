@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Experimental)
-@version      20260521-00.1.5
+@version      20260607-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -17,10 +17,9 @@
 @var          select   SiteCurrency                "Currency Brand Style"                               ["Robux*", "Tickets"]
 @var          select   CustomTheme                 "Custom Site Theme"                                  ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                        0
-@var          checkbox fiveColumn                  "Five column Avatar Editor"                          1
-@var          checkbox Fix1903ICT                  "Fixed 201903 Item Card Transitions"                 0
 @var          select   greetingTxt                 "Greeting Text Style"                                ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                                    ["Pre-201812", "201812", "201903*", "201908"]
+@var          checkbox Fix1903T                    " └ Fixed 201903 Transitions"                        0
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                     0
 @var          checkbox LegacyHomeTitles            "Legacy Home Titles"                                 0
 @var          select   LegacyFooterText            "Legacy Footer Text"                                 ["None*", "BrandSync", "201401", "201501", "201601", "201607", "201609", "201701", "201706", "201801", "201811", "201901"]
@@ -73,6 +72,7 @@
 @var          checkbox RemoveSidebarMembership     " ├ Remove Sidebar Membership"                       1
 @var          checkbox RemoveSubGenres             " ├ Remove Sub Genres"                               1
 @var          checkbox RemoveTheme                 " ├ Remove Theme"                                    1
+@var          checkbox RemoveTopbarDownloadBtn     " ├ Remove Topbar Download Button"                   1
 @var          checkbox RemoveVerifiedBadge         " ├ Remove Verified Badge"                           1
 @var          checkbox RemoveVoiceChat             " ├ Remove Voice Chat"                               1
 @var          checkbox RenameGiftcards             " ├ Rename Buy Gift Cards to Gift Cards"             1
@@ -86,6 +86,8 @@
 @var          select   RestoreAds                  " ├ Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              "    └ Games Page"                                   0
 @var          checkbox RestoreAgeIndicators        " ├ Restore Age Indicators"                          1
+@var          checkbox AgeIndicatorNoUser          "    ├ Legacy Style display no Username"             1
+@var          select   AgeIndicatorStyle           "    └ Style"                                        ["Default*", "Legacy"]
 @var          checkbox HCoGothamSSm                " ├ Restore HCo Gotham SSm"                          1
 @var          checkbox HCoGothamSSmFixes           "    └ Fixes"                                        0
 @var          checkbox HomeHeader                  " ├ Restore Home Header"                             0
@@ -93,6 +95,9 @@
 @var          checkbox HHMembership                "    ├ Membership"                                   0
 @var          select   HHYear                      "    ├ Year"                                         ["2015", "2017*"]
 @var          text     HHUsername                  "    └ Username"                                     "''"
+@var          checkbox LegacyAvatarEditor          " ├ Restore Legacy Avatar Editor"                    1
+@var          checkbox fiveColumn                  "    ├ Five column"                                  1
+@var          checkbox LAELegacyTab                "    └ Legacy Tab"                                   1
 @var          checkbox RestoreTbUserBehavior       " ├ Restore Topbar Username cursor behavior"         1
 @var          checkbox RevertExpandedhomepage      " ├ Revert Expanded home page"                       1
 @var          checkbox RevertGameModals            " ├ Revert Game Modals"                              1
@@ -115,7 +120,7 @@
 @var          select   SSPGVersion                 "    └ Version"                                      ["V5", "V5_1", "V9", "V9_1*"]
 @var          checkbox TransitionalAnimations      "Transition animations"                              1
 @var          checkbox RedLogoStyle                "Use 2017 Red Branding (Messages / Bootstrapper)"    0
-@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Developers*", "Testers"]
+@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Testers*"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -1506,6 +1511,9 @@
                 color: #474747;
             }
         }
+        .\[--icon-size-small\:1em\] {
+            display: none;
+        }
         > div > div[style*="position"] {
             & when (@LegacyNextStyleGuide = 1) and (@LNSGRemoveplp = 1) {
                 display: none;
@@ -2281,17 +2289,19 @@
             @media (min-width: 1688px) {
                 max-width: 120px;
             }
-            @media (min-width: 1141px) {
-                .left-nav-new-width & {
-                    width: auto;
-                    max-width: 76px;
-                    margin: 0 12px;
-                    padding: 0px;
+            & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
+                @media (min-width: 1141px) {
+                    .left-nav-new-width & {
+                        width: auto;
+                        max-width: 76px;
+                        margin: 0 12px;
+                        padding: 0px;
+                    }
                 }
-            }
-            @media (min-width: 1688px) {
-                .left-nav-new-width & {
-                    max-width: 120px;
+                @media (min-width: 1688px) {
+                    .left-nav-new-width & {
+                        max-width: 120px;
+                    }
                 }
             }
         }
@@ -2349,7 +2359,7 @@
             }
         }
         @media (min-width: 991px) {
-            .left-nav-new-width & .navbar-search when (@Revert201909updates = 1) {
+            .left-nav-new-width & .navbar-search when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
                 width: 25%;
             }
         }
@@ -2359,17 +2369,24 @@
                 .col-md-5 {
                     width: 33.33333%;
                 }
-                .col-md-2, .left-nav-new-width .rbx-header .navbar-search {
+                .col-md-2 {
                     width: 25%;
+                }
+                & when (@RevertSidebar = 1) {
+                    .rbx-header .navbar-search {
+                        width: 25%;
+                    }
                 }
             }
         }
-        @media (min-width: 1141px) {
-            .left-nav-new-width & .icon-logo {
-                display: none;
-            }
-            .left-nav-new-width & .rbx-nav-collapse .menu-button, .left-nav-new-width & .icon-logo-r {
-                display: inline-block;
+        & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
+            @media (min-width: 1141px) {
+                .left-nav-new-width & .icon-logo {
+                    display: none;
+                }
+                .left-nav-new-width & .rbx-nav-collapse .menu-button, .left-nav-new-width & .icon-logo-r {
+                    display: inline-block;
+                }
             }
         }
         @media (min-width: 1200px) {
@@ -2377,12 +2394,14 @@
                 width: 25%;
             }
         }
-        @media (min-width: 1688px) {
-            .left-nav-new-width & .icon-logo {
-                display: block;
-            }
-            .left-nav-new-width & .icon-logo-r {
-                display: none;
+        & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
+            @media (min-width: 1688px) {
+                .left-nav-new-width & .icon-logo {
+                    display: block;
+                }
+                .left-nav-new-width & .icon-logo-r {
+                    display: none;
+                }
             }
         }
     }
@@ -2554,11 +2573,13 @@
         display: inline-block;
         float: left;
         color: #fff;
-        padding-top: 13px;
-        margin-right: 6px;
-        & when (@SourceSansPro = 0) {
-            font-size: 10px;
-            font-weight: 500;
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
+            padding-top: 13px;
+            margin-right: 6px;
+            & when (@SourceSansPro = 0) {
+                font-size: 10px;
+                font-weight: 500;
+            }
         }
         & when (@SourceSansPro = 1) {
             font-size: 12px;
@@ -2567,18 +2588,24 @@
         & when (@RestoreTbUserBehavior = 1) {
             cursor: text;
         }
+        .age-bracket-label-plus-badge {
+            display: none
+        }
     }
 
     .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username {
         margin-right: 0;
-        head:has([data-isunder13]) ~ body &:after when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) {
+        head:has([data-isunder13]) ~ body &:after when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) and (@AgeIndicatorStyle = Default) or (@AgeIndicatorNoUser = 0)  {
             content: ": "
         }
     }
     .xsmall.age-bracket-label-age.text-secondary, .rbx-header .rbx-navbar-icon-group .age-bracket-label .age-bracket-label-username  {
         color: inherit;
         display: inline;
-        & when (@SourceSansPro = 1) {
+        & when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) and (@AgeIndicatorStyle = Legacy) and (@AgeIndicatorNoUser = 1) {
+            display: none
+        }
+        & when (@SourceSansPro = 1) and (@AgeIndicatorStyle = Default) {
             font-size: 12px;
             font-weight: 400;
         }
@@ -2594,10 +2621,42 @@
             pointer-events: none;
         }
         head:has([data-isunder13="true"]) ~ body &:after when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) {
-            content: "<13"
+            & when (@AgeIndicatorStyle = Default) {
+                content: "<13";
+                & when (@HCoGothamSSm = 0) and (@SourceSansPro = 0) {
+                    font-size: 10px;
+                    font-weight: 400;
+                }
+            }
+            & when (@AgeIndicatorStyle = Legacy) {
+                content: "Account: Under 13 yrs";
+                font-size: 12px;
+                & when (@SourceSansPro = 1) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+            }
         }
         head:has([data-isunder13="false"]) ~ body &:after when (@Revert201909updates = 1) and (@RestoreAgeIndicators = 1) {
-            content: "13+"
+            & when (@AgeIndicatorStyle = Default) {
+                content: "13+";
+                & when (@HCoGothamSSm = 0) and (@SourceSansPro = 0) {
+                    font-size: 10px;
+                    font-weight: 400;
+                }
+            }
+            & when (@AgeIndicatorStyle = Legacy) {
+                content: "Account: Over 13 yrs";
+                font-size: 12px;
+                & when (@SourceSansPro = 1) {
+                    font-weight: 500;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-weight: 400;
+                }
+            }
         }
     }
 
@@ -3664,8 +3723,8 @@
         border-radius: 3px;
     }
 
-    & when (@fiveColumn = 0) {
-        .items-list.avatar-item-list .item-card.six-column {
+    & when (@LegacyAvatarEditor = 0) or (@fiveColumn = 0) {
+        .items-list.avatar-item-list .item-card.six-column, .items-list.avatar-item-list .item-card.seven-column {
             & when not ((@LegacyNextStyleGuide = 1) and (@LNSGSmallerCaptions = 1)) {
                 height: 188px;
             }
@@ -3674,8 +3733,15 @@
             }
             min-height: auto;
         }
+        /*
+            There's a Roblox CSS oversite where recommended cards aren't centered in non-5 column rows.
+            This is here to fix it.
+        */
+        .recommended-items .item-card-container {
+            margin: auto;
+        }
     }
-    & when (@fiveColumn = 1) {
+    & when (@LegacyAvatarEditor = 1) and (@fiveColumn = 1) {
         .right-panel.six-column, .right-panel.seven-column {
             width: 670px;
         }
@@ -3709,6 +3775,53 @@
                 height: auto;
             }
             min-height: auto;
+        }
+    }
+
+    .right-wrapper .rbx-tabs-horizontal .nav-tabs when (@LAELegacyTab = 1) {
+        display: flex;
+        .rbx-tab {
+            &:first-child, &:nth-child(1) {
+                order: 1
+            }
+            &:nth-child(2) {
+                order: 7;
+                .text-lead {
+                    font-size: 0;
+                    line-height: 100%;
+                    display: contents;
+                    &:before {
+                        content: "Outfits";
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            font-size: 16px;
+                            font-weight: 500;
+                            @media (max-width: 767px) {
+                                font-size:12px;
+                                font-weight: 500
+                            }
+                        }
+                        & when (@SourceSansPro = 1) {
+                            font-size: 18px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+            &:nth-child(3) {
+                order: 4
+            }
+            &:nth-child(4) {
+                order: 2
+            }
+            &:nth-child(5) {
+                order: 3
+            }
+            &:nth-child(6) {
+                order: 5
+            }
+            &:nth-child(7) {
+                order: 6
+            }
         }
     }
 
@@ -5767,6 +5880,10 @@
                 .input-field,.line-height {
                     line-height: 1.4em
                 }
+                body& .chat-friend-list .chat-friend-info .chat-friend-name {
+                    width: 100%;
+                    margin: 0;
+                }
                 .chat-friend-list .chat-friend-info .chat-brief-timestamp {
                     width: 70px;
                     padding: 0;
@@ -5795,7 +5912,7 @@
                 }
             }
         }
-        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, #game-community-link-container, [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, .footer-link:has(.footer-postfixIcon), .footer-link:has([href*="/sitemap"]), .filters-container, .shopping-cart-btn-container, .message-dep-header, .home-page-upsell-card-banner-container, .home-container.expand-max-width .game-home-page-container > div > div:has(.wide-game-tile-list), .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container:not(:has([class*="-carouselContainer"])), .search-overlay, .search-landing-root, .sort-subtitle-container, #game-store-container, #rbx-developer-products, .scroller-new, .dismissable-announcement-upsell-banner {
+        .content .friends-filter, .avatar-shop-homepage-recommendations-container, #populated-avatar-shop-homepage-recommendations, .menu-option-content[href="#!/app-permissions"], #game-age-recommendation-details, .game-age-recommendation-details-container, #game-age-recommendation-container, .section[ng-if="parentContent.isContentAgeRestrictionSettingsEnabled"], .friend-recommendations-section, .search-container .input-group .icon-close-gray-16x16, .games-list-header, .server-list-options, .privacy-section[account-privacy-contact-settings], .section[ng-if="userSettingsMetadata.isContentAgeRestrictionSettingsEnabled"], .section-content[account-privacy-exercise-data-rights], .menu-vertical .menu-option-content[href="#!/classic-clothing"] .menu-text, .menu-vertical .menu-option-content[href="#!/shoes"], .menu-vertical .menu-option-content[href="#!/tops"], .menu-vertical .menu-option-content[href="#!/bottoms"], .menu-vertical .menu-option-content[href="#!/video"], .menu-vertical .menu-option-content[href="#!/classic-heads"] .menu-text, .menu-vertical .menu-option-content[href="#!/heads"], .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"] .menu-text, .menu-vertical .menu-option-content[href="#!/private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"] .menu-text, .dropdown-menu li[href="#!/bottoms"], .dropdown-menu li[href="#!/shoes"], .dropdown-menu li[href="#!/tops"], .dropdown-menu li[href="#!/classic-clothing"] .ng-binding, .dropdown-menu li[href="#!/classic-heads"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-shirts"] .ng-binding, .dropdown-menu li[href="#!/classic-clothing/classic-pants"] .ng-binding, .dropdown-menu li[href="#!/game-passes"] .ng-binding, .topic-container, .logged-out .copyright-container .col-md-3, .footer .footer-links li:nth-last-child(1), body[data-internal-page-name="Landing"] .copyright-container .col-md-3, body[data-internal-page-name="Landing"] .footer .footer-links li:nth-last-child(1), .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"] .menu-text, .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"] .menu-text, .dropdown-menu li[href="#!/places/my-experiences"] .ng-binding, .dropdown-menu li[href="#!/places/other-experiences"] .ng-binding, .dropdown-menu li[href="#!/private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/my-private-servers"] .ng-binding, .dropdown-menu li[href="#!/private-servers/other-private-servers"] .ng-binding, .catalog-container .search-container .input-group .autocomplete-dropdown-menu, .catalog-container .search-container .input-group .clear-search, #desktop-app-banner, .footer .footer-links .footer-link:nth-child(5), .footer .footer-links .footer-link:nth-child(8), .avatar-card-container .avatar-card-content .avatar-card-caption .avatar-card-footer, .toggle-translation-button, .section[account-parental-controls-content-controls], .section-content[account-privacy-beta-settings], .sponsored-layer, .chat-friend-list .chat-friend-info .chat-alias-name, #recommendations-container #complimentary-items-recommendations-container, #game-events-container, .icon-back-to-top, .section[ng-if="displaySessionManagement()"], .section[ng-if="displaySessionManagement() && !accountSettingsPolicy.securityTabReactUIEnabled"], .groups-list .group-search-input, .item-details-section .item-purchase-link-container .see-all-link-icon, .item-details-section:has(div:nth-child(5)) .price-row-container ~ .item-info-row-container:nth-child(3), [ng-click*="openAdvancedAccessories()"], #otp-login-button, #cross-device-login-button, .content .page-content .form-group.birthday-container .account-more-info, .section-content.remove-panel.settings-account-info-container .form-group:nth-child(1), .settings-privacy-contact, .catalog-container .catalog-content .search-bars .shopping-cart-btn-entry, .shopping-cart-modal-container, .catalog-container .catalog-results .item-card .item-card-thumb-container .add-to-cart-btn-container, .catalog-container .catalog-results .item-card .item-card-thumb-container:hover .add-to-cart-btn-container, .shopping-cart-add-remove-btn-container, #game-community-link-container, [data-testid="home-page-game-grid"], .game-home-page-container .home-interleave-divider, .home-container .game-grid.home-game-grid .grid-item-container:nth-child(n+7), .nav-credit, #rbx-subscriptions-container, #robux-upsell-react-page-wrapper .subscription-container, .dropdown-wallet:has(.icon-menu-wallet), .info-tooltip-container, .setting-section:has(#btn-account-deactivation-wrapper), #session-management, .stacked-user-input:nth-child(5), .game-community-link-display-container, .footer-link:has(.footer-postfixIcon), .footer-link:has([href*="/sitemap"]), .filters-container, .shopping-cart-btn-container, .message-dep-header, .home-page-upsell-card-banner-container, .home-container.expand-max-width .game-home-page-container > div > div:has(.wide-game-tile-list), .btn-common-play-game-unplayable-lg, .game-home-page-container .sdui-feed-item-container:not(:has([class*="-carouselContainer"])), .search-overlay, .search-landing-root, .sort-subtitle-container, #game-store-container, #rbx-developer-products, .scroller-new, .dismissable-announcement-upsell-banner, #faq-section-details {
             display: none !important;
         }
         #age-group-id when (@RemoveAgeGroup = 1) {
@@ -5892,8 +6009,18 @@
             }
         }
         & when (@RemoveTheme = 1) {
-            #browser-preferences, .theme-update-container {
+            #browser-preferences {
                 display: none;
+            }
+            /*
+            .theme-update-container {
+                display: none;
+            }
+            */
+        }
+        & when (@RemoveTopbarDownloadBtn = 1) {
+            .rbx-navbar-icon-group>li.navbar-download-app-item {
+                display: none
             }
         }
         & when (@RemoveVerifiedBadge = 1) {
@@ -6664,13 +6791,17 @@
             &:after {
                 content: 'Games';
                 font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
+                    line-height: 0;
                 }
                 & when (@SourceSansPro = 1) {
                     font-weight: 400;
+                    line-height: 0;
                 }
-                line-height: 0;
+                & when (@HCoGothamSSm = 0) {
+                    line-height: inherit;
+                }
                 vertical-align: middle;
                 display: inline-block;
                 @media (max-width: 767px) {
@@ -6683,13 +6814,17 @@
             &:after {
                 content: 'Catalog';
                 font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     font-weight: 500;
+                    line-height: 0;
                 }
                 & when (@SourceSansPro = 1) {
                     font-weight: 400;
+                    line-height: 0;
                 }
-                line-height: 0;
+                & when (@HCoGothamSSm = 0) {
+                    line-height: inherit;
+                }
                 vertical-align: middle;
                 display: inline-block;
                 @media (max-width: 767px) {
@@ -6712,7 +6847,10 @@
             line-height: 14px;
             margin: 0 0 2px;
         }
-        body.gotham-font .chat-friend-list .chat-friend-info .chat-friend-name, body.builder-font .chat-friend-list .chat-friend-info .chat-friend-name {
+        [is-roblox-plus] {
+            display: none;
+        }
+        body.gotham-font .chat-friend-list .chat-friend-info .chat-friend-name {
             width: 100%;
             margin: 0;
         }
@@ -9797,7 +9935,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260521-00.1.5";
+    @Version: "20260607-00.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -9923,13 +10061,19 @@
             bottom: 0;
             left: 0;
             right: 0;
-            & when (@RestoreSidebarPadding = 0) {
-                width: 165px;
-                padding: 0 0 0 10px
+            & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
+                & when (@RestoreSidebarPadding = 0) {
+                    width: 165px;
+                    padding: 0 0 0 10px
+                }
+                & when (@RestoreSidebarPadding = 1) {
+                    width: 100%;
+                    padding: 0 10px;
+                }
             }
-            & when (@RestoreSidebarPadding = 1) {
-                width: 100%;
-                padding: 0 10px;
+            & when (@Revert201909updates = 0) or (@RevertSidebar = 0) {
+                padding-left: var(--padding-large);
+                padding-right: var(--padding-large);
             }
             margin: 0 0 24px;
             & when (@SourceSansPro = 0) {
@@ -9983,13 +10127,19 @@
             bottom: 0;
             left: 0;
             right: 0;
-            & when (@RestoreSidebarPadding = 0) {
-                width: 165px;
-                padding: 0 0 0 10px
+            & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
+                & when (@RestoreSidebarPadding = 0) {
+                    width: 165px;
+                    padding: 0 0 0 10px
+                }
+                & when (@RestoreSidebarPadding = 1) {
+                    width: 100%;
+                    padding: 0 10px;
+                }
             }
-            & when (@RestoreSidebarPadding = 1) {
-                width: 100%;
-                padding: 0 10px;
+            & when (@Revert201909updates = 0) or (@RevertSidebar = 0) {
+                padding-left: var(--padding-large);
+                padding-right: var(--padding-large);
             }
             margin: 0 0 6px;
             & when (@SourceSansPro = 0) {
@@ -10417,6 +10567,9 @@
 
     #navbar-stream .nav-robux-icon, .rbx-header .rbx-navbar-icon-group>li, .rbx-header .rbx-navbar-right-nav>li {
         padding: 0;
+        &.navbar-download-app-item {
+            padding: 4px 12px 4px 4px;
+        }
     }
 
     body:not(.LegacyRobuxDropdown) {
@@ -13417,7 +13570,7 @@
     }
     & when (@CardStyle = 201903) {
         .game-tile, .grid-item-container:not(.item-card), .featured-grid-item-container, .hover-game-tile {
-            & when (@Fix1903ICT = 1) {
+            & when (@Fix1903T = 1) {
                 -webkit-transition: transform .15s;
                 -o-transition: transform .15s;
                 transition: transform .15s;
@@ -13459,7 +13612,12 @@
         margin-top: 6px;
     }
     .light-theme .game-card-link .game-card-name, .dark-theme .game-card-link .game-card-name {
-        margin-bottom: 6px;
+         & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+            margin-bottom: 3px;
+        }
+        & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
+            margin-bottom: 6px;
+        }
     }
 
     @media (max-width: 543px) {
@@ -13515,7 +13673,7 @@
     .game-tile-list .game-card-container .game-card-info .playing-counts-label {
         & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
             width: 100%;
-            padding: 0 6px 0 0;
+            padding: 0 6px;
             margin: 3px 0;
         }
         & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -13591,7 +13749,12 @@
     /*/ Revert the recent changes for friend activity and native ads. /*/
     .game-card .game-card-container .game-card-link .game-card-info, .game-carousel .game-card-container .game-card-link .game-card-info, .game-grid .game-card-container .game-card-link .game-card-info {
         position: absolute;
-        margin: 0 6px;
+        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+            padding: 0 6px;
+        }
+        & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
+            margin: 0 6px;
+        }
     }
     .game-card-container .game-card-link .game-card-friend-activity, .game-card-container .game-card-link .game-card-native-ad, .game-card-container .game-card-link .game-card-info[data-testid="game-tile-stats-friend-activity"] {
         margin: 0
@@ -14524,7 +14687,7 @@
     }
     /*/ end of changes /*/
 
-    .game-grid, .game-grid.expand-home-content-disabled, .game-grid.expand-home-content {
+    .game-grid, .game-grid.expand-home-content-disabled, .game-grid.expand-home-content, .game-grid.dynamic-layout-sizing-disabled {
         display: block;
     }
 
@@ -14928,10 +15091,10 @@
         &.event-tile, &.grid-tile, &.interest-tile {
             vertical-align: top;
             white-space: normal;
-            & when (@Fix1903ICT = 0) or not (@CardStyle = 201903) {
+            & when (@Fix1903T = 0) or not (@CardStyle = 201903) {
                 transition: unset;
             }
-            & when (@Fix1903ICT = 1) and (@CardStyle = 201903) {
+            & when (@Fix1903T = 1) and (@CardStyle = 201903) {
                 -webkit-transition: transform .15s;
                 -o-transition: transform .15s;
                 transition: transform .15s;
@@ -15972,15 +16135,17 @@
         width: 280px;
         overflow: auto;
         .chat-friend-info .chat-friend-name {
-            width: 66%;
-            width: calc(100% - 72px);
-            float: left;
-            line-height: 14px;
-            margin: 0 0 2px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                .gotham-font &, .builder-font & {
-                    width: 67%;
-                    width: calc(100% - 70px);
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
+                width: 66%;
+                width: calc(100% - 72px);
+                float: left;
+                line-height: 14px;
+                margin: 0 0 2px;
+                & when (@SourceSansPro = 0) {
+                    .gotham-font &, .builder-font & {
+                        width: 67%;
+                        width: calc(100% - 70px);
+                    }
                 }
             }
         }
@@ -17066,7 +17231,7 @@
     /*/ Revert Signup /w options /*/
 
     & when not (@SignUpStyle = 2019L) and not (@SignUpStyle = 2020+) {
-        #RollerContainer.rollercoaster-background, #RollerContainer.rollercoaster-background.default-background {
+        #RollerContainer.rollercoaster-background {
             background: #6de3ff;
             background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
             height: 100vh;
@@ -17074,11 +17239,17 @@
             display: block;
             background-repeat: no-repeat;
             background-size: cover;
-        }
-        #RollerContainer.rollercoaster-background.marketing-background-1 {
-            background-image: none;
-            &-localized-id, &-localized-de, &-localized-jp, &-localized-us {
-                background-image: none;
+            &.fixed-background {
+                background-attachment: unset;
+            }
+            &.default-background {
+                background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+            }
+            &.marketing-background-1 {
+                background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+                &-localized-id, &-localized-de, &-localized-jp, &-localized-us {
+                    background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+                }
             }
         }
         #InnerRollerContainer {
@@ -20534,11 +20705,9 @@
         }
         .light-theme .tab-horizontal-submenu {
             box-shadow: 0 1px 3px hsl(0deg 0% 59% / 74%);
-            z-index: 2;
         }
         .dark-theme .tab-horizontal-submenu {
             box-shadow: 0 1px 3px hsl(0deg 0% 41% / 74%);
-            z-index: 2;
         }
 
         .roblox-messages-container.rbx-tabs-horizontal .nav-tabs {
@@ -26528,27 +26697,34 @@
                                 border-radius: 50%;
                             }
                         }
+                        a.flex {
+                            display: block;
+                        }
                         span {
                             margin: 0;
                             [class*=text-] {
                                 & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-size: 16px;
                                     font-weight: 500;
-                                    line-height: 1.4em;
                                 }
                                 & when (@SourceSansPro = 1) {
                                     font-size: 18px;
                                     font-weight: 400;
-                                    line-height: 1.3em;
                                 }
-                                display: block;
                                 & when (@RemoveSidebarAvatar = 0) {
                                     margin: 3px
                                 }
                                 & when (@RemoveSidebarAvatar = 1) {
                                     margin: 0;
                                 }
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                display: block;
                             }
+                        }
+                        .icon-regular-roblox-plus {
+                            Display: none;
                         }
                         &:after {
                             content: "";
@@ -26654,7 +26830,7 @@
                             display: none
                         }
                     }
-                    [href*="/plus"] [class*=text-] {
+                    [href*="/plus"]:not([class*=body-medium]) [class*=text-] {
                         font-size: 0;
                         &:after {
                             & when (@RenameSidebarMembership = Plus) {
