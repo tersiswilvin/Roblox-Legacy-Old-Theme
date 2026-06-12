@@ -15,24 +15,24 @@ body:
           required: true
   - type: checkboxes
     attributes:
-      label: Does the problem exist in Experimental?
-      description: Please verify that the issue does not occur on the Experimental Branch otherwise it will be closed without further notice.
+      label: Does the problem exist in Dev?
+      description: Verify that the issue does not occur on the Dev Branch otherwise it will be closed without further notice.
       options:
-        - label: I've verified that the problem persists in the Experimental Branch.
+        - label: I've verified that the problem persists in the Dev Branch.
           required: true
   - type: input
     id: browser
     attributes:
       label: Browser
       description: What browser were you using?
-      placeholder: (Example => Google Chrome, Edge, Firefox, Opera)
+      placeholder: Google Chrome, Microsoft Edge, Firefox, Opera
     validations:
       required: true
   - type: input
     id: page-url
     attributes:
       label: Page URL
-      placeholder: (Example => https://www.roblox.com/home)
+      placeholder: https://www.roblox.com/home
     validations:
       required: false
   - type: dropdown
@@ -42,7 +42,8 @@ body:
       description: What channel you were on when it occured?
       options:
         - Release
-        - Experimental
+        - Beta
+        - Dev
     validations:
       required: true
   - type: dropdown
@@ -59,6 +60,6 @@ body:
     id: describe-issue
     attributes:
       label: Describe the Problem
-      description: Describe the issue you're facing. (Optional | You may include a screenshot or video demonstrating the bug.)
+      description: Describe or share a photo or video of the issue you're facing as well as the expected behavior, and any steps to reproduce it.
     validations:
       required: true
