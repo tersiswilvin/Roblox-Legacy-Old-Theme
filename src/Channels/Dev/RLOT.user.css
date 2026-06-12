@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name         Roblox Legacy Old Theme (Experimental)
+@name         Roblox Legacy Old Theme (Dev)
 @version      20260607-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
 @homepageURL  https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme
 @supportURL   https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues
-@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Experimental/src/RLOTExperimental.user.css
+@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Dev/src/Channels/Dev/RLOT.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
 @var          checkbox AEOBW                       "Avatar Editor pre-1.5 border width"                 0
@@ -120,7 +120,7 @@
 @var          select   SSPGVersion                 "    └ Version"                                      ["V5", "V5_1", "V9", "V9_1*"]
 @var          checkbox TransitionalAnimations      "Transition animations"                              1
 @var          checkbox RedLogoStyle                "Use 2017 Red Branding (Messages / Bootstrapper)"    0
-@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Testers*"]
+@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Developers*", "Testers"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
