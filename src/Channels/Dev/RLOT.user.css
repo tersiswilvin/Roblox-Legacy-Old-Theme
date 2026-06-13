@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260612-00.1.5
+@version      20260612-01.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -10057,7 +10057,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260612-00.1.5";
+    @Version: "20260612-01.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -13285,12 +13285,39 @@
                     background-position: 0 -420px;
                 }
             }
-            div {
+            div, [class*="text-"] {
                 padding-left: 4.5em;
                 position: relative;
+                margin: 0.2em 0 0;
                 margin-left: .5em;
                 top: 50%;
                 transform: translateY(-50%);
+            }
+            .text-body-large {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.4em;
+                    @media (max-width: 767px) {
+                        font-size:16px;
+                        font-weight: 400
+                    }
+                    @media (max-width: 543px) {
+                        font-size:12px;
+                        font-weight: 400
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                letter-spacing: unset;
+                display: block;
+                width: 100%;
+                word-wrap: break-word;
             }
             .light-theme & {
                 font-size: 16px;
