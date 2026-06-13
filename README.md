@@ -1,4 +1,4 @@
-# Roblox Legacy Old Theme
+<h1 align="center"> Roblox Legacy Old Theme</h1>
 **[Roblox Legacy Old Theme](https://userstyles.world/style/5399/)** is a theme for [stylus](https://add0n.com/stylus.html) (see [Installation](#Installation) for installation details) that brings back the 2019 "legacy" theme primarily from June - September 2019 with customizable options for the end user.
 
 <p align="center">
@@ -216,7 +216,7 @@ Don't have stylus already installed? You can get it here for your browser :
 
 For a better experience/accuracy with the theme you may try out [Legacy Site Restoration](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Release/src/JS/LegacySiteRestoration.user.js) which requires [Tampermonkey](https://www.tampermonkey.net/index.php#download) (recommended) or [Violentmonkey](https://violentmonkey.github.io/get-it/) to use. If your unsure or confused with how to install please refer to tampermonkey's script [installation page](https://www.tampermonkey.net/faq.php?locale=en#Q102) or violentmonkey's script [installation page](https://violentmonkey.github.io/guide/creating-a-userscript/).
 
-For upcoming updates and features you can try out the [beta](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Beta/src/Channels/Beta/RLOT.user.css) channel, you're <ins>**not required**</ins> in any way to install this. Experimental channel may change at any time and or be unstable, any issues should be reported via [issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose).
+For upcoming stable changes, features, and bug fixes you can try out the [Beta](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Beta/src/RLOT.user.css) channel, for upcoming unstable changes, features, and bug fixes you can try out the [Dev](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Dev/src/RLOT.user.css) channel. You're <ins>**not required**</ins> in any form to install these to use Roblox Legacy Old Theme. Please report any issues you find in these builds via [issues](https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues/new/choose).
 
 ## Issues
 

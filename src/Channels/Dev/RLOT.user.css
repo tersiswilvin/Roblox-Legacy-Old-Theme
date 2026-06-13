@@ -1,14 +1,21 @@
 /* ==UserStyle==
-@name         Roblox Legacy Old Theme (Experimental)
-@version      20260607-00.1.5
+@name         Roblox Legacy Old Theme (Dev)
+@version      20260612-02.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
 @homepageURL  https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme
 @supportURL   https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/issues
-@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Beta/src/Channels/Beta/RLOT.user.css
+@updateURL    https://github.com/tersiswilvin/Roblox-Legacy-Old-Theme/raw/refs/heads/Dev/src/Channels/Dev/RLOT.user.css
 @license      CC-BY-SA-4.0
 @preprocessor less
+@var          select   alertmsg                    "Alert Message"                                      ["OFF*", "CUSTOM"]
+@var          select   alertcloseicon              " ├ Feedback Close Button"                           ["OFF*", "ON"]
+@var          select   alertlegacyclose            "    └ Legacy"                                       ["OFF*", "ON"]
+@var          select   alerteventtype              " ├ Feedback Event"                                  ["OFF*", "ON"]
+@var          select   alertstatus                 " ├ Status"                                          ["loading", "success", "warning", "info*"]
+@var          text     alerttext                   " ├ Text"                                            "'Your text here...'"
+@var          select   alerttype                   " └ Type"                                            ["default*", "feedback"]
 @var          checkbox AEOBW                       "Avatar Editor pre-1.5 border width"                 0
 @var          select   BadgeStyle                  "Badge Style"                                        ["201309", "201410", "201501", "201509", "201511", "201701", "201903*"]
 @var          checkbox BoxShadows                  "Box Shadows"                                        0
@@ -120,7 +127,7 @@
 @var          select   SSPGVersion                 "    └ Version"                                      ["V5", "V5_1", "V9", "V9_1*"]
 @var          checkbox TransitionalAnimations      "Transition animations"                              1
 @var          checkbox RedLogoStyle                "Use 2017 Red Branding (Messages / Bootstrapper)"    0
-@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Testers*"]
+@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Developers*", "Testers"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -2573,13 +2580,13 @@
         display: inline-block;
         float: left;
         color: #fff;
-        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) or (@SourceSansPro = 1) {
             padding-top: 13px;
             margin-right: 6px;
-            & when (@SourceSansPro = 0) {
-                font-size: 10px;
-                font-weight: 500;
-            }
+        }
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            font-size: 10px;
+            font-weight: 500;
         }
         & when (@SourceSansPro = 1) {
             font-size: 12px;
@@ -8657,6 +8664,10 @@
                     font-weight: 300;
                 }
             }
+            .alert-loading, .alert-success, .alert-warning, .alert-info {
+                font-size: 18px;
+                line-height: 1em;
+            }
             .text-lead {
                 font-size: 18px;
                 font-weight: 400;
@@ -8922,6 +8933,117 @@
         }
         .rbx-left-col .rbx-scrollbar .left-col-list {
             width: 100%;
+        }
+    }
+
+    .alert-container when (@alertmsg = CUSTOM) {
+        &:before {
+            content: "@{alerttext}";
+            & when (@alertstatus = loading) {
+                background-color: #b8b8b8;
+            }
+            & when (@alertstatus = success) {
+                background-color: #02b757;
+            }
+            & when (@alertstatus = warning) {
+                background-color: #d86868;
+            }
+            & when (@alertstatus = info) {
+                background-color: #f68802;
+            }
+            border: 0;
+            & when (@alerttype = default) {
+                margin: 0;
+            }
+            text-align: center;
+            color: #fff;
+            & when (@alerttype = default) {
+                & when (@SourceSansPro = 0) {
+                    font-size: 16px;
+                    font-weight: 500;
+                    @media (max-width: 767px) {
+                        font-size:12px;
+                        font-weight: 500
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 18px;
+                    font-weight: 400;
+                    @media (max-width: 767px) {
+                        font-size:16px
+                    }
+                }
+                line-height: 1em;
+                padding: 17px 0;
+                display: block;
+            }
+            & when (@alerttype = feedback) {
+                & when (@SourceSansPro = 0) {
+                    font-size: 16px;
+                    line-height: 1.4em;
+                }
+                & when (@SourceSansPro = 1) {
+                    font-size: 18px;
+                    line-height: 1em;
+                }
+                padding: 15px;
+                -webkit-transition: top .4s ease;
+                -o-transition: top .4s ease;
+                transition: top .4s ease;
+                position: fixed;
+                & when (@alerteventtype = OFF) {
+                    top: -60px;
+                }
+                & when (@alerteventtype = ON) {
+                    top: 40px;
+                    @media (max-width: 991px) {
+                        top:80px
+                    }
+                }
+                left: 0;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 970px;
+                right: 0;
+                z-index: 1029;
+            }
+        }
+        &:after when (@alerttype = feedback) and (@alertcloseicon = ON) {
+            content: "";
+            background-image: url(https://images.rbxcdn.com/8f9d73863e52851ec5910be4ffa5ed78-generic_01312019.svg);
+            background-repeat: no-repeat;
+            background-position: 0 -880px;
+            background-size: 40px auto;
+            position: fixed;
+            left: calc(50% + 452px);
+            & when (@alerteventtype = OFF) {
+                top: -45px;
+            }
+            & when (@alerteventtype = ON) {
+                top: 55px;
+            }
+            -webkit-transition: top .4s ease;
+            -o-transition: top .4s ease;
+            transition: top .4s ease;
+            & when (@alertlegacyclose = OFF) {
+                width: 18px;
+                height: 18px;
+            }
+            & when (@alertlegacyclose = ON) {
+                opacity: .5;
+                filter: alpha(opacity=50);
+                width: 20px;
+                height: 20px;
+            }
+            margin: auto 0 auto auto;
+            display: inline-block;
+            vertical-align: middle;
+            z-index: 1029;
+            @media (max-width: 991px) {
+                left: unset;
+                right: 15px;
+                top: 95px;
+            }
         }
     }
 
@@ -9935,7 +10057,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260607-00.1.5";
+    @Version: "20260612-02.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -13163,12 +13285,39 @@
                     background-position: 0 -420px;
                 }
             }
-            div {
+            div, [class*="text-"] {
                 padding-left: 4.5em;
                 position: relative;
+                margin: 0.2em 0 0;
                 margin-left: .5em;
                 top: 50%;
                 transform: translateY(-50%);
+            }
+            .text-body-large {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    font-family: HCo Gotham SSm,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.4em;
+                    @media (max-width: 767px) {
+                        font-size:16px;
+                        font-weight: 400
+                    }
+                    @media (max-width: 543px) {
+                        font-size:12px;
+                        font-weight: 400
+                    }
+                }
+                & when (@SourceSansPro = 1) {
+                    font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 1.3em;
+                }
+                letter-spacing: unset;
+                display: block;
+                width: 100%;
+                word-wrap: break-word;
             }
             .light-theme & {
                 font-size: 16px;
@@ -24206,9 +24355,14 @@
             &:before {
                 content: "";
                 & when (@BoxShadows = 0) {
-                    background-color: #d1d1d1;
                     & when not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
                         background-color: #d1d1d1;
+                        .light-theme & {
+                            background-color: #d1d1d1;
+                        }
+                        .dark-theme & {
+                            background-color: #2e2e2e;
+                        }
                     }
                     & when (@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) {
                         background-color: transparent;
@@ -24216,6 +24370,12 @@
                 }
                 & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
                     background-color: #fff;
+                    .light-theme & {
+                        background-color: #fff;
+                    }
+                    .dark-theme & {
+                        background-color: #000;
+                    }
                 }
                 background-image: url(@HHAvatarUrl);
                 background-size: 100%;
@@ -24536,6 +24696,10 @@
             > .flex {
                 flex-wrap: wrap;
                 margin: 0 0 6px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
             }
             .padding-bottom-small {
                 padding: 0;
@@ -24544,13 +24708,17 @@
         &-sidebar {
             background-color: transparent;
             border: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: unset;
+            position: unset;
+            width: 160px;
             height: unset;
+            float: left;
             padding: 0;
+            & when (@SourceSansPro = 0) and (@Revert201909updates = 1) {
+                margin-top: 48px;
+            }
+            & when (@SourceSansPro = 1) and (@Revert201909updates = 1) {
+                margin-top: 52px;
+            }
             @media (max-width: 991px) {
                 display: block;
             }
