@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260612-01.1.5
+@version      20260612-02.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2580,13 +2580,13 @@
         display: inline-block;
         float: left;
         color: #fff;
-        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) or (@SourceSansPro = 1) {
             padding-top: 13px;
             margin-right: 6px;
-            & when (@SourceSansPro = 0) {
-                font-size: 10px;
-                font-weight: 500;
-            }
+        }
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            font-size: 10px;
+            font-weight: 500;
         }
         & when (@SourceSansPro = 1) {
             font-size: 12px;
@@ -10057,7 +10057,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260612-01.1.5";
+    @Version: "20260612-02.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
