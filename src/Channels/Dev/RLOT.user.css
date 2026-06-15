@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260612-02.1.5
+@version      20260614-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -25,7 +25,7 @@
 @var          select   CustomTheme                 "Custom Site Theme"                                  ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
 @var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                        0
 @var          select   greetingTxt                 "Greeting Text Style"                                ["None*", "Hello", "HelloExclamation", "Exclamation"]
-@var          select   CardStyle                   "Item Card Style"                                    ["Pre-201812", "201812", "201903*", "201908"]
+@var          select   CardStyle                   "Item Card Style"                                    ["201604", "201812", "201903*", "201908"]
 @var          checkbox Fix1903T                    " └ Fixed 201903 Transitions"                        0
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                     0
 @var          checkbox LegacyHomeTitles            "Legacy Home Titles"                                 0
@@ -1019,25 +1019,25 @@
     .game-card-native-ad {
         position: absolute;
         bottom: 0;
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             width: 93%;
         }
-        & when not (@CardStyle = Pre-201812) {
+        & when not (@CardStyle = 201604) {
             width: 91.5%;
         }
     }
     .grid-item-container .game-card-friend-activity {
         position: absolute;
         bottom: 0;
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             width: 93%;
         }
-        & when not (@CardStyle = Pre-201812) {
+        & when not (@CardStyle = 201604) {
             width: 91.5%;
         }
     }
     .game-carousel .grid-item-container .game-card-friend-activity {
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             width: 93.5%;
         }
         & when (@CardStyle = 201812) {
@@ -1055,7 +1055,7 @@
 
     .light-theme .game-card-friend-activity, .light-theme .game-card-native-ad {
         background-color: #00a2ff;
-        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+        & when (@CardStyle = 201604) or (@CardStyle = 201812) {
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
         }
@@ -1067,7 +1067,7 @@
         & when (@BrighterDarkThemeColors = 1) {
             background-color: #00a2ff;
         }
-        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+        & when (@CardStyle = 201604) or (@CardStyle = 201812) {
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
         }
@@ -2409,6 +2409,16 @@
                 .left-nav-new-width & .icon-logo-r {
                     display: none;
                 }
+            }
+        }
+    }
+    & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
+        @media (min-width: 1200px) {
+            .btr-no-hamburger .left-nav-new-width #header .icon-logo {
+                display: block;
+            }
+            .btr-no-hamburger .left-nav-new-width #header .icon-logo-r {
+                display: none;
             }
         }
     }
@@ -7254,17 +7264,7 @@
             }
         }
 
-        .left-nav ul:after {
-            & when (@RestoreSidebarPadding = 0) {
-                padding: 0 0 0 10px;
-            }
-            & when (@RestoreSidebarPadding = 1) {
-                padding: 0 10px 0;
-            }
-            line-height: 1.42857;
-            width: 165px;
-        }
-        body:not(.RestoreEvents):not(.EventsEnabled) .rbx-left-col .rbx-scrollbar .left-col-list:after, .left-nav ul:after {
+        body:not(.RestoreEvents):not(.EventsEnabled) .rbx-left-col .rbx-scrollbar .left-col-list:after, body:not(.RestoreEvents):not(.EventsEnabled) .left-nav ul:after {
             content: 'Events';
             font-size: 16px;
             & when (@SourceSansPro = 0) {
@@ -8913,7 +8913,7 @@
             }
         }
 
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             .game-card-container .game-card-info .info-label.playing-counts-label {
                 font-weight: 400;
             }
@@ -10057,7 +10057,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260612-02.1.5";
+    @Version: "20260614-00.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -13630,7 +13630,7 @@
     }
 
     .horizontal-scroller .scroller, .games-list-container.wide-game-tile-container .scroller {
-        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) and not (@CardStyle = Pre-201812) {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) and not (@CardStyle = 201604) {
             height: 240px;
         }
         & when (@SourceSansPro = 1) {
@@ -13646,31 +13646,51 @@
         }
     }
 
-    & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
-        & when (@CardStyle = Pre-201812) {
+    & when (@CardStyle = 201604) or (@CardStyle = 201812) {
+        & when (@CardStyle = 201604) {
             .light-theme .game-card-thumb-container img, .dark-theme .game-card-thumb-container img {
                 border-top-right-radius: 3px;
                 border-top-left-radius: 3px;
             }
         }
-        .light-theme .game-card-info .info-label.icon-playing-counts-gray, .dark-theme .game-card-info .info-label.icon-playing-counts-gray {
-            display: none;
+        .game-card-info {
+            display: flex;
+            flex-wrap: wrap;
+            .playing-counts-label {
+                order: 1;
+            }
+            .icon-playing-counts-gray {
+                order: 2;
+            }
+            .vote-percentage-label {
+                order: 4;
+            }
+            .icon-votes-gray {
+                order: 3;
+            }
+            .icon-playing-counts-gray {
+                flex-basis: 100%;
+            }
+        }
+        .game-card-info .info-label.icon-playing-counts-gray {
+            position: absolute;
+            margin: 20px 0 0 19px;
+            .light-theme &, .dark-theme {
+                background: none;
+            }
         }
         .game-card-info .info-label.playing-counts-label {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
             font-size: 12px;
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 font-weight: 500;
             }
             & when (@CardStyle = 201812) {
                 font-weight: 400;
             }
             color: #757575;
-        }
-        .game-card-info .info-label.playing-counts-label:after {
-            content: ' Playing';
+            &:after {
+                content: ' Playing';
+            }
         }
         & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
             .gotham-font .game-card-info .info-label.playing-counts-label, .builder-font .game-card-info .info-label.playing-counts-label {
@@ -13761,7 +13781,7 @@
         margin-top: 6px;
     }
     .light-theme .game-card-link .game-card-name, .dark-theme .game-card-link .game-card-name {
-         & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+         & when (@CardStyle = 201604) or (@CardStyle = 201812) {
             margin-bottom: 3px;
         }
         & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -13782,7 +13802,7 @@
     }
 
     .game-cards .game-card {
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             height: 223px;
         }
         & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -13820,10 +13840,10 @@
         padding: 0 12px 0 5px;
     }
     .game-tile-list .game-card-container .game-card-info .playing-counts-label {
-        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+        & when (@CardStyle = 201604) or (@CardStyle = 201812) {
             width: 100%;
-            padding: 0 6px;
-            margin: 3px 0;
+            padding: 0;
+            margin: 0 0 3px;
         }
         & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
             padding: 0 0 0 5px;
@@ -13842,7 +13862,7 @@
 
     .grid-item-container:not(.item-card) {
         float: none;
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             width: 161px;
             height: 223px;
             padding: 0 11px 0 0;
@@ -13875,7 +13895,7 @@
     }
     .grid-item-container .game-card-link, .featured-grid-item-container .game-card-link {
         background-color: #fff;
-        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+        & when (@CardStyle = 201604) or (@CardStyle = 201812) {
             border-radius: 3px;
         }
         & when (@CardStyle = 201903) {
@@ -13897,11 +13917,13 @@
 
     /*/ Revert the recent changes for friend activity and native ads. /*/
     .game-card .game-card-container .game-card-link .game-card-info, .game-carousel .game-card-container .game-card-link .game-card-info, .game-grid .game-card-container .game-card-link .game-card-info {
-        position: absolute;
-        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+        
+        & when (@CardStyle = 201604) or (@CardStyle = 201812) {
+            position: unset;
             padding: 0 6px;
         }
         & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
+            position: absolute;
             margin: 0 6px;
         }
     }
@@ -13932,22 +13954,22 @@
         }
         text-align: center;
         .grid-item-container & {
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 width: 93.5%;
             }
             & when (@CardStyle = 201812) {
                 width: 91.5%;
             }
-            & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+            & when (@CardStyle = 201604) or (@CardStyle = 201812) {
                 border-bottom-left-radius: 3px;
                 border-bottom-right-radius: 3px;
             }
         }
         .game-grid .grid-item-container & {
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 width: 93%;
             }
-            & when not (@CardStyle = Pre-201812) {
+            & when not (@CardStyle = 201604) {
                 width: 91.5%;
             }
         }
@@ -14881,7 +14903,7 @@
 
     .featured-grid-item-container {
         float: none;
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             width: 161px;
             height: 223px;
             padding: 0 11px 0 0;
@@ -14935,10 +14957,10 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 width: 93%;
             }
-            & when not (@CardStyle = Pre-201812) {
+            & when not (@CardStyle = 201604) {
                 width: 91.5%;
             }
             & when (@SourceSansPro = 0) {
@@ -14953,7 +14975,7 @@
             text-align: center;
             height: 25px;
             padding: 5px 8px;
-            & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+            & when (@CardStyle = 201604) or (@CardStyle = 201812) {
                 border-bottom-left-radius: 3px;
                 border-bottom-right-radius: 3px;
             }
@@ -15046,9 +15068,9 @@
         }
     }
 
-    & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+    & when (@CardStyle = 201604) or (@CardStyle = 201812) {
         .game-cards .game-card {
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 width: 161px;
                 & when (@SourceSansPro = 0) {
                     height: 240px;
@@ -15071,7 +15093,7 @@
         }
         .game-carousel .grid-item-container, .game-carousel.expand-home-content .grid-item-container, .game-carousel.expand-home-content-disabled .grid-item-container, .dark-theme .game-carousel .grid-item-container, .dark-theme .game-carousel .grid-item-container {
             background-color: transparent;
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 width: 161px;
                 height: 223px;
                 padding: 0 11px 0 0;
@@ -15129,7 +15151,7 @@
         }
         @media (min-width: 543px) {
             ul.hlist.game-cards .game-card {
-                & when (@CardStyle = Pre-201812) {
+                & when (@CardStyle = 201604) {
                     width: 161px;
                     padding: 0 11px 0 0;
                 }
@@ -15181,7 +15203,7 @@
         height: 150px;
         width: 150px;
         border-radius: 0;
-        & when (@CardStyle = Pre-201812) {
+        & when (@CardStyle = 201604) {
             border-top-right-radius: 3px;
             border-top-left-radius: 3px;
         }
@@ -15194,7 +15216,7 @@
         height: 100%;
         max-height: 100%;
         margin: 0;
-        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+        & when (@CardStyle = 201604) or (@CardStyle = 201812) {
             border-radius: 3px;
         }
         & when (@CardStyle = 201903) or (@CardStyle = 201908)  {
@@ -15258,7 +15280,7 @@
                     transition: unset;
                     .brief-game-icon {
                         border-radius: 0;
-                        & when (@CardStyle = Pre-201812) {
+                        & when (@CardStyle = 201604) {
                             border-top-right-radius: 3px;
                             border-top-left-radius: 3px;
                         }
@@ -15280,7 +15302,7 @@
                     transition: unset;
                     .game-card-name {
                         overflow: hidden;
-                        & when (@CardStyle = Pre-201812) or (@CardStyle = 201812) {
+                        & when (@CardStyle = 201604) or (@CardStyle = 201812) {
                             white-space: nowrap;
                         }
                         & when (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -15363,7 +15385,7 @@
             &.focused.old-hover.first-tile, &.grid-tile.focused.old-hover, &.event-tile.focused.old-hover, &.grid-tile.focused.old-hover, &.interest-tile.focused.old-hover {
                 margin: 0;
                 margin-bottom: 12px;
-                & when (@CardStyle = Pre-201812) {
+                & when (@CardStyle = 201604) {
                     padding: 0 11px 0 0;
                 }
                 & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -15411,7 +15433,7 @@
         @media (max-width: 543px) {
             margin: 0;
             margin-bottom: 12px;
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 padding: 0 11px 0 0;
             }
             & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -15440,7 +15462,7 @@
             display: none;
         }
         .hover-game-tile.event-tile, .hover-game-tile.grid-tile, .hover-game-tile.interest-tile, .hover-game-tile.grid-tile.old-hover, .hover-game-tile.event-tile.focused.old-hover, .hover-game-tile.grid-tile.focused.old-hover {
-            & when (@CardStyle = Pre-201812) {
+            & when (@CardStyle = 201604) {
                 width: 161px;
                 height: 223px;
                 padding: 0 11px 0 0;
@@ -15476,7 +15498,7 @@
                 width: 100%;
             }
             &.focused {
-                & when (@CardStyle = Pre-201812) {
+                & when (@CardStyle = 201604) {
                     width: 161px;
                 }
                 & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -15484,7 +15506,7 @@
                 }
                 max-height: unset;
                 @media (max-width: 543px) {
-                    & when (@CardStyle = Pre-201812) {
+                    & when (@CardStyle = 201604) {
                         width: 101px;
                     }
                     & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -15501,7 +15523,7 @@
                 }
             }
             @media (max-width: 543px) {
-                & when (@CardStyle = Pre-201812) {
+                & when (@CardStyle = 201604) {
                     width: 101px;
                 }
                 & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -26599,6 +26621,11 @@
         .no-gutter-ads.logged-in:not(.left-nav-new-width) .content, .no-gutter-ads.left-nav-new-width main.container-main,.wrap.has-groups-list-sidebar.no-gutter-ads.logged-in:not(.left-nav-new-width) .container-main:not(.in-app) .content, .wrap.has-groups-list-sidebar.no-gutter-ads.logged-in.left-nav-new-width .container-main:not(.in-app) .content {
             margin-left: auto
         }
+        @media (max-width: 1688px) {
+            body.btr-no-hamburger .left-nav-new-width .container-main {
+                margin-left: 175px;
+            }
+        }
         .left-nav {
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
@@ -26618,6 +26645,11 @@
                 .no-gutter-ads &, & {
                     width: 175px;
                 }
+            }
+            .btr-no-hamburger & {
+                width: 175px;
+                display: block;
+                visibility: visible;
             }
             @media (min-width: 992px) {
                 top: 40px;
@@ -27085,7 +27117,17 @@
                 &.flex {
                     display: block
                 }
-            }
+                &:after {
+                    & when (@RestoreSidebarPadding = 0) {
+                        padding: 0 0 0 10px;
+                    }
+                    & when (@RestoreSidebarPadding = 1) {
+                        padding: 0 10px 0;
+                    }
+                    line-height: 1.42857;
+                    width: 165px;
+                }
+}
             .light-theme & {
                 background-color: #fff;
                 box-shadow: 0 0 3px rgba(25, 25, 25, .3);
