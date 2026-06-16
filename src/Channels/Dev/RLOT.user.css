@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260614-00.1.5
+@version      20260616-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -53,6 +53,7 @@
 @var          checkbox Revert201909updates         "Revert 201909+ updates"                             1
 @var          checkbox LoginMethodsSectioned       " ├ Login Methods Sectioned"                         0
 @var          checkbox RemoveAccountSwitcher       " ├ Remove Account Switcher"                         1
+@var          checkbox RemoveAgeBadge              " ├ Remove Age Badge"                                1
 @var          checkbox RemoveAgeGroup              " ├ Remove Age Group"                                1
 @var          checkbox RemoveAgeVerification       " ├ Remove Age Verification"                         1
 @var          checkbox RemoveCamera                " ├ Remove Camera"                                   1
@@ -2293,6 +2294,14 @@
             margin: 0 12px;
             padding: 0;
             float: left;
+            &.has-age-badge {
+                & when (@Revert201909updates = 1) and (@RemoveAgeBadge = 1) {
+                    max-width: 76px;
+                }
+                & when (@Revert201909updates = 0) or (@RemoveAgeBadge = 0) {
+                    max-width: none;
+                }
+            }
             @media (min-width: 1688px) {
                 max-width: 120px;
             }
@@ -2303,14 +2312,33 @@
                         max-width: 76px;
                         margin: 0 12px;
                         padding: 0px;
+                        &.has-age-badge {
+                            & when (@Revert201909updates = 1) and (@RemoveAgeBadge = 1) {
+                                max-width: 76px;
+                            }
+                            & when (@Revert201909updates = 0) or (@RemoveAgeBadge = 0) {
+                                max-width: none;
+                            }
+                        }
                     }
                 }
                 @media (min-width: 1688px) {
                     .left-nav-new-width & {
                         max-width: 120px;
+                        &.has-age-badge {
+                            & when (@Revert201909updates = 1) and (@RemoveAgeBadge = 1) {
+                                max-width: 120px;
+                            }
+                            & when (@Revert201909updates = 0) or (@RemoveAgeBadge = 0) {
+                                max-width: none;
+                            }
+                        }
                     }
                 }
             }
+        }
+        #age-badge-container when (@Revert201909updates = 1) and (@RemoveAgeBadge = 1) {
+            display: none;
         }
         .navbar-search {
             box-sizing: border-box;
@@ -2412,6 +2440,7 @@
             }
         }
     }
+    
     & when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
         @media (min-width: 1200px) {
             .btr-no-hamburger .left-nav-new-width #header .icon-logo {
@@ -2429,6 +2458,9 @@
         font-size: 18px;
         line-height: 20px;
         height: 50px;
+        .has-age-badge & when (@Revert201909updates = 0) or (@RemoveAgeBadge = 0) {
+            height: 40px;
+        }
     }
 
     .rbx-left-col {
@@ -10057,7 +10089,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260614-00.1.5";
+    @Version: "20260616-00.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
