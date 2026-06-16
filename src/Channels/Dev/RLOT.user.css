@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260616-01.1.5
+@version      20260616-02.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -10089,7 +10089,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260616-01.1.5";
+    @Version: "20260616-02.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -13706,9 +13706,53 @@
         }
         .game-card-info .info-label.icon-playing-counts-gray {
             position: absolute;
-            margin: 20px 0 0 19px;
-            .light-theme &, .dark-theme {
+            width: 70%;
+            width: calc(91% - 32px);
+            height: 6px;
+            margin: 27px auto 0 calc(1% + 16px);
+            padding: 0;
+            z-index: 1;
+            &:before {
+                content: "";
+                background-color: #fff;
+                height: 6px;
+                width: 2px;
+                position: absolute;
+                top: 0;
+                left: 38%;
+                .light-theme & {
+                    background-color: #fff;
+                }
+                .dark-theme & {
+                    background-color: #000;
+                }
+            }
+            &:after {
+                content: "";
+                background-color: #fff;
+                height: 6px;
+                width: 2px;
+                position: absolute;
+                top: 0;
+                left: 58%;
+                .light-theme & {
+                    background-color: #fff;
+                }
+                .dark-theme & {
+                    background-color: #000;
+                }
+            }
+            .light-theme &, .dark-theme & {
                 background: none;
+                width: 70%;
+                width: calc(91% - 32px);
+                height: 6px;
+                .light-theme & {
+                    background-color: #fff;
+                }
+                .dark-theme & {
+                    background-color: #000;
+                }
             }
         }
         .game-card-info .info-label.playing-counts-label {
@@ -13743,11 +13787,23 @@
         .light-theme .game-card-info .info-label.icon-votes-gray {
             background-image: url(https://static.rbxcdn.com/images/Icons/thumbs.svg);
             background-position: 0 0;
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                margin: .4em 0;
+            }
+            & when (@SourceSansPro = 1) {
+                margin: .3em 0;
+            }
         }
         .dark-theme .game-card-info .info-label.icon-votes-gray {
             background-image: url(https://static.rbxcdn.com/images/Icons/thumbs.svg);
             background-position: 0 0;
             filter: invert(100%);
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                margin: .4em 0;
+            }
+            & when (@SourceSansPro = 1) {
+                margin: .3em 0;
+            }
         }
         .light-theme .game-card-container:hover .info-label.icon-votes-gray, .dark-theme .game-card-container:hover .info-label.icon-votes-gray {
             background-position: -16px 0;
@@ -13759,6 +13815,12 @@
         }
         .light-theme .game-card-container:hover .game-card-link .game-card-info:not(:has(.info-avatar)):after, .dark-theme .game-card-container:hover  .game-card-link .game-card-info:not(:has(.info-avatar)):not(:has(.info-avatar)):after {
             visibility: visible;
+        }
+        .game-tile-list .game-card-container:hover .game-card-info .no-vote, .game-tile-list .game-card-container:hover .game-card-info .vote-percentage-label {
+            background: linear-gradient(90deg, #02b757 50%, rgba(226, 118, 118, .6) 50%);
+            .light-theme &, .dark-theme & {
+                background: linear-gradient(90deg, #02b757 50%, rgba(226, 118, 118, .6) 50%);
+            }
         }
         .light-theme .item-card-container, .light-theme .item-cards .item-card-container, .dark-theme .item-card-container, .dark-theme .item-cards .item-card-container {
             border-radius: 3px;
@@ -13808,6 +13870,14 @@
         margin: 0 6px;
     }
 
+    .game-cards .game-card .game-card-name, .game-cards .game-card .game-card-info {
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            line-height: 1.4em
+        }
+        & when (@SourceSansPro = 1) {
+            line-height: 1.3em;
+        }
+    }
     .light-theme .game-card-experimental, .light-theme .game-card-container .game-card-name, .light-theme .game-card-name-secondary, .light-theme .game-card-vote, .dark-theme .game-card-experimental, .dark-theme .game-card-container .game-card-name, .dark-theme .game-card-name-secondary, .dark-theme .game-card-vote {
         width: 100%;
         padding: 0 6px;
@@ -13865,10 +13935,20 @@
         & when (@SourceSansPro = 1) {
             font-weight: 300;
         }
-        line-height: 18px;
-        @media (max-width: 543px) {
-            font-size: 10px;
-            line-height: 12px;
+        & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                line-height: 1.4em
+            }
+            & when (@SourceSansPro = 1) {
+                line-height: 1.3em;
+            }
+        }
+        & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
+            line-height: 18px;
+            @media (max-width: 543px) {
+                font-size: 10px;
+                line-height: 12px;
+            }
         }
     }
     .game-tile .game-card-container .game-card-info .vote-percentage-label {
@@ -13880,15 +13960,51 @@
     .game-tile-list .game-card-container .game-card-info .no-vote, .game-tile-list .game-card-container .game-card-info .vote-percentage-label {
         & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
             font-size: 0;
-            background-color: #B8B8B8;
+            background: linear-gradient(90deg, #757575 50%, #B8B8B8 50%);
             padding: 0;
             width: 70%;
             width: calc(99% - 32px);
             height: 6px;
-            margin: 5px auto 0 1%;
+            margin: 9px auto 0 1%;
             position: relative;
+            &:before {
+                content: "";
+                background-color: #fff;
+                height: 6px;
+                width: 2px;
+                position: absolute;
+                top: 0;
+                left: 18%;
+                .light-theme & {
+                    background-color: #fff;
+                }
+                .dark-theme & {
+                    background-color: #000;
+                }
+            }
+            &:after {
+                content: "";
+                background-color: #fff;
+                height: 6px;
+                width: 2px;
+                position: absolute;
+                top: 0;
+                left: 78%;
+                .light-theme & {
+                    background-color: #fff;
+                }
+                .dark-theme & {
+                    background-color: #000;
+                }
+            }
+            .light-theme & {
+                background: linear-gradient(90deg, #757575 50%, #B8B8B8 50%);
+            }
+            .dark-theme & {
+                background: linear-gradient(90deg, #8A8A8A 50%, #474747 50%);
+            }
         }
-        & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
+        & when (@CardStyle = 201903) or (@CardStyle = 201908) {
             padding: 0 12px 0 5px;
         }
     }
@@ -13898,7 +14014,7 @@
             padding: 0;
             margin: 0 0 3px;
         }
-        & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
+        & when (@CardStyle = 201903) or (@CardStyle = 201908) {
             padding: 0 0 0 5px;
         }
     }
@@ -13986,6 +14102,12 @@
                 background-position: 0 -16px;
                 visibility: hidden;
                 opacity: .6;
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    margin: .4em 0;
+                }
+                & when (@SourceSansPro = 1) {
+                    margin: .3em 0;
+                }
                 order: 5;
             }
         }
