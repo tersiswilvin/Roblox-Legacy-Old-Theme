@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260616-03.1.5
+@version      20260617-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -26,6 +26,7 @@
 @var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                        0
 @var          select   greetingTxt                 "Greeting Text Style"                                ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                                    ["201604", "201606", "201812", "201903*", "201908"]
+@var          number   VoteBarPercentage           " ├ Vote Bar percentage Value"                       [50, 0, 100, 1, "%"]
 @var          checkbox Fix1903T                    " └ Fixed 201903 Transitions"                        0
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                     0
 @var          checkbox LegacyHomeTitles            "Legacy Home Titles"                                 0
@@ -10089,7 +10090,7 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260616-03.1.5";
+    @Version: "20260617-00.1.5";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -13822,9 +13823,9 @@
             visibility: visible;
         }
         .game-tile-list .game-card-container:hover .game-card-info .no-vote, .game-tile-list .game-card-container:hover .game-card-info .vote-percentage-label {
-            background: linear-gradient(90deg, #02b757 50%, rgba(226, 118, 118, .6) 50%);
+            background: linear-gradient(90deg, #02b757 @VoteBarPercentage, rgba(226, 118, 118, .6) @VoteBarPercentage);
             .light-theme &, .dark-theme & {
-                background: linear-gradient(90deg, #02b757 50%, rgba(226, 118, 118, .6) 50%);
+                background: linear-gradient(90deg, #02b757 @VoteBarPercentage, rgba(226, 118, 118, .6) @VoteBarPercentage);
             }
         }
         .light-theme .item-card-container, .light-theme .item-cards .item-card-container, .dark-theme .item-card-container, .dark-theme .item-cards .item-card-container {
@@ -13965,7 +13966,7 @@
     .game-tile-list .game-card-container .game-card-info .no-vote, .game-tile-list .game-card-container .game-card-info .vote-percentage-label {
         & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
             font-size: 0;
-            background: linear-gradient(90deg, #757575 50%, #B8B8B8 50%);
+            background: linear-gradient(90deg, #757575 @VoteBarPercentage, #B8B8B8 @VoteBarPercentage);
             padding: 0;
             width: 70%;
             width: calc(99% - 32px);
@@ -14003,10 +14004,10 @@
                 }
             }
             .light-theme & {
-                background: linear-gradient(90deg, #757575 50%, #B8B8B8 50%);
+                background: linear-gradient(90deg, #757575 @VoteBarPercentage, #B8B8B8 @VoteBarPercentage);;
             }
             .dark-theme & {
-                background: linear-gradient(90deg, #8A8A8A 50%, #474747 50%);
+                background: linear-gradient(90deg, #8A8A8A @VoteBarPercentage, #474747 @VoteBarPercentage);
             }
         }
         & when (@CardStyle = 201903) or (@CardStyle = 201908) {
@@ -27115,6 +27116,9 @@
                                 text-overflow: ellipsis;
                                 white-space: nowrap;
                                 display: block;
+                            }
+                            span:nth-child(2) {
+                                display: none;
                             }
                         }
                         .icon-regular-roblox-plus {
