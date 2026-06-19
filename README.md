@@ -15,11 +15,11 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 - Highly Customizable :
   - Alert Message
     -  ├ Feedback Close Button
-      - Legacy
+      -  └ Legacy
     -  ├ Feedback Event
     -  ├ Status
     -  ├ Text
-      - Linkify
+      -  └ Linkify
     -  └ Type
   - Avatar Editor pre-1.5 border width
   - Badge Style
@@ -136,9 +136,9 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
       -  └ Version
   - Transition animations
   - Use 2017 Red Branding (Messages / Bootstrapper)
-  - Watermark Branch <b>`Beta & Dev only`</b>
+  - Watermark Branch <b>`Beta & Dev builds only`</b>
     - None
-    - Developers <i>`Available in dev builds`</i>
+    - Developers <i>`Dev builds Only`</i>
     - Testers
 - Extension Support
   - BTRoblox
