@@ -13,60 +13,30 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
 
 ## Features
 - Highly Customizable :
+  - Alert Message
+    -  ├ Feedback Close Button
+      - Legacy
+    -  ├ Feedback Event
+    -  ├ Status
+    -  ├ Text
+      - Linkify
+    -  └ Type
   - Avatar Editor pre-1.5 border width
   - Badge Style
-    - 201309
-    - 201410
-    - 201501
-    - 201509
-    - 201511
-    - 201701
-    - 201903 <b>`Default`</b>
   - Box Shadows
-  - Brighter Dark Theme colors <b>`Default`</b>
-  - Crop Wide Gamecard Thumbnails <b>`Default`</b>
+  - Brighter Dark Theme colors
+  - Crop Wide Gamecard Thumbnails
   - Currency Brand Style
-    - Robux <b>`Default`</b>
-    - Tickets
   - Custom Site Theme
-    - None <b>`Default`</b>
-    - April_Fools
-    - BloxTober
-    - BTR_Night
-    - BTR_Red
-    - BTR_Simblk
-    - BTR_Sky
-    - L_Red
-    - RPlus_Easter
-    - RPlus_OBC
   - Force Light Theme on signup
-  - Five column Avatar Editor <b>`Default`</b>
-  - Fixed 201903 Item Card Transition­s
   - Greeting Text Style
-    - None <b>`Default`</b>
-    - Hello
-    - HelloExclamation
-    - Exclamation
   - Item Card Style
-    - Pre-201812
-    - 201812
-    - 201903 <b>`Default`</b>
-    - 201908
+    -  ├ Fixed 201903 Transitions
+    -  ├ pre-1.5 Vote Bar CSS
+    -  └ Vote Bar percentage Value
   - Legacy Game Headers (BTRoblox)
   - Legacy Home Titles
   - Legacy Footer Text
-    - None <b>`Default`</b>
-    - BrandSync
-    - 201401
-    - 201501
-    - 201601
-    - 201607
-    - 201601
-    - 201701
-    - 201706
-    - 201801
-    - 201811
-    - 201901
   - Legacy Next StyleGuide
     -  ├ Capital Brand Text in Modals
     -  ├ Chat Party icon
@@ -75,7 +45,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Login Password Error Spacing
     -  ├ Older
     -  ├ Older Chat
-    -  ├ Older Chat Dialog Shadows <b>`Default`</b>
+      -  └ Dialog Shadows
     -  ├ Remove people list popovers
     -  ├ Remove Place name
     -  ├ Remove Social Links
@@ -84,119 +54,96 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  └ Smaller item card captions
   - My Avatar Gogo Spinner
   - Play Button Style
-    - 201610
-    - 201704
-    - 201706
-    - 201712
-    - 201812
-    - 201901
-    - 201906 <b>`Default`</b>
-    - 2020+
     -  └ Social media experiment type
-      - None <b>`Default`</b>
-      - share_icon
-      - social_media
-  - Pre-2020 Event Thumbnail Aspect Ratio <b>`Default`</b>
+  - Pre-2020 Event Thumbnail Aspect Ratio
   - Restore legacy sidebar padding
-  - Revert 201909+ updates <b>`Default`</b>
+  - Revert 201909+ updates
     -  ├ Login Methods Sectioned
-    -  ├ Remove Account Switcher <b>`Default`</b>
-    -  ├ Remove Age Group <b>`Default`</b>
-    -  ├ Remove Age Verificati­on <b>`Default`</b>
-    -  ├ Remove Camera <b>`Default`</b>
-    -  ├ Remove Chip Filters Container <b>`Default`</b>
+    -  ├ Remove Account Switcher
+    -  ├ Remove Badge
+    -  ├ Remove Age Group
+    -  ├ Remove Age Verificati­on
+    -  ├ Remove Camera
+    -  ├ Remove Chip Filters Container
     -  ├ Remove Edit Descriptio­n Icon
-    -  ├ Remove Game Events <b>`Default`</b>
-    -  ├ Remove Group Announceme­nts <b>`Default`</b>
-    -  ├ Remove Group Content Moderation <b>`Default`</b>
-    -  ├ Remove Group Cover <b>`Default`</b>
-    -  ├ Remove Group Events <b>`Default`</b>
-    -  ├ Remove Group Forums <b>`Default`</b>
-    -  ├ Remove Group Guilded <b>`Default`</b>
-    -  ├ Remove Osa Context Card <b>`Default`</b>
-    -  ├ Remove Passkey <b>`Default`</b>
-    -  ├ Remove Passkey Manage Button <b>`Default`</b>
-    -  ├ Remove Player Feedback Banner <b>`Default`</b>
-    -  ├ Remove Profile Posts <b>`Default`</b>
-    -  ├ Remove Profile Store <b>`Default`</b>
-    -  ├ Remove Quick Sign In <b>`Default`</b>
-    -  ├ Remove Sidebar Avatar <b>`Default`</b>
-    -  ├ Remove Sidebar Giftcards <b>`Default`</b>
-    -  ├ Remove Sub Genres <b>`Default`</b>
-    -  ├ Remove Theme <b>`Default`</b>
-    -  ├ Remove Verified Badge <b>`Default`</b>
-    -  ├ Remove Voice Chat <b>`Default`</b>
-    -  ├ Rename Buy Gift Cards to Gift Cards <b>`Default`</b>
-    -  ├ Rename Communitie­s to Groups <b>`Default`</b>
-    -  ├ Rename Connection­s to Friends <b>`Default`</b>
-    -  ├ Rename Get Premium/­Premium to Upgrade Now <b>`Default`</b>
-    -  ├ Rename Help & Safety to Help <b>`Default`</b>
-    -  ├ Rename Official Store to Shop <b>`Default`</b>
-    -  ├ Rename X to Twitter <b>`Default`</b>
-    -  ├ Restore Ads <b>`Default`</b>
-      - None
-      - Default <b>`Default`</b>
-      - Filler
-      - └ Games Page
-    -  ├ Restore Age Indicators <b>`Default`</b>
-    -  ├ Restore HCo Gotham SSm <b>`Default`</b>
+    -  ├ Remove Game Events
+    -  ├ Remove Group Announceme­nts
+    -  ├ Remove Group Banners
+    -  ├ Remove Group Content Moderation
+    -  ├ Remove Group Cover
+    -  ├ Remove Group Events
+    -  ├ Remove Group Forums
+    -  ├ Remove Group Guilded
+    -  ├ Remove New item Pill
+    -  ├ Remove Osa Context Card
+    -  ├ Remove Passkey
+    -  ├ Remove Passkey Manage Button
+    -  ├ Remove Player Feedback Banner
+    -  ├ Remove Profile Posts
+    -  ├ Remove Profile Store
+    -  ├ Remove Quick Sign In
+    -  ├ Remove Settings Automatic Translations
+    -  ├ Remove Sidebar Avatar
+    -  ├ Remove Sidebar Giftcards
+    -  ├ Remove Sidebar Membership
+    -  ├ Remove Sub Genres
+    -  ├ Remove Theme
+    -  ├ Remove Topbar Download Button
+    -  ├ Remove Verified Badge
+    -  ├ Remove Voice Chat
+    -  ├ Rename Buy Gift Cards to Gift Cards
+    -  ├ Rename Communitie­s to Groups
+    -  ├ Rename Connection­s to Friends (Deprecated)
+    -  ├ Rename Help & Safety to Help
+    -  ├ Rename Official Store to Shop
+    -  ├ Rename Sidebar Membership
+    -  ├ Rename Sidebar Membership button to Upgrade Now
+    -  ├ Rename X to Twitter
+    -  ├ Restore Ads
+      -  └ Games Page
+    -  ├ Restore Age Indicators
+      -  ├ Legacy Style display no Username
+      -  └ Style
+    -  ├ Restore HCo Gotham SSm
+      -  └ Fixes
     -  ├ Restore Home Header
       -  ├ Avatar Url
       -  ├ Members­hip
       -  ├ Year
-        - 2015
-        - 2017 <b>`Default`</b>
       -  └ Usernam­e
-    -  ├ Restore Topbar Username cursor behavior <b>`Default`</b>
-    -  ├ Revert Expanded home page <b>`Default`</b>
-    -  ├ Revert Game Modals <b>`Default`</b>
-    -  ├ Revert Login <b>`Default`</b>
-    -  ├ Revert New Sidebar <b>`Default`</b>
-    -  ├ Revert React Avatar Editor <b>`Default`</b>
-    -  ├ Revert React People list <b>`Default`</b>
-    -  ├ Revert Server Playerlist­s <b>`Default`</b>
-    -  ├ Revert Webblox <b>`Default`</b>
-    -  └ Upperca­se Roblox User Text <b>`Default`</b>
-  - Premium To BC
+    -  ├ Restore Legacy Audio Thumbnails
+    -  ├ Restore Legacy Avatar Editor
+      -  ├ Five column
+      -  └ Legacy Tab
+    -  ├ Restore Topbar Username cursor behavior
+    -  ├ Revert Expanded home page
+    -  ├ Revert Game Modals
+    -  ├ Revert Login
+    -  ├ Revert React Avatar Editor
+    -  ├ Revert React People list
+    -  ├ Revert Server Playerlist­s
+    -  ├ Revert Sidebar
+    -  ├ Revert Webblox
+    -  └ Upperca­se Roblox User Text
+  - Membership To BC
     -  └ Tier
-      - BC <b>`Default`</b>
-      - TBC
-      - OBC
   - Site Brand Style
-    - 201408
-    - 201412
-    - 201511
-    - 201701 <b>`Default`</b>
   - Signup Theme
-    - 2017
-    - 2018 <b>`Default`</b>
-    - 2019L
-    - 2020+
-  - Styleguide Page Theme
-    - 2016
-    - 2017
-    - 2018 <b>`Default`</b>
   - Social Links Version
-    - V1
-    - V2 <b>`Default`</b>
-    - V3
-    - V3_1
-    - V3_2
-    - V4
-    - V4_1
     -  └ Remove nondesigna­ted icons
   - Source Sans Pro Font
-    -  └ Google Version
-  - Transition animations <b>`Default`</b>
+    -  └ Google Variant
+      -  └ Version
+  - Transition animations
   - Use 2017 Red Branding (Messages / Bootstrapper)
-  - Watermark Branch <b>`Experimental only`</b>
+  - Watermark Branch <b>`Beta & Dev only`</b>
     - None
-    - Developers <i>`Hidden`</i>
-    - Testers <b>`Default`</b>
+    - Developers <i>`Available in dev builds`</i>
+    - Testers
 - Extension Support
   - BTRoblox
   - DashBlox
-  - Roblox+
+  - Roblox+ <b>`Extension Deprecated`</b>
   - RoPro
   - RoSeal
   - RoGold
