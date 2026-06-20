@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260620-00.1.5
+@version      20260620-01.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -133,7 +133,7 @@
 @var          select   SSPGVersion                 "    └ Version"                                      ["V5", "V5_1", "V9", "V9_1*"]
 @var          checkbox TransitionalAnimations      "Transition animations"                              1
 @var          checkbox RedLogoStyle                "Use 2017 Red Branding (Messages / Bootstrapper)"    0
-@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Developers*", "Testers"]
+@var          select   WatermarkStyle              "Watermark Branch"                                   ["None", "Dev*", "Beta"]
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.roblox.com"), url-prefix("https://web.roblox.com") {
@@ -2577,7 +2577,7 @@
         & when (@Revert201909updates = 1) and (@RemoveSidebarAvatar = 1) {
             display: none;
         }
-        & ~ .font-header-2 {
+        & ~ * .font-header-2 {
             & when (@SourceSansPro = 1) {
                 font-size: 18px;
                 font-weight: 400;
@@ -10137,21 +10137,20 @@
 
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
-    @Version: "20260620-00.1.5";
-    @Version_New: "1.5";
+    @Version: "1.5";
     @VersionDate: "20260620";
-    @VersionBuild: "00";
+    @VersionBuild: "01";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
             min-height: 100%;
             position: relative;
             &:before {
-                & when (@WatermarkStyle = Developers) {
-                    content: "(Legacy Theme) Development Purposes Only";
+                & when (@WatermarkStyle = Dev) {
+                    content: "(Legacy Theme) Dev Build";
                 }
-                & when (@WatermarkStyle = Testers) {
-                    content: "(Legacy Theme) Testing Purposes Only";
+                & when (@WatermarkStyle = Beta) {
+                    content: "(Legacy Theme) Beta Build";
                 }
                 color: #191919;
                 font-size: 18px;
@@ -10170,29 +10169,29 @@
                     width: 100%;
                     padding: 0 10px;
                 }
-                margin: 0 0 24px;
+                margin: 0 0 34px;
                 & when (@SourceSansPro = 0) {
                     .gotham-font &, .builder-font & {
                         font-size: 16px;
                         line-height: 16px;
-                        margin: 0 0 20px;
+                        margin: 0 0 30px;
                     }
                 }
                 .light-theme & {
-                    & when (@WatermarkStyle = Developers) {
-                        content: "(Light Theme) Development Purposes Only";
+                    & when (@WatermarkStyle = Dev) {
+                        content: "(Light Theme) Dev Build";
                     }
-                    & when (@WatermarkStyle = Testers) {
-                        content: "(Light Theme) Testing Purposes Only";
+                    & when (@WatermarkStyle = Beta) {
+                        content: "(Light Theme) Beta Build";
                     }
                     color: #191919;
                 }
                 .dark-theme & {
-                    & when (@WatermarkStyle = Developers) {
-                        content: "(Dark Theme) Development Purposes Only";
+                    & when (@WatermarkStyle = Dev) {
+                        content: "(Dark Theme) Dev Build";
                     }
-                    & when (@WatermarkStyle = Testers) {
-                        content: "(Dark Theme) Testing Purposes Only";
+                    & when (@WatermarkStyle = Beta) {
+                        content: "(Dark Theme) Beta Build";
                     }
                     color: #e6e6e6;
                 }
@@ -10206,12 +10205,7 @@
                 }
             }
             &:after {
-                & when (@WatermarkStyle = Developers) {
-                    content: "Build @{Version}";
-                }
-                & when (@WatermarkStyle = Testers) {
-                    content: "Milestone @{Version}";
-                }
+                content: "Version @{Version} \A Build @{VersionDate}-@{VersionBuild}";
                 color: #b8b8b8;
                 font-size: 12px;
                 line-height: 12px;
@@ -10251,11 +10245,11 @@
         position: relative;
         height: 100%;
         &:before {
-            & when (@WatermarkStyle = Developers) {
-                content: "(Legacy Theme) Development Purposes Only";
+            & when (@WatermarkStyle = Dev) {
+                content: "(Legacy Theme) Dev Build";
             }
-            & when (@WatermarkStyle = Testers) {
-                content: "(Legacy Theme) Testing Purposes Only";
+            & when (@WatermarkStyle = Beta) {
+                content: "(Legacy Theme) Beta Build";
             }
             color: #191919;
             font-size: 18px;
@@ -10280,29 +10274,29 @@
                 padding-left: var(--padding-large);
                 padding-right: var(--padding-large);
             }
-            margin: 0 0 24px;
+            margin: 0 0 34px;
             & when (@SourceSansPro = 0) {
                 .gotham-font &, .builder-font & {
                     font-size: 16px;
                     line-height: 16px;
-                    margin: 0 0 20px;
+                    margin: 0 0 30px;
                 }
             }
             .light-theme & {
-                & when (@WatermarkStyle = Developers) {
-                    content: "(Light Theme) Development Purposes Only";
+                & when (@WatermarkStyle = Dev) {
+                    content: "(Light Theme) Dev Build";
                 }
-                & when (@WatermarkStyle = Testers) {
-                    content: "(Light Theme) Testing Purposes Only";
+                & when (@WatermarkStyle = Beta) {
+                    content: "(Light Theme) Beta Build";
                 }
                 color: #191919;
             }
             .dark-theme & {
-                & when (@WatermarkStyle = Developers) {
-                    content: "(Dark Theme) Development Purposes Only";
+                & when (@WatermarkStyle = Dev) {
+                    content: "(Dark Theme) Dev Build";
                 }
-                & when (@WatermarkStyle = Testers) {
-                    content: "(Dark Theme) Testing Purposes Only";
+                & when (@WatermarkStyle = Beta) {
+                    content: "(Dark Theme) Beta Build";
                 }
                 color: #e6e6e6;
             }
@@ -10316,12 +10310,7 @@
             }
         }
         &:after {
-            & when (@WatermarkStyle = Developers) {
-                content: "Build @{Version}";
-            }
-            & when (@WatermarkStyle = Testers) {
-                content: "Milestone @{Version}";
-            }
+            content: "Version @{Version} \A Build @{VersionDate}-@{VersionBuild}";
             color: #b8b8b8;
             font-size: 12px;
             line-height: 12px;
@@ -26827,10 +26816,12 @@
                                 & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                                     font-size: 16px;
                                     font-weight: 500;
+                                    line-height: 1.4em;
                                 }
                                 & when (@SourceSansPro = 1) {
                                     font-size: 18px;
                                     font-weight: 400;
+                                    line-height: 1.3em;
                                 }
                                 & when (@RemoveSidebarAvatar = 0) {
                                     margin: 3px
