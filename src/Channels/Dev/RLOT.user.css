@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260620-01.1.5
+@version      20260629-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -24,11 +24,10 @@
 @var          checkbox CroppedWideThumbs           "Crop Wide Gamecard Thumbnails"                      1
 @var          select   SiteCurrency                "Currency Brand Style"                               ["Robux*", "Tickets"]
 @var          select   CustomTheme                 "Custom Site Theme"                                  ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
-@var          checkbox forcesignuplighttheme       "Force Light Theme on signup"                        0
 @var          select   greetingTxt                 "Greeting Text Style"                                ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                                    ["201604", "201606", "201812", "201903*", "201908"]
 @var          checkbox Fix1903T                    " ├ Fixed 201903 Transitions"                        0
-@var          checkbox VoteBarPercentage                    " ├ pre-1.5 Vote Bar CSS"                            0
+@var          checkbox pre15VBCSS                  " ├ pre-1.5 Vote Bar CSS ( X )"                            0
 @var          number   VoteBarPercentage           " └ Vote Bar percentage Value"                       [50, 0, 100, 1, "%"]
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                     0
 @var          checkbox LegacyHomeTitles            "Legacy Home Titles"                                 0
@@ -126,6 +125,8 @@
 @var          select   PTBCTiers                   " └ Tier"                                            ["BC*", "TBC", "OBC"]
 @var          select   LogoStyle                   "Site Brand Style"                                   ["201408", "201412", "201511", "201701*"]
 @var          select   SignUpStyle                 "Signup Theme"                                       ["2017", "2018*", "2019L", "2020+"]
+@var          checkbox forcesignuplighttheme       " └ Force Light Theme"                               1
+@var          select   SignUpBKG                   " └ Background"                                      ["Default*", "Variant1", "Variant2", "Variant3"]
 @var          select   SocialLinks                 "Social Links Version"                               ["V1*", "V2", "V3", "V3_1", "V3_2", "V4", "V4_1"]
 @var          checkbox RemoveSocialIcons           " └ Remove nondesignated icons"                      1
 @var          checkbox SourceSansPro               "Source Sans Pro Font"                               0
@@ -427,7 +428,7 @@
     .light-theme .modal-dialog .modal-content {
         background-color: #fff;
     }
-    .dark-theme .rbx-tabs-horizontal .nav-tabs, .dark-theme .rbx-tab .rbx-tab-heading, .dark-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .dark-theme .menu-vertical .menu-option .menu-secondary, .dark-theme .avatar-card-container, .dark-theme .sg-container, .dark-theme .modal-dialog .modal-content, .dark-theme .details-container, .dark-theme .details-members-container .add-friends-option, .dark-theme .friends-list-container, .dark-theme .details-btns-fixed, .dark-theme .rbx-tabs-horizontal #horizontal-tabs .rbx-tab:not(.active) a:not(:hover), .dark-theme .messages .messageDivider.message-news, .dark-theme .dialogs .popover.bottom.game-list-in-dialog, .dark-theme .dialogs-minimize-container, .dark-theme .mobile-panel .panel .panel-heading, .dark-theme .mobile-panel .panel ul, .dark-theme .notification-stream-loading, .dark-theme .request-error-page-content .default-error-page, .dark-theme .menu-vertical, .dark-theme .stack .stack-list .stack-row, .dark-theme .chat-main-empty .chat-disconnect, .dark-theme .item-thumbnail-container .asset-thumb-container, .dark-theme .modal-dialog .modal-content {
+    .dark-theme .rbx-tabs-horizontal .nav-tabs, .dark-theme .rbx-tab .rbx-tab-heading, .dark-theme .rbx-tabs-vertical .category-tabs .menu-vertical, .dark-theme .menu-vertical .menu-option .menu-secondary, .dark-theme .avatar-card-container, .dark-theme .sg-container, .dark-theme .modal-dialog .modal-content, .dark-theme .details-container, .dark-theme .details-members-container .add-friends-option, .dark-theme .friends-list-container, .dark-theme .details-btns-fixed, .dark-theme .messages .messageDivider.message-news, .dark-theme .dialogs .popover.bottom.game-list-in-dialog, .dark-theme .dialogs-minimize-container, .dark-theme .mobile-panel .panel .panel-heading, .dark-theme .mobile-panel .panel ul, .dark-theme .notification-stream-loading, .dark-theme .request-error-page-content .default-error-page, .dark-theme .menu-vertical, .dark-theme .stack .stack-list .stack-row, .dark-theme .chat-main-empty .chat-disconnect, .dark-theme .item-thumbnail-container .asset-thumb-container, .dark-theme .modal-dialog .modal-content {
         background-color: #000;
     }
 
@@ -2254,8 +2255,8 @@
     }
 
     .light-theme .rbx-header .rbx-navbar-icon-group>li>button .notification-red, .dark-theme .rbx-header .rbx-navbar-icon-group>li>button .notification-red {
-        bottom: auto;
-        left: auto;
+        bottom: 18px;
+        left: 30px;
         min-width: 18px;
         border: 0;
         border-radius: 8px;
@@ -7337,7 +7338,7 @@
                     .light-theme &, .dark-theme & {
                         padding: 0 15px 15px;
                     }
-                    &:before {
+                    &:before when (@BoxShadows = 1) {
                         content: "";
                         position: absolute;
                         background: #fff;
@@ -7349,7 +7350,7 @@
                         .light-theme & {
                             background-color: #fff;
                         }
-                        .dark-theme {
+                        .dark-theme & {
                             background-color: #000;
                         }
                     }
@@ -10138,8 +10139,8 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20260620";
-    @VersionBuild: "01";
+    @VersionDate: "20260629";
+    @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -10565,9 +10566,10 @@
     }
 
     .setting-section .remove-panel:not(.section-content):not(:has(.section-content)), .setting-section > div:not([class]):not(:has(.section-content)) {
-        &, .light-theme & {
+        background-color: #fff;
+        padding: 15px;
+        .light-theme & {
             background-color: #fff;
-            padding: 15px;
         }
         .dark-theme & {
             background-color: #000
@@ -17314,7 +17316,18 @@
     & when not (@SignUpStyle = 2019L) and not (@SignUpStyle = 2020+) {
         #RollerContainer.rollercoaster-background {
             background: #6de3ff;
-            background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+            & when (@SignUpBKG = Default) {
+                background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+            }
+            & when (@SignUpBKG = Variant1) {
+                background-image: url(https://images.rbxcdn.com/dec6207ec93dfa433a244c8496b40a8f.jpg);
+            }
+            & when (@SignUpBKG = Variant2) {
+                background-image: url(https://images.rbxcdn.com/a451a268d5647f762f13ef2b64ec14a0.jpg);
+            }
+            & when (@SignUpBKG = Variant3) {
+                background-image: url(https://images.rbxcdn.com/6ae8d5b64a8c165327900cb1ebd81a1d.jpg);
+            }
             height: 100vh;
             min-height: 894px;
             display: block;
@@ -17324,12 +17337,45 @@
                 background-attachment: unset;
             }
             &.default-background {
-                background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
-            }
-            &.marketing-background-1 {
-                background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
-                &-localized-id, &-localized-de, &-localized-jp, &-localized-us {
+                & when (@SignUpBKG = Default) {
                     background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+                }
+                & when (@SignUpBKG = Variant1) {
+                    background-image: url(https://images.rbxcdn.com/dec6207ec93dfa433a244c8496b40a8f.jpg);
+                }
+                & when (@SignUpBKG = Variant2) {
+                    background-image: url(https://images.rbxcdn.com/a451a268d5647f762f13ef2b64ec14a0.jpg);
+                }
+                & when (@SignUpBKG = Variant3) {
+                    background-image: url(https://images.rbxcdn.com/6ae8d5b64a8c165327900cb1ebd81a1d.jpg);
+                }
+            }
+            &.marketing-background-1, &.marketing-background-2 {
+                & when (@SignUpBKG = Default) {
+                    background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+                }
+                & when (@SignUpBKG = Variant1) {
+                    background-image: url(https://images.rbxcdn.com/dec6207ec93dfa433a244c8496b40a8f.jpg);
+                }
+                & when (@SignUpBKG = Variant2) {
+                    background-image: url(https://images.rbxcdn.com/a451a268d5647f762f13ef2b64ec14a0.jpg);
+                }
+                & when (@SignUpBKG = Variant3) {
+                    background-image: url(https://images.rbxcdn.com/6ae8d5b64a8c165327900cb1ebd81a1d.jpg);
+                }
+                &-localized-id, &-localized-de, &-localized-jp, &-localized-us {
+                    & when (@SignUpBKG = Default) {
+                        background-image: url(https://images.rbxcdn.com/e942d5c326e104bddf1d2c8ce3e0e9a7.png);
+                    }
+                    & when (@SignUpBKG = Variant1) {
+                        background-image: url(https://images.rbxcdn.com/dec6207ec93dfa433a244c8496b40a8f.jpg);
+                    }
+                    & when (@SignUpBKG = Variant2) {
+                        background-image: url(https://images.rbxcdn.com/a451a268d5647f762f13ef2b64ec14a0.jpg);
+                    }
+                    & when (@SignUpBKG = Variant3) {
+                        background-image: url(https://images.rbxcdn.com/6ae8d5b64a8c165327900cb1ebd81a1d.jpg);
+                    }
                 }
             }
         }
@@ -25372,7 +25418,13 @@
                 background-color: transparent;
                 padding: 12px 2%;
                 box-shadow: none;
+                &:focus {
+                    background-color: #eee;
+                }
                 &:hover {
+                    background: #F2F2F2;
+                }
+                &:focus, &:hover {
                     box-shadow: inset 0 -4px 0 0 #00a2ff;
                 }
                 .text-lead {
@@ -25400,13 +25452,25 @@
                 }
                 .light-theme & {
                     background-color: transparent;
+                    &:focus {
+                        background-color: #eee;
+                    }
                     &:hover {
+                        background: #F2F2F2;
+                    }
+                    &:focus, &:hover {
                         box-shadow: inset 0 -4px 0 0 #00a2ff;
                     }
                 }
                 .dark-theme & {
                     background-color: transparent;
+                    &:focus {
+                        background-color: #111;
+                    }
                     &:hover {
+                        background: #0D0D0D;
+                    }
+                    &:focus, &:hover {
                         box-shadow: inset 0 -4px 0 0 #00a2ff;
                     }
                 }
