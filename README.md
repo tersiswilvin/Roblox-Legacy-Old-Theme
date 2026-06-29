@@ -28,7 +28,6 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Crop Wide Gamecard Thumbnails
   - Currency Brand Style
   - Custom Site Theme
-  - Force Light Theme on signup
   - Greeting Text Style
   - Item Card Style
     -  ├ Fixed 201903 Transitions
@@ -129,6 +128,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  └ Tier
   - Site Brand Style
   - Signup Theme
+    -  ├ Force Light Theme
     -  └ Background
   - Social Links Version
     -  └ Remove nondesigna­ted icons
