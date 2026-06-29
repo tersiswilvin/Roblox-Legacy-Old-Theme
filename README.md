@@ -129,6 +129,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  └ Tier
   - Site Brand Style
   - Signup Theme
+    -  └ Background
   - Social Links Version
     -  └ Remove nondesigna­ted icons
   - Source Sans Pro Font
