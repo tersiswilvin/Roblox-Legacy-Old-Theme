@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260629-00.1.5
+@version      20260723-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -3878,6 +3878,65 @@
                 order: 6
             }
         }
+    }
+
+    .avatar-tabs-scroller #horizontal-tabs.nav-tabs when (@LegacyAvatarEditor = 1) {
+        white-space: unset;
+        scroll-behavior: unset;
+        border-radius: 0;
+        overflow: unset;
+        &>li.rbx-tab {
+            float: left;
+            vertical-align: unset;
+            display: block;
+            & when (@LAELegacyTab = 1) {
+                &:first-child, &:nth-child(1) {
+                    order: 1
+                }
+                &:nth-child(2) {
+                    order: 8;
+                    .text-lead {
+                        font-size: 0;
+                        line-height: 100%;
+                        display: contents;
+                        &:before {
+                            content: "Outfits";
+                            font-size: 16px;
+                            font-weight: 500;
+                            @media (max-width: 767px) {
+                                font-size:12px;
+                                font-weight: 500
+                            }
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    order: 3
+                }
+                &:nth-child(4) {
+                    order: 4;
+                    display: none
+                }
+                &:nth-child(5) {
+                    order: 2
+                }
+                &:nth-child(6) {
+                    order: 5
+                }
+                &:nth-child(7) {
+                    order: 6;
+                    display: none
+                }
+                &:nth-child(8) {
+                    order: 7;
+                    display: none
+                }
+            }
+        }
+    }
+    .tab-horizontal-submenu when (@LegacyAvatarEditor = 1) {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     .item-card-container.remove-panel {
@@ -10139,7 +10198,7 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20260629";
+    @VersionDate: "20260723";
     @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
