@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260910-00.1.5
+@version      20260910-01.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -3669,9 +3669,12 @@
     .dark-theme .left-wrapper .section-content {
         background-color: #000;
     }
-    .dark-theme .avatar-back, .light-theme .avatar-back {
-        margin-left: -15px;
-        margin-top: -15px;
+    .avatar-back {
+        border-radius: 0;
+        .dark-theme &, .light-theme & {
+            margin-left: -15px;
+            margin-top: -15px;
+        }
     }
 
     .item-card-thumb-container, .item-card-thumb-container .item-card-thumb, .item-card-thumb-container div[class^=icon-], .item-card-thumb-container span[class^=icon-], .email-upsell-modal .modal-dialog .modal-content, .modal-modern .modal-dialog .modal-content
@@ -10199,7 +10202,7 @@
     @WatermarkEnabled: true;
     @Version: "1.5";
     @VersionDate: "20260910";
-    @VersionBuild: "00";
+    @VersionBuild: "01";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
