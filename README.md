@@ -173,11 +173,15 @@ Please report any issues you find in [Issues](https://github.com/tersiswilvin/Ro
 
 ## Credits
 
-- [CodePen (codepen.io)](https://codepen.io)
-- [WayBack Machine (web.archive.org)](https://web.archive.org)
-- [YouTube (youtube.com)](https://www.YouTube.com)
+[CodePen (codepen.io)](https://codepen.io)
+<br/>
+[WayBack Machine (web.archive.org)](https://web.archive.org)
+<br/>
+[YouTube (youtube.com)](https://www.YouTube.com)
+<br/>
 - [Hamblo (archive.hamblo.xyz)](https://archive.hamblo.xyz)
 <br/>
 <sub>RLOT would not be possible without these, please show them your support if you can.</sub>
-
+<br/>
+<br/>
 **Special thanks to those that helped make this theme possible.**
