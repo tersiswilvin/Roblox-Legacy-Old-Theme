@@ -1,5 +1,7 @@
 == Version History ==
 
+(Release 1.5 | --/--/2026)
+
 (Release 1.4.1 | 08/01/2025)
 Added "Gotham Font Fixes" option.
 Added "Rename Connections to Friends" option.
