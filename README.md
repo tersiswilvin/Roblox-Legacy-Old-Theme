@@ -177,6 +177,6 @@ Sites used to make this possible :
 - [CodePen (codepen.io)](https://codepen.io)
 - [WayBack Machine (web.archive.org)](https://web.archive.org)
 - [YouTube (youtube.com)](https://www.YouTube.com)
-- [Hamblo (hamblo.xyz)](https://hamblo.xyz)
+- [Hamblo (archive.hamblo.xyz)](https://archive.hamblo.xyz)
 
 Special thanks to those that helped make this theme possible.
