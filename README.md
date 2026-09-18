@@ -174,8 +174,9 @@ Please report any issues you find in [Issues](https://github.com/tersiswilvin/Ro
 ## Credits
 
 Sites used to make this possible :
-- [CodePen](https://codepen.io)
-- [WayBack Machine](https://web.archive.org)
-- [YouTube](https://www.YouTube.com)
+- [CodePen (codepen.io)](https://codepen.io)
+- [WayBack Machine (web.archive.org)](https://web.archive.org)
+- [YouTube (youtube.com)](https://www.YouTube.com)
+- [Hamblo (hamblo.xyz)](https://hamblo.xyz)
 
 Special thanks to those that helped make this theme possible.
