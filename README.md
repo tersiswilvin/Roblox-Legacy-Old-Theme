@@ -184,4 +184,4 @@ Please report any issues you find in [Issues](https://github.com/tersiswilvin/Ro
 <sub>RLOT would not be possible without these, please show them your support if you can.</sub>
 <br/>
 <br/>
-<bold>Special thanks to those that helped make this theme possible.</bold>
+<b>Special thanks to those that helped make this theme possible.</b>
