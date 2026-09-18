@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260910-01.1.5
+@version      20260917-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -93,6 +93,7 @@
 @var          checkbox RenameStore                 " ├ Rename Official Store to Shop"                   1
 @var          select   RenameSidebarMembership     " ├ Rename Sidebar Membership"                       ["Plus*", "Premium", "BC"]
 @var          checkbox RenameUpgradeNowBtn         " ├ Rename Sidebar Membership button to Upgrade Now" 1
+@var          checkbox RenameNewsroom              " ├ Rename Sidebar Newsroom to Blog"                 1
 @var          checkbox RenameX                     " ├ Rename X to Twitter"                             1
 @var          select   RestoreAds                  " ├ Restore Ads"                                     ["None", "Default*", "Filler"]
 @var          checkbox RestoreGameAds              "    └ Games Page"                                   0
@@ -7431,6 +7432,32 @@
                 }
             }
         }
+        
+        & when (@RenameNewsroom = 1) {
+            #nav-blog .font-header-2, .left-nav [href="https://blog.roblox.com/"] [class*=text-] {
+                font-size: 0;
+                &:after {
+                    content: "Blog";
+                    font-size: 16px;
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        font-weight: 500;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        font-weight: 400;
+                    }
+                    line-height: 1.428571429;
+                    @media (max-width: 767px) {
+                        font-size:12px;
+                        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                            font-weight: 500;
+                        }
+                        & when (@SourceSansPro = 1) {
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
 
         body:not(.LoginRevert) when (@RevertLogin = 1) {
             .login-container {
@@ -10201,8 +10228,8 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20260910";
-    @VersionBuild: "01";
+    @VersionDate: "20260917";
+    @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
@@ -15863,6 +15890,10 @@
     }
     .dark-theme .legacy-notif-base .text-content span:nth-child(3) {
         color: #474747
+    }
+
+    .legacy-notif-base .notif-content-container {
+        width: 100%;
     }
 
     /*/ Revert New Payment /*/
