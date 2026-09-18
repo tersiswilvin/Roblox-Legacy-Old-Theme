@@ -173,10 +173,10 @@ Please report any issues you find in [Issues](https://github.com/tersiswilvin/Ro
 
 ## Credits
 
-Sites used to make this possible :
 - [CodePen (codepen.io)](https://codepen.io)
 - [WayBack Machine (web.archive.org)](https://web.archive.org)
 - [YouTube (youtube.com)](https://www.YouTube.com)
 - [Hamblo (archive.hamblo.xyz)](https://archive.hamblo.xyz)
+<sub>RLOT would not be possible without these, please show them your support if you can.</sub>
 
-Special thanks to those that helped make this theme possible.
+**Special thanks to those that helped make this theme possible.**
