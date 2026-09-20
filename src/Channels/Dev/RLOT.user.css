@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260917-00.1.5
+@version      20260920-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -27,7 +27,7 @@
 @var          select   greetingTxt                 "Greeting Text Style"                                ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                                    ["201604", "201606", "201812", "201903*", "201908"]
 @var          checkbox Fix1903T                    " ├ Fixed 201903 Transitions"                        0
-@var          checkbox pre15VBCSS                  " ├ pre-1.5 Vote Bar CSS ( X )"                            0
+@var          checkbox pre15VBCSS                  " ├ pre-1.5 Vote Bar CSS"                            0
 @var          number   VoteBarPercentage           " └ Vote Bar percentage Value"                       [50, 0, 100, 1, "%"]
 @var          checkbox LegacyBTRGameHeaders        "Legacy Game Headers (BTRoblox)"                     0
 @var          checkbox LegacyHomeTitles            "Legacy Home Titles"                                 0
@@ -10228,7 +10228,7 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20260917";
+    @VersionDate: "20260920";
     @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
@@ -13492,7 +13492,7 @@
                 border-top-left-radius: 3px;
             }
         }
-        .game-card-info {
+        .game-card-info when (@pre15VBCSS = 0) {
             display: flex;
             flex-wrap: wrap;
             .playing-counts-label {
@@ -13511,7 +13511,7 @@
                 flex-basis: 100%;
             }
         }
-        .game-card-info .info-label.icon-playing-counts-gray {
+        .game-card-info .info-label.icon-playing-counts-gray when (@pre15VBCSS = 0) {
             position: absolute;
             width: 70%;
             width: calc(91% - 32px);
@@ -13567,7 +13567,7 @@
                 }
             }
         }
-        .game-card-info .info-label.playing-counts-label {
+        .game-card-info .info-label.playing-counts-label when (@pre15VBCSS = 0) {
             font-size: 12px;
             & when (@CardStyle = 201604) or (@CardStyle = 201606) {
                 font-weight: 500;
@@ -13577,6 +13577,27 @@
             }
             color: #757575;
             &:after {
+                content: ' Playing';
+            }
+        }
+        & when (@pre15VBCSS = 1) {
+            .light-theme .game-card-info .info-label.icon-playing-counts-gray, .dark-theme .game-card-info .info-label.icon-playing-counts-gray {
+                display: none;
+            }
+            .game-card-info .info-label.playing-counts-label {
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                font-size: 12px;
+                & when (@CardStyle = Pre-201812) {
+                    font-weight: 500;
+                }
+                & when (@CardStyle = 201812) {
+                    font-weight: 400;
+                }
+                color: #757575;
+            }
+            .game-card-info .info-label.playing-counts-label:after {
                 content: ' Playing';
             }
         }
@@ -13596,13 +13617,18 @@
                 font-weight: 300;
             }
         }
+        & when (@pre15VBCSS = 1) {
+            .game-card-container:hover .game-card-info .info-label.vote-percentage-label, .game-card-container:hover .game-card-info .info-label.no-vote {
+                color: #02b757;
+            }
+        }
         .light-theme .game-card-info .info-label.icon-votes-gray {
             background-image: url(https://static.rbxcdn.com/images/Icons/thumbs.svg);
             background-position: 0 0;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) and (@pre15VBCSS = 0) {
                 margin: .4em 0;
             }
-            & when (@SourceSansPro = 1) {
+            & when (@SourceSansPro = 1) and (@pre15VBCSS = 0) {
                 margin: .3em 0;
             }
         }
@@ -13610,10 +13636,10 @@
             background-image: url(https://static.rbxcdn.com/images/Icons/thumbs.svg);
             background-position: 0 0;
             filter: invert(100%);
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) and (@pre15VBCSS = 0) {
                 margin: .4em 0;
             }
-            & when (@SourceSansPro = 1) {
+            & when (@SourceSansPro = 1) and (@pre15VBCSS = 0) {
                 margin: .3em 0;
             }
         }
@@ -13621,17 +13647,19 @@
             background-position: -16px 0;
             filter: none;
         }
-        .light-theme .game-card-container:hover .game-card-link .game-card-info:not(:has(.info-avatar)):after, .dark-theme .game-card-container:hover  .game-card-link .game-card-info:not(:has(.info-avatar)):after {
-            background-position: -16px -16px;
-            filter: none;
-        }
-        .light-theme .game-card-container:hover .game-card-link .game-card-info:not(:has(.info-avatar)):after, .dark-theme .game-card-container:hover  .game-card-link .game-card-info:not(:has(.info-avatar)):not(:has(.info-avatar)):after {
-            visibility: visible;
-        }
-        .game-tile-list .game-card-container:hover .game-card-info .no-vote, .game-tile-list .game-card-container:hover .game-card-info .vote-percentage-label {
-            background: linear-gradient(90deg, #02b757 @VoteBarPercentage, rgba(226, 118, 118, .6) @VoteBarPercentage);
-            .light-theme &, .dark-theme & {
+        & when (@pre15VBCSS = 0) {
+            .light-theme .game-card-container:hover .game-card-link .game-card-info:not(:has(.info-avatar)):after, .dark-theme .game-card-container:hover  .game-card-link .game-card-info:not(:has(.info-avatar)):after {
+                background-position: -16px -16px;
+                filter: none;
+            }
+            .light-theme .game-card-container:hover .game-card-link .game-card-info:not(:has(.info-avatar)):after, .dark-theme .game-card-container:hover  .game-card-link .game-card-info:not(:has(.info-avatar)):not(:has(.info-avatar)):after {
+                visibility: visible;
+            }
+            .game-tile-list .game-card-container:hover .game-card-info .no-vote, .game-tile-list .game-card-container:hover .game-card-info .vote-percentage-label {
                 background: linear-gradient(90deg, #02b757 @VoteBarPercentage, rgba(226, 118, 118, .6) @VoteBarPercentage);
+                .light-theme &, .dark-theme & {
+                    background: linear-gradient(90deg, #02b757 @VoteBarPercentage, rgba(226, 118, 118, .6) @VoteBarPercentage);
+                }
             }
         }
         .light-theme .item-card-container, .light-theme .item-cards .item-card-container, .dark-theme .item-card-container, .dark-theme .item-cards .item-card-container {
@@ -13696,18 +13724,28 @@
         margin: 3px 0;
     }
     .light-theme .game-card-container .game-card-name, .dark-theme .game-card-container .game-card-name {
-        & when (@CardStyle = 201604) {
-            margin-top: 3px;
+        & when (@pre15VBCSS = 0) {
+            & when (@CardStyle = 201604) {
+                margin-top: 3px;
+            }
+            & when (@CardStyle = 201606) or (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
+                margin-top: 6px;
+            }
         }
-        & when (@CardStyle = 201606) or (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
+        & when (@pre15VBCSS = 1) {
             margin-top: 6px;
         }
     }
     .light-theme .game-card-link .game-card-name, .dark-theme .game-card-link .game-card-name {
-        & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
-            margin-bottom: 3px;
+        & when (@pre15VBCSS = 0) {
+            & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
+                margin-bottom: 3px;
+            }
+            & when (@CardStyle = 201903) or (@CardStyle = 201908) {
+                margin-bottom: 6px;
+            }
         }
-        & when (@CardStyle = 201903) or (@CardStyle = 201908) {
+        & when (@pre15VBCSS = 1) {
             margin-bottom: 6px;
         }
     }
@@ -13770,7 +13808,7 @@
         padding: 0;
     }
     .game-tile-list .game-card-container .game-card-info .no-vote, .game-tile-list .game-card-container .game-card-info .vote-percentage-label {
-        & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
+        & when (@pre15VBCSS = 0) and ((@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812)) {
             font-size: 0;
             background: linear-gradient(90deg, #757575 @VoteBarPercentage, #B8B8B8 @VoteBarPercentage);
             padding: 0;
@@ -13816,15 +13854,21 @@
                 background: linear-gradient(90deg, #8A8A8A @VoteBarPercentage, #474747 @VoteBarPercentage);
             }
         }
-        & when (@CardStyle = 201903) or (@CardStyle = 201908) {
+        & when (@pre15VBCSS = 1) or ((@CardStyle = 201903) or (@CardStyle = 201908)) {
             padding: 0 12px 0 5px;
         }
     }
     .game-tile-list .game-card-container .game-card-info .playing-counts-label {
         & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
             width: 100%;
-            padding: 0;
-            margin: 0 0 3px;
+            & when (@pre15VBCSS = 0) {
+                padding: 0;
+                margin: 0 0 3px;
+            }
+            & when (@pre15VBCSS = 1) {
+                padding: 0 6px 0 0;
+                margin: 3px 0;
+            }
         }
         & when (@CardStyle = 201903) or (@CardStyle = 201908) {
             padding: 0 0 0 5px;
@@ -13898,8 +13942,11 @@
 
     /*/ Revert the recent changes for friend activity and native ads. /*/
     .game-card .game-card-container .game-card-link .game-card-info, .game-carousel .game-card-container .game-card-link .game-card-info, .game-grid .game-card-container .game-card-link .game-card-info {
-        
-        & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
+        & when (@pre15VBCSS = 1) {
+            position: absolute;
+            margin: 0 6px;
+        }
+        & when (@pre15VBCSS = 0) and ((@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812)) {
             position: unset;
             padding: 0 6px;
             margin: 3px 0;
@@ -13924,7 +13971,9 @@
             }
         }
         & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
-            position: absolute;
+            & when (@pre15VBCSS = 0) {
+                position: absolute;
+            }
             margin: 0 6px;
         }
     }
