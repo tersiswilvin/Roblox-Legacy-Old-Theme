@@ -43,6 +43,12 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
     -  ├ Left Align Login Header
     -  ├ Login Password Error Spacing
     -  ├ Older
+      -  ├ Avatar Border
+      -  ├ Avatar Border Radius
+      -  ├ Avatar Box Shadows
+      -  ├ Avatar Transparen­t Background
+      -  ├ Plain Card Avatar Border
+      -  └ People List Friends Name
     -  ├ Older Chat
       -  └ Dialog Shadows
     -  ├ Remove people list popovers
