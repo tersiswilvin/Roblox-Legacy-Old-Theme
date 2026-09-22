@@ -145,7 +145,7 @@ You can join using the invite url [here](https://discord.gg/sXZkehbWh6).
   - Use 2017 Red Branding (Messages / Bootstrapper)
   - Watermark Branch <b>`Beta & Dev builds only`</b>
     - None
-    - Developers <i>`Dev builds Only`</i>
+    - Developers <i>`Dev builds only`</i>
     - Testers
 - Extension Support
   - BTRoblox
