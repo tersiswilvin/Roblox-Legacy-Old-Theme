@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260920-00.1.5
+@version      20260921-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -39,6 +39,12 @@
 @var          checkbox LNSGLeftLoginHeader         " ├ Left Align Login Header"                         0
 @var          checkbox LNSGLoginErrorSpacing       " ├ Login Password Error Spacing"                    0
 @var          checkbox LNSGOlder                   " ├ Older"                                           0
+@var          checkbox LNSGOlderBorders            "    ├ Avatar Border"                                1
+@var          checkbox LNSGOlderBorderRadius       "    ├ Avatar Border Radius"                         1
+@var          checkbox LNSGOlderBoxShadows         "    ├ Avatar Box Shadows"                           1
+@var          checkbox LNSGOlderTranBkg            "    ├ Avatar Transparent Background"                1
+@var          checkbox LNSGOlderCardPlainBorder            "    ├ Plain Card Avatar Border"                     1
+@var          checkbox LNSGOlderPeopleListFN       "    └ People List Friends Name"                     1
 @var          checkbox LNSGOlderChat               " ├ Older Chat"                                      0
 @var          checkbox LNSGOlderChatDialogShadows  "    └ Dialog Shadows"                               1
 @var          checkbox LNSGRemoveplp               " ├ Remove people list popovers"                     0
@@ -10228,7 +10234,7 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20260920";
+    @VersionDate: "20260921";
     @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
@@ -13745,7 +13751,7 @@
                 margin-bottom: 6px;
             }
         }
-        & when (@pre15VBCSS = 1) {
+        & when (@pre15VBCSS = 1) or ((@CardStyle = 201903) or (@CardStyle = 201908)) {
             margin-bottom: 6px;
         }
     }
@@ -20945,10 +20951,15 @@
             box-shadow: 0 1px 6px 0 rgb(230 230 230 / 75%);
         }
 
-        & when (@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) {
+        & when (@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderBoxShadows = 1) {
             .avatar {
+                box-shadow: none;
+                &:hover {
+                    box-shadow: none;
+                }
                 .light-theme &, .dark-theme & {
-                    &, &:hover {
+                    box-shadow: none;
+                    &:hover {
                         box-shadow: none;
                     }
                 }
@@ -21943,74 +21954,33 @@
         }
 
         & when (@LNSGOlder = 1) {
-            .avatar-card-fullbody .avatar-card-image, .avatar-card-fullbody .avatar-card-link, .avatar .avatar-card-image, .avatar .avatar-card-link, .avatar-headshot-lg, .avatar-card-fullbody {
-                border-radius: 0;
-            }
-            .avatar-card-fullbody .avatar-card-image, .avatar .avatar-card-image, .avatar {
-                .light-theme &, .dark-theme {
-                    background-color: transparent
+            & when (@LNSGOlderBorderRadius = 1) {
+                .avatar-card-fullbody .avatar-card-image, .avatar-card-fullbody .avatar-card-link, .avatar .avatar-card-image, .avatar .avatar-card-link, .avatar-headshot-lg, .avatar-card-fullbody {
+                    border-radius: 0;
                 }
             }
-            .friend .friend-avatar {
-                background: transparent;
-                border: 1px solid #b8b8b8;
-            }
-            .light-theme .avatar.card-plain, .dark-theme .avatar.card-plain {
-                border: none;
-            }
-            .profile-header .profile-avatar-image .avatar-image-link {
-                display: block;
-                border: 1px solid #ccc;
-            }
-            .people-list .friend .friend-name {
-                text-align: left;
-            }
-            .profile-header .profile-avatar-image .icon-online, .profile-header .profile-avatar-image .icon-game, .profile-header .profile-avatar-image .icon-studio {
-                background-size: 38px auto;
-                width: 38px;
-                height: 38px;
-            }
-            .profile-header .profile-avatar-image .profile-avatar-status {
-                right: -12px;
-                bottom: -12px;
-            }
-            .profile-header .profile-avatar-image .icon-game {
-                background-position: 0 0;
-            }
-
-            .profile-header .profile-avatar-image .icon-studio {
-                background-position: 0 -38px;
-            }
-
-            .profile-header .profile-avatar-image .icon-online {
-                background-position: 0 -76px;
-            }
-            @media(max-width: 991px) {
-                .profile-header .profile-avatar-image .profile-avatar-status {
-                    background-image:none;
-                    display: block;
-                    height: 6px;
-                    width: 100%;
-                    right: 0;
-                    bottom: 0;
-                }
-
-                .profile-header .profile-avatar-image .profile-avatar-status.icon-ingame {
-                    background-color: #02b757;
-                }
-
-                .profile-header .profile-avatar-image .profile-avatar-status.icon-studio {
-                    background-color: #f68802;
-                }
-
-                .profile-header .profile-avatar-image .profile-avatar-status.icon-online {
-                    background-color: #00a2ff;
+            & when (@LNSGOlderTranBkg = 1) {
+                .avatar-card-fullbody .avatar-card-image, .avatar .avatar-card-image, .avatar {
+                    background-color: transparent;
+                    .light-theme &, .dark-theme {
+                        background-color: transparent
+                    }
                 }
             }
-
-            @media(max-width: 767px) {
-                .profile-header .profile-avatar-image .profile-avatar-status {
-                    display:none;
+            & when (@LNSGOlderBorders = 1) {
+                .friend .friend-avatar, .friend-tile-content .avatar-card-image {
+                    background: transparent;
+                    border: 1px solid #b8b8b8;
+                }
+            }
+            & when (@LNSGOlderCardPlainBorder = 1) {
+                .light-theme .avatar.card-plain, .dark-theme .avatar.card-plain {
+                    border: none;
+                }
+            }
+            & when (@LNSGOlderPeopleListFN = 1) {
+                .people-list .friend .friend-name, .content .friends-carousel-display-name {
+                    text-align: left;
                 }
             }
         }
@@ -24475,7 +24445,7 @@
             &:before {
                 content: "";
                 & when (@BoxShadows = 0) {
-                    & when not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
+                    & when not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableTranBkg = 0)) {
                         background-color: #d1d1d1;
                         .light-theme & {
                             background-color: #d1d1d1;
@@ -24484,11 +24454,11 @@
                             background-color: #2e2e2e;
                         }
                     }
-                    & when (@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) {
+                    & when (@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableTranBkg = 1) {
                         background-color: transparent;
                     }
                 }
-                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
+                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
                     background-color: #fff;
                     .light-theme & {
                         background-color: #fff;
@@ -24499,7 +24469,7 @@
                 }
                 background-image: url(@HHAvatarUrl);
                 background-size: 100%;
-                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
+                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
                     & when (@TransitionalAnimations = 1) {
                         -webkit-transition: box-shadow 200ms ease;
                         -o-transition: box-shadow 200ms ease;
@@ -24521,7 +24491,7 @@
                 margin-right: 24px;
                 position: relative;
                 vertical-align: bottom;
-                & when (@HHYear = 2017) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
+                & when (@HHYear = 2017) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBorders = 0)) {
                     border-radius: 50%;
                 }
                 cursor: pointer;
@@ -24533,16 +24503,16 @@
                 @media (max-width: 767px) {
                     display:none;
                 }
-                .light-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
+                .light-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
                     background-color: #fff;
                     box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
                 }
-                .dark-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
+                .dark-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
                     background-color: #000;
                     box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
                 }
             }
-            &:hover:before when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1)) {
+            &:hover:before when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
                 & when (@TransitionalAnimations = 1) {
                     -webkit-transition: box-shadow 200ms ease;
                     -o-transition: box-shadow 200ms ease;
