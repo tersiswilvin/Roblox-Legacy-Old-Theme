@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20260921-00.1.5
+@version      20260930-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -43,7 +43,7 @@
 @var          checkbox LNSGOlderBorderRadius       "    ├ Avatar Border Radius"                         1
 @var          checkbox LNSGOlderBoxShadows         "    ├ Avatar Box Shadows"                           1
 @var          checkbox LNSGOlderTranBkg            "    ├ Avatar Transparent Background"                1
-@var          checkbox LNSGOlderCardPlainBorder            "    ├ Plain Card Avatar Border"                     1
+@var          checkbox LNSGOlderCardPlainBorder    "    ├ Plain Card Avatar Border"                     1
 @var          checkbox LNSGOlderPeopleListFN       "    └ People List Friends Name"                     1
 @var          checkbox LNSGOlderChat               " ├ Older Chat"                                      0
 @var          checkbox LNSGOlderChatDialogShadows  "    └ Dialog Shadows"                               1
@@ -2261,9 +2261,25 @@
         background-image: url(https://images.rbxcdn.com/071268906f54456c207a199bf4fb3f40-negative_06142018.svg);
     }
 
-    .light-theme .rbx-header .rbx-navbar-icon-group>li>button .notification-red, .dark-theme .rbx-header .rbx-navbar-icon-group>li>button .notification-red {
-        bottom: 18px;
-        left: 30px;
+    .rbx-header .rbx-navbar-icon-group>li>button .notification-red {
+        & when (@HCoGothamSSmFixes = 0) or (@SourceSansPro = 1) {
+            font-size: 12px;
+        }
+        & when (@HCoGothamSSmFixes = 1) and (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            font-size: 10px;
+        }
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 0) or (@SourceSansPro = 1) {
+            font-weight: 500;
+            line-height: 1.3em;
+        }
+        & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+            font-weight: 400;
+            line-height: 1.4em;
+        }
+        top: 6px;
+        right: 0px;
+        bottom: unset;
+        left: unset;
         min-width: 18px;
         border: 0;
         border-radius: 8px;
@@ -10234,7 +10250,7 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20260921";
+    @VersionDate: "20260930";
     @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
@@ -10858,6 +10874,9 @@
 
     #navbar-stream .nav-robux-icon, .rbx-header .rbx-navbar-icon-group>li, .rbx-header .rbx-navbar-right-nav>li {
         padding: 0;
+        &[style*="pointer-events: none;"] {
+            pointer-events: unset !important;
+        }
         &.navbar-download-app-item {
             padding: 4px 12px 4px 4px;
         }
@@ -11594,6 +11613,9 @@
 
     #game-details-play-button-container .btn-common-play-game-action-needed-lg, #game-details-play-button-container .btn-common-play-game-lg, #game-details-play-button-container .btn-common-play-game-unplayable-lg, #game-details-play-button-container .btn-common-play-game-action-needed-lg, #game-details-play-button-container .btn-common-play-game-lg, #game-details-play-button-container .btn-common-play-game-unplayable-lg, #game-details-play-button-container .btn-economy-robux-white-lg {
         min-height: unset;
+        .group-hover\/interactable\:bg-\[var\(--color-state-hover\)\] {
+            display: none;
+        }
     }
 
     & when not (@PlayButtonStyle = 201906) or not (@PlayButtonStyle = 2020+) {
@@ -24445,7 +24467,7 @@
             &:before {
                 content: "";
                 & when (@BoxShadows = 0) {
-                    & when not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableTranBkg = 0)) {
+                    & when not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderTranBkg = 0)) {
                         background-color: #d1d1d1;
                         .light-theme & {
                             background-color: #d1d1d1;
@@ -24454,11 +24476,11 @@
                             background-color: #2e2e2e;
                         }
                     }
-                    & when (@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableTranBkg = 1) {
+                    & when (@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderTranBkg = 1) {
                         background-color: transparent;
                     }
                 }
-                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
+                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderBoxShadows = 1)) {
                     background-color: #fff;
                     .light-theme & {
                         background-color: #fff;
@@ -24469,7 +24491,7 @@
                 }
                 background-image: url(@HHAvatarUrl);
                 background-size: 100%;
-                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
+                & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderBoxShadows = 1)) {
                     & when (@TransitionalAnimations = 1) {
                         -webkit-transition: box-shadow 200ms ease;
                         -o-transition: box-shadow 200ms ease;
@@ -24491,7 +24513,7 @@
                 margin-right: 24px;
                 position: relative;
                 vertical-align: bottom;
-                & when (@HHYear = 2017) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBorders = 0)) {
+                & when (@HHYear = 2017) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderBorders = 0)) {
                     border-radius: 50%;
                 }
                 cursor: pointer;
@@ -24503,16 +24525,16 @@
                 @media (max-width: 767px) {
                     display:none;
                 }
-                .light-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
+                .light-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderBoxShadows = 1)) {
                     background-color: #fff;
                     box-shadow: 0 1px 4px 0 rgb(25 25 25 / 30%);
                 }
-                .dark-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
+                .dark-theme & when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderBoxShadows = 1)) {
                     background-color: #000;
                     box-shadow: 0 1px 4px 0 rgb(230 230 230 / 30%);
                 }
             }
-            &:hover:before when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderDisableBoxShadows = 1)) {
+            &:hover:before when (@BoxShadows = 1) and not ((@LegacyNextStyleGuide = 1) and (@LNSGOlder = 1) and (@LNSGOlderBoxShadows = 1)) {
                 & when (@TransitionalAnimations = 1) {
                     -webkit-transition: box-shadow 200ms ease;
                     -o-transition: box-shadow 200ms ease;
