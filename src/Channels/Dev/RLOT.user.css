@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20261010-00.1.5
+@version      20261021-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -2381,6 +2381,9 @@
             margin: 0;
             margin-right: 12px;
             padding: 5px 5px 0 0;
+        }
+        .hover\:\[opacity\:0\.8\]:hover {
+            opacity: 1
         }
         .rbx-navbar {
             li {
@@ -10291,7 +10294,7 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20261010";
+    @VersionDate: "20261021";
     @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
@@ -13724,7 +13727,7 @@
             .light-theme .game-card-container:hover .game-card-link .game-card-info:not(:has(.info-avatar)):after, .dark-theme .game-card-container:hover  .game-card-link .game-card-info:not(:has(.info-avatar)):not(:has(.info-avatar)):after {
                 visibility: visible;
             }
-            .game-tile-list .game-card-container:hover .game-card-info .no-vote, .game-tile-list .game-card-container:hover .game-card-info .vote-percentage-label {
+            .game-card-container:hover .game-card-info .no-vote, .game-card-container:hover .game-card-info .vote-percentage-label {
                 background: linear-gradient(90deg, #02b757 @VoteBarPercentage, rgba(226, 118, 118, .6) @VoteBarPercentage);
                 .light-theme &, .dark-theme & {
                     background: linear-gradient(90deg, #02b757 @VoteBarPercentage, rgba(226, 118, 118, .6) @VoteBarPercentage);
@@ -13831,16 +13834,28 @@
         }
     }
 
-    .game-cards .game-card {
-        & when (@CardStyle = 201604) or (@CardStyle = 201606) {
-            height: 223px;
-        }
-        & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
+    & when (@pre15VBCSS = 0) {
+        .game-cards .game-card when (@CardStyle = 201903) or (@CardStyle = 201908) {
             & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                 height: 240px;
             }
             & when (@SourceSansPro = 1) {
                 height: 223px;
+            }
+        }
+    }
+    & when (@pre15VBCSS = 1) {
+        .game-cards .game-card {
+            & when (@CardStyle = 201604) or (@CardStyle = 201606) {
+                height: 223px;
+            }
+            & when (@CardStyle = 201812) or (@CardStyle = 201903) or (@CardStyle = 201908) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                    height: 240px;
+                }
+                & when (@SourceSansPro = 1) {
+                    height: 223px;
+                }
             }
         }
     }
@@ -13862,7 +13877,7 @@
                 line-height: 1.3em;
             }
         }
-        & when  (@CardStyle = 201903) or (@CardStyle = 201908) {
+        & when (@CardStyle = 201903) or (@CardStyle = 201908) {
             line-height: 18px;
             @media (max-width: 543px) {
                 font-size: 10px;
@@ -13871,12 +13886,22 @@
         }
     }
     .game-tile .game-card-container .game-card-info .vote-percentage-label {
-        padding: 0 12px 0 0;
+        & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
+            padding: 0;
+        }
+        & when (@CardStyle = 201903) or (@CardStyle = 201908) {
+            padding: 0 12px 0 5px;
+        }
     }
     .game-tile .game-card-container .game-card-info .no-vote, .game-tile .game-card-container .game-card-info .playing-counts-label {
-        padding: 0;
+        & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
+            padding: 0;
+        }
+        & when (@CardStyle = 201903) or (@CardStyle = 201908) {
+            padding: 0 0 0 5px;
+        }
     }
-    .game-tile-list .game-card-container .game-card-info .no-vote, .game-tile-list .game-card-container .game-card-info .vote-percentage-label {
+    .game-card-container .game-card-info .no-vote, .game-card-container .game-card-info .vote-percentage-label {
         & when (@pre15VBCSS = 0) and ((@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812)) {
             font-size: 0;
             background: linear-gradient(90deg, #757575 @VoteBarPercentage, #B8B8B8 @VoteBarPercentage);
@@ -13927,7 +13952,7 @@
             padding: 0 12px 0 5px;
         }
     }
-    .game-tile-list .game-card-container .game-card-info .playing-counts-label {
+    .game-card-container .game-card-info .playing-counts-label {
         & when (@CardStyle = 201604) or (@CardStyle = 201606) or (@CardStyle = 201812) {
             width: 100%;
             & when (@pre15VBCSS = 0) {
@@ -15085,7 +15110,7 @@
         .game-cards .game-card {
             & when (@CardStyle = 201604) or (@CardStyle = 201606) {
                 width: 161px;
-                & when (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     height: 240px;
                 }
                 & when (@SourceSansPro = 1) {
@@ -15095,7 +15120,7 @@
             }
             & when (@CardStyle = 201812) {
                 width: 164px;
-                & when (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     height: 240px;
                 }
                 & when (@SourceSansPro = 1) {
@@ -15108,12 +15133,22 @@
             background-color: transparent;
             & when (@CardStyle = 201604) or (@CardStyle = 201606) {
                 width: 161px;
-                height: 223px;
+                & when (@pre15VBCSS = 0) {
+                    & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
+                        height: 240px;
+                    }
+                    & when (@SourceSansPro = 1) {
+                        height: 223px;
+                    }
+                }
+                & when (@pre15VBCSS = 1) {
+                    height: 223px;
+                }
                 padding: 0 11px 0 0;
             }
             & when (@CardStyle = 201812) {
                 width: 164px;
-                & when (@SourceSansPro = 0) {
+                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
                     height: 240px;
                 }
                 & when (@SourceSansPro = 1) {
