@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20261024-00.1.5
+@version      20261028-00.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -23,7 +23,7 @@
 @var          checkbox BrighterDarkThemeColors     "Brighter Dark Theme colors"                         1
 @var          checkbox CroppedWideThumbs           "Crop Wide Gamecard Thumbnails"                      1
 @var          select   SiteCurrency                "Currency Brand Style"                               ["Robux*", "Tickets"]
-@var          select   CustomTheme                 "Custom Site Theme"                                  ["None*", "April_Fools", "BloxTober", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
+@var          select   CustomTheme                 "Custom Site Theme"                                  ["None", "April_Fools", "BloxTober*", "BTR_Night", "BTR_Red", "BTR_Simblk", "BTR_Sky", "L_Red", "RPlus_Easter", "RPlus_OBC"]
 @var          select   greetingTxt                 "Greeting Text Style"                                ["None*", "Hello", "HelloExclamation", "Exclamation"]
 @var          select   CardStyle                   "Item Card Style"                                    ["201604", "201606", "201812", "201903*", "201908"]
 @var          checkbox Fix1903T                    " ├ Fixed 201903 Transitions"                        0
@@ -10294,7 +10294,7 @@
     /*/=={ Watermark }==/*/
     @WatermarkEnabled: true;
     @Version: "1.5";
-    @VersionDate: "20261024";
+    @VersionDate: "20261028";
     @VersionBuild: "00";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
