@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Roblox Legacy Old Theme (Dev)
-@version      20261103-00.1.5
+@version      20261103-01.1.5
 @namespace    userstyles.world/user/tersiswilvin
 @description  A heavily modified Roblox Old Light Theme (2019) by GalactiCosmo aimed to be more accurate with customizable options.
 @author       tersiswilvin
@@ -91,6 +91,7 @@
 @var          checkbox RemoveSubGenres             " ├ Remove Sub Genres"                               1
 @var          checkbox RemoveTheme                 " ├ Remove Theme"                                    0
 @var          checkbox RemoveTopbarDownloadBtn     " ├ Remove Topbar Download Button"                   1
+@var          checkbox RemoveTopbarRobuxBadge      " ├ Remove Topbar Robux Badge"                       1
 @var          checkbox RemoveVerifiedBadge         " ├ Remove Verified Badge"                           1
 @var          checkbox RemoveVoiceChat             " ├ Remove Voice Chat"                               1
 @var          checkbox RenameGiftcards             " ├ Rename Buy Gift Cards to Gift Cards"             1
@@ -122,10 +123,12 @@
 @var          checkbox RevertExpandedhomepage      " ├ Revert Expanded home page"                       1
 @var          checkbox RevertGameModals            " ├ Revert Game Modals"                              1
 @var          checkbox RevertLogin                 " ├ Revert Login"                                    1
+@var          checkbox RevertPrivacylink           " ├ Revert Privacy link"                             1
 @var          checkbox RevertReactAvatarEditor     " ├ Revert React Avatar Editor"                      1
 @var          checkbox RevertReactPeopleList       " ├ Revert React People list"                        1
 @var          checkbox RevertServerPlayerlists     " ├ Revert Server Playerlists"                       1
 @var          checkbox RevertSidebar               " ├ Revert Sidebar"                                  1
+@var          checkbox RevertTbWidthupdate         " ├ Revert Topbar Width update"                      1
 @var          checkbox RevertWebblox               " ├ Revert Webblox"                                  1
 @var          checkbox UppercaseRoblox             " └ Uppercase Roblox User Text"                      1
 @var          checkbox MembershipToBC              "Membership To BC"                                   0
@@ -1580,7 +1583,7 @@
             display: none;
         }
     }
-    & when (@Revert201909updates = 1) {
+    & when (@Revert201909updates = 1) and (@RevertReactPeopleList = 1) {
         .home-container.expand-max-width .friend-list .hlist, .home-container.expand-max-width .people-list .hlist {
             display: block;
             .friend {
@@ -2282,7 +2285,7 @@
         padding: 1px 6px;
         min-width: unset;
         transform: translate(-4px, -4px);
-        & when (@Revert201909updates = 1) {
+        & when (@Revert201909updates = 1) and (@RemoveTopbarRobuxBadge = 1) {
             display: none;
         }
         .light-theme &, .dark-theme & {
@@ -2387,7 +2390,7 @@
         }
         .rbx-navbar {
             li {
-                & when (@Revert201909updates = 1) {
+                & when (@Revert201909updates = 1) and (@RevertTbWidthupdate = 1) {
                     width: 25%;
                 }
                 float: left;
@@ -2412,13 +2415,13 @@
             }
         }
         @media (min-width: 991px) {
-            .left-nav-new-width & .navbar-search when (@Revert201909updates = 1) and (@RevertSidebar = 1) {
+            .left-nav-new-width & .navbar-search when (@Revert201909updates = 1) and (@RevertSidebar = 1) and (@RevertTbWidthupdate = 1) {
                 width: 25%;
             }
         }
         @media (min-width: 992px) {
             height: 40px;
-            & when (@Revert201909updates = 1) {
+            & when (@Revert201909updates = 1) and (@RevertTbWidthupdate = 1) {
                 .col-md-5 {
                     width: 33.33333%;
                 }
@@ -2443,7 +2446,7 @@
             }
         }
         @media (min-width: 1200px) {
-            .col-lg-4 when (@Revert201909updates = 1) {
+            .col-lg-4 when (@Revert201909updates = 1) and (@RevertTbWidthupdate = 1) {
                 width: 25%;
             }
         }
@@ -3594,7 +3597,7 @@
         color: #474747;
     }
 
-    .footer .text-footer-nav {
+    .footer .text-footer-nav when (@Revert201909updates = 1) and (@RevertPrivacylink = 1) {
         &.privacy {
             color: #00a2ff;
             &:active, &:link, &:visited {
@@ -3607,7 +3610,7 @@
                 }
             }
         }
-        &:not(.privacy)[href*="/info/privacy"] when (@Revert201909updates = 1) {
+        &:not(.privacy)[href*="/info/privacy"] {
             color: #00a2ff;
             &:active, &:link, &:visited {
                 color: #00a2ff
@@ -6166,407 +6169,7 @@
                 text-transform: uppercase;
             }
         }
-        .menu-vertical .menu-option-content[href="#!/classic-heads"]:after {
-            content: 'Heads';
-            float: left;
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option-content[href="#!/classic-clothing"]:before {
-            content: 'Clothing';
-            float: left;
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option-content[href="#!/game-passes"] .menu-text:before {
-            content: 'Game ';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option-content[href="#!/private-servers"]:before {
-            content: 'VIP Servers';
-            float: left;
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-t-shirts"]:before {
-            content: 'T-shirts';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-shirts"]:before {
-            content: 'Shirts';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option .menu-secondary-option[href="#!/classic-clothing/classic-pants"]:before {
-            content: 'Pants';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/my-private-servers"]:before {
-            content: 'My VIP Servers';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option .menu-secondary-option[href="#!/private-servers/other-private-servers"]:before {
-            content: 'Other VIP Servers';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/classic-clothing"]:before {
-            content: 'Clothing';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/classic-heads"]:before {
-            content: 'Heads';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/classic-clothing/classic-t-shirts"]:before {
-            content: 'T-shirts';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/classic-clothing/classic-shirts"]:before {
-            content: 'Shirts';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/classic-clothing/classic-pants"]:before {
-            content: 'Pants';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/game-passes"]:before {
-            content: 'Game Passes';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/private-servers"]:before {
-            content: 'VIP Servers';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/private-servers/my-private-servers"]:before {
-            content: 'My VIP Servers';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/private-servers/other-private-servers"]:before {
-            content: 'Other VIP Servers';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .input-group-btn .dropdown-menu li:before {
-            display: block;
-            line-height: 1.42857;
-            padding: 10px 12px;
-        }
-        .menu-vertical .menu-option .menu-secondary-option[href="#!/places/my-experiences"]:before {
-            content: 'My Games';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .menu-vertical .menu-option .menu-secondary-option[href="#!/places/other-experiences"]:before {
-            content: 'Other Games';
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 16px;
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/places/my-experiences"]:before {
-            content: 'My Games';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .dropdown-menu li[href="#!/places/other-experiences"]:before {
-            content: 'Other Games';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-            }
-        }
-        .game-error .error-text {
-            font-size: 0;
-            margin-top: 0;
-            &:before {
-                content: 'Games failed to load';
-                font-size: 16px;
-                font-weight: inherit;
-                line-height: 1.5em;
-                margin-top: 12px;
-                display: block;
-            }
-        }
-
-        .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-heads"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/my-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/other-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/my-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/other-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span {
-            font-size: 0;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span:after {
-            content: 'Clothing';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
-            content: 'T-shirts';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
-            content: 'Shirts';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
-            content: 'Pants';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-heads"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span:after {
-            content: 'Heads';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/game-passes"]) ~ .tab-content .breadcrumb-container li:nth-child(1) span:before {
-            content: 'Game ';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/my-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
-            content: 'My Games';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/places"] ~ .menu-secondary-container .active[href="#!/places/other-experiences"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
-            content: 'Other Games';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/private-servers"]) ~ .tab-content .breadcrumb-container li:first-child span {
-            font-size: 0;
-            &:after {
-                content: 'VIP Servers';
-                font-size: 16px;
-                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                    line-height: 1.4em;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                    line-height: 1.3em;
-                }
-                cursor: text;
-            }
-        }
-        .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/my-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
-            content: 'My VIP Servers';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
-        .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/private-servers"] ~ .menu-secondary-container .active[href="#!/private-servers/other-private-servers"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
-            content: 'Other VIP Servers';
-            font-size: 16px;
-            & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-            cursor: text;
-        }
+        
         @media (max-width: 543px) {
             .rbx-tabs-vertical .category-tabs:has(.active .menu-option-content[href="#!/classic-clothing"]) ~ .tab-content .breadcrumb-container li:first-child span:after, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-t-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-shirts"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after, .rbx-tabs-vertical .category-tabs:has(.menu-option-content[href="#!/classic-clothing"] ~ .menu-secondary-container .active[href="#!/classic-clothing/classic-pants"]) ~ .tab-content .breadcrumb-container li:nth-child(3) span:after {
                 & when (@SourceSansPro = 0) {
@@ -6580,10 +6183,6 @@
             }
         }
 
-        .game-dev-store .container-header h3:after {
-            content: ' for this game';
-            cursor: text;
-        }
         .logged-out .copyright-container, .wrap:not(.logged-in) .copyright-container, body[data-internal-page-name="Landing"] .copyright-container {
             padding-top: 0;
             border-top: 0;
@@ -6608,156 +6207,7 @@
         .transaction-type-dropdown #type-selection-label, .transaction-date-dropdown #date-selection-label, .transaction-num-items-dropdown #num-items-selection-label {
             display: none;
         }
-        [ng-bind*="'Heading.Games'"] {
-            font-size: 0;
-            &:active, &:focus, &:hover {
-                font-size: 0;
-            }
-            .gotham-font &, .gotham-font .container-header &, .builder-font &, .builder-font .container-header & {
-                font-size: 0;
-                &:active, &:focus, &:hover {
-                    font-size: 0;
-                }
-            }
-            #btr-games & {
-                font-size: 0;
-                line-height: 0;
-                &:after {
-                    content: 'Games';
-                    & when (@SourceSansPro = 0) {
-                        font-size: 16px;
-                        font-weight: 500;
-                        line-height: 16px;
-                        @media (max-width: 767px) {
-                            font-size: 12px;
-                            font-weight: 500;
-                        }
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 18px;
-                        font-weight: 400;
-                    }
-                    line-height: 1rem;
-                    cursor: inherit
-                }
-            }
-            &:after {
-                content: 'Games';
-                & when (@SourceSansPro = 0) {
-                    font-size: 20px;
-                    font-weight: 700;
-                    @media (max-width: 767px) {
-                        font-size: 16px;
-                    }
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 24px;
-                    font-weight: 300;
-                    @media (max-width: 767px) {
-                        font-size:21px
-                    }
-                }
-                line-height: 1em;
-                cursor: text;
-            }
-        }
-
-        .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-games-off ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-shop ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-profile ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-library ~ .navbar-list-option-suffix, .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-groups ~ .navbar-list-option-suffix {
-            font-size: 0;
-            line-height: 0;
-        }
-        .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-games-off ~ .navbar-list-option-suffix:after {
-            content: 'in Games';
-            font-size: 16px;
-            line-height: 1.3em;
-        }
-        .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-shop ~ .navbar-list-option-suffix:after {
-            content: 'in Catalog';
-            font-size: 16px;
-            line-height: 1.3em;
-        }
-        .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-profile ~ .navbar-list-option-suffix:after {
-            content: 'in Players';
-            font-size: 16px;
-            line-height: 1.3em;
-        }
-        .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-library ~ .navbar-list-option-suffix:after {
-            content: 'in Library';
-            font-size: 16px;
-            line-height: 1.3em;
-        }
-        .rbx-header .navbar-search .navbar-search-option .new-navbar-search-anchor .icon-menu-groups ~ .navbar-list-option-suffix:after {
-            content: 'in Groups';
-            font-size: 16px;
-            line-height: 1.3em;
-        }
-        .profile-join-game.btn-growth-md:after, .btn-join-game .text-label:after, .profile-header-buttons [class*="Primary"] [class*=textContainer]:after {
-            content: ' Game';
-        }
-
-        .game-stat {
-            display: unset;
-            p {
-                margin-bottom: 0;
-            }
-            &-container:has(:nth-child(10)) &:nth-last-child(-n+1) when (@Revert201909updates = 1) and (@RemoveSubGenres = 1) {
-                display: none;
-            }
-            &s-container li:first-child p:first-child, &-container li:first-child p:first-child {
-                font-size: 0;
-                &:after {
-                    content: "Playing";
-                    line-height: 1.5em;
-                    & when (@SourceSansPro = 0) {
-                        font-size: 12px;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 16px;
-                    }
-                    cursor: text;
-                }
-            }
-            &s-container li:not(.game-stat-width-voice):nth-child(6) p:first-child:after, &s-container li.game-stat-width-voice:nth-child(7) p:first-child {
-                font-size: 0;
-                &:after {
-                    content: "Max Players";
-                    line-height: 1.5em;
-                    & when (@SourceSansPro = 0) {
-                        font-size: 12px;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 16px;
-                    }
-                    cursor: text;
-                }
-            }
-            /*/ Preprocessor less can't handle more items so just put it into a different section for now. /*/
-            &-container:has(.chat-feature-list) li:nth-child(7) p:first-child, &-container:not(:has(.chat-feature-list)) li:nth-child(8) p:first-child {
-                font-size: 0;
-                &:after {
-                    content: "Max Players";
-                    line-height: 1.5em;
-                    & when (@SourceSansPro = 0) {
-                        font-size: 12px;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 16px;
-                    }
-                    cursor: text;
-                }
-            }
-        }
-        .game-follow-button-container div[role="tooltip"] .tooltip-inner, .container-header div[role="tooltip"] .tooltip-inner {
-            font-size: 0;
-        }
-        .game-follow-button-container .tooltip-container ~ [role="tooltip"] .tooltip-inner:after {
-            content: 'Follow Game';
-            font-size: 12px;
-            line-height: 1.3em;
-        }
-        .game-follow-button-container .tooltip-container:has(.followed) ~ [role="tooltip"] .tooltip-inner:after {
-            content: 'Unfollow Game';
-        }
+        
         @media (hover: hover) {
             .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container .follow-button :not(.disabled):hover {
                 background-position: -28px -252px;
@@ -6766,95 +6216,7 @@
         .game-main-content.follow-button-enabled .favorite-follow-vote-share .game-follow-button-container:has(.icon-notifications-bell) .icon-label {
             font-size: 0;
         }
-        .follow-button:has(.icon-notifications-bell) .icon-label:after {
-            content: "";
-            & when (@SourceSansPro = 0) {
-                font-size: 12px;
-                font-weight: 400;
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 14px;
-                font-weight: 300;
-                line-height: 1.3em;
-            }
-        }
-        .tooltip-container .follow-button:has(.icon-notifications-bell) .icon-label:after {
-            content: "Follow";
-        }
-        .tooltip-container:has(.followed) .follow-button:has(.icon-notifications-bell) .icon-label:after {
-            content: "Following";
-        }
-        .gotham-font, .builder-font {
-            #recommended-games-container h2, .games-detail h2, .container-list.games-detail h2 {
-                font-size: 0;
-                &:after {
-                    content: "Recommended Games";
-                    & when (@SourceSansPro = 0) {
-                        font-size: 20px;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 24px;
-                    }
-                    font-weight: inherit;
-                    line-height: 1em;
-                    cursor: text;
-                }
-                &:hover, &:focus, &:active {
-                    font-size: 0;
-                    &:after {
-                        content: "Recommended Games";
-                        & when (@SourceSansPro = 0) {
-                            font-size: 20px;
-                        }
-                        & when (@SourceSansPro = 1) {
-                            font-size: 24px;
-                        }
-                        font-weight: inherit;
-                        line-height: 1em;
-                        cursor: text;
-                    }
-                }
-            }
-        }
-
-        #player-badges-container .container-header h2:before {
-            content: 'Player ';
-            cursor: text;
-        }
-
-        .profile-container .profile-game h3 {
-            font-size: 0px;
-            &:hover, &:focus, &:active {
-                font-size: 0px;
-            }
-            &:after {
-                content: "Games";
-                font-size: 20px;
-                line-height: 1em;
-                cursor: text;
-                @media (max-width: 767px) {
-                    font-size: 16px;
-                }
-            }
-        }
-        body:not(.btr-profile) .profile-container .profile-game #games-switcher .list-item:nth-child(1) .text-label:nth-child(1) {
-            font-size: 0;
-            &:after {
-                font-size: 16px;
-                content: "Playing";
-                line-height: 1.4em;
-                cursor: text;
-            }
-        }
-        .chat-main-empty .chat-disconnect #find-game {
-            font-size: 0;
-            &:after {
-                content: "Visit Games";
-                font-size: 16px;
-                line-height: 100%;
-            }
-        }
+        
         .home-container a[href*="/v2/Continue"]:not([class*="btn"]):not([class*="css-"]), .home-container a[href*="/v2/Continue"]:not([class*="btn"]) [class*="-textOverride"] {
             & when (@LegacyHomeTitles = 1) {
                 font-size: 0;
@@ -6889,87 +6251,6 @@
                 content: 'My ';
             }
         }
-        #build-page .divider-right a.tab-item:nth-child(1), #build-page .divider-right .groups-dropdown-container ~ a.tab-item:nth-child(2) {
-            font-size: 0;
-            &:after {
-                content: 'Games';
-                font-size: 16px;
-                line-height: 1.428;
-            }
-        }
-        .content-area .create-new-button {
-            font-size: 0;
-            &:after {
-                content: 'Create New Game';
-                font-size: 20px;
-                line-height: 1.3em;
-            }
-        }
-        #build-page table:nth-child(3) td div h2 {
-            font-size: 0;
-            &:after {
-                content: 'Games';
-                font-size: 30px;
-                line-height: 1em;
-                cursor: text;
-            }
-        }
-        #DevelopTabs.tab-container #LibraryTabLink {
-            font-size: 0px;
-            &:after {
-                content: 'Library';
-                font-weight: bold;
-                font-size: 15px;
-                line-height: 1.428;
-            }
-        }
-
-        .rbx-header .rbx-navbar li a[href="/discover"], .rbx-header .rbx-navbar li a[href="/charts"] {
-            font-size: 0;
-            &:after {
-                content: 'Games';
-                font-size: 16px;
-                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 500;
-                    line-height: 0;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 400;
-                    line-height: 0;
-                }
-                & when (@HCoGothamSSm = 0) {
-                    line-height: inherit;
-                }
-                vertical-align: middle;
-                display: inline-block;
-                @media (max-width: 767px) {
-                    font-size: 12px;
-                }
-            }
-        }
-        .rbx-header .rbx-navbar li a[href*="/catalog"] {
-            font-size: 0;
-            &:after {
-                content: 'Catalog';
-                font-size: 16px;
-                & when (@Revert201909updates = 1) and (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 500;
-                    line-height: 0;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 400;
-                    line-height: 0;
-                }
-                & when (@HCoGothamSSm = 0) {
-                    line-height: inherit;
-                }
-                vertical-align: middle;
-                display: inline-block;
-                @media (max-width: 767px) {
-                    font-size: 12px;
-                }
-            }
-        }
 
         .chat-friend-list .chat-friend-container .chat-friend-info .dynamic-overflow-container {
             display: block;
@@ -6996,51 +6277,7 @@
             float: left;
             width: 100%;
         }
-        .avatar-editor-header .catalog-header div:nth-child(n+1) {
-            font-size: 0;
-            &:after {
-                content: 'Explore the catalog to find more clothes!';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                    line-height: 1.4em;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                    line-height: 1.3em;
-                }
-                cursor: text;
-                @media (max-width: 543px) {
-                    font-size: 12px;
-                    & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                        font-weight: 400;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-weight: 300;
-                    }
-                }
-            }
-        }
-        .catalog-container .search-bars h1 a {
-            font-size: 0px;
-            padding: 0;
-            margin: 0;
-            &:after {
-                content: 'Catalog';
-                & when (@SourceSansPro = 0) {
-                    font-size: 32px;
-                    font-weight: 800;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 36px;
-                    font-weight: 400;
-                }
-                line-height: 1em;
-                @media (max-width: 767px) {
-                    font-size: 24px;
-                }
-            }
-        }
+        
         .catalog-container .search-bars .heading {
             height: 36px;
         }
@@ -7056,332 +6293,6 @@
             position: relative;
             @media (min-width: 543px) {
                 float: right;
-            }
-        }
-
-        .rbx-private-server-create .rbx-private-server-create-button {
-            font-size: 0;
-            &:hover, &:focus, &:active {
-                font-size: 0
-            }
-            .light-theme &, .dark-theme & {
-                font-size: 0;
-                &:hover, &:focus, &:active {
-                    font-size: 0
-                }
-            }
-            &:after {
-                content: 'Create VIP Server';
-                font-size: 18px;
-                font-weight: 500;
-                line-height: 100%;
-            }
-        }
-        #rbx-private-servers .section-content-off:not(.empty-game-instances-container) {
-            font-size: 0;
-            &:before {
-                content: 'This game does not support ';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 1.4em;
-                cursor: text;
-            }
-            .text-link:after {
-                content: 'VIP Servers';
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1.4em;
-            }
-            &:after {
-                content: '.';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 1.4em;
-                cursor: text;
-            }
-        }
-        #rbx-private-servers .container-header h2 {
-            font-size: 0;
-            &:after {
-                content: 'VIP Servers';
-                font-size: 20px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 700;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 1em;
-                cursor: text;
-            }
-        }
-
-        .create-server-banner .play-with-others-text {
-            font-size: 0px;
-            &:before {
-                content: 'Play this game with friends and other people you invite.';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 0;
-                vertical-align: middle;
-                cursor: text;
-            }
-            .text-link {
-                font-size: 16px;
-                line-height: 0;
-                vertical-align: middle;
-            }
-            span:before {
-                content: 'See all your VIP servers in the ';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 0;
-                vertical-align: middle;
-                cursor: text;
-            }
-            span:after {
-                content: ' tab.';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                }
-                line-height: 0;
-                vertical-align: middle;
-                cursor: text;
-            }
-        }
-
-        .app-bumper-container .app-motto-container .xsmall {
-            font-size: 0;
-            &:hover, &:focus, &:active {
-                font-size: 0;
-            }
-            &:after {
-                content: 'Millions of games by people like you';
-                & when (@SourceSansPro = 0) {
-                    font-size: 10px;
-                    font-weight: 500;
-                    line-height: 1.4em
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 12px;
-                    font-weight: 400;
-                    line-height: 1.3em
-                }
-                cursor: text;
-            }
-        }
-        .create-server-banner .rbx-private-server-create .rbx-private-server-create-disabled-text, #private-server-tooltip .tooltip-inner {
-            font-size: 0;
-            &:hover, &:focus, &:active {
-                font-size: 0
-            }
-        }
-        .create-server-banner .rbx-private-server-create .rbx-private-server-create-disabled-text:after {
-            content: 'You have created the maximum number of free vip servers for this game.';
-            & when (@SourceSansPro = 0) {
-                font-size: 10px;
-                font-weight: 500;
-            }
-            & when (@SourceSansPro = 1) {
-                font-size: 12px;
-                font-weight: 400;
-            }
-            line-height: 1.4em;
-            cursor: text;
-        }
-        #private-server-tooltip .tooltip-inner:after {
-            content: 'VIP servers let you play this game privately with friends, your clan, or people you invite!';
-            font-size: 12px;
-            font-weight: 400;
-            & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                line-height: 1.4em;
-            }
-            & when (@SourceSansPro = 1) {
-                line-height: 1.3em;
-            }
-        }
-
-        #purchase-private-server-modal .modal-title {
-            font-size: 0;
-            &:before {
-                content: 'Create VIP Server';
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-size: 20px;
-                    font-weight: 700;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 21px;
-                    font-weight: 400;
-                }
-                line-height: 1.42857;
-                cursor: text;
-            }
-        }
-        #purchase-private-server-modal .private-server-main-text {
-            font-size: 0;
-            &:before {
-                content: 'Create a VIP Server for ';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                    line-height: 1.4em;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                    line-height: 1.3em;
-                }
-                cursor: text;
-                @media (max-width: 543px) {
-                    font-size: 12px;
-                    font-weight: 400;
-                }
-            }
-            * {
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                    line-height: 1.4em;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                    line-height: 1.3em;
-                }
-                @media (max-width: 543px) {
-                    font-size: 12px;
-                    font-weight: 400;
-                }
-            }
-            &:after {
-                content: '?';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 400;
-                    line-height: 1.4em;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 300;
-                    line-height: 1.3em;
-                }
-                cursor: text;
-                @media (max-width: 543px) {
-                    font-size: 12px;
-                    font-weight: 400;
-                }
-            }
-        }
-
-        #purchase-private-server-modal .private-server-game-name {
-            font-size: 0;
-            line-height: 0;
-            &:before {
-                content: 'Game Name';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 500;
-                    line-height: 1.4em;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 400;
-                    line-height: 1.3em;
-                }
-                cursor: text;
-                @media (max-width: 767px) {
-                    font-size: 12px;
-                    font-weight: 400;
-                }
-            }
-        }
-
-        .private-server-container .container-header.see-all-container-header h1 {
-            font-size: 0;
-            &:after {
-                content: 'Configure VIP Server';
-                & when (@SourceSansPro = 0) {
-                    font-size: 32px;
-                    font-weight: 800;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 36px;
-                    font-weight: 400;
-                }
-                line-height: 1em;
-                cursor: text;
-                @media (max-width: 767px) {
-                    & when (@SourceSansPro = 0) {
-                        font-size: 24px;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 30px;
-                    }
-                }
-            }
-        }
-        .private-server-container .container-header.see-all-container-header .see-all-link-icon {
-            font-size: 0;
-            &:active, &:focus, &:hover, &:visited {
-                font-size: 0;
-            }
-            .gotham-font &, .builder-font & {
-                font-size: 0;
-                &:active, &:focus, &:hover, &:visited {
-                    font-size: 0;
-                }
-            }
-            &:before {
-                content: 'Back to VIP Servers';
-                & when (@SourceSansPro = 0) {
-                    font-size: 16px;
-                    font-weight: 500;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 14px;
-                    font-weight: 500;
-                }
-                line-height: 100%;
-            }
-        }
-
-        .private-server-container .section-content .text-label[ng-bind="'Label.Game' | translate"] {
-            font-size: 0;
-            &:after {
-                content: 'Game';
-                font-size: 16px;
-                & when (@HCoGothamSSm = 1) and (@SourceSansPro = 0) {
-                    font-weight: 500;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-weight: 400;
-                }
-                line-height: 1.4em;
-                cursor: text;
-                @media (max-width: 767px) {
-                    font-size: 12px;
-                    font-weight: 500;
-                }
             }
         }
 
@@ -7751,30 +6662,6 @@
             }
             .game-instances .create-server-banner .play-with-others-text, #running-game-instances-container .create-server-banner .play-with-others-text {
                 height: 16.8px
-            }
-        }
-
-        .game-home-page-container:has(.game-error) h2 {
-            font-size: 0;
-            &:after {
-                content: 'Games';
-                & when (@SourceSansPro = 0) {
-                    font-size: 20px;
-                    font-weight: 700;
-                }
-                & when (@SourceSansPro = 1) {
-                    font-size: 24px;
-                    font-weight: 300;
-                }
-                line-height: 1em;
-                @media (max-width: 767px) {
-                    & when (@SourceSansPro - 0) {
-                        font-size: 16px;
-                    }
-                    & when (@SourceSansPro = 1) {
-                        font-size: 21px;
-                    }
-                }
             }
         }
 
@@ -8400,11 +7287,6 @@
                 }
                 cursor: text;
             }
-        }
-
-        .stack.badge-container.game-badges-list .container-header h2:before, .badge-container.game-badges-list .container-header h2:before, .badge-container .container-header h2:before, .game-badges-list .container-header h2:before {
-            content: "Game ";
-            cursor: text;
         }
 
         & when (@RenameUpgradeNowBtn = 1) {
@@ -10296,7 +9178,7 @@
     /* @WatermarkStyle: None; */
     @Version: "1.5";
     @VersionDate: "20261103";
-    @VersionBuild: "00";
+    @VersionBuild: "01";
     .simplebar-offset when not (@WatermarkStyle = None) and (@WatermarkEnabled = true) {
         bottom: 43.4px !important;
         .simplebar-content {
