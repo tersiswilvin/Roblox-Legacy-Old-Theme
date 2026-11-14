@@ -6144,7 +6144,7 @@
             display: none;
         }
         & when (@RemoveTopbarDownloadBtn = 1) {
-            .rbx-navbar-icon-group>li.navbar-download-app-item {
+            .rbx-navbar-icon-group>li:is(.navbar-download-app-item, .download-app-nav-item) {
                 display: none
             }
         }
@@ -10875,7 +10875,7 @@
     }
 
     .rbx-header .rbx-navbar-icon-group .navbar-stream {
-        padding: 9px 0;
+        padding: 6px 0;
         height: 40px;
         /*width: 46px;*/
     }
@@ -10906,9 +10906,11 @@
         vertical-align: middle;
         margin-top: -2px;
     }
+    /*
     .rbx-header .rbx-navbar-icon-group>li>button>.rbx-menu-item.nav-robux-icon {
         display: block;
     }
+    */
     #btr-navbar-messages > a, #btr-navbar-friends > a {
         padding: 6px 9px;
         border-radius: 0;
@@ -11111,6 +11113,29 @@
         margin-right: 0;
         margin-left: 0;
     }
+
+    /* unsure of where to put this, move accordingly */
+    .rbx-header :is(.icon-regular-three-bars-horizontal, #nav-robux, #nav-settings, #common-notification-bell) {
+        width: 28px !important;
+        height: 28px !important;
+        background-color: transparent !important;
+        background-image: url("https://static.rbxcdn.com/images/Shared/navigation_10022018.svg") !important;
+        background-repeat: no-repeat !important;
+        background-size: auto auto !important;
+        -webkit-mask: none !important;
+        mask: none !important;
+    }
+
+    .rbx-header .icon-regular-three-bars-horizontal { background-position: 0 0 !important; }
+    .rbx-header #nav-robux { background-position: 0 -28px !important; }
+    .rbx-header #nav-settings { background-position: 0 -84px !important; }
+    .rbx-header #common-notification-bell { background-position: 0 -448px !important; }
+
+    .rbx-header button:hover .icon-regular-three-bars-horizontal { background-position: -28px 0 !important; }
+    .rbx-header button:hover #nav-robux { background-position: -28px -28px !important; }
+    .rbx-header button:hover #nav-settings { background-position: -28px -84px !important; }
+    .rbx-header button:hover #common-notification-bell { background-position: -28px -448px !important; }
+
     .btn-uiblox-common-common-notification-bell-md.disabled:hover span[class^=icon-], .btn-uiblox-common-common-notification-bell-md.disabled span[class^=icon-], .btn-uiblox-common-common-notification-bell-md[disabled]:hover span[class^=icon-], .btn-uiblox-common-common-notification-bell-md[disabled] span[class^=icon-], .btn-uiblox-common-common-notification-bell-md span[class^=icon-], a.btn-uiblox-common-common-notification-bell-md.disabled:hover span[class^=icon-], a.btn-uiblox-common-common-notification-bell-md.disabled span[class^=icon-], a.btn-uiblox-common-common-notification-bell-md[disabled]:hover span[class^=icon-], a.btn-uiblox-common-common-notification-bell-md[disabled] span[class^=icon-], a.btn-uiblox-common-common-notification-bell-md span[class^=icon-], button.btn-uiblox-common-common-notification-bell-md.disabled:hover span[class^=icon-], button.btn-uiblox-common-common-notification-bell-md.disabled span[class^=icon-], button.btn-uiblox-common-common-notification-bell-md[disabled]:hover span[class^=icon-], button.btn-uiblox-common-common-notification-bell-md[disabled] span[class^=icon-], button.btn-uiblox-common-common-notification-bell-md span[class^=icon-] {
         background-position: 0 -448px;
     }
