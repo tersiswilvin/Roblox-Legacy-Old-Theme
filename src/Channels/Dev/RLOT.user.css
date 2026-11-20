@@ -18111,7 +18111,7 @@
 
     /*/=={ Buttons }==/*/
     /*/== Green Buttons ==/*/
-    .btn-cta-lg, .btn-growth-lg, .btn-primary-lg, .btn-common-play-game-lg, a.btn-common-play-game-lg, button.btn-common-play-game-lg, .btn-branded-robux-white-lg, a.btn-branded-robux-white-lg, button.btn-branded-robux-white-lg {
+    .btn-cta-lg, .btn-growth-lg, .btn-primary-lg, .bg-action-emphasis, .btn-common-play-game-lg, a.btn-common-play-game-lg, button.btn-common-play-game-lg, .btn-branded-robux-white-lg, a.btn-branded-robux-white-lg, button.btn-branded-robux-white-lg {
         .light-theme & {
             & when (@BoxShadows = 1) and (@TransitionalAnimations = 1) {
                 -webkit-transition: box-shadow 200ms ease-in-out;
